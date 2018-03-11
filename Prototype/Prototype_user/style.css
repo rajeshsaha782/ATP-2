@@ -276,3 +276,38 @@ a
 .pic:last-child{
 	margin-bottom:30px;
 }
+.reg{
+	width:300px;
+	border-collapse:collapse;
+	height:400px;
+}
+.reg th
+{
+	text-align:left;
+}
+.log{
+	width:250px;
+	border-collapse:collapse;
+	height:300px;
+}
+.log th
+{
+	text-align:left;
+}
+.log td
+{
+	text-align:center;
+}
+.pass{
+	width:300px;
+	border-collapse:collapse;
+	height:300px;
+}
+.pass th
+{
+	text-align:left;
+}
+.pass td
+{
+	text-align:center;
+}
