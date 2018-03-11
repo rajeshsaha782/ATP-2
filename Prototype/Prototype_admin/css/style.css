@@ -23,6 +23,13 @@ a
   background: linear-gradient(to right, #FFFFFF, #FF8C00);
   /* font-family: 'Roboto', sans-serif; */
 }
+
+.ba1{
+  background: -webkit-linear-gradient(top,#FFFFFF, #696969);
+  background: linear-gradient(to bottom, #FFFFFF, #696969);
+  /* font-family: 'Roboto', sans-serif; */
+}
+
 .main-nav
 {
 	width:300px;
@@ -117,6 +124,8 @@ a
 	/* background-color:whitesmoke; */
 
 }
+
+
 .main-nav-ul ul a:before
 {
 	content:'\203A';
