@@ -129,7 +129,7 @@ a
 .main-nav-ul ul a:before
 {
 	content:'\203A';
-	margin-right:20px;
+	margin-right:0px;
 }
 .main-nav .sub-arrow:after
 {
