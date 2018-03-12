@@ -1,0 +1,163 @@
+
+								
+								
+								
+
+<meta name="viewport" content="width=device=width,
+		initial-scalw=1,user-scalable=no">
+		
+		
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="../../Prototype_user/style.css">
+
+		<style>
+.w3-animate-bottom{overflow: scroll;
+    overflow-x: hidden;
+	position:relative;animation:animatebottom 0.4s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+	
+	::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent; 
+}
+</style>
+<body class="w3-light-grey w3-animate-bottom ">
+<div class="invoice" style="width:800px;background-color:transparent">
+		
+			
+				
+				
+				<div class="invoice-wrapper">
+				
+				
+					<div class="invoice-wrap">
+					<div style="text-align:center;color:black;" class="ba"><h3>Add Product</h3></div>
+				
+						<div class="desc" style="margin-left:225;">
+						
+						
+							<table class="reg">
+		<tr>
+		<td>
+        <table width="100%" >
+            <tr>
+                <td width="130"></td>
+                <td width="10"></td>
+                <td width="230"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Product Name</td>
+                <td>:</td>
+                <td><input name="name" type="text"></td>
+                <td></td>
+            </tr>		
+            <tr><td colspan="4"><hr/></td></tr>
+            <tr>
+                <td>Product code</td>
+                <td>:</td>
+                <td>
+                    <input name="email" type="text">
+                </td>
+                <td></td>
+            </tr>		
+            <tr><td colspan="4"><hr/></td></tr>
+            <tr>
+                <td>Price</td>
+                <td>:</td>
+                <td><input name="userName" type="text">Tk</td>
+                <td></td>
+            </tr>		
+            <tr><td colspan="4"><hr/></td></tr>
+            <tr>
+                <td>Size</td>
+                <td>:</td>
+                <td><input name="text" type="text"></td>
+                <td></td>
+            </tr>		
+            <tr><td colspan="4"><hr/></td></tr>
+            <tr>
+                <td>Quantity</td>
+                <td>:</td>
+                <td><input name="Quantity"></td>
+                <td></td>
+            </tr>	
+			<tr><td colspan="4"><hr/></td></tr>
+            <tr>
+                <td>Brand</td>
+                <td>:</td>
+                <td>
+					<select>
+					<option></option>
+					<option>Local</option>
+					<option>Easy</option>
+					<option>Eacstasy</option>
+					<option>Yellow</option>
+					<option>Aarong</option>
+					</select>
+                </td>
+                <td></td>
+            </tr>
+            <tr><td colspan="4"><hr/></td></tr>
+            <tr>
+                <td>Product Feature</td>
+                <td>:</td>
+                <td><input name="Product_Feature"></td>
+                <td></td>
+            </tr>		
+           
+        </table>
+		</td>
+		<td>
+		<table>
+									<tr><td><img align="bottom" src="../resources/product.JPG" width="167"/></td></tr>
+									<tr><td><button type="file" class="button" name="product_pic" accept="image/*">Browse</button></td></tr>
+								</table>
+								</td>
+								</tr>
+								<br/>
+								<tr>
+							<td>
+							<button class="button" onclick="confirmm()">Confirm</button>
+							</td>
+							<td>
+						<a href="Dashboard.html"><button class="button">Cancel</button></a>
+						</td>
+						
+							</tr>
+							
+								</table>
+						
+						
+							
+						
+						</div>
+						
+						
+					   
+				   
+				   </div>
+				   
+				   
+				 
+					   
+					 
+				   
+				   </div>
+				   
+				   
+		</div>
+		
+		<script>
+function confirmm() {
+    var txt;
+    if (confirm("Add This Product?")) {
+        alert("Succesful");
+		window.open("Dashboard.html",'_self');
+		
+    } else {
+        txt = "You pressed Cancel!";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+</body>

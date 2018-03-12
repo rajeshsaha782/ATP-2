@@ -41,8 +41,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-        <tr>
-          <td><a href="View_Profile.html">1</a></td>
+		
+        <tr class="click">
+		<a href="View_Profile_User.html">
+          <td>1</td>
           <td>MD Mashiul Azam</td>
           <td>efti@gmail.com</td>
 		  <td>100</td>
@@ -51,31 +53,39 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
           <!-- <td><a href="View_Profile.html">View</a></td> -->
 		  <!-- <td><a href="Edit_Profile.html">Edit</a></td> -->
 		  <!-- <td><a href="Delete_Profile.html">Delete</a></td> -->
+		  </a>
         </tr>
+		
+		<a href="View_Profile_User.html">
 		<tr>
-          <td><a href="View_Profile.html">2</a></td>
+          <td>2</td>
           <td>Rajesh Saha</td>
           <td>rajesh@gmail.com</td>
 		  <td>234</td>
           <td>3 Month(s) Ago</td>
 		  <td>Blocked</td>
         </tr>
+		</a>
+		<a href="View_Profile_User.html">
 		<tr>
-          <td><a href="View_Profile.html">3</a></td>
+          <td>3</td>
           <td>Rakibul Hossain</td>
           <td>rakib@gmail.com</td>
 		  <td>1879</td>
           <td>1 Year(s) Ago</td>
 		  <td>Active</td>
         </tr>
+		</a>
+		<a href="View_Profile_User.html">
 		<tr>
-          <td><a href="View_Profile.html">4</a></td>
+          <td>4</td>
           <td>Reza Ul Karim</td>
           <td>reza@gmail.com</td>
 		  <td>2134</td>
           <td>1 Year(s) Ago</td>
 		  <td>Blocked</td>
         </tr>
+		</a>
         
       </tbody>
     </table>
@@ -89,6 +99,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
 <!-- }).resize(); -->
 <!-- </script> -->
 </body>
+<script>
+ $("tr").click(function(){
+   window.location = "example.html";
+ });
+ </script>
 
 </html>
 

@@ -9,15 +9,14 @@
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
-
 </style>
 <body class="s">
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-card-4 w3-large ba" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-dark-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item"><img src="resources/e.jpg" class="w3-left  w3-margin-right" style="width:100px"></span>
-  <span class="w3-bar-item  w3-right"><img src="resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"> <i class="fa fa-tasks fa-fw w3-hover-shadow "><div class="notification">1</div></i></span>
+  <span class="w3-bar-item"><a href="admin/Dashboard.html" target="contentFrame"><img src="resources/e.jpg" class="w3-left  w3-margin-right" style="width:100px"/></a></span>
+  <span class="w3-bar-item  w3-right"><a href="admin/View_Profile_Admin.html" target="contentFrame"><img src="resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"></a> <i class="fa fa-tasks fa-fw w3-hover-shadow "><div class="notification">1</div></i></span>
 </div>
 
 <!-- Sidebar/menu -->
@@ -25,25 +24,26 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container w3-row">
     
     <div class="w3-col s8 w3-bar">
-      <span><h3>Welcome, <strong>Efti</strong></span></h3><br>
+      <span><h3>Welcome, <strong>Efti</strong></h3><a href="../Prototype_user/index.html"><i class="fa fa-sign-out w3-xlarge"></i></a></span>
       
     </div>
   </div >
   <div class="w3-container">
+  
   <ul class="main-nav-ul" style="padding:5px">
 					
 						<li><h4><a href="#" ><i class="fa fa-address-card fa-fw "></i> Account<span class="sub-arrow"></h4></span></a>
 							<ul class="w3-animate-zoom " style="padding-left:25px">
-								<li><a href="admin/Dashboard.html" target="contentFrame" class="w3-bar-item w3-button  w3-padding w3-blue"><i class="fa fa-dashboard fa-fw"></i>  DashBoard</a></li>
-								<li><a href="#" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Edit Profile</a></li>
-								<li><a href="#" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  View Profile</a></li>
-								<li><a href="#" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-lock fa-fw"></i>  Change Password</a></li>
+								<li><a href="admin/Dashboard.html" target="contentFrame" class="w3-bar-item w3-button  w3-padding w3-blue" ><i class="fa fa-dashboard fa-fw"></i>  DashBoard</a></li>
+								<li><a href="admin/Edit_Profile_Admin.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Edit Profile</a></li>
+								<li><a href="admin/View_Profile_Admin.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  View Profile</a></li>
+								<li><a href="admin/Change_Password.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-lock fa-fw"></i>  Change Password</a></li>
 							</ul>
 						</li>
 						<li><h4><a href="#" ><i class="fa fa-registered fa-fw"></i> Registar<span class="sub-arrow"></h4></span></a>
 							<ul class="w3-animate-zoom"  style="padding-left:25px">
-								<li><a href="#" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Add Member</a></li>
-								<li><a href="#" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-product-hunt fa-fw"></i>  Add Product</a></li>
+								<li><a href="admin/Add_Member.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Add Member</a></li>
+								<li><a href="admin/Add_Product.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-product-hunt fa-fw"></i>  Add Product</a></li>
 							</ul>
 						</li>
 						<li><h4><a href="#" ><i class="fa fa-eye fa-fw"></i> View<span class="sub-arrow"></h4></span></a>
