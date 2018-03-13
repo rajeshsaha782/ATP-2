@@ -369,3 +369,41 @@ a
 	text-align:center;
 
 }
+
+
+/* slider button*/
+.prev , .next{
+
+	position: absolute;
+
+	top: 50%;
+
+	font-size: 18px;
+
+	font-weight: bold;
+
+	padding: 16px;
+
+	margin-top: -22px;
+
+	border-radius: 0 3px 3px 0;
+
+	color: #fff;
+
+	cursor: pointer;
+
+	}
+
+	.next{
+
+	right: 30px;
+
+	border-radius: 3px 0 0 3px;
+
+	}
+
+	.prev:hover,.next:hover{
+
+	background-color: rgba(0,0,0,0.8);
+
+	}
