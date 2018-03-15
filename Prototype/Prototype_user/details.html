@@ -135,116 +135,108 @@
 					
 		<div class="main_wrapper">
 		
-				<div class="main-div">
-				   
-						<div  style="width:40%;height:400px;background-color:white;float:left">
-						
-						
-						    <div class="slider">
-				                 <div  style="width:100%">
-			
-			
-					                 <img id= "imgholder" src="resources/1.jpg" width="100%" height="300px">
+			<div class="main-div">
+			   
+				<div  style="width:40%;height:400px;background-color:white;float:left">
 				
-				
-				                 </div>
-				            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-			
-			
-		                    </div>
-									<!--<img src="resources/1.jpg" width="80%" height="300px" align="center"/> -->
-						</div>
-							
-						<div  style="width:60%;height:400px;background-color:white;float:right">
-										<h4 align="left">Kakashi T-Shirt</h4>
-										<p align="left">Price:<span class="pri">$415.54</span></p>
-										<p align="left">Size:
-											<input type="radio">S</input>
-											<input type="radio">M</input>
-											<input type="radio">L</input>
-											<input type="radio">Xl</input>
-										
-										</p>
-										<p align="left">Quantity:<input type="text"></p>
-										<a href="shoppingcart.html" ><input class="button" type="submit" value="Buy" style="float:left;" /></a>
-										<a href="index.html" ><input class="button" type="submit" value="Back"/></a>
-										
-									
-
-                                    <div class="w3-bar w3-black">
-                                       <button class="w3-bar-item w3-button tablink w3-Teal" onclick="Details(event,'Features')">Features</button>
-                                       <button class="w3-bar-item w3-button tablink" onclick="Details(event,'Sizing')">Sizing</button>
-                                       <button class="w3-bar-item w3-button tablink" onclick="Details(event,'Reviews')">Reviews</button>
-                                    </div>
-
-									<div id="Features" class="w3-container city">
-									  <p>Sleeve: Half sleeve. Fabric: Cotton.Comfortable to wear.Exclusive design. Style: Slim fit. Bangladeshi product.</p>
-									  <p>Pack of two solid waist-length T-shirts in purple and grey melange.Each has a stylised polo collar, short sleeves</p>
-									  <p>Cotton Machine-wash warm</p>
-									</div>
-
-									<div id="Sizing" class="w3-container city" style="display:none">
-									  <h4>Size Chart</h4>
-										<table>
-											<tr>
-												  <th>Size</th>
-												  <th>Small</th>
-												  <th>Medium</th>
-												  <th>Large</th>
-												
-												  <th>XL</th>
-											</tr>
-												
-											<tr>
-											   <td>chest</td>
-											   <td>30</td>
-											   <td>38</td>
-											   <td>40</td>
-											   <td>42</td>
-											</tr>
-											   
-											<tr>
-											   <td>Length</td>
-											   <td>25</td>
-											   <td>26</td>
-											   <td>27</td>
-											   <td>28</td>
-											 
-											   
-											</tr>
-										</table>
-									</div>
-
-									<div id="Reviews" class="w3-container city" style="display:none">
-									  <h4>Reviews</h4>
-									  <p>Buyer Reviews show here</p>
-									</div>	
-
-			<script>
-                    function Details(evt, Name) {
-                            var i, x, tablinks;
-                           x = document.getElementsByClassName("city");
-                        for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";
-                               }
-                 tablinks = document.getElementsByClassName("tablink");
-                for (i = 0; i < x.length; i++) {
-              tablinks[i].className = tablinks[i].className.replace(" w3-Teal", "");
-                                     }
-                     document.getElementById(Name).style.display = "block";
-                 evt.currentTarget.className += " w3-Teal";
-}
-</script>									
-										
-						</div>
-		         </div>
-		    
-         </div>
-		
-		
+					<div class="slider">
+						 <div  style="width:100%">
 	
+							 <img id= "imgholder" src="resources/1.jpg" width="100%" height="400px">
 		
+						 </div>
+	
+					</div>
+							<!--<img src="resources/1.jpg" width="80%" height="300px" align="center"/> -->
+				</div>
+					
+				<div  style="width:60%;height:400px;background-color:white;float:right">
+								<h4 align="left">Kakashi T-Shirt</h4>
+								<p align="left">Price:<span class="pri">$415.54</span></p>
+								<p align="left">Size:
+									<input type="radio">S</input>
+									<input type="radio">M</input>
+									<input type="radio">L</input>
+									<input type="radio">Xl</input>
+								
+								</p>
+								<p align="left">Quantity:<input type="text"></p>
+								<a href="shoppingcart.html" ><input class="button" type="submit" value="Buy" style="float:left;" /></a>
+								<a href="index.html" ><input class="button" type="submit" value="Back"/></a>
+								
+							</br>
+							</br>
+
+							<div class="w3-bar w3-black">
+							   <button class="w3-bar-item w3-button tablink w3-Teal" onclick="Details(event,'Features')">Features</button>
+							   <button class="w3-bar-item w3-button tablink" onclick="Details(event,'Sizing')">Sizing</button>
+							   <button class="w3-bar-item w3-button tablink" onclick="Details(event,'Reviews')">Reviews</button>
+							</div>
+
+							<div id="Features" class="w3-container city">
+							  <p>Sleeve: Half sleeve. Fabric: Cotton.Comfortable to wear.Exclusive design. Style: Slim fit. Bangladeshi product.</p>
+							  <p>Pack of two solid waist-length T-shirts in purple and grey melange.Each has a stylised polo collar, short sleeves</p>
+							  <p>Cotton Machine-wash warm</p>
+							</div>
+
+							<div id="Sizing" class="w3-container city" style="display:none">
+							  <h4>Size Chart</h4>
+								<table>
+									<tr>
+										  <th>Size</th>
+										  <th>Small</th>
+										  <th>Medium</th>
+										  <th>Large</th>
+										
+										  <th>XL</th>
+									</tr>
+										
+									<tr>
+									   <td>chest</td>
+									   <td>30</td>
+									   <td>38</td>
+									   <td>40</td>
+									   <td>42</td>
+									</tr>
+									   
+									<tr>
+									   <td>Length</td>
+									   <td>25</td>
+									   <td>26</td>
+									   <td>27</td>
+									   <td>28</td>
+									 
+									   
+									</tr>
+								</table>
+							</div>
+
+							<div id="Reviews" class="w3-container city" style="display:none">
+							  <h4>Reviews</h4>
+							  <p>Buyer Reviews show here</p>
+							</div>	
+
+					 <script>
+							function Details(evt, Name) {
+								var i, x, tablinks;
+								x = document.getElementsByClassName("city");
+								for (i = 0; i < x.length; i++) {
+										x[i].style.display = "none";
+									}
+								tablinks = document.getElementsByClassName("tablink");
+							   for (i = 0; i < x.length; i++) {
+										tablinks[i].className = tablinks[i].className.replace(" w3-Teal", "");
+									}
+								document.getElementById(Name).style.display = "block";
+								evt.currentTarget.className += " w3-Teal";
+							}
+					 </script>												
+				</div>
+			 </div>
+        </div>
+		
+		<br/>
+		<br/>
 	
 		<div class="main_wrapper" height="50%">
 		
@@ -298,30 +290,17 @@
 						</div>
 					
 				</div>
-			
-			
 			</div>
-			
-		
 		</div>
 		
 		
-					
-		
-		
-		
-		
-		
 		<div class="main_wrapper">
-		
 		
 			<div class="wrap">
 			
 				<footer class="footer">
 				
-				
-					<!--<p>&copy; ALL Rights Reserved || EasyLife || 2018</p>
-					-->
+					<!--<p>&copy; ALL Rights Reserved || EasyLife || 2018</p>-->
 					
 					<div class="info">
 					
@@ -341,7 +320,6 @@
 					
 					</div>
 					
-					
 					<div class="info">
 					
 						<h3><b>My Account</b></h3>
@@ -352,7 +330,6 @@
 					
 					</div>
 					
-					
 					<div class="info">
 					
 						<h3>Visit Us</h3>
@@ -362,19 +339,11 @@
 					
 					
 					</div>
-				
-				
 				</footer>
 			
 			</div>
 		
-		
 		</div>
 		
-		
-			
-
 	</body>
-	
-	
 </html>
