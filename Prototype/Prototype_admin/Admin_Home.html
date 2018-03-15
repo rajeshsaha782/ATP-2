@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
@@ -28,7 +29,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       
     </div>
   </div >
-  <div class="w3-container">
+  <div class="w3-container" id="menu">
   
   <ul class="main-nav-ul" style="padding:5px">
 					
@@ -106,15 +107,26 @@ function w3_close() {
     overlayBg.style.display = "none";
 }
 
-$('.main-nav-ul').on('click', function(e) {
-  e.preventDefault();
+$('li').on('click', function(e) {
 
+	if( $(this).hasClass('hover'))
+	{
+		$('li').removeClass('hover');
+		$(this).removeClass('selected');
+	}
+
+	else{
   // remove .hover class from all other elements
-  $('.main-nav-ul').removeClass('hover');
+  $('li').removeClass('hover');
 
   // apply it to the current element
   $(this).addClass('hover');
+   $(this).addClass('selected');
+  }
 });
+
+
+
 
 
 
