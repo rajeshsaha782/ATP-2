@@ -4,54 +4,27 @@
 	<head>
 		<meta name="viewport" content="width=device=width,
 		initial-scalw=1,user-scalable=no">
-		<title>Home</title>
+		<title>DashboardUSer
+		</title>
 		
 		
 		
 		<script>
 						var images= ["resources/slider2.jpg","resources/slider3.jpg","resources/slider1.jpg"];
 						var counter=1;
-						//slide(counter);
-						//next();
-
 						function next(){
 							var img = document.getElementById("imgholder");
-							if(counter==2){
-								counter=0;	
-							}
-							counter++;
-							img.src=images[counter];
+							
+							img.src=images[counter++];
+							
+							if(counter==3){
+								counter=0;
 								
+							}
+							
 						}
+						
 						window.setInterval(next,2000);
-						function plusSlides(n)
-						{
-						   if(counter==2&&n==1)
-						   {
-						     counter=0;
-						     slide(counter);
-						   }
-						   else if(counter==0&&n==-1)
-						   {
-						     counter=2;
-						     slide(counter);
-						   }
-						   else
-						   {
-						     counter=counter+n;
-						     slide(counter);
-						   } 
-						}
-						
-						
-						function slide(counter)
-						{
-						   var img = document.getElementById("imgholder");
-						   img.src=images[counter];
-														
-						}
-            
-				
 			</script>
 		
 		
@@ -85,6 +58,7 @@
 				
 				<div class="logo" style="width:10%">
 					<a href="shoppingcart.html"><strong>(0)items</strong><abbr title="Total Purchase: $900"><i style="font-size:30px;margin-top:18px;" class="fa fa-shopping-cart fa-fw "></i></abbr></a>
+			
 				</div>
 
 				
@@ -93,9 +67,10 @@
 					
 					<span>My Account </span><i style="font-size:30px;margin-top:25px;" class="fa fa-user-circle fa-fw "></i>
 			
+			
 					<div class="dropdown-content">
-						<a href="login.html"><i style="font-size:15px" class="fa fa-lock fa-fw "></i>  LogIn</a>
-						<a href="registration.html"><i style="font-size:15px" class="fa fa-pencil fa-fw "></i>     Register</a>
+						<a href="personalinfo.html"><i style="font-size:15px" class="fa fa-pencil fa-fw "></i>  Rakibul Hossain</a>
+						<a href="index.html"><i style="font-size:15px" class="fa fa-lock fa-fw "></i>     Log out</a>
 						<a href="trackProduct.html"><i style="font-size:15px" class="fa fa-truck fa-fw "></i>  Track Product</a>
 					  </div>
 					  
@@ -107,118 +82,64 @@
 			</header>
 		</head>
 		
-		<div class="main_wrapper" style="width:100%">
+		<div class="main_wrapper">
 		
-			<div class="wrap">
+		<div class="wrap">
 		
-				<div class="main-div">
+		<div class="main-div">
 		
 		
-					<div class="accordian" style="width:20%">
+			<div class="accordian" style="width:20%">
 			
 			
-						<nav class="main-nav">
+				<nav class="main-nav">
 				
 					<ul class="main-nav-ul">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="catagory.html" >Summer Collection<span class="sub-arrow"></span></a>
-							<ul>
-								<li><a href="catagory.html">Men</a></li>
-								<li><a href="catagory.html">Women</a></li>
-								<li><a href="catagory.html">Kid</a></li>
-							</ul>
-						</li>
-						<li><a href="catagory.html" >Winter Collection<span class="sub-arrow"></span></a>
-							<ul>
-								<li><a href="catagory.html">Men</a></li>
-								<li><a href="catagory.html">Women</a></li>
-								<li><a href="catagory.html">Kid</a></li>
-							</ul>
-						</li>
-						<li><a href="catagory.html" >Mens Clothe<span class="sub-arrow"></span></a>
-							<ul>
-								<li><a href="catagory.html">Shirt</a></li>
-								<li><a href="catagory.html">Pant</a></li>
-								<li><a href="catagory.html">Panjabi</a></li>
-							</ul>
-						</li>
-						<li><a href="catagory.html" >Womens Clothe<span class="sub-arrow"></span></a>
-							<ul>
-								<li><a href="catagory.html">Saree</a></li>
-								<li><a href="catagory.html">Salwar Kamiz</a></li>
-								<li><a href="catagory.html">Kurta</a></li>
-							</ul>
-						</li>
-						<li><a href="catagory.html" >Kids Clothe<span class="sub-arrow"></span></a>
-							<ul>
-								<li><a href="catagory.html">Tee shirt </a></li>
-								<li><a href="catagory.html">Pant</a></li>
-								<li><a href="catagory.html">Panjabi</a></li>
-							</ul>
-						</li>
-						<li><a href="catagory.html" >Shoe<span class="sub-arrow"></span></a>
-							<ul>
-								<li><a href="catagory.html">Men</a></li>
-								<li><a href="catagory.html">Women</a></li>
-								<li><a href="catagory.html">Kid</a></li>
-							</ul>
-						</li>
-						<li><a href="catagory.html" >Accessories<span class="sub-arrow"></span></a>
-							<ul>
-								<li><a href="catagory.html">Wallet</a></li>
-								<li><a href="catagory.html">Watch</a></li>
-								<li><a href="catagory.html">Jwellery</a></li>
-							</ul>
-						</li>
-						<li><a href="catagory.html" >Brand<span class="sub-arrow"></span></a>
-							<ul>
-								<li><a href="catagory.html">Aarong</a></li>
-								<li><a href="catagory.html">Eacstasy</a></li>
-								<li><a href="catagory.html">Yellow</a></li>
-							</ul>
-						</li>
+						<li><a href="loghome.html">Home</a></li>
+						<li><a href="dashboard.html" >My Dashboard<span class="sub-arrow"></span></a></li>
+						<li><a href="personalinfo.html" >Account Information<span class="sub-arrow"></span></a></li>
+						<li><a href="changepassword.html" >Cahange Password<span class="sub-arrow"></span></a></li>
+						<li><a href="order.html" >My Orders<span class="sub-arrow"></span></a></li>
+						<li><a href="coupon.html" >My Coupon<span class="sub-arrow"></span></a></li>
 						
-					</ul>
-					
+							
+						
 				</nav>
-			</div>
-			
-			
-			
-				<div class="slider">
-				<div  style="width:100%">
-			
-			
-					<img id= "imgholder" src="resources/slider1.jpg" width="100%" height="450px">
 				
-				
-				</div>
-				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1)">&#10095;</a>
 			
 			
-		      </div>
-			
-			
-		
-		
 			</div>
+			
+			
+			
+			<div class="slider" style="width:70%">
 		
 		
+				<img id= "imgholder" src="resources/slider1.jpg" width=100% height=412>
+			
+			
 			</div>
+			
+			
+		
+		
+		</div>
+		
+		
+		</div>
 		
 		</div>
 		
 		
 		
 		
-		<div class="main_wrapper" >
+		<div class="main_wrapper">
 			
 			<div class="wrap">
 		
 				<div class="product-wrapper">
 					
-						<a href="details.html"><a href="details.html"><img src="resources/1.jpg" alt="" width="250" height="250"/></a></a>
+						<a href="details.html"><img src="resources/1.jpg" alt="" width="250" height="250"/></a>
 						<h4>Lorem Ipsum is simply </h4>
 						 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
 						<p><span class="pri">$415.54</span></p>  
@@ -396,10 +317,9 @@
 					<div class="info">
 					
 						<h3><b>My Account</b></h3>
-								<a href="login.html">Personal Info</a></br>
-								
-								<a href="login.html">Orders</a></br>
-								<a href="shoppingCart.html">Shopping Cart</a></br>
+								<a href="personalInfo.html">Personal Info</a></br>
+								<a href="invoice.html">Orders</a></br>
+								<a href="shoppingcart.html">Shopping Cart</a></br>
 					
 					</div>
 					
