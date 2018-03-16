@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
@@ -16,7 +17,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-bar w3-top w3-card-4 w3-large ba" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-dark-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="w3-bar-item"><a href="admin/Dashboard.html" target="contentFrame"><img src="resources/e.jpg" class="w3-left  w3-margin-right" style="width:100px"/></a></span>
-  <span class="w3-bar-item  w3-right"><a href="admin/View_Profile_Admin.html" target="contentFrame"><img src="resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"></a> <i class="fa fa-tasks fa-fw w3-hover-shadow "><div class="notification">1</div></i></span>
+  <span class="w3-bar-item  w3-right"><a href="admin/View_Profile_Admin.html" target="contentFrame"><img src="resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"></a> <a href="../Prototype_user/index.html"><i class="fa fa-sign-out w3-xlarge"></i></a> <i class="fa fa-tasks fa-fw w3-hover-shadow "><div class="notification">1</div></i></span>
 </div>
 
 <!-- Sidebar/menu -->
@@ -24,11 +25,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container w3-row">
     
     <div class="w3-col s8 w3-bar">
-      <span><h3>Welcome, <strong>Efti</strong></h3><a href="../Prototype_user/index.html"><i class="fa fa-sign-out w3-xlarge"></i></a></span>
+      <span><h3>Welcome, <strong>Efti</strong></h3></span>
       
     </div>
   </div >
-  <div class="w3-container">
+  <div class="w3-container" id="menu">
   
   <ul class="main-nav-ul" style="padding:5px">
 					
@@ -61,7 +62,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 						<li><h4><a href="#" ><i class="fa fa-camera fa-fw"></i> Slider<span class="sub-arrow"></h4></span></a>
 							<ul class="w3-animate-zoom"  style="padding-left:25px">
 								<li><a href="admin/Update_Slider.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-up fa-fw"></i>  Slider Update</a></li>
-								<li><a href="#" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-up fa-fw"></i>  Advertisement</a></li>
+								<li><a href="admin/Advertise.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-up fa-fw"></i>  Advertisement</a></li>
 							</ul>
 						</li>	
 	</ul>
@@ -74,10 +75,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:350px;margin-top:43px;">
 <br/>
-	<iframe  name="contentFrame" frameborder="0" width="95%" height="585px" src="admin/Dashboard.html"></iframe>
+	<iframe id="frame" name="contentFrame" frameborder="0" width="95%" height="585px" src="admin/Dashboard.html"></iframe>
 </div>
 
 <script>
+
+var heigh = window.innerHeight*0.9;
+
+document.getElementById("frame").height=heigh;
+
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
 
@@ -101,15 +107,28 @@ function w3_close() {
     overlayBg.style.display = "none";
 }
 
-$('.main-nav-ul').on('click', function(e) {
-  e.preventDefault();
+$('li').on('click', function(e) {
 
+	if( $(this).hasClass('hover'))
+	{
+		$('li').removeClass('hover');
+		$(this).removeClass('selected');
+	}
+
+	else{
   // remove .hover class from all other elements
-  $('.main-nav-ul').removeClass('hover');
+  $('li').removeClass('hover');
 
   // apply it to the current element
   $(this).addClass('hover');
+   $(this).addClass('selected');
+  }
 });
+
+
+
+
+
 
 
 </script>

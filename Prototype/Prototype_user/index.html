@@ -11,19 +11,47 @@
 		<script>
 						var images= ["resources/slider2.jpg","resources/slider3.jpg","resources/slider1.jpg"];
 						var counter=1;
+						//slide(counter);
+						//next();
+
 						function next(){
 							var img = document.getElementById("imgholder");
-							
-							img.src=images[counter++];
-							
-							if(counter==3){
-								counter=0;
-								
+							if(counter==2){
+								counter=0;	
 							}
-							
+							counter++;
+							img.src=images[counter];
+								
+						}
+						window.setInterval(next,2000);
+						function plusSlides(n)
+						{
+						   if(counter==2&&n==1)
+						   {
+						     counter=0;
+						     slide(counter);
+						   }
+						   else if(counter==0&&n==-1)
+						   {
+						     counter=2;
+						     slide(counter);
+						   }
+						   else
+						   {
+						     counter=counter+n;
+						     slide(counter);
+						   } 
 						}
 						
-						window.setInterval(next,2000);
+						
+						function slide(counter)
+						{
+						   var img = document.getElementById("imgholder");
+						   img.src=images[counter];
+														
+						}
+            
+				
 			</script>
 		
 		
@@ -153,20 +181,23 @@
 					</ul>
 					
 				</nav>
-				
-			
-			
 			</div>
 			
 			
 			
-				<div class="slider" style="width:70%">
+				<div class="slider">
+				<div  style="width:100%">
 			
 			
-					<img id= "imgholder" src="resources/slider1.jpg" width=100% height=450>
+					<img id= "imgholder" src="resources/slider1.jpg" width="100%" height="450px">
 				
 				
 				</div>
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			
+			
+		      </div>
 			
 			
 		
