@@ -9,23 +9,7 @@
 		
 		
 		
-		<script>
-						var images= ["resources/slider2.jpg","resources/slider3.jpg","resources/slider1.jpg"];
-						var counter=1;
-						function next(){
-							var img = document.getElementById("imgholder");
-							
-							img.src=images[counter++];
-							
-							if(counter==3){
-								counter=0;
-								
-							}
-							
-						}
-						
-						window.setInterval(next,2000);
-			</script>
+		
 		
 		
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -100,7 +84,9 @@
 						<li><a href="personalinfo.html" >Account Information<span class="sub-arrow"></span></a></li>
 						<li><a href="changepassword.html" >Cahange Password<span class="sub-arrow"></span></a></li>
 						<li><a href="order.html" >My Orders<span class="sub-arrow"></span></a></li>
+						<li><a href="review.html" >My Reviews<span class="sub-arrow"></span></a></li>
 						<li><a href="coupon.html" >My Coupon<span class="sub-arrow"></span></a></li>
+						<li><a href="index.html" >Log Out<span class="sub-arrow"></span></a></li>
 						
 							
 						
@@ -114,8 +100,47 @@
 			
 			<div class="slider" style="width:70%">
 		
-		
-				<img id= "imgholder" src="resources/slider1.jpg" width=100% height=412>
+				<div class="invoice-wrap">
+					
+					
+						<div style="text-align:center;background-color:f47407;color:white;"><h3>MY DASHBOARD</h3></div>
+					
+				
+						<div class="desc" style=";">
+						
+						
+								<div  >
+									<table class="dash">
+										<tr>	
+											<td ><h2>Rakibul Hossain</h2>
+												<p>Customer Id<p>
+												<p class="pri">0001111</p></td>
+											<td ><img src="resources/e.jpg" height="70" width="180" /></td>
+											<td class="left" >
+												<p>Current points<p>
+												<p class="pri">5678</p>
+												<p>Member Type<p>
+												<p class="pri">Premium</p></td>
+										</tr>
+										<tr>	
+											<td ><h2>Account Information</h2>
+												<p>Rakibul Hossain<p>
+												<p class="pri">shiningtanjian@gmail.com</p></td>
+											
+										</tr>
+										<tr>	
+											<td ><h2>Address</h2>
+												<p>Shipping Address<p>
+												<a href="editinfo.html"><input type="submit" class="button" value="Manage Address" style="width:150px;"/></a>
+											
+										</tr>
+									</table>
+								
+								</div>
+								
+								
+						</div>
+				
 			
 			
 			</div>
@@ -133,152 +158,15 @@
 		
 		
 		
-		<div class="main_wrapper">
-			
-			<div class="wrap">
-		
-				<div class="product-wrapper">
-					
-						<a href="details.html"><img src="resources/1.jpg" alt="" width="250" height="250"/></a>
-						<h4>Lorem Ipsum is simply </h4>
-						 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						<p><span class="pri">$415.54</span></p>  
-						<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>
-						
-					
-					
-				</div>
-				
-				
-				
-				<div class="product-wrapper">
-					
-						<a href="details.html"><img src="resources/1.jpg" alt="" width="250" height="250"/></a>
-						<h4>Lorem Ipsum is simply </h4>
-						 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						<p><span class="pri">$415.54</span></p>  
-						<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>
-						
-					
-					
-				</div>
-				
-				
-				
-				
-				<div class="product-wrapper">
-					
-						<a href="details.html"><img src="resources/1.jpg" alt="" width="250" height="250"/></a>
-						<h4>Lorem Ipsum is simply </h4>
-						 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						<p><span class="pri">$415.54</span></p>  
-						<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>
-						
-					
-					
-				</div>
-				
-				
-				
-				<div class="product-wrapper">
-					
-						<a href="details.html"><img src="resources/1.jpg" alt="" width="250" height="250"/></a>
-						<h4>Lorem Ipsum is simply </h4>
-						 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						<p><span class="pri">$415.54</span></p>  
-						<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>
-						
-					
-					
-				</div>
-				
-				
-				
-				<div class="product-wrapper">
-					
-						<a href="details.html"><img src="resources/1.jpg" alt="" width="250" height="250"/></a>
-						<h4>Lorem Ipsum is simply </h4>
-						 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						<p><span class="pri">$415.54</span></p>  
-						<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>
-						
-					
-					
-				</div>
-				
-				
-				
-				
-				<div class="product-wrapper">
-					
-						<a href="details.html"><img src="resources/1.jpg" alt="" width="250" height="250"/></a>
-						<h4>Lorem Ipsum is simply </h4>
-						 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						<p><span class="pri">$415.54</span></p>  
-						<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>
-						
-					
-					
-				</div>
-				
-				
-				
-				<div class="product-wrapper">
-					
-						<a href="details.html"><img src="resources/1.jpg" alt="" width="250" height="250"/></a>
-						<h4>Lorem Ipsum is simply </h4>
-						 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						<p><span class="pri">$415.54</span></p>  
-						<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>
-						
-					
-					
-				</div>
-				
-				
-				
-				
-				<div class="product-wrapper">
-					
-						<a href="details.html"><img src="resources/1.jpg" alt="" width="250" height="250"/></a>
-						<h4>Lorem Ipsum is simply </h4>
-						 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						<p><span class="pri">$415.54</span></p>  
-						<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>
-						
-					
-					
-				</div>
-				
-			
-			</div>
 		
 		
-		</div>
+		
+
 		
 		
 		
 		
-		<div class="main_wrapper">
-		
-		
-			<div class="wrap">
-			
-				<div class="pagination">
-					<a href="">&laquo;</a>
-					<a href=""class="active">1</a>
-					<a href="">2</a>
-					<a href="">3</a>
-					<a href="">4</a>
-					<a href="">5</a>
-					<a href="">&raquo;</a>
-				</div>
-				
-			
-			</div>
-		
-		
-		</div>
+	
 		
 		
 		
