@@ -9,7 +9,7 @@ namespace easylife.Controllers
     public class HomeController : Controller
     {
 
-        public ActionResult Home()
+        public ActionResult Admin_Home()
         {
             return View();
         }
