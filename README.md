@@ -1,6 +1,6 @@
 # This is a E-commerce site project named easylife.
 ![easylife](Prototype/Prototype_user/e.jpg)
-
+![rajesh](Prototype/Prototype_admin/resources/rajesh.jpg)
 ## Group:
 	1. Saha,Rajesh ![rajesh](Prototype/Prototype_admin/resources/rajesh.jpg)
 	2. Efti ![efti](Prototype/Prototype_admin/resources/efti.jpg)
