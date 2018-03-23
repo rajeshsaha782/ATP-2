@@ -1,4 +1,4 @@
-This is a E-commerce site project named easylife.
+#This is a E-commerce site project named easylife.
 
 Group:
 	1. Saha,Rajesh
