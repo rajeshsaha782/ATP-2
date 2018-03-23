@@ -1,1 +1,1 @@
-#hello
+This is a E-commerce site project named easylife.
