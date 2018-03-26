@@ -1,6 +1,6 @@
 <html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<head>
 		<meta name="viewport" content="width=device=width,
 		initial-scalw=1,user-scalable=no">
@@ -9,15 +9,15 @@
 		<link rel="stylesheet" type="text/css" href="styler.css">
 		<style>
 			table {
-				width:100%;
+			width:100%;
 			}
 			table, th, td {
-				border: 1px solid black;
-				border-collapse: collapse;
+			border: 1px solid black;
+			border-collapse: collapse;
 			}
 			th, td {
-				padding: 5px;
-				text-align: left;
+			padding: 5px;
+			text-align: left;
 			}
 		</style>
 		
@@ -25,11 +25,11 @@
 	
 	
 	<body>
-	
-		<head>
 		
-			<header class="header">
+		<head>
 			
+			<header class="header">
+				
 				<div class="logo" >
 					
 					<a href="index.html"><img src="resources/e.jpg" height="70" width="180" /></a>
@@ -46,24 +46,24 @@
 				
 				<div class="logo" style="width:10%">
 					<a href="shoppingcart.html"><strong>(0)items</strong><abbr title="Total Purchase: $900"><i style="font-size:30px;margin-top:18px;" class="fa fa-shopping-cart fa-fw "></i></abbr></a>
-			
+					
 				</div>
-
+				
 				
 				
 				<div class="dropdown">
 					
 					<span>My Account </span><i style="font-size:30px;margin-top:25px;" class="fa fa-user-circle fa-fw "></i>
-			
+					
 					<div class="dropdown-content">
 						<a href="login.html"><i style="font-size:15px" class="fa fa-lock fa-fw "></i>  LogIn</a>
 						<a href="registration.html"><i style="font-size:15px" class="fa fa-pencil fa-fw "></i>     Register</a>
 						<a href="trackProduct.html"><i style="font-size:15px" class="fa fa-truck fa-fw "></i>  Track Product</a>
-					  </div>
-					  
+					</div>
+					
 				</div>
-					
-					
+				
+				
 			</header>
 		</head>
 		
@@ -129,165 +129,165 @@
 				
 			</ul>
 		</div>
-					
+		
 		<div class="main_wrapper">
-		
-			<div class="main-div">
-			   
-				<div  style="width:40%;height:400px;background-color:white;float:left">
-				
-					<div class="slider" style="box-shadow:none;">
-						 <div  style="width:100%">
-	
-							 <img id= "imgholder" class="pic" src="resources/1.jpg" width="100%" height="400px">
-							
-		
-						 </div>
-	
-					</div>
-							<!--<img src="resources/1.jpg" width="80%" height="300px" align="center"/> -->
-				</div>
-					
-				<div  style="width:60%;height:400px;background-color:white;float:right">
-								<h4 align="left">Kakashi T-Shirt</h4><a><i class="fa fa-heart" style="color:red; float:left; font-size:24px;"></i>(5)</a>
-								<br/>
-								<p align="left">Price:<span class="pri">$415.54</span></p>
-								<p align="left">Size:
-									<input type="radio">S</input>
-									<input type="radio">M</input>
-									<input type="radio">L</input>
-									<input type="radio">Xl</input>
-								
-								</p>
-								<p align="left">Quantity:<input type="text" size="10"/></p>
-								
-								<a href="shoppingcart.html" ><input class="button" type="submit" value="Buy"  /></a>
-								<a href="index.html" ><input class="button" type="submit" value="Back"/></a>
-								
-							</br>
-							</br>
-
-							<div class="w3-bar w3-black">
-							   <button class="w3-bar-item w3-button tablink w3-Teal" onclick="Details(event,'Features')">Features</button>
-							   <button class="w3-bar-item w3-button tablink" onclick="Details(event,'Sizing')">Sizing</button>
-							   <button class="w3-bar-item w3-button tablink" onclick="Details(event,'Reviews')">Reviews</button>
-							</div>
-
-							<div id="Features" class="w3-container city">
-							  <p>Sleeve: Half sleeve. Fabric: Cotton.Comfortable to wear.Exclusive design. Style: Slim fit. Bangladeshi product.</p>
-							  <p>Pack of two solid waist-length T-shirts in purple and grey melange.Each has a stylised polo collar, short sleeves</p>
-							  <p>Cotton Machine-wash warm</p>
-							</div>
-
-							<div id="Sizing" class="w3-container city" style="display:none">
-							  <h4>Size Chart</h4>
-								<table>
-									<tr>
-										  <th>Size</th>
-										  <th>Small</th>
-										  <th>Medium</th>
-										  <th>Large</th>
-										
-										  <th>XL</th>
-									</tr>
-										
-									<tr>
-									   <td>chest</td>
-									   <td>30</td>
-									   <td>38</td>
-									   <td>40</td>
-									   <td>42</td>
-									</tr>
-									   
-									<tr>
-									   <td>Length</td>
-									   <td>25</td>
-									   <td>26</td>
-									   <td>27</td>
-									   <td>28</td>
-									 
-									   
-									</tr>
-								</table>
-							</div>
-
-							<div id="Reviews" class="w3-container city" style="display:none">
-							  <h4>Reviews</h4>
-							  <p>Buyer Reviews show here</p>
-							</div>	
-
-					 <script>
-							function Details(evt, Name) {
-								var i, x, tablinks;
-								x = document.getElementsByClassName("city");
-								for (i = 0; i < x.length; i++) {
-										x[i].style.display = "none";
-									}
-								tablinks = document.getElementsByClassName("tablink");
-							   for (i = 0; i < x.length; i++) {
-										tablinks[i].className = tablinks[i].className.replace(" w3-Teal", "");
-									}
-								document.getElementById(Name).style.display = "block";
-								evt.currentTarget.className += " w3-Teal";
-							}
-					 </script>												
-				</div>
-			 </div>
-        </div>
-		
-		<br/>
-		<br/>
-	
-		<div class="main_wrapper" height="50%">
-		
-			<div class="wrap">
 			
-				<div class="main-div">
-						
-						<div style="background-color: f47407;color:white;">
-						
-							<p ><h3 align="center">Related Products</h3></p>
-						
-						</div>
-						
-						<div class="product-wrapper">
-							
-								<a href="details.html"><img src="resources/1.jpg" alt="" width="100%"/></a>
-								<h4>Lorem Ipsum is simply </h4>
-								 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-								<p><span class="pri">$415.54</span></p>  
-								<a href="details.html"><a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a></a>
+			<div class="main-div">
 				
-						</div>
-						
-						
-						<div class="product-wrapper">
+				<div  style="width:40%;height:400px;background-color:white;float:left">
+					
+					<div class="slider" style="box-shadow:none;">
+						<div  style="width:100%">
 							
-								<a href="details.html"><img src="resources/1.jpg" alt="" width="100%"/></a>
-								<h4>Lorem Ipsum is simply </h4>
-								 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-								<p><span class="pri">$415.54</span></p>  
-								<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>	
+							<img id= "imgholder" class="pic" src="resources/1.jpg" width="100%" height="400px">
+							
 							
 						</div>
 						
-						<div class="product-wrapper">
-							
-								<a href="details.html"><img src="resources/1.jpg" alt="" width="100%"/></a>
-								<h4>Lorem Ipsum is simply </h4>
-								 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-								<p><span class="pri">$415.54</span></p>  
-								<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>
-									
-						</div>
+					</div>
+					<!--<img src="resources/1.jpg" width="80%" height="300px" align="center"/> -->
+				</div>
+				
+				<div  style="width:60%;height:400px;background-color:white;float:right">
+					<h4 align="left">Kakashi T-Shirt</h4><a><i class="fa fa-heart" style="color:red; float:left; font-size:24px;"></i>(5)</a>
+					<br/>
+					<p align="left">Price:<span class="pri">$415.54</span></p>
+					<p align="left">Size:
+						<input type="radio">S</input>
+						<input type="radio">M</input>
+						<input type="radio">L</input>
+						<input type="radio">Xl</input>
 						
-						<div class="product-wrapper">
-								<a href="details.html"><img src="resources/1.jpg" alt="" width="100%"/></a>
-								<h4>Lorem Ipsum is simply </h4>
-								 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-								<p><span class="pri">$415.54</span></p>  
-								<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>	
-						</div>
+					</p>
+					<p align="left">Quantity:<input type="text" size="10"/></p>
+					
+					<a href="shoppingcart.html" ><input class="button" type="submit" value="Buy"  /></a>
+					<a href="index.html" ><input class="button" type="submit" value="Back"/></a>
+					
+					</br>
+					</br>
+					
+					<div class="w3-bar w3-black">
+						<button class="w3-bar-item w3-button tablink w3-Teal" onclick="Details(event,'Features')">Features</button>
+						<button class="w3-bar-item w3-button tablink" onclick="Details(event,'Sizing')">Sizing</button>
+						<button class="w3-bar-item w3-button tablink" onclick="Details(event,'Reviews')">Reviews</button>
+					</div>
+					
+					<div id="Features" class="w3-container city">
+						<p>Sleeve: Half sleeve. Fabric: Cotton.Comfortable to wear.Exclusive design. Style: Slim fit. Bangladeshi product.</p>
+						<p>Pack of two solid waist-length T-shirts in purple and grey melange.Each has a stylised polo collar, short sleeves</p>
+						<p>Cotton Machine-wash warm</p>
+					</div>
+					
+					<div id="Sizing" class="w3-container city" style="display:none">
+						<h4>Size Chart</h4>
+						<table>
+							<tr>
+								<th>Size</th>
+								<th>Small</th>
+								<th>Medium</th>
+								<th>Large</th>
+								
+								<th>XL</th>
+							</tr>
+							
+							<tr>
+								<td>chest</td>
+								<td>30</td>
+								<td>38</td>
+								<td>40</td>
+								<td>42</td>
+							</tr>
+							
+							<tr>
+								<td>Length</td>
+								<td>25</td>
+								<td>26</td>
+								<td>27</td>
+								<td>28</td>
+								
+								
+							</tr>
+						</table>
+					</div>
+					
+					<div id="Reviews" class="w3-container city" style="display:none">
+						<h4>Reviews</h4>
+						<p>Buyer Reviews show here</p>
+					</div>	
+					
+					<script>
+						function Details(evt, Name) {
+							var i, x, tablinks;
+							x = document.getElementsByClassName("city");
+							for (i = 0; i < x.length; i++) {
+								x[i].style.display = "none";
+							}
+							tablinks = document.getElementsByClassName("tablink");
+							for (i = 0; i < x.length; i++) {
+								tablinks[i].className = tablinks[i].className.replace(" w3-Teal", "");
+							}
+							document.getElementById(Name).style.display = "block";
+							evt.currentTarget.className += " w3-Teal";
+						}
+					</script>												
+				</div>
+			</div>
+		</div>
+		
+		<br/>
+		<br/>
+		
+		<div class="main_wrapper" height="50%">
+			
+			<div class="wrap">
+				
+				<div class="main-div">
+					
+					<div style="background-color: f47407;color:white;">
+						
+						<p ><h3 align="center">Related Products</h3></p>
+						
+					</div>
+					
+					<div class="product-wrapper">
+						
+						<a href="details.html"><img src="resources/1.jpg" alt="" width="100%"/></a>
+						<h4>Lorem Ipsum is simply </h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+						<p><span class="pri">$415.54</span></p>  
+						<a href="details.html"><a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a></a>
+						
+					</div>
+					
+					
+					<div class="product-wrapper">
+						
+						<a href="details.html"><img src="resources/1.jpg" alt="" width="100%"/></a>
+						<h4>Lorem Ipsum is simply </h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+						<p><span class="pri">$415.54</span></p>  
+						<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>	
+						
+					</div>
+					
+					<div class="product-wrapper">
+						
+						<a href="details.html"><img src="resources/1.jpg" alt="" width="100%"/></a>
+						<h4>Lorem Ipsum is simply </h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+						<p><span class="pri">$415.54</span></p>  
+						<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>
+						
+					</div>
+					
+					<div class="product-wrapper">
+						<a href="details.html"><img src="resources/1.jpg" alt="" width="100%"/></a>
+						<h4>Lorem Ipsum is simply </h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+						<p><span class="pri">$415.54</span></p>  
+						<a href="details.html"><button class="button" style="vertical-align:middle"><span>Details</span></button></a>	
+					</div>
 					
 				</div>
 			</div>
@@ -295,54 +295,54 @@
 		
 		
 		<div class="main_wrapper">
-		
-			<div class="wrap">
 			
-				<footer class="footer">
+			<div class="wrap">
 				
+				<footer class="footer">
+					
 					<!--<p>&copy; ALL Rights Reserved || EasyLife || 2018</p>-->
 					
 					<div class="info">
-					
-								<h3><b>Information</b></h3>
-								<a href="aboutUs.html">About Us</a></br>
-								<a href="contactUs.html">Contact Us</a>
-					
+						
+						<h3><b>Information</b></h3>
+						<a href="aboutUs.html">About Us</a></br>
+						<a href="contactUs.html">Contact Us</a>
+						
 					</div>
 					
 					<div class="info">
-					
+						
 						<h3><b>Customer Serviece</b></h3>
-								<a href="securityPolicy.html">Security Policy</a></br>
-								<a href="shipping.html">Shipping & Replacement</a></br>
-								<a href="privacyPolicy.html">Privacy Policy</a></br>
-								<a href="termsOfuse.html">Terms Of Use</a>
-					
+						<a href="securityPolicy.html">Security Policy</a></br>
+						<a href="shipping.html">Shipping & Replacement</a></br>
+						<a href="privacyPolicy.html">Privacy Policy</a></br>
+						<a href="termsOfuse.html">Terms Of Use</a>
+						
 					</div>
 					
 					<div class="info">
-					
+						
 						<h3><b>My Account</b></h3>
-								<a href="login.html">Personal Info</a></br>
-								
-								<a href="login.html">Orders</a></br>
-								<a href="shoppingcart.html">Shopping Cart</a></br>
-					
+						<a href="login.html">Personal Info</a></br>
+						
+						<a href="login.html">Orders</a></br>
+						<a href="shoppingcart.html">Shopping Cart</a></br>
+						
 					</div>
 					
 					<div class="info">
-					
+						
 						<h3>Visit Us</h3>
-								<img src="resources/l.jpg" height="20" width="20" />Dhanmondi, Dhaka-1205 </br>
-								<img src="resources/mail.jpg" height="20" width="20" />admin@easylife.com </br>
-								<img src="resources/mobile.jpg" height="20" width="20" />09636-102030
-					
-					
+						<img src="resources/l.jpg" height="20" width="20" />Dhanmondi, Dhaka-1205 </br>
+						<img src="resources/mail.jpg" height="20" width="20" />admin@easylife.com </br>
+						<img src="resources/mobile.jpg" height="20" width="20" />09636-102030
+						
+						
 					</div>
 				</footer>
-			
+				
 			</div>
-		
+			
 		</div>
 		
 	</body>
