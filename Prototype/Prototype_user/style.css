@@ -74,6 +74,10 @@ a
 	display:block;
 	clear:both;
 }
+.main-div
+{
+	
+}
 .slider{
 	width:65%;
 	float:right;
@@ -226,12 +230,24 @@ a
 	content:"";
 	display:block;
 	clear:both;
+	
+	
 }
+
 .header{
 	  border-top: 10px solid #f47407;
 	  border-bottom: 10px solid #f47407;
 	  text-align:center;
 	  width:100%;
+	  background-color:whitesmoke;
+	  
+	
+	 
+}
+.header:after{
+	content:"";
+	display:table;
+	clear:both;
 }
 
 .invoice{
