@@ -11,12 +11,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
-
+table {
+			border-collapse: collapse;
+			width: 100%;
+			}
+			tr:hover {background-color:gray;}
 </style>
 </head>
-<div >
+	<div >
 					
 					<input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
+						<select id="search by" class="comboBox">
+							<option>Any</option>
+							<option>Product Name</option>
+							<option>Product Code</option>
+						  </select>
 				</div>
 <body class="w3-animate-bottom">
 	

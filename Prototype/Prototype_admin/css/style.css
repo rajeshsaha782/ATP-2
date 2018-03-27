@@ -322,3 +322,21 @@ a
 .header{
 	  background-color: whitesmoke;
 }
+
+
+
+.comboBox {
+  
+  border-radius: 4px;
+  background-color: #fffff;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size:15px;
+  width: 120px;
+  height: 30px;
+  border-radius:10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
