@@ -11,12 +11,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
-
+table {
+			border-collapse: collapse;
+			width: 100%;
+			}
+			tr:hover {background-color:gray;}
 </style>
 </head>
-<div >
+	<div >
 					
 					<input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
+						<select id="search by" class="comboBox">
+							<option>Any</option>
+							<option>Product Name</option>
+							<option>Product Code</option>
+						  </select>
 				</div>
 <body class="w3-animate-bottom">
 	
@@ -27,8 +36,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
-          <th>Product Code</th>
-          <th>Product Name</th>
+          <th>Product Image</th>
+          <th>Product Name[Code]</th>
           <th>Total Sells</th>
 		  <th>Price</th>
           <th>Last Purchase</th>
@@ -43,32 +52,32 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
       <tbody>
         
 		<tr>
-          <td><a href="View_Product.html">1</a></td>
-          <td>Woolen Jacket</td>
+          <td><a href="View_Product.html"><img id= "imgholder" class="pic" src="../resources/1.jpg" width="60px" height="60px"></a></td>
+          <td>Woolen Jacket[1]</td>
           <td>0</td>
           <td>300</td>
 		  <td>2017-12-28 16:19:53</td>
 		  <td>10</td>
         </tr>
 		<tr>
-          <td><a href="View_Product.html">2</a></td>
-          <td>Women Hoody</td>
+           <td><a href="View_Product.html"><img id= "imgholder" class="pic" src="../resources/2.jpg" width="60px" height="60px"></a></td>
+          <td>Women Hoody[2]</td>
           <td>0</td>
           <td>300</td>
 		  <td>2017-12-28 16:19:53</td>
 		  <td>10</td>
         </tr>
 		<tr>
-          <td><a href="View_Product.html">3</a></td>
-          <td>Gavading pant</td>
+           <td><a href="View_Product.html"><img id= "imgholder" class="pic" src="../resources/3.jpg" width="60px" height="60px"></a></td>
+          <td>Gavading pant[3]</td>
           <td>0</td>
           <td>300</td>
 		  <td>2017-12-28 16:19:53</td>
 		  <td>10</td>
         </tr>
 		<tr>
-          <td><a href="View_Product.html">3</a></td>
-          <td>Moyur Ear Ringst</td>
+           <td><a href="View_Product.html"><img id= "imgholder" class="pic" src="../resources/1.jpg" width="60px" height="60px"></a></td>
+          <td>Moyur Ear Ringst[4]</td>
           <td>0</td>
           <td>300</td>
 		  <td>2017-12-28 16:19:53</td>
