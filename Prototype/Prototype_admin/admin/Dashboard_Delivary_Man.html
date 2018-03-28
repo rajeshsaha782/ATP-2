@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/topuhit/Font-Bangla@1.0.3/1.0.0/font-bangla.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
+
+
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent; 
+}
+<!-- /* optional: show position indicator in red */ -->
+<!-- ::-webkit-scrollbar-thumb { -->
+    <!-- background: #FF0000; -->
+<!-- } -->
+
+</style>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+	height=100;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {background-color:gray;}
+</style>
+<body class="w3-light-grey w3-animate-bottom ">
+
+
+<!-- Top container -->
+<div class="w3-main" >
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+  
+    
+	<div class="w3-third">
+	<a href="View_Members.html">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-user w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>15</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <b><h4>Total Delivered Products</h4></b>
+      </div>
+	  </a>
+    </div>
+	
+	
+	
+	<div class="w3-third">
+	  <a href="View_Users.html">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>53675</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Pending Deliveries</h4>
+      </div>
+	  </a>
+    </div>
+	
+	
+	
+    <div class="w3-third">
+	<a href="View_Products.html">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-product-hunt w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>9456456</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>TBA</h4>
+      </div>
+	  </a>
+    </div>
+	
+	
+	
+    
+	
+    
+  </div>
+
+  
+  <hr>
+  <div >
+	<table>
+		<tr>
+			<th>Buyer Name</th>
+			<th>Deadline</th>
+			<th>Invoice ID</th>
+			<th>Payment</th>
+			<th>Location</th>
+			<th>Delivered</th>
+		</tr>
+		<tr>
+			<td>Efti</td>
+			<td>29/03/2018</td>
+			<td>1</td>
+			<td><i class="fb-taka"></i>1060</td>
+			<td>Mirpur</td>
+			<td><input type="checkbox"/></td>
+		</tr>
+		<tr>
+			<td>Efti</td>
+			<td>29/03/2018</td>
+			<td>1</td>
+			<td><i class="fb-taka"></i>1060</td>
+			<td>Mirpur</td>
+			<td><input type="checkbox"/></td>
+		</tr>
+		<tr>
+			<td>Efti</td>
+			<td>29/03/2018</td>
+			<td>1</td>
+			<td><i class="fb-taka"></i>1060</td>
+			<td>Mirpur</td>
+			<td><input type="checkbox"/></td>
+		</tr>
+		<tr>
+			<td>Efti</td>
+			<td>29/03/2018</td>
+			<td>1</td>
+			<td><i class="fb-taka"></i>1060</td>
+			<td>Mirpur</td>
+			<td><input type="checkbox"/></td>
+		</tr>
+		<tr>
+			<td>Efti</td>
+			<td>29/03/2018</td>
+			<td>1</td>
+			<td><i class="fb-taka"></i>1060</td>
+			<td>Mirpur</td>
+			<td><input type="checkbox"/></td>
+		</tr>
+		
+	</table>
+  </div>
+  
+	
+	<br/>
+	<h5 align="center">Delivered Products in Last 5 Months</h5>
+	
+	
+	
+	<div id="pending">
+		<iframe frameborder="0" width="100%" height="475px" src="graph_Delivery_Man.html"></iframe>
+	</div>
+  
+  <hr>
+  <div class="w3-container">
+    <h5>Top 5 Active Users</h5>
+    <ul class="w3-ul w3-card-4 w3-white">
+      <li class="w3-padding-16">
+        <img src="../resources/efti.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
+        <span class="w3-xlarge">Efti</span><br>
+      </li>
+      <li class="w3-padding-16">
+        <img src="../resources/rakib.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
+        <span class="w3-xlarge">Rakib</span><br>
+      </li>
+      <li class="w3-padding-16">
+        <img src="../resources/rajesh.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
+        <span class="w3-xlarge">Rajesh</span><br>
+      </li>
+	  <li class="w3-padding-16">
+        <img src="../resources/reza.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
+        <span class="w3-xlarge">Reza</span><br>
+      </li>
+	  <li class="w3-padding-16">
+        <img src="../resources/robi.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
+        <span class="w3-xlarge">Robi</span><br>
+      </li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="w3-container">
+    <h5>Recent Reports</h5>
+    <div class="w3-row">
+      <div class="w3-col m2 text-center">
+        <img class="w3-circle" src="../resources/tanim.jpg" style="width:96px;height:96px">
+      </div>
+      <div class="w3-col m10 w3-container">
+        <h4>Tanim <span class="w3-opacity w3-medium">Feb 2, 2018</span></h4>
+        <p>Inconvinient time of delivery</p><br>
+      </div>
+    </div>
+
+    <div class="w3-row">
+      <div class="w3-col m2 text-center">
+        <img class="w3-circle" src="../resources/robi.jpg" style="width:96px;height:96px">
+      </div>
+      <div class="w3-col m10 w3-container">
+        <h4>Robi <span class="w3-opacity  w3-medium ">Jan 27, 2018</span></h4>
+        <p>Quality of product is poor.</p><br>
+      </div>
+    </div>
+  </div>
+  <br>
+  
+
+</div>
+</html>
+
+

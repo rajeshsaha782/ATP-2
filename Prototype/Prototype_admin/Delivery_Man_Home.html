@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
+</style>
+<body class="s">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-card-4 w3-large ba" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-dark-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item"><a href="admin/Dashboard_Delivary_Man.html" target="contentFrame"><img src="resources/e.jpg" class="w3-left  w3-margin-right" style="width:100px"/></a></span>
+  <span class="w3-bar-item  w3-right"><a href="admin/View_Profile_Admin.html" target="contentFrame"><img src="resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"></a> <a href="../Prototype_user/index.html"><i class="fa fa-sign-out w3-xlarge"></i></a> </span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse ba1 w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    
+    <div class="w3-col s8 w3-bar">
+      <span><h3>Welcome, <strong>Efti</strong></h3></span>
+      
+    </div>
+  </div >
+  <div class="w3-container" id="menu">
+  
+  <ul class="main-nav-ul" style="padding:5px">
+					
+						
+							
+								<li><a href="admin/Dashboard_Delivary_Man.html" target="contentFrame" class="w3-bar-item w3-button  w3-padding w3-blue" ><i class="fa fa-dashboard fa-fw"></i>  DashBoard</a></li>
+								<li><a href="admin/View_Profile_Admin.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  View Profile</a></li>
+								<li><a href="admin/Edit_Profile_Admin.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Edit Profile</a></li>
+								<li><a href="admin/Change_Password.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-lock fa-fw"></i>  Change Password</a></li>
+							
+						
+						
+	</ul>
+	</div>
+</nav>
+
+
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:350px;margin-top:43px;">
+<br/>
+	<iframe id="frame" name="contentFrame" frameborder="0" width="95%" height="585px" src="admin/Dashboard_Delivary_Man.html"></iframe>
+</div>
+
+<script>
+
+var heigh = window.innerHeight*0.9;
+
+document.getElementById("frame").height=heigh;
+
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+$('li').on('click', function(e) {
+
+	if( $(this).hasClass('hover'))
+	{
+		$('li').removeClass('hover');
+		$(this).removeClass('selected');
+	}
+
+	else{
+  // remove .hover class from all other elements
+  $('li').removeClass('hover');
+
+  // apply it to the current element
+  $(this).addClass('hover');
+   $(this).addClass('selected');
+  }
+});
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
