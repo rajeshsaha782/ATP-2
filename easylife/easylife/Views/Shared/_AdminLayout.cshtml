@@ -24,8 +24,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top w3-card-4 w3-large ba" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-dark-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item"><a href="admin/Dashboard.html" target="contentFrame"><img src="~/resources/e.jpg" class="w3-left  w3-margin-right" style="width:100px"/></a></span>
-  <span class="w3-bar-item  w3-right"><a href="admin/View_Profile_Admin.html" target="contentFrame"><img src="~/resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"></a> <a href="../Prototype_user/index.html"><i class="fa fa-sign-out w3-xlarge"></i></a> <i class="fa fa-tasks fa-fw w3-hover-shadow "><div class="notification">1</div></i></span>
+  <span class="w3-bar-item"><a href=@Url.Action("Dashboard")><img src="~/resources/e.jpg" class="w3-left  w3-margin-right" style="width:100px"/></a></span>
+  <span class="w3-bar-item  w3-right"><a href="admin/View_Profile_Admin.html" ><img src="~/resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"></a> <a href="../Prototype_user/index.html"><i class="fa fa-sign-out w3-xlarge"></i></a> <i class="fa fa-tasks fa-fw w3-hover-shadow "><div class="notification">1</div></i></span>
 </div>
 
 <!-- Sidebar/menu -->
@@ -41,38 +41,38 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   
   <ul class="main-nav-ul" style="padding:5px">
 					
-						<li><h4><a href="#" ><i class="fa fa-address-card fa-fw "></i> Account<span class="sub-arrow"></h4></span></a>
-							<ul class="w3-animate-zoom " style="padding-left:25px">
-								<li><a href="admin/Dashboard.html" target="contentFrame" class="w3-bar-item w3-button  w3-padding w3-blue" ><i class="fa fa-dashboard fa-fw"></i>  DashBoard</a></li>
-								<li><a href="admin/Edit_Profile_Admin.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Edit Profile</a></li>
-								<li><a href="admin/View_Profile_Admin.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  View Profile</a></li>
-								<li><a href="admin/Change_Password.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-lock fa-fw"></i>  Change Password</a></li>
-							</ul>
-						</li>
-						<li><h4><a href="#" ><i class="fa fa-registered fa-fw"></i> Registar<span class="sub-arrow"></h4></span></a>
-							<ul class="w3-animate-zoom"  style="padding-left:25px">
-								<li><a href="admin/Add_Member.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Add Member</a></li>
-								<li><a href="admin/Add_Product.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-product-hunt fa-fw"></i>  Add Product</a></li>
-							</ul>
-						</li>
-						<li><h4><a href="#" ><i class="fa fa-eye fa-fw"></i> View<span class="sub-arrow"></h4></span></a>
-							<ul class="w3-animate-zoom"  style="padding-left:25px">
-								<li><a href="admin/View_Admins.html" target="contentFrame" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  View Admins</a></li>
-								<li><a href="admin/View_Stock_Executive.html" target="contentFrame" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  View Stock Executives</a></li>
-								<li><a href="admin/View_Order_Executive.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  View Order Executives</a></li>
-								<li><a href="admin/View_Products.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-product-hunt fa-fw"></i>  View Product</a></li>
-								<li><a href="admin/View_Users.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  View Users</a></li>
-								<li><a href="admin/View_Invoices.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-list-alt fa-fw"></i>  View Invoices</a></li>
-								<li><a href="admin/View_Orders.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-list fa-fw"></i>  View Orders</a></li>
-								<li><a href="admin/View_Stock.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-list fa-fw"></i>  View Stock</a></li>
-							</ul>
-						</li>
-						<li><h4><a href="#" ><i class="fa fa-camera fa-fw"></i> Slider<span class="sub-arrow"></h4></span></a>
-							<ul class="w3-animate-zoom"  style="padding-left:25px">
-								<li><a href="admin/Update_Slider.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-up fa-fw"></i>  Slider Update</a></li>
-								<li><a href="admin/Advertise.html" target="contentFrame"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-up fa-fw"></i>  Advertisement</a></li>
-							</ul>
-						</li>	
+			<li><h4><a href="#" ><i class="fa fa-address-card fa-fw "></i> Account<span class="sub-arrow"></h4></span></a>
+				<ul class="w3-animate-zoom " style="padding-left:25px">
+					<li><a href=@Url.Action("Dashboard")  class="w3-bar-item w3-button  w3-padding w3-blue" ><i class="fa fa-dashboard fa-fw"></i>  DashBoard</a></li>
+					<li><a href="admin/Edit_Profile_Admin.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Edit Profile</a></li>
+					<li><a href="admin/View_Profile_Admin.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  View Profile</a></li>
+					<li><a href="admin/Change_Password.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-lock fa-fw"></i>  Change Password</a></li>
+				</ul>
+			</li>
+			<li><h4><a href="#" ><i class="fa fa-registered fa-fw"></i> Registar<span class="sub-arrow"></h4></span></a>
+				<ul class="w3-animate-zoom"  style="padding-left:25px">
+					<li><a href="admin/Add_Member.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Add Member</a></li>
+					<li><a href="admin/Add_Product.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-product-hunt fa-fw"></i>  Add Product</a></li>
+				</ul>
+			</li>
+			<li><h4><a href="#" ><i class="fa fa-eye fa-fw"></i> View<span class="sub-arrow"></h4></span></a>
+				<ul class="w3-animate-zoom"  style="padding-left:25px">
+					<li><a href="admin/View_Admins.html"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  View Admins</a></li>
+					<li><a href="admin/View_Stock_Executive.html"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  View Stock Executives</a></li>
+					<li><a href="admin/View_Order_Executive.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  View Order Executives</a></li>
+					<li><a href="admin/View_Products.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-product-hunt fa-fw"></i>  View Product</a></li>
+					<li><a href="admin/View_Users.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  View Users</a></li>
+					<li><a href="admin/View_Invoices.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-list-alt fa-fw"></i>  View Invoices</a></li>
+					<li><a href="admin/View_Orders.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-list fa-fw"></i>  View Orders</a></li>
+					<li><a href="admin/View_Stock.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-list fa-fw"></i>  View Stock</a></li>
+				</ul>
+			</li>
+			<li><h4><a href="#" ><i class="fa fa-camera fa-fw"></i> Slider<span class="sub-arrow"></h4></span></a>
+				<ul class="w3-animate-zoom"  style="padding-left:25px">
+					<li><a href="admin/Update_Slider.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-up fa-fw"></i>  Slider Update</a></li>
+					<li><a href="admin/Advertise.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-up fa-fw"></i>  Advertisement</a></li>
+				</ul>
+			</li>	
 	</ul>
 	</div>
 </nav>

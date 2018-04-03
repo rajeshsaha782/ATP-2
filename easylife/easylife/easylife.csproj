@@ -104,7 +104,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -115,8 +115,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="resources\back.jpg" />
+    <Content Include="resources\e.jpg" />
+    <Content Include="resources\efti.jpg" />
+    <Content Include="resources\m.jpg" />
+    <Content Include="resources\product.jpg" />
+    <Content Include="resources\rajesh.jpg" />
+    <Content Include="resources\rakib.jpg" />
+    <Content Include="resources\reza.jpg" />
+    <Content Include="resources\robi.jpg" />
+    <Content Include="resources\tanim.jpg" />
+    <Content Include="Styles\graph.css" />
     <Content Include="Styles\Style.css" />
     <Content Include="Styles\w3.css" />
+    <None Include="Views\Admin\Edit_Profile_Admin.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -137,7 +149,10 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Admin_Home.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\graph.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

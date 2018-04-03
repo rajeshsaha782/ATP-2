@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace easylife.Controllers
 {
-    public class HomeController : Controller
+    public class AdminController : Controller
     {
 
-        public ActionResult Admin_Home()
+        public ActionResult Dashboard()
         {
             return View();
         }
