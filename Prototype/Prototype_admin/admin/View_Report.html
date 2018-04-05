@@ -1,0 +1,95 @@
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/w3.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/table.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			html,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
+			table {
+			border-collapse: collapse;
+			width: 100%;
+			}
+			tr:hover {background-color:gray;}
+			
+		</style>
+	</head>
+	<div style="padding-left:35px">
+		
+		<select id="view" class="comboBox">
+			<option>View All</option>
+		</select>
+		
+		
+		<select id="search by" class="comboBox">
+			<option>Any</option>
+			<option>Name</option>
+			<option>Email</option>
+		</select>
+		<input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
+		
+	</div>
+	<body class="w3-animate-bottom ">
+		
+		<!--for demo wrap-->
+		<h1>Reports</h1>
+		<section class="w3-card-4">
+			<div class="tbl-header">
+				<table cellpadding="0" cellspacing="0" border="0">
+					<thead>
+						<tr>
+							<th>Report ID</th>
+							<th>Report Title</th>
+							<th>Reported By</th>
+							<th>Reporting Time</th>
+							<th>Description</th>
+							<th>Status</th>
+							<th>View Reports</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="tbl-content">
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tbody>
+						<tr  onclick="window.location='View_Details_Report.html'">
+						<td>1</a></td>
+						<td>Defect Product</td>
+						<td>MD Mashiul Azam</td>
+						<td>01-02-2002</td>
+						<td>Seen</td>
+						<td>View</td>
+				
+					</tr>
+					
+					<tr  onclick="window.location='View_Profile_Admin.html'">
+						<td>2</a></td>
+						<td>Defect Product</td>
+						<td>MD Mashiul Azam</td>
+						<td>01-02-2002</td>
+						<td>UnSeen</td>
+						<td>View</td>
+					</tr>
+					
+					
+				</tbody>
+			</table>
+		</div>
+	</section>
+	
+	<!-- <script> -->
+	<!-- $(window).on("load resize ", function() { -->
+	<!-- var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width(); -->
+	<!-- $('.tbl-header').css({'padding-right':scrollWidth}); -->
+	<!-- }).resize(); -->
+	<!-- </script> -->
+</body>
+
+</html>
+
+
