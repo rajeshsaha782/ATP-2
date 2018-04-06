@@ -1,9 +1,10 @@
-﻿@{
-    ViewBag.Title = "_AdminLayout";
-}
-
+﻿
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>@ViewBag.Title</title>
+        </head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 @*<link rel="stylesheet" href="css/w3.css">
@@ -86,6 +87,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 					<li><a href="admin/View_Invoices.html"   style="color:black"><i class="fa fa-list-alt fa-fw"></i>  View Invoices</a></li>
 					<li><a href="admin/View_Orders.html"   style="color:black"><i class="fa fa-list fa-fw"></i>  View Orders</a></li>
 					<li><a href="admin/View_Stock.html"   style="color:black"><i class="fa fa-list fa-fw"></i>  View Stock</a></li>
+                     <li><a href=@Url.Action("Profit_graph")   style="color:black"><i class="fa fa-list fa-fw"></i> View Statistic</a></li>
 				</ul>
         </li>
       <li class="treeview">
@@ -196,11 +198,6 @@ $('li').on('click', function(e) {
    $(this).addClass('selected');
   }
 });
-
-
-
-
-
 
 
 </script>

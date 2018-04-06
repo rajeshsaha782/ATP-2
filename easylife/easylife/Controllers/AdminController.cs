@@ -14,5 +14,10 @@ namespace easylife.Controllers
             return View();
         }
 
+        public ActionResult Profit_graph()
+        {
+            return View();
+        }
+
     }
 }
