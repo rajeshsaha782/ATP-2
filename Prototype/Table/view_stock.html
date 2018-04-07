@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+ 
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+ 
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="css/AdminLTE.min.css">
+ 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  </head>
+	<body>
+        <div class="box-body">
+        <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+		     <div class="row">
+				 <div class="col-sm-6"></div>
+				 <div class="col-sm-6"></div>
+			 </div>
+			 <div class="row">
+			 <div class="col-sm-12">
+			 <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+            <thead>
+                <tr role="row">
+				  <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column descending" aria-sort="ascending">Product Image</th>
+				  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Product Name</th>
+				  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Price</th>
+				  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Remaining Quantity</th>
+				  </tr>
+            </thead>
+                
+			<tbody>  
+                <tr role="row" class="odd">
+                  <td class="sorting_1"><a href="View_Products_Details.html"><img id= "imgholder" class="pic" src="../resources/1.jpg" width="60px" height="60px"></a></td>
+                  <td class="">Woolen Jaket</td>
+                  <td>300</td>
+				  <td>10</td>
+                </tr>
+				<tr role="row" class="even">
+                  <td class="sorting_1"><a href="View_Products_Details.html"><img id= "imgholder" class="pic" src="image/3.jpg" width="60px" height="60px"></a></td>
+                  <td class="">Jaket</td>
+                  <td>300</td>
+				  <td>20</td>
+                </tr>
+				<tr role="row" class="odd">
+                  <td class="sorting_1"><a href="View_Products_Details.html"><img id= "imgholder" class="pic" src="image/2.jpg" width="60px" height="60px"></a></td>
+                  <td class="">Women Jaket</td>
+                  <td>300</td>
+				  <td>18</td>
+                </tr>
+				<tr role="row" class="even">
+                  <td class="sorting_1"><a href="View_Products_Details.html"><img id= "imgholder" class="pic" src="image/1.jpg" width="60px" height="60px"></a></td>
+                  <td class="">Woolen shirt</td>
+                  <td>2300</td>
+				  <td>10</td>
+                </tr><tr role="row" class="odd">
+                  <td class="sorting_1"><a href="View_Products_Details.html"><img id= "imgholder" class="pic" src="image/3.jpg" width="60px" height="60px"></a></td>
+                  <td class="">Woolen Jaket</td>
+                  <td>1300</td>
+				  <td>14</td>
+                </tr>
+				<tr role="row" class="even">
+                  <td class="sorting_1"><a href="View_Products_Details.html"><img id= "imgholder" class="pic" src="image/2.jpg" width="60px" height="60px"></a></td>
+                  <td class="">Woolen Jaket</td>
+                  <td>500</td>
+				  <td>13</td>
+                </tr> 
+			</tbody>
+        </div>  
+       </div>
+	  
+	   
+<script src="jquery/jquery.min.js"></script>
+<script src="jquery/jquery.dataTables.min.js"></script>
+
+		<script>
+		  $(function () {
+			$('#example1').DataTable()
+			$('#example2').DataTable({
+			  'paging'      : true,
+			  'lengthChange': false,
+			  'searching'   : false,
+			  'ordering'    : true,
+			  'info'        : true,
+			  'autoWidth'   : false
+			})
+		  })
+		</script>
+    </body>
+</html>

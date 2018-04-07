@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+ 
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+ 
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="css/AdminLTE.min.css">
+ 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+</head>
+	<body>
+        <div class="box-body">
+        <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+		<div class="row">
+			<div class="col-sm-6"></div>
+			<div class="col-sm-6"></div>
+		</div>
+		<div class="row"><div class="col-sm-12">
+		<table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+            <thead>
+                <tr role="row">
+				  <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column descending" aria-sort="ascending">Order Code</th>
+				  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Product Code</th>
+				  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Invoice</th>
+				  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Order Placed</th>
+				  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Product</th>
+				  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Order Status</th>
+				   <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Payment Status</th>
+				  </tr>
+            </thead>
+                
+			<tbody>
+                
+                <tr role="row" class="odd">
+                  <td class="sorting_1">1</td>
+                  <td class="">1</td>
+                  <td>5</td>
+                  <td>2017-12-29</td>
+                  <td>Woolen Jacket</td>
+				  <td>Pending</td>
+				  <td>Not Paid</td>
+                </tr>
+				  <tr role="row" class="odd">
+                  <td class="sorting_1">2</td>
+                  <td class="">2</td>
+                  <td>3</td>
+                  <td>2017-12-29</td>
+                  <td>Woolen Jacket</td>
+				  <td>Pending</td>
+				  <td>Not Paid</td>
+                </tr>
+				  <tr role="row" class="odd">
+                  <td class="sorting_1">3</td>
+                  <td class="">5</td>
+                  <td>8</td>
+                  <td>2017-12-29</td>
+                  <td>Jacket</td>
+				  <td>Pending</td>
+				  <td>Not Paid</td>
+                </tr>
+				  <tr role="row" class="odd">
+                  <td class="sorting_1">4</td>
+                  <td class="">1</td>
+                  <td>12</td>
+                  <td>2017-12-29</td>
+                  <td>Woolen Jacket</td>
+				  <td>Pending</td>
+				  <td>Paid</td>
+                </tr>
+				  <tr role="row" class="odd">
+                  <td class="sorting_1">5</td>
+                  <td class="">1</td>
+                  <td>12</td>
+                  <td>2017-12-29</td>
+                  <td>Woolen Jacket</td>
+				  <td>Pending</td>
+				  <td>Not Paid</td>
+                </tr>
+				  <tr role="row" class="odd">
+                  <td class="sorting_1">6</td>
+                  <td class="">5</td>
+                  <td>1</td>
+                  <td>2017-12-09</td>
+                  <td>Women Hoddy</td>
+				  <td>Pending</td>
+				  <td>Paid</td>
+                </tr>
+				 
+			</tbody>
+        </div>  
+       </div>
+	   
+	   
+<script src="jquery/jquery.min.js"></script>
+<script src="jquery/jquery.dataTables.min.js"></script>
+
+		<script>
+		  $(function () {
+			$('#example1').DataTable()
+			$('#example2').DataTable({
+			  'paging'      : true,
+			  'lengthChange': false,
+			  'searching'   : false,
+			  'ordering'    : true,
+			  'info'        : true,
+			  'autoWidth'   : false
+			})
+		  })
+		</script>
+    </body>
+</html>
