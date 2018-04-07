@@ -2,6 +2,23 @@
     ViewBag.Title = "Profit_graph";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<style>
+.comboBox {
+  
+  border-radius: 4px;
+  background-color: #fffff;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size:15px;
+  width: 120px;
+  height: 30px;
+  border-radius:10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+</style>
 
 <html>
 <head>
@@ -30,7 +47,7 @@
 
      <div style="padding-bottom:20px">
 
-        <select>
+        <select class="comboBox">
             <option>2017</option>
             <option>2018</option>
          </select>
@@ -56,7 +73,7 @@
 
 <script src="~/Styles/Chart.js"></script>
 
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="~/Styles/loader.js"></script>
 
 <script type="text/javascript">
     // Load google charts

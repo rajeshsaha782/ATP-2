@@ -139,16 +139,19 @@
     <Content Include="Styles\Chart.js" />
     <Content Include="Styles\graph.css" />
     <Content Include="Styles\jquery.min.js" />
+    <Content Include="Styles\loader.js" />
     <Content Include="Styles\skin-blue.min.css" />
     <Content Include="Styles\Style.css" />
     <Content Include="Styles\table.css" />
     <Content Include="Styles\w3.css" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Views\Admin\Advertise.cshtml" />
     <Content Include="Views\Admin\Change_Password.cshtml" />
     <Content Include="Views\Admin\Add_Member.cshtml" />
     <Content Include="Views\Admin\Add_Product.cshtml" />
     <None Include="Views\Admin\Edit_Profile_Admin.cshtml" />
+    <None Include="Views\Admin\Update_Slider.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -165,7 +168,7 @@
     <Content Include="Views\Admin\View_Delivery_Man.cshtml" />
     <Content Include="Views\Admin\View_Invoices.cshtml" />
     <Content Include="Views\Admin\View_Orders.cshtml" />
-    <Content Include="Views\Admin\View_Stocks.cshtml" />
+    <Content Include="Views\Admin\View_Stock.cshtml" />
     <Content Include="Views\Admin\_ViewStart.cshtml" />
     <Content Include="Views\Admin\View_Invoice.cshtml" />
   </ItemGroup>

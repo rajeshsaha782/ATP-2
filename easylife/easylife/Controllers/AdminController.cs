@@ -63,7 +63,7 @@ namespace easylife.Controllers
         {
             return View();
         }
-        public ActionResult View_Stocks()
+        public ActionResult View_Stock()
         {
             return View();
         }
@@ -73,6 +73,21 @@ namespace easylife.Controllers
         }
 
         //---------------------------------------------
+
+        public ActionResult Update_Slider()
+        {
+            return View();
+        }
+
+        public ActionResult Advertise()
+        {
+            return View();
+        }
+
+
+
+        //---------------------------------------------
+
 
         public ActionResult View_Invoice()
         {

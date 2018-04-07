@@ -1,6 +1,7 @@
 ﻿@{
-    ViewBag.Title = "View_Products";
+    ViewBag.Title = "View_Stocks";
 }
+
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
 table {
@@ -8,7 +9,6 @@ table {
 			width: 100%;
 			}
 			tr:hover {background-color:gray;}
-            
 .comboBox {
   
   border-radius: 4px;
@@ -38,7 +38,7 @@ table {
 <body class="w3-animate-bottom">
 	
   <!--for demo wrap-->
-  <h1 style="color:	blue">Products</h1>
+  <h1>Products</h1>
   <section class="w3-card-4">
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -46,9 +46,7 @@ table {
         <tr>
           <th>Product Image</th>
           <th>Product Name[Code]</th>
-          <th>Total Sells</th>
 		  <th>Price</th>
-          <th>Last Purchase</th>
 		  <th>Remaining Quantity</th>
 		  
         </tr>
@@ -60,35 +58,27 @@ table {
       <tbody>
         
 		<tr>
-          <td><a href="View_Products_Details"><img id="img" src="~/resources/1.jpg" width="60px" height="60px"></a></td>
+          <td><a href="View_Products_Details.html"><img id= "imgholder" class="pic" src="../resources/1.jpg" width="60px" height="60px"></a></td>
           <td>Woolen Jacket[1]</td>
-          <td>0</td>
           <td>300</td>
-		  <td>2017-12-28 16:19:53</td>
 		  <td>10</td>
         </tr>
 		<tr>
-           <td><a href="View_Products_Details"><img  src="~/resources/2.jpg" width="60px" height="60px"></a></td>
+           <td><a href="View_Products_Details.html"><img id= "imgholder" class="pic" src="../resources/2.jpg" width="60px" height="60px"></a></td>
           <td>Women Hoody[2]</td>
-          <td>0</td>
           <td>300</td>
-		  <td>2017-12-28 16:19:53</td>
 		  <td>10</td>
         </tr>
 		<tr>
-           <td><a href="View_Products_Details"><img   src="~/resources/3.jpg" width="60px" height="60px"></a></td>
+           <td><a href="View_Products_Details.html"><img id= "imgholder" class="pic" src="../resources/3.jpg" width="60px" height="60px"></a></td>
           <td>Gavading pant[3]</td>
-          <td>0</td>
           <td>300</td>
-		  <td>2017-12-28 16:19:53</td>
 		  <td>10</td>
         </tr>
 		<tr>
-           <td><a href="View_Products_Details"><img   src="~/resources/1.jpg" width="60px" height="60px"></a></td>
+           <td><a href="View_Products_Details.html"><img id= "imgholder" class="pic" src="../resources/1.jpg" width="60px" height="60px"></a></td>
           <td>Moyur Ear Ringst[4]</td>
-          <td>0</td>
           <td>300</td>
-		  <td>2017-12-28 16:19:53</td>
 		  <td>10</td>
         </tr>
         
@@ -104,3 +94,8 @@ table {
 <!-- }).resize(); -->
 <!-- </script> -->
 </body>
+
+</html>
+
+
+
