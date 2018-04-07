@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "View_Products";
+}
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
+table {
+			border-collapse: collapse;
+			width: 100%;
+			}
+			tr:hover {background-color:gray;}
+            
+.comboBox {
+  
+  border-radius: 4px;
+  background-color: #fffff;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size:15px;
+  width: 120px;
+  height: 30px;
+  border-radius:10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+</style>
+</head>
+	<div >
+					
+					<input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
+						<select id="search by" class="comboBox">
+							<option>Any</option>
+							<option>Product Name</option>
+							<option>Product Code</option>
+						  </select>
+				</div>
+<body class="w3-animate-bottom">
+	
+  <!--for demo wrap-->
+  <h1>Products</h1>
+  <section class="w3-card-4">
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Product Image</th>
+          <th>Product Name[Code]</th>
+          <th>Total Sells</th>
+		  <th>Price</th>
+          <th>Last Purchase</th>
+		  <th>Remaining Quantity</th>
+		  
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        
+		<tr>
+          <td><a href="View_Products_Details"><img id="img" src="~/resources/1.jpg" width="60px" height="60px"></a></td>
+          <td>Woolen Jacket[1]</td>
+          <td>0</td>
+          <td>300</td>
+		  <td>2017-12-28 16:19:53</td>
+		  <td>10</td>
+        </tr>
+		<tr>
+           <td><a href="View_Products_Details"><img  src="~/resources/2.jpg" width="60px" height="60px"></a></td>
+          <td>Women Hoody[2]</td>
+          <td>0</td>
+          <td>300</td>
+		  <td>2017-12-28 16:19:53</td>
+		  <td>10</td>
+        </tr>
+		<tr>
+           <td><a href="View_Products_Details"><img   src="~/resources/3.jpg" width="60px" height="60px"></a></td>
+          <td>Gavading pant[3]</td>
+          <td>0</td>
+          <td>300</td>
+		  <td>2017-12-28 16:19:53</td>
+		  <td>10</td>
+        </tr>
+		<tr>
+           <td><a href="View_Products_Details"><img   src="~/resources/1.jpg" width="60px" height="60px"></a></td>
+          <td>Moyur Ear Ringst[4]</td>
+          <td>0</td>
+          <td>300</td>
+		  <td>2017-12-28 16:19:53</td>
+		  <td>10</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- <script> -->
+	<!-- $(window).on("load resize ", function() { -->
+  <!-- var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width(); -->
+  <!-- $('.tbl-header').css({'padding-right':scrollWidth}); -->
+<!-- }).resize(); -->
+<!-- </script> -->
+</body>
