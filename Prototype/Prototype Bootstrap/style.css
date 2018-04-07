@@ -1,0 +1,38 @@
+		li
+		{
+			list-style:none;
+		}
+		a
+		{
+			text-decoration:none;
+		}
+			  	.bg-col{
+	  		background-color:lightblue;
+	  	}
+	  	.glyphicon1{
+	  		font-size:20px;
+	  	}
+	  	.nav{
+	  		margin-left:40px;
+	  		width:400px;
+	  	}
+	  	.input-group1{
+	  		width:400px;
+	  		
+	  	}
+	  	.pull-right1{
+	  		margin-right:-138px;
+	  	}
+	  	.navbar{
+	  		width:100%;
+	  	}
+	  	.panel-group .panel a{
+	  		text-decoration:none;
+	  		display:block;
+	  		
+	  	}
+	  	body{
+		padding:0;
+		margin:0;
+      
+		}
