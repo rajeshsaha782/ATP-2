@@ -115,6 +115,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="resources\1.jpg" />
+    <Content Include="resources\2.jpg" />
+    <Content Include="resources\3.jpg" />
     <Content Include="resources\back.jpg" />
     <Content Include="resources\e.jpg" />
     <Content Include="resources\efti.jpg" />
@@ -138,9 +141,13 @@
     <Content Include="Styles\jquery.min.js" />
     <Content Include="Styles\skin-blue.min.css" />
     <Content Include="Styles\Style.css" />
+    <Content Include="Styles\table.css" />
     <Content Include="Styles\w3.css" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Admin\Change_Password.cshtml" />
+    <Content Include="Views\Admin\Add_Member.cshtml" />
+    <Content Include="Views\Admin\Add_Product.cshtml" />
     <None Include="Views\Admin\Edit_Profile_Admin.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -154,6 +161,13 @@
     <Content Include="Views\Admin\View_Users.cshtml" />
     <Content Include="Views\Admin\View_Products.cshtml" />
     <Content Include="Views\Admin\Profit_graph.cshtml" />
+    <Content Include="Views\Admin\View_Profile_Admin.cshtml" />
+    <Content Include="Views\Admin\View_Delivery_Man.cshtml" />
+    <Content Include="Views\Admin\View_Invoices.cshtml" />
+    <Content Include="Views\Admin\View_Orders.cshtml" />
+    <Content Include="Views\Admin\View_Stocks.cshtml" />
+    <Content Include="Views\Admin\_ViewStart.cshtml" />
+    <Content Include="Views\Admin\View_Invoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

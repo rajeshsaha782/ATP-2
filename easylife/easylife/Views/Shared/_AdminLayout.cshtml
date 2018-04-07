@@ -12,6 +12,7 @@
 
 <link href="~/Styles/Style.css" rel="stylesheet" />
 <link href="~/Styles/w3.css" rel="stylesheet" />
+<link href="~/Styles/table.css" rel="stylesheet" />
 
 <link href="~/Styles/AdminLTE.min.css" rel="stylesheet" />@* for treeview*@
 
@@ -27,16 +28,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 </style>
 <body class="s">
-
+<aside class="main-sidebar">
 <!-- Top container -->
 <div class="w3-bar w3-top w3-card-4 w3-large ba" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-dark-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="w3-bar-item"><a href=@Url.Action("Dashboard")><img src="~/resources/e.jpg" class="w3-left  w3-margin-right" style="width:100px"/></a></span>
-  <span class="w3-bar-item  w3-right"><a href="admin/View_Profile_Admin.html" ><img src="~/resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"></a> <a href="../Prototype_user/index.html"><i class="fa fa-sign-out w3-xlarge"></i></a> <i class="fa fa-tasks fa-fw w3-hover-shadow "><div class="notification">1</div></i></span>
+  <span class="w3-bar-item  w3-right"><a href=@Url.Action("View_Profile_Admin") ><img src="~/resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"></a> <a href="../Prototype_user/index"><i class="fa fa-sign-out w3-xlarge"></i></a> <i class="fa fa-tasks fa-fw w3-hover-shadow "><div class="notification">1</div></i></span>
 </div>
 
 <!-- Sidebar/menu -->
-  <aside class="main-sidebar">
+  
 
 <nav class="w3-sidebar w3-collapse ba1 w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
@@ -58,9 +59,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           </a>
           <ul class="treeview-menu">
             <li><a href=@Url.Action("Dashboard") style="color:black"  class=" w3-blue" ><i class="fa fa-dashboard fa-fw"></i>  DashBoard</a></li>
-					<li><a href="admin/Edit_Profile_Admin.html" style="color:black" ><i class="fa fa-cog fa-fw"></i>  Edit Profile</a></li>
-					<li><a href="admin/View_Profile_Admin.html" style="color:black"  ><i class="fa fa-eye fa-fw"></i>  View Profile</a></li>
-					<li><a href="admin/Change_Password.html" style="color:black"  ><i class="fa fa-lock fa-fw"></i>  Change Password</a></li>
+					<li><a href=@Url.Action("Edit_Profile_Admin") style="color:black" ><i class="fa fa-cog fa-fw"></i>  Edit Profile</a></li>
+					<li><a href=@Url.Action("View_Profile_Admin") style="color:black"  ><i class="fa fa-eye fa-fw"></i>  View Profile</a></li>
+					<li><a href=@Url.Action("Change_Password") style="color:black"  ><i class="fa fa-lock fa-fw"></i>  Change Password</a></li>
           </ul>
         </li>
       <li class="treeview">
@@ -70,8 +71,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
               </span>
           </a>
           <ul class="treeview-menu">
-                    <li><a href="admin/Add_Member.html"   style="color:black"><i class="fa fa-user fa-fw"></i>  Add Member</a></li>
-					<li><a href="admin/Add_Product.html"   style="color:black"><i class="fa fa-product-hunt fa-fw"></i>  Add Product</a></li>
+                    <li><a href=@Url.Action("Add_Member")   style="color:black"><i class="fa fa-user fa-fw"></i>  Add Member</a></li>
+					<li><a href=@Url.Action("Add_Product")   style="color:black"><i class="fa fa-product-hunt fa-fw"></i>  Add Product</a></li>
 		    </ul>
         </li>
       <li class="treeview">
@@ -81,12 +82,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="admin/View_Admins.html"  style="color:black"><i class="fa fa-user fa-fw"></i>  View Admins</a></li>
-					<li><a href="admin/View_Products.html"   style="color:black"><i class="fa fa-product-hunt fa-fw"></i>  View Product</a></li>
-					<li><a href="admin/View_Users.html"   style="color:black"><i class="fa fa-users fa-fw"></i>  View Users</a></li>
-					<li><a href="admin/View_Invoices.html"   style="color:black"><i class="fa fa-list-alt fa-fw"></i>  View Invoices</a></li>
-					<li><a href="admin/View_Orders.html"   style="color:black"><i class="fa fa-list fa-fw"></i>  View Orders</a></li>
-					<li><a href="admin/View_Stock.html"   style="color:black"><i class="fa fa-list fa-fw"></i>  View Stock</a></li>
+                    <li><a href=@Url.Action("View_Admins")  style="color:black"><i class="fa fa-user fa-fw"></i>  View Admins</a></li>
+                    <li><a href=@Url.Action("View_Delivery_Man") style="color:black" ><i class="fa fa-list fa-fw"></i>  View Delivery Man</a></li>
+                    <li><a href=@Url.Action("View_Users")   style="color:black"><i class="fa fa-users fa-fw"></i>  View Users</a></li>
+					<li><a href=@Url.Action("View_Products")   style="color:black"><i class="fa fa-product-hunt fa-fw"></i>  View Product</a></li>
+					
+					<li><a href=@Url.Action("View_Invoices")   style="color:black"><i class="fa fa-list-alt fa-fw"></i>  View Invoices</a></li>
+					<li><a href=@Url.Action("View_Orders")   style="color:black"><i class="fa fa-list fa-fw"></i>  View Orders</a></li>
+					<li><a href=@Url.Action("View_Stock")   style="color:black"><i class="fa fa-list fa-fw"></i>  View Stock</a></li>
                      <li><a href=@Url.Action("Profit_graph")   style="color:black"><i class="fa fa-list fa-fw"></i> View Statistic</a></li>
 				</ul>
         </li>
@@ -97,8 +100,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
               </span>
           </a>
           <ul class="treeview-menu">
-                    <li><a href="admin/Update_Slider.html"   style="color:black"><i class="fa fa-arrow-circle-up fa-fw"></i>  Slider Update</a></li>
-					<li><a href="admin/Advertise.html"   style="color:black"><i class="fa fa-arrow-circle-up fa-fw"></i>  Advertisement</a></li>
+                    <li><a href=@Url.Action("Update_Slider")   style="color:black"><i class="fa fa-arrow-circle-up fa-fw"></i>  Slider Update</a></li>
+					<li><a href=@Url.Action("Advertise")   style="color:black"><i class="fa fa-arrow-circle-up fa-fw"></i>  Advertisement</a></li>
 				</ul>
         </li>
 
@@ -110,31 +113,31 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 			<li ><h4><a href="#" ><i class="fa fa-address-card fa-fw "></i> <span class="sub-arrow">Account</h4></span></a>
 				<ul  style="padding-left:20px">
 					<li><a href=@Url.Action("Dashboard")  class="w3-bar-item w3-button  w3-padding w3-blue" ><i class="fa fa-dashboard fa-fw"></i>  DashBoard</a></li>
-					<li><a href="admin/Edit_Profile_Admin.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Edit Profile</a></li>
-					<li><a href="admin/View_Profile_Admin.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  View Profile</a></li>
-					<li><a href="admin/Change_Password.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-lock fa-fw"></i>  Change Password</a></li>
+					<li><a href=" Edit_Profile_Admin"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Edit Profile</a></li>
+					<li><a href=" View_Profile_Admin"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  View Profile</a></li>
+					<li><a href=" Change_Password"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-lock fa-fw"></i>  Change Password</a></li>
 				</ul>
 			</li>
 			<li ><h4><a href="#" ><i class="fa fa-registered fa-fw"></i> Registar<span class="sub-arrow"></h4></span></a>
 				<ul    style="padding-left:20px">
-					<li><a href="admin/Add_Member.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Add Member</a></li>
-					<li><a href="admin/Add_Product.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-product-hunt fa-fw"></i>  Add Product</a></li>
+					<li><a href=" Add_Member"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Add Member</a></li>
+					<li><a href=" Add_Product"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-product-hunt fa-fw"></i>  Add Product</a></li>
 				</ul>
 			</li>
 			<li ><h4><a href="#" ><i class="fa fa-eye fa-fw"></i> View<span class="sub-arrow"></h4></span></a>
 				<ul   style="padding-left:20px">
-					<li><a href="admin/View_Admins.html"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  View Admins</a></li>
-					<li><a href="admin/View_Products.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-product-hunt fa-fw"></i>  View Product</a></li>
-					<li><a href="admin/View_Users.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  View Users</a></li>
-					<li><a href="admin/View_Invoices.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-list-alt fa-fw"></i>  View Invoices</a></li>
-					<li><a href="admin/View_Orders.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-list fa-fw"></i>  View Orders</a></li>
-					<li><a href="admin/View_Stock.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-list fa-fw"></i>  View Stock</a></li>
+					<li><a href=" View_Admins"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  View Admins</a></li>
+					<li><a href=" View_Products"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-product-hunt fa-fw"></i>  View Product</a></li>
+					<li><a href=" View_Users"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  View Users</a></li>
+					<li><a href=" View_Invoices"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-list-alt fa-fw"></i>  View Invoices</a></li>
+					<li><a href=" View_Orders"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-list fa-fw"></i>  View Orders</a></li>
+					<li><a href=" View_Stock"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-list fa-fw"></i>  View Stock</a></li>
 				</ul>
 			</li>
 			<li ><h4><a href="#" ><i class="fa fa-camera fa-fw"></i> Slider<span class="sub-arrow"></h4></span></a>
 				<ul   style="padding-left:20px">
-					<li><a href="admin/Update_Slider.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-up fa-fw"></i>  Slider Update</a></li>
-					<li><a href="admin/Advertise.html"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-up fa-fw"></i>  Advertisement</a></li>
+					<li><a href=" Update_Slider"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-up fa-fw"></i>  Slider Update</a></li>
+					<li><a href=" Advertise"   class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-up fa-fw"></i>  Advertisement</a></li>
 				</ul>
 			</li>	
             	
@@ -148,7 +151,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:350px;margin-top:43px;">
 <br/>
-	@*<iframe id="frame" name="contentFrame" frameborder="0" width="95%" height="585px" src="admin/Dashboard.html"></iframe>*@
+	@*<iframe id="frame" name="contentFrame" frameborder="0" width="95%" height="585px" src=" Dashboard"></iframe>*@
     @RenderBody();
 </div>
 

@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Admin_Home";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    //Layout = "~/Views/Shared/_AdminLayout";
 }
 
 
@@ -43,7 +43,7 @@ cshtml {
   
     
 	<div class="w3-quarter">
-	<a href="View_Members.cshtml">
+	<a href=@Url.Action("View_Members")>
       <div class="w3-container w3-red w3-padding-16">
         <div class="w3-left"><i class="fa fa-user w3-xxxlarge"></i></div>
         <div class="w3-right">
@@ -58,7 +58,7 @@ cshtml {
 	
 	
 	<div class="w3-quarter">
-	  <a href="View_Users.cshtml">
+	  <a href=@Url.Action("View_Users")>
       <div class="w3-container w3-orange w3-text-white w3-padding-16">
         <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
         <div class="w3-right">
@@ -73,7 +73,7 @@ cshtml {
 	
 	
     <div class="w3-quarter">
-	<a href="View_Products.cshtml">
+	<a href=@Url.Action("View_Products")>
       <div class="w3-container w3-blue w3-padding-16">
         <div class="w3-left"><i class="fa fa-product-hunt w3-xxxlarge"></i></div>
         <div class="w3-right">
@@ -88,7 +88,7 @@ cshtml {
 	
 	
     <div class="w3-quarter">
-	<a href="View_Invoices.cshtml">
+	<a href=@Url.Action("View_Invoices")>
       <div class="w3-container w3-teal w3-padding-16">
         <div class="w3-left"><i class="fa fa-list w3-xxxlarge"></i></div>
         <div class="w3-right">
@@ -109,14 +109,14 @@ cshtml {
     <h5 style="color:Red">General Status</h5>
 	
     <p>New Visitors</p>
-	<a href="View_Users.cshtml">
+	<a href=@Url.Action("View_Users")>
     <div class="w3-grey">
       <div class="w3-container w3-center w3-padding w3-green" style="width:25%">25%</div>
     </div>
 	</a>
 
     <p>Active Users</p>
-	<a href="View_Users.cshtml">
+	<a href=@Url.Action("View_Users")>
     <div class="w3-grey">
       <div class="w3-container w3-center w3-padding w3-orange" style="width:50%">50%</div>
     </div>
@@ -138,7 +138,7 @@ cshtml {
 	
 	
 	<div>
-		@*<iframe frameborder="0" width="100%" height="475px" src="graph.cshtml"></iframe>*@
+		@*<iframe frameborder="0" width="100%" height="475px" src="graph"></iframe>*@
         @*@cshtml.Partial("graph")*@
 	</div>
   
@@ -147,15 +147,15 @@ cshtml {
     <h5>Top 5 Active Users</h5>
     <ul class="w3-ul w3-card-4 w3-white">
       <li class="w3-padding-16">
-        <img src="../resources/efti.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
+        <img src="~/resources/efti.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
         <span class="w3-xlarge">Efti</span><br>
       </li>
       <li class="w3-padding-16">
-        <img src="../resources/rakib.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
+        <img src="~/resources/rakib.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
         <span class="w3-xlarge">Rakib</span><br>
       </li>
       <li class="w3-padding-16">
-        <img src="../resources/rajesh.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
+        <img src="~/resources/rajesh.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
         <span class="w3-xlarge">Rajesh</span><br>
       </li>
 	  <li class="w3-padding-16">
