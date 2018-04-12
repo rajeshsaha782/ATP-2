@@ -39,8 +39,8 @@
 
 		.img1
 		{
-			height:255px;
-			width:255px;
+			height:300px;
+			width:280px;
 		}
 
 		.brand
@@ -57,8 +57,25 @@
       padding-top: 70px;
   			}
 
-
-  		th
-  		{
-			text-align:right;	
-  		}	
+		.img2
+		{
+			height:255px;
+			width:255px;
+		}
+		.glyphicon-thumbs-down:hover
+		{
+			color:red;
+		}
+		.glyphicon-thumbs-up:hover
+		{
+			color:green;
+		}
+		.user
+		{
+			height:50px;
+			width:50px;
+		}
+		p
+		{
+			text-align:justify;	
+		}
