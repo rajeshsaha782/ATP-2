@@ -292,9 +292,8 @@
 						 	
 						<a href="shoppingCart.html"><button  class="btn btn-info">Add to Cart</button></a>
 						
-							<a href="#" id="love">
-							<span id="sp1" class="glyphicon glyphicon-heart" style="font-size:20px; padding-left:10px;color:gray"></span>
-							</a>
+							
+							<span id="love" class="glyphicon glyphicon-heart" style="font-size:20px; padding-left:10px;color:gray"></span>
 							
 							</br>
 							</br>
@@ -564,26 +563,29 @@
   
 	$("a").on("click", function(){     
 	  whichButton = this.id;                   
-	  if (whichButton === "love") 
-	  {
-		if($("#sp1").css("color")=='rgb(128, 128, 128)')
-		{
-			
-			$("#sp1").css("color", "red");
-		}
-		else
-		{
-			$("#sp1").css("color", "gray");
-		}
-		
-	  }
+	  
 	});
 	
 	$("span").on("click", function(){
 
 	  whichButton = this.id;
+	  
+	  if (whichButton === "love") 
+	  {
+		if($("#love").css("color")=='rgb(128, 128, 128)')
+		{
+			$("#love").css("color", "red");
+			alert("Added into Your favourite list");
+		}
+		else
+		{
+			$("#love").css("color", "gray");
+			alert("Removed from your favorite list");
+		}
+		
+	  }
 
-	  if (whichButton === "like")	  
+	else if (whichButton === "like")	  
 	  {
 
 		if($("#like").css("color")=='rgb(0, 0, 0)')
