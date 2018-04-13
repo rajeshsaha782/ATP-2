@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		
-		<title>Change Password</title>	 
+		<title>My Reports</title>	 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -171,80 +171,64 @@
 				
 				<!-- Body-->
 				
-				<div class="col-md-9 " style="height:700px; padding-left:200px;padding-right:200px;" >
+				<div class="col-md-9 " style="height:700px;" >
 					
 					
-				
+					
+					
+					
+					
+					
+					
+					
+					<div class="container-fluid">
 						
 						
-						
-						
-						
-						
-						<div class="container-fluid">
+						<table class="table table-striped ">
 							
-							
-						<table class="table table-striped  ">
+							<tbody>
+								<tr>
+									<th>Product</th>
+									<th style="width:200px;">Reporting Time</th>
+									<th>Report Description</th>
+									<th>Status</th>
+									
+									
+									
+									
+								</tr>
 								
-								<tbody>
+								<tr>
+									<td><a href="details.html"><img class="img-circle user" src="resources/1.jpg"></a></td>
+								<td>12th March, 2018</td>
+									<td>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+										It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</td>
+								<td>Seen</td>
+									
+									
+								</tr>
+								<tr>
+									<td><a href="details.html"><img class="img-circle user" src="resources/3.jpg"></a></td>
+								<td>12th March, 2018</td>
+									<td>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+										It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</td>
+								<td>Unseen</td>
+									
+									
+								</tr>
 								
-									
-									<tr>
-										
-										<td style="padding-left:100px;" >
-										<p>Old Password</p>
-										</td>
-										<td >
-											<p><input class="form-control"  type="password" value=""/></p>
-										</td>
-
-										
-									</tr>
-									
-									<tr>
-										
-										<td  style="padding-left:100px;" >
-										<p>New Password</p>
-										</td>
-										<td >
-											<p><input class="form-control"  type="password" value=""/></p>
-										</td>
-
-										
-									</tr>
-									<tr>
-										
-										<td  style="padding-left:100px;" >
-										<p>Retype New Password</p>
-										</td>
-										<td >
-											<p><input class="form-control"  type="password" value=""/></p>
-										</td>
-
-										
-									</tr>
-									
-									
-									<tr>
 								
-										<td colspan="2"  >
-											<p><a a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-info" >Save</button></a></p>
-										</td>
-
-										
-									</tr>
-									
-									
-								</tbody>
-							</table>
+								
+							</tbody>
+						</table>
 						
-							
+						
 						
 					</div>	
 					
-				
+					
+				</div>
 			</div>
-		</div>
 			
 			<!-- footer-->
 			
@@ -299,46 +283,166 @@
 				
 				
 			</div>
+			<div class="modal fade" id="deleteModal" role="dialog" style="padding-top:50px;">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content">
+						
+						<div class="modal-body" >
+							
+							<p>Are you sure, You want to remove?</p>
+							
+						</div>
+						<div class="modal-footer">
+							<a href="shoppingCart.html"><button type="button" class="btn btn-danger" >Remove</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
 			
 			
 			<div class="modal fade" id="loginmodal" role="dialog" style="padding-top:50px;">
-		<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				
-				<div class="modal-body" >
-					
-					<table class="table table-striped reg  ">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content">
 						
-						<p>Are You sure you want to change?</p>
-					</table>
-					
-				</div>
-				<div class="modal-footer">
-					<a data-toggle="modal" data-target="#sucessModal"><button type="button" class="btn btn-danger" >Change</button></a>
-				</div>
-			</div>
-		</div>
-	</div>
-			
-			
-		<div class="modal fade" id="sucessModal" role="dialog" style="padding-top:50px;">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					
-					<div class="modal-body" >
-						
-						<p>Change Password Successful !!</p>
-						
-					</div>
-					<div class="modal-footer">
-						<a href="dashboard.html"><button type="button" class="btn btn-info" >OK</button></a>
+						<div class="modal-body" >
+							
+							<table class="table table-striped reg  ">
+								
+								<tbody>
+									
+									<tr>
+										<th>Email</th>
+										<td><input type="text"></input></td>
+										
+									</tr>
+									<tr>
+										<th>Password</th>
+										<td><input type="password"></input></td>
+										
+									</tr>
+									
+								</tbody>
+							</table>
+							
+						</div>
+						<div class="modal-footer">
+							<a data-toggle="modal" data-target="#confirmmodal"><button type="button" class="btn btn-info" >Log In</button></a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>	
 			
 			
 			
-		</body>
-		
-	</html>	
+			
+			
+			
+			
+			<div class="modal fade" id="confirmmodal" role="dialog" style="padding-top:50px;">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						
+						<div class="modal-body" >
+							
+							<table class="table table-striped reg  ">
+								
+								<tbody>
+									
+									<tr>
+										<table class="table table-striped ">
+											
+											<tbody>
+												<p><b>Shipment</b></p>
+												<tr>
+													
+													<td><p>Name</p></td>
+													<td><p>Rakibul Hossain</p></td>
+													
+												</tr>
+												
+												<tr>
+													
+													<td><p>Shipping Address</p></td>
+													<td><input type="text"></td>
+													
+												</tr>
+												<tr>
+													
+													<td><p>Phone No</p></td>
+													<td>01856353477</td>
+													
+												</tr>
+												<tr>
+													
+													<td colspan="4" style="text-align:center;"><a ><button type="button" class="btn btn-info" >Use Billing Address</button></a></td>
+													
+													
+												</tr>
+												
+											</tbody>
+										</table>
+										
+										
+									</tr>
+									<tr>
+										<table class="table table-striped ">
+											
+											<tbody>
+												<p><b>Total Cost Estimation</b></p>
+												<tr>
+													
+													<td><p>Product Cost</p></td>
+													<td><p>$450</p></td>
+													
+												</tr>
+												
+												<tr>
+													
+													<td><p>Shipping Cost</p></td>
+													<td><p>$50</p></td>
+													
+												</tr>
+												<tr>
+													
+													<td><p>Total</p></td>
+													<td><p>$500</p></td>
+													
+												</tr>
+												
+												
+											</tbody>
+										</table>
+										
+									</tr>
+									
+									<tr>
+										<table class="table table-striped ">
+											
+											<tbody>
+												<p><b>Payment Method</b></p>
+												<tr>
+													
+													<td><input type="radio">b-Kash</input><input type="radio">Cash On delivery</input></td>
+													<td>Use coupon Code : <input type="text"></input></td>
+													
+												</tr>
+												
+												
+											</tbody>
+										</table>
+									</tr>
+									
+								</tbody>
+							</table>
+							
+						</div>
+						<div class="modal-footer">
+							<a href="invoices.html"><button type="button" class="btn btn-info" >Confirm</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+	</body>
+	
+</html>	

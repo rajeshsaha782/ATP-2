@@ -119,7 +119,7 @@
 					<h4>My Account</h4>
 					<li><a data-toggle="modal" data-target="#loginmodal" >Personal Information</a></li>
 					<li><a data-toggle="modal" data-target="#loginmodal" >Orders</a></li>
-					<li><a data-toggle="modal" data-target="#loginmodal" >Reports</a></li>
+					<li><a href="reports.html">Reports</a></li>
 					<li><a data-toggle="modal" data-target="#loginmodal" >Shopping Cart</a></li>
 				</ul>
 			
@@ -144,7 +144,114 @@
 	
 	
 </div>
+<div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					
+					<div class="modal-body" >
+						
+						<table class="table table-striped   ">
+							
+							<tbody>
+								<tr>
+									<th>Name</th>
+									<td> <input type="text"></input></td>
+								</tr>
+								<tr>
+									<th>Email</th>
+									<td><input type="text"></input></td>
+									
+								</tr>
+								<tr>
+									<th>Gender</th>
+									<td> <input type="radio">Male</input>
+										<input type="radio">Feale</input>
+										<input type="radio">Other</input>
+									</td>
+								</tr>
+								<tr>
+									<th>Password</th>
+									<td><input type="password"></input></td>
+									
+								</tr>
+								<tr>
+									<th>Retype</th>
+									<td><input type="password"></input></td>
+									
+								</tr>
+								<tr>
+									<th>Phone</th>
+									<td><input type="text"></input></td>
+									
+								</tr>
+								<tr>
+									<td colspan="2"><hr></td>
+									
+								</tr>
+								<tr>
+									
+								<td colspan="2">Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-info" >Log In</button></a> </td>
+									
+									
+								</tr>
+								
+							</tbody>
+						</table>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="dashboard.html"><button type="button" class="btn btn-info" >Sign Up</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
 
+
+
+				<div class="modal fade" id="loginmodal" role="dialog" style="padding-top:50px;">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				
+				<div class="modal-body" >
+					
+					<table class="table table-striped  ">
+						
+						<tbody>
+							
+							<tr>
+								<th>Email</th>
+								<td><input type="text"></input></td>
+								
+							</tr>
+							<tr>
+								<th>Password</th>
+								<td><input type="password"></input></td>
+								
+							</tr>
+							
+							<tr>
+								
+								<td colspan="2">
+								<hr>
+								</td>
+								
+							</tr>
+							<tr>
+								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" class="btn btn-info" >Sign Up</button></a> </td>
+								
+							</tr>
+							
+						</tbody>
+					</table>
+					
+				</div>
+				<div class="modal-footer">
+					<a href="dashboard.html"><button type="button" class="btn btn-info" >Log In</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
 
 </body>
 

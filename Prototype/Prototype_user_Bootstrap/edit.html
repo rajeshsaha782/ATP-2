@@ -39,8 +39,8 @@
 					</div>
 				</form>
 				<ul class="nav navbar-nav pull-right pull-right1">
-					<li><a  data-toggle="modal" data-target="#signupModal"><span class="glyphicon glyphicon-user" ></span> Sign Up</a></li>
-					<li ><a data-toggle="modal" data-target="#loginmodal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a  href="dashboard.html"><span class="glyphicon glyphicon-user" ></span>Rakibul Hossain</a></li>
+					
 					<li><a href="shoppingCart.html"><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(0)</span></a></li>
 				</ul>
 			</div>
@@ -127,6 +127,26 @@
 							<div class="panel-heading">
 								<h4 class="panel-title">
 									<a data-parent="#accordion" href="myCoupon.html">My Coupon</a>
+								</h4>
+							</div>
+							
+						</div>
+						<div class="panel panel-default">
+							
+							
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-parent="#accordion" href="myReports.html">My Reports</a>
+								</h4>
+							</div>
+							
+						</div>
+						<div class="panel panel-default">
+							
+							
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-parent="#accordion" href="myFavorite.html">My Favorite</a>
 								</h4>
 							</div>
 							
@@ -228,8 +248,8 @@
 									</tr>
 									<tr>
 								
-										<td colspan="2" style="padding-left:300px;" >
-											<p><a href="dashboard.html"><button type="button" class="btn btn-info" >Save</button></a></p>
+										<td colspan="2" >
+											<p><a data-toggle="modal" data-target="#sucessModal"><button type="button" class="btn btn-info" >Save</button></a></p>
 										</td>
 
 										
@@ -277,10 +297,10 @@
 				<div class="container-fluid col-md-3">
 					<ul>
 						<h4>My Account</h4>
-						<li><a data-toggle="modal" data-target="#loginmodal" >Personal Information</a></li>
-						<li><a data-toggle="modal" data-target="#loginmodal" >Orders</a></li>
-						<li><a data-toggle="modal" data-target="#loginmodal" >Reports</a></li>
-						<li><a data-toggle="modal" data-target="#loginmodal" >Shopping Cart</a></li>
+						<li><a href="info.html">Personal Information</a></li>
+						<li><a href="invoices.html" >Orders</a></li>
+						<li><a href="myReports.html">Reports</a></li>
+						<li><a href="shoppingCart.html">Shopping Cart</a></li>
 					</ul>
 					
 					
@@ -302,7 +322,21 @@
 			</div>
 			
 			
-			
+			<div class="modal fade" id="sucessModal" role="dialog" style="padding-top:50px;">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					
+					<div class="modal-body" >
+						
+						<p>Edit Information Successful !!</p>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="dashboard.html"><button type="button" class="btn btn-info" >OK</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
 			
 			
 			
