@@ -8,7 +8,13 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="style.css">
-		
+		<link rel="stylesheet" href="src/enlarge.css" />
+		<style>
+			
+			.enlarge_btn {
+				display: none;
+			}
+		</style>
 	</head>
 	
 	<body>
@@ -239,8 +245,19 @@
 						
 						
 						
-						<div class="container-fluid col-md-3">
-							<a href="details.html"><img class="img-thumbnail img2" src="resources/1.jpg"></a>
+						<div class="container-fluid col-md-5">
+							<div class="enlarge_pane_contain">
+								<div class="enlarge_pane">
+									<div class="enlarge">
+										<div class="enlarge_contain">
+											<img src="resources/1.jpg" width="550" height="350" alt="" id="test-img">
+										</div>
+										<a href="resources/1.jpg" class="enlarge_btn" title="Toggle Zoom">Toggle Zoom</a>
+									</div>
+								</div>
+							</div>
+							
+
 							<div style="text-align:center ;">
 								<p style="font-size: 30px;text-align:center; "><span class="glyphicon glyphicon-thumbs-up"></span>
 									&nbsp;
@@ -274,7 +291,7 @@
 									</tr>
 									<tr>
 										<th>Quantity</th>
-										<td><input type="text"></input></td>
+										<td><input type="number"></input></td>
 									</tr>
 									
 								</tbody>
@@ -537,7 +554,24 @@
 <!--modal finished-->
 			
 			
-			
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="src/enlarge.js"></script>
+		<script src="src/enlarge.init.js"></script>
+		<script src="init.js"></script>
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>		
 			
 			
 			
