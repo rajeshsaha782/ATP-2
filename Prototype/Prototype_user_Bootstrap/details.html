@@ -12,6 +12,10 @@
 		<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
 		<link rel="stylesheet" href="zoom/easyzoom.css">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+		<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
 	</head>
 	
 	<body>
@@ -234,6 +238,14 @@
 				<!-- Body-->
 				
 				<div class="col-md-9 " style="height:700px;" >
+					<div class="container-fluid ">
+						<ol class="breadcrumb">
+						<li><a href="index.html" ><i class="fa fa-dashboard"></i> Home</a></li>
+						<li><a href="search.html" ><i class="fa fa-dashboard"></i>Search</a></li>
+						<li><a  class="active"><i class="fa fa-dashboard"></i>Details</a></li>
+						
+						</ol>
+					</div>
 					
 					
 					<div class="container-fluid ">
@@ -250,12 +262,12 @@
 									</div>
 								
 						
-							<div style="text-align:center;">
+							<div >
 							
-								<span id="like" class="glyphicon glyphicon-thumbs-up" style="font-size: 30px;text-align:center;color:black"></span><small style="font-size: 15px;">(10)</small>
+								<p><span id="like" class="glyphicon glyphicon-thumbs-up" style="font-size: 30px;text-align:center;color:black"></span><small style="font-size: 15px;">(10)</small>
 									&nbsp;
 								<span id="unlike" class="glyphicon glyphicon-thumbs-down" style="font-size: 30px;text-align:center;color:black"></span><small style="font-size: 15px;">(5)</small>
-								
+								</p>
 							</div>
 							
 							
@@ -290,11 +302,13 @@
 								</tbody>
 							</table>
 						 	
-						<a href="shoppingCart.html"><button  class="btn btn-info">Add to Cart</button></a>
 						
-							
-							<span id="love" class="glyphicon glyphicon-heart" style="font-size:20px; padding-left:10px;color:gray" title="Save for later"></span>
-							
+						
+							<span id="cart" class="glyphicon glyphicon-shopping-cart" style="font-size:30px; padding-left:20px;color:grey" title="Add to Cart"></span>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<span id="love" class="glyphicon glyphicon-heart" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="shoppingCart.html"><button type="button" class="btn btn-info" >Buy</button></a>
 							</br>
 							</br>
 							
@@ -581,6 +595,20 @@
 		{
 			$("#love").css("color", "gray");
 			alert("Removed from your favorite list");
+		}
+		
+	  }
+	  else if (whichButton === "cart") 
+	  {
+		if($("#cart").css("color")=='rgb(128, 128, 128)')
+		{
+			$("#cart").css("color", "yellow");
+			alert("Added into Your Cart");
+		}
+		else
+		{
+			$("#cart").css("color", "black");
+			alert("Removed from your cart");
 		}
 		
 	  }
