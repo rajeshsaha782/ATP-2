@@ -259,7 +259,7 @@
 									
 									<tr>
 										<td> <a href="details.html"><img class="img-circle user" src="resources/1.jpg"></a></td>
-										<td><p>Kakashi T-Shirt</p></td>
+										<td>Kakashi T-Shirt</td>
 										<td>1 </td>
 										<td>1</td>
 										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash"></span></a></td>
@@ -267,7 +267,7 @@
 									</tr>
 									<tr>
 										<td> <a href="details.html"><img class="img-circle user" src="resources/2.jpg"></a></td>
-										<td><p>Kakashi T-Shirt</p></td>
+										<td>Kakashi T-Shirt</td>
 										<td>1 </td>
 										<td>1</td>
 										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash"></span></a></td>
@@ -275,7 +275,7 @@
 									</tr>
 									<tr>
 										<td> <a href="details.html"><img class="img-circle user" src="resources/3.jpg"></a></td>
-										<td><p>Kakashi T-Shirt</p></td>
+									<td>Kakashi T-Shirt</td>
 										<td>1 </td>
 										<td>1</td>
 										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash"></span></a></td>
@@ -322,7 +322,7 @@
 									
 								</tbody>
 							</table>
-							<a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-info" >Confirm</button></a>
+							<p><a data-toggle="modal" data-target="#confirmmodal"><button type="button" class="btn btn-info" >Confirm</button></a></p>
 						
 							
 						
@@ -366,10 +366,10 @@
 				<div class="container-fluid col-md-3">
 					<ul>
 						<h4>My Account</h4>
-						<li><a href="dashboard.html" >Personal Information</a></li>
-						<li><a href="dashboard.html" >Orders</a></li>
-						<li><a href="dashboard.html" >Reports</a></li>
-						<li><a href="dashboard.html" >Shopping Cart</a></li>
+						<li><a data-toggle="modal" data-target="#loginmodal" >Personal Information</a></li>
+						<li><a data-toggle="modal" data-target="#loginmodal" >Orders</a></li>
+						<li><a href="reports.html">Reports</a></li>
+						<li><a data-toggle="modal" data-target="#loginmodal" >Shopping Cart</a></li>
 					</ul>
 					
 					
@@ -406,40 +406,7 @@
 		</div>
 		
 		
-		<div class="modal fade" id="loginmodal" role="dialog" style="padding-top:50px;">
-		<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				
-				<div class="modal-body" >
-					
-					<table class="table table-striped reg  ">
-						
-						<tbody>
-							
-							<tr>
-								<th>Email</th>
-								<td><input type="text"></input></td>
-								
-							</tr>
-							<tr>
-								<th>Password</th>
-								<td><input type="password"></input></td>
-								
-							</tr>
-							
-						</tbody>
-					</table>
-					
-				</div>
-				<div class="modal-footer">
-					<a data-toggle="modal" data-target="#confirmmodal"><button type="button" class="btn btn-info" >Log In</button></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
-	
+		
 	
 	
 	
@@ -461,26 +428,33 @@
 								<p><b>Shipment</b></p>
 									<tr>
 										
-										<td><p>Name</p></td>
-										<td><p>Rakibul Hossain</p></td>
+									<td>Name</td>
+										<td>Rakibul Hossain</td>
 				
 									</tr>
 									
 									<tr>
 										
-										<td><p>Shipping Address</p></td>
+										<td>Shipping Address</td>
 										<td><input type="text"></td>
 				
 									</tr>
 									<tr>
 										
-										<td><p>Phone No</p></td>
+										<td>Phone No</td>
 										<td>01856353477</td>
 				
 									</tr>
 									<tr>
 										
-									<td colspan="4" style="text-align:center;"><a ><button type="button" class="btn btn-info" >Use Billing Address</button></a></td>
+									<td colspan="4" style="text-align:center;" >
+										<select>
+											<option selected >Use Billing Address</option>	
+											<option >Nikunja-2,H#10, R#10</option>	
+											<option>Nikunja-2,H#10, R#10</option>	
+										</select>
+									
+									</td>
 										
 				
 									</tr>
@@ -497,21 +471,21 @@
 								<p><b>Total Cost Estimation</b></p>
 									<tr>
 										
-										<td><p>Product Cost</p></td>
-										<td><p>$450</p></td>
+									<td>Product Cost</td>
+										<td>$450</td>
 				
 									</tr>
 									
 									<tr>
 										
-										<td><p>Shipping Cost</p></td>
-										<td><p>$50</p></td>
+									<td>Shipping Cost</td>
+										<td>$50</td>
 				
 									</tr>
 									<tr>
 										
-										<td><p>Total</p></td>
-										<td><p>$500</p></td>
+									<td>Total</td>
+										<td>$500</td>
 				
 									</tr>
 									
@@ -543,7 +517,7 @@
 					
 				</div>
 				<div class="modal-footer">
-				<a href="invoices.html"><button type="button" class="btn btn-info" >Confirm</button></a>
+				<a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-info" >Confirm</button></a>
 				</div>
 			</div>
 		</div>
@@ -557,13 +531,13 @@
 	
 	
 	
-	<div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
+				<div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
 					
 					<div class="modal-body" >
 						
-						<table class="table table-striped reg  ">
+						<table class="table table-striped   ">
 							
 							<tbody>
 								<tr>
@@ -592,54 +566,22 @@
 									<td><input type="password"></input></td>
 									
 								</tr>
-							</tbody>
-						</table>
-						
-					</div>
-					<div class="modal-footer">
-						<a href="dashboard.html"><button type="button" class="btn btn-info" >Sign Up</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-			
-			
-			
-			<div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					
-					<div class="modal-body" >
-						
-						<table class="table table-striped reg  ">
-							
-							<tbody>
 								<tr>
-									<th>Name</th>
-									<td> <input type="text"></input></td>
-								</tr>
-								<tr>
-									<th>Email</th>
+									<th>Phone</th>
 									<td><input type="text"></input></td>
 									
 								</tr>
 								<tr>
-									<th>Gender</th>
-									<td> <input type="radio">Male</input>
-										<input type="radio">Feale</input>
-										<input type="radio">Other</input>
-									</td>
-								</tr>
-								<tr>
-									<th>Password</th>
-									<td><input type="password"></input></td>
+									<td colspan="2"><hr></td>
 									
 								</tr>
 								<tr>
-									<th>Retype</th>
-									<td><input type="password"></input></td>
+									
+								<td colspan="2">Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-info" >Log In</button></a> </td>
+									
 									
 								</tr>
+								
 							</tbody>
 						</table>
 						
@@ -659,7 +601,7 @@
 				
 				<div class="modal-body" >
 					
-					<table class="table table-striped reg  ">
+					<table class="table table-striped  ">
 						
 						<tbody>
 							
@@ -674,17 +616,29 @@
 								
 							</tr>
 							
+							<tr>
+								
+								<td colspan="2">
+								<hr>
+								</td>
+								
+							</tr>
+							<tr>
+								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" class="btn btn-info" >Sign Up</button></a> </td>
+								
+							</tr>
+							
 						</tbody>
 					</table>
 					
 				</div>
 				<div class="modal-footer">
-					<a href="dashboard.html"><button type="button" class="btn btn-info" >Log In</button></a>
+					<a href="invoices.html"><button type="button" class="btn btn-info" >Log In</button></a>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>	
+	
 	
 
 <!--modal finished-->
