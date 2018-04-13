@@ -79,3 +79,8 @@
 		{
 			text-align:justify;	
 		}
+
+		.edit+.td
+		{
+			padding-left:400px;
+		}

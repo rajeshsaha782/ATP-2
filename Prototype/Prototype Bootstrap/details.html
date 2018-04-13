@@ -41,7 +41,7 @@
 				<ul class="nav navbar-nav pull-right pull-right1">
 					<li><a  data-toggle="modal" data-target="#signupModal"><span class="glyphicon glyphicon-user" ></span> Sign Up</a></li>
 					<li ><a data-toggle="modal" data-target="#loginmodal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-					<li><a href="shoppingCart"><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(0)</span></a></li>
+					<li><a href="shoppingCart.html"><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(0)</span></a></li>
 				</ul>
 			</div>
 		</nav>
@@ -71,7 +71,7 @@
 							<div class="panel-heading" >
 								<h4 class="panel-title">
 									
-									<a data-parent="#accordion" href="#"><span class="glyphicon glyphicon-home"></span>  Home</a>
+									<a data-parent="#accordion" href="index.html"><span class="glyphicon glyphicon-home"></span>  Home</a>
 								</h4>
 							</div>
 							<div id="" class="panel-collapse collapse">
@@ -242,7 +242,7 @@
 						<div class="container-fluid col-md-3">
 							<a href="details.html"><img class="img-thumbnail img2" src="resources/1.jpg"></a>
 							<div style="text-align:center ;">
-								<p style="font-size: 30px; "><span class="glyphicon glyphicon-thumbs-up"></span>
+								<p style="font-size: 30px;text-align:center; "><span class="glyphicon glyphicon-thumbs-up"></span>
 									&nbsp;
 								<span class="glyphicon glyphicon-thumbs-down"></span></p>
 								
@@ -366,7 +366,7 @@
 									<tr>
 									<td> <img class="img-circle user" src="resources/user.jpg"></td>
 										<td>Rakib</td>
-										<td><input type="text"></input></td>
+										<td><input type="text"></input> <a href="#"><button  class="btn btn-info">Submit</button></a> </td>
 										
 									</tr>
 									
@@ -452,7 +452,89 @@
 			
 			
 			
-			
+			<div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					
+					<div class="modal-body" >
+						
+						<table class="table table-striped reg  ">
+							
+							<tbody>
+								<tr>
+									<th>Name</th>
+									<td> <input type="text"></input></td>
+								</tr>
+								<tr>
+									<th>Email</th>
+									<td><input type="text"></input></td>
+									
+								</tr>
+								<tr>
+									<th>Gender</th>
+									<td> <input type="radio">Male</input>
+										<input type="radio">Feale</input>
+										<input type="radio">Other</input>
+									</td>
+								</tr>
+								<tr>
+									<th>Password</th>
+									<td><input type="password"></input></td>
+									
+								</tr>
+								<tr>
+									<th>Retype</th>
+									<td><input type="password"></input></td>
+									
+								</tr>
+							</tbody>
+						</table>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="dashboard.html"><button type="button" class="btn btn-info" >Sign Up</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+				<div class="modal fade" id="loginmodal" role="dialog" style="padding-top:50px;">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				
+				<div class="modal-body" >
+					
+					<table class="table table-striped reg  ">
+						
+						<tbody>
+							
+							<tr>
+								<th>Email</th>
+								<td><input type="text"></input></td>
+								
+							</tr>
+							<tr>
+								<th>Password</th>
+								<td><input type="password"></input></td>
+								
+							</tr>
+							
+						</tbody>
+					</table>
+					
+				</div>
+				<div class="modal-footer">
+					<a href="dashboard.html"><button type="button" class="btn btn-info" >Log In</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+	
+
+<!--modal finished-->
 			
 			
 			
