@@ -127,6 +127,9 @@
     <Content Include="resources\rakib.jpg" />
     <Content Include="resources\reza.jpg" />
     <Content Include="resources\robi.jpg" />
+    <Content Include="resources\slider1.jpg" />
+    <Content Include="resources\slider2.jpg" />
+    <Content Include="resources\slider3.jpg" />
     <Content Include="resources\tanim.jpg" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

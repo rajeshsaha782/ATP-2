@@ -8,7 +8,13 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="style.css">
-		
+		<link rel="stylesheet" href="src/enlarge.css" />
+		<style>
+			
+			.enlarge_btn {
+				display: none;
+			}
+		</style>
 	</head>
 	
 	<body>
@@ -239,8 +245,19 @@
 						
 						
 						
-						<div class="container-fluid col-md-3">
-							<a href="details.html"><img class="img-thumbnail img2" src="resources/1.jpg"></a>
+						<div class="container-fluid col-md-5">
+							<div class="enlarge_pane_contain">
+								<div class="enlarge_pane">
+									<div class="enlarge">
+										<div class="enlarge_contain">
+											<img src="resources/1.jpg" width="550" height="350" alt="" id="test-img">
+										</div>
+										<a href="resources/1.jpg" class="enlarge_btn" title="Toggle Zoom">Toggle Zoom</a>
+									</div>
+								</div>
+							</div>
+							
+
 							<div style="text-align:center ;">
 								<p style="font-size: 30px;text-align:center; "><span class="glyphicon glyphicon-thumbs-up"></span>
 									&nbsp;
@@ -274,17 +291,13 @@
 									</tr>
 									<tr>
 										<th>Quantity</th>
-										<td><input type="text"></input></td>
-									</tr>
-									<tr>
-									<td><a href="shoppingCart.html"><button  class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</button></a></td>
-										<td><a href="#"><button  class="btn btn-info"><span class="glyphicon glyphicon-pushpin"></span>Add to Favorite</button></a></td>
+										<td><input type="number"></input></td>
 									</tr>
 									
 								</tbody>
 							</table>
 						 	
-						
+						<a href="shoppingCart.html"><button  class="btn btn-info">Add to Cart</button></a>
 							
 							
 							</br>
@@ -428,7 +441,7 @@
 						<h4>My Account</h4>
 						<li><a data-toggle="modal" data-target="#loginmodal" >Personal Information</a></li>
 						<li><a data-toggle="modal" data-target="#loginmodal" >Orders</a></li>
-						<li><a href="reports.html">Reports</a></li>
+						<li><a data-toggle="modal" data-target="#loginmodal" >Reports</a></li>
 						<li><a data-toggle="modal" data-target="#loginmodal" >Shopping Cart</a></li>
 					</ul>
 					
@@ -462,7 +475,7 @@
 					
 					<div class="modal-body" >
 						
-						<table class="table table-striped   ">
+						<table class="table table-striped reg  ">
 							
 							<tbody>
 								<tr>
@@ -491,22 +504,6 @@
 									<td><input type="password"></input></td>
 									
 								</tr>
-								<tr>
-									<th>Phone</th>
-									<td><input type="text"></input></td>
-									
-								</tr>
-								<tr>
-									<td colspan="2"><hr></td>
-									
-								</tr>
-								<tr>
-									
-								<td colspan="2">Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-info" >Log In</button></a> </td>
-									
-									
-								</tr>
-								
 							</tbody>
 						</table>
 						
@@ -526,7 +523,7 @@
 				
 				<div class="modal-body" >
 					
-					<table class="table table-striped  ">
+					<table class="table table-striped reg  ">
 						
 						<tbody>
 							
@@ -541,18 +538,6 @@
 								
 							</tr>
 							
-							<tr>
-								
-								<td colspan="2">
-								<hr>
-								</td>
-								
-							</tr>
-							<tr>
-								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" class="btn btn-info" >Sign Up</button></a> </td>
-								
-							</tr>
-							
 						</tbody>
 					</table>
 					
@@ -563,12 +548,30 @@
 			</div>
 		</div>
 	</div>
+</div>	
 	
 
 <!--modal finished-->
 			
 			
-			
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="src/enlarge.js"></script>
+		<script src="src/enlarge.init.js"></script>
+		<script src="src/init.js"></script>
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>		
 			
 			
 			
