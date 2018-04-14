@@ -237,7 +237,7 @@
 				
 				<!-- Body-->
 				
-				<div class="col-md-9 " style="height:700px;" >
+				<div class="col-md-9 " style="height:750px;" >
 					<div class="container-fluid ">
 						<ol class="breadcrumb">
 						<li><a href="index.html" ><i class="fa fa-dashboard"></i> Home</a></li>
@@ -304,15 +304,28 @@
 										<td><input type="number" value="1"></input></td>
 									</tr>
 									<tr>
-										<td>
-											<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+										<td colspan="2">
+										<p>	<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 											<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 											<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 											<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 											<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
 											
 											
+										</p>	
+										</td>
+									</tr>
+									
+									<tr>
+										<td colspan="2">
 											
+											<p>	
+												<span id="cart" class="glyphicon glyphicon-shopping-cart" style="font-size:30px; padding-left:20px;color:grey" title="Add to Cart"></span>
+							
+												<span id="love" class="glyphicon glyphicon-heart" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
+												
+												<a href="shoppingCart.html"><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>
+											</p>
 										</td>
 									</tr>
 									
@@ -321,12 +334,7 @@
 						 	
 						
 						
-							<span id="cart" class="glyphicon glyphicon-shopping-cart" style="font-size:30px; padding-left:20px;color:grey" title="Add to Cart"></span>
-							&nbsp;&nbsp;&nbsp;&nbsp;
-							<span id="love" class="glyphicon glyphicon-heart" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
-							&nbsp;&nbsp;&nbsp;&nbsp;
 							
-							<a href="shoppingCart.html"><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>
 							</br>
 							</br>
 							
@@ -489,20 +497,13 @@
 				
 				
 			</div>
-			
-			
-			
-			
-			
-			
-			
 			<div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
 					
 					<div class="modal-body" >
 						
-						<table class="table table-striped reg  ">
+						<table class="table table-striped   ">
 							
 							<tbody>
 								<tr>
@@ -531,6 +532,22 @@
 									<td><input type="password"></input></td>
 									
 								</tr>
+								<tr>
+									<th>Phone</th>
+									<td><input type="text"></input></td>
+									
+								</tr>
+								<tr>
+									<td colspan="2"><hr></td>
+									
+								</tr>
+								<tr>
+									
+								<td colspan="2">Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="login" class="btn btn-info" >Log In</button></a> </td>
+									
+									
+								</tr>
+								
 							</tbody>
 						</table>
 						
@@ -550,7 +567,7 @@
 				
 				<div class="modal-body" >
 					
-					<table class="table table-striped reg  ">
+					<table class="table table-striped  ">
 						
 						<tbody>
 							
@@ -565,17 +582,42 @@
 								
 							</tr>
 							
+							<tr>
+								
+								<td colspan="2">
+								<hr>
+								</td>
+								
+							</tr>
+							<tr>
+								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" id="sign" class="btn btn-info" >Sign Up</button></a> </td>
+								
+							</tr>
+							
 						</tbody>
 					</table>
 					
 				</div>
 				<div class="modal-footer">
-					<a href="dashboard.html"><button type="button" class="btn btn-info" >Log In</button></a>
+					<a href="dashboard.html"><button type="button" id="login" class="btn btn-info" >Log In</button></a>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>	
+	<script>
+		$("#login").click(function(){
+				
+				$("#signupModal").hide();
+			
+		});
+		$("#sign").click(function(){
+				
+				$("#loginmodal").hide();
+	
+		});
+	</script>		
+	
 	
 
 <!--modal finished-->

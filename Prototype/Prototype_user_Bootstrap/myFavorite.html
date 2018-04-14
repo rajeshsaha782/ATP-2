@@ -202,7 +202,8 @@
 									<th>Product Image</th>
 									<th>Product Name</th>
 									<th>Product Price</th>
-									<th>Date</th>
+									<th colspan="2">Date</th>
+									
 									
 									
 									
@@ -214,6 +215,7 @@
 									<td>Kakashi t_shirt</td>
 									<td>$500</td>
 									<td>28th October,2018</td>
+									<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
 									
 									
 								</tr>
@@ -222,6 +224,7 @@
 									<td>Kakashi t_shirt</td>
 									<td>$500</td>
 									<td>28th October,2018</td>
+									<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
 									
 									
 								</tr>
@@ -292,7 +295,22 @@
 				
 				
 			</div>
-			
+			<div class="modal fade" id="deleteModal" role="dialog" style="padding-top:50px;">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					
+					<div class="modal-body" >
+						
+						<p>Are you sure, You want to remove?</p>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="myFavorite.html"><button type="button" class="btn btn-danger" >Remove</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		
 	</body>
 	

@@ -79,7 +79,12 @@
 		{
 			text-align:center;	
 		}
-
+		.point{
+				cursor:pointer;
+			}
 		
+		.navbar-inverse{
+		border-radius:0px;
+	  }
 		
 		

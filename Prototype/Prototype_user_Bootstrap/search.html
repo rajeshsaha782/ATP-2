@@ -284,7 +284,7 @@
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
 								</p>
-								<p><a href="shoppingCart.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
+								<p><a href="details.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
 							</div>
 							
 							
@@ -301,7 +301,7 @@
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
 								</p>
-								<p><a href="shoppingCart.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
+								<p><a href="details.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
 							</div>
 							
 							
@@ -318,7 +318,7 @@
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
 								</p>
-								<p><a href="shoppingCart.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
+								<p><a href="details.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
 							</div>
 							
 							
@@ -335,7 +335,7 @@
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
 								</p>
-								<p><a href="shoppingCart.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
+								<p><a href="details.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
 							</div>
 							
 							
@@ -367,7 +367,7 @@
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
 								</p>
-								<p><a href="shoppingCart.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
+								<p><a href="details.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
 							</div>
 							
 							
@@ -384,7 +384,7 @@
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
 								</p>
-								<p><a href="shoppingCart.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
+								<p><a href="details.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
 							</div>
 							
 							
@@ -401,7 +401,7 @@
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
 								</p>
-								<p><a href="shoppingCart.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
+								<p><a href="details.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
 							</div>
 							
 							
@@ -418,7 +418,7 @@
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
 								</p>
-								<p><a href="shoppingCart.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
+								<p><a href="details.html"><button type="button" class="btn btn-info" >Buy</button></a></p>
 							</div>
 							
 							
@@ -493,13 +493,7 @@
 				
 			</div>
 			
-			
-			
-			
-			
-			
-			
-		<div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
+<div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
 					
@@ -545,7 +539,7 @@
 								</tr>
 								<tr>
 									
-								<td colspan="2">Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-info" >Log In</button></a> </td>
+								<td colspan="2">Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="login" class="btn btn-info" >Log In</button></a> </td>
 									
 									
 								</tr>
@@ -592,8 +586,7 @@
 								
 							</tr>
 							<tr>
-								
-								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" class="btn btn-info" >Sign Up</button></a> </td>
+								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" id="sign" class="btn btn-info" >Sign Up</button></a> </td>
 								
 							</tr>
 							
@@ -602,13 +595,24 @@
 					
 				</div>
 				<div class="modal-footer">
-					<a href="dashboard.html"><button type="button" class="btn btn-info" >Log In</button></a>
+					<a href="dashboard.html"><button type="button" id="login" class="btn btn-info" >Log In</button></a>
 				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
+</div>	
+	<script>
+		$("#login").click(function(){
+				
+				$("#signupModal").hide();
 			
-			
+		});
+		$("#sign").click(function(){
+				
+				$("#loginmodal").hide();
+	
+		});
+	</script>	
 			
 			
 			

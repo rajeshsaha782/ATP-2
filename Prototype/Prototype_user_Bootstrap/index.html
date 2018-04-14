@@ -15,6 +15,7 @@
 	  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
 
 	  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+	 
 	</head>
 	
 	<body>
@@ -584,7 +585,7 @@
 								</tr>
 								<tr>
 									
-								<td colspan="2">Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-info" >Log In</button></a> </td>
+								<td colspan="2">Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="login" class="btn btn-info" >Log In</button></a> </td>
 									
 									
 								</tr>
@@ -631,7 +632,7 @@
 								
 							</tr>
 							<tr>
-								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" class="btn btn-info" >Sign Up</button></a> </td>
+								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" id="sign" class="btn btn-info" >Sign Up</button></a> </td>
 								
 							</tr>
 							
@@ -640,13 +641,26 @@
 					
 				</div>
 				<div class="modal-footer">
-					<a href="dashboard.html"><button type="button" class="btn btn-info" >Log In</button></a>
+					<a href="dashboard.html"><button type="button" id="login" class="btn btn-info" >Log In</button></a>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>	
+	<script>
+		$("#login").click(function(){
+				
+				$("#signupModal").hide();
+			
+		});
+		$("#sign").click(function(){
+				
+				$("#loginmodal").hide();
 	
+		});
+		
+		
+	</script>
 
 <!--modal finished-->
 

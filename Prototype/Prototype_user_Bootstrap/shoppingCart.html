@@ -278,7 +278,7 @@
 										<td><input type="number" value="1"></input></</td>
 
 										<td>1</td>
-										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash" title="Remove"></span></a></td>
+										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
 										
 									</tr>
 									<tr>
@@ -289,7 +289,7 @@
 										<td><input type="number" value="1"></input></</td>
 
 										<td>1</td>
-										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash" title="Remove"></span></a></td>
+										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
 										
 									</tr>
 									<tr>
@@ -301,7 +301,7 @@
 										<td><input type="number" value="1"></input></</td>
 
 										<td>1</td>
-										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash" title="Remove"></span></a></td>
+										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
 										
 									</tr>
 									
@@ -540,7 +540,7 @@
 					
 				</div>
 				<div class="modal-footer">
-				<a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-info" >Confirm</button></a>
+				<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="confirm" class="btn btn-info" >Confirm</button></a>
 				</div>
 			</div>
 		</div>
@@ -548,13 +548,7 @@
 	
 	
 	
-	
-	
-	
-	
-	
-	
-				<div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
+	<div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
 					
@@ -600,7 +594,7 @@
 								</tr>
 								<tr>
 									
-								<td colspan="2">Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-info" >Log In</button></a> </td>
+								<td colspan="2">Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="login" class="btn btn-info" >Log In</button></a> </td>
 									
 									
 								</tr>
@@ -647,7 +641,7 @@
 								
 							</tr>
 							<tr>
-								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" class="btn btn-info" >Sign Up</button></a> </td>
+								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" id="sign" class="btn btn-info" >Sign Up</button></a> </td>
 								
 							</tr>
 							
@@ -656,23 +650,29 @@
 					
 				</div>
 				<div class="modal-footer">
-					<a href="invoices.html"><button type="button" class="btn btn-info" >Log In</button></a>
+					<a href="invoices.html"><button type="button" id="login" class="btn btn-info" >Log In</button></a>
 				</div>
 			</div>
 		</div>
-	</div>
+		</div>
+</div>	
+	<script>
+		$("#login").click(function(){
+				
+				$("#signupModal").hide();
+			
+		});
+		$("#sign").click(function(){
+				
+				$("#loginmodal").hide();
 	
+		});
+		$("#confirm").click(function(){
+				
+				$("#confirmmodal").hide();
 	
-
-<!--modal finished-->
-			
-			
-			
-			
-			
-			
-			
-			
+		});
+	</script>	
 			
 			
 		</body>
