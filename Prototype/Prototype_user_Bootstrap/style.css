@@ -148,5 +148,14 @@
 .f-otter ul li:nth-child(4) a:hover .fa{
 	color:#007bb6;
 }
+
+.neon
+	{
+		color:#990000;
+		text-shadow:0 0 20px #4d0000;
 		
+		
+	}
+
+
 		
