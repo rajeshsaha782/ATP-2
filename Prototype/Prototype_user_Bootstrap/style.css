@@ -86,5 +86,67 @@
 		.navbar-inverse{
 		border-radius:0px;
 	  }
+	  
+	 .f-otter
+	 {
+	 margin-left:600px;
+	}
+	  .f-otter ul{
+	display:flex;
+	margin:0;
+	padding;
+	list-style-type:none;
+}
+.f-otter ul a{
+	position:relative;
+	width:60px;
+	height:60px;
+	background:#f1f1f1;
+	display:block;
+	text-align:center;
+	margin:0 10px;
+	border-radius:50%;
+	padding:6px;
+	box-sizing:border-box;
+	text-decoration:none;
+	box-shadow:0 10px 15px rgba(0,0,0,0.3);
+	background:linear-gradient(0deg, #ddd,#fff);
+	transition:.5s;
+}
+.f-otter ul a .fa{
+	width:100%;
+	height:100%;
+	display:block;
+	background:linear-gradient(0deg, #fff,#ddd);
+	border-radius:50%;
+	line-height:calc(60px - 12px);
+	font-size:24px;
+	color:#262626;
+	transition:.5s;
+}
+.f-otter ul a:hover{
+	box-shadow:0 2px 5px rgba(0,0,0,0.3);
+}
+.f-otter h4{
+	font-family: 'Bree Serif', serif;
+	margin-left:0px;
+	color:#FFF;
+	margin-left: 109px;
+	margin-bottom: 10px;
+	
+}
+.f-otter ul li:nth-child(1) a:hover .fa{
+	color:#3b5998;
+}
+
+.f-otter ul li:nth-child(2) a:hover .fa{
+	color:#00aced;
+}
+.f-otter ul li:nth-child(3) a:hover .fa{
+	color:#dd4b39;
+}
+.f-otter ul li:nth-child(4) a:hover .fa{
+	color:#007bb6;
+}
 		
 		
