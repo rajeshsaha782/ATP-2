@@ -13,6 +13,15 @@
 		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
 		<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+		<script>
+		var slider = document.getElementById("myRange");
+		var output = document.getElementById("demo");
+		output.innerHTML = slider.value;
+
+		slider.oninput = function() {
+		  output.innerHTML = this.value;
+		}
+		</script>
 		
 	</head>
 	
@@ -249,9 +258,9 @@
 					
 					
 					
-					<div class="container-fluid well">
+					<div class="container-fluid well ">
 						
-						<div class="dropdown">
+						<div class="dropdown col-md-2">
 						    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Advance Search
 							<span class="caret"></span></button>
 						    <ul class="dropdown-menu">
@@ -262,9 +271,16 @@
 								<li><a href="#">  <span class="glyphicon glyphicon-sort"></span> Sort By Top Sale</a></li>
 							</ul>
 						</div>
+						<div class="col-md-1"><p>Price Range</p></div>
+
+						<div class="slidecontainer col-md-9">
+						 <p>Value: <span id="demo"></span></p>
+						  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
 						
-					</div>	
-					
+						</div>
+						
+						
+					</div>					
 					</br>
 					</br>
 					
@@ -383,6 +399,7 @@
 						<li><a data-toggle="modal" data-target="#loginmodal" >Personal Information</a></li>
 						<li><a data-toggle="modal" data-target="#loginmodal" >Orders</a></li>
 						<li><a href="reports.html">Reports</a></li>
+						<li><a  href="trackProduct.html">Track Product</a></li>
 						<li><a data-toggle="modal" data-target="#loginmodal" >Shopping Cart</a></li>
 					</ul>
 					
