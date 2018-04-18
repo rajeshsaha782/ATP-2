@@ -274,8 +274,8 @@
 											
 											
 											
-										<td style="text-align:center;padding-top:70px;"><p>Current points:<b>5678</b></p>
-											<p>Member Types:<b>Premium</b></p>
+										<td style="text-align:center;padding-top:70px;"><p>Current points:<b style="color:blue">5678</b></p>
+											<p>Member Types:<b style="color:red">Premium</b></p>
 											
 										</td>
 										
@@ -292,9 +292,10 @@
 					</div>	
 					<div class="container-fluid well" style="margin-top:30px">
 						<div>
-							<select>
-								<option>2017</option>
-								<option>2018</option>
+							<select id="year">
+								<option value="2018">2018</option>
+								<option value="2017">2017</option>
+								
 							</select>
 						</div>
 						 <div class="col-md-14" >
@@ -454,7 +455,38 @@
 <script src="Chart.js"></script>
 
 <script>
-    var TotalPurchase = [1128, 1148, 3140, 1119, 1186, 3127, 1190, 2280, 1270, 2230, 2250, 1275];
+
+	/*$( "select" )
+  .change(function () 
+  {
+    alert($("select").val());
+    
+	if($("select").val()==2017)
+	{
+		var TotalPurchase = [1128, 1148, 3140, 1119, 1186, 3127, 1190, 2280, 1270, 2230, 2250, 1275];
+	}
+	else if($("select").val()==2018)
+	{
+		var TotalPurchase = [2128, 2148, 3140, 2119, 1186, 3127, 1190, 2280, 1270, 2230, 2250, 1275];
+	}*/
+	
+   
+  })
+</script>
+
+<script>
+
+
+	if($("select").val()==2017)
+	{
+		var TotalPurchase = [1128, 1148, 3140, 1119, 1186, 3127, 1190, 2280, 1270, 2230, 2250, 1275];
+	}
+	else if($("select").val()==2018)
+	{
+		var TotalPurchase = [2128, 2148, 1140, 2119, 1186, 3127, 1190, 2280, 1270, 2230, 2250, 1275];
+	}
+	
+   // var TotalPurchase = [1128, 1148, 3140, 1119, 1186, 3127, 1190, 2280, 1270, 2230, 2250, 1275];
   $(function () {
 
     var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
