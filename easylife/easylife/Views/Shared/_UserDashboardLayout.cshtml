@@ -28,7 +28,7 @@
 		<nav class="navbar navbar-inverse" data-spy="affix"  >
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href=@Url.Action("index")>Easylife</a>
+					<a class="navbar-brand" href=@Url.Action("index","UserHome")>Easylife</a>
 					
 				</div>
 				
@@ -44,9 +44,9 @@
 					</div>
 				</form>
 				<ul class="nav navbar-nav pull-right pull-right1">
-					<li><a  @Url.Action("dashboard")><span class="glyphicon glyphicon-user" ></span>Rakibul Hossain</a></li>
+					<li class="point"><a href=@Url.Action("Dashboard")><span class="glyphicon glyphicon-user" ></span>Rakibul Hossain</a></li>
 					
-					<li><a @Url.Action("shoppingCart")><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(0)</span></a></li>
+					<li><a href=@Url.Action("shoppingCart")><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(0)</span></a></li>
 				</ul>
 			</div>
 		</nav>
@@ -76,7 +76,7 @@
 							<div class="panel-heading" >
 								<h4 class="panel-title">
 									
-									<a data-parent="#accordion" @Url.Action("dashboard")><span class="glyphicon glyphicon-dashboard"></span> My Dashboard</a>
+									<a class="point" data-parent="#accordion" href=@Url.Action("Dashboard")><span class="glyphicon glyphicon-dashboard"></span> My Dashboard</a>
 								</h4>
 							</div>
 							<div id="" class="panel-collapse collapse">
@@ -161,7 +161,7 @@
 							
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-parent="#accordion" href=@Url.Action("index")>Log Out</a>
+									<a data-parent="#accordion" href=@Url.Action("index","UserHome")>Log Out</a>
 								</h4>
 							</div>
 							
