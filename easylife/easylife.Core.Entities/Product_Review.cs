@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace easylife.Core.Entities
 {
-    public class Address
+    class Product_Review
     {
         [Key]
-        public int Address_id { get; set; }
+        public int Review_id { get; set; }
         public int Member_id { get; set; }
-        public string Member_Address { get; set; }
+        public int Product_id { get; set; }
+        public string Review { get; set; }
+        public DateTime Date { get; set; }
+
     }
 }
