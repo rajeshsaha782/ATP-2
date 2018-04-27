@@ -9,7 +9,6 @@ namespace easylife.Core.Entities
     public class Invoice
     {
         public int    Invoice_id { get; set; }
-        public int    Memeber_id { get; set; }
         public string Date { get; set; }
         public int    id { get; set; }
         public string Payment_Status { get; set; }
