@@ -361,7 +361,7 @@
 		},
 		splineCurve = helpers.splineCurve = function(FirstPoint,MiddlePoint,AfterPoint,t){
 			//Props to Rob Spencer at scaled innovation for his post on splining between points
-			//http://scaledinnovation.com/analytics/splines/aboutSplines.html
+			//http://scaledinnovation.com/analytics/splines/aboutSplines.cscshtml
 			var d01=Math.sqrt(Math.pow(MiddlePoint.x-FirstPoint.x,2)+Math.pow(MiddlePoint.y-FirstPoint.y,2)),
 				d12=Math.sqrt(Math.pow(AfterPoint.x-MiddlePoint.x,2)+Math.pow(AfterPoint.y-MiddlePoint.y,2)),
 				fa=t*d01/(d01+d12),// scaling factor for triangle Ta

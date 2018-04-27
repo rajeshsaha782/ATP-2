@@ -127,7 +127,7 @@
 								<tr>
 									<td>
 									     <button class="button" onclick="confirmm()">Confirm</button>
-										 <a href="Dashboard.html"><button class="button">Cancel</button></a>
+										 <a href="Dashboard.cscshtml"><button class="button">Cancel</button></a>
 									</td>
 									<td>
 								          
@@ -149,12 +149,12 @@ function confirmm() {
     var txt;
     if (confirm("Add This Product?")) {
         alert("Succesful");
-		window.open("Dashboard.html",'_self');
+		window.open("Dashboard.cscshtml",'_self');
 		
     } else {
         txt = "You pressed Cancel!";
     }
-    document.getElementById("demo").innerHTML = txt;
+    document.getElementById("demo").innercshtml = txt;
 }
 </script>
 </body>

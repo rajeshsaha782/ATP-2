@@ -134,7 +134,7 @@ intellisense.annotate(jQuery, {
     ///   <param name="url" type="String">A string containing the URL to which the request is sent.</param>
     ///   <param name="data" type="">A plain object or string that is sent to the server with the request.</param>
     ///   <param name="success(data, textStatus, jqXHR)" type="Function">A callback function that is executed if the request succeeds.</param>
-    ///   <param name="dataType" type="String">The type of data expected from the server. Default: Intelligent Guess (xml, json, script, or html).</param>
+    ///   <param name="dataType" type="String">The type of data expected from the server. Default: Intelligent Guess (xml, json, script, or cshtml).</param>
     ///   <returns type="jqXHR" />
     /// </signature>
   },
@@ -297,12 +297,12 @@ intellisense.annotate(jQuery, {
     ///   <returns type="String" />
     /// </signature>
   },
-  'parseHTML': function() {
+  'parsecshtml': function() {
     /// <signature>
     ///   <summary>Parses a string into an array of DOM nodes.</summary>
-    ///   <param name="data" type="String">HTML string to be parsed</param>
-    ///   <param name="context" type="Element">Document element to serve as the context in which the HTML fragment will be created</param>
-    ///   <param name="keepScripts" type="Boolean">A Boolean indicating whether to include scripts passed in the HTML string</param>
+    ///   <param name="data" type="String">cshtml string to be parsed</param>
+    ///   <param name="context" type="Element">Document element to serve as the context in which the cshtml fragment will be created</param>
+    ///   <param name="keepScripts" type="Boolean">A Boolean indicating whether to include scripts passed in the cshtml string</param>
     ///   <returns type="Array" />
     /// </signature>
   },
@@ -326,7 +326,7 @@ intellisense.annotate(jQuery, {
     ///   <param name="url" type="String">A string containing the URL to which the request is sent.</param>
     ///   <param name="data" type="">A plain object or string that is sent to the server with the request.</param>
     ///   <param name="success(data, textStatus, jqXHR)" type="Function">A callback function that is executed if the request succeeds. Required if dataType is provided, but can be null in that case.</param>
-    ///   <param name="dataType" type="String">The type of data expected from the server. Default: Intelligent Guess (xml, json, script, text, html).</param>
+    ///   <param name="dataType" type="String">The type of data expected from the server. Default: Intelligent Guess (xml, json, script, text, cshtml).</param>
     ///   <returns type="jqXHR" />
     /// </signature>
   },
@@ -722,7 +722,7 @@ intellisense.annotate(jQuery.fn, {
     /// </signature>
     /// <signature>
     ///   <summary>Add elements to the set of matched elements.</summary>
-    ///   <param name="html" type="htmlString">An HTML fragment to add to the set of matched elements.</param>
+    ///   <param name="cshtml" type="cshtmlString">An cshtml fragment to add to the set of matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -759,13 +759,13 @@ intellisense.annotate(jQuery.fn, {
   'after': function() {
     /// <signature>
     ///   <summary>Insert content, specified by the parameter, after each element in the set of matched elements.</summary>
-    ///   <param name="content" type="">HTML string, DOM element, or jQuery object to insert after each element in the set of matched elements.</param>
-    ///   <param name="content" type="">One or more additional DOM elements, arrays of elements, HTML strings, or jQuery objects to insert after each element in the set of matched elements.</param>
+    ///   <param name="content" type="">cshtml string, DOM element, or jQuery object to insert after each element in the set of matched elements.</param>
+    ///   <param name="content" type="">One or more additional DOM elements, arrays of elements, cshtml strings, or jQuery objects to insert after each element in the set of matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Insert content, specified by the parameter, after each element in the set of matched elements.</summary>
-    ///   <param name="function(index)" type="Function">A function that returns an HTML string, DOM element(s), or jQuery object to insert after each element in the set of matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set.</param>
+    ///   <param name="function(index)" type="Function">A function that returns an cshtml string, DOM element(s), or jQuery object to insert after each element in the set of matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -840,20 +840,20 @@ intellisense.annotate(jQuery.fn, {
   'append': function() {
     /// <signature>
     ///   <summary>Insert content, specified by the parameter, to the end of each element in the set of matched elements.</summary>
-    ///   <param name="content" type="">DOM element, HTML string, or jQuery object to insert at the end of each element in the set of matched elements.</param>
-    ///   <param name="content" type="">One or more additional DOM elements, arrays of elements, HTML strings, or jQuery objects to insert at the end of each element in the set of matched elements.</param>
+    ///   <param name="content" type="">DOM element, cshtml string, or jQuery object to insert at the end of each element in the set of matched elements.</param>
+    ///   <param name="content" type="">One or more additional DOM elements, arrays of elements, cshtml strings, or jQuery objects to insert at the end of each element in the set of matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Insert content, specified by the parameter, to the end of each element in the set of matched elements.</summary>
-    ///   <param name="function(index, html)" type="Function">A function that returns an HTML string, DOM element(s), or jQuery object to insert at the end of each element in the set of matched elements. Receives the index position of the element in the set and the old HTML value of the element as arguments. Within the function, this refers to the current element in the set.</param>
+    ///   <param name="function(index, cshtml)" type="Function">A function that returns an cshtml string, DOM element(s), or jQuery object to insert at the end of each element in the set of matched elements. Receives the index position of the element in the set and the old cshtml value of the element as arguments. Within the function, this refers to the current element in the set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
   'appendTo': function() {
     /// <signature>
     ///   <summary>Insert every element in the set of matched elements to the end of the target.</summary>
-    ///   <param name="target" type="">A selector, element, HTML string, or jQuery object; the matched set of elements will be inserted at the end of the element(s) specified by this parameter.</param>
+    ///   <param name="target" type="">A selector, element, cshtml string, or jQuery object; the matched set of elements will be inserted at the end of the element(s) specified by this parameter.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -942,13 +942,13 @@ intellisense.annotate(jQuery.fn, {
   'before': function() {
     /// <signature>
     ///   <summary>Insert content, specified by the parameter, before each element in the set of matched elements.</summary>
-    ///   <param name="content" type="">HTML string, DOM element, or jQuery object to insert before each element in the set of matched elements.</param>
-    ///   <param name="content" type="">One or more additional DOM elements, arrays of elements, HTML strings, or jQuery objects to insert before each element in the set of matched elements.</param>
+    ///   <param name="content" type="">cshtml string, DOM element, or jQuery object to insert before each element in the set of matched elements.</param>
+    ///   <param name="content" type="">One or more additional DOM elements, arrays of elements, cshtml strings, or jQuery objects to insert before each element in the set of matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Insert content, specified by the parameter, before each element in the set of matched elements.</summary>
-    ///   <param name="function" type="Function">A function that returns an HTML string, DOM element(s), or jQuery object to insert before each element in the set of matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set.</param>
+    ///   <param name="function" type="Function">A function that returns an cshtml string, DOM element(s), or jQuery object to insert before each element in the set of matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -1510,15 +1510,15 @@ intellisense.annotate(jQuery.fn, {
     ///   <returns type="jQuery" />
     /// </signature>
   },
-  'html': function() {
+  'cshtml': function() {
     /// <signature>
-    ///   <summary>Set the HTML contents of each element in the set of matched elements.</summary>
-    ///   <param name="htmlString" type="htmlString">A string of HTML to set as the content of each matched element.</param>
+    ///   <summary>Set the cshtml contents of each element in the set of matched elements.</summary>
+    ///   <param name="cshtmlString" type="cshtmlString">A string of cshtml to set as the content of each matched element.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Set the HTML contents of each element in the set of matched elements.</summary>
-    ///   <param name="function(index, oldhtml)" type="Function">A function returning the HTML content to set. Receives the           index position of the element in the set and the old HTML value as arguments.           jQuery empties the element before calling the function;           use the oldhtml argument to reference the previous content.           Within the function, this refers to the current element in the set.</param>
+    ///   <summary>Set the cshtml contents of each element in the set of matched elements.</summary>
+    ///   <param name="function(index, oldcshtml)" type="Function">A function returning the cshtml content to set. Receives the           index position of the element in the set and the old cshtml value as arguments.           jQuery empties the element before calling the function;           use the oldcshtml argument to reference the previous content.           Within the function, this refers to the current element in the set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -1585,14 +1585,14 @@ intellisense.annotate(jQuery.fn, {
   'insertAfter': function() {
     /// <signature>
     ///   <summary>Insert every element in the set of matched elements after the target.</summary>
-    ///   <param name="target" type="">A selector, element, HTML string, or jQuery object; the matched set of elements will be inserted after the element(s) specified by this parameter.</param>
+    ///   <param name="target" type="">A selector, element, cshtml string, or jQuery object; the matched set of elements will be inserted after the element(s) specified by this parameter.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
   'insertBefore': function() {
     /// <signature>
     ///   <summary>Insert every element in the set of matched elements before the target.</summary>
-    ///   <param name="target" type="">A selector, element, HTML string, or jQuery object; the matched set of elements will be inserted before the element(s) specified by this parameter.</param>
+    ///   <param name="target" type="">A selector, element, cshtml string, or jQuery object; the matched set of elements will be inserted before the element(s) specified by this parameter.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -2050,20 +2050,20 @@ intellisense.annotate(jQuery.fn, {
   'prepend': function() {
     /// <signature>
     ///   <summary>Insert content, specified by the parameter, to the beginning of each element in the set of matched elements.</summary>
-    ///   <param name="content" type="">DOM element, array of elements, HTML string, or jQuery object to insert at the beginning of each element in the set of matched elements.</param>
-    ///   <param name="content" type="">One or more additional DOM elements, arrays of elements, HTML strings, or jQuery objects to insert at the beginning of each element in the set of matched elements.</param>
+    ///   <param name="content" type="">DOM element, array of elements, cshtml string, or jQuery object to insert at the beginning of each element in the set of matched elements.</param>
+    ///   <param name="content" type="">One or more additional DOM elements, arrays of elements, cshtml strings, or jQuery objects to insert at the beginning of each element in the set of matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Insert content, specified by the parameter, to the beginning of each element in the set of matched elements.</summary>
-    ///   <param name="function(index, html)" type="Function">A function that returns an HTML string, DOM element(s), or jQuery object to insert at the beginning of each element in the set of matched elements. Receives the index position of the element in the set and the old HTML value of the element as arguments. Within the function, this refers to the current element in the set.</param>
+    ///   <param name="function(index, cshtml)" type="Function">A function that returns an cshtml string, DOM element(s), or jQuery object to insert at the beginning of each element in the set of matched elements. Receives the index position of the element in the set and the old cshtml value of the element as arguments. Within the function, this refers to the current element in the set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
   'prependTo': function() {
     /// <signature>
     ///   <summary>Insert every element in the set of matched elements to the beginning of the target.</summary>
-    ///   <param name="target" type="">A selector, element, HTML string, or jQuery object; the matched set of elements will be inserted at the beginning of the element(s) specified by this parameter.</param>
+    ///   <param name="target" type="">A selector, element, cshtml string, or jQuery object; the matched set of elements will be inserted at the beginning of the element(s) specified by this parameter.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -2215,7 +2215,7 @@ intellisense.annotate(jQuery.fn, {
   'replaceWith': function() {
     /// <signature>
     ///   <summary>Replace each element in the set of matched elements with the provided new content and return the set of elements that was removed.</summary>
-    ///   <param name="newContent" type="">The content to insert. May be an HTML string, DOM element, or jQuery object.</param>
+    ///   <param name="newContent" type="">The content to insert. May be an cshtml string, DOM element, or jQuery object.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -2606,31 +2606,31 @@ intellisense.annotate(jQuery.fn, {
   },
   'wrap': function() {
     /// <signature>
-    ///   <summary>Wrap an HTML structure around each element in the set of matched elements.</summary>
-    ///   <param name="wrappingElement" type="">A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.</param>
+    ///   <summary>Wrap an cshtml structure around each element in the set of matched elements.</summary>
+    ///   <param name="wrappingElement" type="">A selector, element, cshtml string, or jQuery object specifying the structure to wrap around the matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Wrap an HTML structure around each element in the set of matched elements.</summary>
-    ///   <param name="function(index)" type="Function">A callback function returning the HTML content or jQuery object to wrap around the matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set.</param>
+    ///   <summary>Wrap an cshtml structure around each element in the set of matched elements.</summary>
+    ///   <param name="function(index)" type="Function">A callback function returning the cshtml content or jQuery object to wrap around the matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
   'wrapAll': function() {
     /// <signature>
-    ///   <summary>Wrap an HTML structure around all elements in the set of matched elements.</summary>
-    ///   <param name="wrappingElement" type="">A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.</param>
+    ///   <summary>Wrap an cshtml structure around all elements in the set of matched elements.</summary>
+    ///   <param name="wrappingElement" type="">A selector, element, cshtml string, or jQuery object specifying the structure to wrap around the matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
   'wrapInner': function() {
     /// <signature>
-    ///   <summary>Wrap an HTML structure around the content of each element in the set of matched elements.</summary>
-    ///   <param name="wrappingElement" type="String">An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the content of the matched elements.</param>
+    ///   <summary>Wrap an cshtml structure around the content of each element in the set of matched elements.</summary>
+    ///   <param name="wrappingElement" type="String">An cshtml snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the content of the matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Wrap an HTML structure around the content of each element in the set of matched elements.</summary>
+    ///   <summary>Wrap an cshtml structure around the content of each element in the set of matched elements.</summary>
     ///   <param name="function(index)" type="Function">A callback function which generates a structure to wrap around the content of the matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set.</param>
     ///   <returns type="jQuery" />
     /// </signature>

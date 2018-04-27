@@ -1,0 +1,169 @@
+<div class="container-fluid ">
+						<ol class="breadcrumb">
+						<li><a href=@Url.Action("index") ><i ></i> Home</a></li>
+						<li><a href=@Url.Action("search") ><i ></i>Search</a></li>
+						<li><a  href=@Url.Action("details")><i ></i>Details</a></li>
+						<li><a  href=@Url.Action("shoppingCart")><i ></i>Shopping Cart</a></li>
+						<li><a  class="active"><i ></i>Confirm Order</a></li>
+						
+						</ol>
+					</div>
+					
+					
+					
+					<div class="container-fluid ">
+						
+						
+						
+						
+						<table class="table table-striped ">
+							
+							<tbody>
+							
+							<tr>
+								<table class="table table-striped ">
+								
+								<tbody>
+								<p><b>Shipment</b></p>
+									<tr>
+										
+									<td>Name</td>
+										<td>Rakibul Hossain</td>
+				
+									</tr>
+									
+									<tr>
+										
+										<td>Shipping Address</td>
+										<td><textarea rows="5" >Nikunja-2, H#10, r#10</textarea></td>
+				
+									</tr>
+									<tr>
+										
+										<td>Phone No</td>
+										<td>01856353477</td>
+				
+									</tr>
+									<tr>
+										
+									<td colspan="4" style="text-align:center;" >
+										<select>
+											<option selected >Use Billing Address</option>	
+											<option >Nikunja-2,H#10, R#10</option>	
+											<option>Nikunja-2,H#10, R#10</option>	
+										</select>
+									
+									</td>
+										
+				
+									</tr>
+									
+								</tbody>
+							</table>
+							
+								
+							</tr>
+							<tr>
+								<table class="table table-striped ">
+								
+								<tbody>
+								<p><b>Total Cost Estimation</b></p>
+									<tr>
+										
+									<td>Product Cost</td>
+										<td>$450</td>
+				
+									</tr>
+									
+									<tr>
+										
+									<td>Shipping Cost</td>
+										<td>$50</td>
+				
+									</tr>
+									<tr>
+										
+									<td>Total</td>
+										<td>$500</td>
+				
+									</tr>
+									
+										
+								</tbody>
+							</table>
+								
+							</tr>
+							
+							<tr>
+								<table class="table table-striped ">
+								
+								<tbody>
+								<p><b>Payment Method</b></p>
+									<tr>
+										
+										<td><input type="radio"><span><img class="img-circle user" src="~/resources/bkash.jpg"> </span> b-Kash</input> <span><img class="img-circle user" src="~/resources/cash.jpg"> </span><input type="radio">Cash On delivery</input></td>
+										<td>Use coupon Code : <input type="text"></input></td>
+				
+									</tr>
+									
+									
+								</tbody>
+							</table>
+							</tr>
+							<tr>
+										<td colspan="3"><p><a a data-toggle="modal" data-target="#loginmodal_cart"><button type="button" class="btn btn-info" >Confirm</button></a></p></td>
+										
+										
+										
+							</tr>
+							
+						</tbody>
+						</table>					
+					</div>
+					
+	<div class="row">
+
+		<div class="modal fade" id="loginmodal_cart" role="dialog" style="padding-top:50px;">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				
+				<div class="modal-body" >
+					
+					<table class="table table-striped  ">
+						
+						<tbody>
+							
+							<tr>
+								<th>Email</th>
+								<td><input type="text"></input></td>
+								
+							</tr>
+							<tr>
+								<th>Password</th>
+								<td><input type="password"></input></td>
+								
+							</tr>
+							
+							<tr>
+								
+								<td colspan="2">
+								<hr>
+								</td>
+								
+							</tr>
+							<tr>
+								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" id="sign" class="btn btn-info" >Sign Up</button></a> </td>
+								
+							</tr>
+							
+						</tbody>
+					</table>
+					
+				</div>
+				<div class="modal-footer">
+					<a href=@Url.Action("invoices")><button type="button" id="login" class="btn btn-info" >Log In</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>					

@@ -105,6 +105,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\UserDashboardController.cs" />
+    <Compile Include="Controllers\UserHomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -118,10 +120,35 @@
     <Content Include="resources\1.jpg" />
     <Content Include="resources\2.jpg" />
     <Content Include="resources\3.jpg" />
+    <Content Include="resources\apex.jpg" />
+    <Content Include="resources\arong.jpg" />
     <Content Include="resources\back.jpg" />
+    <Content Include="resources\bata.jpg" />
+    <Content Include="resources\bkash.jpg" />
+    <Content Include="resources\bronze.jpg" />
+    <Content Include="resources\cap6.jpg" />
+    <Content Include="resources\cash.jpg" />
+    <Content Include="resources\digital watch.jpg" />
+    <Content Include="resources\Dupatta.jpg" />
     <Content Include="resources\e.jpg" />
+    <Content Include="resources\easy.jpg" />
+    <Content Include="resources\ectasy.jpg" />
     <Content Include="resources\efti.jpg" />
+    <Content Include="resources\emporio watch.jpg" />
+    <Content Include="resources\er2.jpg" />
+    <Content Include="resources\er33.jpg" />
+    <Content Include="resources\er4.jpg" />
+    <Content Include="resources\eri.jpg" />
+    <Content Include="resources\f1.jpg" />
+    <Content Include="resources\f2.jpg" />
+    <Content Include="resources\fasttrack sunglass.jpg" />
+    <Content Include="resources\gks1.jpg" />
+    <Content Include="resources\gks2.jpg" />
+    <Content Include="resources\gold.jpg" />
+    <Content Include="resources\kameez.jpg" />
     <Content Include="resources\m.jpg" />
+    <Content Include="resources\Panjabi.jpg" />
+    <Content Include="resources\platinum.jpg" />
     <Content Include="resources\product.jpg" />
     <Content Include="resources\rajesh.jpg" />
     <Content Include="resources\rakib.jpg" />
@@ -130,8 +157,17 @@
     <Content Include="resources\slider1.jpg" />
     <Content Include="resources\slider2.jpg" />
     <Content Include="resources\slider3.jpg" />
+    <Content Include="resources\slider4.jpg" />
+    <Content Include="resources\slider5.jpg" />
+    <Content Include="resources\slider6.jpg" />
     <Content Include="resources\tanim.jpg" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="resources\u1.jpg" />
+    <Content Include="resources\u2.jpg" />
+    <Content Include="resources\user.jpg" />
+    <Content Include="resources\w1.jpg" />
+    <Content Include="resources\yellow.jpg" />
+    <Content Include="Scripts\easyzoom.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -140,11 +176,13 @@
     <Content Include="Styles\adminlte.min.js" />
     <Content Include="Styles\bootstrap.min.css" />
     <Content Include="Styles\Chart.js" />
+    <Content Include="Styles\easyzoom.css" />
     <Content Include="Styles\graph.css" />
     <Content Include="Styles\jquery.min.js" />
     <Content Include="Styles\loader.js" />
     <Content Include="Styles\skin-blue.min.css" />
     <Content Include="Styles\Style.css" />
+    <Content Include="Styles\Style_user.css" />
     <Content Include="Styles\table.css" />
     <Content Include="Styles\w3.css" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
@@ -155,6 +193,24 @@
     <Content Include="Views\Admin\Add_Product.cshtml" />
     <None Include="Views\Admin\Edit_Profile_Admin.cshtml" />
     <None Include="Views\Admin\Update_Slider.cshtml" />
+    <Content Include="Views\Shared\_UserHomeLayout.cshtml" />
+    <None Include="Views\UserDashboard\changepass.cshtml" />
+    <None Include="Views\UserDashboard\edit.cshtml" />
+    <None Include="Views\UserDashboard\invoices.cshtml" />
+    <None Include="Views\UserDashboard\manageAddress.cshtml" />
+    <None Include="Views\UserDashboard\myCoupon.cshtml" />
+    <None Include="Views\UserDashboard\myFavorite.cshtml" />
+    <None Include="Views\UserDashboard\myOrders.cshtml" />
+    <None Include="Views\UserDashboard\myReports.cshtml" />
+    <None Include="Views\UserDashboard\myReviews.cshtml" />
+    <None Include="Views\UserHome\catagory.cshtml" />
+    <None Include="Views\UserHome\confirmOrder.cshtml" />
+    <None Include="Views\UserHome\details.cshtml" />
+    <Content Include="Views\UserHome\invoices.cshtml" />
+    <None Include="Views\UserHome\reports.cshtml" />
+    <None Include="Views\UserHome\search.cshtml" />
+    <None Include="Views\UserHome\shoppingCart.cshtml" />
+    <None Include="Views\UserHome\trackProduct.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -174,6 +230,12 @@
     <Content Include="Views\Admin\View_Stock.cshtml" />
     <Content Include="Views\Admin\_ViewStart.cshtml" />
     <Content Include="Views\Admin\View_Invoice.cshtml" />
+    <Content Include="Views\Shared\_UserDashboardLayout.cshtml" />
+    <Content Include="Views\UserDashboard\Dashboard.cshtml" />
+    <Content Include="Views\UserDashboard\info.cshtml" />
+    <Content Include="Views\UserDashboard\_ViewStart.cshtml" />
+    <Content Include="Views\UserHome\Index.cshtml" />
+    <Content Include="Views\UserHome\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
