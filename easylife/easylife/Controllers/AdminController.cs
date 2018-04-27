@@ -21,6 +21,10 @@ namespace easylife.Controllers
         {
             return View();
         }
+        public ActionResult View_Profile_User()
+        {
+            return View();
+        }
         public ActionResult Change_Password()
         {
             return View();

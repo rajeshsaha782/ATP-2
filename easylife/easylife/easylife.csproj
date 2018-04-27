@@ -172,10 +172,12 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
     <Content Include="Styles\AdminLTE.min.css" />
     <Content Include="Styles\adminlte.min.js" />
     <Content Include="Styles\bootstrap.min.css" />
     <Content Include="Styles\Chart.js" />
+    <Content Include="Styles\dataTables.bootstrap.min.css" />
     <Content Include="Styles\easyzoom.css" />
     <Content Include="Styles\graph.css" />
     <Content Include="Styles\jquery.min.js" />
@@ -193,6 +195,7 @@
     <Content Include="Views\Admin\Add_Product.cshtml" />
     <None Include="Views\Admin\Edit_Profile_Admin.cshtml" />
     <None Include="Views\Admin\Update_Slider.cshtml" />
+    <None Include="Views\Admin\View_Profile_User.cshtml" />
     <Content Include="Views\Shared\_UserHomeLayout.cshtml" />
     <None Include="Views\UserDashboard\changepass.cshtml" />
     <None Include="Views\UserDashboard\edit.cshtml" />

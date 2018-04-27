@@ -1,10 +1,11 @@
-﻿@{
-    ViewBag.Title = "View_Profile_Admin";
-}
+<meta name="viewport" content="width=device=width,
+		initial-scalw=1,user-scalable=no">
+
+
 <style>
 .w3-animate-bottom{overflow: scroll;
     overflow-x: hidden;
-	position:relative;animation:animatebottom 0.4s}keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+	position:relative;animation:animatebottom 0.4s} keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
 	
 	::-webkit-scrollbar {
     width: 0px; 
@@ -12,7 +13,7 @@
 }
 </style>		
 <body class="w3-light-grey w3-animate-bottom ">
-	<div class="invoice" style="width:800px;background-color:skyblue" >
+	<div class="invoice" style="width:800px;background-color:transparent"">
 		
 			
 				
@@ -65,8 +66,8 @@
 							</tr>
 							<tr>
 							
-								<th>Position:</th>
-								<td>Admin</td>
+								<th>Address:</th>
+								<td>22/11,Barabagh,Mirpur-2</td>
 							
 							</tr>
 							<tr>
@@ -76,8 +77,9 @@
 							
 							</tr>
 							
-							<tr colspan="2">
-							<td><a href="Edit_Profile_Admin.cshtml"><button class="button">Edit</button></a>
+							<tr>
+							<td><a href="Edit_Profile_User.html"><button class="button">Edit</button></a>
+							<td><button class="button" onclick="confirmm()">Delete</button></td>
 							</tr>
 							
 							
@@ -104,4 +106,18 @@
 				   
 				   
 		</div>
+		
+				<script>
+function confirmm() {
+    var txt;
+    if (confirm("Delete this account?")) {
+        alert("Succesful");
+		window.open("View_Users.html",'_self');
+		
+    } else {
+        txt = "You pressed Cancel!";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
 </body>
