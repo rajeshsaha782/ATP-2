@@ -573,7 +573,7 @@ var i,
 	// http://www.w3.org/TR/css3-selectors/#whitespace
 	whitespace = "[\\x20\\t\\r\\n\\f]",
 
-	// http://www.w3.org/TR/CSS21/syndata.cscshtml#value-def-identifier
+	// http://www.w3.org/TR/CSS21/syndata.cshtml#value-def-identifier
 	identifier = "(?:\\\\.|[\\w-]|[^\0-\\xa0])+",
 
 	// Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
@@ -633,7 +633,7 @@ var i,
 	rsibling = /[+~]/,
 
 	// CSS escapes
-	// http://www.w3.org/TR/CSS21/syndata.cscshtml#escaped-characters
+	// http://www.w3.org/TR/CSS21/syndata.cshtml#escaped-characters
 	runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
 	funescape = function( _, escaped, escapedWhitespace ) {
 		var high = "0x" + escaped - 0x10000;
@@ -969,16 +969,16 @@ function createDisabledPseudo( disabled ) {
 	return function( elem ) {
 
 		// Only certain elements can match :enabled or :disabled
-		// https://cshtml.spec.whatwg.org/multipage/scripting.cscshtml#selector-enabled
-		// https://cshtml.spec.whatwg.org/multipage/scripting.cscshtml#selector-disabled
+		// https://cshtml.spec.whatwg.org/multipage/scripting.cshtml#selector-enabled
+		// https://cshtml.spec.whatwg.org/multipage/scripting.cshtml#selector-disabled
 		if ( "form" in elem ) {
 
 			// Check for inherited disabledness on relevant non-disabled elements:
 			// * listed form-associated elements in a disabled fieldset
-			//   https://cshtml.spec.whatwg.org/multipage/forms.cscshtml#category-listed
-			//   https://cshtml.spec.whatwg.org/multipage/forms.cscshtml#concept-fe-disabled
+			//   https://cshtml.spec.whatwg.org/multipage/forms.cshtml#category-listed
+			//   https://cshtml.spec.whatwg.org/multipage/forms.cshtml#concept-fe-disabled
 			// * option elements in a disabled optgroup
-			//   https://cshtml.spec.whatwg.org/multipage/forms.cscshtml#concept-option-disabled
+			//   https://cshtml.spec.whatwg.org/multipage/forms.cshtml#concept-option-disabled
 			// All such elements have a "form" property.
 			if ( elem.parentNode && elem.disabled === false ) {
 
@@ -4770,7 +4770,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 				// Deserialize a standard representation
 				tag = ( rtagName.exec( elem ) || [ "", "" ] )[ 1 ].toLowerCase();
 				wrap = wrapMap[ tag ] || wrapMap._default;
-				tmp.innercshtml = wrap[ 1 ] + jQuery.cscshtmlPrefilter( elem ) + wrap[ 2 ];
+				tmp.innercshtml = wrap[ 1 ] + jQuery.cshtmlPrefilter( elem ) + wrap[ 2 ];
 
 				// Descend through wrappers to the right content
 				j = wrap[ 0 ];
@@ -5405,7 +5405,7 @@ jQuery.Event = function( src, props ) {
 };
 
 // jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
-// https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.cscshtml
+// https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.cshtml
 jQuery.Event.prototype = {
 	constructor: jQuery.Event,
 	isDefaultPrevented: returnFalse,
@@ -5699,7 +5699,7 @@ function domManip( collection, args, callback, ignored ) {
 		return collection.each( function( index ) {
 			var self = collection.eq( index );
 			if ( valueIsFunction ) {
-				args[ 0 ] = value.call( this, index, self.cscshtml() );
+				args[ 0 ] = value.call( this, index, self.cshtml() );
 			}
 			domManip( self, args, callback, ignored );
 		} );
@@ -5969,7 +5969,7 @@ jQuery.fn.extend( {
 			if ( typeof value === "string" && !rnoInnercshtml.test( value ) &&
 				!wrapMap[ ( rtagName.exec( value ) || [ "", "" ] )[ 1 ].toLowerCase() ] ) {
 
-				value = jQuery.cscshtmlPrefilter( value );
+				value = jQuery.cshtmlPrefilter( value );
 
 				try {
 					for ( ; i < l; i++ ) {
@@ -6801,7 +6801,7 @@ jQuery.extend( {
 			i = 0,
 
 			// Attribute names can contain non-cshtml whitespace characters
-			// https://cshtml.spec.whatwg.org/multipage/syntax.cscshtml#attributes-2
+			// https://cshtml.spec.whatwg.org/multipage/syntax.cshtml#attributes-2
 			attrNames = value && value.match( rnotcshtmlwhite );
 
 		if ( attrNames && elem.nodeType === 1 ) {
