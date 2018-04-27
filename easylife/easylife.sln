@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "easylife.Core.Service.Inter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "easylife.Infrastructure", "easylife.Infrastructure\easylife.Infrastructure.csproj", "{C706FD0C-65D6-4C1C-BDC5-12719CE56A48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{E9D90B68-60CB-48D1-866C-C83554A23DE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{C706FD0C-65D6-4C1C-BDC5-12719CE56A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C706FD0C-65D6-4C1C-BDC5-12719CE56A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C706FD0C-65D6-4C1C-BDC5-12719CE56A48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9D90B68-60CB-48D1-866C-C83554A23DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9D90B68-60CB-48D1-866C-C83554A23DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9D90B68-60CB-48D1-866C-C83554A23DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9D90B68-60CB-48D1-866C-C83554A23DE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

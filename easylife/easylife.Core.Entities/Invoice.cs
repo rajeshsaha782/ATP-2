@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
 namespace easylife.Core.Entities
 {
     public class Invoice
     {
+        [Key]
         public int    Invoice_id { get; set; }
         public int    Memeber_id { get; set; }
         public string Date { get; set; }
