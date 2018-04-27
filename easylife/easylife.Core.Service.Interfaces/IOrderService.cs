@@ -14,5 +14,9 @@ namespace easylife.Core.Service.Interfaces
         bool Insert(Order order);
         bool Update(Order order);
         bool Delete(int Order_id);
+
+        IEnumerable<Order> GetByInvoiceId(int Invoice_id);
+        IEnumerable<Order> GetByProductId(int Product_id);
+        
     }
 }

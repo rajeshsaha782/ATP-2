@@ -14,5 +14,9 @@ namespace easylife.Core.Service.Interfaces
         bool Insert(UserFavorite userfavorite);
         bool Update(UserFavorite userfavorite);
         bool Delete(int UserFavorite_id);
+
+        IEnumerable<UserFavorite> GetByMemberId(int Member_id);
+        IEnumerable<UserFavorite> GetByProductId(int Product_id);
+        
     }
 }

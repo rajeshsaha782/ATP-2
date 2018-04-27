@@ -14,5 +14,13 @@ namespace easylife.Core.Service.Interfaces
         bool Insert(Report report);
         bool Update(Report report);
         bool Delete(int Report_id);
+
+        IEnumerable<Report> GetByMemberId(int Member_id);
+        IEnumerable<Report> GetByTitle(string Title);
+        IEnumerable<Report> GetByDate(DateTime Date);
+        IEnumerable<Report> GetBySeenStatus();
+        IEnumerable<Report> GetByUnseenStatus();
+        bool SetSeen(int Report_id);
+        
     }
 }

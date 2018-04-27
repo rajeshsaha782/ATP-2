@@ -14,5 +14,10 @@ namespace easylife.Core.Service.Interfaces
         bool Insert(Search_History history);
         bool Update(Search_History history);
         bool Delete(int Search_id);
+
+        IEnumerable<Search_History> GetByMemberId(int Member_id);
+        IEnumerable<Search_History> GetByProductId(int Product_id);
+        IEnumerable<Search_History> GetByCategory(string Category);
+        
     }
 }

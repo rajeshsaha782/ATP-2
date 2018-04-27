@@ -14,5 +14,9 @@ namespace easylife.Core.Service.Interfaces
         bool Insert(Product_Review review);
         bool Update(Product_Review review);
         bool Delete(int Review_id);
+
+        IEnumerable<Product_Review> GetByMemberId(int Member_id);
+        IEnumerable<Product_Review> GetByProductId(int Product_id);
+        
     }
 }

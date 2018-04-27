@@ -14,5 +14,19 @@ namespace easylife.Core.Service.Interfaces
         bool Insert(Member member);
         bool Update(Member member);
         bool Delete(int Member_id);
+
+
+        IEnumerable<Member> GetByEmail(string Email);
+        IEnumerable<Member> GetByName(string Name);
+        IEnumerable<Member> GetByType(string Type);
+        IEnumerable<Member> GetByStatus(string Status);
+
+        //bool IncreasePoint(int Member_id);    //need point attribute for member
+        //bool DecreasePoint(int Member_id);
+
+
+
+
+
     }
 }
