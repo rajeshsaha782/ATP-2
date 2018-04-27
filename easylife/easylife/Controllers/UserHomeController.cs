@@ -13,6 +13,10 @@ namespace easylife.Controllers
         {
             return View();
         }
+        public ActionResult brand()
+        {
+            return View();
+        }
         public ActionResult catagory()
         {
             return View();

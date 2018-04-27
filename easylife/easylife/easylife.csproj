@@ -205,6 +205,7 @@
     <None Include="Views\UserDashboard\myReviews.cshtml" />
     <None Include="Views\UserHome\catagory.cshtml" />
     <None Include="Views\UserHome\confirmOrder.cshtml" />
+    <Content Include="Views\UserHome\brand.cshtml" />
     <None Include="Views\UserHome\details.cshtml" />
     <Content Include="Views\UserHome\invoices.cshtml" />
     <None Include="Views\UserHome\reports.cshtml" />
