@@ -13,6 +13,7 @@ namespace easylife.Core.Entities
         public int Coupon_id { get; set; }
         public int Member_id { get; set; }
         public int Percentage { get; set; }
+        public string Availability { get; set; }
         public DateTime Issue_Date { get; set; }
         public DateTime Deadline_Date { get; set; }
 

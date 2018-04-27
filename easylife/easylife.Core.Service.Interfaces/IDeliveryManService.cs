@@ -14,5 +14,10 @@ namespace easylife.Core.Service.Interfaces
         bool Insert(Delivery_Man delivery_Man);
         bool Update(Delivery_Man delivery_Man);
         bool Delete(int Delivery_Man_id);
+
+        IEnumerable<Delivery_Man> GetByMember(int Member_id);
+        IEnumerable<Delivery_Man> GetByAvailability();
+        IEnumerable<Delivery_Man> GetByUnavailability();
+
     }
 }

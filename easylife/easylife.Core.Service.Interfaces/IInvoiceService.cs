@@ -14,5 +14,11 @@ namespace easylife.Core.Service.Interfaces
         bool Insert(Invoice invoice);
         bool Update(Invoice invoice);
         bool Delete(int Invoice_id);
+
+        IEnumerable<Invoice> GetByMember(int Member_id);
+        IEnumerable<Invoice> GetByPaid();
+        IEnumerable<Invoice> GetByUnpaid();
+        IEnumerable<Invoice> GetByDate(DateTime Date);
+
     }
 }

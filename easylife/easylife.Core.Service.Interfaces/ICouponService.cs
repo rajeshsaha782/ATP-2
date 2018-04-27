@@ -14,5 +14,11 @@ namespace easylife.Core.Service.Interfaces
         bool Insert(Coupon coupon);
         bool Update(Coupon coupon);
         bool Delete(int Coupon_id);
+
+
+        IEnumerable<Coupon> GetByMember(int Member_id);
+        bool isAvailable(int Coupon_id);
+        bool DeleteByMember(int Member_id);
+
     }
 }
