@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace easylife.Core.Entities
 {
-    class Delivery_Man
+   public class Delivery_Man
     {
         [Key]
         public int Delivery_Man_id { get; set; }

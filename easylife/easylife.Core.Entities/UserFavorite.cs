@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace easylife.Core.Entities
 {
-    public class UserFavorites
+    public class UserFavorite
     {
         [Key]
-        public int UserFavorites_id { get; set; }
+        public int UserFavorite_id { get; set; }
         public int Product_id { get; set; }
         public int Memeber_id { get; set; }
         public string Date { get; set; }

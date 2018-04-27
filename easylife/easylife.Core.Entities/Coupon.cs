@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace easylife.Core.Entities
 {
-    class Coupon
+    public class Coupon
     {
         [Key]
         public int Coupon_id { get; set; }

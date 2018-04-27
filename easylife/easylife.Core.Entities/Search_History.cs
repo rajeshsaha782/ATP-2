@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace easylife.Core.Entities
 {
-    class Search_History
+   public class Search_History
     {
         [Key]
         public int Search_id { get; set; }
