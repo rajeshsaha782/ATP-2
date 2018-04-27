@@ -1,0 +1,5 @@
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service\bin\Debug\easylife.Core.Service.dll
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service\bin\Debug\easylife.Core.Service.pdb
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service\obj\Debug\easylife.Core.Service.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service\obj\Debug\easylife.Core.Service.dll
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service\obj\Debug\easylife.Core.Service.pdb

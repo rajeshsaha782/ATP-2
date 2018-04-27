@@ -39,8 +39,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="IAddressService.cs" />
+    <Compile Include="ICouponService.cs" />
+    <Compile Include="IDeliveryManService.cs" />
+    <Compile Include="IInvoiceService.cs" />
+    <Compile Include="IMemberService.cs" />
+    <Compile Include="IOrderService.cs" />
+    <Compile Include="IProductReviewService.cs" />
+    <Compile Include="IProductService.cs" />
+    <Compile Include="IReportService.cs" />
+    <Compile Include="ISearchHistoryService.cs" />
+    <Compile Include="IUserFavoriteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\easylife.Core.Entities\easylife.Core.Entities.csproj">
+      <Project>{ea25d295-de6c-4156-bdc6-74135edee6a6}</Project>
+      <Name>easylife.Core.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
