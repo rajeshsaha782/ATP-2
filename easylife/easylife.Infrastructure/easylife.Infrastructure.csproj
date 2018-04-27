@@ -60,6 +60,14 @@
       <Project>{ea25d295-de6c-4156-bdc6-74135edee6a6}</Project>
       <Name>easylife.Core.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\easylife.Core.Service.Interfaces\easylife.Core.Service.Interfaces.csproj">
+      <Project>{d63c8b93-e607-4a9e-8fec-6e6a80544975}</Project>
+      <Name>easylife.Core.Service.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\easylife.Core.Service\easylife.Core.Service.csproj">
+      <Project>{4d075f36-78eb-49e7-931d-5532950e533e}</Project>
+      <Name>easylife.Core.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
