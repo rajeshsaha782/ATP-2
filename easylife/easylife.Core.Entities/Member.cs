@@ -20,6 +20,6 @@ namespace easylife.Core.Entities
         public string Memeber_Since { get; set; }
         public string Last_Logged_In { get; set; }
         public float  Total_Purchase { get; set; }
-        //ponit?
+        public int Point { set; get; }
     }
 }
