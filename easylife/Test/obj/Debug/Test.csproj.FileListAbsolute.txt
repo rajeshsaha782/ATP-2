@@ -1,0 +1,14 @@
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\bin\Debug\Test.exe.config
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\bin\Debug\Test.exe
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\bin\Debug\Test.pdb
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\bin\Debug\easylife.Infrastructure.dll
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\bin\Debug\EntityFramework.dll
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\bin\Debug\easylife.Core.Entities.dll
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\bin\Debug\easylife.Infrastructure.pdb
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\bin\Debug\EntityFramework.xml
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\bin\Debug\easylife.Core.Entities.pdb
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\obj\Debug\Test.exe
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\obj\Debug\Test.pdb
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\bin\Debug\EntityFramework.SqlServer.dll
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Test\bin\Debug\EntityFramework.SqlServer.xml
