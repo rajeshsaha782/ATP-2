@@ -146,6 +146,8 @@
     <Content Include="resources\gks2.jpg" />
     <Content Include="resources\gold.jpg" />
     <Content Include="resources\kameez.jpg" />
+    <Content Include="resources\logo.ico" />
+    <Content Include="resources\logo.jpg" />
     <Content Include="resources\m.jpg" />
     <Content Include="resources\Panjabi.jpg" />
     <Content Include="resources\platinum.jpg" />
