@@ -31,7 +31,8 @@ namespace Test
             Member m = new Member();
             m.Email = "r@gmail.com";
             m.Name = "rajesh";
-
+            m.Memeber_Since = DateTime.Now;
+            m.Last_Logged_In = DateTime.Now;
             e.Members.Add(m);
             e.SaveChanges();
 

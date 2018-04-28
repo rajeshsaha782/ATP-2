@@ -20,8 +20,8 @@ namespace easylife.Core.Entities
         public string Sub_Category { get; set; }
         public string Brand { get; set; }
         public int    Size { get; set; }
-        public string Date { get; set; }
-        public int    Last_Sold { get; set; }
+        public DateTime Date { get; set; }
+        public DateTime Last_Sold { get; set; }
         public float  Total_Sell { get; set; }
         public int    Total_Viewed { get; set; }
         public float Star { get; set; }//Star= (Like*5)/(like+dislike)

@@ -11,7 +11,7 @@ namespace easylife.Core.Entities
     {
         [Key]
         public int Invoice_id { get; set; }
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
         public int    id { get; set; }
         public string Payment_Status { get; set; }
         public string Payment_Method { get; set; }

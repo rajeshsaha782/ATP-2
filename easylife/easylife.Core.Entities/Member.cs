@@ -17,8 +17,8 @@ namespace easylife.Core.Entities
         public string Phone_Number { get; set; }
         public string Type { get; set; }
         public string Status { get; set; }
-        public string Memeber_Since { get; set; }
-        public string Last_Logged_In { get; set; }
+        public DateTime Memeber_Since { get; set; }
+        public DateTime Last_Logged_In { get; set; }
         public float  Total_Purchase { get; set; }
         public int Point { set; get; }
     }

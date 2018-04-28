@@ -13,6 +13,6 @@ namespace easylife.Core.Entities
         public int UserFavorite_id { get; set; }
         public int Product_id { get; set; }
         public int Memeber_id { get; set; }
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
     }
 }
