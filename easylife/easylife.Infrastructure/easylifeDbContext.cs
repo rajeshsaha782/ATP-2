@@ -10,6 +10,9 @@ namespace easylife.Infrastructure
 {
     public class easylifeDbContext : DbContext
     {
+        public easylifeDbContext():base("easylifeDBContext")
+        {
+        }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Coupon> Coupons { get; set; }
         public DbSet<Delivery_Man> Delivery_Mans { get; set; }

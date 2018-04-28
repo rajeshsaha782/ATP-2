@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,14 +48,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="UserFavouriteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\easylife.Core.Entities\easylife.Core.Entities.csproj">
+      <Project>{ea25d295-de6c-4156-bdc6-74135edee6a6}</Project>
+      <Name>easylife.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\easylife.Core.Service.Interfaces\easylife.Core.Service.Interfaces.csproj">
+      <Project>{D63C8B93-E607-4A9E-8FEC-6E6A80544975}</Project>
+      <Name>easylife.Core.Service.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Validation\Validation.csproj">
       <Project>{9d2a909f-5dee-4fb5-a7d0-bebc1911ead2}</Project>
       <Name>Validation</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
