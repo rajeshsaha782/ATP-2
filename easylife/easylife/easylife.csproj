@@ -194,7 +194,11 @@
     <Content Include="Views\Admin\Add_Member.cshtml" />
     <Content Include="Views\Admin\Add_Product.cshtml" />
     <None Include="Views\Admin\Edit_Profile_Admin.cshtml" />
+    <Content Include="Views\Admin\Edit_Profile_Delivery_Man.cshtml" />
+    <Content Include="Views\Admin\Edit_Profile_User.cshtml" />
     <None Include="Views\Admin\Update_Slider.cshtml" />
+    <Content Include="Views\Admin\View_Product_Details.cshtml" />
+    <Content Include="Views\Admin\View_Profile_Delivery_Man.cshtml" />
     <None Include="Views\Admin\View_Profile_User.cshtml" />
     <Content Include="Views\Shared\_UserHomeLayout.cshtml" />
     <None Include="Views\UserDashboard\changepass.cshtml" />

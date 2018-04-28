@@ -24,6 +24,10 @@ table {
   cursor: pointer;
   margin: 5px;
 }
+
+h3 {
+        text-align:center;
+    }
 </style>
 </head>
 	<div >
@@ -41,6 +45,7 @@ table {
 	
   <!--for demo wrap-->
   <h1>Orders</h1>
+    <h3>Total Order(s) Found: 10</h3>
   <section class="w3-card-4">
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -63,8 +68,8 @@ table {
       <tbody>
         <tr>
           <td>1</td>
-          <td><a href="View_Products_Details.cshtml">1</a></td>
-          <td><a href="View_Invoice.cshtml">1</a></td>
+          <td><a href='@Url.Action("View_Product_Details")'">1</a></td>
+          <td><a href='@Url.Action("View_Invoice")'">1</a></td>
 		  <td>2017-12-28</td>
           <td>Woolen Jacket</td>
           <td>Pending</td>
@@ -73,8 +78,8 @@ table {
         </tr>
 		<tr>
           <td>2</td>
-          <td><a href="View_Products_Details.cshtml">2</a></td>
-          <td><a href="View_Invoice.cshtml">1</a></td>
+          <td><a ref='@Url.Action("View_Product_Details")'">2</a></td>
+          <td><a href='@Url.Action("View_Invoice")'">1</a></td>
 		  <td>2017-12-28</td>
           <td>Women Hoody</td>
           <td>Pending</td>
@@ -82,8 +87,8 @@ table {
         </tr>
 		<tr>
           <td>3</td>
-          <td><a href="View_Products_Details.cshtml">3</a></td>
-          <td><a href="View_Invoice.cshtml">1</a></td>
+          <td><a href='@Url.Action("View_Product_Details")'">3</a></td>
+          <td><a href='@Url.Action("View_Invoice")'">1</a></td>
 		  <td>2017-12-28</td>
           <td>Long Tunik</td>
           <td>Pending</td>
@@ -91,8 +96,8 @@ table {
         </tr>
 		<tr>
           <td>4</td>
-          <td><a href="View_Products_Details.cshtml">4</a></td>
-          <td><a href="View_Invoice.cshtml">2</a></td>
+          <td><a href='@Url.Action("View_Product_Details")'">4</a></td>
+          <td><a href='@Url.Action("View_Invoice")'">2</a></td>
 		  <td>2017-12-28</td>
           <td>Embrodari panjabi</td>
           <td>Delivered</td>

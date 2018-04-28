@@ -86,30 +86,21 @@
 							</tr>
                              <tr>
 							
-								<th>Total Purchase:</th>
-								<td><label>1000 Taka</label></td>
+								<th>Availaibility:</th>
+								<td><label>Availaible</label></td>
 							
 							</tr>
-                             <tr>
+                                 <tr>
 							
-								<th>Points:</th>
-								<td>678</td>
-							
-							</tr>
-                            <tr>
-							
-								<th>Status:</th>
-								<td>
-                                    <img src="~/resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px">
-                                   <img src="~/resources/gold.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px">
-                                     <img src="~/resources/active.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px">
-								</td>
+								<th>Delivary Zone:</th>
+								<td><label>Mirpur</label></td>
 							
 							</tr>
+                             
 
 							
 							<tr>
-							<td><a href='@Url.Action("Edit_Profile_User")'><button class="button">Edit</button></a>
+							<td><a href=@Url.Action("Edit_Profile_Delivery_Man")><button class="button">Edit</button></a>
 							<td><button class="button" onclick="confirmm()">Delete</button></td>
 							</tr>
 							
@@ -143,7 +134,7 @@ function confirmm() {
     var txt;
     if (confirm("Delete this account?")) {
         alert("Succesful");
-        window.open('@Url.Action("View_Users")', '_self');
+        window.open('@Url.Action("View_Delivery_Man")','_self');
 		
     } else {
         txt = "You pressed Cancel!";

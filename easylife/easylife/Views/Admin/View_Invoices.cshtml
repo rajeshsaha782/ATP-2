@@ -28,6 +28,9 @@ table {
   cursor: pointer;
   margin: 5px;
 }
+h3 {
+        text-align:center;
+    }
 </style>
 </head>
 	<div >
@@ -43,6 +46,7 @@ table {
 	
   <!--for demo wrap-->
   <h1 style="color:	teal">Invoices</h1>
+    <h3 style="color:	teal">Total Invoice(s) Found: 10</h3>
   <section class="w3-card-4">
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -78,7 +82,7 @@ table {
         </tr>
 		<tr>
           <td><a href='@Url.Action("View_Invoice")'>2</a></td>
-          <td><a href=href='@Url.Action("View_Profile_User")'>Rajesh Saha</a></td>
+          <td><a href='@Url.Action("View_Profile_User")'>Rajesh Saha</a></td>
           <td>1 year(s) ago</td>
 		  <td>Delivered</td>
           <td>Paid</td>

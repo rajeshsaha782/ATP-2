@@ -31,9 +31,14 @@ namespace easylife.Core.Service.Interfaces
         bool IncreaseQuantity(int Product_id, int Quantity);
         bool DecreaseQuantity(int Product_id, int Quantity);
 
+        bool SetTotal_Viewed(int Product_id);//increment by 1
+        bool SetTotal_Sell(int Product_id);//increment by 1
         
         int GetTotal_Viewed(int Product_id);
         int GetTotal_Sell(int Product_id);
+
+        bool SetTotal_Star(int Product_id);//Countlike(productid)*5/countlike(productid)+countdislike(productid)
+        float GetTotal_Star(int Product_id);
 
     }
 }

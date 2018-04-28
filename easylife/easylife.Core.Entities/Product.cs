@@ -24,6 +24,7 @@ namespace easylife.Core.Entities
         public int    Last_Sold { get; set; }
         public float  Total_Sell { get; set; }
         public int    Total_Viewed { get; set; }
+        public float Star { get; set; }//Star= (Like*5)/(like+dislike)
 
 
     }
