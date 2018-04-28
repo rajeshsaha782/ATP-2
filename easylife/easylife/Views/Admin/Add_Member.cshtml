@@ -105,7 +105,7 @@
 							<button class="button" onclick="confirmm()">Confirm</button>
 							</td>
 							<td>
-						<a href="Dashboard.cscshtml"><button class="button">Cancel</button></a>
+						<a href="@Url.Action("Dashboard")"><button class="button">Cancel</button></a>
 						</td>
 						
 							</tr>
@@ -137,7 +137,7 @@ function confirmm() {
     var txt;
     if (confirm("Add This Member?")) {
         alert("Succesful");
-		window.open("Dashboard.cscshtml",'_self');
+        window.open('@Url.Action("View_Profile_Admin")', '_self');
 		
     } else {
         txt = "You pressed Cancel!";

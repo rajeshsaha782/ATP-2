@@ -97,6 +97,22 @@ namespace easylife.Controllers
         {
             return View();
         }
+        public ActionResult View_Profile_Delivery_Man()
+        {
+            return View();
+        }
+        public ActionResult View_Product_Details()
+        {
+            return View();
+        }
+        public ActionResult Edit_Profile_User()
+        {
+            return View();
+        }
+        public ActionResult Edit_Profile_Delivery_Man()
+        {
+            return View();
+        }
 
     }
 }

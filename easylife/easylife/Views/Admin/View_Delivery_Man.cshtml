@@ -25,6 +25,9 @@ table {
   cursor: pointer;
   margin: 5px;
 }
+            h3 {
+        text-align:center;
+    }
 </style>
 </head>
 	<div style="padding-left:35px">
@@ -43,6 +46,7 @@ table {
 	
   <!--for demo wrap-->
   <h1>Delivery Man</h1>
+    <h3 >Total Delivery Man(s) Found: 10</h3>
   <section class="w3-card-4">
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -62,7 +66,7 @@ table {
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-        <tr onclick="window.location='View_Profile_Delivery_Man.cshtml'">
+        <tr  onclick="location.href='@Url.Action("View_Profile_Delivery_Man")'">
           <td>1</td>
           <td>MD Mashiul Azam</td>
           <td>efti@gmail.com</td>
@@ -74,7 +78,7 @@ table {
 		  <!-- <td><a href="Edit_Profile.cshtml">Edit</a></td> -->
 		  <!-- <td><a href="Delete_Profile.cshtml">Delete</a></td> -->
         </tr>
-		<tr onclick="window.location='View_Profile_Delivery_Man.cshtml'">
+		<tr  onclick="location.href='@Url.Action("View_Profile_Delivery_Man")'">
           <td>2</td>
           <td>Rajesh Saha</td>
           <td>rajesh@gmail.com</td>
@@ -83,7 +87,7 @@ table {
 		  <td>Efti</td>
 		  <td>Available</td>
         </tr>
-		<tr onclick="window.location='View_Profile_Delivery_Man.cshtml'">
+		<tr  onclick="location.href='@Url.Action("View_Profile_Delivery_Man")'">
           <td>3</td>
           <td>Rakibul Hossain</td>
           <td>rakib@gmail.com</td>
@@ -92,7 +96,7 @@ table {
 		  <td>-</td>
 		  <td>On vacation</td>
         </tr>
-		<tr onclick="window.location='View_Profile_Delivery_Man.cshtml'">
+		<tr  onclick="location.href='@Url.Action("View_Profile_Delivery_Man")'">
           <td>4</td>
           <td>Reza Ul Karim</td>
           <td>reza@gmail.com</td>

@@ -26,6 +26,9 @@ table {
   cursor: pointer;
   margin: 5px;
 }
+    h3 {
+        text-align:center;
+    }
 </style>
 
 	<div style="padding-left:35px">
@@ -51,6 +54,7 @@ table {
 	
   <!--for demo wrap-->
   <h1 style="color:red">Admins</h1>
+    <h3 style="color:red">Total Admin(s) Found:10</h3>
   <section class="w3-card-4">
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -68,7 +72,7 @@ table {
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-        <tr  onclick="window.location.href='(@Url.Action("View_Profile_Admin"))';">
+        <tr  onclick="location.href='@Url.Action("View_Profile_Admin")'">
           <td>1</a></td>
           <td>MD Mashiul Azam</td>
           <td>efti@gmail.com</td>
@@ -78,21 +82,21 @@ table {
 		  <!-- <td><a href="Edit_Profile">Edit</a></td> -->
 		  <!-- <td><a href="Delete_Profile">Delete</a></td> -->
         </tr>
-		<tr onclick="window.location.href='(@Url.Action("View_Profile_Admin","Admin"))';">
+		<tr onclick="location.href='@Url.Action("View_Profile_Admin")'">
           <td>2</a></td>
           <td>Rajesh Saha</td>
           <td>rajesh@gmail.com</td>
           <td>3 Month(s) Ago</td>
 		  <td>Admin</td>
         </tr>
-		<tr  onclick="window.location.href('@Url.Action("View_Profile_Admin")')">
+		<tr  onclick="location.href='@Url.Action("View_Profile_Admin")'">
           <td>3</a></td>
           <td>Rakibul Hossain</td>
           <td>rakib@gmail.com</td>
           <td>1 Year(s) Ago</td>
 		  <td>Order Executive </td>
         </tr>
-		<tr onclick="window.location.href('@Url.Action("View_Profile_Admin")')">
+		<tr onclick="location.href='@Url.Action("View_Profile_Admin")'">
           <td>4</a></td>
           <td>Reza Ul Karim</td>
           <td>reza@gmail.com</td>

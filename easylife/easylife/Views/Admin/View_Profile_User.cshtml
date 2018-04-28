@@ -108,7 +108,7 @@
 
 							
 							<tr>
-							<td><a href="Edit_Profile_User.cshtml"><button class="button">Edit</button></a>
+							<td><a href='@Url.Action("Edit_Profile_User")'><button class="button">Edit</button></a>
 							<td><button class="button" onclick="confirmm()">Delete</button></td>
 							</tr>
 							
@@ -142,7 +142,7 @@ function confirmm() {
     var txt;
     if (confirm("Delete this account?")) {
         alert("Succesful");
-		window.open("View_Users.html",'_self');
+        window.open('@Url.Action("View_Users")', '_self');
 		
     } else {
         txt = "You pressed Cancel!";
