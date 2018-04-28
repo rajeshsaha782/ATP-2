@@ -23,6 +23,8 @@ namespace easylife.Core.Service
             return _context.Set<UserFavorite>().ToList();
         }
 
+
+
         public bool Delete(int UserFavorite_id)
         {
             throw new NotImplementedException();

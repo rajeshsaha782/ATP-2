@@ -23,6 +23,8 @@ namespace easylife.Core.Service
             return _context.Set<Order>().ToList();
         }
 
+
+
         public bool Delete(int Order_id)
         {
             throw new NotImplementedException();

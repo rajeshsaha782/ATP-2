@@ -43,7 +43,9 @@
     <Compile Include="Address.cs" />
     <Compile Include="Coupon.cs" />
     <Compile Include="Delivery_Man.cs" />
+    <Compile Include="Dislike.cs" />
     <Compile Include="Invoice.cs" />
+    <Compile Include="Like.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
