@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "easylife.Infrastructure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation", "Validation\Validation.csproj", "{9D2A909F-5DEE-4FB5-A7D0-BEBC1911EAD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "C:\Users\rajes\Desktop\Test\Test.csproj", "{49BC79BB-7B90-4772-9457-1A480E864F4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{9D2A909F-5DEE-4FB5-A7D0-BEBC1911EAD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D2A909F-5DEE-4FB5-A7D0-BEBC1911EAD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D2A909F-5DEE-4FB5-A7D0-BEBC1911EAD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49BC79BB-7B90-4772-9457-1A480E864F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49BC79BB-7B90-4772-9457-1A480E864F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49BC79BB-7B90-4772-9457-1A480E864F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49BC79BB-7B90-4772-9457-1A480E864F4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
