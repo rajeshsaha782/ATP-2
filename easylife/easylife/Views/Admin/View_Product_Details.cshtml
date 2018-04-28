@@ -6,7 +6,7 @@
 			
 			<div class="main-div">
 				
-				<div  style="width:40%;height:400px;background-color:white;float:left">
+				<div  style="width:40%;height:600px;background-color:white;float:left">
 					
 					<div class="slider" style="box-shadow:none;">
 						<div  style="width:100%">
@@ -20,7 +20,7 @@
 					<!--<img src="resources/1.jpg" width="80%" height="300px" align="center"/> -->
 				</div>
 				
-				<div  style="width:60%;height:400px;background-color:white;float:right">
+				<div  style="width:60%;height:600px;background-color:white;float:right">
 					<h4 align="left">Kakashi T-Shirt</h4>
 					<br/>
 					<p align="left">Price:<span class="pri">$415.54</span></p>
@@ -87,7 +87,7 @@
 						<div class="box-footer box-comments">
 									  <div class="box-comment">
 										<!-- User image -->
-										<img class="img-circle img-sm" src="../../Prototype_user/resources/r1.jpg" alt="User Image">
+										<img class="img-circle img-sm" src="~/resources/u1.jpg" alt="User Image">
 
 										<div class="comment-text">
 											  <span class="username">
@@ -102,7 +102,7 @@
 									  <!-- /.box-comment -->
 									  <div class="box-comment">
 										<!-- User image -->
-										<img class="img-circle img-sm" src="../../Prototype_user/resources/r2.jpg" alt="User Image">
+										<img class="img-circle img-sm" src="~/resources/u2.jpg" alt="User Image">
 
 										<div class="comment-text">
 											  <span class="username">
@@ -140,3 +140,36 @@
 	
 			</div>
 	</div>
+
+ <div class="col-md-8" style="padding-bottom:20px;padding-top:20px">
+
+              <div id="piechart">
+          
+            </div>
+
+          
+     </div>
+<script src="~/Styles/loader.js"></script> 
+<script type="text/javascript">
+    // Load google charts
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Draw the chart and set the chart values
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Like', 132],
+        ['DisLike', 53],
+        ['Viewed', 203],
+        ['Puschased', 153]
+        ]);
+
+
+        var options = { 'title': 'Product Review', 'width': 1000, 'height': 500 };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+    }
+</script>

@@ -78,22 +78,35 @@ html,body,h1,h2,h3,h4,h5 {font-family: Arial, sans-serif;
 					<li><a href=@Url.Action("Add_Product")   style="color:black"><i class="fa fa-product-hunt fa-fw"></i>  Add Product</a></li>
 		    </ul>
         </li>
+
       <li class="treeview">
-          <a href="#"><h4 style="color:black"><i class="fa fa-eye fa-fw"></i> <span>View</span></h4>
+          <a href="#"><h4 style="color:black"><i class="fa fa-product-hunt fa-fw"></i> <span>Product Info</span></h4>
+            <span class="pull-right-container" >
+                <i  style="color:black"  class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+                    <li><a href=@Url.Action("View_Products")   style="color:black"><i class="fa fa-product-hunt fa-fw"></i>  View Product</a></li>
+					<li><a href=@Url.Action("View_Invoices")   style="color:black"><i class="fa fa-list-alt fa-fw"></i>  View Invoices</a></li>
+					<li><a href=@Url.Action("View_Orders")   style="color:black"><i class="fa fa-list fa-fw"></i>  View Orders</a></li>
+					<li><a href=@Url.Action("View_Stock")   style="color:black"><i class="fa fa-list fa-fw"></i>  View Stock</a></li>
+                     <li><a href=@Url.Action("Profit_graph")   style="color:black"><i class="fa fa-list fa-fw"></i> View Statistic</a></li>
+		    </ul>
+        </li>
+
+
+      <li class="treeview">
+          <a href="#"><h4 style="color:black"><i class="fa fa-user fa-fw"></i> <span>Member Info</span></h4>
            <span class="pull-right-container" >
                 <i  style="color:black"  class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
                     <li><a href=@Url.Action("View_Members")  style="color:black"><i class="fa fa-user fa-fw"></i>  View Admins</a></li>
-                    <li><a href=@Url.Action("View_Delivery_Man") style="color:black" ><i class="fa fa-list fa-fw"></i>  View Delivery Man</a></li>
                     <li><a href=@Url.Action("View_Users")   style="color:black"><i class="fa fa-users fa-fw"></i>  View Users</a></li>
-					<li><a href=@Url.Action("View_Products")   style="color:black"><i class="fa fa-product-hunt fa-fw"></i>  View Product</a></li>
-					
-					<li><a href=@Url.Action("View_Invoices")   style="color:black"><i class="fa fa-list-alt fa-fw"></i>  View Invoices</a></li>
-					<li><a href=@Url.Action("View_Orders")   style="color:black"><i class="fa fa-list fa-fw"></i>  View Orders</a></li>
-					<li><a href=@Url.Action("View_Stock")   style="color:black"><i class="fa fa-list fa-fw"></i>  View Stock</a></li>
-                     <li><a href=@Url.Action("Profit_graph")   style="color:black"><i class="fa fa-list fa-fw"></i> View Statistic</a></li>
+                    <li><a href=@Url.Action("View_Delivery_Man") style="color:black" ><i class="fa fa-list fa-fw"></i>  View Delivery Man</a></li>
+
+                     
 				</ul>
         </li>
       <li class="treeview">
