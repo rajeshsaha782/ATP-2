@@ -322,3 +322,8 @@ a
 .header{
 	  background-color: whitesmoke;
 }
+.user
+		{
+			height:50px;
+			width:50px;
+		}
