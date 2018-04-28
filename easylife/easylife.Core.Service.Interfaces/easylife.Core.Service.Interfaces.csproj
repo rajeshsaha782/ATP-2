@@ -44,7 +44,7 @@
     <Compile Include="IDeliveryManService.cs" />
     <Compile Include="IDislikeService.cs" />
     <Compile Include="IInvoiceService.cs" />
-    <Compile Include="ILikeServices.cs" />
+    <Compile Include="ILikeService.cs" />
     <Compile Include="IMemberService.cs" />
     <Compile Include="IOrderService.cs" />
     <Compile Include="IProductReviewService.cs" />

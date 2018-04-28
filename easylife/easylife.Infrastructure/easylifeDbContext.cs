@@ -24,5 +24,8 @@ namespace easylife.Infrastructure
         public DbSet<Report> Reports { get; set; }
         public DbSet<Search_History> Search_Historys { get; set; }
         public DbSet<UserFavorite> UserFavorites { get; set; }
+        public DbSet<Like> Likes { get; set; }
+        public DbSet<Dislike> Dislikes { get; set; }
+        
     }
 }

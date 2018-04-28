@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace easylife.Core.Service.Interfaces
 {
-    class IDislikeService
+    public interface IDislikeService
     {
         IEnumerable<Dislike> GetAll();
         IEnumerable<Dislike> GetById(int Dislike_id);
