@@ -17,8 +17,8 @@ namespace easylife.Core.Service.Interfaces
 
         IEnumerable<Product> GetByLessThanSellPrice(float price);
         IEnumerable<Product> GetByMoreThanSellPrice(float price);
-        IEnumerable<Product> GetByCategory(string category);
-        IEnumerable<Product> GetBySubCategory(string subcategory);
+        IEnumerable<Product> GetByCategory(string category, string subcategory);
+        //IEnumerable<Product> GetBySubCategory(string subcategory);
         IEnumerable<Product> GetByBrand(string brand);
 
         //IEnumerable<Product> GetByLessView();    //if functions are neccesary use order by query
@@ -32,8 +32,16 @@ namespace easylife.Core.Service.Interfaces
         bool DecreaseQuantity(int Product_id, int Quantity);
 
         //concept of "like" needs more work
-        bool like(int Product_id);  //increament like
-        bool dislike(int Product_id);  //increament dislike
+        bool SetLike(int Product_id);  //increament like
+        bool SetDisLike(int Product_id);  //increament dislike
+        bool SetTotal_Viewed(int Product_id);  //increament like
+        bool SetTotal_Sell(int Product_id);  //increament dislike
+
+
+        int GetLike(int Product_id);
+        int GetDisLike(int Product_id);
+        int GetTotal_Viewed(int Product_id);
+        int GetTotal_Sell(int Product_id);
 
     }
 }
