@@ -21,6 +21,7 @@ namespace easylife.Core.Service.Interfaces
         IEnumerable<Report> GetBySeenStatus();
         IEnumerable<Report> GetByUnseenStatus();
         bool SetSeen(int Report_id);
+        bool SetUnseen(int Report_id);
         
     }
 }

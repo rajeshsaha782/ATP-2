@@ -31,15 +31,7 @@ namespace easylife.Core.Service.Interfaces
         bool IncreaseQuantity(int Product_id, int Quantity);
         bool DecreaseQuantity(int Product_id, int Quantity);
 
-        //concept of "like" needs more work
-        bool SetLike(int Product_id);  //increament like
-        bool SetDisLike(int Product_id);  //increament dislike
-        bool SetTotal_Viewed(int Product_id);  //increament like
-        bool SetTotal_Sell(int Product_id);  //increament dislike
-
-
-        int GetLike(int Product_id);
-        int GetDisLike(int Product_id);
+        
         int GetTotal_Viewed(int Product_id);
         int GetTotal_Sell(int Product_id);
 
