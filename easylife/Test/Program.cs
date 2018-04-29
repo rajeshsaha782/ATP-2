@@ -36,6 +36,14 @@ namespace Test
             e.Members.Add(m);
             e.SaveChanges();
 
+
+            ///GetAll-----------------
+
+            //foreach(var mem in e.Members)
+            //{
+            //    Console.WriteLine(mem.Name);
+            //}
+
         }
     }
 }
