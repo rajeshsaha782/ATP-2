@@ -1,4 +1,4 @@
-﻿
+﻿@using System.Web.Optimization
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,12 +11,11 @@
 @*<link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">*@
 
-<link href="~/Styles/Style.css" rel="stylesheet" />
+@*<link href="~/Styles/Style.css" rel="stylesheet" />
 <link href="~/Styles/w3.css" rel="stylesheet" />
 <link href="~/Styles/table.css" rel="stylesheet" />
-
-<link href="~/Styles/AdminLTE.min.css" rel="stylesheet" />@* for treeview*@
-
+<link href="~/Styles/AdminLTE.min.css" rel="stylesheet" />*@@* for treeview*@
+    @Styles.Render("~/Admin")
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

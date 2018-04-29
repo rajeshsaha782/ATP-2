@@ -1,19 +1,23 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		
 		<title>@ViewBag.Title</title>
         <link rel="icon" href="~/resources/logo.ico" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 		
-        @*<link rel="stylesheet" href="style.css">*@
-        <link href="~/Styles/Style_user.css" rel="stylesheet" />
+		
 
-        @*<link rel="stylesheet" href="AdminLTE.min.css">*@
-        <link href="~/Styles/AdminLTE.min.css" rel="stylesheet" />
+       @* <link href="~/Styles/Style_user.css" rel="stylesheet" />
+        <link href="~/Styles/AdminLTE.min.css" rel="stylesheet" />*@
+        @Styles.Render("~/UserDashboard")
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
 	</head>
 	
