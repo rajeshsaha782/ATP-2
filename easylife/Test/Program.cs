@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using easylife.Infrastructure;
 using easylife.Core.Entities;
+using easylife.Core.Service;
 namespace Test
 {
     class Program
@@ -27,14 +28,24 @@ namespace Test
 
             ///----------EF Test
 
-            easylifeDbContext e = new easylifeDbContext();
+           /* easylifeDbContext e = new easylifeDbContext();
             Member m = new Member();
             m.Email = "r@gmail.com";
             m.Name = "rajesh";
             m.Memeber_Since = DateTime.Now;
             m.Last_Logged_In = DateTime.Now;
             e.Members.Add(m);
-            e.SaveChanges();
+            e.SaveChanges();*/
+
+           /* Address a = new Address();
+            a.Address_id = 1;
+            a.Member_id = 1;
+            a.Member_Address = "Mirpur";
+
+            AddressService a1 = new AddressService();
+
+            Console.WriteLine(a1.Insert(a));*/
+
 
 
             ///GetAll-----------------

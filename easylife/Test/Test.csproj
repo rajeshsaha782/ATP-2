@@ -48,6 +48,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=3.3.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.0\lib\net45\Unity.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -58,11 +62,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="E:\AIUB\3-3.Spring%282017-18%29\ATP-II\Project_easylife\easylife\easylife.Core.Entities\easylife.Core.Entities.csproj">
+    <ProjectReference Include="..\easylife.Core.Entities\easylife.Core.Entities.csproj">
       <Project>{ea25d295-de6c-4156-bdc6-74135edee6a6}</Project>
       <Name>easylife.Core.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="E:\AIUB\3-3.Spring%282017-18%29\ATP-II\Project_easylife\easylife\easylife.Infrastructure\easylife.Infrastructure.csproj">
+    <ProjectReference Include="..\easylife.Core.Service\easylife.Core.Service.csproj">
+      <Project>{4d075f36-78eb-49e7-931d-5532950e533e}</Project>
+      <Name>easylife.Core.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\easylife.Infrastructure\easylife.Infrastructure.csproj">
       <Project>{c706fd0c-65d6-4c1c-bdc5-12719ce56a48}</Project>
       <Name>easylife.Infrastructure</Name>
     </ProjectReference>

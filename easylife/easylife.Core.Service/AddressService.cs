@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace easylife.Core.Service
 {
-    class AddressService : IAddressService
+    public class AddressService : IAddressService
     {
         DbContext _context;
 
@@ -69,12 +69,26 @@ namespace easylife.Core.Service
 
         public bool Insert(Address address)
         {
-            throw new NotImplementedException();
+            if (_context.Set<Address>().Add(address) == address)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool Update(Address address)
         {
-            throw new NotImplementedException();
+            if (_context.Set<Address>().Any(e => e.Address_id == address.Address_id))
+            {
+                _context.Set<Address>().Attach(address);
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+            
         }
     }
 }

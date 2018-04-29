@@ -24,3 +24,17 @@ C:\Users\rajes\Desktop\Test\bin\Debug\easylife.Infrastructure.pdb
 C:\Users\rajes\Desktop\Test\bin\Debug\EntityFramework.xml
 C:\Users\rajes\Desktop\Test\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\rajes\Desktop\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\bin\Debug\Test.exe.config
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\obj\Debug\Test.exe
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\obj\Debug\Test.pdb
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\bin\Debug\Test.exe
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\bin\Debug\Test.pdb
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\bin\Debug\easylife.Core.Entities.dll
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\bin\Debug\easylife.Infrastructure.dll
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\bin\Debug\EntityFramework.dll
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\bin\Debug\EntityFramework.SqlServer.dll
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\bin\Debug\easylife.Core.Entities.pdb
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\bin\Debug\easylife.Infrastructure.pdb
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\bin\Debug\EntityFramework.xml
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\bin\Debug\EntityFramework.SqlServer.xml
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
