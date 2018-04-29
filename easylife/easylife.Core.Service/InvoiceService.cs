@@ -75,7 +75,18 @@ namespace easylife.Core.Service
 
         public bool Update(Invoice invoice)
         {
-            throw new NotImplementedException();
+            var updateInvoice = _context.Set<Invoice>().Where(i => i.Invoice_id == invoice.Invoice_id).SingleOrDefault();
+            /// 
+
+            if (updateInvoice != null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -122,7 +122,18 @@ namespace easylife.Core.Service
 
         public bool Update(Product product)
         {
-            throw new NotImplementedException();
+            var updateProduct = _context.Set<Product>().Where(i => i.Product_id == product.Product_id).SingleOrDefault();
+            /// 
+
+            if (updateProduct != null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -72,15 +72,19 @@ namespace easylife.Core.Service
         public bool Update(Entities.UserFavorite userfavorite)
         {
         
-            var deleteFavorite = _context.Set<UserFavorite>().Where(i => i.UserFavorite_id ==userfavorite.UserFavorite_id).SingleOrDefault();
+            var updateFavorite = _context.Set<UserFavorite>().Where(i => i.UserFavorite_id ==userfavorite.UserFavorite_id).SingleOrDefault();
             /// 
 
-            if (deleteFavorite != null)
+            if (updateFavorite != null)
             {
-               
+                return true;
 
             }
-            return true;
+            else
+            {
+                return false;
+            }
+           
         }
     }
 }

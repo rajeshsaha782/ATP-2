@@ -74,7 +74,18 @@ namespace easylife.Core.Service
 
         public bool Update(Like address)
         {
-            throw new NotImplementedException();
+            var updateLike = _context.Set<Like>().Where(i => i.Like_id == address.Like_id).SingleOrDefault();
+            /// 
+
+            if (updateLike != null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

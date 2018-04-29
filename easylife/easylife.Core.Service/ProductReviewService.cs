@@ -62,7 +62,18 @@ namespace easylife.Core.Service
 
         public bool Update(Product_Review review)
         {
-            throw new NotImplementedException();
+            var updateReview = _context.Set<Product_Review>().Where(i => i.Review_id == review.Review_id).SingleOrDefault();
+            /// 
+
+            if (updateReview != null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

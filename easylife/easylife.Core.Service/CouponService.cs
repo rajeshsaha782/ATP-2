@@ -78,7 +78,18 @@ namespace easylife.Core.Service
 
         public bool Update(Coupon coupon)
         {
-            throw new NotImplementedException();
+            var updateCoupon = _context.Set<Coupon>().Where(i => i.Coupon_id == coupon.Coupon_id).SingleOrDefault();
+            /// 
+
+            if (updateCoupon != null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

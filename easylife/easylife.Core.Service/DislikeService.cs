@@ -78,7 +78,18 @@ namespace easylife.Core.Service
 
         public bool Update(Dislike dislike)
         {
-            throw new NotImplementedException();
+            var updatedislike = _context.Set<Dislike>().Where(i => i.Dislike_id == dislike.Dislike_id).SingleOrDefault();
+            /// 
+
+            if (updatedislike != null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

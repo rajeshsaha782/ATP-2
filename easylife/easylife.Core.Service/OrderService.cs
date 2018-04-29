@@ -63,7 +63,18 @@ namespace easylife.Core.Service
 
         public bool Update(Order order)
         {
-            throw new NotImplementedException();
+            var updateOrder = _context.Set<Order>().Where(i => i.Order_id == order.Order_id).SingleOrDefault();
+            /// 
+
+            if (updateOrder != null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

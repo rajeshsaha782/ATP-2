@@ -79,7 +79,18 @@ namespace easylife.Core.Service
 
         public bool Update(Member member)
         {
-            throw new NotImplementedException();
+            var updateMember = _context.Set<Member>().Where(i => i.Memeber_id == member.Memeber_id).SingleOrDefault();
+            /// 
+
+            if (updateMember != null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -85,7 +85,18 @@ namespace easylife.Core.Service
 
         public bool Update(Report report)
         {
-            throw new NotImplementedException();
+            var updateReport = _context.Set<Report>().Where(i => i.Report_id == report.Report_id).SingleOrDefault();
+            /// 
+
+            if (updateReport != null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -68,7 +68,18 @@ namespace easylife.Core.Service
 
         public bool Update(Delivery_Man delivery_Man)
         {
-            throw new NotImplementedException();
+            var updatedelivery_man = _context.Set<Delivery_Man>().Where(i => i.Delivery_Man_id == delivery_Man.Delivery_Man_id).SingleOrDefault();
+            /// 
+
+            if (updatedelivery_man != null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
