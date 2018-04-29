@@ -48,7 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressService.cs" />
+    <Compile Include="CouponService.cs" />
+    <Compile Include="DeliveryManService.cs" />
+    <Compile Include="DislikeService.cs" />
+    <Compile Include="InvoiceService.cs" />
+    <Compile Include="LikeService.cs" />
+    <Compile Include="MemberService.cs" />
     <Compile Include="OrderService.cs" />
+    <Compile Include="ProductReviewService.cs" />
+    <Compile Include="ProductService.cs" />
+    <Compile Include="ReportService.cs" />
+    <Compile Include="SearchHistoryService.cs" />
     <Compile Include="UserFavouriteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

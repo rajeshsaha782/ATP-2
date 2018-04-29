@@ -24,28 +24,37 @@ namespace easylife.Core.Service
         }
 
 
-
         public bool Delete(int Order_id)
         {
-            throw new NotImplementedException();
+            var deleteOrder = _context.Set<Order>().Where(i => i.Order_id == Order_id).SingleOrDefault();
+            /// 
+
+            if (deleteOrder != null)
+            {
+                _context.Set<Order>().Remove(deleteOrder);
+
+            }
+            return true;
         }
 
        
 
         public IEnumerable<Order> GetById(int Order_id)
         {
-            throw new NotImplementedException();
+            return _context.Set<Order>().Where(i => i.Order_id == Order_id);
         }
 
         public IEnumerable<Order> GetByInvoiceId(int Invoice_id)
         {
-            throw new NotImplementedException();
+            return _context.Set<Order>().Where(i => i.Invoice_id == Invoice_id);
         }
 
         public IEnumerable<Order> GetByProductId(int Product_id)
         {
-            throw new NotImplementedException();
+            return _context.Set<Order>().Where(i => i.Product_id == Product_id);
         }
+
+
 
         public bool Insert(Order order)
         {

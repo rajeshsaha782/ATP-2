@@ -18,43 +18,69 @@ namespace easylife.Core.Service
             _context = context;
         }
 
+        public UserFavouriteService()
+        {
+        }
+
         public IEnumerable<Entities.UserFavorite> GetAll()
         {
             return _context.Set<UserFavorite>().ToList();
         }
 
 
+        public IEnumerable<Entities.UserFavorite> GetByMemberId(int Member_id)
+        {
+            return _context.Set<UserFavorite>().Where(i=>i.Memeber_id==Member_id);
+        }
+
+
+        //Console.WriteLine("Send");
 
         public bool Delete(int UserFavorite_id)
         {
-            throw new NotImplementedException();
+            var deleteFavorite= _context.Set<UserFavorite>().Where(i=>i.UserFavorite_id == UserFavorite_id).SingleOrDefault();
+            /// 
+           
+            if (deleteFavorite != null)
+            {
+                _context.Set<UserFavorite>().Remove(deleteFavorite);
+        
+            }
+            return true;
         }
 
-       
 
         public IEnumerable<Entities.UserFavorite> GetById(int UserFavorite_id)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Entities.UserFavorite> GetByMemberId(int Member_id)
-        {
-            throw new NotImplementedException();
+            return _context.Set<UserFavorite>().Where(i => i.UserFavorite_id == UserFavorite_id);
+            
         }
 
         public IEnumerable<Entities.UserFavorite> GetByProductId(int Product_id)
         {
-            throw new NotImplementedException();
+            return _context.Set<UserFavorite>().Where(i => i.Product_id == Product_id);
         }
 
         public bool Insert(Entities.UserFavorite userfavorite)
         {
-            throw new NotImplementedException();
+            //_context.Set<UserFavorite>.Add(object userfavorite);
+
+            return true;
+            
         }
 
         public bool Update(Entities.UserFavorite userfavorite)
         {
-            throw new NotImplementedException();
+        
+            var deleteFavorite = _context.Set<UserFavorite>().Where(i => i.UserFavorite_id ==userfavorite.UserFavorite_id).SingleOrDefault();
+            /// 
+
+            if (deleteFavorite != null)
+            {
+               
+
+            }
+            return true;
         }
     }
 }
