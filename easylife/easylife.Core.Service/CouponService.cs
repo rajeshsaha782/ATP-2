@@ -68,7 +68,13 @@ namespace easylife.Core.Service
 
         public bool Insert(Coupon coupon)
         {
-            throw new NotImplementedException();
+            if (_context.Set<Coupon>().Add(coupon) == coupon)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool isAvailable(int Coupon_id)

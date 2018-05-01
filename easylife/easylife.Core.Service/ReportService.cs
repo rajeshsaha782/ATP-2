@@ -70,7 +70,13 @@ namespace easylife.Core.Service
 
         public bool Insert(Report report)
         {
-            throw new NotImplementedException();
+            if (_context.Set<Report>().Add(report) == report)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool SetSeen(int Report_id)

@@ -58,7 +58,13 @@ namespace easylife.Core.Service
 
         public bool Insert(Order order)
         {
-            throw new NotImplementedException();
+            if (_context.Set<Order>().Add(order) == order)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool Update(Order order)

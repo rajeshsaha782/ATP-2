@@ -102,7 +102,13 @@ namespace easylife.Core.Service
 
         public bool Insert(Product product)
         {
-            throw new NotImplementedException();
+            if (_context.Set<Product>().Add(product) == product)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool SetTotal_Sell(int Product_id)

@@ -63,7 +63,13 @@ namespace easylife.Core.Service
 
         public bool Insert(Dislike dislike)
         {
-            throw new NotImplementedException();
+            if (_context.Set<Dislike>().Add(dislike) == dislike)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool SetDisike(int Member_id, int Product_id)

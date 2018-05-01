@@ -59,7 +59,13 @@ namespace easylife.Core.Service
 
         public bool Insert(Like address)
         {
-            throw new NotImplementedException();
+            if (_context.Set<Like>().Add(address) == address)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool SetLike(int Member_id, int Product_id)

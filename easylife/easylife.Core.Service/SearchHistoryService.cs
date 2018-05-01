@@ -58,7 +58,13 @@ namespace easylife.Core.Service
 
         public bool Insert(SearchHistory history)
         {
-            throw new NotImplementedException();
+            if (_context.Set<SearchHistory>().Add(history) == history)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool Update(SearchHistory history)

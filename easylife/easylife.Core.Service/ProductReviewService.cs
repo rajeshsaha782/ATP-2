@@ -57,7 +57,13 @@ namespace easylife.Core.Service
 
         public bool Insert(ProductReview review)
         {
-            throw new NotImplementedException();
+            if (_context.Set<ProductReview>().Add(review) == review)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool Update(ProductReview review)

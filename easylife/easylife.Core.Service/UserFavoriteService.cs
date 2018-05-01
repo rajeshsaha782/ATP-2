@@ -63,10 +63,14 @@ namespace easylife.Core.Service
 
         public bool Insert(Entities.UserFavorite userfavorite)
         {
-            //_context.Set<UserFavorite>.Add(object userfavorite);
+            if (_context.Set<UserFavorite>().Add(userfavorite) == userfavorite)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
 
-            return true;
-            
         }
 
         public bool Update(Entities.UserFavorite userfavorite)

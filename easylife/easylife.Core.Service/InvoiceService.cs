@@ -65,7 +65,13 @@ namespace easylife.Core.Service
 
         public bool Insert(Invoice invoice)
         {
-            throw new NotImplementedException();
+            if (_context.Set<Invoice>().Add(invoice) == invoice)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool SetStatus(int Invoice_id, string Status)

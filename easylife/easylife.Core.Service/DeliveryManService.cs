@@ -63,7 +63,13 @@ namespace easylife.Core.Service
 
         public bool Insert(DeliveryMan delivery_Man)
         {
-            throw new NotImplementedException();
+            if (_context.Set<DeliveryMan>().Add(delivery_Man) == delivery_Man)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool Update(DeliveryMan deliveryMan)
