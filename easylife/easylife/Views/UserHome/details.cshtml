@@ -1,6 +1,7 @@
-@model easylife.Core.Entities.Product
+@model easylife.Models.DetailViewModel
 @{
     ViewBag.Title = "EasyLife | Details";
+    int c = 0;
 }
 <link href="~/Styles/Style_user.css" rel="stylesheet" />
 <div class="container-fluid ">
@@ -23,7 +24,8 @@
 						
 								
 									<div class="easyzoom example">
-										<img src="~/resources/1.jpg" >
+										@Html.Raw(String.Format("<img src=\"/resources/{0}.jpg\">",Model.DetailProduct.ProductId))
+                                       @* <img src="~/resources/2.jpg">*@
 									</div>
 								
 						
@@ -50,11 +52,11 @@
 								<tbody>
 									<tr>
 										<th>Product Name</th>
-										<td><p>@Model.ProductName</p></td>
+										<td><p>@Model.DetailProduct.ProductName</p></td>
 									</tr>
 									<tr>
 										<th>Product Price</th>
-										<td><p>$@Model.SellingPrice</p></td>
+										<td><p>$@Model.DetailProduct.SellingPrice</p></td>
 									</tr>
 									<tr>
 										<th>Size</th>
@@ -66,7 +68,7 @@
 									</tr>
 									<tr>
 										<th>Quantity</th>
-										<td><input type="number" value="1"></input></td>
+										<td><input id="qty" type="number" value="1"></input></td>
 									</tr>
 									<tr>
 										<td colspan="2">
@@ -89,7 +91,7 @@
 							
 												<span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
 												
-												<a href="shoppingCart"><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>
+												<a href=@Url.Action("shoppingCart", new {id=Model.DetailProduct.ProductId })><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>
 											</p>
 										</td>
 									</tr>
@@ -117,7 +119,7 @@
 
 								 <div class="tab-content">
 									<div id="feature" class="tab-pane fade in active">
-										<p>@Model.Features</p>
+										<p>@Model.DetailProduct.Features</p>
 									</div>
 
 
@@ -204,12 +206,44 @@
 
 				</div>
 				<div class="container-fluid">
-					<h3 class="neon"><p><b>Related Products</b></p></h3>
+					<h3 class="neon" style="margin-top:120px"><p><b>Related Products</b></p></h3>
+
+
+                     @{
+                      
+                          
+                               @Html.Raw("<div class=\"container-fluid well\">")
+                           
+                           foreach (var item in Model.RelatedProducts) 
+                           {
+                               <div class="container-fluid col-md-3">
+							    <a href=@Url.Action("details", new {id=item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">",item.ProductId))</a>
+							    <div style="text-align:center ;">
+								    <p>@item.ProductName</p>
+								    <p>@item.SellingPrice $</p>
+								    <p>
+									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+								</p>
+								    <p><a href=@Url.Action("details", new { id = @item.ProductId})><button type="button" class="btn btn-info" >Buy</button></a></p>
+							    </div>
+
+						        </div>
+                               c++;
+                               if(c==4)
+                               { break; }
+                           }
+                           
+                            
+                           @Html.Raw("</div> ")
+                            
+       
+                    }
+
 					<div class="container-fluid well">
-						
-						
-						
-						
 						
 						<div class="container-fluid col-md-3">
 							<a href="details"><img class="img-thumbnail img2" src="~/resources/1.jpg"></a>

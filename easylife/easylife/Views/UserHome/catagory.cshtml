@@ -35,35 +35,32 @@
 					
                     @{
                       
-                           if(c==0)
-                           {
-                               @Html.Raw("<div class=\"container-fluid well\">")
-                           }
+                           
+                           @Html.Raw("<div class=\"container-fluid well\">")
+                         
                            foreach (var item in Model) 
                            {
                                <div class="container-fluid col-md-3">
-							    <a href=@Url.Action("details", new {id=item.ProductId })><img class="img-thumbnail img2" src="~/resources/1.jpg"></a>
+							    <a href=@Url.Action("details", new {id=item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">",item.ProductId))</a>
 							    <div style="text-align:center ;">
 								    <p>@item.ProductName</p>
 								    <p>@item.SellingPrice $</p>
-								    <p style="color:red;font-size:20">
-									    <span><i class="fa fa-star"></i></span>
-									    <span><i class="fa fa-star"></i></span>
-									    <span><i class="fa fa-star"></i></span>
-									    <span><i class="fa fa-star"></i></span>
-									    <span><i class="fa fa-star"></i></span>
-								    </p>
+								    <p>
+									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+								</p>
 								    <p><a href=@Url.Action("details", new { id = @item.ProductId})><button type="button" class="btn btn-info" >Buy</button></a></p>
 							    </div>
 
 						        </div>
                            }
-                           c++;
-                            if(c==1)
-                            {
-                                c=0;
+                           
+                            
                                @Html.Raw("</div> ")
-                            }
+                            
        
                     }
                     

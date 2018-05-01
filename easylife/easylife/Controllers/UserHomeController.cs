@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using easylife.Core.Service.Interfaces;
+using easylife.Models;
+
+
 namespace easylife.Controllers
 {
     public class UserHomeController : Controller
@@ -19,9 +22,10 @@ namespace easylife.Controllers
         {
             return View();
         }
-        public ActionResult brand()
+        public ActionResult brand(string brand)
         {
-            return View();
+            ViewBag.brand = brand;
+            return View( _ProductService.GetByBrand(brand));
         }
         public ActionResult catagory(string category, string subcategory)
         {
@@ -29,7 +33,23 @@ namespace easylife.Controllers
         }
         public ActionResult details(int id=0)
         {
-            return View(_ProductService.GetById(id));
+            DetailViewModel d = new DetailViewModel();
+            d.DetailProduct = _ProductService.GetById(id);
+            d.RelatedProducts = _ProductService.GetByCategory(d.DetailProduct.Category,d.DetailProduct.SubCategory);
+            return View(d);
+        }
+        public ActionResult shoppingCart(int id)
+        {
+
+            //var cart = new HttpCookie("cart");
+            //cart.Value = Convert.ToString(id);
+            //cart.Expires = DateTime.Now.AddDays(7);
+            //cart.Secure = true;
+            //Response.Cookies.Add(cart);
+
+            HttpCookie cookie = Request.Cookies["cart"];
+            Response.Write(cookie);
+            return View();
         }
         public ActionResult confirmOrder()
         {
@@ -45,10 +65,7 @@ namespace easylife.Controllers
         {
             return View();
         }
-        public ActionResult shoppingCart()
-        {
-            return View();
-        }
+        
         public ActionResult trackProduct()
         {
             return View();
