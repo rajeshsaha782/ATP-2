@@ -10,7 +10,7 @@ namespace easylife.Core.Service.Interfaces
     public interface IProductService
     {
         IEnumerable<Product> GetAll();
-        IEnumerable<Product> GetById(int ProductId);
+        Product GetById(int ProductId);
         bool Insert(Product product);
         bool Update(Product product);
         bool Delete(int ProductId);
@@ -18,7 +18,7 @@ namespace easylife.Core.Service.Interfaces
         IEnumerable<Product> GetByLessThanSellPrice(float price);
         IEnumerable<Product> GetByMoreThanSellPrice(float price);
         IEnumerable<Product> GetByCategory(string category, string subcategory);
-        //IEnumerable<Product> GetBySubCategory(string subcategory);
+        //IEnumerable<Product> GetByCategory(string category);
         IEnumerable<Product> GetByBrand(string brand);
 
         //IEnumerable<Product> GetByLessView();    //if functions are neccesary use order by query

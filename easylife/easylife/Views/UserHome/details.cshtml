@@ -1,3 +1,4 @@
+@model easylife.Core.Entities.Product
 @{
     ViewBag.Title = "EasyLife | Details";
 }
@@ -49,11 +50,11 @@
 								<tbody>
 									<tr>
 										<th>Product Name</th>
-										<td><p>Kakashi T-Shirt</p></td>
+										<td><p>@Model.ProductName</p></td>
 									</tr>
 									<tr>
 										<th>Product Price</th>
-										<td><p>$450</p></td>
+										<td><p>$@Model.SellingPrice</p></td>
 									</tr>
 									<tr>
 										<th>Size</th>
@@ -116,10 +117,7 @@
 
 								 <div class="tab-content">
 									<div id="feature" class="tab-pane fade in active">
-										<p><b>Sleeve:</b> Half sleeve. Fabric: Cotton.Comfortable to wear.Exclusive design.</p> 
-										<p><b>Style:</b>  Slim fit. Bangladeshi product.</p>
-										<p>Pack of two solid waist-length T-shirts in purple and grey melange.Each has a stylised polo collar, short sleeves</p>
-										<p>Cotton Machine-wash warm</p>
+										<p>@Model.Features</p>
 									</div>
 
 

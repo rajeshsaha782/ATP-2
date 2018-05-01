@@ -46,13 +46,30 @@ namespace Test
             // AddressService a1 = new AddressService(e);
             // Console.WriteLine(a1.Insert(a));
 
-            Member m = new Member();
-            m.Email = "r@gmail.com";
-            m.MemeberSince = DateTime.Now;
-            m.LastLoggedIn = DateTime.Now;
+            ////Member--------------------
 
-            MemberService ms = new MemberService(e);
-            Console.WriteLine(ms.Insert(m));
+            //Member m = new Member();
+            //m.Email = "r@gmail.com";
+            //m.MemeberSince = DateTime.Now;
+            //m.LastLoggedIn = DateTime.Now;
+
+            //MemberService ms = new MemberService(e);
+            //Console.WriteLine(ms.Insert(m));
+
+            //Product--------------------
+
+            Product p = new Product();
+            p.ProductName = "5";
+            p.Quantity = 10;
+            p.BuyingPrice = 100;
+            p.SellingPrice = 101;
+            p.Category = "Mens Wear";
+            p.SubCategory = "Shirt";
+            p.Date = DateTime.Now;
+            p.LastSold = DateTime.Now;
+
+            ProductService ps = new ProductService(e);
+            Console.WriteLine(ps.Insert(p));
 
             ///GetAll-----------------
 

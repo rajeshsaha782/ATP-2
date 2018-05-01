@@ -32,12 +32,12 @@ namespace easylife.Core.Service
 
         public IEnumerable<Product> GetByCategory(string category, string subcategory)
         {
-            throw new NotImplementedException();
+            return _context.Set<Product>().Where(i => i.Category == category && i.SubCategory==subcategory);
         }
 
-        public IEnumerable<Product> GetById(int Product_id)
+        public Product GetById(int Product_id)
         {
-            return _context.Set<Product>().Where(i => i.ProductId == Product_id);
+            return _context.Set<Product>().Where(i => i.ProductId == Product_id).FirstOrDefault();
 
         }
 
@@ -102,7 +102,7 @@ namespace easylife.Core.Service
 
         public bool Insert(Product product)
         {
-            if (_context.Set<Product>().Add(product) == product)
+            if(_context.Set<Product>().Add(product) == product)
             {
                 _context.SaveChanges();
                 return true;

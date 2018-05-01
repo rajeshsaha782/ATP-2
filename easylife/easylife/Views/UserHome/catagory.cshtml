@@ -1,5 +1,8 @@
+@model IEnumerable<easylife.Core.Entities.Product>
+
 @{
     ViewBag.Title = "EasyLife | Home | Category";
+    int c = 0,totalProduct=Model.Count();
 }
 
 
@@ -28,81 +31,46 @@
 					
 					</br>
 					</br>
+                  
+					
+                    @{
+                      
+                           if(c==0)
+                           {
+                               @Html.Raw("<div class=\"container-fluid well\">")
+                           }
+                           foreach (var item in Model) 
+                           {
+                               <div class="container-fluid col-md-3">
+							    <a href=@Url.Action("details", new {id=item.ProductId })><img class="img-thumbnail img2" src="~/resources/1.jpg"></a>
+							    <div style="text-align:center ;">
+								    <p>@item.ProductName</p>
+								    <p>@item.SellingPrice $</p>
+								    <p style="color:red;font-size:20">
+									    <span><i class="fa fa-star"></i></span>
+									    <span><i class="fa fa-star"></i></span>
+									    <span><i class="fa fa-star"></i></span>
+									    <span><i class="fa fa-star"></i></span>
+									    <span><i class="fa fa-star"></i></span>
+								    </p>
+								    <p><a href=@Url.Action("details", new { id = @item.ProductId})><button type="button" class="btn btn-info" >Buy</button></a></p>
+							    </div>
+
+						        </div>
+                           }
+                           c++;
+                            if(c==1)
+                            {
+                                c=0;
+                               @Html.Raw("</div> ")
+                            }
+       
+                    }
+                    
+					
+                       
 					
 					
-					
-					<div class="container-fluid well" >
-						
-						<div class="container-fluid col-md-3">
-							<a href=@Url.Action("details")><img class="img-thumbnail img2" src="~/resources/1.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p style="color:red;font-size:20">
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-								</p>
-								<p><a href=@Url.Action("details")><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href=@Url.Action("details")><img class="img-thumbnail img2" src="~/resources/2.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p style="color:red;font-size:20">
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-								</p>
-								<p><a href=@Url.Action("details")><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href=@Url.Action("details")><img class="img-thumbnail img2" src="~/resources/3.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p style="color:red;font-size:20">
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-								</p>
-								<p><a href=@Url.Action("details")><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href=@Url.Action("details")><img class="img-thumbnail img2" src="~/resources/f1.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p style="color:red;font-size:20">
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-								</p>
-								<p><a href=@Url.Action("details")><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						
-					</div>	
 					
 					</br>
 					</br>
@@ -110,12 +78,10 @@
 					
 					
 					<h3><b>Related Products</b></h3>
+                    
+                    
 					<div class="container-fluid well">
-						
-						
-						
-						
-						
+					
 						<div class="container-fluid col-md-3">
 							<a href=@Url.Action("details")><img class="img-thumbnail img2" src="~/resources/1.jpg"></a>
 							<div style="text-align:center ;">
