@@ -60,7 +60,7 @@
     <Compile Include="ProductService.cs" />
     <Compile Include="ReportService.cs" />
     <Compile Include="SearchHistoryService.cs" />
-    <Compile Include="UserFavouriteService.cs" />
+    <Compile Include="UserFavoriteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

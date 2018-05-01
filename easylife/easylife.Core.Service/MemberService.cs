@@ -28,9 +28,9 @@ namespace easylife.Core.Service
             return _context.Set<Member>().Where(i => i.Email == Email);
         }
 
-        public IEnumerable<Member> GetById(int Member_id)
+        public Member GetById(int Member_id)
         {
-            return _context.Set<Member>().Where(i => i.Memeber_id == Member_id);
+            return _context.Set<Member>().Find(Member_id);
         }
 
         public IEnumerable<Member> GetByName(string Name)
@@ -69,7 +69,13 @@ namespace easylife.Core.Service
 
         public bool Insert(Member member)
         {
-            throw new NotImplementedException();
+            if(_context.Set<Member>().Add(member) == member)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool SetPoint(int Member_id, int point)

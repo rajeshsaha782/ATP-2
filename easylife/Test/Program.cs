@@ -37,16 +37,22 @@ namespace Test
             e.Members.Add(m);
             e.SaveChanges();*/
 
-           /* Address a = new Address();
-            a.Address_id = 1;
-            a.Member_id = 1;
-            a.Member_Address = "Mirpur";
+            easylifeDbContext e = new easylifeDbContext();
+          
+            //Address a = new Address();
+            //a.Member_id = 1;
+            //a.Member_Address = "Mirpur";
 
-            AddressService a1 = new AddressService();
+            // AddressService a1 = new AddressService(e);
+            // Console.WriteLine(a1.Insert(a));
 
-            Console.WriteLine(a1.Insert(a));*/
+            Member m = new Member();
+            m.Email = "r@gmail.com";
+            m.Memeber_Since = DateTime.Now;
+            m.Last_Logged_In = DateTime.Now;
 
-
+            MemberService ms = new MemberService(e);
+            Console.WriteLine(ms.Insert(m));
 
             ///GetAll-----------------
 
@@ -54,6 +60,8 @@ namespace Test
             //{
             //    Console.WriteLine(mem.Name);
             //}
+
+
 
         }
     }

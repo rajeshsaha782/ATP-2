@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using easylife.Core.Service.Interfaces;
 
 namespace easylife.Controllers
 {
     public class AdminController : Controller
     {
+        public IMemberService _MemberService;
+
+        public AdminController(IMemberService MemberService)
+        {
+            _MemberService = MemberService;
+        }
 
         public ActionResult Dashboard()
         {
@@ -17,9 +24,9 @@ namespace easylife.Controllers
         {
             return View();
         }
-        public ActionResult View_Profile_Admin()
+        public ActionResult View_Profile_Admin(string id)
         {
-            return View();
+            return View(_MemberService.GetByEmail(id));
         }
         public ActionResult View_Profile_User()
         {
@@ -45,7 +52,7 @@ namespace easylife.Controllers
 
         public ActionResult View_Members()
         {
-            return View();
+            return View(_MemberService.GetAll());
         }
         public ActionResult View_Delivery_Man()
         {

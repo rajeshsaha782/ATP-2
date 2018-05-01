@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<easylife.Core.Entities.Member>
+@{
     ViewBag.Title = "View_Members";
 }
 
@@ -72,6 +73,17 @@ table {
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
+          @foreach (var item in Model) {
+        <tr onclick="location.href='@Url.Action("View_Profile_Admin")'">
+            <td>
+                @Html.DisplayFor(modelItem => item.Memeber_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+           
+        </tr>
+         }
         <tr  onclick="location.href='@Url.Action("View_Profile_Admin")'">
           <td>1</a></td>
           <td>MD Mashiul Azam</td>
