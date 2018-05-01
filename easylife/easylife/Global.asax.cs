@@ -44,6 +44,7 @@ namespace easylife
             container.RegisterType<IReportService, ReportService>();
             container.RegisterType<ISearchHistoryService, SearchHistoryService>();
             container.RegisterType<IUserFavoriteService, UserFavoriteService>();
+            container.RegisterType<ILoginService, LoginService>();
 
             container.RegisterType<DbContext, easylifeDbContext>();
 

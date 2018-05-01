@@ -54,6 +54,7 @@
     <Compile Include="DislikeService.cs" />
     <Compile Include="InvoiceService.cs" />
     <Compile Include="LikeService.cs" />
+    <Compile Include="LoginService.cs" />
     <Compile Include="MemberService.cs" />
     <Compile Include="OrderService.cs" />
     <Compile Include="ProductReviewService.cs" />

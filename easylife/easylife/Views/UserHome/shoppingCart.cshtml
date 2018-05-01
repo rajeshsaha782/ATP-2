@@ -10,7 +10,7 @@
 						<ol class="breadcrumb">
 						<li><a href=@Url.Action("index") ><i class="fa fa-dashboard"></i> Home</a></li>
 						<li><a href=@Url.Action("search") >Search</a></li>
-						<li><a  href=@Url.Action("details")>Details</a></li>
+						<li><a  href=@Url.Action("details", new {id=ViewBag.detailId })>Details</a></li>
 						<li><a  class="active">Shopping Cart</a></li>
 						
 						</ol>
@@ -118,7 +118,7 @@
 										
 									</tr>
 									<tr>
-										<td colspan="3"><p><a href="confirmOrder"><button type="button" class="btn btn-info" >Confirm</button></a></p></td>
+										<td colspan="3"><p><a href=@Url.Action("confirmOrder")><button type="button" class="btn btn-info" >Confirm</button></a></p></td>
 										
 										
 										

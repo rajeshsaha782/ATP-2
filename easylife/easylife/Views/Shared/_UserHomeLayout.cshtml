@@ -407,16 +407,16 @@
 					
 					<table class="table table-striped  ">
 						
-						<tbody>
+						<tbody style="width:50%">
 							
 							<tr>
 								<th>Email</th>
-								<td><input type="text"></input></td>
+								<td><input id="email" type="text"/><span id="emailErr" style="color:red"></span></td>
 								
 							</tr>
 							<tr>
 								<th>Password</th>
-								<td><input type="password"></input></td>
+								<td><input id="password" type="password"/><span id="passwordErr" style="color:red"></span></td>
 								
 							</tr>
 							
@@ -437,7 +437,8 @@
 					
 				</div>
 				<div class="modal-footer">
-					<a href=@Url.Action("Dashboard","UserDashboard")><button type="button" id="login" class="btn btn-info" >Log In</button></a>
+					@*<a href=@Url.Action("Dashboard","UserDashboard")><button type="button" id="loginButton" class="btn btn-info" >Log In</button></a>*@
+					<a href="#"><button type="button" id="loginButton" class="btn btn-info" >Log In</button></a>
 				</div>
 			</div>
 		</div>
@@ -452,6 +453,29 @@
 	    $("#sign").click(function () {
 
 	        $("#loginmodal").hide();
+
+	    });
+	    $("#loginButton").click(function () {
+
+	        var valid = true;
+	        if ($("#email").val()=="")
+	        {
+	            valid = false;
+	            $("#emailErr").text("*");
+	        }
+	        if ($("#password").val() == "")
+	        {
+	            valid = false;
+	            $("#passwordErr").text("*");
+	        }
+
+	        if(valid)
+	        {
+                
+              window.location = '@Url.Action("Dashboard","UserDashboard")'
+	            
+	        }
+	        
 
 	    });
 

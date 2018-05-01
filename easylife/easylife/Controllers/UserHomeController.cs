@@ -46,6 +46,7 @@ namespace easylife.Controllers
             //cart.Expires = DateTime.Now.AddDays(7);
             //cart.Secure = true;
             //Response.Cookies.Add(cart);
+            ViewBag.detailId = id;
 
             HttpCookie cookie = Request.Cookies["cart"];
             Response.Write(cookie);
