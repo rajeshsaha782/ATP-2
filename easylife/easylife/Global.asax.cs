@@ -6,6 +6,13 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Optimization;
+using Unity;
+using Unity.Mvc4;
+using Microsoft.Practices.Unity;
+using System.Data.Entity;
+using easylife.Infrastructure;
+using easylife.Core.Service.Interfaces;
+using easylife.Core.Service;
 
 namespace easylife
 {
@@ -21,6 +28,26 @@ namespace easylife
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            IUnityContainer container = new UnityContainer();
+
+            container.RegisterType<IAddressService, AddressService>();
+            container.RegisterType<ICouponService, CouponService>();
+            container.RegisterType<IDeliveryManService, DeliveryManService>();
+            container.RegisterType<IDislikeService, DislikeService>();
+            container.RegisterType<IInvoiceService, InvoiceService>();
+            container.RegisterType<ILikeService, LikeService>();
+            container.RegisterType<IMemberService, MemberService>();
+            container.RegisterType<IOrderService, OrderService>();
+            container.RegisterType<IProductReviewService, ProductReviewService>();
+            container.RegisterType<IProductService, ProductService>();
+            container.RegisterType<IReportService, ReportService>();
+            container.RegisterType<ISearchHistoryService, SearchHistoryService>();
+            container.RegisterType<IUserFavoriteService, UserFavoriteService>();
+
+            container.RegisterType<DbContext, easylifeDbContext>();
+
+            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
 }

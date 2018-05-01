@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace easylife.Core.Service
 {
-    class DeliveryManService : IDeliveryManService
+    public class DeliveryManService : IDeliveryManService
     {
         DbContext _context;
 

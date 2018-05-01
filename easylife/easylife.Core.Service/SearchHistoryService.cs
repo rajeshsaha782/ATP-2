@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace easylife.Core.Service
 {
-    class SearchHistoryService : ISearchHistoryService
+    public class SearchHistoryService : ISearchHistoryService
     {
 
         DbContext _context;

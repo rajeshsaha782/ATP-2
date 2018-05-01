@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace easylife.Core.Service
 {
-    class DislikeService : IDislikeService
+    public class DislikeService : IDislikeService
     {
 
         DbContext _context;
