@@ -55,7 +55,8 @@ h3 {
 		  <th>Total Purchase</th>
           <th>Last Active</th>
 		  <th>Status</th>
-		  
+		  <td></td>
+           <td></td>
         </tr>
       </thead>
     </table>
@@ -71,6 +72,8 @@ h3 {
 		  <td>100</td>
           <td>2 Day(s) Ago</td>
 		  <td>Active</td>
+           <td><a href='@Url.Action("Send_Mail")'><img height="30" width="30" src="~/resources/mail.jpg" /></a></td>
+            <td><a href='@Url.Action("Set_Cupon")'><img height="30" width="30" src="~/resources/cupon.jpg" /></a></td>
           <!-- <td><a href="View_Profile.cshtml">View</a></td> -->
 		  <!-- <td><a href="Edit_Profile.cshtml">Edit</a></td> -->
 		  <!-- <td><a href="Delete_Profile.cshtml">Delete</a></td> -->
@@ -82,6 +85,8 @@ h3 {
 		  <td>234</td>
           <td>3 Month(s) Ago</td>
 		  <td>Blocked</td>
+            <td><a href='@Url.Action("Send_Mail")'><img height="30" width="30" src="~/resources/mail.jpg" /></a></td>
+             <td><a href='@Url.Action("Set_Cupon")'><img height="30" width="30" src="~/resources/cupon.jpg" /></a></td>
         </tr>
 		<tr onclick="location.href='@Url.Action("View_Profile_User")'">
           <td>3</td>
@@ -90,15 +95,20 @@ h3 {
 		  <td>1879</td>
           <td>1 Year(s) Ago</td>
 		  <td>Active</td>
+            <td><a href='@Url.Action("Send_Mail")'><img height="30" width="30" src="~/resources/mail.jpg" /></a></td>
+             <td><a href='@Url.Action("Set_Cupon")'><img height="30" width="30" src="~/resources/cupon.jpg" /></a></td>
         </tr >
 		<tr onclick="location.href='@Url.Action("View_Profile_User")'">
-          <td><4</td>
+          <td>4</td>
           <td>Reza Ul Karim</td>
           <td>reza@gmail.com</td>
 		  <td>2134</td>
           <td>1 Year(s) Ago</td>
 		  <td>Blocked</td>
+            <td><a href='@Url.Action("Send_Mail")'><img height="30" width="30" src="~/resources/mail.jpg" /></a></td>
+             <td><a href='@Url.Action("Set_Cupon")'><img height="30" width="30" src="~/resources/cupon.jpg" /></a></td>
         </tr>
+
         
       </tbody>
     </table>

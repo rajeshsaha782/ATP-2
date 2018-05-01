@@ -173,6 +173,7 @@
     <Content Include="resources\bronze.jpg" />
     <Content Include="resources\cap6.jpg" />
     <Content Include="resources\cash.jpg" />
+    <Content Include="resources\cupon.jpg" />
     <Content Include="resources\digital watch.jpg" />
     <Content Include="resources\Dupatta.jpg" />
     <Content Include="resources\e.jpg" />
@@ -194,6 +195,7 @@
     <Content Include="resources\logo.ico" />
     <Content Include="resources\logo.jpg" />
     <Content Include="resources\m.jpg" />
+    <Content Include="resources\mail.jpg" />
     <Content Include="resources\Panjabi.jpg" />
     <Content Include="resources\platinum.jpg" />
     <Content Include="resources\product.jpg" />
@@ -244,6 +246,8 @@
     <None Include="Views\Admin\Edit_Profile_Admin.cshtml" />
     <Content Include="Views\Admin\Edit_Profile_Delivery_Man.cshtml" />
     <Content Include="Views\Admin\Edit_Profile_User.cshtml" />
+    <Content Include="Views\Admin\Set_Cupon.cshtml" />
+    <Content Include="Views\Admin\Send_Mail.cshtml" />
     <None Include="Views\Admin\Update_Slider.cshtml" />
     <Content Include="Views\Admin\View_Product_Details.cshtml" />
     <Content Include="Views\Admin\View_Profile_Delivery_Man.cshtml" />

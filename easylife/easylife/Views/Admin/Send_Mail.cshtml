@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Send Mail";
+}
+
+		
+			
+			<div class="main-div">
+				
+				<div  style="width:50%;height:600px;background-color:white;">
+					<table>
+                            <tr style="background-color:dimgray;" >
+                                   <td>New Message</td>  
+                                    
+                            </tr>
+                            
+                        
+                            <tr  >
+                                   <td>To:<label>mashiul@gmail.com</label></td> 
+                                   
+                            </tr>
+                           
+                        
+                            <tr>
+                                   <td>Subject:<input  value="Congratulations" size="65"/></td> 
+                                      
+                            </tr>
+                            
+                            <tr>
+                                   <td><textarea rows="13" cols="75" placeholder="type your message here"></textarea></td>    
+                            </tr>
+                        
+					</table>
+                    <table>
+                            <tr >
+                                   <td><button class="button" onclick="confirmm()">Send</button></td>
+                                 <td><a href="@Url.Action("View_Users")"><button class="button">Cancel</button></a></td>   
+                                    
+                            </tr>
+                            
+                        
+                        
+					</table>
+
+					
+						
+					</div>
+					<!--<img src="resources/1.jpg" width="80%" height="300px" align="center"/> -->
+				</div>
+				
+		
+		<script>
+function confirmm() {
+    var txt;
+    if (confirm("Send Message ?")) {
+        alert("Message Sent Succesfully");
+		window.open('@Url.Action("View_Users")','_self');
+		
+    } else {
+        txt = "You pressed Cancel!";
+    }
+    document.getElementById("demo").innercshtml = txt;
+}		
+	
+</script>			
+	
+

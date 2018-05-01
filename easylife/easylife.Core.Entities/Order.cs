@@ -16,7 +16,7 @@ namespace easylife.Core.Entities
         public int InvoiceId { get; set; }
         public int Quantity { get; set; }
         public int Profit { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime SellingDate { get; set; }
 
     }
 }

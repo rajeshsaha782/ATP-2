@@ -120,6 +120,14 @@ namespace easylife.Controllers
         {
             return View();
         }
+        public ActionResult Set_Cupon()
+        {
+            return View();
+        }
+        public ActionResult Send_Mail()
+        {
+            return View();
+        }
 
     }
 }
