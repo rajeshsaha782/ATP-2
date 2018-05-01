@@ -10,20 +10,20 @@ namespace easylife.Core.Entities
     public class Product
     {
         [Key]
-        public int Product_id { get; set; }
-        public string Product_name { get; set; }
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
         public string Features { get; set; }
         public float  Quantity { get; set; }
-        public float  Buying_Price { get; set; }
-        public float  Selling_Price { get; set; }
+        public float  BuyingPrice { get; set; }
+        public float  SellingPrice { get; set; }
         public string Category { get; set; }
-        public string Sub_Category { get; set; }
+        public string SubCategory { get; set; }
         public string Brand { get; set; }
         public int    Size { get; set; }
         public DateTime Date { get; set; }
-        public DateTime Last_Sold { get; set; }
-        public float  Total_Sell { get; set; }
-        public int    Total_Viewed { get; set; }
+        public DateTime LastSold { get; set; }
+        public float  TotalSell { get; set; }
+        public int    TotalViewed { get; set; }
         public float Star { get; set; }//Star= (Like*5)/(like+dislike)
 
 

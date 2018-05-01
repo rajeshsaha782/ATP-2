@@ -12,4 +12,3 @@ F:\GitHub\ATP-2\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities
 F:\GitHub\ATP-2\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities.pdb
 F:\GitHub\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.dll
 F:\GitHub\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.pdb
-F:\GitHub\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.csprojResolveAssemblyReference.cache

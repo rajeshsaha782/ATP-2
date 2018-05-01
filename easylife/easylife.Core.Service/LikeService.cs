@@ -23,28 +23,28 @@ namespace easylife.Core.Service
             return _context.Set<Like>().ToList();
         }
 
-        public IEnumerable<Like> GetById(int Address_id)
+        public IEnumerable<Like> GetById(int AddressId)
         {
-            return _context.Set<Like>().Where(i => i.Like_id == Address_id);
+            return _context.Set<Like>().Where(i => i.LikeId == AddressId);
         }
 
-        public IEnumerable<Like> GetByMemberId(int Member_id)
+        public IEnumerable<Like> GetByMemberId(int MemberId)
         {
-            return _context.Set<Like>().Where(i => i.Member_id == Member_id);
+            return _context.Set<Like>().Where(i => i.MemberId == MemberId);
         }
 
-        public IEnumerable<Like> GetByProductId(int Product_id)
+        public IEnumerable<Like> GetByProductId(int ProductId)
         {
-            return _context.Set<Like>().Where(i => i.Product_id == Product_id);
+            return _context.Set<Like>().Where(i => i.ProductId == ProductId);
         }
         public int countlike(int Product_id)
         {
             throw new NotImplementedException();
         }
 
-        public bool Delete(int Address_id)
+        public bool Delete(int AddressId)
         {
-            var deleteLike = _context.Set<Like>().Where(i => i.Like_id == Address_id).SingleOrDefault();
+            var deleteLike = _context.Set<Like>().Where(i => i.LikeId == AddressId).SingleOrDefault();
             /// 
 
             if (deleteLike != null)
@@ -74,7 +74,7 @@ namespace easylife.Core.Service
 
         public bool Update(Like address)
         {
-            var updateLike = _context.Set<Like>().Where(i => i.Like_id == address.Like_id).SingleOrDefault();
+            var updateLike = _context.Set<Like>().Where(i => i.LikeId == address.LikeId).SingleOrDefault();
             /// 
 
             if (updateLike != null)

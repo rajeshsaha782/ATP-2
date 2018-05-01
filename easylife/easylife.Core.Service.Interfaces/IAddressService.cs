@@ -10,13 +10,13 @@ namespace easylife.Core.Service.Interfaces
     public interface IAddressService
     {
         IEnumerable<Address> GetAll();
-        IEnumerable<Address> GetById(int Address_id);
+        IEnumerable<Address> GetById(int AddressId);
         bool Insert(Address address);
         bool Update(Address address);
-        bool Delete(int Address_id);
+        bool Delete(int AddressId);
 
-        IEnumerable<Address> GetByMemberId(int Member_id);
-        bool DeleteByMemberId(int Member_id);
+        IEnumerable<Address> GetByMemberId(int MemberId);
+        bool DeleteByMemberId(int MemberId);
         //bool UpdateByMember(int address);
 
 

@@ -21,7 +21,7 @@ namespace easylife.Core.Service
 
         public bool Delete(int Invoice_id)
         {
-            var deleteInvoice = _context.Set<Invoice>().Where(i => i.Invoice_id == Invoice_id).SingleOrDefault();
+            var deleteInvoice = _context.Set<Invoice>().Where(i => i.InvoiceId == Invoice_id).SingleOrDefault();
 
             if (deleteInvoice != null)
             {
@@ -44,7 +44,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<Invoice> GetById(int Invoice_id)
         {
-            return _context.Set<Invoice>().Where(i => i.Invoice_id == Invoice_id);
+            return _context.Set<Invoice>().Where(i => i.InvoiceId == Invoice_id);
         }
 
         public IEnumerable<Invoice> GetByMemberId(int Member_id)
@@ -75,7 +75,7 @@ namespace easylife.Core.Service
 
         public bool Update(Invoice invoice)
         {
-            var updateInvoice = _context.Set<Invoice>().Where(i => i.Invoice_id == invoice.Invoice_id).SingleOrDefault();
+            var updateInvoice = _context.Set<Invoice>().Where(i => i.InvoiceId == invoice.InvoiceId).SingleOrDefault();
             /// 
 
             if (updateInvoice != null)

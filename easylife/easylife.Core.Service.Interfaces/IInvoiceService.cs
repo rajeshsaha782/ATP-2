@@ -10,16 +10,16 @@ namespace easylife.Core.Service.Interfaces
     public interface IInvoiceService
     {
         IEnumerable<Invoice> GetAll();
-        IEnumerable<Invoice> GetById(int Invoice_id);
+        IEnumerable<Invoice> GetById(int InvoiceId);
         bool Insert(Invoice invoice);
         bool Update(Invoice invoice);
-        bool Delete(int Invoice_id);
+        bool Delete(int InvoiceId);
 
-        IEnumerable<Invoice> GetByMemberId(int Member_id);
+        IEnumerable<Invoice> GetByMemberId(int MemberId);
         IEnumerable<Invoice> GetByPaid();
         IEnumerable<Invoice> GetByUnpaid();
         IEnumerable<Invoice> GetByDate(DateTime Date);
-        bool SetStatus(int Invoice_id, string Status);
+        bool SetStatus(int InvoiceId, string Status);
 
     }
 }

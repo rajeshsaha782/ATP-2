@@ -49,7 +49,7 @@ namespace easylife.Core.Service
         }
         public bool Delete(int Member_id)
         {
-            var deleteMemberservice= _context.Set<Member>().Where(i => i.Memeber_id == Member_id).SingleOrDefault();
+            var deleteMemberservice= _context.Set<Member>().Where(i => i.MemeberId == Member_id).SingleOrDefault();
             /// 
 
             if (deleteMemberservice != null)
@@ -85,7 +85,7 @@ namespace easylife.Core.Service
 
         public bool Update(Member member)
         {
-            var updateMember = _context.Set<Member>().Where(i => i.Memeber_id == member.Memeber_id).SingleOrDefault();
+            var updateMember = _context.Set<Member>().Where(i => i.MemeberId == member.MemeberId).SingleOrDefault();
             /// 
 
             if (updateMember != null)

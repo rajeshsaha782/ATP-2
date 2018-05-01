@@ -48,8 +48,8 @@ namespace Test
 
             Member m = new Member();
             m.Email = "r@gmail.com";
-            m.Memeber_Since = DateTime.Now;
-            m.Last_Logged_In = DateTime.Now;
+            m.MemeberSince = DateTime.Now;
+            m.LastLoggedIn = DateTime.Now;
 
             MemberService ms = new MemberService(e);
             Console.WriteLine(ms.Insert(m));

@@ -10,10 +10,10 @@ namespace easylife.Core.Service.Interfaces
     public interface IProductService
     {
         IEnumerable<Product> GetAll();
-        IEnumerable<Product> GetById(int Product_id);
+        IEnumerable<Product> GetById(int ProductId);
         bool Insert(Product product);
         bool Update(Product product);
-        bool Delete(int Product_id);
+        bool Delete(int ProductId);
 
         IEnumerable<Product> GetByLessThanSellPrice(float price);
         IEnumerable<Product> GetByMoreThanSellPrice(float price);
@@ -26,19 +26,19 @@ namespace easylife.Core.Service.Interfaces
         //IEnumerable<Product> GetByLessSell();
         //IEnumerable<Product> GetByMoreSell();
 
-        bool IncreasePrice(int Product_id,float Price);
-        bool DecreasePrice(int Product_id,float Price);
-        bool IncreaseQuantity(int Product_id, int Quantity);
-        bool DecreaseQuantity(int Product_id, int Quantity);
+        bool IncreasePrice(int ProductId,float Price);
+        bool DecreasePrice(int ProductId,float Price);
+        bool IncreaseQuantity(int ProductId, int Quantity);
+        bool DecreaseQuantity(int ProductId, int Quantity);
 
-        bool SetTotal_Viewed(int Product_id);//increment by 1
-        bool SetTotal_Sell(int Product_id);//increment by 1
+        bool SetTotal_Viewed(int ProductId);//increment by 1
+        bool SetTotal_Sell(int ProductId);//increment by 1
         
-        int GetTotal_Viewed(int Product_id);
-        int GetTotal_Sell(int Product_id);
+        int GetTotal_Viewed(int ProductId);
+        int GetTotal_Sell(int ProductId);
 
-        bool SetTotal_Star(int Product_id);//Countlike(productid)*5/countlike(productid)+countdislike(productid)
-        float GetTotal_Star(int Product_id);
+        bool SetTotal_Star(int ProductId);//Countlike(productid)*5/countlike(productid)+countdislike(productid)
+        float GetTotal_Star(int ProductId);
 
     }
 }

@@ -10,12 +10,12 @@ namespace easylife.Core.Entities
     public class Coupon
     {
         [Key]
-        public int Coupon_id { get; set; }
-        public int Member_id { get; set; }
+        public int CouponId { get; set; }
+        public int MemberId { get; set; }
         public int Percentage { get; set; }
         public string Availability { get; set; }
-        public DateTime Issue_Date { get; set; }
-        public DateTime Deadline_Date { get; set; }
+        public DateTime IssueDate { get; set; }
+        public DateTime DeadlineDate { get; set; }
 
     }
 }

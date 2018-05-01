@@ -37,7 +37,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<Product> GetById(int Product_id)
         {
-            return _context.Set<Product>().Where(i => i.Product_id == Product_id);
+            return _context.Set<Product>().Where(i => i.ProductId == Product_id);
 
         }
 
@@ -53,7 +53,7 @@ namespace easylife.Core.Service
 
         public bool Delete(int Product_id)
         {
-            var deleteFavorite = _context.Set<Product>().Where(i => i.Product_id == Product_id).SingleOrDefault();
+            var deleteFavorite = _context.Set<Product>().Where(i => i.ProductId == Product_id).SingleOrDefault();
             /// 
             if (deleteFavorite != null)
             {
@@ -122,7 +122,7 @@ namespace easylife.Core.Service
 
         public bool Update(Product product)
         {
-            var updateProduct = _context.Set<Product>().Where(i => i.Product_id == product.Product_id).SingleOrDefault();
+            var updateProduct = _context.Set<Product>().Where(i => i.ProductId == product.ProductId).SingleOrDefault();
             /// 
 
             if (updateProduct != null)

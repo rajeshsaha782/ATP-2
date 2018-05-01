@@ -10,10 +10,10 @@ namespace easylife.Core.Service.Interfaces
     public interface IMemberService
     {
         IEnumerable<Member> GetAll();
-        Member GetById(int Member_id);
+        Member GetById(int MemberId);
         bool Insert(Member member);
         bool Update(Member member);
-        bool Delete(int Member_id);
+        bool Delete(int MemberId);
 
 
         IEnumerable<Member> GetByEmail(string Email);
@@ -21,8 +21,8 @@ namespace easylife.Core.Service.Interfaces
         IEnumerable<Member> GetByType(string Type);
         IEnumerable<Member> GetByStatus(string Status);
 
-        int GetPoint(int Member_id);
-        bool SetPoint(int Member_id,int point);
+        int GetPoint(int MemberId);
+        bool SetPoint(int MemberId,int point);
 
         //bool IncreasePoint(int Member_id);    //need point attribute for member
         //bool DecreasePoint(int Member_id);

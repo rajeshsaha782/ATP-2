@@ -24,9 +24,9 @@ namespace easylife.Core.Service
         }
 
 
-        public bool Delete(int Address_id)
+        public bool Delete(int AddressId)
         {
-            var DeleteAddress = _context.Set<Address>().Where(i => i.Address_id == Address_id).SingleOrDefault();
+            var DeleteAddress = _context.Set<Address>().Where(i => i.AddressId == AddressId).SingleOrDefault();
             /// 
 
             if (DeleteAddress != null)
@@ -38,9 +38,9 @@ namespace easylife.Core.Service
         }
 
 
-        public bool DeleteByMemberId(int Member_id)
+        public bool DeleteByMemberId(int MemberId)
         {
-            var DeleteAddress = _context.Set<Address>().Where(i => i.Member_id == Member_id).SingleOrDefault();
+            var DeleteAddress = _context.Set<Address>().Where(i => i.MemberId == MemberId).SingleOrDefault();
             /// 
 
             if (DeleteAddress != null)
@@ -53,15 +53,15 @@ namespace easylife.Core.Service
 
        
 
-        public IEnumerable<Address> GetById(int Address_id)
+        public IEnumerable<Address> GetById(int AddressId)
         {
-            return _context.Set<Address>().Where(i => i.Address_id == Address_id);
+            return _context.Set<Address>().Where(i => i.AddressId == AddressId);
         }
 
 
-        public IEnumerable<Address> GetByMemberId(int Member_id)
+        public IEnumerable<Address> GetByMemberId(int MemberId)
         {
-            return _context.Set<Address>().Where(i => i.Member_id == Member_id);
+            return _context.Set<Address>().Where(i => i.MemberId == MemberId);
         }
 
 
@@ -80,7 +80,7 @@ namespace easylife.Core.Service
 
         public bool Update(Address address)
         {
-            if (_context.Set<Address>().Any(e => e.Address_id == address.Address_id))
+            if (_context.Set<Address>().Any(e => e.AddressId == address.AddressId))
             {
                 _context.Set<Address>().Attach(address);
                 _context.SaveChanges();

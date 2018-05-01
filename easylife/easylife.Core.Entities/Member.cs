@@ -10,16 +10,18 @@ namespace easylife.Core.Entities
     public class Member
     {
         [Key]
-        public int Memeber_id { get; set; }
+        public int MemeberId { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
-        public string Phone_Number { get; set; }
+        public string Gender { get; set; }
+
+        public string PhoneNumber { get; set; }
         public string Type { get; set; }
         public string Status { get; set; }
-        public DateTime Memeber_Since { get; set; }
-        public DateTime Last_Logged_In { get; set; }
-        public float  Total_Purchase { get; set; }
+        public DateTime MemeberSince { get; set; }
+        public DateTime LastLoggedIn { get; set; }
+        public float  TotalPurchase { get; set; }
         public int Point { set; get; }
     }
 }

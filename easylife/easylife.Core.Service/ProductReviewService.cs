@@ -21,48 +21,48 @@ namespace easylife.Core.Service
 
         public bool Delete(int Review_id)
         {
-            var deleteFavorite = _context.Set<Product_Review>().Where(i => i.Review_id == Review_id).SingleOrDefault();
+            var deleteFavorite = _context.Set<ProductReview>().Where(i => i.ReviewId == Review_id).SingleOrDefault();
             /// 
 
             if (deleteFavorite != null)
             {
-                _context.Set<Product_Review>().Remove(deleteFavorite);
+                _context.Set<ProductReview>().Remove(deleteFavorite);
 
             }
             return true;
         }
 
-        public IEnumerable<Product_Review> GetAll()
+        public IEnumerable<ProductReview> GetAll()
         {
-            return _context.Set<Product_Review>().ToList();
+            return _context.Set<ProductReview>().ToList();
         }
 
-        public IEnumerable<Product_Review> GetById(int Review_id)
+        public IEnumerable<ProductReview> GetById(int Review_id)
         {
-            return _context.Set<Product_Review>().Where(i => i.Review_id == Review_id);
+            return _context.Set<ProductReview>().Where(i => i.ReviewId == Review_id);
         }
 
-        public IEnumerable<Product_Review> GetByMemberId(int Member_id)
+        public IEnumerable<ProductReview> GetByMemberId(int Member_id)
         {
-            return _context.Set<Product_Review>().Where(i => i.Member_id == Member_id);
+            return _context.Set<ProductReview>().Where(i => i.MemberId == Member_id);
         }
 
-        public IEnumerable<Product_Review> GetByProductId(int Product_id)
+        public IEnumerable<ProductReview> GetByProductId(int Product_id)
         {
-            return _context.Set<Product_Review>().Where(i => i.Product_id == Product_id);
+            return _context.Set<ProductReview>().Where(i => i.ProductId == Product_id);
         }
 
 
 
 
-        public bool Insert(Product_Review review)
+        public bool Insert(ProductReview review)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Product_Review review)
+        public bool Update(ProductReview review)
         {
-            var updateReview = _context.Set<Product_Review>().Where(i => i.Review_id == review.Review_id).SingleOrDefault();
+            var updateReview = _context.Set<ProductReview>().Where(i => i.ReviewId == review.ReviewId).SingleOrDefault();
             /// 
 
             if (updateReview != null)

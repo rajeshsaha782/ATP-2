@@ -10,8 +10,8 @@ namespace easylife.Core.Entities
     public class Like
     {
         [Key]
-        public int Like_id { get; set; }
-        public int Member_id { get; set; }
-        public int Product_id { get; set; }
+        public int LikeId { get; set; }
+        public int MemberId { get; set; }
+        public int ProductId { get; set; }
     }
 }

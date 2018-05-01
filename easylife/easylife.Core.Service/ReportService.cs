@@ -21,7 +21,7 @@ namespace easylife.Core.Service
 
         public bool Delete(int Report_id)
         {
-            var deleteFavorite = _context.Set<Report>().Where(i =>i.Report_id == Report_id).SingleOrDefault();
+            var deleteFavorite = _context.Set<Report>().Where(i =>i.ReportId == Report_id).SingleOrDefault();
             /// 
             if (deleteFavorite != null)
             {
@@ -43,12 +43,12 @@ namespace easylife.Core.Service
 
         public IEnumerable<Report> GetById(int Report_id)
         {
-            return _context.Set<Report>().Where(i => i.Report_id == Report_id);
+            return _context.Set<Report>().Where(i => i.ReportId == Report_id);
         }
 
         public IEnumerable<Report> GetByMemberId(int Member_id)
         {
-            return _context.Set<Report>().Where(i => i.Memeber_id == Member_id);
+            return _context.Set<Report>().Where(i => i.MemeberId == Member_id);
         }
 
 
@@ -85,7 +85,7 @@ namespace easylife.Core.Service
 
         public bool Update(Report report)
         {
-            var updateReport = _context.Set<Report>().Where(i => i.Report_id == report.Report_id).SingleOrDefault();
+            var updateReport = _context.Set<Report>().Where(i => i.ReportId == report.ReportId).SingleOrDefault();
             /// 
 
             if (updateReport != null)

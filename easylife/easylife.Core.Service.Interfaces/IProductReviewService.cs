@@ -9,14 +9,14 @@ namespace easylife.Core.Service.Interfaces
 {
     public interface IProductReviewService
     {
-        IEnumerable<Product_Review> GetAll();
-        IEnumerable<Product_Review> GetById(int Review_id);
-        bool Insert(Product_Review review);
-        bool Update(Product_Review review);
-        bool Delete(int Review_id);
+        IEnumerable<ProductReview> GetAll();
+        IEnumerable<ProductReview> GetById(int ReviewId);
+        bool Insert(ProductReview review);
+        bool Update(ProductReview review);
+        bool Delete(int ReviewId);
 
-        IEnumerable<Product_Review> GetByMemberId(int Member_id);
-        IEnumerable<Product_Review> GetByProductId(int Product_id);
+        IEnumerable<ProductReview> GetByMemberId(int MemberId);
+        IEnumerable<ProductReview> GetByProductId(int ProductId);
         
     }
 }

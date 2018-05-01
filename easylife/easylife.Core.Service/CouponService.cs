@@ -28,7 +28,7 @@ namespace easylife.Core.Service
 
         public bool Delete(int Coupon_id)
         {
-            var deleteCoupon = _context.Set<Coupon>().Where(i => i.Coupon_id == Coupon_id).SingleOrDefault();
+            var deleteCoupon = _context.Set<Coupon>().Where(i => i.CouponId == Coupon_id).SingleOrDefault();
             /// 
 
             if (deleteCoupon != null)
@@ -41,7 +41,7 @@ namespace easylife.Core.Service
 
         public bool DeleteByMemberId(int Member_id)
         {
-            var deleteCoupon = _context.Set<Coupon>().Where(i => i.Member_id == Member_id).SingleOrDefault();
+            var deleteCoupon = _context.Set<Coupon>().Where(i => i.MemberId == Member_id).SingleOrDefault();
             /// 
 
             if (deleteCoupon != null)
@@ -56,12 +56,12 @@ namespace easylife.Core.Service
 
         public IEnumerable<Coupon> GetById(int Coupon_id)
         {
-            return _context.Set<Coupon>().Where(i => i.Coupon_id == Coupon_id);
+            return _context.Set<Coupon>().Where(i => i.CouponId == Coupon_id);
         }
 
         public IEnumerable<Coupon> GetByMemberId(int Member_id)
         {
-            return _context.Set<Coupon>().Where(i => i.Member_id == Member_id);
+            return _context.Set<Coupon>().Where(i => i.MemberId == Member_id);
         }
 
 
@@ -78,7 +78,7 @@ namespace easylife.Core.Service
 
         public bool Update(Coupon coupon)
         {
-            var updateCoupon = _context.Set<Coupon>().Where(i => i.Coupon_id == coupon.Coupon_id).SingleOrDefault();
+            var updateCoupon = _context.Set<Coupon>().Where(i => i.CouponId == coupon.CouponId).SingleOrDefault();
             /// 
 
             if (updateCoupon != null)

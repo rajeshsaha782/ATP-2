@@ -26,7 +26,7 @@ namespace easylife.Core.Service
 
         public bool Delete(int Order_id)
         {
-            var deleteOrder = _context.Set<Order>().Where(i => i.Order_id == Order_id).SingleOrDefault();
+            var deleteOrder = _context.Set<Order>().Where(i => i.OrderId == Order_id).SingleOrDefault();
             /// 
 
             if (deleteOrder != null)
@@ -41,17 +41,17 @@ namespace easylife.Core.Service
 
         public IEnumerable<Order> GetById(int Order_id)
         {
-            return _context.Set<Order>().Where(i => i.Order_id == Order_id);
+            return _context.Set<Order>().Where(i => i.OrderId == Order_id);
         }
 
         public IEnumerable<Order> GetByInvoiceId(int Invoice_id)
         {
-            return _context.Set<Order>().Where(i => i.Invoice_id == Invoice_id);
+            return _context.Set<Order>().Where(i => i.InvoiceId == Invoice_id);
         }
 
         public IEnumerable<Order> GetByProductId(int Product_id)
         {
-            return _context.Set<Order>().Where(i => i.Product_id == Product_id);
+            return _context.Set<Order>().Where(i => i.ProductId == Product_id);
         }
 
 
@@ -63,7 +63,7 @@ namespace easylife.Core.Service
 
         public bool Update(Order order)
         {
-            var updateOrder = _context.Set<Order>().Where(i => i.Order_id == order.Order_id).SingleOrDefault();
+            var updateOrder = _context.Set<Order>().Where(i => i.OrderId == order.OrderId).SingleOrDefault();
             /// 
 
             if (updateOrder != null)

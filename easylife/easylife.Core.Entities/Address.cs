@@ -10,8 +10,8 @@ namespace easylife.Core.Entities
     public class Address
     {
         [Key]
-        public int Address_id { get; set; }
-        public int Member_id { get; set; }
-        public string Member_Address { get; set; }
+        public int AddressId { get; set; }
+        public int MemberId { get; set; }
+        public string MemberAddress { get; set; }
     }
 }

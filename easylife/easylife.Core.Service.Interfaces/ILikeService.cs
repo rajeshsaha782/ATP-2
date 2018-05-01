@@ -10,16 +10,16 @@ namespace easylife.Core.Service.Interfaces
     public interface ILikeService
     {
         IEnumerable<Like> GetAll();
-        IEnumerable<Like> GetById(int Address_id);
+        IEnumerable<Like> GetById(int AddressId);
         bool Insert(Like address);
         bool Update(Like address);
-        bool Delete(int Address_id);
+        bool Delete(int AddressId);
 
-        IEnumerable<Like> GetByMemberId(int Member_id);
-        IEnumerable<Like> GetByProductId(int Product_id);
-        bool SetLike(int Member_id, int Product_id);
-        bool UnsetLike(int Member_id, int Product_id);
-        int countlike(int Product_id);
+        IEnumerable<Like> GetByMemberId(int MemberId);
+        IEnumerable<Like> GetByProductId(int ProductId);
+        bool SetLike(int MemberId, int ProductId);
+        bool UnsetLike(int MemberId, int ProductId);
+        int countlike(int ProductId);
 
     }
 }

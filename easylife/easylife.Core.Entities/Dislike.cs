@@ -10,8 +10,8 @@ namespace easylife.Core.Entities
     public class Dislike
     {
         [Key]
-        public int Dislike_id { get; set; }
-        public int Member_id { get; set; }
-        public int Product_id { get; set; }
+        public int DislikeId { get; set; }
+        public int MemberId { get; set; }
+        public int ProductId { get; set; }
     }
 }

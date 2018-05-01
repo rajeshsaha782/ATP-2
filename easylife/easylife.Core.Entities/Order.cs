@@ -10,10 +10,13 @@ namespace easylife.Core.Entities
     public class Order
     {
         [Key]
-        public int Order_id { get; set; }
-        public int Product_id { get; set; }
-        public int Memeber_id { get; set; }
-        public int Invoice_id { get; set; }
+        public int OrderId { get; set; }
+        public int ProductId { get; set; }
+        public int MemeberId { get; set; }
+        public int InvoiceId { get; set; }
         public int Quantity { get; set; }
+        public int Profit { get; set; }
+        public DateTime Date { get; set; }
+
     }
 }

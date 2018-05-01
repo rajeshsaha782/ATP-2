@@ -10,11 +10,11 @@ namespace easylife.Core.Entities
     public class Report
     {
         [Key]
-        public int Report_id { get; set; }
-        public string Report_Title { get; set; }
-        public int    Memeber_id { get; set; }
+        public int ReportId { get; set; }
+        public string ReportTitle { get; set; }
+        public int    MemeberId { get; set; }
         public DateTime Date { get; set; }
         public string Description { get; set; }
-        public string Seen_Status { get; set; }
+        public string SeenStatus { get; set; }
     }
 }

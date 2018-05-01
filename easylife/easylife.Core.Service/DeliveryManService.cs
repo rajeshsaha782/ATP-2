@@ -19,20 +19,20 @@ namespace easylife.Core.Service
         }
 
 
-        public IEnumerable<Delivery_Man> GetAll()
+        public IEnumerable<DeliveryMan> GetAll()
         {
-            return _context.Set<Delivery_Man>().ToList();
+            return _context.Set<DeliveryMan>().ToList();
         }
 
 
-        public bool Delete(int Delivery_Man_id)
+        public bool Delete(int DeliveryManId)
         {
-            var deleteDeliveryMan = _context.Set<Delivery_Man>().Where(i => i.Delivery_Man_id == Delivery_Man_id).SingleOrDefault();
+            var deleteDeliveryMan = _context.Set<DeliveryMan>().Where(i => i.DeliveryManId == DeliveryManId).SingleOrDefault();
             /// 
 
             if (deleteDeliveryMan != null)
             {
-                _context.Set<Delivery_Man>().Remove(deleteDeliveryMan);
+                _context.Set<DeliveryMan>().Remove(deleteDeliveryMan);
 
             }
             return true;
@@ -40,35 +40,35 @@ namespace easylife.Core.Service
 
 
 
-        public IEnumerable<Delivery_Man> GetById(int Delivery_Man_id)
+        public IEnumerable<DeliveryMan> GetById(int DeliveryManId)
         {
-            return _context.Set<Delivery_Man>().Where(i => i.Delivery_Man_id == Delivery_Man_id);
+            return _context.Set<DeliveryMan>().Where(i => i.DeliveryManId == DeliveryManId);
         }
 
-        public IEnumerable<Delivery_Man> GetByMemberId(int Member_id)
+        public IEnumerable<DeliveryMan> GetByMemberId(int MemberId)
         {
-            return _context.Set<Delivery_Man>().Where(i => i.Member_id == Member_id);
+            return _context.Set<DeliveryMan>().Where(i => i.MemberId == MemberId);
         }
 
 
 
-        public IEnumerable<Delivery_Man> GetByAvailability()
-        {
-            throw new NotImplementedException();
-        }
-        public IEnumerable<Delivery_Man> GetByUnavailability()
+        public IEnumerable<DeliveryMan> GetByAvailability()
         {
             throw new NotImplementedException();
         }
-
-        public bool Insert(Delivery_Man delivery_Man)
+        public IEnumerable<DeliveryMan> GetByUnavailability()
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Delivery_Man delivery_Man)
+        public bool Insert(DeliveryMan delivery_Man)
         {
-            var updatedelivery_man = _context.Set<Delivery_Man>().Where(i => i.Delivery_Man_id == delivery_Man.Delivery_Man_id).SingleOrDefault();
+            throw new NotImplementedException();
+        }
+
+        public bool Update(DeliveryMan deliveryMan)
+        {
+            var updatedelivery_man = _context.Set<DeliveryMan>().Where(i => i.DeliveryManId == deliveryMan.DeliveryManId).SingleOrDefault();
             /// 
 
             if (updatedelivery_man != null)

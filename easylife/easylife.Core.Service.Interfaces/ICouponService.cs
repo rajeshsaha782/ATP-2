@@ -10,15 +10,15 @@ namespace easylife.Core.Service.Interfaces
     public interface ICouponService
     {
         IEnumerable<Coupon> GetAll();
-        IEnumerable<Coupon> GetById(int Coupon_id);
+        IEnumerable<Coupon> GetById(int CouponId);
         bool Insert(Coupon coupon);
         bool Update(Coupon coupon);
-        bool Delete(int Coupon_id);
+        bool Delete(int CouponId);
 
 
         IEnumerable<Coupon> GetByMemberId(int Member_id);
-        bool isAvailable(int Coupon_id);
-        bool DeleteByMemberId(int Member_id);
+        bool isAvailable(int CouponId);
+        bool DeleteByMemberId(int MemberId);
 
     }
 }

@@ -7,4 +7,3 @@ F:\GitHub\ATP-2\easylife\Validation\bin\Debug\Validation.dll
 F:\GitHub\ATP-2\easylife\Validation\bin\Debug\Validation.pdb
 F:\GitHub\ATP-2\easylife\Validation\obj\Debug\Validation.dll
 F:\GitHub\ATP-2\easylife\Validation\obj\Debug\Validation.pdb
-F:\GitHub\ATP-2\easylife\Validation\obj\Debug\Validation.csprojResolveAssemblyReference.cache

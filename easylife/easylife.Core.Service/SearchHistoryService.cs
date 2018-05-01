@@ -22,48 +22,48 @@ namespace easylife.Core.Service
 
         public bool Delete(int Search_id)
         {
-            var deleteFavorite = _context.Set<Search_History>().Where(i => i.Search_id == Search_id).SingleOrDefault();
+            var deleteFavorite = _context.Set<SearchHistory>().Where(i => i.SearchId == Search_id).SingleOrDefault();
             /// 
             if (deleteFavorite != null)
             {
-                _context.Set<Search_History>().Remove(deleteFavorite);
+                _context.Set<SearchHistory>().Remove(deleteFavorite);
             }
             return true;
         }
 
-        public IEnumerable<Search_History> GetAll()
+        public IEnumerable<SearchHistory> GetAll()
         {
-            return _context.Set<Search_History>().ToList();
+            return _context.Set<SearchHistory>().ToList();
         }
 
-        public IEnumerable<Search_History> GetByCategory(string Category)
+        public IEnumerable<SearchHistory> GetByCategory(string Category)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Search_History> GetById(int Search_id)
+        public IEnumerable<SearchHistory> GetById(int Search_id)
         {
-            return _context.Set<Search_History>().Where(i => i.Search_id == Search_id);
+            return _context.Set<SearchHistory>().Where(i => i.SearchId == Search_id);
         }
 
-        public IEnumerable<Search_History> GetByMemberId(int Member_id)
+        public IEnumerable<SearchHistory> GetByMemberId(int Member_id)
         {
-            return _context.Set<Search_History>().Where(i => i.Member_id == Member_id);
+            return _context.Set<SearchHistory>().Where(i => i.MemberId == Member_id);
         }
 
-        public IEnumerable<Search_History> GetByProductId(int Product_id)
+        public IEnumerable<SearchHistory> GetByProductId(int Product_id)
         {
-            return _context.Set<Search_History>().Where(i => i.Product_id == Product_id);
+            return _context.Set<SearchHistory>().Where(i => i.ProductId == Product_id);
         }
 
-        public bool Insert(Search_History history)
+        public bool Insert(SearchHistory history)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Search_History history)
+        public bool Update(SearchHistory history)
         {
-            var updateSearchHistory = _context.Set<Search_History>().Where(i => i.Search_id == history.Search_id).SingleOrDefault();
+            var updateSearchHistory = _context.Set<SearchHistory>().Where(i => i.SearchId == history.SearchId).SingleOrDefault();
             /// 
 
             if (updateSearchHistory != null)
