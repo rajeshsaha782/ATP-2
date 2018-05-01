@@ -1,4 +1,5 @@
-﻿@{
+﻿@model easylife.Core.Entities.Member
+@{
     ViewBag.Title = "View_Profile_Admin";
 }
 <style>
@@ -34,45 +35,45 @@
 							<tr>
 							
 								<th>Name:</th>
-								<td><label>Efti</label></td>
+								<td><label>@Model.Name</label></td>
 							
 							</tr>
 							
 							<tr>
 							
 								<th>Email:</th>
-								<td><label>efti@gmail.com</label></td>
+								<td><label>@Model.Email</label></td>
 							
 							</tr>
 							<tr>
 							
 								<th>Gender:</th>
-								<td><label>Male</label></td>
+								<td><label>@Model.Gender</label></td>
 							
 							</tr>
 							
-							<tr>
-							
-								<th>Birth Date:</th>
-								<td><label>01-01-1997</label></td>
-							
-							</tr>
 							<tr>
 							
 								<th>Cell:</th>
-								<td><label>01916590193</label></td>
+								<td><label>@Model.PhoneNumber</label></td>
 							
 							</tr>
 							<tr>
 							
 								<th>Position:</th>
-								<td>Admin</td>
+								<td>@Model.Type</td>
 							
 							</tr>
 							<tr>
 							
 								<th>Member Since:</th>
-								<td><label>10-06-2018</label></td>
+								<td><label>@Model.MemeberSince</label></td>
+							
+							</tr>
+                             <tr>
+							
+								<th>Last Logged in:</th>
+								<td><label>@Model.LastLoggedIn</label></td>
 							
 							</tr>
 							

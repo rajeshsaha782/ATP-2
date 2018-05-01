@@ -1,0 +1,29 @@
+﻿@model easylife.Core.Entities.Address
+
+@{
+    ViewBag.Title = "View1";
+}
+
+<h2>View1</h2>
+
+<fieldset>
+    <legend>Address</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MemberId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MemberId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MemberAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MemberAddress)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.AddressId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

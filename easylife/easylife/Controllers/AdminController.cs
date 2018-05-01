@@ -24,9 +24,10 @@ namespace easylife.Controllers
         {
             return View();
         }
-        public ActionResult View_Profile_Admin(string id)
+        [HttpGet]
+        public ActionResult View_Profile_Admin(int id=0)
         {
-            return View(_MemberService.GetByEmail(id));
+            return View(_MemberService.GetById(id));
         }
         public ActionResult View_Profile_User()
         {
