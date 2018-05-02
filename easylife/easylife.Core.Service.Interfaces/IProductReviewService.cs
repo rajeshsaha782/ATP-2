@@ -10,7 +10,7 @@ namespace easylife.Core.Service.Interfaces
     public interface IProductReviewService
     {
         IEnumerable<ProductReview> GetAll();
-        IEnumerable<ProductReview> GetById(int ReviewId);
+        ProductReview GetById(int ReviewId);
         bool Insert(ProductReview review);
         bool Update(ProductReview review);
         bool Delete(int ReviewId);

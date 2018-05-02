@@ -27,14 +27,32 @@ namespace Test
 
 
             ///----------EF Test
-             easylifeDbContext e = new easylifeDbContext();
+            easylifeDbContext e = new easylifeDbContext();
+            MemberService ms = new MemberService(e);
+
             Member m = new Member();
             m.Email = "r@gmail.com";
             m.Name = "rajesh";
             m.MemberSince = DateTime.Now;
             m.LastLoggedIn = DateTime.Now;
-            e.Members.Add(m);
-            e.SaveChanges();
+            //Console.WriteLine(ms.Insert(m));
+
+            //Console.WriteLine(ms.GetById(1).MemeberId);
+            //Console.WriteLine(ms.GetById(1).Name);
+            //Console.WriteLine(ms.GetById(1).Email);
+
+
+            Member m1 = new Member();
+            m1.MemberId = 1;
+            m1.Email = "e@gmail.com";
+            m1.Name = "efti";
+            m1.MemberSince = DateTime.Now;
+            m1.LastLoggedIn = DateTime.Now;
+            Console.WriteLine(ms.Update(m1));
+
+            Console.WriteLine(ms.GetById(1).MemberId);
+            Console.WriteLine(ms.GetById(1).Name);
+            Console.WriteLine(ms.GetById(1).Email);
 
             //easylifeDbContext e = new easylifeDbContext();
           

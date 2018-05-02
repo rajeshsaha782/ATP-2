@@ -32,7 +32,7 @@ namespace easylife.Core.Service
             if (DeleteAddress != null)
             {
                 _context.Set<Address>().Remove(DeleteAddress);
-
+                _context.SaveChanges();
             }
             return true;
         }
@@ -46,16 +46,16 @@ namespace easylife.Core.Service
             if (DeleteAddress != null)
             {
                 _context.Set<Address>().Remove(DeleteAddress);
-
+                _context.SaveChanges();
             }
             return true;
         }
 
        
 
-        public IEnumerable<Address> GetById(int AddressId)
+        public Address GetById(int AddressId)
         {
-            return _context.Set<Address>().Where(i => i.AddressId == AddressId);
+            return _context.Set<Address>().Where(i => i.AddressId == AddressId).SingleOrDefault();
         }
 
 

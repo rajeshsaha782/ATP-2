@@ -10,7 +10,7 @@ namespace easylife.Core.Service.Interfaces
     public interface ISearchHistoryService
     {
         IEnumerable<SearchHistory> GetAll();
-        IEnumerable<SearchHistory> GetById(int SearchId);
+        SearchHistory GetById(int SearchId);
         bool Insert(SearchHistory history);
         bool Update(SearchHistory history);
         bool Delete(int SearchId);

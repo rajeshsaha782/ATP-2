@@ -10,7 +10,7 @@ namespace easylife.Core.Service.Interfaces
     public interface IDislikeService
     {
         IEnumerable<Dislike> GetAll();
-        IEnumerable<Dislike> GetById(int DislikeId);
+        Dislike GetById(int DislikeId);
         bool Insert(Dislike dislike);
         bool Update(Dislike dislike);
         bool Delete(int DislikeId);

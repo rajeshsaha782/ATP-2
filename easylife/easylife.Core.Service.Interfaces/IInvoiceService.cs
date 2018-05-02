@@ -10,7 +10,7 @@ namespace easylife.Core.Service.Interfaces
     public interface IInvoiceService
     {
         IEnumerable<Invoice> GetAll();
-        IEnumerable<Invoice> GetById(int InvoiceId);
+        Invoice GetById(int InvoiceId);
         bool Insert(Invoice invoice);
         bool Update(Invoice invoice);
         bool Delete(int InvoiceId);

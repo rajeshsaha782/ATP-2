@@ -10,7 +10,7 @@ namespace easylife.Core.Service.Interfaces
     public interface IReportService
     {
         IEnumerable<Report> GetAll();
-        IEnumerable<Report> GetById(int ReportId);
+        Report GetById(int ReportId);
         bool Insert(Report report);
         bool Update(Report report);
         bool Delete(int ReportId);

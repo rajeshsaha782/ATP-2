@@ -35,7 +35,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<Member> GetByName(string Name)
         {
-            return _context.Set<Member>().Where(i => i.Name == Name);
+            return _context.Set<Member>().Where(i => i.Name == Name);// need Like regular exspresion
         }
 
         public IEnumerable<Member> GetByStatus(string Status)
@@ -55,7 +55,7 @@ namespace easylife.Core.Service
             if (deleteMemberservice != null)
             {
                 _context.Set<Member>().Remove(deleteMemberservice);
-
+                _context.SaveChanges();
             }
             return true;
         }
@@ -64,7 +64,7 @@ namespace easylife.Core.Service
 
         public int GetPoint(int Member_id)
         {
-            return 1;      
+            return GetById(Member_id).Point;      
         }
 
         public bool Insert(Member member)
@@ -80,23 +80,21 @@ namespace easylife.Core.Service
 
         public bool SetPoint(int Member_id, int point)
         {
-            throw new NotImplementedException();
+            Member m = GetById(Member_id);
+            m.Point++;
+            return Update(m);
         }
 
         public bool Update(Member member)
         {
-            var updateMember = _context.Set<Member>().SingleOrDefault(i=> i.MemberId==member.MemberId);
-
-            if (updateMember != null)
+            if (_context.Set<Member>().Any(e => e.MemberId == member.MemberId))
             {
-                //_context.SaveChanges();
+                _context.Set<Member>().Attach(member);
+                _context.SaveChanges();
                 return true;
-
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

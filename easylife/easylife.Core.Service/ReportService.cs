@@ -26,7 +26,7 @@ namespace easylife.Core.Service
             if (deleteFavorite != null)
             {
                 _context.Set<Report>().Remove(deleteFavorite);
-
+                _context.SaveChanges();
             }
             return true;
         }
@@ -38,12 +38,12 @@ namespace easylife.Core.Service
 
         public IEnumerable<Report> GetByDate(DateTime Date)
         {
-            throw new NotImplementedException();
+            return _context.Set<Report>().Where(i => i.Date == Date);
         }
 
-        public IEnumerable<Report> GetById(int Report_id)
+        public Report GetById(int Report_id)
         {
-            return _context.Set<Report>().Where(i => i.ReportId == Report_id);
+            return _context.Set<Report>().Where(i => i.ReportId == Report_id).SingleOrDefault();
         }
 
         public IEnumerable<Report> GetByMemberId(int Member_id)
@@ -55,17 +55,17 @@ namespace easylife.Core.Service
 
         public IEnumerable<Report> GetBySeenStatus()
         {
-            throw new NotImplementedException();
+            return _context.Set<Report>().Where(i => i.SeenStatus == "Seen");
         }
 
         public IEnumerable<Report> GetByTitle(string Title)
         {
-            throw new NotImplementedException();
+            return _context.Set<Report>().Where(i => i.ReportTitle == Title);
         }
 
         public IEnumerable<Report> GetByUnseenStatus()
         {
-            throw new NotImplementedException();
+            return _context.Set<Report>().Where(i => i.SeenStatus != "Seen");
         }
 
         public bool Insert(Report report)
@@ -81,12 +81,16 @@ namespace easylife.Core.Service
 
         public bool SetSeen(int Report_id)
         {
-            throw new NotImplementedException();
+            Report r = GetById(Report_id);
+            r.SeenStatus = "Seen";
+            return Update(r);
         }
 
         public bool SetUnseen(int Report_id)
         {
-            throw new NotImplementedException();
+            Report r = GetById(Report_id);
+            r.SeenStatus = "Unseen";
+            return Update(r);
         }
 
         public bool Update(Report report)

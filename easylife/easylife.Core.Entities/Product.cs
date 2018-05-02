@@ -22,7 +22,7 @@ namespace easylife.Core.Entities
         public int    Size { get; set; }
         public DateTime Date { get; set; }
         public DateTime LastSold { get; set; }
-        public float  TotalSell { get; set; }
+        public int  TotalSell { get; set; }
         public int    TotalViewed { get; set; }
         public float Star { get; set; }//Star= (Like*5)/(like+dislike)
 

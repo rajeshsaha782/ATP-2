@@ -27,7 +27,7 @@ namespace easylife.Core.Service
             if (deleteFavorite != null)
             {
                 _context.Set<ProductReview>().Remove(deleteFavorite);
-
+                _context.SaveChanges();
             }
             return true;
         }
@@ -37,9 +37,9 @@ namespace easylife.Core.Service
             return _context.Set<ProductReview>().ToList();
         }
 
-        public IEnumerable<ProductReview> GetById(int Review_id)
+        public ProductReview GetById(int Review_id)
         {
-            return _context.Set<ProductReview>().Where(i => i.ReviewId == Review_id);
+            return _context.Set<ProductReview>().Where(i => i.ReviewId == Review_id).SingleOrDefault();
         }
 
         public IEnumerable<ProductReview> GetByMemberId(int Member_id)

@@ -34,7 +34,7 @@ namespace easylife.Core.Service
             if (deleteCoupon != null)
             {
                 _context.Set<Coupon>().Remove(deleteCoupon);
-
+                _context.SaveChanges();
             }
             return true;
         }
@@ -47,16 +47,16 @@ namespace easylife.Core.Service
             if (deleteCoupon != null)
             {
                 _context.Set<Coupon>().Remove(deleteCoupon);
-
+                _context.SaveChanges();
             }
             return true;
         }
 
        
 
-        public IEnumerable<Coupon> GetById(int Coupon_id)
+        public Coupon GetById(int Coupon_id)
         {
-            return _context.Set<Coupon>().Where(i => i.CouponId == Coupon_id);
+            return _context.Set<Coupon>().Where(i => i.CouponId == Coupon_id).SingleOrDefault();
         }
 
         public IEnumerable<Coupon> GetByMemberId(int Member_id)
@@ -79,7 +79,12 @@ namespace easylife.Core.Service
 
         public bool isAvailable(int Coupon_id)
         {
-            throw new NotImplementedException();
+            Coupon coupon = GetById(Coupon_id);
+            if (coupon.Availability == "Available")
+                return true;
+
+            else
+                return false;
         }
 
         public bool Update(Coupon coupon)

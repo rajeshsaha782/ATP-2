@@ -38,12 +38,12 @@ namespace easylife.Core.Service
 
         public IEnumerable<SearchHistory> GetByCategory(string Category)
         {
-            throw new NotImplementedException();
+            return _context.Set<SearchHistory>().Where(i => i.ProductCategory == Category);
         }
 
-        public IEnumerable<SearchHistory> GetById(int Search_id)
+        public SearchHistory GetById(int Search_id)
         {
-            return _context.Set<SearchHistory>().Where(i => i.SearchId == Search_id);
+            return _context.Set<SearchHistory>().Where(i => i.SearchId == Search_id).SingleOrDefault();
         }
 
         public IEnumerable<SearchHistory> GetByMemberId(int Member_id)

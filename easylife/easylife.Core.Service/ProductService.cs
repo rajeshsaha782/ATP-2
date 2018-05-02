@@ -51,12 +51,16 @@ namespace easylife.Core.Service
 
         public bool DecreasePrice(int Product_id, float Price)
         {
-            throw new NotImplementedException();
+            Product p = GetById(Product_id);
+            p.SellingPrice -= Price;
+            return Update(p);
         }
 
         public bool DecreaseQuantity(int Product_id, int Quantity)
         {
-            throw new NotImplementedException();
+            Product p = GetById(Product_id);
+            p.Quantity -= Quantity;
+            return Update(p);
         }
 
         public bool Delete(int Product_id)
@@ -66,7 +70,7 @@ namespace easylife.Core.Service
             if (deleteFavorite != null)
             {
                 _context.Set<Product>().Remove(deleteFavorite);
-
+                _context.SaveChanges();
             }
             return true;
         }
@@ -75,37 +79,44 @@ namespace easylife.Core.Service
 
         public IEnumerable<Product> GetByLessThanSellPrice(float price)
         {
-            throw new NotImplementedException();
+            return _context.Set<Product>().Where(i => i.SellingPrice < price);
         }
 
         public IEnumerable<Product> GetByMoreThanSellPrice(float price)
         {
-            throw new NotImplementedException();
+            return _context.Set<Product>().Where(i => i.SellingPrice > price);
         }
 
         public int GetTotal_Sell(int Product_id)
         {
-            throw new NotImplementedException();
+            Product p = GetById(Product_id);
+            return p.TotalSell;
         }
 
         public float GetTotal_Star(int Product_id)
         {
-            throw new NotImplementedException();
+            Product p = GetById(Product_id);
+            return p.Star;
         }
 
         public int GetTotal_Viewed(int Product_id)
         {
-            throw new NotImplementedException();
+            Product p = GetById(Product_id);
+            return p.TotalViewed;
         }
 
         public bool IncreasePrice(int Product_id, float Price)
         {
-            throw new NotImplementedException();
+            Product p = GetById(Product_id);
+            p.SellingPrice += Price;
+            return Update(p);
         }
 
         public bool IncreaseQuantity(int Product_id, int Quantity)
         {
-            throw new NotImplementedException();
+            Product p = GetById(Product_id);
+            p.Quantity += Quantity;
+            return Update(p);
         }
 
         public bool Insert(Product product)
@@ -121,17 +132,28 @@ namespace easylife.Core.Service
 
         public bool SetTotal_Sell(int Product_id)
         {
-            throw new NotImplementedException();
+            Product p = GetById(Product_id);
+            p.TotalSell++;
+            return Update(p);
         }
 
         public bool SetTotal_Star(int Product_id)
         {
-            throw new NotImplementedException();
+            LikeService l = new LikeService(_context);
+            DislikeService d = new DislikeService(_context);
+            float a = (float)(l.countlike(Product_id));
+            float b = (float)(d.countdislike(Product_id));
+
+            Product p = GetById(Product_id);
+            p.Star=((a * 5) / (a + b));
+            return Update(p);
         }
 
         public bool SetTotal_Viewed(int Product_id)
         {
-            throw new NotImplementedException();
+            Product p = GetById(Product_id);
+            p.TotalViewed++;
+            return Update(p);
         }
 
         public bool Update(Product product)

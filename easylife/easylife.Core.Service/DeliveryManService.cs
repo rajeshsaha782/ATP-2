@@ -33,16 +33,16 @@ namespace easylife.Core.Service
             if (deleteDeliveryMan != null)
             {
                 _context.Set<DeliveryMan>().Remove(deleteDeliveryMan);
-
+                _context.SaveChanges();
             }
             return true;
         }
 
 
 
-        public IEnumerable<DeliveryMan> GetById(int DeliveryManId)
+        public DeliveryMan GetById(int DeliveryManId)
         {
-            return _context.Set<DeliveryMan>().Where(i => i.MemberId == DeliveryManId);
+            return _context.Set<DeliveryMan>().Where(i => i.MemberId == DeliveryManId).SingleOrDefault();
         }
 
         public IEnumerable<DeliveryMan> GetByMemberId(int MemberId)
@@ -54,11 +54,11 @@ namespace easylife.Core.Service
 
         public IEnumerable<DeliveryMan> GetByAvailability()
         {
-            throw new NotImplementedException();
+            return _context.Set<DeliveryMan>().Where(i => i.Availability == "Available");
         }
         public IEnumerable<DeliveryMan> GetByUnavailability()
         {
-            throw new NotImplementedException();
+            return _context.Set<DeliveryMan>().Where(i => i.Availability != "Available");
         }
 
         public bool Insert(DeliveryMan delivery_Man)

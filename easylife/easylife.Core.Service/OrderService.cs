@@ -32,16 +32,16 @@ namespace easylife.Core.Service
             if (deleteOrder != null)
             {
                 _context.Set<Order>().Remove(deleteOrder);
-
+                _context.SaveChanges();
             }
             return true;
         }
 
        
 
-        public IEnumerable<Order> GetById(int Order_id)
+        public Order GetById(int Order_id)
         {
-            return _context.Set<Order>().Where(i => i.OrderId == Order_id);
+            return _context.Set<Order>().Where(i => i.OrderId == Order_id).SingleOrDefault();
         }
 
         public IEnumerable<Order> GetByInvoiceId(int Invoice_id)

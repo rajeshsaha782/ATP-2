@@ -24,9 +24,9 @@ namespace easylife.Core.Service
             return _context.Set<Dislike>().ToList();
         }
 
-        public IEnumerable<Dislike> GetById(int Dislike_id)
+        public Dislike GetById(int Dislike_id)
         {
-            return _context.Set<Dislike>().Where(i => i.DislikeId == Dislike_id);
+            return _context.Set<Dislike>().Where(i => i.DislikeId == Dislike_id).SingleOrDefault();
         }
 
         public IEnumerable<Dislike> GetByMemberId(int Member_id)
@@ -43,7 +43,7 @@ namespace easylife.Core.Service
 
         public int countdislike(int Product_id)
         {
-            throw new NotImplementedException();
+            return _context.Set<Dislike>().Count(i => i.ProductId == Product_id);
         }
 
         public bool Delete(int Dislike_id)
@@ -54,7 +54,7 @@ namespace easylife.Core.Service
             if (deleteDislike != null)
             {
                 _context.Set<Dislike>().Remove(deleteDislike);
-
+                _context.SaveChanges();
             }
             return true;
         }
@@ -74,12 +74,26 @@ namespace easylife.Core.Service
 
         public bool SetDisike(int Member_id, int Product_id)
         {
-            throw new NotImplementedException();
+            Dislike d = new Dislike();
+            d.MemberId = Member_id;
+            d.ProductId = Product_id;
+            return Insert(d);
         }
 
         public bool UnsetDisike(int Member_id, int Product_id)
         {
-            throw new NotImplementedException();
+            var deleteDislike = _context.Set<Dislike>().Where(i => i.MemberId == Member_id && i.ProductId == Product_id).SingleOrDefault();
+            /// 
+
+            if (deleteDislike != null)
+            {
+                _context.Set<Dislike>().Remove(deleteDislike);
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+            
         }
 
         public bool Update(Dislike dislike)

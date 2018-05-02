@@ -10,7 +10,7 @@ namespace easylife.Core.Service.Interfaces
     public interface ILikeService
     {
         IEnumerable<Like> GetAll();
-        IEnumerable<Like> GetById(int AddressId);
+        Like GetById(int AddressId);
         bool Insert(Like address);
         bool Update(Like address);
         bool Delete(int AddressId);

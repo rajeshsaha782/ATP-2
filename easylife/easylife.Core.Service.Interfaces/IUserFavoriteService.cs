@@ -10,7 +10,7 @@ namespace easylife.Core.Service.Interfaces
     public interface IUserFavoriteService
     {
         IEnumerable<UserFavorite> GetAll();
-        IEnumerable<UserFavorite> GetById(int UserFavoriteId);
+        UserFavorite GetById(int UserFavoriteId);
         bool Insert(UserFavorite userfavorite);
         bool Update(UserFavorite userfavorite);
         bool Delete(int UserFavoriteId);

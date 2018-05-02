@@ -10,7 +10,7 @@ namespace easylife.Core.Service.Interfaces
     public interface IDeliveryManService
     {
         IEnumerable<DeliveryMan> GetAll();
-        IEnumerable<DeliveryMan> GetById(int DeliveryManId);
+        DeliveryMan GetById(int DeliveryManId);
         bool Insert(DeliveryMan deliveryMan);
         bool Update(DeliveryMan deliveryMan);
         bool Delete(int DeliveryManId);

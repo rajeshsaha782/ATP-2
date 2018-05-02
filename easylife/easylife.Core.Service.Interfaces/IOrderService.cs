@@ -10,7 +10,7 @@ namespace easylife.Core.Service.Interfaces
     public interface IOrderService
     {
         IEnumerable<Order> GetAll();
-        IEnumerable<Order> GetById(int OrderId);
+        Order GetById(int OrderId);
         bool Insert(Order order);
         bool Update(Order order);
         bool Delete(int OrderId);

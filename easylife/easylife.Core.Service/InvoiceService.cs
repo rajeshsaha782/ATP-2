@@ -26,7 +26,7 @@ namespace easylife.Core.Service
             if (deleteInvoice != null)
             {
                 _context.Set<Invoice>().Remove(deleteInvoice);
-
+                _context.SaveChanges();
             }
             return true;
         }
@@ -39,12 +39,12 @@ namespace easylife.Core.Service
 
         public IEnumerable<Invoice> GetByDate(DateTime Date)
         {
-            throw new NotImplementedException();
+            return _context.Set<Invoice>().Where(i => i.Date == Date);
         }
 
-        public IEnumerable<Invoice> GetById(int Invoice_id)
+        public Invoice GetById(int Invoice_id)
         {
-            return _context.Set<Invoice>().Where(i => i.InvoiceId == Invoice_id);
+            return _context.Set<Invoice>().Where(i => i.InvoiceId == Invoice_id).SingleOrDefault();
         }
 
         public IEnumerable<Invoice> GetByMemberId(int Member_id)
@@ -54,13 +54,12 @@ namespace easylife.Core.Service
 
         public IEnumerable<Invoice> GetByPaid()
         {
-            //return _context.Set<Invoice>().Where(i => i. == Product_id);
-            throw new NotImplementedException();
+            return _context.Set<Invoice>().Where(i => i.PaymentStatus == "Paid");
         }
 
         public IEnumerable<Invoice> GetByUnpaid()
         {
-            throw new NotImplementedException();
+            return _context.Set<Invoice>().Where(i => i.PaymentStatus != "Paid");
         }
 
         public bool Insert(Invoice invoice)
@@ -76,7 +75,9 @@ namespace easylife.Core.Service
 
         public bool SetStatus(int Invoice_id, string Status)
         {
-            throw new NotImplementedException();
+            Invoice i=GetById(Invoice_id);
+            i.Status = Status;
+            return Update(i);
         }
 
         public bool Update(Invoice invoice)

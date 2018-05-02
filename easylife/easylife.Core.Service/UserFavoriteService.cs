@@ -22,13 +22,13 @@ namespace easylife.Core.Service
         {
         }
 
-        public IEnumerable<Entities.UserFavorite> GetAll()
+        public IEnumerable<UserFavorite> GetAll()
         {
             return _context.Set<UserFavorite>().ToList();
         }
 
 
-        public IEnumerable<Entities.UserFavorite> GetByMemberId(int Member_id)
+        public IEnumerable<UserFavorite> GetByMemberId(int Member_id)
         {
             return _context.Set<UserFavorite>().Where(i=>i.MemeberId==Member_id);
         }
@@ -44,24 +44,24 @@ namespace easylife.Core.Service
             if (deleteFavorite != null)
             {
                 _context.Set<UserFavorite>().Remove(deleteFavorite);
-        
+                _context.SaveChanges();
             }
             return true;
         }
 
 
-        public IEnumerable<Entities.UserFavorite> GetById(int UserFavorite_id)
+        public UserFavorite GetById(int UserFavorite_id)
         {
-            return _context.Set<UserFavorite>().Where(i => i.UserFavoriteId == UserFavorite_id);
+            return _context.Set<UserFavorite>().Where(i => i.UserFavoriteId == UserFavorite_id).SingleOrDefault();
             
         }
 
-        public IEnumerable<Entities.UserFavorite> GetByProductId(int Product_id)
+        public IEnumerable<UserFavorite> GetByProductId(int Product_id)
         {
             return _context.Set<UserFavorite>().Where(i => i.ProductId == Product_id);
         }
 
-        public bool Insert(Entities.UserFavorite userfavorite)
+        public bool Insert(UserFavorite userfavorite)
         {
             if (_context.Set<UserFavorite>().Add(userfavorite) == userfavorite)
             {
@@ -73,7 +73,7 @@ namespace easylife.Core.Service
 
         }
 
-        public bool Update(Entities.UserFavorite userfavorite)
+        public bool Update(UserFavorite userfavorite)
         {
         
             var updateFavorite = _context.Set<UserFavorite>().Where(i => i.UserFavoriteId ==userfavorite.UserFavoriteId).SingleOrDefault();
