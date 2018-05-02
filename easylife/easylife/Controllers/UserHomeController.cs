@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using easylife.Core.Service.Interfaces;
 using easylife.Models;
+using easylife.Core.Entities;
 
 
 namespace easylife.Controllers
@@ -12,10 +13,12 @@ namespace easylife.Controllers
     public class UserHomeController : Controller
     {
         public IProductService _ProductService;
+        public IMemberService _MemberService;
 
-        public UserHomeController(IProductService ProductService)
+        public UserHomeController(IProductService ProductService,IMemberService MemberService)
         {
             _ProductService = ProductService;
+            _MemberService = MemberService;
         }
 
         public ActionResult Index()
@@ -74,6 +77,26 @@ namespace easylife.Controllers
         public ActionResult invoices()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult SignUp(Member m)
+        {
+            m.MemeberSince = DateTime.Now;
+            m.LastLoggedIn = DateTime.Now;
+            m.Status = "active";
+            m.Type = "User";
+            _MemberService.Insert(m);
+
+            return View("Index"); 
+            
+            
+        }
+
+        public ActionResult SortByHighestPrice(IEnumerable<Product> products)
+        {
+
+             return View("search");
         }
 
 

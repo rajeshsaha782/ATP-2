@@ -85,11 +85,11 @@ namespace easylife.Core.Service
 
         public bool Update(Member member)
         {
-            var updateMember = _context.Set<Member>().Where(i => i.MemeberId == member.MemeberId).SingleOrDefault();
-            /// 
+            var updateMember = _context.Set<Member>().SingleOrDefault(i=> i.MemeberId==member.MemeberId);
 
             if (updateMember != null)
             {
+                //_context.SaveChanges();
                 return true;
 
             }

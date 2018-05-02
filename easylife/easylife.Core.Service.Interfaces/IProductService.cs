@@ -41,5 +41,7 @@ namespace easylife.Core.Service.Interfaces
         bool SetTotal_Star(int ProductId);//Countlike(productid)*5/countlike(productid)+countdislike(productid)
         float GetTotal_Star(int ProductId);
 
+
+
     }
 }

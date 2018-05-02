@@ -1,4 +1,5 @@
-﻿@using System.Web.Optimization
+﻿@model easylife.Core.Entities.Member
+@using System.Web.Optimization
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -10,9 +11,9 @@
 		
 		
 
-       @* <link href="~/Styles/Style_user.css" rel="stylesheet" />
-        <link href="~/Styles/AdminLTE.min.css" rel="stylesheet" />*@
-        @Styles.Render("~/UserDashboard")
+        <link href="~/Styles/Style_user.css" rel="stylesheet" />
+        <link href="~/Styles/AdminLTE.min.css" rel="stylesheet" />
+       @* @Styles.Render("~/UserDashboard")*@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -49,7 +50,7 @@
 					</div>
 				</form>
 				<ul class="nav navbar-nav pull-right pull-right1">
-					<li class="point"><a href=@Url.Action("Dashboard")><span class="glyphicon glyphicon-user" ></span>Rakibul Hossain</a></li>
+					<li class="point"><a href=@Url.Action("Dashboard", new { id=Model.MemeberId})><span class="glyphicon glyphicon-user" ></span>@Model.Name</a></li>
 					
 					<li><a href=@Url.Action("shoppingCart")><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(0)</span></a></li>
 				</ul>
@@ -100,13 +101,13 @@
 							</div>
 							<div id="collapse1" class="panel-collapse collapse">
 								<div class="panel-body">
-									<a  href=@Url.Action("info")>Account Information</a>
+									<a  href=@Url.Action("info", new { id=Model.MemeberId})>Account Information</a>
 								</div>
 								<div class="panel-body">
-									<a  href=@Url.Action("edit")>Edit</a>
+									<a  href=@Url.Action("edit", new { id=Model.MemeberId})>Edit</a>
 								</div>
 								<div class="panel-body">
-									<a  href=@Url.Action("changepass")>Change Password</a>
+									<a  href=@Url.Action("changepass", new { id=Model.MemeberId})>Change Password</a>
 								</div>
 								
 							</div>
@@ -116,7 +117,7 @@
 							
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-parent="#accordion" href=@Url.Action("myOrders")>My Orders</a>
+									<a data-parent="#accordion" href=@Url.Action("myOrders", new { id=Model.MemeberId})>My Orders</a>
 								</h4>
 							</div>
 							
@@ -126,7 +127,7 @@
 							
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-parent="#accordion" href=@Url.Action("myReviews")>My Reviews</a>
+									<a data-parent="#accordion" href=@Url.Action("myReviews", new { id=Model.MemeberId})>My Reviews</a>
 								</h4>
 							</div>
 							
@@ -136,7 +137,7 @@
 							
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-parent="#accordion" href=@Url.Action("myCoupon")>My Coupon</a>
+									<a data-parent="#accordion" href=@Url.Action("myCoupon", new { id=Model.MemeberId})>My Coupon</a>
 								</h4>
 							</div>
 							
@@ -146,7 +147,7 @@
 							
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-parent="#accordion" href=@Url.Action("myReports")>My Reports</a>
+									<a data-parent="#accordion" href=@Url.Action("myReports", new { id=Model.MemeberId})>My Reports</a>
 								</h4>
 							</div>
 							
@@ -156,7 +157,7 @@
 							
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-parent="#accordion" href=@Url.Action("myFavorite")>My Favorite</a>
+									<a data-parent="#accordion" href=@Url.Action("myFavorite", new { id=Model.MemeberId})>My Favorite</a>
 								</h4>
 							</div>
 							

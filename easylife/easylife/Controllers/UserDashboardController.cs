@@ -1,4 +1,6 @@
-﻿using System;
+﻿using easylife.Core.Entities;
+using easylife.Core.Service.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,53 +10,74 @@ namespace easylife.Controllers
 {
     public class UserDashboardController : Controller
     {
+        public IProductService _ProductService;
+        public IMemberService _MemberService;
 
-        public ActionResult Dashboard()
+        public UserDashboardController(IProductService ProductService, IMemberService MemberService)
         {
-            return View();
-        }
-
-        public ActionResult info()
-        {
-            return View();
+            _ProductService = ProductService;
+            _MemberService = MemberService;
         }
 
-        public ActionResult changepass()
+        public ActionResult Dashboard(int id)
         {
-            return View();
+            return View(_MemberService.GetById(id));
         }
-        public ActionResult edit()
+
+        public ActionResult info(int id)
         {
-            return View();
+            return View(_MemberService.GetById(id));
         }
-        public ActionResult invoices()
+
+        [HttpGet]
+        public ActionResult edit(int id)
         {
-            return View();
+            return View(_MemberService.GetById(id));
         }
-        public ActionResult manageAddress()
+        [HttpPost]
+        public ActionResult edit(Member m)
         {
-            return View();
+            //if(_MemberService.Update(m))
+            //{
+            //    return View(_MemberService.GetById(m.MemeberId));
+            //}
+            //return RedirectToAction("Dashboard", new {id= m.MemeberId});
+            return View(_MemberService.GetById(m.MemeberId));
         }
-        public ActionResult myCoupon()
+
+        public ActionResult changepass(int id)
         {
-            return View();
+            return View(_MemberService.GetById(id));
+        }
+        
+        public ActionResult invoices(int id)
+        {
+            return View(_MemberService.GetById(id));
+        }
+        public ActionResult manageAddress(int id)
+        {
+            return View(_MemberService.GetById(id));
+        }
+        public ActionResult myCoupon(int id)
+        {
+            return View(_MemberService.GetById(id));
 
         }
-        public ActionResult myFavorite()
+        public ActionResult myFavorite(int id)
         {
-            return View();
+            return View(_MemberService.GetById(id));
         }
-        public ActionResult myOrders()
+        public ActionResult myOrders(int id)
         {
-            return View();
+            return View(_MemberService.GetById(id));
         }
-        public ActionResult myReports()
+        public ActionResult myReports(int id)
         {
-            return View();
+            return View(_MemberService.GetById(id));
         }
-        public ActionResult myReviews()
+        public ActionResult myReviews(int id)
         {
-            return View();
+            return View(_MemberService.GetById(id));
         }
   
 
