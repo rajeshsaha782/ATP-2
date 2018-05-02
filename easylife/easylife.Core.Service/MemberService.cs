@@ -30,7 +30,7 @@ namespace easylife.Core.Service
 
         public Member GetById(int Member_id)
         {
-            return _context.Set<Member>().Where(i => i.MemeberId == Member_id).SingleOrDefault();
+            return _context.Set<Member>().Where(i => i.MemberId == Member_id).SingleOrDefault();
         }
 
         public IEnumerable<Member> GetByName(string Name)
@@ -49,7 +49,7 @@ namespace easylife.Core.Service
         }
         public bool Delete(int Member_id)
         {
-            var deleteMemberservice= _context.Set<Member>().Where(i => i.MemeberId == Member_id).SingleOrDefault();
+            var deleteMemberservice= _context.Set<Member>().Where(i => i.MemberId == Member_id).SingleOrDefault();
             /// 
 
             if (deleteMemberservice != null)
@@ -85,7 +85,7 @@ namespace easylife.Core.Service
 
         public bool Update(Member member)
         {
-            var updateMember = _context.Set<Member>().SingleOrDefault(i=> i.MemeberId==member.MemeberId);
+            var updateMember = _context.Set<Member>().SingleOrDefault(i=> i.MemberId==member.MemberId);
 
             if (updateMember != null)
             {

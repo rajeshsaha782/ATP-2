@@ -27,7 +27,7 @@ namespace easylife.Core.Service
 
         public bool Delete(int DeliveryManId)
         {
-            var deleteDeliveryMan = _context.Set<DeliveryMan>().Where(i => i.DeliveryManId == DeliveryManId).SingleOrDefault();
+            var deleteDeliveryMan = _context.Set<DeliveryMan>().Where(i => i.MemberId == DeliveryManId).SingleOrDefault();
             /// 
 
             if (deleteDeliveryMan != null)
@@ -42,7 +42,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<DeliveryMan> GetById(int DeliveryManId)
         {
-            return _context.Set<DeliveryMan>().Where(i => i.DeliveryManId == DeliveryManId);
+            return _context.Set<DeliveryMan>().Where(i => i.MemberId == DeliveryManId);
         }
 
         public IEnumerable<DeliveryMan> GetByMemberId(int MemberId)
@@ -74,7 +74,7 @@ namespace easylife.Core.Service
 
         public bool Update(DeliveryMan deliveryMan)
         {
-            var updatedelivery_man = _context.Set<DeliveryMan>().Where(i => i.DeliveryManId == deliveryMan.DeliveryManId).SingleOrDefault();
+            var updatedelivery_man = _context.Set<DeliveryMan>().Where(i => i.MemberId == deliveryMan.MemberId).SingleOrDefault();
             /// 
 
             if (updatedelivery_man != null)

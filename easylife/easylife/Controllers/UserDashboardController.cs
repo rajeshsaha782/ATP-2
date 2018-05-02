@@ -42,7 +42,7 @@ namespace easylife.Controllers
             //    return View(_MemberService.GetById(m.MemeberId));
             //}
             //return RedirectToAction("Dashboard", new {id= m.MemeberId});
-            return View(_MemberService.GetById(m.MemeberId));
+            return View(_MemberService.GetById(m.MemberId));
         }
 
         public ActionResult changepass(int id)

@@ -10,7 +10,7 @@ namespace easylife.Core.Entities
     public class Member
     {
         [Key]
-        public int MemeberId { get; set; }
+        public int MemberId { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
@@ -19,7 +19,7 @@ namespace easylife.Core.Entities
         public string PhoneNumber { get; set; }
         public string Type { get; set; }
         public string Status { get; set; }
-        public DateTime MemeberSince { get; set; }
+        public DateTime MemberSince { get; set; }
         public DateTime LastLoggedIn { get; set; }
         public float  TotalPurchase { get; set; }
         public int Point { set; get; }

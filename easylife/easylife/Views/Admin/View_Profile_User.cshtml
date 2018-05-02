@@ -21,142 +21,96 @@
 			height:50px;
 			width:50px;
 		}
-
-   
 </style>		
 <body class="w3-light-grey w3-animate-bottom ">
 	<div class="invoice" style="width:800px;background-color:transparent"">
-		
-			
-				
-				
+	
 				<div class="invoice-wrapper">
-				
-				
+			
 					<div class="invoice-wrap">
-					
-					
+				
 						<div style="text-align:center;color:black;" class="ba"><h3>Personal Information</h3></div>
 					
-				
 						<div class="desc" style="margin-left:275;">
-						
 						
 							<table class="reg" >
 						    <tr>
-							
-								<th>Memeber ID:</th>
-								<td><label>@Model.MemeberId</label></td>
-							
+								<th>Member ID:</th>
+								<td><label>@Model.MemberId</label></td>
 							</tr>
 							<tr>
-							
 								<th>Name:</th>
 								<td><label>@Model.Name</label></td>
-							
 							</tr>
-							
 							<tr>
-							
 								<th>Email:</th>
 								<td><label>@Model.Email</label></td>
-							
 							</tr>
 							<tr>
-							
 								<th>Gender:</th>
 								<td><label>@Model.Gender</label></td>
-							
 							</tr>
 							
-							
 							<tr>
-							
 								<th>Cell:</th>
 								<td><label>@Model.PhoneNumber</label></td>
-							
 							</tr>
-							
 							<tr>
-							
 								<th>Member Since:</th>
 								<td><label>2 Month(s) ago</label></td>
-							
 							</tr>
                             <tr>
-							
 								<th>Last logged in:</th>
 								<td><label>@Model.LastLoggedIn</label></td>
-							
 							</tr>
-                             <tr>
-							
+                            <tr>
 								<th>Total Purchase:</th>
 								<td><label>@Model.TotalPurchase</label></td>
-							
 							</tr>
-                             <tr>
-							
+                            <tr>
 								<th>Points:</th>
 								<td>@Model.Point</td>
-							
 							</tr>
                            
-                                 <tr>
+                            <tr>
 							
 								<th>Status:</th>
 								<td>
                                     <img src="~/resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:1px;height:1px">
                                     <img src="~/resources/gold.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px">
                                     <img id="img" src="~/resources/active.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px">
-                                 
 								</td>
-                             
-							
 							</tr>
 
-							
 							<tr>
-							<td><a href='@Url.Action("Edit_Profile_User")'><button class="button">Edit</button></a>
-							<td><button class="button" onclick="confirmm()">Delete</button></td>
+							        <td><a href='@Url.Action("Edit_Profile_User")'><button class="button">Edit</button></a>
+							        <td><button class="button" onclick="confirmm()">Delete</button></td>
 							</tr>
-							
-							
-							
-						
-						
+					
 						</table>
 						
-							
-						
-						</div>
-						
-						
-					   
-				   
-				   </div>
-				   
-				   
-				 
-					   
-					 
-				   
-				   </div>
-				   
-				   
-		</div>
+				</div>
+				
+		 </div>
+				
+	  </div>
+   </div>
+	
+    	
+    <script>
+        function confirmm() {
+            var txt;
+            if (confirm("Delete this account?"))
+            {
+                alert("Succesful");
+                window.open('@Url.Action("View_Users")', '_self');
 		
-				<script>
-function confirmm() {
-    var txt;
-    if (confirm("Delete this account?")) {
-        alert("Succesful");
-        window.open('@Url.Action("View_Users")', '_self');
-		
-    } else {
-        txt = "You pressed Cancel!";
-    }
-    document.getElementById("demo").innerHTML = txt;
-}
-</script>
+            }
+            else
+            {
+                txt = "You pressed Cancel!";
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+    </script>
 </body>

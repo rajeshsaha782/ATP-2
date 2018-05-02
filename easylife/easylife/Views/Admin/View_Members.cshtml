@@ -89,9 +89,9 @@ table {
           {
               if (item.Type != "User")
               {
-                <tr onclick="location.href='@Url.Action("View_Profile_Admin", new { id=item.MemeberId })'">
+                <tr onclick="location.href='@Url.Action("View_Profile_Admin", new { id=item.MemberId })'">
                     <td>
-                        @Html.DisplayFor(modelItem => item.MemeberId)
+                        @Html.DisplayFor(modelItem => item.MemberId)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)

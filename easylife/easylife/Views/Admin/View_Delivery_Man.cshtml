@@ -1,4 +1,4 @@
-﻿@model IEnumerable<easylife.Core.Entities.Member>
+﻿@model IEnumerable<easylife.Models.DeliveryManViewModel>
 @{
     ViewBag.Title = "View_Delivery_Man";
 }
@@ -47,12 +47,22 @@ table {
   <!--for demo wrap-->
     @{
         var count = 0;
+        var pending = 0;
+        var completed = 0;
         {
             foreach (var item in Model)
             {
-                if (item.Type == "Delivery Man")
+                if (item.MemberIndetify.Type == "Delivery Man")
                 {
                     count++;
+                }
+                if(item.ProductDeliveryActivity.Status==0)
+                {
+                    pending++;
+                }
+                else
+                {
+                    completed++;
                 }
             }
         }
@@ -68,6 +78,7 @@ table {
           <th>Name</th>
           <th>Email</th>
           <th>Delivery Pending</th>
+          <th>Delivery Completed</th>
 		  <th>Delivery Zone</th>
 		  <th>Assigned By</th>
 		  <th>Availability</th>
@@ -80,16 +91,18 @@ table {
       <tbody>
 @foreach (var item in Model)
 {
-    if (item.Type == "Delivery Man")
+    if (item.MemberIndetify.Type == "Delivery Man")
     {
-        <tr  onclick="location.href='@Url.Action("View_Profile_Delivery_Man",new { id = item.MemeberId })'">
-          <td>@Html.DisplayFor(modelItem => item.MemeberId)</td>
-          <td>@Html.DisplayFor(modelItem => item.Name)</td>
-          <td>@Html.DisplayFor(modelItem => item.Email)</td>
-          <td>@Html.DisplayFor(modelItem => item.MemeberId)</td>
-		  <td>@Html.DisplayFor(modelItem => item.MemeberId)</td>
-		  <td>@Html.DisplayFor(modelItem => item.MemeberId)</td>
-		  <td>@Html.DisplayFor(modelItem => item.MemeberId)</td>
+        <tr  onclick="location.href='@Url.Action("View_Profile_Delivery_Man",new { id = item.MemberIndetify.MemberId})'">
+          <td>@Html.DisplayFor(modelItem => item.MemberIndetify.MemberId)</td>
+          <td>@Html.DisplayFor(modelItem => item.MemberIndetify.Name)</td>
+          <td>@Html.DisplayFor(modelItem => item.MemberIndetify.Email)</td>
+          <td>@pending</td>
+		  <td>@completed</td>
+		  <td>@Html.DisplayFor(modelItem => item.DeliveryManDetails.Zone)</td>
+		  <td>@Html.DisplayFor(modelItem => item.DeliveryManDetails.AssignedBy)</td>
+            <td>@Html.DisplayFor(modelItem => item.DeliveryManDetails.Availability)</td>
+
           <!-- <td><a href="View_Profile_Delivery_Man.cshtml">View</a></td> -->
 		  <!-- <td><a href="Edit_Profile.cshtml">Edit</a></td> -->
 		  <!-- <td><a href="Delete_Profile.cshtml">Delete</a></td> -->

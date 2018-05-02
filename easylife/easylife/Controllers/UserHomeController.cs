@@ -82,7 +82,7 @@ namespace easylife.Controllers
         [HttpPost]
         public ActionResult SignUp(Member m)
         {
-            m.MemeberSince = DateTime.Now;
+            m.MemberSince = DateTime.Now;
             m.LastLoggedIn = DateTime.Now;
             m.Status = "active";
             m.Type = "User";

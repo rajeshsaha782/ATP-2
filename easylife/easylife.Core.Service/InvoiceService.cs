@@ -49,7 +49,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<Invoice> GetByMemberId(int Member_id)
         {
-            return _context.Set<Invoice>().Where(i => i.id == Member_id);
+            return _context.Set<Invoice>().Where(i => i.MemberId == Member_id);
         }
 
         public IEnumerable<Invoice> GetByPaid()

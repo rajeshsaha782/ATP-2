@@ -12,7 +12,9 @@ namespace easylife.Core.Entities
         [Key]
         public int InvoiceId { get; set; }
         public DateTime Date { get; set; }
-        public int    id { get; set; }
+        public int MemberId { get; set; }
+        public int DeliveryManId { get; set; }
+        public int Status { set; get; }
         public string PaymentStatus { get; set; }
         public string PaymentMethod { get; set; }
         public string ShippingAddress { get; set; }

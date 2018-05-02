@@ -10,7 +10,8 @@ namespace easylife.Core.Entities
    public class DeliveryMan
     {
         [Key]
-        public int DeliveryManId { get; set; }
+        public int Id { set; get; }
+        public int AssignedBy { get; set; }
         public int MemberId { get; set; }
         public string Availability { get; set; }
         public string Zone { get; set; }
