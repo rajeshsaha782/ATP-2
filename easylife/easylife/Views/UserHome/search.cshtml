@@ -1,3 +1,4 @@
+@model IEnumerable<easylife.Core.Entities.Product>
 @{
     ViewBag.Title = "EasyLife | SearchProducts";
 }
@@ -52,75 +53,33 @@
 							</script>
 					
 					
-					<div class="container-fluid well" >
-						
-						<div class="container-fluid col-md-3">
-							<a href="details"><img class="img-thumbnail img2" src="~/resources/1.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p>
+					 @{
+                      
+                           
+                           @Html.Raw("<div class=\"container-fluid well\">")
+                         
+                           foreach (var item in Model) 
+                           {
+                               <div class="container-fluid col-md-3">
+							    <a href=@Url.Action("details", new {id=item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">",item.ProductId))</a>
+							    <div style="text-align:center ;">
+								    <p>@item.ProductName</p>
+								    <p>@item.SellingPrice $</p>
+								    <p>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
 									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
 								</p>
-								<p><a href="details"><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href="details"><img class="img-thumbnail img2" src="~/resources/2.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-								</p>
-								<p><a href="details"><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href="details"><img class="img-thumbnail img2" src="~/resources/3.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-								</p>
-								<p><a href="details"><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href="details"><img class="img-thumbnail img2" src="~/resources/f1.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-								</p>
-								<p><a href="details"><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						
-					</div>
+								    <p><a href=@Url.Action("details", new { id = @item.ProductId})><button type="button" class="btn btn-info" >Buy</button></a></p>
+							    </div>
+
+						        </div>
+                           }
+                           
+                            
+                               @Html.Raw("</div> ")
+                            
+       
+                    }

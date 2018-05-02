@@ -61,10 +61,10 @@ namespace easylife.Controllers
         {
             return View();
         }
-        
-        public ActionResult search()
+
+        public ActionResult search(string search)
         {
-            return View();
+            return View(_ProductService.GetBySearch(search));
         }
         
         public ActionResult trackProduct()

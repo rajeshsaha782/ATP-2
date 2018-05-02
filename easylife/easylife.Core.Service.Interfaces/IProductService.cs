@@ -18,6 +18,7 @@ namespace easylife.Core.Service.Interfaces
         IEnumerable<Product> GetByLessThanSellPrice(float price);
         IEnumerable<Product> GetByMoreThanSellPrice(float price);
         IEnumerable<Product> GetByCategory(string category, string subcategory);
+        IEnumerable<Product> GetBySearch(string search);
         //IEnumerable<Product> GetByCategory(string category);
         IEnumerable<Product> GetByBrand(string brand);
 

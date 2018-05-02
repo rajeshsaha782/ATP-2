@@ -35,6 +35,14 @@ namespace easylife.Core.Service
             return _context.Set<Product>().Where(i => i.Category == category && i.SubCategory==subcategory);
         }
 
+        public IEnumerable<Product> GetBySearch(string search)
+        {
+            var result = from product in _context.Set<Product>()
+                        where product.ProductName.ToLower().Contains(search.ToLower())
+                       select product;
+            return result.ToList();
+        }
+
         public Product GetById(int Product_id)
         {
             return _context.Set<Product>().Where(i => i.ProductId == Product_id).FirstOrDefault();
@@ -141,5 +149,8 @@ namespace easylife.Core.Service
                 return false;
             }
         }
+
+
+      
     }
 }
