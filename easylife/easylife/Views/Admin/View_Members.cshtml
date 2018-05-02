@@ -54,8 +54,20 @@ table {
 <body class="w3-animate-bottom ">
 	
   <!--for demo wrap-->
+@{
+    var count = 0;
+    {
+        foreach (var item in Model)
+        {
+            if (item.Type == "Admin")
+            {
+                count++;
+            }
+        }
+    }
+}
   <h1 style="color:red">Admins</h1>
-    <h3 style="color:red">Total Admin(s) Found:10</h3>
+    <h3 style="color:red">Total Admin(s) Found: @count</h3>
   <section class="w3-card-4">
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -73,18 +85,32 @@ table {
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-          @foreach (var item in Model) {
-        <tr onclick="location.href='@Url.Action("View_Profile_Admin", new { id=item.MemeberId })'">
-            <td>
-                @Html.DisplayFor(modelItem => item.MemeberId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-           
-        </tr>
-         }
-        <tr  onclick="location.href='@Url.Action("View_Profile_Admin")'">
+          @foreach (var item in Model)
+          {
+              if (item.Type == "Admin")
+              {
+                <tr onclick="location.href='@Url.Action("View_Profile_Admin", new { id=item.MemeberId })'">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MemeberId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastLoggedIn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                </tr>
+              }
+
+          }
+         
+        <!--<tr  onclick="location.href='@Url.Action("View_Profile_Admin")'">
           <td>1</a></td>
           <td>MD Mashiul Azam</td>
           <td>efti@gmail.com</td>
@@ -93,7 +119,7 @@ table {
           <!-- <td><a href="View_Profile_Admin">View</a></td> -->
 		  <!-- <td><a href="Edit_Profile">Edit</a></td> -->
 		  <!-- <td><a href="Delete_Profile">Delete</a></td> -->
-        </tr>
+        <!-- </tr>
 		<tr onclick="location.href='@Url.Action("View_Profile_Admin")'">
           <td>2</a></td>
           <td>Rajesh Saha</td>
@@ -114,7 +140,7 @@ table {
           <td>reza@gmail.com</td>
           <td>1 Year(s) Ago</td>
 		  <td>Stock Executive </td>
-        </tr>
+        </tr>-->
         
       </tbody>
     </table>

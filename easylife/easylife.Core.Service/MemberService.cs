@@ -30,7 +30,7 @@ namespace easylife.Core.Service
 
         public Member GetById(int Member_id)
         {
-            return _context.Set<Member>().Find(Member_id);
+            return _context.Set<Member>().Where(i => i.MemeberId == Member_id).SingleOrDefault();
         }
 
         public IEnumerable<Member> GetByName(string Name)

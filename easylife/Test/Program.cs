@@ -27,17 +27,16 @@ namespace Test
 
 
             ///----------EF Test
-
-           /* easylifeDbContext e = new easylifeDbContext();
+             easylifeDbContext e = new easylifeDbContext();
             Member m = new Member();
             m.Email = "r@gmail.com";
             m.Name = "rajesh";
-            m.Memeber_Since = DateTime.Now;
-            m.Last_Logged_In = DateTime.Now;
+            m.MemeberSince = DateTime.Now;
+            m.LastLoggedIn = DateTime.Now;
             e.Members.Add(m);
-            e.SaveChanges();*/
+            e.SaveChanges();
 
-            easylifeDbContext e = new easylifeDbContext();
+            //easylifeDbContext e = new easylifeDbContext();
           
             //Address a = new Address();
             //a.Member_id = 1;
@@ -58,7 +57,7 @@ namespace Test
 
             //Product--------------------
 
-            Product p = new Product();
+          /*  Product p = new Product();
             p.ProductName = "5";
             p.Quantity = 10;
             p.BuyingPrice = 100;
@@ -69,7 +68,7 @@ namespace Test
             p.LastSold = DateTime.Now;
 
             ProductService ps = new ProductService(e);
-            Console.WriteLine(ps.Insert(p));
+            Console.WriteLine(ps.Insert(p));*/
 
             ///GetAll-----------------
 

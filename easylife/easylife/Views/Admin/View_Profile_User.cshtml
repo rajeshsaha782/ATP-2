@@ -1,3 +1,5 @@
+@model easylife.Core.Entities.Member
+
 @{
     ViewBag.Title = "Edit profile User";
 }
@@ -44,26 +46,26 @@
 						    <tr>
 							
 								<th>Memeber ID:</th>
-								<td><label>1</label></td>
+								<td><label>@Model.MemeberId</label></td>
 							
 							</tr>
 							<tr>
 							
 								<th>Name:</th>
-								<td><label>Efti</label></td>
+								<td><label>@Model.Name</label></td>
 							
 							</tr>
 							
 							<tr>
 							
 								<th>Email:</th>
-								<td><label>efti@gmail.com</label></td>
+								<td><label>@Model.Email</label></td>
 							
 							</tr>
 							<tr>
 							
 								<th>Gender:</th>
-								<td><label>Male</label></td>
+								<td><label>@Model.Gender</label></td>
 							
 							</tr>
 							
@@ -71,7 +73,7 @@
 							<tr>
 							
 								<th>Cell:</th>
-								<td><label>01916590193</label></td>
+								<td><label>@Model.PhoneNumber</label></td>
 							
 							</tr>
 							
@@ -84,19 +86,19 @@
                             <tr>
 							
 								<th>Last logged in:</th>
-								<td><label>1 day(s) ago</label></td>
+								<td><label>@Model.LastLoggedIn</label></td>
 							
 							</tr>
                              <tr>
 							
 								<th>Total Purchase:</th>
-								<td><label>1000 Taka</label></td>
+								<td><label>@Model.TotalPurchase</label></td>
 							
 							</tr>
                              <tr>
 							
 								<th>Points:</th>
-								<td>678</td>
+								<td>@Model.Point</td>
 							
 							</tr>
                            

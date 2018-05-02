@@ -29,9 +29,11 @@ namespace easylife.Controllers
         {
             return View(_MemberService.GetById(id));
         }
-        public ActionResult View_Profile_User()
+        [HttpGet]
+        public ActionResult View_Profile_User(int id=0)
         {
-            return View();
+        
+            return View(_MemberService.GetById(id));
         }
         public ActionResult Change_Password()
         {
@@ -57,7 +59,7 @@ namespace easylife.Controllers
         }
         public ActionResult View_Delivery_Man()
         {
-            return View();
+            return View(_MemberService.GetAll());
         }
         public ActionResult View_Products()
         {
@@ -65,7 +67,7 @@ namespace easylife.Controllers
         }
         public ActionResult View_Users()
         {
-            return View();
+            return View(_MemberService.GetAll());
         }
         public ActionResult View_Invoices()
         {
@@ -105,9 +107,9 @@ namespace easylife.Controllers
         {
             return View();
         }
-        public ActionResult View_Profile_Delivery_Man()
+        public ActionResult View_Profile_Delivery_Man(int id=0)
         {
-            return View();
+            return View(_MemberService.GetById(id));
         }
         public ActionResult View_Product_Details()
         {

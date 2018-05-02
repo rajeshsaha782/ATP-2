@@ -12,3 +12,12 @@ F:\GitHub\ATP-2\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities
 F:\GitHub\ATP-2\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities.pdb
 F:\GitHub\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.dll
 F:\GitHub\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.pdb
+D:\ATP-2\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities.dll.config
+D:\ATP-2\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities.dll
+D:\ATP-2\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities.pdb
+D:\ATP-2\easylife\easylife.Core.Entities\bin\Debug\EntityFramework.dll
+D:\ATP-2\easylife\easylife.Core.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\ATP-2\easylife\easylife.Core.Entities\bin\Debug\EntityFramework.xml
+D:\ATP-2\easylife\easylife.Core.Entities\bin\Debug\EntityFramework.SqlServer.xml
+D:\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.dll
+D:\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.pdb

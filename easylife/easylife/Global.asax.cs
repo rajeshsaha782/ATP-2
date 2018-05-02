@@ -29,6 +29,8 @@ namespace easylife
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            Database.SetInitializer<DbContext>(null);
+
             IUnityContainer container = new UnityContainer();
 
             container.RegisterType<IAddressService, AddressService>();

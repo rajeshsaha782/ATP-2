@@ -19,3 +19,10 @@ F:\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Cor
 F:\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.csprojResolveAssemblyReference.cache
 F:\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.dll
 F:\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.pdb
+D:\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Service.Interfaces.dll
+D:\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Service.Interfaces.pdb
+D:\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Entities.dll
+D:\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Entities.pdb
+D:\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.csprojResolveAssemblyReference.cache
+D:\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.dll
+D:\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.pdb
