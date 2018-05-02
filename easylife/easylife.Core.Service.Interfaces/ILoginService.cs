@@ -9,7 +9,7 @@ namespace easylife.Core.Service.Interfaces
 {
     public interface ILoginService
     {
-        bool isValidMember(int MemberId);
-        string Login(int MemberId,string password);//return the type of member
+        bool isValidMember(string MemberEmail);
+        string Login(string MemberEmail, string password);//return the type of member
     }
 }

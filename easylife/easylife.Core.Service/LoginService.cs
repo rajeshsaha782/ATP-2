@@ -17,22 +17,14 @@ namespace easylife.Core.Service
             _context = context;
         }
 
-        public bool isValidMember(int MemberId)
+
+
+        public bool isValidMember(string MemberEmail)
         {
             throw new NotImplementedException();
         }
 
-        public string Login(int MemberId, string password)
-        {
-            throw new NotImplementedException();
-        }
-
-        bool ILoginService.isValidMember(int MemberId)
-        {
-            throw new NotImplementedException();
-        }
-
-        string ILoginService.Login(int MemberId, string password)
+        public string Login(string MemberEmail, string password)
         {
             throw new NotImplementedException();
         }

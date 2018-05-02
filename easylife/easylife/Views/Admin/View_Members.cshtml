@@ -59,7 +59,7 @@ table {
     {
         foreach (var item in Model)
         {
-            if (item.Type == "Admin")
+            if (item.Type != "User")
             {
                 count++;
             }
@@ -87,7 +87,7 @@ table {
       <tbody>
           @foreach (var item in Model)
           {
-              if (item.Type == "Admin")
+              if (item.Type != "User")
               {
                 <tr onclick="location.href='@Url.Action("View_Profile_Admin", new { id=item.MemeberId })'">
                     <td>
