@@ -1,4 +1,5 @@
-﻿@{
+﻿@model easylife.Models.AdminViewModel.DashboardViewModel
+@{
     ViewBag.Title = "Admin_Home";
     //Layout = "~/Views/Shared/_AdminLayout";
 }
@@ -40,21 +41,37 @@ cshtml {
   </header>
 
   <div class="w3-row-padding w3-margin-bottom">
-  
+  @{ 
+      var Count = 0;
+      foreach(var item in Model.Members)
+      {
+          Count++;
+      }
+  }
     
 	<div class="w3-quarter">
 	<a href=@Url.Action("View_Members")>
       <div class="w3-container w3-red w3-padding-16">
         <div class="w3-left"><i class="fa fa-user w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3>15</h3>
+          <h3>@Count</h3>
         </div>
         <div class="w3-clear"></div>
         <b><h4>Admins</h4></b>
       </div>
 	  </a>
     </div>
-	
+      @{
+          var UserCount = 0;
+          foreach (var item in Model.Members)
+          {
+              if(item.Type=="User")
+              {
+                  UserCount++;
+              }
+              
+          }
+      }
 	
 	
 	<div class="w3-quarter">
@@ -62,7 +79,7 @@ cshtml {
       <div class="w3-container w3-orange w3-text-white w3-padding-16">
         <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3>53675</h3>
+          <h3>@UserCount</h3>
         </div>
         <div class="w3-clear"></div>
         <h4>Users</h4>
@@ -70,6 +87,13 @@ cshtml {
 	  </a>
     </div>
 	
+      @{
+          var ProductCount = 0;
+          foreach (var item in Model.Members)
+          {
+                  ProductCount++;
+          }
+      }
 	
 	
     <div class="w3-quarter">
@@ -77,7 +101,7 @@ cshtml {
       <div class="w3-container w3-blue w3-padding-16">
         <div class="w3-left"><i class="fa fa-product-hunt w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3>9456456</h3>
+          <h3>@ProductCount</h3>
         </div>
         <div class="w3-clear"></div>
         <h4>Products</h4>
@@ -85,14 +109,24 @@ cshtml {
 	  </a>
     </div>
 	
-	
+      @{
+          var PendingCount = 0;
+          foreach (var item in Model.Invoices)
+          {
+              if (item.Status !="Done")
+              {
+                  PendingCount++;
+              }
+
+          }
+      }
 	
     <div class="w3-quarter">
 	<a href=@Url.Action("View_Invoices")>
       <div class="w3-container w3-teal w3-padding-16">
         <div class="w3-left"><i class="fa fa-list w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3>234</h3>
+          <h3>@PendingCount</h3>
         </div>
         <div class="w3-clear"></div>
         <h4>Orders Pending</h4>

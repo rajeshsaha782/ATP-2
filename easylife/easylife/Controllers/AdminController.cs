@@ -30,7 +30,11 @@ namespace easylife.Controllers
 
         public ActionResult Dashboard()
         {
-            return View();
+            DashboardViewModel D = new DashboardViewModel();
+            D.Members = _MemberService.GetAll();
+            D.Product = _ProductService.GetAll();
+            D.Invoices = _InvoiceService.GetAll();
+            return View(D);
         }
         public ActionResult Edit_Profile_Admin()
         {
