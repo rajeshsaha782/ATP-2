@@ -1,11 +1,11 @@
-@model IEnumerable<easylife.Core.Entities.Invoice>
+@model easylife.Models.myOrdersViewModel
 @{
     ViewBag.Title = "EasyLife | Dashboard |My Orders";
 }
 					<div class="container-fluid ">
 						<ol class="breadcrumb">
 						<li><a href=@Url.Action("index","UserHome") ><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a href=@Url.Action("dashboard", new { Model.FirstOrDefault().MemberId}) ><i class="fa fa-dashboard"></i>Dashboard</a></li>
+						<li><a href=@Url.Action("dashboard", new { Model.MemberId}) ><i class="fa fa-dashboard"></i>Dashboard</a></li>
 						<li><a  class="active"><i class="fa fa-dashboard"></i>My Orders</a></li>
 						
 						</ol>
@@ -30,13 +30,13 @@
 									
 									
 								</tr>
-								@foreach (var item in Model)
+								@foreach (var item in Model.Invoices)
                                 {
                                     <tr>
-									    <td> <a href=@Url.Action("invoices")>item.InvoiceId</a></td>
-								        <td>item.Date</td>
-									    <td>item.Status</td>
-									    <td>item.PaymentStatus</td>
+									    <td> <a href=@Url.Action("invoices", new { id=item.InvoiceId})> @item.InvoiceId </a></td>
+								        <td>@item.Date</td>
+									    <td>@item.Status</td>
+									    <td>@item.PaymentStatus</td>
 									    <td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
 									
 									

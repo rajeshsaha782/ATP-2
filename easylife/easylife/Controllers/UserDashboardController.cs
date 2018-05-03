@@ -1,5 +1,6 @@
 ﻿using easylife.Core.Entities;
 using easylife.Core.Service.Interfaces;
+using easylife.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,14 @@ namespace easylife.Controllers
         public IProductService _ProductService;
         public IMemberService _MemberService;
         public IInvoiceService _InvoiceService;
+        public IProductReviewService _ProductReviewService;
 
-
-        public UserDashboardController(IProductService ProductService, IMemberService MemberService,IInvoiceService InvoiceService)
+        public UserDashboardController(IProductService ProductService, IMemberService MemberService, IInvoiceService InvoiceService, IProductReviewService ProductReviewService)
         {
             _ProductService = ProductService;
             _MemberService = MemberService;
             _InvoiceService = InvoiceService;
+            _ProductReviewService = ProductReviewService;
         }
 
         public ActionResult Dashboard(int id)
@@ -55,12 +57,29 @@ namespace easylife.Controllers
 
         public ActionResult myOrders(int id)
         {
-            return View(_InvoiceService.GetByMemberId(id));
+            myOrdersViewModel m = new myOrdersViewModel();
+            m.MemberId = id;
+            m.Name = _MemberService.GetById(id).Name;
+            m.Invoices = _InvoiceService.GetByMemberId(id);
+            return View(m);
         }
 
-        public ActionResult invoices(int id)
+        public ActionResult invoices(int id)//This id is the InvoiceId not memberId
         {
-            return View(_MemberService.GetById(id));
+            InvoiceViewModel I = new InvoiceViewModel();
+            I.MemberId = _InvoiceService.GetById(id).MemberId;
+            I.Name = _MemberService.GetById(I.MemberId).Name;
+            I.Invoice = _InvoiceService.GetById(id);
+            return View(I);
+        }
+
+        public ActionResult myReviews(int id)
+        {
+            myReviewsViewModel m = new myReviewsViewModel();
+            m.MemberId = id;
+            m.Name = _MemberService.GetById(id).Name;
+            m.Reviews = _ProductReviewService.GetByMemberId(id);
+            return View(m);
         }
 
         public ActionResult manageAddress(int id)
@@ -81,10 +100,7 @@ namespace easylife.Controllers
         {
             return View(_MemberService.GetById(id));
         }
-        public ActionResult myReviews(int id)
-        {
-            return View(_MemberService.GetById(id));
-        }
+        
   
 
 

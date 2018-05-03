@@ -1,4 +1,4 @@
-@model easylife.Core.Entities.Invoice
+@model easylife.Models.InvoiceViewModel
 @{
     ViewBag.Title = "EasyLife | Dashboard |MyOrders |Invoice";
 }
@@ -46,7 +46,7 @@
 											<tr>
 												<td>
 													<p style="text-align:left;"><b>Bill To:</b><p>
-													<p style="text-align:left;">Rakibul Hossain<p>
+													<p style="text-align:left;">@Model.Name<p>
 													<p style="text-align:left;">Nikunja<p>
 													<p style="text-align:left;">H N#2A, R N#10<p>
 												</td>
@@ -55,11 +55,11 @@
 														<tbody>
 															<tr>
 																<td>invoice</td>
-																<td>456789</td>
+																<td>@Model.Invoice.InvoiceId</td>
 															</tr>
 															<tr>
 																<td>invoice Date</td>
-																<td>March 10,2018</td>
+																<td>@Model.Invoice.Date</td>
 															</tr>
 															<tr>
 																<td>Amount Due</td>

@@ -1,4 +1,4 @@
-﻿@model easylife.Core.Entities.Member
+﻿@*@model easylife.Core.Entities.Member*@
 @using System.Web.Optimization
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +82,7 @@
 							<div class="panel-heading" >
 								<h4 class="panel-title">
 									
-									<a class="point" data-parent="#accordion" href=@Url.Action("Dashboard")><span class="glyphicon glyphicon-dashboard"></span> My Dashboard</a>
+									<a class="point" data-parent="#accordion" href=@Url.Action("Dashboard", new { id=Model.MemberId})><span class="glyphicon glyphicon-dashboard"></span> My Dashboard</a>
 								</h4>
 							</div>
 							<div id="" class="panel-collapse collapse">

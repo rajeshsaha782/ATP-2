@@ -1,10 +1,11 @@
+@model easylife.Models.myReviewsViewModel
 @{
     ViewBag.Title = "EasyLife | Dashboard |My Reviews";
 }
 <div class="container-fluid ">
 						<ol class="breadcrumb">
 						<li><a href=@Url.Action("index","UserHome")><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a href=@Url.Action("dashboard") ><i class="fa fa-dashboard"></i>Dashboard</a></li>
+						<li><a href=@Url.Action("dashboard", new { id=Model.MemberId }) ><i class="fa fa-dashboard"></i>Dashboard</a></li>
 						<li><a  class="active"><i class="fa fa-dashboard"></i>My Reviews</a></li>
 						
 						</ol>
@@ -29,30 +30,17 @@
 									
 								</tr>
 								
-								<tr>
-									<td><a href=@Url.Action("details")><img class="img-circle user" src="~/resources/1.jpg"></a></td>
-									<td><p>Kakashi t_shirt</p></td>
-									<td>$500</td>
-									<td>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</td>
-									<td>Liked</td>
+                                @foreach(var item in Model.Reviews)
+                                {
+								    <tr>
+									    <td><a href=@Url.Action("details","UserHome", new { id=Model.Reviews.First().ProductId})>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">",Model.Reviews.First().ProductId))</a></td>
+									    <td><p>Kakashi t_shirt</p></td>
+									    <td>$500</td>
+									    <td>@item.Review</td>
+									    <td>Liked</td>
 									
-								</tr>
-								<tr>
-									<td><a href=@Url.Action("details")><img class="img-circle user" src="~/resources/2.jpg"></a></td>
-									<td><p>Kakashi t_shirt</p></td>
-									<td>$500</td>
-									<td>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</td>
-									<td>Disliked</td>
-									
-								</tr>
-								<tr>
-									<td><a href=@Url.Action("details")><img class="img-circle user" src="~/resources/3.jpg"></a></td>
-									<td><p>Kakashi t_shirt</p></td>
-									<td>$500</td>
-									<td>Not Reviewed</td>
-									<td>None</td>
-									
-								</tr>
+								    </tr>
+                                }
 								
 								
 								
