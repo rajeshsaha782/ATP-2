@@ -6,7 +6,7 @@
 <div class="container-fluid ">
 						<ol class="breadcrumb">
 						<li><a href=@Url.Action("index","UserHome") ><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a href=@Url.Action("dashboard", new { id= Model.MemeberId}) ><i class="fa fa-dashboard"></i>Dashboard</a></li>
+						<li><a href=@Url.Action("dashboard", new { id= Model.MemberId}) ><i class="fa fa-dashboard"></i>Dashboard</a></li>
 						<li><a  class="active"><i class="fa fa-dashboard"></i>Account Information</a></li>
 						
 						</ol>
@@ -33,8 +33,8 @@
 											<p>Member Type:<b style="color:red">Premium</b></p>
 											<p>cell : @Model.PhoneNumber</p>
 											<p>address : H#2A, R#10, Nikunja-2</p>
-									<p><a href=@Url.Action("edit", new { id=Model.MemeberId})><button type="button" class="btn btn-info" >Edit</button></a>&nbsp;&nbsp;
-                                        <a href=@Url.Action("changepass", new { id=Model.MemeberId})><button type="button" class="btn btn-info" >Change Password</button></a></p>
+									<p><a href=@Url.Action("edit", new { id=Model.MemberId})><button type="button" class="btn btn-info" >Edit</button></a>&nbsp;&nbsp;
+                                        <a href=@Url.Action("changepass", new { id=Model.MemberId})><button type="button" class="btn btn-info" >Change Password</button></a></p>
 										</td>
 										<td >
 											<a href="info"><img class="img-circle img2" src="~/resources/user.jpg"></a>

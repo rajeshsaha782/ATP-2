@@ -29,7 +29,7 @@ namespace easylife
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer<DbContext>(null);
+            //Database.SetInitializer<easylifeDbContext>(new DropCreateDatabaseIfModelChanges<easylifeDbContext>());
 
             IUnityContainer container = new UnityContainer();
 

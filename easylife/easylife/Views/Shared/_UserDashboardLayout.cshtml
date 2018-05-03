@@ -50,7 +50,7 @@
 					</div>
 				</form>
 				<ul class="nav navbar-nav pull-right pull-right1">
-					<li class="point"><a href=@Url.Action("Dashboard", new { id=Model.MemeberId})><span class="glyphicon glyphicon-user" ></span>@Model.Name</a></li>
+					<li class="point"><a href=@Url.Action("Dashboard", new { id=Model.MemberId})><span class="glyphicon glyphicon-user" ></span>@Model.Name</a></li>
 					
 					<li><a href=@Url.Action("shoppingCart")><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(0)</span></a></li>
 				</ul>
@@ -101,13 +101,13 @@
 							</div>
 							<div id="collapse1" class="panel-collapse collapse">
 								<div class="panel-body">
-									<a  href=@Url.Action("info", new { id=Model.MemeberId})>Account Information</a>
+									<a  href=@Url.Action("info", new { id=Model.MemberId})>Account Information</a>
 								</div>
 								<div class="panel-body">
-									<a  href=@Url.Action("edit", new { id=Model.MemeberId})>Edit</a>
+									<a  href=@Url.Action("edit", new { id=Model.MemberId})>Edit</a>
 								</div>
 								<div class="panel-body">
-									<a  href=@Url.Action("changepass", new { id=Model.MemeberId})>Change Password</a>
+									<a  href=@Url.Action("changepass", new { id=Model.MemberId})>Change Password</a>
 								</div>
 								
 							</div>
@@ -117,7 +117,7 @@
 							
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-parent="#accordion" href=@Url.Action("myOrders", new { id=Model.MemeberId})>My Orders</a>
+									<a data-parent="#accordion" href=@Url.Action("myOrders", new { id=Model.MemberId})>My Orders</a>
 								</h4>
 							</div>
 							
@@ -127,7 +127,7 @@
 							
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-parent="#accordion" href=@Url.Action("myReviews", new { id=Model.MemeberId})>My Reviews</a>
+									<a data-parent="#accordion" href=@Url.Action("myReviews", new { id=Model.MemberId})>My Reviews</a>
 								</h4>
 							</div>
 							
@@ -137,7 +137,7 @@
 							
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-parent="#accordion" href=@Url.Action("myCoupon", new { id=Model.MemeberId})>My Coupon</a>
+									<a data-parent="#accordion" href=@Url.Action("myCoupon", new { id=Model.MemberId})>My Coupon</a>
 								</h4>
 							</div>
 							
@@ -147,7 +147,7 @@
 							
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-parent="#accordion" href=@Url.Action("myReports", new { id=Model.MemeberId})>My Reports</a>
+									<a data-parent="#accordion" href=@Url.Action("myReports", new { id=Model.MemberId})>My Reports</a>
 								</h4>
 							</div>
 							
@@ -157,7 +157,7 @@
 							
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-parent="#accordion" href=@Url.Action("myFavorite", new { id=Model.MemeberId})>My Favorite</a>
+									<a data-parent="#accordion" href=@Url.Action("myFavorite", new { id=Model.MemberId})>My Favorite</a>
 								</h4>
 							</div>
 							

@@ -39,9 +39,9 @@ namespace easylife.Controllers
         {
             //if(_MemberService.Update(m))
             //{
-            //    return View(_MemberService.GetById(m.MemeberId));
+            //    return View(_MemberService.GetById(m.MemberId));
             //}
-            //return RedirectToAction("Dashboard", new {id= m.MemeberId});
+            //return RedirectToAction("Dashboard", new {id= m.MemberId});
             return View(_MemberService.GetById(m.MemberId));
         }
 

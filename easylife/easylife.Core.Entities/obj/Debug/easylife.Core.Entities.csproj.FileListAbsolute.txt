@@ -1,8 +1,3 @@
-E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.csprojResolveAssemblyReference.cache
-E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities.dll
-E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities.pdb
-E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.dll
-E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.pdb
 C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.csprojResolveAssemblyReference.cache
 C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.dll
 C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.pdb
@@ -22,7 +17,11 @@ D:\ATP-2\easylife\easylife.Core.Entities\bin\Debug\EntityFramework.SqlServer.xml
 D:\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.dll
 D:\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.pdb
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities.dll.config
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities.dll
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\bin\Debug\easylife.Core.Entities.pdb
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\bin\Debug\EntityFramework.dll
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\bin\Debug\EntityFramework.SqlServer.dll
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\bin\Debug\EntityFramework.xml
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\bin\Debug\EntityFramework.SqlServer.xml
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.dll
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.pdb

@@ -25,15 +25,20 @@ namespace easylife.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ActionResult brand(string brand)
         {
             ViewBag.brand = brand;
             return View( _ProductService.GetByBrand(brand));
         }
+
+        [HttpGet]
         public ActionResult catagory(string category, string subcategory)
         {
-            return View(_ProductService.GetByCategory(category, subcategory));
+            return View(_ProductService.GetByCategory(category,subcategory));
         }
+
+        [HttpGet]
         public ActionResult details(int id=0)
         {
             DetailViewModel d = new DetailViewModel();
@@ -79,18 +84,18 @@ namespace easylife.Controllers
             return View();
         }
 
-        [HttpPost]
+        
         public ActionResult SignUp(Member m)
         {
-            m.MemberSince = DateTime.Now;
-            m.LastLoggedIn = DateTime.Now;
-            m.Status = "active";
-            m.Type = "User";
-            _MemberService.Insert(m);
+            //m.MemberSince = DateTime.Now;
+            //m.LastLoggedIn = DateTime.Now;
+            //m.Status = "active";
+            //m.Type = "User";
+            //_MemberService.Insert(m);
 
-            return View("Index"); 
-            
-            
+            return RedirectToAction("Index", "UserHome");
+
+
         }
 
         public ActionResult SortByHighestPrice(IEnumerable<Product> products)

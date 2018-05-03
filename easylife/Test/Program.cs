@@ -28,13 +28,13 @@ namespace Test
 
             ///----------EF Test
             easylifeDbContext e = new easylifeDbContext();
-            MemberService ms = new MemberService(e);
+            //MemberService ms = new MemberService(e);
 
-            Member m = new Member();
-            m.Email = "r@gmail.com";
-            m.Name = "rajesh";
-            m.MemberSince = DateTime.Now;
-            m.LastLoggedIn = DateTime.Now;
+            //Member m = new Member();
+            //m.Email = "r@gmail.com";
+            //m.Name = "rajesh";
+            //m.MemberSince = DateTime.Now;
+            //m.LastLoggedIn = DateTime.Now;
             //Console.WriteLine(ms.Insert(m));
 
             //Console.WriteLine(ms.GetById(1).MemeberId);
@@ -42,17 +42,17 @@ namespace Test
             //Console.WriteLine(ms.GetById(1).Email);
 
 
-            Member m1 = new Member();
-            m1.MemberId = 1;
-            m1.Email = "e@gmail.com";
-            m1.Name = "efti";
-            m1.MemberSince = DateTime.Now;
-            m1.LastLoggedIn = DateTime.Now;
-            Console.WriteLine(ms.Update(m1));
+            //Member m1 = new Member();
+            //m1.MemberId = 1;
+            //m1.Email = "e@gmail.com";
+            //m1.Name = "efti";
+            //m1.MemberSince = DateTime.Now;
+            //m1.LastLoggedIn = DateTime.Now;
+            //Console.WriteLine(ms.Update(m1));
 
-            Console.WriteLine(ms.GetById(1).MemberId);
-            Console.WriteLine(ms.GetById(1).Name);
-            Console.WriteLine(ms.GetById(1).Email);
+            //Console.WriteLine(ms.GetById(1).MemberId);
+            //Console.WriteLine(ms.GetById(1).Name);
+            //Console.WriteLine(ms.GetById(1).Email);
 
             //easylifeDbContext e = new easylifeDbContext();
           
@@ -75,18 +75,18 @@ namespace Test
 
             //Product--------------------
 
-          /*  Product p = new Product();
-            p.ProductName = "5";
-            p.Quantity = 10;
-            p.BuyingPrice = 100;
-            p.SellingPrice = 101;
-            p.Category = "Mens Wear";
-            p.SubCategory = "Shirt";
-            p.Date = DateTime.Now;
-            p.LastSold = DateTime.Now;
+            //Product p = new Product();
+            //  p.ProductName = "5";
+            //  p.Quantity = 10;
+            //  p.BuyingPrice = 100;
+            //  p.SellingPrice = 101;
+            //  p.Category = "Mens Wear";
+            //  p.SubCategory = "Shirt";
+            //  p.Date = DateTime.Now;
+            //  p.LastSold = DateTime.Now;
 
-            ProductService ps = new ProductService(e);
-            Console.WriteLine(ps.Insert(p));*/
+            //  ProductService ps = new ProductService(e);
+            //  Console.WriteLine(ps.Insert(p));
 
             ///GetAll-----------------
 
@@ -94,6 +94,14 @@ namespace Test
             //{
             //    Console.WriteLine(mem.Name);
             //}
+
+            ProductService ps = new ProductService(e);
+            IEnumerable<Product> products = ps.GetByCategory("Mens Wear", "Shirt");
+
+            foreach(var i in products)
+            {
+                Console.WriteLine(i.ProductName);
+            }
 
 
 
