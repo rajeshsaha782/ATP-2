@@ -17,6 +17,7 @@ namespace easylife.Core.Service.Interfaces
 
         IEnumerable<ProductReview> GetByMemberId(int MemberId);
         IEnumerable<ProductReview> GetByProductId(int ProductId);
+        int CountReviewsByMemberId(int Member_id);
         
     }
 }

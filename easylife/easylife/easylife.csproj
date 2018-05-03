@@ -161,10 +161,10 @@
     <Compile Include="Models\UserHomeViewModel\catagoryViewModel.cs" />
     <Compile Include="Models\UserHomeViewModel\confirmOrderViewModel.cs" />
     <Compile Include="Models\UserHomeViewModel\DetailViewModel.cs" />
-    <Compile Include="Models\InvoiceViewModel.cs" />
-    <Compile Include="Models\MemberInfo.cs" />
-    <Compile Include="Models\myOrdersViewModel.cs" />
-    <Compile Include="Models\myReviewsViewModel.cs" />
+    <Compile Include="Models\UserDashboardViewModel\InvoiceViewModel.cs" />
+    <Compile Include="Models\UserDashboardViewModel\MemberInfo.cs" />
+    <Compile Include="Models\UserDashboardViewModel\myOrdersViewModel.cs" />
+    <Compile Include="Models\UserDashboardViewModel\myReviewsViewModel.cs" />
     <Compile Include="Models\UserHomeViewModel\IndexViewModel.cs" />
     <Compile Include="Models\UserHomeViewModel\invoicesViewModel.cs" />
     <Compile Include="Models\UserHomeViewModel\MemberModel.cs" />

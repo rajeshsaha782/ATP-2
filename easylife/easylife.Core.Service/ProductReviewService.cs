@@ -52,8 +52,10 @@ namespace easylife.Core.Service
             return _context.Set<ProductReview>().Where(i => i.ProductId == Product_id);
         }
 
-
-
+        public int CountReviewsByMemberId(int Member_id)
+        {
+            return _context.Set<ProductReview>().Count(i => i.MemberId == Member_id);
+        }
 
         public bool Insert(ProductReview review)
         {

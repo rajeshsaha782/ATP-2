@@ -8,6 +8,8 @@ namespace easylife.Models
 {
     public class myReviewsViewModel:MemberInfo
     {
+        public int count;
         public IEnumerable<ProductReview> Reviews { set; get; }
+        public Product[] Products = new Product[1000];
     }
 }

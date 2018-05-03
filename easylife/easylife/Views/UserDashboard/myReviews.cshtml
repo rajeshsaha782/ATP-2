@@ -29,17 +29,18 @@
 									
 									
 								</tr>
-								
+								@{var count=0;}
                                 @foreach(var item in Model.Reviews)
                                 {
 								    <tr>
-									    <td><a href=@Url.Action("details","UserHome", new { id=Model.Reviews.First().ProductId})>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">",Model.Reviews.First().ProductId))</a></td>
-									    <td><p>Kakashi t_shirt</p></td>
-									    <td>$500</td>
+									    <td><a href=@Url.Action("details","UserHome", new { id=item.ProductId})>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">",item.ProductId))</a></td>
+									    <td><p>@Model.Products[count].ProductName</p></td>
+									    <td>$@Model.Products[count].SellingPrice</td>
 									    <td>@item.Review</td>
 									    <td>Liked</td>
 									
 								    </tr>
+                                    count++;
                                 }
 								
 								

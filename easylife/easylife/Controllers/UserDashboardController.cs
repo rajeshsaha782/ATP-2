@@ -79,7 +79,15 @@ namespace easylife.Controllers
             m.MemberId = id;
             m.Name = _MemberService.GetById(id).Name;
             m.Reviews = _ProductReviewService.GetByMemberId(id);
-            
+            m.count = _ProductReviewService.CountReviewsByMemberId(id);
+            int count1 = 0;
+            foreach (var review in m.Reviews)
+            {
+                m.Products[count1]=_ProductService.GetById(review.ProductId);
+                count1++;
+                //m.ProductNames.Add("hey");
+            }
+            //Console.WriteLine(m.ProductNames[0]);
             return View(m);
         }
 
