@@ -1,51 +1,58 @@
-﻿@{
+﻿@model easylife.Models.AdminViewModel.OrdersViewModel
+@{
     ViewBag.Title = "View_Orders";
 }
 
 <style>
-cshtml,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
-table {
-			border-collapse: collapse;
-			width: 100%;
-			}
-			tr:hover {background-color:darkgray;}
- .comboBox {
-  
-  border-radius: 4px;
-  background-color: #fffff;
-  border: none;
-  color: black;
-  text-align: center;
-  font-size:15px;
-  width: 120px;
-  height: 30px;
-  border-radius:10px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
+        cshtml,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
+             table{
+			            border-collapse: collapse;
+			            width: 100%;
+			      }
+         tr:hover {    background-color:darkgray;}
+         .comboBox {
+                      border-radius: 4px;
+                      background-color: #fffff;
+                      border: none;
+                      color: black;
+                      text-align: center;
+                      font-size:15px;
+                      width: 120px;
+                      height: 30px;
+                      border-radius:10px;
+                      transition: all 0.5s;
+                      cursor: pointer;
+                      margin: 5px;
+                    }
 
-h3 {
-        text-align:center;
-    }
+                h3 {
+                        text-align:center;
+                    }
 </style>
-</head>
+
 	<div >
-					
-					<input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
-						<select id="search by" class="comboBox">
-							<option>Any</option>
-							<option>Order Code</option>
-							<option>Product Name</option>
-							<option>Product Code</option>
-							<option>Invoice</option>
-						  </select>
-				</div>
+		<input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
+		<select id="search by" class="comboBox">
+			<option>Any</option>
+			<option>Order Code</option>
+			<option>Product Name</option>
+			<option>Product Code</option>
+			<option>Invoice</option>
+		</select>
+	</div>
+
 <body class="w3-animate-bottom">
 	
   <!--for demo wrap-->
+@{
+    var Count = 0;
+    foreach (var item in Model.Orders)
+    {
+        Count++;
+    }
+}
   <h1>Orders</h1>
-    <h3>Total Order(s) Found: 10</h3>
+    <h3>Total Order(s) Found: @Count</h3>
   <section class="w3-card-4">
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -66,17 +73,42 @@ h3 {
   <div class="tbl-content" style="background-color:white">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
+        @foreach (var item in Model.Orders)
+        {
+            var name = "";
+            var status="";
+            foreach (var T in Model.Products)
+            {
+                if (item.ProductId == T.ProductId)
+                {
+                    name = T.ProductName;
+                }
+            }
+
+            foreach (var T in Model.Invoices)
+            {
+                if (item.InvoiceId == T.InvoiceId)
+                {
+                    status= T.PaymentStatus;
+                }
+            }
+
+
         <tr>
-          <td>1</td>
-          <td><a href='@Url.Action("View_Product_Details")'">1</a></td>
-          <td><a href='@Url.Action("View_Invoice")'">1</a></td>
-		  <td>2017-12-28</td>
-          <td>Woolen Jacket</td>
-          <td>Pending</td>
+          <td>@item.OrderId</td>
+          <td><a href='@Url.Action("View_Product_Details")'">@item.ProductId</a></td>
+          <td><a href='@Url.Action("View_Invoice")'">@item.InvoiceId</a></td>
+		  <td>@item.SellingDate</td>
+          <td>@name</td>
+          <td>@status</td>
           <td>Not Paid</td>
 		  
         </tr>
-		<tr>
+        }
+
+
+        <!--
+          <tr>
           <td>2</td>
           <td><a ref='@Url.Action("View_Product_Details")'">2</a></td>
           <td><a href='@Url.Action("View_Invoice")'">1</a></td>
@@ -103,7 +135,7 @@ h3 {
           <td>Delivered</td>
           <td>Paid</td>
         </tr>
-        
+        -->  
       </tbody>
     </table>
   </div>
