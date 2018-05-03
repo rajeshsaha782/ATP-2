@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "EasyLife | Details";
     int c = 0;
+    Session["ProductId"] = Model.DetailProduct.ProductId;
 }
 <link href="~/Styles/Style_user.css" rel="stylesheet" />
 <div class="container-fluid ">
@@ -24,7 +25,7 @@
 						
 								
 									<div class="easyzoom example">
-										@Html.Raw(String.Format("<img src=\"/resources/{0}.jpg\">",Model.DetailProduct.ProductId))
+										@Html.Raw(String.Format("<img src=\"/resources/{0}.jpg\">", Model.DetailProduct.ProductId))
                                        @* <img src="~/resources/2.jpg">*@
 									</div>
 								
@@ -32,13 +33,13 @@
 							<div >
 							
 								<p>
-								<span id="viewed" class="glyphicon glyphicon-eye-open" style="font-size: 25px;text-align:center;color:gray" title="10 people viewed this Product"></span><small style="font-size: 15px;">(10)</small>
+								<span id="viewed" class="glyphicon glyphicon-eye-open" style="font-size: 25px;text-align:center;color:gray" title="10 people viewed this Product"></span><small style="font-size: 15px;">(@Model.DetailProduct.TotalViewed)</small>
 									&nbsp;
-								<span id="purchase" class="glyphicon glyphicon-shopping-cart" style="font-size: 25px;text-align:center;color:gray" title="5 people Purchased this Product"></span><small style="font-size: 15px;">(5)</small>
+								<span id="purchase" class="glyphicon glyphicon-shopping-cart" style="font-size: 25px;text-align:center;color:gray" title="5 people Purchased this Product"></span><small style="font-size: 15px;">(@Model.DetailProduct.TotalSell)</small>
 									&nbsp;
-								<span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:black" title="Like this Product"></span><small style="font-size: 15px;">(10)</small>
+								<span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:black" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
 									&nbsp;
-								<span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:black"title="Dislike this Product"></span><small style="font-size: 15px;">(5)</small>
+								<span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:black"title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
 								</p>
 							</div>
 							
@@ -77,7 +78,7 @@
                                            {
                                                 <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
                                            }
-                                           @for(int i = 1; i <= 5-Model.DetailProduct.Star; i++)
+                                           @for(int i = 1; i <= 5 - Model.DetailProduct.Star; i++)
                                            {
                                                 <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
                                            }
@@ -124,7 +125,7 @@
 							
 
 								 <div class="tab-content">
-									<div id="feature" class="tab-pane fade in active">
+									<div id="feature" class="tab-pane fade in active" style="height:100px;overflow:auto">
 										<p>@Model.DetailProduct.Features</p>
 									</div>
 
@@ -161,40 +162,46 @@
 							</table>
 										
 									</div>
-									<div id="review" class="tab-pane fade">
-									<table class="table table-striped ">
+									<div id="review" class="tab-pane fade" style="height:200px;overflow:auto">
+									<table class="table table-striped " >
 								
 								<tbody>
-									
-									<tr>
+									@foreach(var Review in Model.Reviews)
+                                    {
+                                         <tr>
 										<td> <img class="img-circle user" src="~/resources/u2.jpg"></td>
-										<td>Nora</td>
+										<td>@Review.MemberId</td>
 										<td><img class="img-circle user" src="~/resources/gold.jpg"></td>
-										<td> <p style="text-align:justify;">It is a long established fact that a reader will be distracted
-										  by the readable content of a page when looking at its layout.</p></td>
+										<td> <p style="text-align:justify;">@Review.Review</p></td>
 										
-									</tr>
-									<tr>
+									    </tr>
+                                      }
+									
+									@*<tr>
 									<td> <img class="img-circle user" src="~/resources/u1.jpg"></td>
 										<td>Norvvis</td>
 										<td><img class="img-circle user" src="~/resources/bronze.jpg"></td>
 										<td> <p style="text-align:justify;">It is a long established fact that a reader will be distracted
 										  by the readable content of a page when looking at its layout.</p></td>
 										
-									</tr>
+									</tr>*@
 									<tr>
 										<td colspan="3"> <p><b>Type Your review</b></p></td>
 										
 										
 									</tr>
+                                    @using(Html.BeginForm("InsertReview", "UserHome", FormMethod.Post))
+                                    {
 									<tr>
 									<td> <img class="img-circle user" src="~/resources/user.jpg"></td>
 										<td>Rakib</td>
 										<td><img class="img-circle user" src="~/resources/platinum.jpg"></td>
-										<td><input type="text"></input> <a href="#"><button  class="btn btn-info">Submit</button></a> </td>
+                                        <td>
+                                               <input type="text" name="review"/> <input type="submit" value="Submit" class="btn btn-primary" />
+                                        </td>
 										
 									</tr>
-									
+                                    }
 									
 								</tbody>
 							</table>
@@ -229,21 +236,21 @@
 								    <p>@item.SellingPrice $</p>
 								    <p>
 									@for(int i = 1; i <= item.Star; i++)
-                                           {
-                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-                                           }
-                                           @for(int i = 1; i <= 5-item.Star; i++)
-                                           {
-                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-                                           }
+         {
+                                          <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+         }
+                                    @for(int i = 1; i <= 5 - item.Star; i++)
+                                    {
+                                        <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+                                    }
 								</p>
 								    <p><a href=@Url.Action("details", new { id = @item.ProductId })><button type="button" class="btn btn-info" >Buy</button></a></p>
 							    </div>
 
 						        </div>
-                             c++;
-                             if(c == 4)
-                             { break; }
+                                    c++;
+                                    if(c == 4)
+                                    { break; }
                          }
                            
                             
@@ -408,7 +415,7 @@
 				        </div>
 			        </div>
 		        </div>
-            }   
+             }   
     
      }
 				

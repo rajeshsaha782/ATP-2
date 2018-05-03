@@ -15,11 +15,17 @@ namespace easylife.Controllers
     {
         public IProductService _ProductService;
         public IMemberService _MemberService;
+        public ILikeService _LikeService;
+        public IDislikeService _DislikeService;
+        public IProductReviewService _ProductReviewService;
 
-        public UserHomeController(IProductService ProductService,IMemberService MemberService)
+        public UserHomeController(IProductService ProductService, IMemberService MemberService, ILikeService LikeService, IDislikeService DislikeService, IProductReviewService ProductReviewService)
         {
             _ProductService = ProductService;
             _MemberService = MemberService;
+            _LikeService = LikeService;
+            _DislikeService = DislikeService;
+            _ProductReviewService = ProductReviewService;
         }
 
         public ActionResult Index()
@@ -47,11 +53,32 @@ namespace easylife.Controllers
         [HttpGet]
         public ActionResult details(int id=0)
         {
+            _ProductService.SetTotal_Viewed(id);//incraease total viewed
+
             DetailViewModel d = new DetailViewModel();
             d.DetailProduct = _ProductService.GetById(id);
+            d.Like = _LikeService.countlike(id);
+            d.DisLike = _DislikeService.countdislike(id);
+            d.Reviews = _ProductReviewService.GetByProductId(id);
+
+
+
             d.RelatedProducts = _ProductService.GetByCategory(d.DetailProduct.Category,d.DetailProduct.SubCategory);
+            
             return View(d);
         }
+
+        public ActionResult InsertReview(string review)
+        {
+            ProductReview p = new ProductReview();
+            p.MemberId = 1;//fake 
+            p.ProductId = Convert.ToInt32(Session["ProductId"]);
+            p.Review = review;
+            p.Date = DateTime.Now;
+            _ProductReviewService.Insert(p);
+            return RedirectToAction("details", new { id = p.ProductId });
+        }
+
         public ActionResult shoppingCart(int id)
         {
             shoppingCartViewModel m = new shoppingCartViewModel();
@@ -111,6 +138,7 @@ namespace easylife.Controllers
 
 
         }
+        
 
         public ActionResult SortByHighestPrice(IEnumerable<Product> products)
         {
