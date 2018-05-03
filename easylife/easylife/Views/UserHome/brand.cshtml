@@ -43,11 +43,14 @@
 								    <p>@item.ProductName</p>
 								    <p>@item.SellingPrice $</p>
 								    <p>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+									@for(int i = 1; i <= item.Star; i++)
+                                           {
+                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+                                           }
+                                           @for(int i = 1; i <= 5-item.Star; i++)
+                                           {
+                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+                                           }
 								</p>
 								    <p><a href=@Url.Action("details", new { id = @item.ProductId})><button type="button" class="btn btn-info" >Buy</button></a></p>
 							    </div>

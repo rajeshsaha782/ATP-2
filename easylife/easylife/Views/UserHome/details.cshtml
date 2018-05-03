@@ -72,11 +72,17 @@
 									</tr>
 									<tr>
 										<td colspan="2">
-										<p>	<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-											<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-											<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-											<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-											<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+										<p>	
+                                           @for(int i = 1; i <= Model.DetailProduct.Star; i++)
+                                           {
+                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+                                           }
+                                           @for(int i = 1; i <= 5-Model.DetailProduct.Star; i++)
+                                           {
+                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+                                           }
+											
+											
 											
 											
 										</p>	
@@ -91,7 +97,7 @@
 							
 												<span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
 												
-												<a href=@Url.Action("shoppingCart", new {id=Model.DetailProduct.ProductId })><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>
+												<a href=@Url.Action("shoppingCart", new { id = Model.DetailProduct.ProductId })><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>
 											</p>
 										</td>
 									</tr>
@@ -214,28 +220,31 @@
                           
                                @Html.Raw("<div class=\"container-fluid well\">")
                            
-                           foreach (var item in Model.RelatedProducts) 
-                           {
+                         foreach(var item in Model.RelatedProducts)
+                         {
                                <div class="container-fluid col-md-3">
-							    <a href=@Url.Action("details", new {id=item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">",item.ProductId))</a>
+							    <a href=@Url.Action("details", new { id = item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">", item.ProductId))</a>
 							    <div style="text-align:center ;">
 								    <p>@item.ProductName</p>
 								    <p>@item.SellingPrice $</p>
 								    <p>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+									@for(int i = 1; i <= item.Star; i++)
+                                           {
+                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+                                           }
+                                           @for(int i = 1; i <= 5-item.Star; i++)
+                                           {
+                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+                                           }
 								</p>
-								    <p><a href=@Url.Action("details", new { id = @item.ProductId})><button type="button" class="btn btn-info" >Buy</button></a></p>
+								    <p><a href=@Url.Action("details", new { id = @item.ProductId })><button type="button" class="btn btn-info" >Buy</button></a></p>
 							    </div>
 
 						        </div>
-                               c++;
-                               if(c==4)
-                               { break; }
-                           }
+                             c++;
+                             if(c == 4)
+                             { break; }
+                         }
                            
                             
                            @Html.Raw("</div> ")
@@ -243,78 +252,7 @@
        
                     }
 
-					<div class="container-fluid well">
-						
-						<div class="container-fluid col-md-3">
-							<a href="details"><img class="img-thumbnail img2" src="~/resources/1.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-								</p>
-								<p><a href="details"><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href="details"><img class="img-thumbnail img2" src="~/resources/2.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-								</p>
-								<p><a href="details"><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href="details"><img class="img-thumbnail img2" src="~/resources/3.jpg"></a>
-							<div style="text-align:center;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-								</p>
-								<p><a href="details"><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href="details"><img class="img-thumbnail img2" src="~/resources/f1.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-									<span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-								</p>
-								<p><a href="details"><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						
-					</div>	
+					
 					
 					</br>
 					</br>
@@ -411,7 +349,7 @@
 @section Signup{
                 
              @using(Html.BeginForm("SignUp", "UserHome", FormMethod.Post))
-            {
+             {
 			        <div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
 			        <div class="modal-dialog modal-sm">
 				        <div class="modal-content">
@@ -421,40 +359,40 @@
 						        <div class="box-body">
                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                         <div class="form-group">
-                                            @Html.LabelFor(model=> model.Name)
+                                            @Html.LabelFor(model => model.Name)
                                             <div>
                                                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            @Html.LabelFor(model=> model.Email)
+                                            @Html.LabelFor(model => model.Email)
                                             <div>
                                                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            @Html.LabelFor(model=> model.Gender)
+                                            @Html.LabelFor(model => model.Gender)
                                             <div>
-                                                Male @Html.RadioButton("gender","Male")
-                                                Female @Html.RadioButton("gender","Female")
-                                                Other @Html.RadioButton("gender","Other")
+                                                Male @Html.RadioButton("gender", "Male")
+                                                Female @Html.RadioButton("gender", "Female")
+                                                Other @Html.RadioButton("gender", "Other")
                                                 @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                             <div class="form-group">
                                             @Html.LabelFor(model => model.PhoneNumber)
                                             <div>
-                                                @Html.EditorFor(model => model.PhoneNumber, new {@class = "form-control"})
-                                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger"})
+                                                @Html.EditorFor(model => model.PhoneNumber, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             @Html.LabelFor(model => model.Password)
                                             <div>
-                                                @Html.PasswordFor(model => model.Password, new {@class = "form-control"})
-                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger"})
+                                                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                     </div>
