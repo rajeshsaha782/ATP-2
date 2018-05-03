@@ -91,20 +91,17 @@ namespace easylife.Core.Service
                 return false;
         }
 
-        public bool Update(Like address)
+        public bool Update(Like like)
         {
-            var updateLike = _context.Set<Like>().Where(i => i.LikeId == address.LikeId).SingleOrDefault();
-            /// 
-
-            if (updateLike != null)
+            if (_context.Set<Like>().Any(e => e.LikeId == like.LikeId))
             {
+                _context.Set<Like>().Attach(like);
+                _context.Entry(like).State = EntityState.Modified;
+                _context.SaveChanges();
                 return true;
-
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

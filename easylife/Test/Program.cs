@@ -28,7 +28,7 @@ namespace Test
 
             ///----------EF Test
             easylifeDbContext e = new easylifeDbContext();
-            //MemberService ms = new MemberService(e);
+            MemberService ms = new MemberService(e);
 
             //Member m = new Member();
             //m.Email = "r@gmail.com";
@@ -45,7 +45,7 @@ namespace Test
             //Member m1 = new Member();
             //m1.MemberId = 1;
             //m1.Email = "e@gmail.com";
-            //m1.Name = "efti";
+            //m1.Name = "efti1";
             //m1.MemberSince = DateTime.Now;
             //m1.LastLoggedIn = DateTime.Now;
             //Console.WriteLine(ms.Update(m1));

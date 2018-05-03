@@ -68,18 +68,15 @@ namespace easylife.Core.Service
 
         public bool Update(ProductReview review)
         {
-            var updateReview = _context.Set<ProductReview>().Where(i => i.ReviewId == review.ReviewId).SingleOrDefault();
-            /// 
-
-            if (updateReview != null)
+            if (_context.Set<ProductReview>().Any(e => e.ReviewId == review.ReviewId))
             {
+                _context.Set<ProductReview>().Attach(review);
+                _context.Entry(review).State = EntityState.Modified;
+                _context.SaveChanges();
                 return true;
-
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

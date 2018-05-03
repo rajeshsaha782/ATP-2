@@ -98,18 +98,15 @@ namespace easylife.Core.Service
 
         public bool Update(Dislike dislike)
         {
-            var updatedislike = _context.Set<Dislike>().Where(i => i.DislikeId == dislike.DislikeId).SingleOrDefault();
-            /// 
-
-            if (updatedislike != null)
+            if (_context.Set<Dislike>().Any(e => e.DislikeId == dislike.DislikeId))
             {
+                _context.Set<Dislike>().Attach(dislike);
+                _context.Entry(dislike).State = EntityState.Modified;
+                _context.SaveChanges();
                 return true;
-
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

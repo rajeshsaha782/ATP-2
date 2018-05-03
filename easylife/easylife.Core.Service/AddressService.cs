@@ -83,6 +83,7 @@ namespace easylife.Core.Service
             if (_context.Set<Address>().Any(e => e.AddressId == address.AddressId))
             {
                 _context.Set<Address>().Attach(address);
+                _context.Entry(address).State = EntityState.Modified;
                 _context.SaveChanges();
                 return true;
             }

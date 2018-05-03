@@ -82,18 +82,15 @@ namespace easylife.Core.Service
 
         public bool Update(Invoice invoice)
         {
-            var updateInvoice = _context.Set<Invoice>().Where(i => i.InvoiceId == invoice.InvoiceId).SingleOrDefault();
-            /// 
-
-            if (updateInvoice != null)
+            if (_context.Set<Invoice>().Any(e => e.InvoiceId == invoice.InvoiceId))
             {
+                _context.Set<Invoice>().Attach(invoice);
+                _context.Entry(invoice).State = EntityState.Modified;
+                _context.SaveChanges();
                 return true;
-
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

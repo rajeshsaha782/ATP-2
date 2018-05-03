@@ -158,18 +158,15 @@ namespace easylife.Core.Service
 
         public bool Update(Product product)
         {
-            var updateProduct = _context.Set<Product>().Where(i => i.ProductId == product.ProductId).SingleOrDefault();
-            /// 
-
-            if (updateProduct != null)
+            if (_context.Set<Product>().Any(e => e.ProductId == product.ProductId))
             {
+                _context.Set<Product>().Attach(product);
+                _context.Entry(product).State = EntityState.Modified;
+                _context.SaveChanges();
                 return true;
-
             }
             else
-            {
                 return false;
-            }
         }
 
 

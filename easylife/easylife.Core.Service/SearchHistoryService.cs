@@ -69,18 +69,15 @@ namespace easylife.Core.Service
 
         public bool Update(SearchHistory history)
         {
-            var updateSearchHistory = _context.Set<SearchHistory>().Where(i => i.SearchId == history.SearchId).SingleOrDefault();
-            /// 
-
-            if (updateSearchHistory != null)
+            if (_context.Set<SearchHistory>().Any(e => e.SearchId == history.SearchId))
             {
+                _context.Set<SearchHistory>().Attach(history);
+                _context.Entry(history).State = EntityState.Modified;
+                _context.SaveChanges();
                 return true;
-
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

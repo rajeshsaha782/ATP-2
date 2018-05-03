@@ -95,18 +95,15 @@ namespace easylife.Core.Service
 
         public bool Update(Report report)
         {
-            var updateReport = _context.Set<Report>().Where(i => i.ReportId == report.ReportId).SingleOrDefault();
-            /// 
-
-            if (updateReport != null)
+            if (_context.Set<Report>().Any(e => e.ReportId == report.ReportId))
             {
+                _context.Set<Report>().Attach(report);
+                _context.Entry(report).State = EntityState.Modified;
+                _context.SaveChanges();
                 return true;
-
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

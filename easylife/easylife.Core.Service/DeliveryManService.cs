@@ -74,18 +74,15 @@ namespace easylife.Core.Service
 
         public bool Update(DeliveryMan deliveryMan)
         {
-            var updatedelivery_man = _context.Set<DeliveryMan>().Where(i => i.MemberId == deliveryMan.MemberId).SingleOrDefault();
-            /// 
-
-            if (updatedelivery_man != null)
+            if (_context.Set<DeliveryMan>().Any(e => e.Id == deliveryMan.Id))
             {
+                _context.Set<DeliveryMan>().Attach(deliveryMan);
+                _context.Entry(deliveryMan).State = EntityState.Modified;
+                _context.SaveChanges();
                 return true;
-
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

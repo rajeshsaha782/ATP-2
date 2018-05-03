@@ -69,18 +69,15 @@ namespace easylife.Core.Service
 
         public bool Update(Order order)
         {
-            var updateOrder = _context.Set<Order>().Where(i => i.OrderId == order.OrderId).SingleOrDefault();
-            /// 
-
-            if (updateOrder != null)
+            if (_context.Set<Order>().Any(e => e.OrderId == order.OrderId))
             {
+                _context.Set<Order>().Attach(order);
+                _context.Entry(order).State = EntityState.Modified;
+                _context.SaveChanges();
                 return true;
-
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

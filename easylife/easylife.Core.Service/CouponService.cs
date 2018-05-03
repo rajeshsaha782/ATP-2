@@ -89,18 +89,15 @@ namespace easylife.Core.Service
 
         public bool Update(Coupon coupon)
         {
-            var updateCoupon = _context.Set<Coupon>().Where(i => i.CouponId == coupon.CouponId).SingleOrDefault();
-            /// 
-
-            if (updateCoupon != null)
+            if (_context.Set<Coupon>().Any(e => e.CouponId == coupon.CouponId))
             {
+                _context.Set<Coupon>().Attach(coupon);
+                _context.Entry(coupon).State = EntityState.Modified;
+                _context.SaveChanges();
                 return true;
-
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

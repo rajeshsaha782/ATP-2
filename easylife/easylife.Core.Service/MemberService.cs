@@ -90,6 +90,7 @@ namespace easylife.Core.Service
             if (_context.Set<Member>().Any(e => e.MemberId == member.MemberId))
             {
                 _context.Set<Member>().Attach(member);
+                _context.Entry(member).State = EntityState.Modified;
                 _context.SaveChanges();
                 return true;
             }
