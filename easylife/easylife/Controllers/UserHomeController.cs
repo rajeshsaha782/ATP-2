@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using easylife.Core.Service.Interfaces;
 using easylife.Models;
 using easylife.Core.Entities;
+using easylife.Models.UserHomeViewModel;
 
 
 namespace easylife.Controllers
@@ -23,19 +24,24 @@ namespace easylife.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            IndexViewModel m = new IndexViewModel();
+            return View(m);
         }
         [HttpGet]
         public ActionResult brand(string brand)
         {
+            brandViewModel m = new brandViewModel();
+            m.productByBrand = _ProductService.GetByBrand(brand);
             ViewBag.brand = brand;
-            return View( _ProductService.GetByBrand(brand));
+            return View(m);
         }
 
         [HttpGet]
         public ActionResult catagory(string category, string subcategory)
         {
-            return View(_ProductService.GetByCategory(category,subcategory));
+            catagoryViewModel m = new catagoryViewModel();
+            m.productByCatagory = _ProductService.GetByCategory(category, subcategory);
+            return View(m);
         }
 
         [HttpGet]
@@ -48,7 +54,7 @@ namespace easylife.Controllers
         }
         public ActionResult shoppingCart(int id)
         {
-
+            shoppingCartViewModel m = new shoppingCartViewModel();
             //var cart = new HttpCookie("cart");
             //cart.Value = Convert.ToString(id);
             //cart.Expires = DateTime.Now.AddDays(7);
@@ -58,30 +64,38 @@ namespace easylife.Controllers
 
             HttpCookie cookie = Request.Cookies["cart"];
             Response.Write(cookie);
-            return View();
+
+            return View(m);
         }
         public ActionResult confirmOrder()
         {
-            return View();
+            confirmOrderViewModel m = new confirmOrderViewModel();
+
+            return View(m);
         }
         
         public ActionResult reports()
         {
-            return View();
+            reportsViewModel m = new reportsViewModel(); 
+            return View(m);
         }
 
         public ActionResult search(string search)
         {
-            return View(_ProductService.GetBySearch(search));
+            searchViewModel m = new searchViewModel();
+            m.productBySearch=_ProductService.GetBySearch(search);
+            return View(m);
         }
         
         public ActionResult trackProduct()
         {
-            return View();
+            trackProductViewModel m = new trackProductViewModel();
+            return View(m);
         }
         public ActionResult invoices()
         {
-            return View();
+            invoicesViewModel m = new invoicesViewModel();
+            return View(m);
         }
 
         

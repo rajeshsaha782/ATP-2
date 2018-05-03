@@ -157,11 +157,21 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DeliveryManViewModel.cs" />
-    <Compile Include="Models\DetailViewModel.cs" />
+    <Compile Include="Models\UserHomeViewModel\brandViewModel.cs" />
+    <Compile Include="Models\UserHomeViewModel\catagoryViewModel.cs" />
+    <Compile Include="Models\UserHomeViewModel\confirmOrderViewModel.cs" />
+    <Compile Include="Models\UserHomeViewModel\DetailViewModel.cs" />
     <Compile Include="Models\InvoiceViewModel.cs" />
     <Compile Include="Models\MemberInfo.cs" />
     <Compile Include="Models\myOrdersViewModel.cs" />
     <Compile Include="Models\myReviewsViewModel.cs" />
+    <Compile Include="Models\UserHomeViewModel\IndexViewModel.cs" />
+    <Compile Include="Models\UserHomeViewModel\invoicesViewModel.cs" />
+    <Compile Include="Models\UserHomeViewModel\MemberModel.cs" />
+    <Compile Include="Models\UserHomeViewModel\reportsViewModel.cs" />
+    <Compile Include="Models\UserHomeViewModel\searchViewModel.cs" />
+    <Compile Include="Models\UserHomeViewModel\shoppingCartViewModel.cs" />
+    <Compile Include="Models\UserHomeViewModel\trackProductViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

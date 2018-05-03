@@ -79,6 +79,7 @@ namespace easylife.Controllers
             m.MemberId = id;
             m.Name = _MemberService.GetById(id).Name;
             m.Reviews = _ProductReviewService.GetByMemberId(id);
+            
             return View(m);
         }
 
