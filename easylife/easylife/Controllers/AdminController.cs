@@ -4,16 +4,28 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using easylife.Core.Service.Interfaces;
+using easylife.Models;
+using easylife.Core.Entities;
+using easylife.Models.AdminViewModel;
+using System.Data.Entity;
 
 namespace easylife.Controllers
 {
     public class AdminController : Controller
     {
         public IMemberService _MemberService;
+        public IInvoiceService _InvoiceService;
+        public IDeliveryManService _DeliveryManService;
+        public IProductService _ProductService;
+        public IOrderService _OrderService;
 
-        public AdminController(IMemberService MemberService)
+        public AdminController(IMemberService MemberService, IOrderService OrderService, IInvoiceService InvoiceService, IDeliveryManService DeliveryManService, IProductService ProductService)
         {
+            _InvoiceService = InvoiceService;
             _MemberService = MemberService;
+            _DeliveryManService = DeliveryManService;
+            _ProductService = ProductService;
+            _OrderService = OrderService;
         }
 
         public ActionResult Dashboard()
@@ -25,14 +37,14 @@ namespace easylife.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult View_Profile_Admin(int id=0)
+        public ActionResult View_Profile_Admin(int id = 0)
         {
             return View(_MemberService.GetById(id));
         }
         [HttpGet]
-        public ActionResult View_Profile_User(int id=0)
+        public ActionResult View_Profile_User(int id = 0)
         {
-        
+
             return View(_MemberService.GetById(id));
         }
         public ActionResult Change_Password()
@@ -59,11 +71,20 @@ namespace easylife.Controllers
         }
         public ActionResult View_Delivery_Man()
         {
-            return View(_MemberService.GetAll());
+            DeliveryManViewModel D = new DeliveryManViewModel();
+            D.members = _MemberService.GetAll();
+            D.Invoices = _InvoiceService.GetAll();
+            D.DeliveryMan = _DeliveryManService.GetAll();
+
+            return View(D);
         }
+       
         public ActionResult View_Products()
         {
-            return View();
+            ProductViewModel m = new ProductViewModel();
+            m.Products = _ProductService.GetAll();
+
+            return View(m);
         }
         public ActionResult View_Users()
         {
@@ -71,11 +92,19 @@ namespace easylife.Controllers
         }
         public ActionResult View_Invoices()
         {
-            return View();
+            InvoicesViewModel m = new InvoicesViewModel();
+            m.Invoices = _InvoiceService.GetAll();
+            m.members = _MemberService.GetAll();
+
+            return View(m);
         }
         public ActionResult View_Orders()
         {
-            return View();
+            OrdersViewModel m = new OrdersViewModel();
+            m.Orders = _OrderService.GetAll();
+            m.Invoices = _InvoiceService.GetAll();
+            m.Products = _ProductService.GetAll();
+            return View(m);
         }
         public ActionResult View_Stock()
         {
@@ -107,7 +136,7 @@ namespace easylife.Controllers
         {
             return View();
         }
-        public ActionResult View_Profile_Delivery_Man(int id=0)
+        public ActionResult View_Profile_Delivery_Man(int id = 0)
         {
             return View(_MemberService.GetById(id));
         }

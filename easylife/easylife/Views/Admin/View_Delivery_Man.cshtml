@@ -1,68 +1,57 @@
-﻿@model IEnumerable<easylife.Models.DeliveryManViewModel>
+﻿@model easylife.Models.DeliveryManViewModel
 @{
     ViewBag.Title = "View_Delivery_Man";
 }
 
 <style>
-cshtml,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
-table {
-			border-collapse: collapse;
-			width: 100%;
-			}
-			tr:hover {background-color:gray;}
+        cshtml,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
+        table {
+			        border-collapse: collapse;
+			        width: 100%;
+			  }
+	    tr:hover {background-color:gray;}
 
-            .comboBox {
-  
-  border-radius: 4px;
-  background-color: #fffff;
-  border: none;
-  color: black;
-  text-align: center;
-  font-size:15px;
-  width: 120px;
-  height: 30px;
-  border-radius:10px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-            h3 {
-        text-align:center;
-    }
+       .comboBox {
+                      border-radius: 4px;
+                      background-color: #fffff;
+                      border: none;
+                      color: black;
+                      text-align: center;
+                      font-size:15px;
+                      width: 120px;
+                      height: 30px;
+                      border-radius:10px;
+                      transition: all 0.5s;
+                      cursor: pointer;
+                      margin: 5px;
+                  }
+         h3 {
+                text-align:center;
+            }
 </style>
+
 	<div style="padding-left:35px">
-					
-					
-					<select id="search by" class="comboBox" >
-							<option>Any</option>
-							<option>Name</option>
-							<option>Email</option>
-							<option>Type</option>
-						  </select>
-					<input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
+		<select id="search by" class="comboBox" >
+				<option>Any</option>
+				<option>Name</option>
+				<option>Email</option>
+				<option>Type</option>
+		</select>
+		<input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
 						
-				</div>
+	</div>
+
 <body class="w3-animate-bottom ">
 	
   <!--for demo wrap-->
     @{
         var count = 0;
-        var pending = 0;
-        var completed = 0;
         {
-            foreach (var item in Model)
+            foreach (var item in Model.members)
             {
-                if (item.MemberIndetify.Type == "Delivery Man")
+                if (item.Type == "Delivery Man")
                 {
                     count++;
-                }
-                if(item.ProductDeliveryActivity.Status==0)
-                {
-                    pending++;
-                }
-                else
-                {
-                    completed++;
                 }
             }
         }
@@ -89,26 +78,55 @@ table {
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-@foreach (var item in Model)
-{
-    if (item.MemberIndetify.Type == "Delivery Man")
+  
+    @foreach (var item in Model.members)
     {
-        <tr  onclick="location.href='@Url.Action("View_Profile_Delivery_Man",new { id = item.MemberIndetify.MemberId})'">
-          <td>@Html.DisplayFor(modelItem => item.MemberIndetify.MemberId)</td>
-          <td>@Html.DisplayFor(modelItem => item.MemberIndetify.Name)</td>
-          <td>@Html.DisplayFor(modelItem => item.MemberIndetify.Email)</td>
-          <td>@pending</td>
-		  <td>@completed</td>
-		  <td>@Html.DisplayFor(modelItem => item.DeliveryManDetails.Zone)</td>
-		  <td>@Html.DisplayFor(modelItem => item.DeliveryManDetails.AssignedBy)</td>
-            <td>@Html.DisplayFor(modelItem => item.DeliveryManDetails.Availability)</td>
+        var Completed = 0;
+        var Pending = 0;
+        var name = "";
+        if (item.Type == "Delivery Man")
+        {
+            foreach (var I in Model.Invoices)
+            {
+                if(I.DeliveryManId==item.MemberId)
+                {
+                    if(I.Status=="Done")
+                    {
+                        Completed++;
+                    }
+                    else
+                    {
+                        Pending++;
+                    }
+                }
+            }
+            foreach (var T in Model.DeliveryMan)
+            {
+                foreach(var S in Model.members)
+                {
+                    if(T.AssignedBy==S.MemberId)
+                    {
+                        name = S.Name;
+                    }
+                }
+
+                <tr onclick="location.href='@Url.Action("View_Profile_Delivery_Man", new { id = item.MemberId })'">
+                  <td>@Html.DisplayFor(modelItem => item.MemberId)</td>
+                  <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                  <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                  <td>@Pending</td>
+                  <td>@Completed</td>
+                  <td>@Html.DisplayFor(modelItem => T.Zone)</td>
+                  <td>@name</td>
+                  <td>@Html.DisplayFor(modelItem => T.Availability)</td>
+                </tr>
+              }
+        }
+    }
 
           <!-- <td><a href="View_Profile_Delivery_Man.cshtml">View</a></td> -->
-		  <!-- <td><a href="Edit_Profile.cshtml">Edit</a></td> -->
-		  <!-- <td><a href="Delete_Profile.cshtml">Delete</a></td> -->
-        </tr>
-    }
-}
+          <!-- <td><a href="Edit_Profile.cshtml">Edit</a></td> -->
+          <!-- <td><a href="Delete_Profile.cshtml">Delete</a></td> -->
 		<!--<tr  onclick="location.href='@Url.Action("View_Profile_Delivery_Man")'">
           <td>2</td>
           <td>Rajesh Saha</td>

@@ -4,10 +4,11 @@
 }
 <style>
       cshtml,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
-      table {
-			    border-collapse: collapse;
-			    width: 100%;
-			}
+         
+          table {
+			        border-collapse: collapse;
+			        width: 100%;
+			    }
 			
       tr:hover {
 
@@ -46,10 +47,10 @@
 				<option>Email</option>
 			</select>
 	</div>
+
 <body class="w3-animate-bottom">
 	
   <!--for demo wrap-->
-
     @{
         var count = 0;
         {
@@ -63,48 +64,50 @@
         }
     }
 
-  <h1 style="color:	yellow">Users</h1>
-   <h3 style="color:	yellow">Total User(s) Found: @count</h3>
-  <section class="w3-card-4">
-  <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-		  <th>Total Purchase</th>
-          <th>Last Active</th>
-		  <th>Status</th>
-		  <td></td>
-           <td></td>
-        </tr>
-      </thead>
-    </table>
-  </div>
- 
-  <div class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <tbody>
-	  @foreach (var item in Model)
-      {
-          if (item.Type == "User")
-          {
-            <tr onclick="location.href='@Url.Action("View_Profile_User", new { id=item.MemberId })'">
-              <td>@Html.DisplayFor(modelItem => item.MemberId)</td>
-              <td>@Html.DisplayFor(modelItem => item.Name)</td>
-		      <td>@Html.DisplayFor(modelItem => item.Email)</td>
-              <td>@Html.DisplayFor(modelItem => item.MemberId)</td>
-              <td>@Html.DisplayFor(modelItem => item.LastLoggedIn)</td>
-		      <td>@Html.DisplayFor(modelItem => item.Status)</td>
-              <td><a href='@Url.Action("Send_Mail")'><img height="30" width="30" src="~/resources/mail.jpg" /></a></td>
-              <td><a href='@Url.Action("Set_Cupon")'><img height="30" width="30" src="~/resources/cupon.jpg" /></a></td>
-              <!-- <td><a href="View_Profile.cshtml">View</a></td> -->
-		      <!-- <td><a href="Edit_Profile.cshtml">Edit</a></td> -->
-		      <!-- <td><a href="Delete_Profile.cshtml">Delete</a></td> -->
+      <h1 style="color:	yellow">Users</h1>
+      <h3 style="color:	yellow">Total User(s) Found: @count</h3>
+      <section class="w3-card-4">
+      <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+		      <th>Total Purchase</th>
+              <th>Last Active</th>
+		      <th>Status</th>
+		      <td></td>
+               <td></td>
             </tr>
+          </thead>
+        </table>
+      </div>
+ 
+      <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tbody>
+	      @foreach (var item in Model)
+          {
+              if (item.Type == "User")
+              {
+                <tr onclick="location.href='@Url.Action("View_Profile_User", new { id=item.MemberId })'">
+                  <td>@Html.DisplayFor(modelItem => item.MemberId)</td>
+                  <td>@Html.DisplayFor(modelItem => item.Name)</td>
+		          <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                  <td>@Html.DisplayFor(modelItem => item.MemberId)</td>
+                  <td>@Html.DisplayFor(modelItem => item.LastLoggedIn)</td>
+		          <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                  <td><a href='@Url.Action("Send_Mail")'><img height="30" width="30" src="~/resources/mail.jpg" /></a></td>
+                  <td><a href='@Url.Action("Set_Cupon")'><img height="30" width="30" src="~/resources/cupon.jpg" /></a></td>
+                </tr>
+              }
           }
-      }
+
+
+              <!-- <td><a href="View_Profile.cshtml">View</a></td> -->
+              <!-- <td><a href="Edit_Profile.cshtml">Edit</a></td> -->
+              <!-- <td><a href="Delete_Profile.cshtml">Delete</a></td> -->
 		<!--<tr onclick="location.href='@Url.Action("View_Profile_User")'">
           <td>2</td>
           <td>Rajesh Saha</td>

@@ -156,6 +156,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminViewModel\InvoicesViewModel.cs" />
+    <Compile Include="Models\AdminViewModel\OrdersViewModel.cs" />
+    <Compile Include="Models\AdminViewModel\ProductModel.cs" />
+    <Compile Include="Models\AdminViewModel\ProductViewModel.cs" />
     <Compile Include="Models\DeliveryManViewModel.cs" />
     <Compile Include="Models\UserHomeViewModel\brandViewModel.cs" />
     <Compile Include="Models\UserHomeViewModel\catagoryViewModel.cs" />
