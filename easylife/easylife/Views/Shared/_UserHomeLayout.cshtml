@@ -1,5 +1,4 @@
-﻿
-@using System.Web.Optimization
+﻿@using System.Web.Optimization
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -335,67 +334,9 @@
 <!--moda-->
 <div class="row">
 
- <!--  @using(Html.BeginForm("SignUp", "UserHome", FormMethod.Post))
-    {
-			<div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					
-					<div class="modal-body" >
-						
-						<div class="box-body">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                <div class="form-group">
-                                    @Html.LabelFor(model=> model.Name)
-                                    <div>
-                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(model=> model.Email)
-                                    <div>
-                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(model=> model.Gender)
-                                    <div>
-                                       Male @Html.RadioButton("gender","Male")
-                                       Female @Html.RadioButton("gender","Female")
-                                       Other @Html.RadioButton("gender","Other")
-                                        @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.PhoneNumber)
-                                    <div>
-                                        @Html.EditorFor(model => model.PhoneNumber, new {@class = "form-control"})
-                                        @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger"})
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Password)
-                                    <div>
-                                        @Html.PasswordFor(model => model.Password, new {@class = "form-control"})
-                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger"})
-                                    </div>
-                                </div>
-                            </div>
-					        <div class="box-footer">
-                                Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="login" class="btn btn-info" >Log In</button></a>
-                            </div>
-						
-					</div>
-					<div class="modal-footer">
-						<input type="submit" value="Sign Up" class="btn btn-primary" />
-                        @*<a href=@Url.Action("dashboard")><button type="button" class="btn btn-info" >Sign Up</button></a>*@
-					</div>
-				</div>
-			</div>
-		</div>
-   }-->
+    @RenderSection("Signup")
+
+  
 
 
 		<div class="modal fade" id="loginmodal" role="dialog" style="padding-top:50px;">

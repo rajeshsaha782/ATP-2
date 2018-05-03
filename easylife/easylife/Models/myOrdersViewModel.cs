@@ -9,6 +9,5 @@ namespace easylife.Models
     public class myOrdersViewModel:MemberInfo
     {
         public IEnumerable<Invoice> Invoices;
-
     }
 }
