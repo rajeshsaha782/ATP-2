@@ -12,11 +12,14 @@ namespace easylife.Controllers
     {
         public IProductService _ProductService;
         public IMemberService _MemberService;
+        public IInvoiceService _InvoiceService;
 
-        public UserDashboardController(IProductService ProductService, IMemberService MemberService)
+
+        public UserDashboardController(IProductService ProductService, IMemberService MemberService,IInvoiceService InvoiceService)
         {
             _ProductService = ProductService;
             _MemberService = MemberService;
+            _InvoiceService = InvoiceService;
         }
 
         public ActionResult Dashboard(int id)
@@ -41,7 +44,7 @@ namespace easylife.Controllers
             //{
             //    return View(_MemberService.GetById(m.MemberId));
             //}
-            //return RedirectToAction("Dashboard", new {id= m.MemberId});
+            
             return View(_MemberService.GetById(m.MemberId));
         }
 
@@ -49,11 +52,17 @@ namespace easylife.Controllers
         {
             return View(_MemberService.GetById(id));
         }
-        
+
+        public ActionResult myOrders(int id)
+        {
+            return View(_InvoiceService.GetByMemberId(id));
+        }
+
         public ActionResult invoices(int id)
         {
             return View(_MemberService.GetById(id));
         }
+
         public ActionResult manageAddress(int id)
         {
             return View(_MemberService.GetById(id));
@@ -67,10 +76,7 @@ namespace easylife.Controllers
         {
             return View(_MemberService.GetById(id));
         }
-        public ActionResult myOrders(int id)
-        {
-            return View(_MemberService.GetById(id));
-        }
+       
         public ActionResult myReports(int id)
         {
             return View(_MemberService.GetById(id));

@@ -18,9 +18,10 @@
 						<div class="container-fluid">
 							
 							
-						@using(Html.BeginForm("edit","UserDashboard",FormMethod.Post))
+						@using (Html.BeginForm())
                         {
-			                    
+                            @Html.AntiForgeryToken()
+    
 						
 						                    <div class="box-body">
                                                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })

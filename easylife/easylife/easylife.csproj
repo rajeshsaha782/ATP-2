@@ -158,6 +158,7 @@
     </Compile>
     <Compile Include="Models\DeliveryManViewModel.cs" />
     <Compile Include="Models\DetailViewModel.cs" />
+    <Compile Include="Models\InvoiceViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
