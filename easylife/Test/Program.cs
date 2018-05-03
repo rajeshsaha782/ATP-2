@@ -75,18 +75,19 @@ namespace Test
 
             //Product--------------------
 
-            //Product p = new Product();
-            //  p.ProductName = "5";
-            //  p.Quantity = 10;
-            //  p.BuyingPrice = 100;
-            //  p.SellingPrice = 101;
-            //  p.Category = "Mens Wear";
-            //  p.SubCategory = "Shirt";
-            //  p.Date = DateTime.Now;
-            //  p.LastSold = DateTime.Now;
+            Product p = new Product();
+            p.ProductName = "54";
+            p.Quantity = 10;
+            p.BuyingPrice = 100;
+            p.SellingPrice = 101;
+            p.Category = "Mens Wear";
+            p.SubCategory = "Shirt";
+            p.Brand = "easy";
+            p.Date = DateTime.Now;
+            p.LastSold = DateTime.Now;
 
-            //  ProductService ps = new ProductService(e);
-            //  Console.WriteLine(ps.Insert(p));
+            ProductService ps = new ProductService(e);
+            Console.WriteLine(ps.Insert(p));
 
             ///GetAll-----------------
 
@@ -95,13 +96,13 @@ namespace Test
             //    Console.WriteLine(mem.Name);
             //}
 
-            ProductService ps = new ProductService(e);
-            IEnumerable<Product> products = ps.GetByCategory("Mens Wear", "Shirt");
+            //ProductService ps = new ProductService(e);
+            //IEnumerable<Product> products = ps.GetByCategory("Mens Wear", "Shirt");
 
-            foreach(var i in products)
-            {
-                Console.WriteLine(i.ProductName);
-            }
+            //foreach(var i in products)
+            //{
+            //    Console.WriteLine(i.ProductName);
+            //}
 
 
 

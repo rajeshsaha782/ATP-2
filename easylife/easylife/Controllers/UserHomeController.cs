@@ -53,7 +53,13 @@ namespace easylife.Controllers
         [HttpGet]
         public ActionResult details(int id=0)
         {
-            _ProductService.SetTotal_Viewed(id);//incraease total viewed
+            string pid= Convert.ToString(id);
+            if(Session[pid]==null)
+            {
+                _ProductService.SetTotal_Viewed(id);//incraease total viewed
+                Session[pid]=Convert.ToString(id);
+            }
+            
 
             DetailViewModel d = new DetailViewModel();
             d.DetailProduct = _ProductService.GetById(id);
