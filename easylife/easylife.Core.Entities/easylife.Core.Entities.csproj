@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="Cart.cs" />
     <Compile Include="Coupon.cs" />
     <Compile Include="Delivery_Man.cs" />
     <Compile Include="Dislike.cs" />

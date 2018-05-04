@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICartService.cs" />
     <Compile Include="ILoginService.cs" />
     <Compile Include="IAddressService.cs" />
     <Compile Include="ICouponService.cs" />

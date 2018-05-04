@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressService.cs" />
+    <Compile Include="CartService.cs" />
     <Compile Include="CouponService.cs" />
     <Compile Include="DeliveryManService.cs" />
     <Compile Include="DislikeService.cs" />
