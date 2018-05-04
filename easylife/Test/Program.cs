@@ -30,12 +30,12 @@ namespace Test
             easylifeDbContext e = new easylifeDbContext();
             MemberService ms = new MemberService(e);
 
-            //Member m = new Member();
-            //m.Email = "r@gmail.com";
-            //m.Name = "rajesh";
-            //m.MemberSince = DateTime.Now;
-            //m.LastLoggedIn = DateTime.Now;
-            //Console.WriteLine(ms.Insert(m));
+            Member m = new Member();
+            m.Email = "r@gmail.com";
+            m.Name = "rajesh";
+            m.MemberSince = DateTime.Now;
+            m.LastLoggedIn = DateTime.Now;
+            Console.WriteLine(ms.Insert(m));
 
             //Console.WriteLine(ms.GetById(1).MemeberId);
             //Console.WriteLine(ms.GetById(1).Name);
@@ -104,8 +104,15 @@ namespace Test
             //    Console.WriteLine(i.ProductName);
             //}
 
+            Cart c=new Cart();
+            CartService cs = new CartService(e);
 
-
+            c.MemberId = 1;
+            c.ProductId = 1;
+            c.ProductName = "54";
+            c.Quantity = 1;
+            c.UnitPrice = 10;
+            Console.WriteLine(cs.Insert(c));
         }
     }
 }

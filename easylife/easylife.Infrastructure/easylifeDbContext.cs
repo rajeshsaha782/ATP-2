@@ -26,6 +26,7 @@ namespace easylife.Infrastructure
         public DbSet<UserFavorite> UserFavorites { get; set; }
         public DbSet<Like> Likes { get; set; }
         public DbSet<Dislike> Dislikes { get; set; }
+        public DbSet<Cart> Carts { get; set; }
         
     }
 }
