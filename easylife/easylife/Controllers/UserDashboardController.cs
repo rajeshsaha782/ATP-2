@@ -108,6 +108,11 @@ namespace easylife.Controllers
             m.Invoices = _InvoiceService.GetByMemberId(id);
             return View(m);
         }
+        public ActionResult removeOrder(int id, int mid)
+        {
+            _InvoiceService.Delete(id);
+            return RedirectToAction("myOrders", "UserDashboard", new { id = mid });
+        }
 
         public ActionResult invoices(int id)//This id is the InvoiceId not memberId
         {
@@ -154,6 +159,11 @@ namespace easylife.Controllers
             _AddressService.Insert(a);
             return RedirectToAction("manageAddress", "UserDashboard", new { id = mid });
         }
+        public ActionResult removeAddress(int id,int mid)
+        {
+            _AddressService.Delete(id);
+            return RedirectToAction("manageAddress", "UserDashboard", new { id = mid });
+        }
         public ActionResult myCoupon(int id)
         {
             myCouponViewModel m = new myCouponViewModel();
@@ -179,6 +189,11 @@ namespace easylife.Controllers
             }
             //Console.WriteLine(m.ProductNames[0]);
             return View(m);
+        }
+        public ActionResult removeFavorite(int id, int mid)
+        {
+            _UserFavoriteService.Delete(id);
+            return RedirectToAction("myFavorite", "UserDashboard", new { id = mid });
         }
        
         public ActionResult myReports(int id)

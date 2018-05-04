@@ -37,10 +37,10 @@
                                 {
 								<tr>
 									<td><a href=@Url.Action("details","UserHome", new { id=item.ProductId})>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">",item.ProductId))</a></td>
-									<td>>@Model.Products[count].ProductName</td>
+									<td>@Model.Products[count].ProductName</td>
 									<td>$@Model.Products[count].SellingPrice</td>
-									<td>@item.Date/td>
-									<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
+									<td>@item.Date</td>
+									<td><a href=@Url.Action("removeFavorite", new { id=item.UserFavoriteId,mid=Model.MemberId})><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
 									
 									@{count++;}
 								</tr>

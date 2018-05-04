@@ -37,7 +37,7 @@
 								        <td>@item.Date</td>
 									    <td>@item.Status</td>
 									    <td>@item.PaymentStatus</td>
-									    <td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
+									    <td><a href=@Url.Action("removeOrder", new { id=item.InvoiceId,mid=item.MemberId})><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
 									
 									
 								    </tr>

@@ -42,7 +42,7 @@
 									
 								</td>
 								<td>
-									<p><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></p>
+									<p><a href=@Url.Action("removeAddress", new { id=item.AddressId,mid=item.MemberId})><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></p>
 								</td>
 									
 								</tr>
@@ -68,8 +68,9 @@
 									
 								</tr>
 								<tr>
-								<td colspan="2"><input type="submit" value="Add" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px" /></td>
-
+                                    
+								<td colspan="2"><input type="submit" value="Add" class="btn btn-primary" style="margin-left:200px" /></td>
+                                    
 								</tr>
                                         }
 								
