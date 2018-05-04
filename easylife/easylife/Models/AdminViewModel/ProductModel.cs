@@ -13,6 +13,7 @@ namespace easylife.Models.AdminViewModel
         public int  Price;
         public DateTime LastPurchase;
         public int RemainingQuantity;
+        public int TotalProduct;
 
 
         //Invoice View
@@ -27,6 +28,7 @@ namespace easylife.Models.AdminViewModel
         public int ProductCode;
         public int Invoice;
         public DateTime OrederPlace;
+        public int TotalOrder;
 
 
 

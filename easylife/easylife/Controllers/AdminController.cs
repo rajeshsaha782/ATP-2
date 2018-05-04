@@ -121,6 +121,7 @@ namespace easylife.Controllers
         {
             ProductViewModel m = new ProductViewModel();
             m.Products = _ProductService.GetAll();
+            m.TotalProduct = _ProductService.GetAll().Count();
 
             return View(m);
         }
@@ -146,6 +147,7 @@ namespace easylife.Controllers
             m.Orders = _OrderService.GetAll();
             m.Invoices = _InvoiceService.GetAll();
             m.Products = _ProductService.GetAll();
+            m.TotalOrder = _OrderService.GetAll().Count();
             return View(m);
         }
         public ActionResult View_Stock()

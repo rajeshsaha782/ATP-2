@@ -6,7 +6,7 @@ using System.Web;
 
 namespace easylife.Models.AdminViewModel
 {
-    public class OrdersViewModel
+    public class OrdersViewModel:ProductModel
     {
         public IEnumerable<Order> Orders { set; get; }
         public IEnumerable<Invoice> Invoices { set; get; }
