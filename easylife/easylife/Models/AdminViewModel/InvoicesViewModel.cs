@@ -8,6 +8,7 @@ namespace easylife.Models.AdminViewModel
 {
     public class InvoicesViewModel:ProductModel
     {
+        public int InvoiceCount;
         public IEnumerable<Invoice> Invoices { set; get; }
         public IEnumerable<Member> members { set; get; }
 

@@ -75,14 +75,18 @@ namespace easylife.Core.Service
 
         public bool Insert(Member member)
         {
-            if(_context.Set<Member>().Add(member) == member)
+            try
             {
+                _context.Entry(member).State = EntityState.Added;
                 _context.SaveChanges();
                 return true;
             }
-            else
+            catch (Exception ex)
+            {
                 return false;
+            }
         }
+    }
 
         public bool SetPoint(int Member_id, int point)
         {

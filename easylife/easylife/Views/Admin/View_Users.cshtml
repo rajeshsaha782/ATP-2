@@ -1,4 +1,4 @@
-﻿@model IEnumerable<easylife.Core.Entities.Member>
+﻿@model easylife.Models.AdminViewModel.MemberViewModel
 @{
     ViewBag.Title = "View_Users";
 }
@@ -51,21 +51,9 @@
 <body class="w3-animate-bottom">
 	
   <!--for demo wrap-->
-    @{
-        var count = 0;
-        {
-            foreach (var item in Model)
-            {
-                if (item.Type == "User")
-                {
-                    count++;
-                }
-            }
-        }
-    }
-
+ 
       <h1 style="color:	yellow">Users</h1>
-      <h3 style="color:	yellow">Total User(s) Found: @count</h3>
+      <h3 style="color:	yellow">Total User(s) Found: @Model.UserCount</h3>
       <section class="w3-card-4">
       <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
@@ -87,7 +75,7 @@
       <div class="tbl-content">
         <table cellpadding="0" cellspacing="0" border="0">
           <tbody>
-	      @foreach (var item in Model)
+	      @foreach (var item in Model.Members)
           {
               if (item.Type == "User")
               {

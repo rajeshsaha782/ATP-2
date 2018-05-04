@@ -6,11 +6,11 @@ using System.Web;
 
 namespace easylife.Models.AdminViewModel
 {
-    public class DashboardViewModel: MemberView
+    public class MemberViewModel
     {
+        public int AdminCount;
+        public int UserCount;
         public IEnumerable<Member> Members { set; get; }
-        public IEnumerable<Product> Product { set; get; }
-        public IEnumerable<Invoice> Invoices { set; get; }
-
+        
     }
 }

@@ -26,4 +26,3 @@ E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entit
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.csprojResolveAssemblyReference.cache
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.dll
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.pdb
-D:\ATP-2\easylife\easylife.Core.Entities\obj\Debug\easylife.Core.Entities.csprojResolveAssemblyReference.cache

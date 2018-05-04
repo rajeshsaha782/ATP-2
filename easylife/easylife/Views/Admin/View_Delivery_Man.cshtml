@@ -44,20 +44,9 @@
 <body class="w3-animate-bottom ">
 	
   <!--for demo wrap-->
-    @{
-        var count = 0;
-        {
-            foreach (var item in Model.members)
-            {
-                if (item.Type == "Delivery Man")
-                {
-                    count++;
-                }
-            }
-        }
-    }
+  
   <h1>Delivery Man</h1>
-    <h3 >Total Delivery Man(s) Found: @count</h3>
+    <h3 >Total Delivery Man(s) Found: @Model.MemberCount</h3>
   <section class="w3-card-4">
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">

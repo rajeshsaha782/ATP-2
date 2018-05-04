@@ -158,10 +158,12 @@
     </Compile>
     <Compile Include="Models\AdminViewModel\DashboardViewModel.cs" />
     <Compile Include="Models\AdminViewModel\InvoicesViewModel.cs" />
+    <Compile Include="Models\AdminViewModel\MemberView.cs" />
+    <Compile Include="Models\AdminViewModel\MemberViewModel.cs" />
     <Compile Include="Models\AdminViewModel\OrdersViewModel.cs" />
     <Compile Include="Models\AdminViewModel\ProductModel.cs" />
     <Compile Include="Models\AdminViewModel\ProductViewModel.cs" />
-    <Compile Include="Models\DeliveryManViewModel.cs" />
+    <Compile Include="Models\AdminViewModel\DeliveryManViewModel.cs" />
     <Compile Include="Models\UserHomeViewModel\brandViewModel.cs" />
     <Compile Include="Models\UserHomeViewModel\catagoryViewModel.cs" />
     <Compile Include="Models\UserHomeViewModel\confirmOrderViewModel.cs" />

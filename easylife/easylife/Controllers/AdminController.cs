@@ -31,6 +31,22 @@ namespace easylife.Controllers
         public ActionResult Dashboard()
         {
             DashboardViewModel D = new DashboardViewModel();
+            int Total= _MemberService.GetAll().Count();
+            int user = _MemberService.GetByType("User").Count();
+            int count = 0;
+            foreach(var item in _InvoiceService.GetAll())
+            {
+                if(item.PaymentStatus=="Done")
+                {
+                    count++;
+                }
+            }
+
+            D.TotalAdmin = Total - user;
+            D.TotalUser = user;
+            D.TotalProducts = _ProductService.GetAll().Count();
+            D.TotalPending = count;
+                
             D.Members = _MemberService.GetAll();
             D.Product = _ProductService.GetAll();
             D.Invoices = _InvoiceService.GetAll();
@@ -62,6 +78,17 @@ namespace easylife.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Add_Member(Member mem)
+        {
+            if (_MemberService.Insert(mem))
+                return RedirectToAction("Index");
+            else
+            {
+               
+                return View(mem);
+            }
+        }
         public ActionResult Add_Product()
         {
             return View();
@@ -71,7 +98,13 @@ namespace easylife.Controllers
 
         public ActionResult View_Members()
         {
-            return View(_MemberService.GetAll());
+            MemberViewModel m = new MemberViewModel();
+            m.Members = _MemberService.GetAll();
+            int x= _MemberService.GetAll().Count();
+            int y = _MemberService.GetByType("User").Count();
+            m.AdminCount = x - y;
+
+            return View(m);
         }
         public ActionResult View_Delivery_Man()
         {
@@ -79,6 +112,7 @@ namespace easylife.Controllers
             D.members = _MemberService.GetAll();
             D.Invoices = _InvoiceService.GetAll();
             D.DeliveryMan = _DeliveryManService.GetAll();
+            D.MemberCount = _DeliveryManService.GetAll().Count();
 
             return View(D);
         }
@@ -92,13 +126,17 @@ namespace easylife.Controllers
         }
         public ActionResult View_Users()
         {
-            return View(_MemberService.GetAll());
+            MemberViewModel m = new MemberViewModel();
+            m.Members = _MemberService.GetAll();
+            m.UserCount = _MemberService.GetByType("User").Count();
+            return View(m);
         }
         public ActionResult View_Invoices()
         {
             InvoicesViewModel m = new InvoicesViewModel();
             m.Invoices = _InvoiceService.GetAll();
             m.members = _MemberService.GetAll();
+            m.InvoiceCount = _InvoiceService.GetAll().Count();
 
             return View(m);
         }
