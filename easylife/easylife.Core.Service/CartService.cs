@@ -1,6 +1,8 @@
-﻿using easylife.Core.Service.Interfaces;
+﻿using easylife.Core.Entities;
+using easylife.Core.Service.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,35 +11,65 @@ namespace easylife.Core.Service
 {
     public class CartService : ICartService
     {
+        DbContext _context;
 
-        IEnumerable<Entities.Cart> ICartService.GetAll()
+        public CartService(DbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        Entities.Cart ICartService.GetById(int CartId)
+
+
+        public IEnumerable<Cart> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Set<Cart>().ToList();
         }
 
-        bool ICartService.Insert(Entities.Cart Cart)
+        public Cart GetById(int CartId)
         {
-            throw new NotImplementedException();
+            return _context.Set<Cart>().Where(i => i.CartId == CartId).SingleOrDefault();
         }
 
-        bool ICartService.Update(Entities.Cart Cart)
+        public bool Insert(Cart Cart)
         {
-            throw new NotImplementedException();
+            if(_context.Set<Cart>().Add(Cart) == Cart)
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
-        bool ICartService.Delete(int CartId)
+        public bool Update(Cart Cart)
         {
-            throw new NotImplementedException();
+            if(_context.Set<Cart>().Any(e => e.CartId == Cart.CartId))
+            {
+                _context.Set<Cart>().Attach(Cart);
+                _context.Entry(Cart).State = EntityState.Modified;
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
-        IEnumerable<Entities.Cart> ICartService.GetByMemberId(int MemberId)
+        public bool Delete(int CartId)
         {
-            throw new NotImplementedException();
+            var DeleteCart= _context.Set<Cart>().Where(i => i.CartId == CartId).SingleOrDefault();
+            /// 
+
+            if(DeleteCart != null)
+            {
+                _context.Set<Cart>().Remove(DeleteCart);
+                _context.SaveChanges();
+            }
+            return true;
+        }
+
+        public IEnumerable<Cart> GetByMemberId(int MemberId)
+        {
+            return _context.Set<Cart>().Where(i => i.MemberId == MemberId);
         }
     }
 }
