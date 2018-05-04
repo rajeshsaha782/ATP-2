@@ -1,8 +1,3 @@
-C:\xampp\htdocs\GitHub\ATP-2\easylife\Validation\bin\Debug\Validation.dll
-C:\xampp\htdocs\GitHub\ATP-2\easylife\Validation\bin\Debug\Validation.pdb
-C:\xampp\htdocs\GitHub\ATP-2\easylife\Validation\obj\Debug\Validation.csprojResolveAssemblyReference.cache
-C:\xampp\htdocs\GitHub\ATP-2\easylife\Validation\obj\Debug\Validation.dll
-C:\xampp\htdocs\GitHub\ATP-2\easylife\Validation\obj\Debug\Validation.pdb
 F:\GitHub\ATP-2\easylife\Validation\bin\Debug\Validation.dll
 F:\GitHub\ATP-2\easylife\Validation\bin\Debug\Validation.pdb
 F:\GitHub\ATP-2\easylife\Validation\obj\Debug\Validation.dll
@@ -17,3 +12,7 @@ E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Validation\obj\Debu
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Validation\obj\Debug\Validation.dll
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\Validation\obj\Debug\Validation.pdb
 D:\ATP-2\easylife\Validation\obj\Debug\Validation.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Validation\bin\Debug\Validation.dll
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Validation\bin\Debug\Validation.pdb
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Validation\obj\Debug\Validation.dll
+C:\xampp\htdocs\GitHub\ATP-2\easylife\Validation\obj\Debug\Validation.pdb

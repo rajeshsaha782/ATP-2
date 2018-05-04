@@ -1,3 +1,4 @@
+@model easylife.Models.UserDashboardViewModel.myAddressViewModel
 @{
     ViewBag.Title = "EasyLife | Dashboard |Manage Address";
 }
@@ -19,18 +20,22 @@
 						<table class="table table-striped ">
 							
 							<tbody>
+                                @{var count=1;}
+                                                    @foreach (var item in Model.Addresses)
+                                                    {
 								<tr>
 								<td>
 									<table class="table table-striped reg  ">
-							
+							                     
 												<tbody>
-												<p><b>Addresses</b><p>
+												<p><b>Addresse  @count</b><p>
+                                                   
 													<tr>
-														<td>Address</td>
 														<td><textarea rows="5" >Nikunja-2, H#10, r#10</textarea></td>	
 													</tr>
-													
+                                                       
 												</tbody>
+                                                         
 											</table>
 								
 									
@@ -40,16 +45,19 @@
 								</td>
 									
 								</tr>
-								
+								@{count++;}
+                                                    
+													}
 								<tr>
 									<td>
+                                        @using (Html.BeginForm("addAddress", "UserDashboard", new { mid = Model.MemberId }, FormMethod.Post))
 									<table class="table table-striped reg  ">
 							
 												<tbody>
 												<p><b>Addresses</b><p>
 													<tr>
 														<td>Address</td>
-														<td><textarea rows="5" >Nikunja-2, H#10, r#10</textarea></td>
+														<td><textarea id="fulladdress" name="fulladdress" rows="5" ></textarea></td>
 													</tr>
 													
 												</tbody>
@@ -58,7 +66,7 @@
 									
 								</tr>
 								<tr>
-								<td colspan="2"><p><a href=@Url.Action("dashboard")><button type="button" class="btn btn-info" >Add</button></a></p></td>
+								<td colspan="2"><input type="submit" value="Add" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px" /></td>
 
 								</tr>
 								

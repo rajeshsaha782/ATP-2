@@ -19,6 +19,7 @@ namespace easylife.Controllers
         public ICouponService _CouponService;
         public IUserFavoriteService _UserFavoriteService;
         public IReportService _ReportService;
+        public IAddressService _AddressService;
 
         public UserDashboardController(IProductService ProductService, IMemberService MemberService, IInvoiceService InvoiceService, IProductReviewService ProductReviewService)
         {
@@ -97,7 +98,21 @@ namespace easylife.Controllers
 
         public ActionResult manageAddress(int id)
         {
-            return View(_MemberService.GetById(id));
+            myAddressViewModel m = new myAddressViewModel();
+            m.MemberId = id;
+            m.Name = _MemberService.GetById(id).Name;
+            m.Addresses = _AddressService.GetByMemberId(id);
+            return View(m);
+        }
+        [HttpPost]
+        public ActionResult addAddress(string fulladdress, int mid)
+        {
+            Address a = new Address();
+            a.MemberId = mid;
+            a.MemberAddress = fulladdress;
+
+            _AddressService.Insert(a);
+            return RedirectToAction("manageAddress");
         }
         public ActionResult myCoupon(int id)
         {
