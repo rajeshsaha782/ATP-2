@@ -1,6 +1,7 @@
 ﻿using easylife.Core.Entities;
 using easylife.Core.Service.Interfaces;
 using easylife.Models;
+using easylife.Models.UserDashboardViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,9 @@ namespace easylife.Controllers
         public IMemberService _MemberService;
         public IInvoiceService _InvoiceService;
         public IProductReviewService _ProductReviewService;
+        public ICouponService _CouponService;
+        public IUserFavoriteService _UserFavoriteService;
+        public IReportService _ReportService;
 
         public UserDashboardController(IProductService ProductService, IMemberService MemberService, IInvoiceService InvoiceService, IProductReviewService ProductReviewService)
         {
@@ -79,7 +83,7 @@ namespace easylife.Controllers
             m.MemberId = id;
             m.Name = _MemberService.GetById(id).Name;
             m.Reviews = _ProductReviewService.GetByMemberId(id);
-            m.count = _ProductReviewService.CountReviewsByMemberId(id);
+            //m.count = _ProductReviewService.CountReviewsByMemberId(id);
             int count1 = 0;
             foreach (var review in m.Reviews)
             {
@@ -97,17 +101,38 @@ namespace easylife.Controllers
         }
         public ActionResult myCoupon(int id)
         {
-            return View(_MemberService.GetById(id));
+            myCouponViewModel m = new myCouponViewModel();
+            m.MemberId = id;
+            m.Name = _MemberService.GetById(id).Name;
+            m.Coupons = _CouponService.GetByMemberId(id);
+            return View(m);
 
         }
         public ActionResult myFavorite(int id)
         {
-            return View(_MemberService.GetById(id));
+            myFavoriteViewModel m = new myFavoriteViewModel();
+            m.MemberId = id;
+            m.Name = _MemberService.GetById(id).Name;
+            m.Favorites = _UserFavoriteService.GetByMemberId(id);
+            //m.count = _ProductReviewService.CountReviewsByMemberId(id);
+            int count1 = 0;
+            foreach (var favorite in m.Favorites)
+            {
+                m.Products[count1] = _ProductService.GetById(favorite.ProductId);
+                count1++;
+                //m.ProductNames.Add("hey");
+            }
+            //Console.WriteLine(m.ProductNames[0]);
+            return View(m);
         }
        
         public ActionResult myReports(int id)
         {
-            return View(_MemberService.GetById(id));
+            myReportViewModel m = new myReportViewModel();
+            m.MemberId = id;
+            m.Name = _MemberService.GetById(id).Name;
+            m.Reports = _ReportService.GetByMemberId(id);
+            return View(m);
         }
         
   

@@ -6,8 +6,8 @@ using System.Web;
 
 namespace easylife.Models.UserDashboardViewModel
 {
-    public class myCouponViewModel:MemberInfo
+    public class myAddressViewModel:MemberInfo
     {
-        public IEnumerable<Coupon> Coupons { get; set; }
+        public IEnumerable<Address> Addresses { get; set; }
     }
 }

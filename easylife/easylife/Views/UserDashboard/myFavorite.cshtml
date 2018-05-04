@@ -1,10 +1,11 @@
+@model easylife.Models.UserDashboardViewModel.myFavoriteViewModel
 @{
     ViewBag.Title = "EasyLife | Dashboard |My Favourite";
 }
 <div class="container-fluid ">
 						<ol class="breadcrumb">
 						<li><a href=@Url.Action("index","UserHome")><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a href=@Url.Action("dashboard") ><i class="fa fa-dashboard"></i>Dashboard</a></li>
+						<li><a href=@Url.Action("dashboard", new { id=Model.MemberId }) ><i class="fa fa-dashboard"></i>Dashboard</a></li>
 						<li><a  class="active"><i class="fa fa-dashboard"></i>My Favourite</a></li>
 						
 						</ol>
@@ -31,25 +32,20 @@
 									
 									
 								</tr>
+                                @{var count=0;}
+								@foreach (var item in Model.Favorites)
+                                {
+								<tr>
+									<td><a href=@Url.Action("details","UserHome", new { id=item.ProductId})>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">",item.ProductId))</a></td>
+									<td>>@Model.Products[count].ProductName</td>
+									<td>$@Model.Products[count].SellingPrice</td>
+									<td>@item.Date/td>
+									<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
+									
+									@{count++;}
+								</tr>
+                                }
 								
-								<tr>
-									<td><a href=@Url.Action("details")><img class="img-circle user" src="~/resources/1.jpg"></a></td>
-									<td>Kakashi t_shirt</td>
-									<td>$500</td>
-									<td>28th October,2018</td>
-									<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
-									
-									
-								</tr>
-								<tr>
-									<td><a href=@Url.Action("details")><img class="img-circle user" src="~/resources/2.jpg"></a></td>
-									<td>Kakashi t_shirt</td>
-									<td>$500</td>
-									<td>28th October,2018</td>
-									<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
-									
-									
-								</tr>
 								
 								
 								

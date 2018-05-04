@@ -1,10 +1,11 @@
+@model easylife.Models.UserDashboardViewModel.myReportViewModel
 @{
     ViewBag.Title = "EasyLife | Dashboard |My Reports";
 }
 <div class="container-fluid ">
 						<ol class="breadcrumb">
 						<li><a href=@Url.Action("index","UserHome")><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a href=@Url.Action("dashboard") ><i class="fa fa-dashboard"></i>Dashboard</a></li>
+						<li><a href=@Url.Action("dashboard", new { id=Model.MemberId }) ><i class="fa fa-dashboard"></i>Dashboard</a></li>
 						<li><a  class="active"><i class="fa fa-dashboard"></i>My Reports</a></li>
 						
 						</ol>
@@ -20,7 +21,7 @@
 							
 							<tbody>
 								<tr>
-									<th>Product</th>
+									<th>Report Title</th>
 									<th style="width:200px;">Reporting Time</th>
 									<th>Report Description</th>
 									<th>Status</th>
@@ -29,25 +30,18 @@
 									
 									
 								</tr>
+								@foreach (var item in Model.Reports)
+                                {
+								<tr>
+									<td>@item.ReportTitle</td>
+								<td>@item.Date</td>
+									<td>@item.Description</td>
+								<td>@item.SeenStatus</td>
 								
-								<tr>
-									<td><a href=@Url.Action("details")><img class="img-circle user" src="~/resources/1.jpg"></a></td>
-								<td>12th March, 2018</td>
-									<td>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-										It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</td>
-								<td>Seen</td>
-									
 									
 								</tr>
-								<tr>
-									<td><a href=@Url.Action("details")><img class="img-circle user" src="~/resources/3.jpg"></a></td>
-								<td>12th March, 2018</td>
-									<td>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-										It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</td>
-								<td>Unseen</td>
-									
-									
-								</tr>
+                                }
+								
 								
 								
 								
