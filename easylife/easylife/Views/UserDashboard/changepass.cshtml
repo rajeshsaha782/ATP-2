@@ -1,3 +1,4 @@
+@model easylife.Models.UserDashboardViewModel.myPasswordViewModel
 @{
     ViewBag.Title = "EasyLife | Dashboard |Change Password";
 }
@@ -5,7 +6,7 @@
 <div class="container-fluid ">
 						<ol class="breadcrumb">
 						<li><a href=@Url.Action("index","UserHome")><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a href=@Url.Action("Dashboard")><i class="fa fa-dashboard"></i>Dashboard</a></li>
+						<li><a href=@Url.Action("dashboard", new { id= Model.member.MemberId})><i class="fa fa-dashboard"></i>Dashboard</a></li>
 						<li><a  class="active"><i class="fa fa-dashboard"></i>Change Password</a></li>
 						
 						</ol>
@@ -31,8 +32,12 @@
 										<p>Old Password</p>
 										</td>
 										<td >
-											<p><input class="form-control"  type="password" value=""/></p>
+											<p><input class="form-control" id="cpass" name="cpass" type="password" value=""/></p>
 										</td>
+                                        @if (@Model.flag==1)
+                                        {
+                                            <td>*Wrong Password</td>
+                                        }
 
 										
 									</tr>
@@ -43,7 +48,7 @@
 										<p>New Password</p>
 										</td>
 										<td >
-											<p><input class="form-control"  type="password" value=""/></p>
+											<p><input class="form-control" id="npass" name="npass"  type="password" value=""/></p>
 										</td>
 
 										
@@ -54,8 +59,13 @@
 										<p>Retype New Password</p>
 										</td>
 										<td >
-											<p><input class="form-control"  type="password" value=""/></p>
+											<p><input class="form-control" id="rpass" name="rpass"  type="password" value=""/></p>
 										</td>
+
+                                        @if (@Model.flag==2)
+                                        {
+                                            <td>*Password doesn't match</td>
+                                        }
 
 										
 									</tr>

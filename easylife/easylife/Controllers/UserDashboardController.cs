@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace easylife.Controllers
 {
@@ -21,12 +22,16 @@ namespace easylife.Controllers
         public IReportService _ReportService;
         public IAddressService _AddressService;
 
-        public UserDashboardController(IProductService ProductService, IMemberService MemberService, IInvoiceService InvoiceService, IProductReviewService ProductReviewService)
+        public UserDashboardController(IProductService ProductService, IMemberService MemberService, IInvoiceService InvoiceService, IProductReviewService ProductReviewService, ICouponService CouponService, IUserFavoriteService UserFavoriteService, IReportService ReportService, IAddressService AddressService)
         {
             _ProductService = ProductService;
             _MemberService = MemberService;
             _InvoiceService = InvoiceService;
             _ProductReviewService = ProductReviewService;
+            _CouponService = CouponService;
+            _UserFavoriteService = UserFavoriteService;
+            _ReportService = ReportService;
+            _AddressService = AddressService;
         }
 
         public ActionResult Dashboard(int id)
@@ -55,9 +60,44 @@ namespace easylife.Controllers
             return View(_MemberService.GetById(m.MemberId));
         }
 
-        public ActionResult changepass(int id)
+        public ActionResult changepass(int id,int f)
         {
-            return View(_MemberService.GetById(id));
+            myPasswordViewModel p = new myPasswordViewModel();
+            p.member = _MemberService.GetById(id);
+            if (f == 1)
+            {
+                p.flag = 1;
+            }
+            else if (f==2)
+            {
+                p.flag = 2;
+            }
+            else
+                p.flag = 0;
+            
+            return View(p);
+        }
+
+        public ActionResult ChangePassword(int mid, string cpass, string npass, string rpass)
+        {
+            myPasswordViewModel p = new myPasswordViewModel();
+            p.member = _MemberService.GetById(mid);
+            if (p.member.Password != cpass)
+            {
+                return RedirectToAction("changepass", "UserDashboard", new { id = mid, f=1 });
+            }
+            else if(npass != rpass)
+            {
+                return RedirectToAction("changepass", "UserDashboard", new { id = mid, f=2 });
+            }
+            else
+            {
+                p.member.Password = npass;
+                _MemberService.Update(p.member);
+                return RedirectToAction("info", "UserDashboard", new { id = mid });
+            }
+
+            
         }
 
         public ActionResult myOrders(int id)
@@ -112,7 +152,7 @@ namespace easylife.Controllers
             a.MemberAddress = fulladdress;
 
             _AddressService.Insert(a);
-            return RedirectToAction("manageAddress");
+            return RedirectToAction("manageAddress", "UserDashboard", new { id = mid });
         }
         public ActionResult myCoupon(int id)
         {
