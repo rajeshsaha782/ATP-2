@@ -67,6 +67,34 @@ namespace easylife.Core.Service
             return true;
         }
 
+        public bool DeleteByMemberId(int MemberId)
+        {
+            var DeleteCart = _context.Set<Cart>().Where(i => i.MemberId == MemberId).ToList();
+            /// 
+            int flag = 0;
+            foreach (var cart in DeleteCart)
+            {
+                if (cart != null)
+                {
+                    _context.Set<Cart>().Remove(cart);
+                    _context.SaveChanges();
+                    flag = 1;
+                }
+                else
+                {
+                    flag = 0;
+                    break;
+                }      
+            }
+            if (flag == 1)
+                return true;
+
+            else
+                return false;
+
+            
+        }
+
         public IEnumerable<Cart> GetByMemberId(int MemberId)
         {
             return _context.Set<Cart>().Where(i => i.MemberId == MemberId);

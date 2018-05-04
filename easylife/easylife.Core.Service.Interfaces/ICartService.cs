@@ -16,6 +16,7 @@ namespace easylife.Core.Service.Interfaces
         bool Delete(int CartId);
 
         IEnumerable<Cart> GetByMemberId(int MemberId);
+        bool DeleteByMemberId(int MemberId);
         
     }
 }
