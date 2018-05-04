@@ -21,6 +21,7 @@ namespace easylife.Core.Service.Interfaces
         IEnumerable<Member> GetByType(string Type);
         IEnumerable<Member> GetByStatus(string Status);
 
+        int countMember();
         int GetPoint(int MemberId);
         bool SetPoint(int MemberId,int point);
 

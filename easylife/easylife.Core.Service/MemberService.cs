@@ -43,9 +43,15 @@ namespace easylife.Core.Service
             return _context.Set<Member>().Where(i => i.Status == Status);
         }
 
+
         public IEnumerable<Member> GetByType(string Type)
         {
             return _context.Set<Member>().Where(i => i.Type == Type);
+        }
+
+        public int countMember()
+        {
+            return _context.Set<Member>().Count();
         }
         public bool Delete(int Member_id)
         {
