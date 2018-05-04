@@ -19,12 +19,13 @@
 					<div class="container-fluid ">
 						
 						
-						
+						@using(Html.BeginForm("invoices", "UserHome", FormMethod.Post))
+                        {
 						
 						<table class="table table-striped ">
 							
 							<tbody>
-							
+							 
 							<tr>
 								<table class="table table-striped ">
 								
@@ -40,7 +41,7 @@
 									<tr>
 										
 										<td>Shipping Address</td>
-										<td><textarea rows="5" ></textarea></td>
+										<td><textarea rows="5" name="ShippingAddress"></textarea></td>
 				
 									</tr>
 									<tr>
@@ -77,29 +78,29 @@
 								
 								<tbody>
 								<p><b>Total Cost Estimation</b></p>
-									<tr>
+									<tr style="color:blue">
 										
 									<td>Product Cost</td>
-										<td>$450</td>
+										<td>$@Model.totalCost</td>
 				
 									</tr>
 									
-									<tr>
+									<tr style="color:blue">
 										
 									<td>Shipping Cost</td>
 										<td>$50</td>
 				
 									</tr>
-                                    <tr>
+                                    <tr style="color:red">
 										
 									<td>Discount</td>
-										<td>$20</td>
+										<td>$@Model.Discount</td>
 				
 									</tr>
-									<tr>
+									<tr style="color:green">
 										
 									<td>Total</td>
-										<td>$480</td>
+										<td>$@Model.grandTotal</td>
 				
 									</tr>
 									
@@ -116,7 +117,8 @@
 								<p><b>Payment Method</b></p>
 									<tr>
 										
-										<td><input type="radio"><span><img class="img-circle user" src="~/resources/bkash.jpg"> </span> b-Kash</input> <span><img class="img-circle user" src="~/resources/cash.jpg"> </span><input type="radio">Cash On delivery</input></td>
+										<td><input name="paymentMethod" value="0" type="radio"/><span><img class="img-circle user" src="~/resources/bkash.jpg"> </span> b-Kash 
+                                            <input name="paymentMethod" value="1" type="radio"/><span><img class="img-circle user" src="~/resources/cash.jpg"> </span>Cash On delivery</td>
 										
 				
 									</tr>
@@ -124,16 +126,21 @@
 									
 								</tbody>
 							</table>
+                        
 							</tr>
 							<tr>
-										<td colspan="3"><p><a a data-toggle="modal" data-target="#loginmodal_cart"><button type="button" class="btn btn-info" >Confirm</button></a></p></td>
+										<td colspan="3" >
+                                            @*<p><a a data-toggle="modal" data-target="#loginmodal_cart"><button type="button" class="btn btn-info" >Confirm</button></a></p>*@
+                                            <input type="submit" value="Confirm" class="btn btn-info" />
+										</td>
 										
 										
 										
 							</tr>
 							
 						</tbody>
-						</table>					
+						</table>	
+        }				
 					</div>
 					
 	<div class="row">
