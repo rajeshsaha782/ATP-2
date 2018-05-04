@@ -13,7 +13,7 @@ namespace easylife.Core.Entities
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public string Features { get; set; }
-        public float  Quantity { get; set; }
+        public int  Quantity { get; set; }
         public float  BuyingPrice { get; set; }
         public float  SellingPrice { get; set; }
         public string Category { get; set; }

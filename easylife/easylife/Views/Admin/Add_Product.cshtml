@@ -1,4 +1,5 @@
-﻿@{
+﻿@model easylife.Core.Entities.Product
+@{
     ViewBag.Title = "Add_Product";
 }
 
@@ -26,68 +27,124 @@
 <body class="w3-light-grey w3-animate-bottom ">
          <div class="invoice" style="width:800px;background-color:lightskyblue">
 		
+@using (Html.BeginForm("Add_Product", "Admin", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
 			<div class="invoice-wrapper">
 				
 				<div class="invoice-wrap">
 					<div style="text-align:center;color:black;" class="ba"><h3>Add Product</h3></div>
 				
 						<div class="desc" style="margin-left:225;">
-						
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
 						    <table class="tableshape" border="0" width="100%">
 		                        <tr>
 		                            <td>
                                         <table width="100%" border="0" >
 											
 											<tr height="40px">
-												<td>Product Name</td>
-												<td>:</td>
-												<td><label><input name="name" type="text"></label></td>
-											
-											</tr>		
-											
-											<tr height="40px">
-												<td>Product code</td>
-												<td>:</td>
-												<td>
-													<input name="email" type="text">
-												</td>
+												<td>Product<td>
+                                                <td>
+                                                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
 												
+                                                </td>
+											
 											</tr>		
 											
+                                            <tr height="40px">
+                                                <td>Catagory</td>
+                                                <td>:</td>
+                                                <td>
+                                                    @Html.DropDownListFor(model => model.Category, new SelectList(
+               new List<Object>{
+                                                                   new { value = "Man" , text = "Man"  },
+                                                                   new { value = "Woman" , text = "Woman" },
+                                                                   new { value = "Kid" , text = "Kid"},
+                                                                   new { value = "FootWear" , text = "FootWear"},
+                                                                   new { value = "Accessories" , text = "Accessories"},
+                                                                }, "value", "text", 2), new { @onchange = "Callfunc(this.value)" })
+                                                </td>
+                                               
+                                            </tr>	
+
+                                            <tr height="40px">
+                                                <td>Sub-Catagory</td>
+                                                <td>:</td>
+                                                <td>
+                                                    @Html.DropDownListFor(model => model.SubCategory, new SelectList(
+                                                          new List<Object>
+                                                            {
+                                                            new { value = 5, text = "Shirt" },
+                                                                                   new { value = "Pant", text = "Pant" },
+                                                                                   new { value = "Panjabi", text = "Panjabi" },
+                                                                                   new { value = "T-shirt", text = "T-shirt" },
+                                                                                   new { value = "Panjabi", text = "Panjabi" },
+                                                                                   new { value = "T-shirt", text = "T-shirt" },
+                                                          },"value","text", 2))
+
+                                                </td>
+
+                                            </tr>
+
+											<!--
+               
+           
+                                               
 											<tr height="40px">
-												<td>Catagory</td>
+												<td>Sub-Catagory</td>
 												<td>:</td>
 												<td>
-													<select>
-													<option></option>
-													<option>Man's Clothing</option>
-													<option>Woman's Clothing</option>
-													<option>Kid's Clothing</option>
-													<option>Yellow</option>
-													<option>Aarong</option>
-													</select>
+                                                    ///Html.DropDownListFor(model => model.SubCategory, new SelectList(
+                                                          new List<Object> {
+                                                                               if (ViewBag.value == "Man")
+                                                                                {
+                                                                                   new { value = 5, text = "Shirt" },
+                                                                                   new { value = 6, text = "Pant" },
+                                                                                   new { value = 7, text = "Panjabi" },
+                                                                                   new { value = 8, text = "T-shirt" },
+                                                                                 }
+                                                                                else if (ViewBag.value == "Man")
+                                                                                {
+                                                                                    new { value = 8, text = "Panjabi" },
+                                                                                    new { value = 10, text = "T-shirt" },
+                                                                                }
+                                                        },"value","text", 2))
+												
 												</td>
 												
 											</tr>
+                                                 -->
 											
 											<tr height="40px">
 												<td>Price</td>
 												<td>:</td>
-												<td><input name="userName" type="text">Tk</td>
+												<td>
+                                                    @Html.EditorFor(model => model.SellingPrice, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.SellingPrice, "", new { @class = "text-danger" })
+                                                </td>
 												
 											</tr>		
 											
 											<tr height="40px">
 												<td>Size</td>
 												<td>:</td>
-												<td><input name="text" type="text"></td>
+												<td>
+                                                    @Html.EditorFor(model => model.Size, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
+                                                </td>
 												
 											</tr>		
 											
 											<tr height="40px">
 												<td>Quantity</td>
 												<td>:</td>
-												<td><input name="Quantity"></td>
+												<td>
+                                                    @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                                                </td>
 												
 											</tr>	
 											
@@ -95,14 +152,15 @@
 												<td>Brand</td>
 												<td>:</td>
 												<td>
-													<select>
-													<option></option>
-													<option>Local</option>
-													<option>Easy</option>
-													<option>Eacstasy</option>
-													<option>Yellow</option>
-													<option>Aarong</option>
-													</select>
+                                                    @Html.DropDownListFor(model => model.Brand, new SelectList(
+                                                          new List<Object>
+                                                            {
+                                                                                   new { value = "Local", text = "Local" },
+                                                                                   new { value = "Easy", text = "Easy" },
+                                                                                   new { value = "Ecstacy", text = "Ecstacy" },
+                                                                                   new { value = "Yellow", text = "Yellow" },
+                                                                                   new { value = "Aarong", text = "Aarong" },
+                                                          }, "value", "text", 2))
 												</td>
 												
 											</tr>
@@ -110,18 +168,21 @@
 											<tr height="40px">
 												<td>Product Feature</td>
 												<td>:</td>
-												<td><input name="Product_Feature"></td>
+												<td>
+                                                    @Html.EditorFor(model => model.Features, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.Features, "", new { @class = "text-danger" })
+                                                </td>
 											
 											</tr>		
            
                                         </table>
 		                            </td>
-									<td>
+									<!--<td>
 										<table>
 											<tr><td><img align="bottom" src="../resources/product.JPG" width="167"/></td></tr>
 											<tr><td><button type="file" class="button" name="product_pic" accept="image/*">Browse</button></td></tr>
 										</table>
-									</td>
+									</td>-->
 								</tr>
 								<br/>
 								<tr>
@@ -140,21 +201,28 @@
 				    </div>
 			    
 			</div>
-				   
-				   
+}
+
 		</div>
 		
-		<script>
-function confirmm() {
-    var txt;
-    if (confirm("Add This Product?")) {
-        alert("Succesful");
-        window.open('@Url.Action("View_Product_Details")', '_self');
-		
-    } else {
-        txt = "You pressed Cancel!";
-    }
-    document.getElementById("demo").innercshtml = txt;
-}
+    <script>
+        function confirmm()
+        {
+                        var txt;
+                        if (confirm("Add This Product?")) {
+                            alert("Succesful");
+                            window.open('@Url.Action("View_Product_Details")', '_self');
+
+                        } else {
+                            txt = "You pressed Cancel!";
+                        }
+                        document.getElementById("demo").innercshtml = txt;
+                    }
+        
+            function Callfunc(val)
+            {
+                @ViewBag.value=val;
+            }
+ 
 </script>
 </body>

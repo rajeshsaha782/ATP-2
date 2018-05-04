@@ -121,13 +121,16 @@ namespace easylife.Core.Service
 
         public bool Insert(Product product)
         {
-            if(_context.Set<Product>().Add(product) == product)
+            try
             {
+                _context.Entry(product).State = EntityState.Added;
                 _context.SaveChanges();
                 return true;
             }
-            else
+            catch (Exception ex)
+            {
                 return false;
+            }
         }
 
         public bool SetTotal_Sell(int Product_id)
