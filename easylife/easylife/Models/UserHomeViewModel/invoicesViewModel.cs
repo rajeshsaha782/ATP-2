@@ -5,7 +5,8 @@ using System.Web;
 
 namespace easylife.Models.UserHomeViewModel
 {
-    public class invoicesViewModel:MemberModel
+    public class invoicesViewModel : MemberModel
     {
+        public string ShippingAddress { get; set; }
     }
 }

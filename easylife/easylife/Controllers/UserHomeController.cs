@@ -21,8 +21,9 @@ namespace easylife.Controllers
         public ICartService _CartService;
         public ICouponService _CouponService;
         public IAddressService _AddressService;
+        public IInvoiceService _InvoiceService;
 
-        public UserHomeController(IProductService ProductService, IMemberService MemberService, ILikeService LikeService, IDislikeService DislikeService, IProductReviewService ProductReviewService, ICartService CartService, ICouponService CouponService, IAddressService AddressService)
+        public UserHomeController(IProductService ProductService, IMemberService MemberService, ILikeService LikeService, IDislikeService DislikeService, IProductReviewService ProductReviewService, ICartService CartService, ICouponService CouponService, IAddressService AddressService, IInvoiceService InvoiceService)
         {
             _ProductService = ProductService;
             _MemberService = MemberService;
@@ -32,6 +33,7 @@ namespace easylife.Controllers
             _CartService = CartService;
             _CouponService = CouponService;
             _AddressService = AddressService;
+            _InvoiceService = InvoiceService;
         }
 
         public ActionResult Index()
@@ -57,15 +59,15 @@ namespace easylife.Controllers
         }
 
         [HttpGet]
-        public ActionResult details(int id=0)
+        public ActionResult details(int id = 0)
         {
-            string pid= Convert.ToString(id);
-            if(Session[pid]==null)
+            string pid = Convert.ToString(id);
+            if(Session[pid] == null)
             {
                 _ProductService.SetTotal_Viewed(id);//incraease total viewed
-                Session[pid]=Convert.ToString(id);
+                Session[pid] = Convert.ToString(id);
             }
-            
+
 
             DetailViewModel d = new DetailViewModel();
             d.DetailProduct = _ProductService.GetById(id);
@@ -75,8 +77,8 @@ namespace easylife.Controllers
 
 
 
-            d.RelatedProducts = _ProductService.GetByCategory(d.DetailProduct.Category,d.DetailProduct.SubCategory);
-            
+            d.RelatedProducts = _ProductService.GetByCategory(d.DetailProduct.Category, d.DetailProduct.SubCategory);
+
             return View(d);
         }
 
@@ -93,7 +95,7 @@ namespace easylife.Controllers
 
         public ActionResult AddToCart(int qty, int id)
         {
-            
+
             string a = "insert";
             int updateId = 0;
             foreach(var i in _CartService.GetByMemberId(1))
@@ -116,24 +118,32 @@ namespace easylife.Controllers
             if(a == "update")
             {
                 c.Quantity = qty + _CartService.GetById(updateId).Quantity;
+                c.UnitPrice = _ProductService.GetById(id).SellingPrice * c.Quantity;
                 _CartService.Update(c);
             }
             else
             {
                 c.Quantity = qty;
+                c.UnitPrice = _ProductService.GetById(id).SellingPrice * c.Quantity;
                 _CartService.Insert(c);
             }
             return RedirectToAction("shoppingCart");
-            
+
         }
 
         public ActionResult shoppingCart()//product id
         {
-           // ViewBag.detailId = id;
+            // ViewBag.detailId = id;
 
             shoppingCartViewModel m = new shoppingCartViewModel();
             m.GetCartByMemberId = _CartService.GetByMemberId(1);
             m.GetAllCoupon = _CouponService.GetByMemberId(1);
+            foreach(var item in _CartService.GetByMemberId(1))//fake
+            {
+                m.totalCost = m.totalCost + (item.UnitPrice);
+            }
+
+            m.grandTotal = m.totalCost + 50;
 
             return View(m);
         }
@@ -141,8 +151,8 @@ namespace easylife.Controllers
         {
             _CartService.Delete(id);
             return RedirectToAction("shoppingCart");
-           
-          
+
+
         }
 
 
@@ -154,52 +164,75 @@ namespace easylife.Controllers
             m.PhoneNumber = _MemberService.GetById(1).PhoneNumber;//fake 
             m.MemberAddresses = _AddressService.GetByMemberId(1);//fake
 
+
+            foreach(var item in _CartService.GetByMemberId(1))//fake
+            {
+                m.totalCost = m.totalCost + (item.UnitPrice);
+            }
+
+            m.grandTotal = m.totalCost + 50 - m.Discount;
+
             return View(m);
         }
-        
+
+        public ActionResult invoices(string ShippingAddress, string paymentMethod)
+        {
+            invoicesViewModel m = new invoicesViewModel();
+
+            Invoice I = new Invoice();
+            I.Date = DateTime.Now;
+            I.MemberId = 1;//fake
+            I.Status = "0";
+            I.PaymentStatus = "0";
+            I.PaymentMethod = paymentMethod;
+            I.ShippingAddress = ShippingAddress;
+
+            _InvoiceService.Insert(I);
+
+            //order...
+
+            return View(m);
+        }
+
         public ActionResult reports()
         {
-            reportsViewModel m = new reportsViewModel(); 
+            reportsViewModel m = new reportsViewModel();
             return View(m);
         }
 
         public ActionResult search(string search)
         {
             searchViewModel m = new searchViewModel();
-            m.productBySearch=_ProductService.GetBySearch(search);
+            m.productBySearch = _ProductService.GetBySearch(search);
             return View(m);
         }
-        
+
         public ActionResult trackProduct()
         {
             trackProductViewModel m = new trackProductViewModel();
             return View(m);
         }
-        public ActionResult invoices()
-        {
-            invoicesViewModel m = new invoicesViewModel();
-            return View(m);
-        }
 
-        
+
+
         public ActionResult SignUp(Member m)
         {
-            //m.MemberSince = DateTime.Now;
-            //m.LastLoggedIn = DateTime.Now;
-            //m.Status = "active";
-            //m.Type = "User";
-            //_MemberService.Insert(m);
+            m.MemberSince = DateTime.Now;
+            m.LastLoggedIn = DateTime.Now;
+            m.Status = "active";
+            m.Type = "User";
+            _MemberService.Insert(m);
 
             return RedirectToAction("Index", "UserHome");
 
 
         }
-        
+
 
         public ActionResult SortByHighestPrice(IEnumerable<Product> products)
         {
 
-             return View("search");
+            return View("search");
         }
 
 

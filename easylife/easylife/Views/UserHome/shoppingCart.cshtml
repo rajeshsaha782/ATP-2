@@ -85,10 +85,10 @@
 										
 									</tr>
 									
-									<tr>
-										<td>$450</td>
+									<tr style="color:red">
+										<td>$@Model.totalCost</td>
 										<td>$50</td>
-										<td>$500</td>
+										<td>$@Model.grandTotal</td>
 										
 										
 									</tr>
@@ -96,11 +96,11 @@
 										
 										<th><button type="button" class="btn btn-info" >Use Cupon Code</button></th>
 										<th>
-                                            <select>
-                                                <option></option>
+                                            <select id="mySelect" onchange="Change()">
+                                                <option id="0"></option>
                                                 @foreach(var item in Model.GetAllCoupon)
                                                 {
-                                                    <option>@item.CouponId [@item.Percentage%][@item.DeadlineDate]</option>
+                                                    <option id="@item.CouponId">@item.CouponId [@item.Percentage%][@item.DeadlineDate]</option>
                                                 }
                                              </select>
                                            
@@ -198,4 +198,16 @@
     
      }
 				
-			
+	<script>
+	    $('#mySelect').change(function () {
+	        //alert($(this).children(":selected").attr("id"));
+
+
+	    });
+	    function Change() {
+	        alert("changed");
+
+	    }
+
+
+     </script>

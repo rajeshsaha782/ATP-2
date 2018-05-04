@@ -1,40 +1,42 @@
-﻿@{
+﻿@model easylife.Models.AdminViewModel.ProductViewModel
+@{
     ViewBag.Title = "View_Stocks";
 }
 
 <style>
-cshtml,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
-table {
-			border-collapse: collapse;
-			width: 100%;
-			}
-			tr:hover {background-color:gray;}
-.comboBox {
+        cshtml,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
+        table {
+			        border-collapse: collapse;
+			        width: 100%;
+			        }
+
+        tr:hover {background-color:gray;}
+        .comboBox {
   
-  border-radius: 4px;
-  background-color: #fffff;
-  border: none;
-  color: black;
-  text-align: center;
-  font-size:15px;
-  width: 120px;
-  height: 30px;
-  border-radius:10px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
+                      border-radius: 4px;
+                      background-color: #fffff;
+                      border: none;
+                      color: black;
+                      text-align: center;
+                      font-size:15px;
+                      width: 120px;
+                      height: 30px;
+                      border-radius:10px;
+                      transition: all 0.5s;
+                      cursor: pointer;
+                      margin: 5px;
+                }
 </style>
-</head>
-	<div >
-					
-					<input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
-						<select id="search by" class="comboBox">
-							<option>Any</option>
-							<option>Product Name</option>
-							<option>Product Code</option>
-						  </select>
-				</div>
+
+	    <div >	
+		    <input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
+			    <select id="search by" class="comboBox">
+				    <option>Any</option>
+				    <option>Product Name</option>
+				    <option>Product Code</option>
+			    </select>
+	    </div>
+
 <body class="w3-animate-bottom">
 	
   <!--for demo wrap-->
@@ -57,12 +59,22 @@ table {
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
         
-		<tr>
-          <td><a href='@Url.Action("View_Product_Details")'"><img id= "imgholder" class="pic" src="../resources/1.jpg" width="60px" height="60px"></a></td>
-          <td>Woolen Jacket[1]</td>
-          <td>300</td>
-		  <td>10</td>
-        </tr>
+          @foreach(var item in Model.Products)
+          {
+              int x = item.Quantity-item.TotalSell;
+
+            <tr>
+                <td><a href='@Url.Action("View_Product_Details")' "><img id= " imgholder" class="pic" src="../resources/1.jpg" width="60px" height="60px"></a></td>
+                <td>@item.ProductName</td>
+                <td>@item.SellingPrice</td>
+                <td>x</td>
+            </tr>
+        }
+	
+
+
+          <!--
+       
 		<tr>
            <td><a href='@Url.Action("View_Product_Details")'"><img id= "imgholder" class="pic" src="../resources/2.jpg" width="60px" height="60px"></a></td>
           <td>Women Hoody[2]</td>
@@ -81,7 +93,7 @@ table {
           <td>300</td>
 		  <td>10</td>
         </tr>
-        
+          -->
       </tbody>
     </table>
   </div>

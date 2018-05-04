@@ -97,7 +97,25 @@ namespace easylife.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Add_Product(Product pro)
+        {
+            pro.TotalViewed = 0;
+            pro.TotalSell = 0;
+            pro.Star = 0;
+            pro.Date = DateTime.Now;
+            pro.BuyingPrice = 2;
+            pro.LastSold = DateTime.Now;
 
+            if (_ProductService.Insert(pro))
+                return RedirectToAction("Dashboard");
+            else
+            {
+
+                return View(pro);
+            }
+            return View();
+        }
         //---------------------------------------------
 
         public ActionResult View_Members()
@@ -156,7 +174,10 @@ namespace easylife.Controllers
         }
         public ActionResult View_Stock()
         {
-            return View();
+            ProductViewModel p = new ProductViewModel();
+            p.Products = _ProductService.GetAll();
+
+            return View(p);
         }
         public ActionResult Profit_graph()
         {
