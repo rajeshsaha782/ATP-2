@@ -14,7 +14,5 @@ namespace easylife.Models.AdminViewModel
 
 
 
-
-
     }
 }

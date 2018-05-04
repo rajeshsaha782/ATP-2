@@ -68,18 +68,17 @@
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
   
-    @foreach (var item in Model.members)
+    @foreach (var item in Model.DeliveryMan)
     {
         var Completed = 0;
         var Pending = 0;
         var name = "";
-        if (item.Type == "Delivery Man")
-        {
+
             foreach (var I in Model.Invoices)
             {
-                if(I.DeliveryManId==item.MemberId)
+                if (I.DeliveryManId == item.MemberId)
                 {
-                    if(I.Status=="Done")
+                    if (I.Status == "Done")
                     {
                         Completed++;
                     }
@@ -89,27 +88,25 @@
                     }
                 }
             }
-            foreach (var T in Model.DeliveryMan)
+            foreach (var S in Model.members)
             {
-                foreach(var S in Model.members)
+                if (item.AssignedBy == S.MemberId)
                 {
-                    if(T.AssignedBy==S.MemberId)
-                    {
-                        name = S.Name;
-                    }
+                    name = S.Name;
                 }
-
-                <tr onclick="location.href='@Url.Action("View_Profile_Delivery_Man", new { id = item.MemberId })'">
-                  <td>@Html.DisplayFor(modelItem => item.MemberId)</td>
-                  <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                  <td>@Html.DisplayFor(modelItem => item.Email)</td>
-                  <td>@Pending</td>
-                  <td>@Completed</td>
-                  <td>@Html.DisplayFor(modelItem => T.Zone)</td>
-                  <td>@name</td>
-                  <td>@Html.DisplayFor(modelItem => T.Availability)</td>
-                </tr>
-              }
+                if (S.MemberId == item.MemberId)
+                {
+                    <tr onclick="location.href='@Url.Action("View_Profile_Delivery_Man", new { id = item.MemberId })'">
+                        <td>@Html.DisplayFor(modelItem => S.MemberId)</td>
+                        <td>@Html.DisplayFor(modelItem => S.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => S.Email)</td>
+                        <td>@Pending</td>
+                        <td>@Completed</td>
+                        <td>@Html.DisplayFor(modelItem => item.Zone)</td>
+                        <td>@name</td>
+                        <td>@Html.DisplayFor(modelItem => item.Availability)</td>
+                    </tr>
+                }
         }
     }
 
