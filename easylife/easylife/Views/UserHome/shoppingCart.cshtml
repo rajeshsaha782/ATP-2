@@ -1,6 +1,7 @@
 @model easylife.Models.UserHomeViewModel.shoppingCartViewModel
 @{
     ViewBag.Title = "EasyLife | Details| shoppingCart";
+    int totalProduct = Model.GetCartByMemberId.Count();
 }
 <div  style="height:700px;" >
 
@@ -11,7 +12,7 @@
 						<ol class="breadcrumb">
 						<li><a href=@Url.Action("index") ><i class="fa fa-dashboard"></i> Home</a></li>
 						<li><a href=@Url.Action("search") >Search</a></li>
-						<li><a  href=@Url.Action("details", new {id=ViewBag.detailId })>Details</a></li>
+						<li><a  href=@Url.Action("details")>Details</a></li>
 						<li><a  class="active">Shopping Cart</a></li>
 						
 						</ol>
@@ -25,6 +26,8 @@
 						<table class="table table-striped ">
 								
 								<tbody>
+                                    @if(totalProduct!=0)
+                                    {
 									<tr>
 										
 										<th>Product Image</th>
@@ -32,45 +35,26 @@
 										<th>Quantity</th>
 										<th >Price</th>
 										<th ></th>
-										
-										
 									</tr>
-									
-									<tr>
-										<td> <a href=@Url.Action("details")><img class="img-circle user" src="~/resources/1.jpg"></a></td>
-
-										
-
-										<td>Kakashi T-Shirt</td>
-										<td><input type="number" value="1"></input></</td>
-
-										<td>1</td>
-										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
-										
-									</tr>
-									<tr>
-										<td> <a href=@Url.Action("details")><img class="img-circle user" src="~/resources/2.jpg"></a></td>
-
-										
-										<td>Kakashi T-Shirt</td>
-										<td><input type="number" value="1"></input></</td>
-
-										<td>1</td>
-										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
-										
-									</tr>
-									<tr>
-										<td> <a href=@Url.Action("details")><img class="img-circle user" src="~/resources/3.jpg"></a></td>
-
-									
-
-										<td>Kakashi T-Shirt</td>
-										<td><input type="number" value="1"></input></</td>
-
-										<td>1</td>
-										<td><a data-toggle="modal" data-target="#deleteModal" ><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
-										
-									</tr>
+                                    }
+                                    
+									@foreach(var item in Model.GetCartByMemberId)
+                                     {
+                                        <tr>
+										<td> <a href=@Url.Action("details", new { id=item.ProductId})>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">", item.ProductId))</a></td>
+										<td>@item.ProductName</td>
+										<td><input type="number" value= "@item.Quantity"/></td>
+										<td>@item.UnitPrice $</td>
+										<td><a href=@Url.Action("RemoveFormCart", new { id=item.CartId})><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
+                                        </tr>
+                                     }
+						               
+									@if(totalProduct==0)
+                                    {
+                                        <tr>
+                                            <td>Your cart is empty</td>
+                                        </tr>
+                                    }
 									
 									
 								</tbody>
@@ -111,7 +95,17 @@
                                     <tr>
 										
 										<th><button type="button" class="btn btn-info" >Use Cupon Code</button></th>
-										<th><input type="text"></th>
+										<th>
+                                            <select>
+                                                <option></option>
+                                                @foreach(var item in Model.GetAllCoupon)
+                                                {
+                                                    <option>@item.CouponId [@item.Percentage%][@item.DeadlineDate]</option>
+                                                }
+                                             </select>
+                                           
+
+										</th>
 										<th></th>		
 										
 										

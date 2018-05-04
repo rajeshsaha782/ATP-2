@@ -49,7 +49,8 @@
 							
 							
 							<table class="table table-striped reg  " style="width:400px;">
-								
+								 @using(Html.BeginForm("AddToCart", "UserHome", new { id = Model.DetailProduct.ProductId }, FormMethod.Post))
+         {
 								<tbody>
 									<tr>
 										<th>Product Name</th>
@@ -61,15 +62,15 @@
 									</tr>
 									<tr>
 										<th>Size</th>
-										<td> <input type="radio">S</input>
-											<input type="radio">M</input>
-											<input type="radio">L</input>
-											<input type="radio">XL</input>
+										<td> <input type="radio"/>S
+											<input type="radio"/>M
+											<input type="radio"/>L
+											<input type="radio"/>XL
 										</td>
 									</tr>
 									<tr>
 										<th>Quantity</th>
-										<td><input id="qty" type="number" value="1"></input></td>
+										<td><input id="qty" name="qty" type="number" value="1"/></td>
 									</tr>
 									<tr>
 										<td colspan="2">
@@ -98,15 +99,16 @@
 							
 												<span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
 												
-												<a href=@Url.Action("shoppingCart", new { id = Model.DetailProduct.ProductId })><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>
+                                                <input type="submit" value="Buy Now" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px" />
+												@*<a href=@Url.Action("shoppingCart", new { id = Model.DetailProduct.ProductId })><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>*@
 											</p>
 										</td>
 									</tr>
 									
 								</tbody>
-							</table>
-						 	
-						
+							
+         }
+						</table>
 						
 							
 							</br>

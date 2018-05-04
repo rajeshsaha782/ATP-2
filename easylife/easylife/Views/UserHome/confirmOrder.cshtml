@@ -33,29 +33,33 @@
 									<tr>
 										
 									<td>Name</td>
-										<td>Rakibul Hossain</td>
+										<td>@Model.Name</td>
 				
 									</tr>
 									
 									<tr>
 										
 										<td>Shipping Address</td>
-										<td><textarea rows="5" >Nikunja-2, H#10, r#10</textarea></td>
+										<td><textarea rows="5" ></textarea></td>
 				
 									</tr>
 									<tr>
 										
 										<td>Phone No</td>
-										<td>01856353477</td>
+										<td>@Model.PhoneNumber</td>
 				
 									</tr>
 									<tr>
 										
 									<td colspan="4" style="text-align:center;" >
 										<select>
-											<option selected >Use Billing Address</option>	
-											<option >Nikunja-2,H#10, R#10</option>	
-											<option>Nikunja-2,H#10, R#10</option>	
+											<option selected >Use Billing Address</option>
+                                            @foreach(var item in Model.MemberAddresses)
+                                            {
+                                                <option id="@item.AddressId">@item.MemberAddress</option>	
+                                            }	
+											
+											
 										</select>
 									
 									</td>

@@ -18,14 +18,20 @@ namespace easylife.Controllers
         public ILikeService _LikeService;
         public IDislikeService _DislikeService;
         public IProductReviewService _ProductReviewService;
+        public ICartService _CartService;
+        public ICouponService _CouponService;
+        public IAddressService _AddressService;
 
-        public UserHomeController(IProductService ProductService, IMemberService MemberService, ILikeService LikeService, IDislikeService DislikeService, IProductReviewService ProductReviewService)
+        public UserHomeController(IProductService ProductService, IMemberService MemberService, ILikeService LikeService, IDislikeService DislikeService, IProductReviewService ProductReviewService, ICartService CartService, ICouponService CouponService, IAddressService AddressService)
         {
             _ProductService = ProductService;
             _MemberService = MemberService;
             _LikeService = LikeService;
             _DislikeService = DislikeService;
             _ProductReviewService = ProductReviewService;
+            _CartService = CartService;
+            _CouponService = CouponService;
+            _AddressService = AddressService;
         }
 
         public ActionResult Index()
@@ -85,24 +91,68 @@ namespace easylife.Controllers
             return RedirectToAction("details", new { id = p.ProductId });
         }
 
-        public ActionResult shoppingCart(int id)
+        public ActionResult AddToCart(int qty, int id)
         {
-            shoppingCartViewModel m = new shoppingCartViewModel();
-            //var cart = new HttpCookie("cart");
-            //cart.Value = Convert.ToString(id);
-            //cart.Expires = DateTime.Now.AddDays(7);
-            //cart.Secure = true;
-            //Response.Cookies.Add(cart);
-            ViewBag.detailId = id;
+            
+            string a = "insert";
+            int updateId = 0;
+            foreach(var i in _CartService.GetByMemberId(1))
+            {
+                if(i.ProductId == id)
+                {
+                    a = "update";
+                    updateId = i.CartId;
+                    break;
+                }
+            }
 
-            HttpCookie cookie = Request.Cookies["cart"];
-            Response.Write(cookie);
+
+            Cart c = new Cart();
+            c.MemberId = 1;//fake
+            c.ProductId = id;
+            c.ProductName = _ProductService.GetById(id).ProductName;
+            c.UnitPrice = _ProductService.GetById(id).SellingPrice;
+
+            if(a == "update")
+            {
+                c.Quantity = qty + _CartService.GetById(updateId).Quantity;
+                _CartService.Update(c);
+            }
+            else
+            {
+                c.Quantity = qty;
+                _CartService.Insert(c);
+            }
+            return RedirectToAction("shoppingCart");
+            
+        }
+
+        public ActionResult shoppingCart()//product id
+        {
+           // ViewBag.detailId = id;
+
+            shoppingCartViewModel m = new shoppingCartViewModel();
+            m.GetCartByMemberId = _CartService.GetByMemberId(1);
+            m.GetAllCoupon = _CouponService.GetByMemberId(1);
 
             return View(m);
         }
+        public ActionResult RemoveFormCart(int id)//cartid
+        {
+            _CartService.Delete(id);
+            return RedirectToAction("shoppingCart");
+           
+          
+        }
+
+
         public ActionResult confirmOrder()
         {
             confirmOrderViewModel m = new confirmOrderViewModel();
+
+            m.Name = _MemberService.GetById(1).Name;//fake 
+            m.PhoneNumber = _MemberService.GetById(1).PhoneNumber;//fake 
+            m.MemberAddresses = _AddressService.GetByMemberId(1);//fake
 
             return View(m);
         }
