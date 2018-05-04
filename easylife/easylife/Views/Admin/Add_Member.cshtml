@@ -3,153 +3,152 @@
     ViewBag.Title = "Add_Member";
 }
 
-		<style>
-.w3-animate-bottom{overflow: scroll;
-    overflow-x: hidden;
-	position:relative;animation:animatebottom 0.4s} keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+<style>
+            .w3-animate-bottom
+                        {   overflow: scroll;
+                            overflow-x: hidden;
+	                        position:relative;animation:animatebottom 0.4s
+
+                         } 
+            keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}
+                                                                                                                      }
 	
-	::-webkit-scrollbar {
-    width: 0px; 
-    background: transparent; 
-}
+	        ::-webkit-scrollbar 
+            {
+                width: 0px; 
+                background: transparent; 
+            }
 </style>
+
 <body class="w3-light-grey w3-animate-bottom ">
+
 <div class="invoice" style="width:800px;background-color:lightskyblue">
 		
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Add_Member", "Admin",FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
 
-				<div class="invoice-wrapper">
+			<div class="invoice-wrapper">
 				
-					<div class="invoice-wrap">
-					<div style="text-align:center;color:black;" class="ba"><h3>Add Member</h3></div>
+				<div class="invoice-wrap">
+				<div style="text-align:center;color:black;" class="ba"><h3>Add Member</h3></div>
 				
-						<div class="desc" style="margin-left:225;">
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+					<div class="desc" style="margin-left:225;">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 						
-							<table class="reg" >
+						<table class="reg" >
                                
-							<tr>			
-								<th>@Html.LabelFor(model => model.Name)</th>
+						<tr>			
+							<th>@Html.LabelFor(model => model.Name)</th>
+							<td>
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </td>
+						</tr>
+							
+						<tr>
+							<th>@Html.LabelFor(model => model.Email)</th>
+							<td>
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </td>
+							
+						</tr>
+							
+						<tr>
+							<th>@Html.LabelFor(model => model.Password)</th>
+							<td>
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </td>
+							
+						</tr>
+							
+						<tr>
+							<th>@Html.LabelFor(model => model.Password)</th>
+							<td>
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </td>
+							
+						</tr>
+						<tr>
+							<th>Gender:</th>
+							<td>
+                                @Html.RadioButton("gender", "Male") Male 
+                                @Html.RadioButton("gender", "Female") Female 
+                                @Html.RadioButton("gender", "Other") Other 
+                                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                            </td>
+						</tr>
+							
+						<tr>
+							<th>Cell No:</th>
+							<td>
+                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                            </td>
+							
+						</tr>
+						<tr>
+                               
+						<th>Position:</th>
+						<td>
+                            @Html.RadioButton("Type", "Admin") Admin 
+                            <hr/>
+                            @Html.RadioButton("Type", "Stock Executive") Stock Executive 
+                            <hr />
+                            @Html.RadioButton("Type", "Delivery Man") Delivery Man
+                            <hr />
+                            @Html.RadioButton("Type", "Other") Order Executive 
+                            @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                                 
+						</td>
+						</tr>
+							
+						<tr>
+							<th>Status:</th>
 								<td>
-                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                                </td>
-							</tr>
-							
-							<tr>
-								<th>@Html.LabelFor(model => model.Email)</th>
-								<td>
-                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                </td>
-							
-							</tr>
-							
-							<tr>
-								<th>@Html.LabelFor(model => model.Password)</th>
-								<td>
-                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                                </td>
-							
-							</tr>
-							
-							<tr>
-							
-								<th>@Html.LabelFor(model => model.Password)</th>
-								<td>
-                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                                </td>
-							
-							</tr>
-							
-							<tr>
-								<th>Gender:</th>
-								<td>
-                                        <input type="radio" name="gender" Value="m">Male
-						                <input type="radio" name="gender" Value="f">Female
-						                <input type="radio" name="gender" Value="o">Other
-                                </td>
-							</tr>
-							
-							<tr>
-							
-								<th>Birth Date:</th>
-								<td>
-                                    @Html.EditorFor(model => model.MemberSince, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.MemberSince, "", new { @class = "text-danger" })
-                                </td>
-							
-							</tr>
-							<tr>
-							
-								<th>Cell No:</th>
-								<td>
-                                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-                                </td>
-							
-							</tr>
-							<tr>
-							
-								<th>Position:</th>
-								<td><input type="radio" name="position" Value="a">Admin
-								<br/>
-								<input type="radio" name="position" Value="s">Stock Executive
-								<br/>
-								<input type="radio" name="position" Value="o">Order Executive
-								<br/>
-								<input type="radio" name="position" Value="d">Delivery Man
+                                    @Html.RadioButton("Status", "Active") Active
+                                    @Html.RadioButton("Status", "Blocked") Blocked 
+                                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
 								</td>
-							</tr>
+						</tr>
 							
-							<tr>
-							
-								<th>Status:</th>
-								        <td>
-                                            <input type="radio" name="status" Value="a">Active
-								            <br/>
-								            <input type="radio" name="status" Value="b">Blocked
-								        </td>
-							</tr>
-							
-							<tr>
-							    <td>
-							          <button class="button" onclick="confirmm()">Confirm</button>
-							    </td>
-							    <td>
-						            <a href="@Url.Action("Dashboard")"><button class="button">Cancel</button></a>
-						        </td>
+						<tr>
+							<td>
+							    <button class="button" value="Confirm" onclick="confirmm()">Confirm</button>
+							</td>
+							<td>
+						        <a href="@Url.Action("Dashboard")"><button class="button">Cancel</button></a>
+						    </td>
 						
-							</tr>
+						</tr>
 						
-						</table>
+					</table>
 				
-						</div>
+					</div>
 				
-				   </div>
+				</div>
 				   
 				
-				   </div>
-}
+			</div>
+          }
+	</div>
+		
 
-		</div>
+    <script>
+        function confirmm() {
+            var txt;
+            if (confirm("Add This Member?")) {
+               // alert("Succesful");
+                //alert(Model.Name);
+              window.open('@Url.Action("View_Profile_Admin")', '_self');
 		
-		<script>
-function confirmm() {
-    var txt;
-    if (confirm("Add This Member?")) {
-       // alert("Succesful");
-        //alert(Model.Name);
-      window.open('@Url.Action("View_Profile_Admin")', '_self');
-		
-    } else {
-        txt = "You pressed Cancel!";
-    }
-    document.getElementById("demo").innercshtml = txt;
-}
-</script>
+            } else {
+                txt = "You pressed Cancel!";
+            }
+            document.getElementById("demo").innercshtml = txt;
+        }
+    </script>
 </body>

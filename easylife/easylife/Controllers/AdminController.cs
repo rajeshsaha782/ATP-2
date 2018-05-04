@@ -81,9 +81,12 @@ namespace easylife.Controllers
         [HttpPost]
         public ActionResult Add_Member(Member mem)
         {
+            mem.LastLoggedIn = DateTime.Now;
             mem.MemberSince = DateTime.Now;
+            mem.TotalPurchase = 0;
+            mem.Point = 0;
             if (_MemberService.Insert(mem))
-                return RedirectToAction("Index");
+                return RedirectToAction("Dashboard");
             else
             {
                
