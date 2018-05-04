@@ -86,7 +86,7 @@ namespace easylife.Core.Service
                 return false;
             }
         }
-    }
+   
 
         public bool SetPoint(int Member_id, int point)
         {
