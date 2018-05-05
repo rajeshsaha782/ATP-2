@@ -54,9 +54,19 @@
 					</div>
 				</form>
 				<ul class="nav navbar-nav pull-right pull-right1">
-					<li class="point"><a  data-toggle="modal" data-target="#signupModal"><span class="glyphicon glyphicon-user" ></span> Sign Up</a></li>
-					<li class="point"><a data-toggle="modal" data-target="#loginmodal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-					<li><a href=@Url.Action("shoppingCart")><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(0)</span></a></li>
+                    @if(Session["userId"] == null)
+                    {
+                         <li class="point"><a  data-toggle="modal" data-target="#signupModal"><span class="glyphicon glyphicon-user" ></span> Sign Up</a></li>
+					    <li class="point"><a data-toggle="modal" data-target="#loginmodal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    }
+                    @if(Session["userId"]!=null)
+                    {
+                        <li class="point"><a href=@Url.Action("Dashboard","UserDashboard")><span class="glyphicon glyphicon-user" ></span>@Model.Name</a></li>
+                        <li class="point"><a href=@Url.Action("Logout")><span class="glyphicon glyphicon-log-out" >Logout</li>
+                        <li><a href=@Url.Action("shoppingCart")><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(0)</span></a></li>
+                    }
+					
+					
 				</ul>
 			</div>
 		</nav>
@@ -105,13 +115,13 @@
 						</div>
 						<div id="collapse1" class="panel-collapse collapse">
 					        <div class="panel-body">
-								<a  href=@Url.Action("catagory", new { category="Mens Wear",subcategory="Shirt" })>Shirt</a>
+								<a  href=@Url.Action("catagory", new { category = "Mens Wear", subcategory = "Shirt" })>Shirt</a>
 							</div>
 							<div class="panel-body">
-								<a  href=@Url.Action("catagory", new { category="Mens Wear",subcategory="Pant" })>Pant</a>
+								<a  href=@Url.Action("catagory", new { category = "Mens Wear", subcategory = "Pant" })>Pant</a>
 							</div>
 							<div class="panel-body">
-								<a  href=@Url.Action("catagory", new { category="Mens Wear",subcategory="Panjabi" })>Panjabi</a>
+								<a  href=@Url.Action("catagory", new { category = "Mens Wear", subcategory = "Panjabi" })>Panjabi</a>
 							</div>
 							
 						</div>
@@ -126,13 +136,13 @@
 						</div>
 						<div id="collapse2" class="panel-collapse collapse">
 					        <div class="panel-body">
-								<a  href=@Url.Action("catagory", new { category="Womens Wear",subcategory="Saree" })>Saree</a>
+								<a  href=@Url.Action("catagory", new { category = "Womens Wear", subcategory = "Saree" })>Saree</a>
 							</div>
 							<div class="panel-body">
-								<a  href=@Url.Action("catagory", new { category="Womens Wear",subcategory="Salwar" })>Salwar</a>
+								<a  href=@Url.Action("catagory", new { category = "Womens Wear", subcategory = "Salwar" })>Salwar</a>
 							</div>
 							<div class="panel-body">
-								<a  href=@Url.Action("catagory", new { category="Womens Wear",subcategory="Three-Piece" })>Three-Piece</a>
+								<a  href=@Url.Action("catagory", new { category = "Womens Wear", subcategory = "Three-Piece" })>Three-Piece</a>
 							</div>
 							
 						</div>
@@ -147,13 +157,13 @@
 						</div>
 						<div id="collapse3" class="panel-collapse collapse">
 					        <div class="panel-body">
-								<a  href=@Url.Action("catagory", new { category="Kids Wear",subcategory="Shirt" })>Shirt</a>
+								<a  href=@Url.Action("catagory", new { category = "Kids Wear", subcategory = "Shirt" })>Shirt</a>
 							</div>
 							<div class="panel-body">
-								<a  href=@Url.Action("catagory", new { category="Kids Wear",subcategory="Shirt" })>Pant</a>
+								<a  href=@Url.Action("catagory", new { category = "Kids Wear", subcategory = "Shirt" })>Pant</a>
 							</div>
 							<div class="panel-body">
-								<a  href=@Url.Action("catagory", new { category="Kids Wear",subcategory="T-Shirt" })>T-Shirt</a>
+								<a  href=@Url.Action("catagory", new { category = "Kids Wear", subcategory = "T-Shirt" })>T-Shirt</a>
 							</div>
 							
 						</div>
@@ -170,13 +180,13 @@
 						</div>
 						<div id="collapse4" class="panel-collapse collapse">
 					        <div class="panel-body">
-								<a href=@Url.Action("catagory", new { category="FootWear",subcategory="Men" })>Men</a>
+								<a href=@Url.Action("catagory", new { category = "FootWear", subcategory = "Men" })>Men</a>
 							</div>
 							<div class="panel-body">
-								<a href=@Url.Action("catagory", new { category="FootWear",subcategory="Women" })>Women</a>
+								<a href=@Url.Action("catagory", new { category = "FootWear", subcategory = "Women" })>Women</a>
 							</div>
 							<div class="panel-body">
-								<a href=@Url.Action("catagory", new { category="FootWear",subcategory="Kids" })>Kids</a>
+								<a href=@Url.Action("catagory", new { category = "FootWear", subcategory = "Kids" })>Kids</a>
 							</div>
 							
 						</div>
@@ -192,13 +202,13 @@
 						</div>
 						<div id="collapse5" class="panel-collapse collapse">
 					        <div class="panel-body">
-								<a href=@Url.Action("catagory", new { category="Accessories",subcategory="Handbag" })>Handbag</a>
+								<a href=@Url.Action("catagory", new { category = "Accessories", subcategory = "Handbag" })>Handbag</a>
 							</div>
 							<div class="panel-body">
-								<a href=@Url.Action("catagory", new { category="Accessories",subcategory="Sunglass" })>Sunglass</a>
+								<a href=@Url.Action("catagory", new { category = "Accessories", subcategory = "Sunglass" })>Sunglass</a>
 							</div>
 							<div class="panel-body">
-								<a href=@Url.Action("catagory", new { category="Accessories",subcategory="Jewelery" })>Jewelery</a>
+								<a href=@Url.Action("catagory", new { category = "Accessories", subcategory = "Jewelery" })>Jewelery</a>
 							</div>
 							
 						</div>
@@ -215,22 +225,22 @@
 						</div>
 						<div id="collapse6" class="panel-collapse collapse">
 					        <div class="panel-body">
-								<a  href=@Url.Action("brand", new { brand="easy"})>Easy</a>
+								<a  href=@Url.Action("brand", new { brand = "easy" })>Easy</a>
 							</div>
 							<div class="panel-body">
-								<a  href=@Url.Action("brand", new { brand="yellow"})>Yellow</a>
+								<a  href=@Url.Action("brand", new { brand = "yellow" })>Yellow</a>
 							</div>
 							<div class="panel-body">
-								<a  href=@Url.Action("brand", new { brand="arong"})>AArong</a>
+								<a  href=@Url.Action("brand", new { brand = "arong" })>AArong</a>
 							</div>
 							<div class="panel-body">
-								<a  href=@Url.Action("brand", new { brand="ectasy"})>Ecstasy</a>
+								<a  href=@Url.Action("brand", new { brand = "ectasy" })>Ecstasy</a>
 							</div>
 							<div class="panel-body">
-								<a  href=@Url.Action("brand", new { brand="bata"})>Bata</a>
+								<a  href=@Url.Action("brand", new { brand = "bata" })>Bata</a>
 							</div>
 							<div class="panel-body">
-								<a href=@Url.Action("brand", new { brand="apex"})>Apex</a>
+								<a href=@Url.Action("brand", new { brand = "apex" })>Apex</a>
 							</div>
 							
 						</div>
@@ -438,7 +448,7 @@
 	                method: "POST",
 	                //contentType: "application/json; charset=utf-8",
 	                data: {'email':email , 'password':password },
-	                url: "@Url.Action("Login","UserHome")",
+	                url: "@Url.Action("Login", "UserHome")",
 	                success: function (data) {
 	                    //alert(data);
 	                    if (data == "Invalid")
@@ -457,7 +467,7 @@
 	                    {
 	                        if(data==0)
 	                        {
-	                            window.location = '@Url.Action("Dashboard","UserDashboard")'
+	                            window.location = '@Url.Action("Dashboard", "UserDashboard")'
 	                        }
 	                        if (data == 1) {
 	                            window.location = '@Url.Action("Dashboard","Admin")'

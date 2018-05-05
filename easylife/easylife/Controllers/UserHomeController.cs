@@ -40,13 +40,22 @@ namespace easylife.Controllers
 
         public ActionResult Index()
         {
+            
             IndexViewModel m = new IndexViewModel();
+            if(Session["userId"] != null)
+            {
+                m.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
+            }
             return View(m);
         }
         [HttpGet]
         public ActionResult brand(string brand)
         {
             brandViewModel m = new brandViewModel();
+            if(Session["userId"] != null)
+            {
+                m.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
+            }
             m.productByBrand = _ProductService.GetByBrand(brand);
             ViewBag.brand = brand;
             return View(m);
@@ -56,6 +65,10 @@ namespace easylife.Controllers
         public ActionResult catagory(string category, string subcategory)
         {
             catagoryViewModel m = new catagoryViewModel();
+            if(Session["userId"] != null)
+            {
+                m.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
+            }
             m.productByCatagory = _ProductService.GetByCategory(category, subcategory);
             return View(m);
         }
@@ -72,6 +85,10 @@ namespace easylife.Controllers
 
 
             DetailViewModel d = new DetailViewModel();
+            if(Session["userId"] != null)
+            {
+                d.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
+            }
             d.DetailProduct = _ProductService.GetById(id);
             d.Like = _LikeService.countlike(id);
             d.DisLike = _DislikeService.countdislike(id);
@@ -138,6 +155,10 @@ namespace easylife.Controllers
             // ViewBag.detailId = id;
 
             shoppingCartViewModel m = new shoppingCartViewModel();
+            if(Session["userId"] != null)
+            {
+                m.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
+            }
             m.GetCartByMemberId = _CartService.GetByMemberId(1);
             m.GetAllCoupon = _CouponService.GetByMemberId(1);
             foreach(var item in _CartService.GetByMemberId(1))//fake
@@ -161,7 +182,10 @@ namespace easylife.Controllers
         public ActionResult confirmOrder()
         {
             confirmOrderViewModel m = new confirmOrderViewModel();
-
+            if(Session["userId"] != null)
+            {
+                m.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
+            }
             m.Name = _MemberService.GetById(1).Name;//fake 
             m.PhoneNumber = _MemberService.GetById(1).PhoneNumber;//fake 
             m.MemberAddresses = _AddressService.GetByMemberId(1);//fake
@@ -180,7 +204,10 @@ namespace easylife.Controllers
         public ActionResult invoices(string ShippingAddress, string paymentMethod)
         {
             invoicesViewModel m = new invoicesViewModel();
-
+            if(Session["userId"] != null)
+            {
+                m.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
+            }
             Invoice I = new Invoice();
             I.Date = DateTime.Now;
             I.MemberId = 1;//fake
@@ -199,12 +226,20 @@ namespace easylife.Controllers
         public ActionResult reports()
         {
             reportsViewModel m = new reportsViewModel();
+            if(Session["userId"] != null)
+            {
+                m.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
+            }
             return View(m);
         }
 
         public ActionResult search(string search)
         {
             searchViewModel m = new searchViewModel();
+            if(Session["userId"] != null)
+            {
+                m.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
+            }
             m.productBySearch = _ProductService.GetBySearch(search);
             return View(m);
         }
@@ -212,6 +247,10 @@ namespace easylife.Controllers
         public ActionResult trackProduct()
         {
             trackProductViewModel m = new trackProductViewModel();
+            if(Session["userId"] != null)
+            {
+                m.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
+            }
             return View(m);
         }
 
@@ -260,6 +299,11 @@ namespace easylife.Controllers
         {
 
             return View("search");
+        }
+        public ActionResult Logout()
+        {
+            Session["userId"] = null;
+            return RedirectToAction("Index");
         }
 
 
