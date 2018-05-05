@@ -30,12 +30,133 @@ namespace Test
             easylifeDbContext e = new easylifeDbContext();
             MemberService ms = new MemberService(e);
 
-            Member m = new Member();
-            m.Email = "r@gmail.com";
-            m.Name = "rajesh";
-            m.MemberSince = DateTime.Now;
-            m.LastLoggedIn = DateTime.Now;
-            Console.WriteLine(ms.Insert(m));
+            Member m1 = new Member();
+            m1.Email = "rajesh@gmail.com";
+            m1.Password = "123";
+            m1.Name = "Rajesh saha";
+            m1.Gender = "Male";
+            m1.PhoneNumber = "01711111111";
+            m1.Type = "Admin";
+            m1.Status = "Active";
+            m1.MemberSince = DateTime.Now;
+            m1.LastLoggedIn = DateTime.Now;
+            m1.TotalPurchase = 1;
+            m1.Point = 1;
+
+            Console.WriteLine(ms.Insert(m1));
+
+
+            Member m2 = new Member();
+            m2.Email = "rakib@gmail.com";
+            m2.Password = "123";
+            m2.Name = "Rakibul Hossain";
+            m2.Gender = "Male";
+            m2.PhoneNumber = "01722222222";
+            m2.Type = "Delivery Man";
+            m2.Status = "Active";
+            m2.MemberSince = DateTime.Now;
+            m2.LastLoggedIn = DateTime.Now;
+            m2.TotalPurchase = 1;
+            m2.Point = 1;
+
+            Console.WriteLine(ms.Insert(m2));
+
+
+
+            Member m3 = new Member();
+            m3.Email = "efti@gmail.com";
+            m3.Password = "123";
+            m3.Name = "Mashiul Azam";
+            m3.Gender = "Male";
+            m3.PhoneNumber = "01733333333";
+            m3.Type = "Product Excutive";
+            m3.Status = "Active";
+            m3.MemberSince = DateTime.Now;
+            m3.LastLoggedIn = DateTime.Now;
+            m3.TotalPurchase = 1;
+            m3.Point = 1;
+
+            Console.WriteLine(ms.Insert(m3));
+
+
+
+            Member m4 = new Member();
+            m4.Email = "reza@gmail.com";
+            m4.Password = "123";
+            m4.Name = "Rezaul Karim";
+            m4.Gender = "Male";
+            m4.PhoneNumber = "01744444444";
+            m4.Type = "Order Excutive";
+            m4.Status = "Active";
+            m4.MemberSince = DateTime.Now;
+            m4.LastLoggedIn = DateTime.Now;
+            m4.TotalPurchase = 1;
+            m4.Point = 1;
+
+            Console.WriteLine(ms.Insert(m4));
+
+            Member m5 = new Member();
+            m5.Email = "robi@gmail.com";
+            m5.Password = "123";
+            m5.Name = "Robi Ullah";
+            m5.Gender = "Male";
+            m5.PhoneNumber = "01811111111";
+            m5.Type = "User";
+            m5.Status = "Active";
+            m5.MemberSince = DateTime.Now;
+            m5.LastLoggedIn = DateTime.Now;
+            m5.TotalPurchase = 1;
+            m5.Point = 1;
+
+            Console.WriteLine(ms.Insert(m5));
+
+
+            Member m6 = new Member();
+            m6.Email = "tanim@gmail.com";
+            m6.Password = "123";
+            m6.Name = "Ibrahim Khalil";
+            m6.Gender = "Male";
+            m6.PhoneNumber = "01822222222";
+            m6.Type = "User";
+            m6.Status = "Active";
+            m6.MemberSince = DateTime.Now;
+            m6.LastLoggedIn = DateTime.Now;
+            m6.TotalPurchase = 1;
+            m6.Point = 1;
+
+            Console.WriteLine(ms.Insert(m6));
+
+            Member m7 = new Member();
+            m7.Email = "toma@gmail.com";
+            m7.Password = "123";
+            m7.Name = "Toma Azam";
+            m7.Gender = "Female";
+            m7.PhoneNumber = "01833333333";
+            m7.Type = "User";
+            m7.Status = "Block";
+            m7.MemberSince = DateTime.Now;
+            m7.LastLoggedIn = DateTime.Now;
+            m7.TotalPurchase = 1;
+            m7.Point = 1;
+
+            Console.WriteLine(ms.Insert(m7));
+
+            Member m8 = new Member();
+            m8.Email = "mizbah@gmail.com";
+            m8.Password = "123";
+            m8.Name = "Mizbah Ahmed";
+            m8.Gender = "Male";
+            m8.PhoneNumber = "01844444444";
+            m8.Type = "User";
+            m8.Status = "Block";
+            m8.MemberSince = DateTime.Now;
+            m8.LastLoggedIn = DateTime.Now;
+            m8.TotalPurchase = 1;
+            m8.Point = 1;
+
+            Console.WriteLine(ms.Insert(m8));
+
+
 
             //Console.WriteLine(ms.GetById(1).MemeberId);
             //Console.WriteLine(ms.GetById(1).Name);
@@ -55,7 +176,7 @@ namespace Test
             //Console.WriteLine(ms.GetById(1).Email);
 
             //easylifeDbContext e = new easylifeDbContext();
-          
+
             //Address a = new Address();
             //a.Member_id = 1;
             //a.Member_Address = "Mirpur";
@@ -247,15 +368,7 @@ namespace Test
             //    Console.WriteLine(i.ProductName);
             //}
 
-            Cart c1 = new Cart();
-            CartService cs1 = new CartService(e);
-
-            c.MemberId = 1;
-            c.ProductId = 1;
-            c.ProductName = "54";
-            c.Quantity = 1;
-            c.UnitPrice = 10;
-            Console.WriteLine(cs1.Insert(c));
+            
         }
     }
 }
