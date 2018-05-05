@@ -48,23 +48,23 @@
 											<tr>
 												<td>
 													<p style="text-align:left;"><b>Bill To:</b><p>
-													<p style="text-align:left;">Rakibul Hossain<p>
-													<p style="text-align:left;">Nikunja<p>
-													<p style="text-align:left;">H N#2A, R N#10<p>
+													<p style="text-align:left;">@Model.Name<p>
+													<p style="text-align:left;">@Model.ShippingAddress<p>
+													
 												</td>
 												<td>
 													<table class="table table-striped ">
 														<tbody>
 															<tr>
 																<td>invoice</td>
-																<td>456789</td>
+																<td>@Model.userInvoice.InvoiceId</td>
 															</tr>
 															<tr>
 																<td>invoice Date</td>
-																<td>March 10,2018</td>
+																<td>@Model.userInvoice.Date</td>
 															</tr>
 															<tr>
-																<td>Amount Due</td>
+																<td>Amount</td>
 																<td>$450</td>
 															</tr>
 														</tbody>

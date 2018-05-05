@@ -4,7 +4,7 @@
 }
 <div class="container-fluid ">
 						<ol class="breadcrumb">
-						<li><a href="index.html" ><i ></i> Home</a></li>
+						<li><a href=@Url.Action("index") ><i ></i> Home</a></li>
 						<li><a class="active" ><i ></i>Reports</a></li>
 						
 						</ol>
@@ -15,42 +15,24 @@
 					<div class="container-fluid col-md-5">
 						
 						
-						
+						@using(Html.BeginForm("reports", "UserHome",  FormMethod.Post))
+                        {
 						
 						<table class="table table-striped ">
 							
 							<tbody>
 								<tr>
-									
 									<th>Report Title</th>
-									<td>Faulty Products</td>
-									
-									
-		
-								</tr>
-								<tr>
-									
-									<th>Product Code</th>
-									<td>3456789</td>
-									
-									
-		
+									<td><input name="title"/></td>
 								</tr>
 								
 								<tr>
-									<th>User Mail</th>
-									<td>rakib@gmail.com</td>
-									
-									
-									
-								</tr>
-								<tr>
 									<th>Description</th>
-									<td><textarea rows="" cols="30" placeholder="loreum ispum"></textarea></td>
+									<td><textarea name="description" rows="" cols="30" placeholder="loreum ispum"></textarea></td>
 								</tr>
 								<tr>
 									<td colspan="2">
-										<p><a data-toggle="modal" data-target="#sucessModal"><button type="button" class="btn btn-info" >Submit</button></a></p>
+										<input id="input" type="submit" value="Submit" class="btn btn-primary" />
 									</td>
 								</tr>
 								
@@ -58,7 +40,7 @@
 							</tbody>
 						</table>
 
-						
+                     }
 					</div>
 @section Signup{
                 
@@ -126,4 +108,11 @@
     
      }
 				
-			
+		<script>
+
+		    $("#input").click(function () {
+		    
+		        alert("Thanks for your feedback.");
+		    }
+
+            </script>

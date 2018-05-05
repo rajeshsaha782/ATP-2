@@ -62,8 +62,8 @@
                     @if(Session["userId"]!=null)
                     {
                         <li class="point"><a href=@Url.Action("Dashboard","UserDashboard")><span class="glyphicon glyphicon-user" ></span>@Model.Name</a></li>
-                        <li class="point"><a href=@Url.Action("Logout")><span class="glyphicon glyphicon-log-out" >Logout</li>
-                        <li><a href=@Url.Action("shoppingCart")><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(0)</span></a></li>
+                        <li class="point"><a href=@Url.Action("Logout")><span class="glyphicon glyphicon-log-out" title="Log out"></span></a></li>
+                        <li><a href=@Url.Action("shoppingCart")><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(@Model.totalProductInCart)</span></a></li>
                     }
 					
 					
@@ -298,11 +298,28 @@
 			<div class="container-fluid col-md-3">
 				<ul>
 					<h4>My Account</h4>
-					<li><a data-toggle="modal" data-target="#loginmodal" >Personal Information</a></li>
-					<li><a data-toggle="modal" data-target="#loginmodal" >Orders</a></li>
-					<li><a href="reports">Reports</a></li>
-					<li><a  href="trackProduct">Track Product</a></li>
-					<li><a data-toggle="modal" data-target="#loginmodal" >Shopping Cart</a></li>
+
+                     @if(Session["useId"] != null)
+                    {
+                         <li><a href=@Url.Action("Dashboard","UserDashboard") class="point">Personal Information</a></li>
+					    <li><a href=@Url.Action("myOrders", "UserDashboard", new { id=Convert.ToInt32(Session["userId"])}) class="point">Orders</a></li>
+					    <li><a href=@Url.Action("reports")class="point">Report</a></li>
+					    <li><a  href=@Url.Action("trackProduct")class="point">Track Product</a></li>
+					    <li><a href=@Url.Action("shoppingCart") class="point">Shopping Cart</a></li>
+                    }
+
+                    @if(Session["useId"] == null)
+                    {
+                         <li><a data-toggle="modal" data-target="#loginmodal" class="point">Personal Information</a></li>
+					    <li><a data-toggle="modal" data-target="#loginmodal" class="point">Orders</a></li>
+					    <li><a href=@Url.Action("reports") class="point">Reports</a></li>
+					    <li><a  href=@Url.Action("trackProduct") class="point">Track Product</a></li>
+					    <li><a data-toggle="modal" data-target="#loginmodal" class="point">Shopping Cart</a></li>
+                    }
+
+                   
+
+					
 				</ul>
 			
 				
@@ -415,71 +432,63 @@
 	            valid = false;
 	            $("#emailErr").text("*Required");
 	        }
-	        else
-	        {
+	        else {
 	            if (!emailReg.test($("#email").val())) {
 	                $("#emailErr").text("Invalid Email");
 	                valid = false;
 	            }
 	            else { $("#emailErr").text(""); }
 
-	            
+
 	        }
 
-	        if ($("#password").val() == "")
-	        {
+	        if ($("#password").val() == "") {
 	            valid = false;
 	            $("#passwordErr").text("*Required");
 	        }
-	        else
-	        {
-	            
+	        else {
+
 	            $("#passwordErr").text("");
 	        }
-	      
-	        if(valid)
-	        {
-	            
+
+	        if (valid) {
+
 	            var email = $("#email").val();
 	            var password = $("#password").val();
 
 	            $.ajax({
-	                
+
 	                method: "POST",
 	                //contentType: "application/json; charset=utf-8",
-	                data: {'email':email , 'password':password },
+	                data: { 'email': email, 'password': password },
 	                url: "@Url.Action("Login", "UserHome")",
 	                success: function (data) {
 	                    //alert(data);
-	                    if (data == "Invalid")
-	                    {
+	                    if (data == "Invalid") {
 	                        $("#validationErr").text("This email is not exists");
 	                    }
-	                    else if (data == "Block")
-	                    {
+	                    else if (data == "Block") {
 	                        $("#validationErr").text("Your Account is blocked!!!");
 	                    }
 	                    else if (data == "Invalid Password") {
 	                        $("#validationErr").text("Invalid Password!!!");
-	                        
-	                    }
-	                    else
-	                    {
-	                        if(data==0)
-	                        {
-	                            window.location = '@Url.Action("Dashboard", "UserDashboard")'
-	                        }
-	                        if (data == 1) {
-	                            window.location = '@Url.Action("Dashboard","Admin")'
-                            }
 
 	                    }
+	                    else {
+	                        if (data == 0) {
+	                            window.location = '@Url.Action("Index", "UserHome")'
+	                        }
+                            if (data == 1) {
+                                window.location = '@Url.Action("Dashboard","Admin")'
+	                        }
+
+                        }
 	                },
-	                error: function () { alert("error")}
+	                error: function () { alert("error") }
 	            });
-	            
-	        }
-	        
+
+    }
+
 
 	    });
 

@@ -23,14 +23,14 @@ namespace easylife.Core.Service
         {
             var deleteInvoice = _context.Set<Invoice>().Where(i => i.InvoiceId == Invoice_id).SingleOrDefault();
 
-            if (deleteInvoice != null)
+            if(deleteInvoice != null)
             {
                 _context.Set<Invoice>().Remove(deleteInvoice);
                 _context.SaveChanges();
             }
             return true;
         }
-        
+
 
         public IEnumerable<Invoice> GetAll()
         {
@@ -64,7 +64,7 @@ namespace easylife.Core.Service
 
         public bool Insert(Invoice invoice)
         {
-            if (_context.Set<Invoice>().Add(invoice) == invoice)
+            if(_context.Set<Invoice>().Add(invoice) == invoice)
             {
                 _context.SaveChanges();
                 return true;
@@ -73,16 +73,27 @@ namespace easylife.Core.Service
                 return false;
         }
 
+        public Invoice Insert(Invoice invoice, bool returnInvoice)
+        {
+            Invoice I = new Invoice();
+
+            I = _context.Set<Invoice>().Add(invoice);
+            _context.SaveChanges();
+
+            return I;
+
+        }
+
         public bool SetStatus(int Invoice_id, string Status)
         {
-            Invoice i=GetById(Invoice_id);
+            Invoice i = GetById(Invoice_id);
             i.Status = Status;
             return Update(i);
         }
 
         public bool Update(Invoice invoice)
         {
-            if (_context.Set<Invoice>().Any(e => e.InvoiceId == invoice.InvoiceId))
+            if(_context.Set<Invoice>().Any(e => e.InvoiceId == invoice.InvoiceId))
             {
                 _context.Set<Invoice>().Attach(invoice);
                 _context.Entry(invoice).State = EntityState.Modified;

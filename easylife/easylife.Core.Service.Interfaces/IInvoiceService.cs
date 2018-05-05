@@ -12,6 +12,7 @@ namespace easylife.Core.Service.Interfaces
         IEnumerable<Invoice> GetAll();
         Invoice GetById(int InvoiceId);
         bool Insert(Invoice invoice);
+        Invoice Insert(Invoice invoice, bool returnInvoice);
         bool Update(Invoice invoice);
         bool Delete(int InvoiceId);
 
