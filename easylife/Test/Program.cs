@@ -1,4 +1,4 @@
-using System;
+﻿ng System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -212,20 +212,919 @@ namespace Test
             //Console.WriteLine(ms.Insert(m));
 
             //Product--------------------
-
-            Product p = new Product();
-            p.ProductName = "54";
-            p.Quantity = 10;
-            p.BuyingPrice = 100;
-            p.SellingPrice = 101;
-            p.Category = "Mens Wear";
-            p.SubCategory = "Shirt";
-            p.Brand = "easy";
-            p.Date = DateTime.Now;
-            p.LastSold = DateTime.Now;
-
             ProductService ps = new ProductService(e);
-            Console.WriteLine(ps.Insert(p));
+
+            Product p1 = new Product();
+            p1.ProductName = "Kakashi T Shirt";
+            p1.Features = "Loreum Ispum";
+            p1.Quantity = 10;
+            p1.BuyingPrice = 440;
+            p1.SellingPrice = 450;
+            p1.Category = "Kids Wear";
+            p1.SubCategory = "T-Shirt";
+            p1.Brand = "easy";
+            p1.size = 1;
+            p1.Date = DateTime.Now;
+            p1.LastSold = DateTime.Now;
+            p1.TotalSell = 200;
+            p1.Totalreview = 5;
+            p1.Star = 40;
+			Console.WriteLine(ps.Insert(p1));
+
+
+			Product p2 = new Product();
+            p2.ProductName = "Naruto T Shirt";
+            p2.Features = "Loreum Ispum";
+            p2.Quantity = 10;
+            p2.BuyingPrice = 440;
+            p2.SellingPrice = 450;
+            p2.Category = "Kids Wear";
+            p2.SubCategory = "T-Shirt";
+            p2.Brand = "easy";
+            p2.size = 1;
+            p2.Date = DateTime.Now;
+            p2.LastSold = DateTime.Now;
+            p2.TotalSell = 200;
+            p2.Totalreview = 5;
+            p2.Star = 40;
+			Console.WriteLine(ps.Insert(p2));
+			
+			Product p3 = new Product();
+            p3.ProductName = "Avenger T Shirt";
+            p3.Features = "Loreum Ispum";
+            p3.Quantity = 10;
+            p3.BuyingPrice = 440;
+            p3.SellingPrice = 450;
+            p3.Category = "Kids Wear";
+            p3.SubCategory = "T-Shirt";
+            p3.Brand = "easy";
+            p3.size = 1;
+            p3.Date = DateTime.Now;
+            p3.LastSold = DateTime.Now;
+            p3.TotalSell = 200;
+            p3.Totalreview = 5;
+            p3.Star = 40;
+			Console.WriteLine(ps.Insert(p3));
+			
+			
+			Product p8 = new Product();
+            p8.ProductName = "One Piece T Shirt";
+            p8.Features = "Loreum Ispum";
+            p8.Quantity = 10;
+            p8.BuyingPrice = 480;
+            p8.SellingPrice = 500;
+            p8.Category = "Kids Wear";
+            p8.SubCategory = "T-Shirt";
+            p8.Brand = "arong";
+            p8.size = 1;
+            p8.Date = DateTime.Now;
+            p8.LastSold = DateTime.Now;
+            p8.TotalSell = 200;
+            p8.Totalreview = 5;
+            p8.Star = 40;
+			Console.WriteLine(ps.Insert(p8));
+			
+			Product p9 = new Product();
+            p9.ProductName = "Doraemon T Shirt";
+            p9.Features = "Loreum Ispum";
+            p9.Quantity = 10;
+            p9.BuyingPrice = 480;
+            p9.SellingPrice = 500;
+            p9.Category = "Kids Wear";
+            p9.SubCategory = "T-Shirt";
+            p9.Brand = "arong";
+            p9.size = 2;
+            p9.Date = DateTime.Now;
+            p9.LastSold = DateTime.Now;
+            p9.TotalSell = 200;
+            p9.Totalreview = 5;
+            p9.Star = 40;
+			Console.WriteLine(ps.Insert(p9));
+			
+
+			
+			Product p11 = new Product();
+            p11.ProductName = "Sonic T Shirt";
+            p11.Features = "Loreum Ispum";
+            p11.Quantity = 10;
+            p11.BuyingPrice = 480;
+            p11.SellingPrice = 500;
+            p11.Category = "Kids Wear";
+            p11.SubCategory = "T-Shirt";
+            p11.Brand = "arong";
+            p11.size = 1;
+            p11.Date = DateTime.Now;
+            p11.LastSold = DateTime.Now;
+            p11.TotalSell = 200;
+            p11.Totalreview = 5;
+            p11.Star = 40;
+			Console.WriteLine(ps.Insert(p11));
+			
+			
+			Product p10 = new Product();
+            p10.ProductName = "Superman T Shirt";
+            p10.Features = "Loreum Ispum";
+            p10.Quantity = 10;
+            p10.BuyingPrice = 480;
+            p10.SellingPrice = 500;
+            p10.Category = "Kids Wear";
+            p10.SubCategory = "T-Shirt";
+            p10.Brand = "arong";
+            p10.size = 3;
+            p10.Date = DateTime.Now;
+            p10.LastSold = DateTime.Now;
+            p10.TotalSell = 200;
+            p10.Totalreview = 5;
+            p10.Star = 40;
+			Console.WriteLine(ps.Insert(p11));
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+			///shirt
+			
+			
+			
+			Product p4 = new Product();
+            p4.ProductName = "Black Shirt";
+            p4.Features = "Loreum Ispum";
+            p4.Quantity = 10;
+            p4.BuyingPrice = 1300;
+            p4.SellingPrice = 1350;
+            p4.Category = "Mens Wear";
+            p4.SubCategory = "Shirt";
+            p4.Brand = "yellow";
+            p4.size = 1;
+            p4.Date = DateTime.Now;
+            p4.LastSold = DateTime.Now;
+            p4.TotalSell = 200;
+            p4.Totalreview = 5;
+            p4.Star = 40;
+			Console.WriteLine(ps.Insert(p4));
+			
+			Product p5 = new Product();
+            p5.ProductName = "Blue Shirt";
+            p5.Features = "Loreum Ispum";
+            p5.Quantity = 10;
+            p5.BuyingPrice = 1300;
+            p5.SellingPrice = 1350;
+            p5.Category = "Mens Wear";
+            p5.SubCategory = "Shirt";
+            p5.Brand = "yellow";
+            p5.size = 3;
+            p5.Date = DateTime.Now;
+            p5.LastSold = DateTime.Now;
+            p5.TotalSell = 200;
+            p5.Totalreview = 5;
+            p5.Star = 40;
+			Console.WriteLine(ps.Insert(p5));
+			
+			Product p6 = new Product();
+            p6.ProductName = "Maroon Shirt";
+            p6.Features = "Loreum Ispum";
+            p6.Quantity = 10;
+            p6.BuyingPrice = 1200;
+            p6.SellingPrice = 1280;
+            p6.Category = "Mens Wear";
+            p6.SubCategory = "Shirt";
+            p6.Brand = "yellow";
+            p6.size = 1;
+            p6.Date = DateTime.Now;
+            p6.LastSold = DateTime.Now;
+            p6.TotalSell = 200;
+            p6.Totalreview = 5;
+            p6.Star = 40;
+			Console.WriteLine(ps.Insert(p6));
+			
+			Product p7 = new Product();
+            p7.ProductName = "Check Shirt";
+            p7.Features = "Loreum Ispum";
+            p7.Quantity = 10;
+            p7.BuyingPrice = 1200;
+            p7.SellingPrice = 1280;
+            p7.Category = "Mens Wear";
+            p7.SubCategory = "Shirt";
+            p7.Brand = "arong";
+            p7.size = 1;
+            p7.Date = DateTime.Now;
+            p7.LastSold = DateTime.Now;
+            p7.TotalSell = 200;
+            p7.Totalreview = 5;
+            p7.Star = 40;
+			Console.WriteLine(ps.Insert(p7));
+			
+			
+			Product p12 = new Product();
+            p12.ProductName = "Red Shirt";
+            p12.Features = "Loreum Ispum";
+            p12.Quantity = 10;
+            p12.BuyingPrice = 1200;
+            p12.SellingPrice = 1280;
+            p12.Category = "Mens Wear";
+            p12.SubCategory = "Shirt";
+            p12.Brand = "arong";
+            p12.size = 1;
+            p12.Date = DateTime.Now;
+            p12.LastSold = DateTime.Now;
+            p12.TotalSell = 200;
+            p12.Totalreview = 5;
+            p12.Star = 40;
+			Console.WriteLine(ps.Insert(p12));
+			
+			
+			Product p13 = new Product();
+            p13.ProductName = "Sky Blue Shirt";
+            p10.Features = "Loreum Ispum";
+            p13.Quantity = 10;
+            p13.BuyingPrice = 1200;
+            p13.SellingPrice = 1280;
+            p13.Category = "Mens Wear";
+            p13.SubCategory = "Shirt";
+            p13.Brand = "ectasy";
+            p10.size =2;
+            p13.Date = DateTime.Now;
+            p13.LastSold = DateTime.Now;
+            p1.TotalSell = 200;
+            p1.Totalreview = 5;
+            p1.Star = 40;
+			Console.WriteLine(ps.Insert(p13));
+			
+			
+			Product p14 = new Product();
+            p14.ProductName = "White Shirt";
+            p10.Features = "Loreum Ispum";
+            p14.Quantity = 10;
+            p14.BuyingPrice = 1200;
+            p14.SellingPrice = 1280;
+            p14.Category = "Mens Wear";
+            p14.SubCategory = "Shirt";
+            p14.Brand = "ectasy";
+            p10.size = 2;
+            p14.Date = DateTime.Now;
+            p14.LastSold = DateTime.Now;
+            p1.TotalSell = 200;
+            p1.Totalreview = 5;
+            p1.Star = 40;
+			Console.WriteLine(ps.Insert(p14));
+			
+
+
+
+
+
+			///pant
+			
+			Product p15 = new Product();
+            p15.ProductName = "Biker-Jeans";
+            p15.Features = "Loreum Ispum";
+            p15.Quantity = 10;
+            p15.BuyingPrice = 1200;
+            p15.SellingPrice = 1280;
+            p15.Category = "Mens Wear";
+            p15.SubCategory = "Pant";
+            p15.Brand = "ectasy";
+            p15.size = 2;
+            p15.Date = DateTime.Now;
+            p15.LastSold = DateTime.Now;
+            p15.TotalSell = 200;
+            p15.Totalreview = 5;
+            p15.Star = 40;
+			Console.WriteLine(ps.Insert(p15));
+			
+			Product p16 = new Product();
+            p16.ProductName = "Black Pant";
+            p16.Features = "Loreum Ispum";
+            p16.Quantity = 10;
+            p16.BuyingPrice = 2000;
+            p16.SellingPrice = 2080;
+            p16.Category = "Mens Wear";
+            p16.SubCategory = "Pant";
+            p16.Brand = "ectasy";
+            p10.size = 2;
+            p16.Date = DateTime.Now;
+            p16.LastSold = DateTime.Now;
+            p16.TotalSell = 200;
+            p16.Totalreview = 5;
+            p16.Star = 40;
+			Console.WriteLine(ps.Insert(p16));
+			
+			Product p17 = new Product();
+            p17.ProductName = "Gavading Pant";
+            p17.Features = "Loreum Ispum";
+            p17.Quantity = 10;
+            p17.BuyingPrice = 2000;
+            p17.SellingPrice = 2080;
+            p17.Category = "Mens Wear";
+            p17.SubCategory = "Pant";
+            p17.Brand = "yellow";
+            p17.size = 2;
+            p17.Date = DateTime.Now;
+            p17.LastSold = DateTime.Now;
+            p17.TotalSell = 200;
+            p17.Totalreview = 5;
+            p17.Star = 40;
+			Console.WriteLine(ps.Insert(p17));
+			
+			
+			Product p18 = new Product();
+            p18.ProductName = "Gray Pant";
+            p18.Features = "Loreum Ispum";
+            p18.Quantity = 10;
+            p18.BuyingPrice = 2000;
+            p18.SellingPrice = 2080;
+            p18.Category = "Mens Wear";
+            p18.SubCategory = "Pant";
+            p18.Brand = "yellow";
+            p18.size = 2;
+            p18.Date = DateTime.Now;
+            p18.LastSold = DateTime.Now;
+            p18.TotalSell = 200;
+            p18.Totalreview = 5;
+            p18.Star = 40;
+			Console.WriteLine(ps.Insert(p18));
+			
+			Product p19 = new Product();
+            p19.ProductName = "jack-jones-jeans";
+            p19.Features = "Loreum Ispum";
+            p19.Quantity = 10;
+            p19.BuyingPrice = 2000;
+            p19.SellingPrice = 2080;
+            p19.Category = "Mens Wear";
+            p19.SubCategory = "Pant";
+            p19.Brand = "yellow";
+            p19.size = 2;
+            p19.Date = DateTime.Now;
+            p19.LastSold = DateTime.Now;
+            p19.TotalSell = 200;
+            p19.Totalreview = 5;
+            p19.Star = 40;
+			Console.WriteLine(ps.Insert(p19));
+			
+			Product p20 = new Product();
+            p20.ProductName = "Tommy-jones-jeans";
+            p20.Features = "Loreum Ispum";
+            p20.Quantity = 10;
+            p20.BuyingPrice = 2000;
+            p20.SellingPrice = 2080;
+            p20.Category = "Mens Wear";
+            p20.SubCategory = "Pant";
+            p20.Brand = "yellow";
+            p20.size = 2;
+            p20.Date = DateTime.Now;
+            p20.LastSold = DateTime.Now;
+            p20.TotalSell = 200;
+            p20.Totalreview = 5;
+            p20.Star = 40;
+			Console.WriteLine(ps.Insert(p20));
+			
+			Product p21 = new Product();
+            p21.ProductName = "White Pant";
+            p21.Features = "Loreum Ispum";
+            p21.Quantity = 10;
+            p21.BuyingPrice = 2000;
+            p21.SellingPrice = 2080;
+            p21.Category = "Mens Wear";
+            p21.SubCategory = "Pant";
+            p21.Brand = "yellow";
+            p21.size = 2;
+            p21.Date = DateTime.Now;
+            p21.LastSold = DateTime.Now;
+            p21.TotalSell = 200;
+            p21.Totalreview = 5;
+            p21.Star = 40;
+			Console.WriteLine(ps.Insert(p21));
+			
+			
+
+
+
+
+			///panjabi
+			
+			Product p22 = new Product();
+            p22.ProductName = "Blue Pnajabi";
+            p21.Features = "Loreum Ispum";
+            p22.Quantity = 10;
+            p22.BuyingPrice = 2000;
+            p22.SellingPrice = 2080;
+            p22.Category = "Mens Wear";
+            p22.SubCategory = "Panjabi";
+            p22.Brand = "yellow";
+            p22.size = 2;
+            p22.Date = DateTime.Now;
+            p22.LastSold = DateTime.Now;
+            p22.TotalSell = 200;
+            p22.Totalreview = 5;
+            p22.Star = 40;
+			Console.WriteLine(ps.Insert(p22));
+			
+			
+			Product p23 = new Product();
+            p23.ProductName = "Embrodari panjabi";
+            p23.Features = "Loreum Ispum";
+            p23.Quantity = 10;
+            p23.BuyingPrice = 2000;
+            p23.SellingPrice = 2080;
+            p23.Category = "Mens Wear";
+            p23.SubCategory = "Panjabi";
+            p23.Brand = "yellow";
+            p23.size =1;
+            p23.Date = DateTime.Now;
+            p23.LastSold = DateTime.Now;
+            p23.TotalSell = 200;
+            p23.Totalreview = 5;
+            p23.Star = 40;
+			Console.WriteLine(ps.Insert(p23));
+			
+			Product p24 = new Product();
+            p24.ProductName = "Red Panjabi";
+            p24.Features = "Loreum Ispum";
+            p24.Quantity = 10;
+            p24.BuyingPrice = 2000;
+            p24.SellingPrice = 2080;
+            p24.Category = "Mens Wear";
+            p24.SubCategory = "Panjabi";
+            p24.Brand = "easy";
+            p24.size = 1;
+            p24.Date = DateTime.Now;
+            p24.LastSold = DateTime.Now;
+            p24.TotalSell = 200;
+            p24.Totalreview = 5;
+            p24.Star = 40;
+			Console.WriteLine(ps.Insert(p24));
+			
+			
+			Product p25 = new Product();
+            p25.ProductName = "White Panjabi";
+            p25.Features = "Loreum Ispum";
+            p25.Quantity = 10;
+            p25.BuyingPrice = 2000;
+            p25.SellingPrice = 2080;
+            p25.Category = "Mens Wear";
+            p25.SubCategory = "Panjabi";
+            p25.Brand = "easy";
+            p25.size = 2;
+            p25.Date = DateTime.Now;
+            p25.LastSold = DateTime.Now;
+            p25.TotalSell = 200;
+            p25.Totalreview = 5;
+            p25.Star = 40;
+			Console.WriteLine(ps.Insert(p25));
+			
+			
+			Product p26 = new Product();
+            p26.ProductName = "Yellow Panjabi";
+            p26.Features = "Loreum Ispum";
+            p26.Quantity = 10;
+            p26.BuyingPrice = 2000;
+            p26.SellingPrice = 2080;
+            p26.Category = "Mens Wear";
+            p26.SubCategory = "Panjabi";
+            p26.Brand = "arong";
+            p26.size = 2;
+            p26.Date = DateTime.Now;
+            p26.LastSold = DateTime.Now;
+            p26.TotalSell = 200;
+            p26.Totalreview = 5;
+            p26.Star = 40;
+			Console.WriteLine(ps.Insert(p26));
+			
+			Product p27 = new Product();
+            p27.ProductName = "Green Panjabi";
+            p27.Features = "Loreum Ispum";
+            p27.Quantity = 10;
+            p27.BuyingPrice = 2000;
+            p27.SellingPrice = 2080;
+            p27.Category = "Mens Wear";
+            p27.SubCategory = "Panjabi";
+            p27.Brand = "arong";
+            p27.size = 1;
+            p27.Date = DateTime.Now;
+            p27.LastSold = DateTime.Now;
+            p27.TotalSell = 200;
+            p27.Totalreview = 5;
+            p27.Star = 40;
+			Console.WriteLine(ps.Insert(p27));
+			
+			Product p28 = new Product();
+            p28.ProductName = "Black Pnajabi";
+            p28.Features = "Loreum Ispum";
+            p28.Quantity = 10;
+            p28.BuyingPrice = 2000;
+            p28.SellingPrice = 2080;
+            p28.Category = "Mens Wear";
+            p28.SubCategory = "Panjabi";
+            p28.Brand = "arong";
+            p28.size = 2;
+            p28.Date = DateTime.Now;
+            p28.LastSold = DateTime.Now;
+            p28.TotalSell = 200;
+            p28.Totalreview = 5;
+            p28.Star = 40;
+			Console.WriteLine(ps.Insert(p28));
+
+
+
+
+			///saree
+			
+			
+			Product p29 = new Product();
+            p29.ProductName = "Black Saree";
+            p29.Features = "Loreum Ispum";
+            p29.Quantity = 10;
+            p29.BuyingPrice = 3000;
+            p29.SellingPrice = 3200;
+            p29.Category = "Womens Wear";
+            p29.SubCategory = "Saree";
+            p29.Brand = "arong";
+            p29.size = 0;
+            p29.Date = DateTime.Now;
+            p29.LastSold = DateTime.Now;
+            p29.LastSold = DateTime.Now;
+            p29.TotalSell = 200;
+            p29.Totalreview = 5;
+            p29.Star = 40;
+			Console.WriteLine(ps.Insert(p29));
+			
+			Product p30 = new Product();
+            p30.ProductName = "Green Saree";
+            p30.Features = "Loreum Ispum";
+            p30.Quantity = 10;
+            p30.BuyingPrice = 3000;
+            p30.SellingPrice = 3200;
+            p30.Category = "Womens Wear";
+            p30.SubCategory = "Saree";
+            p30.Brand = "arong";
+            p30.size = 0;
+            p30.Date = DateTime.Now;
+            p30.LastSold = DateTime.Now;
+            p30.LastSold = DateTime.Now;
+            p30.TotalSell = 200;
+            p30.Totalreview = 5;
+            p30.Star = 40;
+			Console.WriteLine(ps.Insert(p30));
+			
+			
+			Product p31 = new Product();
+            p31.ProductName = "Printed Saree";
+            p31.Features = "Loreum Ispum";
+            p31.Quantity = 10;
+            p31.BuyingPrice = 3000;
+            p31.SellingPrice = 3200;
+            p31.Category = "Womens Wear";
+            p31.SubCategory = "Saree";
+            p31.Brand = "arong";
+            p31.size = 0;
+            p31.Date = DateTime.Now;
+            p31.LastSold = DateTime.Now;
+            p31.LastSold = DateTime.Now;
+            p31.TotalSell = 200;
+            p31.Totalreview = 5;
+            p31.Star = 40;
+			Console.WriteLine(ps.Insert(p31));
+			
+			Product p32 = new Product();
+            p32.ProductName = "Red saree";
+            p32.Features = "Loreum Ispum";
+            p32.Quantity = 10;
+            p32.BuyingPrice = 3000;
+            p32.SellingPrice = 3200;
+            p32.Category = "Womens Wear";
+            p32.SubCategory = "Saree";
+            p32.Brand = "arong";
+            p32.size = 0;
+            p32.Date = DateTime.Now;
+            p32.LastSold = DateTime.Now;
+            p32.LastSold = DateTime.Now;
+            p32.TotalSell = 200;
+            p32.Totalreview = 5;
+            p32.Star = 40;
+			Console.WriteLine(ps.Insert(p32));
+			
+			Product p33 = new Product();
+            p33.ProductName = "Shiffon Saree";
+            p33.Features = "Loreum Ispum";
+            p33.Quantity = 10;
+            p33.BuyingPrice = 3000;
+            p33.SellingPrice = 3200;
+            p33.Category = "Womens Wear";
+            p33.SubCategory = "Saree";
+            p33.Brand = "arong";
+            p33.size = 0;
+            p33.Date = DateTime.Now;
+            p33.LastSold = DateTime.Now;
+            p33.LastSold = DateTime.Now;
+            p33.TotalSell = 200;
+            p33.Totalreview = 5;
+            p33.Star = 40;
+			Console.WriteLine(ps.Insert(p33));
+			
+			
+			Product p34 = new Product();
+            p34.ProductName = "Sky Blue Saree";
+            p34.Features = "Loreum Ispum";
+            p34.Quantity = 10;
+            p34.BuyingPrice = 3000;
+            p34.SellingPrice = 3200;
+            p34.Category = "Womens Wear";
+            p34.SubCategory = "Saree";
+            p34.Brand = "arong";
+            p34.size = 0;
+            p34.Date = DateTime.Now;
+            p34.LastSold = DateTime.Now;
+            p34.LastSold = DateTime.Now;
+            p34.TotalSell = 200;
+            p34.Totalreview = 5;
+            p34.Star = 40;
+			Console.WriteLine(ps.Insert(p34));
+			
+			Product p35 = new Product();
+            p35.ProductName = "Pink Saree";
+            p35.Features = "Loreum Ispum";
+            p35.Quantity = 10;
+            p35.BuyingPrice = 3000;
+            p35.SellingPrice = 3200;
+            p35.Category = "Womens Wear";
+            p35.SubCategory = "Saree";
+            p35.Brand = "arong";
+            p35.size = 0;
+            p35.Date = DateTime.Now;
+            p35.LastSold = DateTime.Now;
+            p35.LastSold = DateTime.Now;
+            p35.TotalSell = 200;
+            p35.Totalreview = 5;
+            p35.Star = 40;
+			Console.WriteLine(ps.Insert(p35));
+			
+			
+			
+			///three piece
+			
+			
+			Product p36 = new Product();
+            p36.ProductName = "Blue Three Piece";
+            p36.Features = "Loreum Ispum";
+            p36.Quantity = 10;
+            p36.BuyingPrice = 3000;
+            p36.SellingPrice = 3200;
+            p36.Category = "Womens Wear";
+            p36.SubCategory = "Three-Piece";
+            p36.Brand = "arong";
+            p36.size = 1;
+            p36.Date = DateTime.Now;
+            p36.LastSold = DateTime.Now;
+            p36.LastSold = DateTime.Now;
+            p36.TotalSell = 200;
+            p36.Totalreview = 5;
+            p36.Star = 40;
+			Console.WriteLine(ps.Insert(p36));
+			
+			
+			Product p37 = new Product();
+            p37.ProductName = "Pink Three-Piece";
+            p37.Features = "Loreum Ispum";
+            p37.Quantity = 10;
+            p37.BuyingPrice = 3000;
+            p37.SellingPrice = 3200;
+            p37.Category = "Womens Wear";
+            p37.SubCategory = "Three-Piece";
+            p37.Brand = "arong";
+            p37.size = 2;
+            p37.Date = DateTime.Now;
+            p37.LastSold = DateTime.Now;
+            p37.LastSold = DateTime.Now;
+            p37.TotalSell = 200;
+            p37.Totalreview = 5;
+            p37.Star = 40;
+			Console.WriteLine(ps.Insert(p37));
+			
+			
+			Product p38 = new Product();
+            p38.ProductName = "Purple Three-Piece";
+            p21.Features = "Loreum Ispum";
+            p38.Quantity = 10;
+            p38.BuyingPrice = 3000;
+            p38.SellingPrice = 3200;
+            p38.Category = "Womens Wear";
+            p38.SubCategory = "Three-Piece";
+            p38.Brand = "arong";
+            p21.size = 1;
+            p38.Date = DateTime.Now;
+            p38.LastSold = DateTime.Now;
+            p21.LastSold = DateTime.Now;
+            p21.TotalSell = 200;
+            p21.Totalreview = 5;
+            p21.Star = 40;
+			Console.WriteLine(ps.Insert(p38));
+			
+			Product p39 = new Product();
+            p39.ProductName = "Black Three-Piece";
+            p39.Features = "Loreum Ispum";
+            p39.Quantity = 10;
+            p39.BuyingPrice = 3000;
+            p39.SellingPrice = 3200;
+            p39.Category = "Womens Wear";
+            p39.SubCategory = "Three-Piece";
+            p39.Brand = "arong";
+            p39.size = 2;
+            p39.Date = DateTime.Now;
+            p39.LastSold = DateTime.Now;
+            p39.LastSold = DateTime.Now;
+            p39.TotalSell = 200;
+            p39.Totalreview = 5;
+            p39.Star = 40;
+			Console.WriteLine(ps.Insert(p39));
+			
+			Product p40 = new Product();
+            p40.ProductName = "White Three-Piece";
+            p40.Features = "Loreum Ispum";
+            p40.Quantity = 10;
+            p40.BuyingPrice = 3000;
+            p40.SellingPrice = 3200;
+            p40.Category = "Womens Wear";
+            p40.SubCategory = "Three-Piece";
+            p40.Brand = "arong";
+            p40.size = 1;
+            p40.Date = DateTime.Now;
+            p40.LastSold = DateTime.Now;
+            p40.LastSold = DateTime.Now;
+            p40.TotalSell = 200;
+            p40.Totalreview = 5;
+            p40.Star = 40;
+			Console.WriteLine(ps.Insert(p40));
+			
+			
+			Product p41 = new Product();
+            p41.ProductName = "Embrodery Three-Piece";
+            p41.Features = "Loreum Ispum";
+            p41.Quantity = 10;
+            p41.BuyingPrice = 3000;
+            p41.SellingPrice = 3200;
+            p41.Category = "Womens Wear";
+            p41.SubCategory = "Three-Piece";
+            p41.Brand = "arong";
+            p41.size = 2;
+            p41.Date = DateTime.Now;
+            p41.LastSold = DateTime.Now;
+            p41.LastSold = DateTime.Now;
+            p41.TotalSell = 200;
+            p41.Totalreview = 5;
+            p41.Star = 40;
+			Console.WriteLine(ps.Insert(p41));
+			
+			Product p42 = new Product();
+            p42.ProductName = "Red Three-Piece";
+            p42.Features = "Loreum Ispum";
+            p42.Quantity = 10;
+            p42.BuyingPrice = 3000;
+            p42.SellingPrice = 3200;
+            p42.Category = "Womens Wear";
+            p42.SubCategory = "Three-Piece";
+            p42.Brand = "arong";
+            p42.size = 1;
+            p42.Date = DateTime.Now;
+            p42.LastSold = DateTime.Now;
+            p42.LastSold = DateTime.Now;
+            p42.TotalSell = 200;
+            p42.Totalreview = 5;
+            p42.Star = 40;
+			Console.WriteLine(ps.Insert(p42));
+			
+			
+			
+			////kids pant
+			
+			Product p43 = new Product();
+            p43.ProductName = "Summer-shorts";
+            p43.Features = "Loreum Ispum";
+            p43.Quantity = 430;
+            p43.BuyingPrice = 440;
+            p43.SellingPrice = 450;
+            p43.Category = "Kids Wear";
+            p43.SubCategory = "Pant";
+            p43.Brand = "easy";
+            p43.size = 1;
+            p43.Date = DateTime.Now;
+            p43.LastSold = DateTime.Now;
+            p43.TotalSell = 200;
+            p43.Totalreview = 5;
+            p43.Star = 40;
+			Console.WriteLine(ps.Insert(p43));
+			
+			
+			Product p44 = new Product();
+            p44.ProductName = "children-cotton-pant";
+            p44.Features = "Loreum Ispum";
+            p44.Quantity = 440;
+            p44.BuyingPrice = 440;
+            p44.SellingPrice = 450;
+            p44.Category = "Kids Wear";
+            p44.SubCategory = "Pant";
+            p44.Brand = "easy";
+            p44.size = 1;
+            p44.Date = DateTime.Now;
+            p44.LastSold = DateTime.Now;
+            p44.TotalSell = 200;
+            p44.Totalreview = 5;
+            p44.Star = 40;
+			Console.WriteLine(ps.Insert(p44));
+			
+			Product p45 = new Product();
+            p45.ProductName = "Kids-Pant-Children-Jeans";
+            p45.Features = "Loreum Ispum";
+            p45.Quantity = 450;
+            p45.BuyingPrice = 440;
+            p45.SellingPrice = 450;
+            p45.Category = "Kids Wear";
+            p45.SubCategory = "Pant";
+            p45.Brand ="easy";
+            p45.size = 2;
+            p45.Date = DateTime.Now;
+            p45.LastSold = DateTime.Now;
+            p45.TotalSell = 200;
+            p45.Totalreview = 5;
+            p45.Star = 40;
+			Console.WriteLine(ps.Insert(p45));
+			
+			Product p46 = new Product();
+            p46.ProductName = "Kids-Pant-Fashion-Light-Blue-Jean";
+            p46.Features = "Loreum Ispum";
+            p46.Quantity = 460;
+            p46.BuyingPrice = 440;
+            p46.SellingPrice = 450;
+            p46.Category = "Kids Wear";
+            p46.SubCategory = "Pant";
+            p46.Brand = "easy";
+            p46.size = 2;
+            p46.Date = DateTime.Now;
+            p46.LastSold = DateTime.Now;
+            p46.TotalSell = 200;
+            p46.Totalreview = 5;
+            p46.Star = 40;
+			Console.WriteLine(ps.Insert(p46));
+			
+			Product p47 = new Product();
+            p47.ProductName = "Three Quarter";
+            p47.Features = "Loreum Ispum";
+            p47.Quantity = 470;
+            p47.BuyingPrice = 440;
+            p47.SellingPrice = 450;
+            p47.Category = "Kids Wear";
+            p47.SubCategory = "Pant";
+            p47.Brand = "easy";
+            p47.size = 2;
+            p47.Date = DateTime.Now;
+            p47.LastSold = DateTime.Now;
+            p47.TotalSell = 200;
+            p47.Totalreview = 5;
+            p47.Star = 40;
+			Console.WriteLine(ps.Insert(p47));
+			
+			Product p48 = new Product();
+            p48.ProductName = "Moana Girl Jeans";
+            p48.Features = "Loreum Ispum";
+            p48.Quantity = 480;
+            p48.BuyingPrice = 440;
+            p48.SellingPrice = 450;
+            p48.Category = "Kids Wear";
+            p48.SubCategory = "Pant";
+            p48.Brand = "easy";
+            p48.size = 2;
+            p48.Date = DateTime.Now;
+            p48.LastSold = DateTime.Now;
+            p48.TotalSell = 200;
+            p48.Totalreview = 5;
+            p48.Star = 40;
+			Console.WriteLine(ps.Insert(p48));
+			
+			
+			Product p49 = new Product();
+            p49.ProductName = "Cotton Pant";
+            p49.Features = "Loreum Ispum";
+            p49.Quantity = 490;
+            p49.BuyingPrice = 440;
+            p49.SellingPrice = 450;
+            p49.Category = "Kids Wear";
+            p49.SubCategory = "Pant";
+            p49.Brand = "easy";
+            p49.size = 2;
+            p49.Date = DateTime.Now;
+            p49.LastSold = DateTime.Now;
+            p49.TotalSell = 200;
+            p49.Totalreview = 5;
+            p49.Star = 40;
+			Console.WriteLine(ps.Insert(p49));
+			
+			
+			
+			
 
              //Address--------------------
 
@@ -339,95 +1238,185 @@ namespace Test
 
             //Dislike--------------------
 
-            Dislike d = new Dislike();
-            d.MemberId = 1;
-            d.ProductId = 1;
+          	DislikeService ds = new DislikeService(e);
 
-            DislikeService ds = new DislikeService(e);
-            Console.WriteLine(ds.Insert(d));
+            Dislike d1 = new Dislike();
+            d1.MemberId = 6;
+            d1.ProductId = 1;
+            Console.WriteLine(ds.Insert(d1));
+
+
 
             //like--------------------
-
-            Like l = new Like();
-            l.MemberId = 1;
-            l.ProductId = 1;
-
             LikeService ls = new LikeService(e);
-            Console.WriteLine(ls.Insert(l));
+
+            Like l1 = new Like();
+            l1.MemberId = 4;
+            l1.ProductId = 1;
+            Console.WriteLine(ls.Insert(l1));
+
+
+
+            Like l2 = new Like();
+            l2.MemberId = 4;
+            l2.ProductId = 2;
+            Console.WriteLine(ls.Insert(l2));
 
             //Invoice--------------------
 
-            Invoice i = new Invoice();
-            i.Date = DateTime.Now;
-            i.MemberId = 1;
-            i.DeliveryManId = 1;
-            i.Status = "0";
-            i.PaymentStatus = "0";
-            i.PaymentMethod = "1";
-            i.ShippingAddress = "khilkhet,dhaka";
-
             InvoiceService ivs = new InvoiceService(e);
-            Console.WriteLine(ivs.Insert(i));
+
+
+            Invoice i1 = new Invoice();
+            i1.Date = DateTime.Now;
+            i1.MemberId = 5;
+            i1.DeliveryManId = 2;
+            i1.Status = "0";
+            i1.PaymentStatus = "0";
+            i1.PaymentMethod = "1";
+            i1.ShippingAddress = "khilkhet,dhaka";
+			Console.WriteLine(ivs.Insert(i1));
+
+
+
+			Invoice i2 = new Invoice();
+            i2.Date = DateTime.Now;
+            i2.MemberId = 6;
+            i2.DeliveryManId = 9;
+            i2.Status = "0";
+            i2.PaymentStatus = "0";
+            i2.PaymentMethod = "1";
+            i2.ShippingAddress = "Mirpur,dhaka";
+			Console.WriteLine(ivs.Insert(i2));
 
             //Order--------------------
+			OrderService os = new OrderService(e);
 
-            Order o = new Order();
-            o.ProductId = 1;
-            o.MemeberId = 1;
-            o.InvoiceId = 1;
-            o.Quantity = 10;
-            o.Profit = 100;
-            o.SellingDate = DateTime.Now;
+            Order o1 = new Order();
+            o1.ProductId = 1;
+            o1.MemeberId = 5;
+            o1.InvoiceId = 1;
+            o1.Quantity = 1;
+            o1.Profit = 10;
+            o1.SellingDate = DateTime.Now;
+            Console.WriteLine(os.Insert(o1));
 
-            OrderService os = new OrderService(e);
-            Console.WriteLine(os.Insert(o));
+
+            Order o2 = new Order();
+            o2.ProductId = 2;
+            o2.MemeberId = 5;
+            o2.InvoiceId = 1;
+            o2.Quantity = 1;
+            o2.Profit = 10;
+            o2.SellingDate = DateTime.Now;
+            Console.WriteLine(os.Insert(o2));
+
+
+            Order o3 = new Order();
+            o3.ProductId = 3;
+            o3.MemeberId = 6;
+            o3.InvoiceId = 2;
+            o3.Quantity = 1;
+            o3.Profit = 10;
+            o3.SellingDate = DateTime.Now;
+            Console.WriteLine(os.Insert(o3));
+
 
 
             //ProductReview--------------------
 
-            ProductReview pr = new ProductReview();
-            pr.MemberId = 1;
-            pr.ProductId = 1;
-            pr.Review = "good";
-            pr.Date = DateTime.Now;
 
 
             ProductReviewService prs = new ProductReviewService(e);
-            Console.WriteLine(prs.Insert(pr));
+
+            ProductReview pr1 = new ProductReview();
+            pr1.MemberId = 5;
+            pr1.ProductId = 1;
+            pr1.Review = "good";
+            pr1.Date = DateTime.Now;
+            Console.WriteLine(prs.Insert(pr1));
+
+
+            ProductReview pr2 = new ProductReview();
+            pr2.MemberId = 5;
+            pr2.ProductId = 2;
+            pr2.Review = "good";
+            pr2.Date = DateTime.Now;
+            Console.WriteLine(prs.Insert(pr2));
+
+
+            ProductReview pr3 = new ProductReview();
+            pr3.MemberId = 6;
+            pr3.ProductId = 3;
+            pr3.Review = "good";
+            pr3.Date = DateTime.Now;
+            Console.WriteLine(prs.Insert(pr3));
+
+
+
 
             //Report--------------------
-
-            Report r = new Report();
-            r.ReportTitle = "Faulty product";
-            r.MemeberId = 1;
-            r.Date = DateTime.Now;
-            r.Description = "loreum ispum";
-            r.SeenStatus = "2";
-
             ReportService rs = new ReportService(e);
-            Console.WriteLine(rs.Insert(r));
+
+            Report r1 = new Report();
+            r1.ReportTitle = "Faulty product";
+            r1.MemeberId = 7;
+            r1.Date = DateTime.Now;
+            r1.Description = "loreum ispum";
+            r1.SeenStatus = "0";
+			Console.WriteLine(rs.Insert(r1));
+
+
+			Report r2 = new Report();
+            r2.ReportTitle = "Faulty product";
+            r2.MemeberId = 8;
+            r2.Date = DateTime.Now;
+            r2.Description = "loreum ispum";
+            r2.SeenStatus = "0";
+			Console.WriteLine(rs.Insert(r2));
 
             //SearchHistory--------------------
+			SearchHistoryService shs = new SearchHistoryService(e);
 
-            SearchHistory sh = new SearchHistory();
-            sh.MemberId = 1;
-            sh.ProductCategory = "shirt";
-            sh.ProductId = 1;
-            sh.Date = DateTime.Now;
+            SearchHistory sh1 = new SearchHistory();
+            sh1.MemberId = 5;
+            sh1.ProductCategory = "shirt";
+            sh1.ProductId = 1;
+            sh1.Date = DateTime.Now;
+            Console.WriteLine(shs.Insert(sh1));
 
 
-            SearchHistoryService shs = new SearchHistoryService(e);
-            Console.WriteLine(shs.Insert(sh));
+            SearchHistory sh2 = new SearchHistory();
+            sh2.MemberId = 5;
+            sh2.ProductCategory = "shirt";
+            sh2.ProductId = 2;
+            sh2.Date = DateTime.Now;
+            Console.WriteLine(shs.Insert(sh2));
+
+
+            SearchHistory sh3 = new SearchHistory();
+            sh3.MemberId = 6;
+            sh3.ProductCategory = "shirt";
+            sh3.ProductId = 3;
+            sh3.Date = DateTime.Now;
+            Console.WriteLine(shs.Insert(sh3));
 
             //UserFavorite--------------------
 
-            UserFavorite u = new UserFavorite();
-            u.ProductId = 1;
-            u.MemeberId = 1;
-            u.Date = DateTime.Now;
-
             UserFavoriteService ufs = new UserFavoriteService(e);
-            Console.WriteLine(ufs.Insert(u));
+
+
+            UserFavorite u1 = new UserFavorite();
+            u1.ProductId = 4;
+            u1.MemeberId = 6;
+            u1.Date = DateTime.Now;
+            Console.WriteLine(ufs.Insert(u1));
+
+            UserFavorite u2 = new UserFavorite();
+            u2.ProductId = 5;
+            u2.MemeberId = 5;
+            u2.Date = DateTime.Now;
+            Console.WriteLine(ufs.Insert(u2));
             
 
             ///GetAll-----------------
@@ -445,15 +1434,15 @@ namespace Test
             //    Console.WriteLine(i.ProductName);
             //}
 
-            Cart c=new Cart();
-            CartService cs1 = new CartService(e);
+           /* Cart c=new Cart();
+            CartService cs = new CartService(e);
 
             c.MemberId = 1;
             c.ProductId = 1;
             c.ProductName = "54";
             c.Quantity = 1;
             c.UnitPrice = 10;
-            Console.WriteLine(cs1.Insert(c));
+            Console.WriteLine(cs.Insert(c));*/
         }
     }
 }
