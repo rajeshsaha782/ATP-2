@@ -363,6 +363,7 @@
 							<tr>
 								
 								<td colspan="2">
+                                    <span id="validationErr" style="color:red"></span>
 								<hr>
 								</td>
 								
@@ -428,17 +429,41 @@
 	      
 	        if(valid)
 	        {
-                
+	            
 	            var email = $("#email").val();
 	            var password = $("#password").val();
 
 	            $.ajax({
+	                
 	                method: "POST",
 	                //contentType: "application/json; charset=utf-8",
 	                data: {'email':email , 'password':password },
 	                url: "@Url.Action("Login","UserHome")",
 	                success: function (data) {
-	                     alert(data)
+	                    //alert(data);
+	                    if (data == "Invalid")
+	                    {
+	                        $("#validationErr").text("This email is not exists");
+	                    }
+	                    else if (data == "Block")
+	                    {
+	                        $("#validationErr").text("Your Account is blocked!!!");
+	                    }
+	                    else if (data == "Invalid Password") {
+	                        $("#validationErr").text("Invalid Password!!!");
+	                        
+	                    }
+	                    else
+	                    {
+	                        if(data==0)
+	                        {
+	                            window.location = '@Url.Action("Dashboard","UserDashboard")'
+	                        }
+	                        if (data == 1) {
+	                            window.location = '@Url.Action("Dashboard","Admin")'
+                            }
+
+	                    }
 	                },
 	                error: function () { alert("error")}
 	            });

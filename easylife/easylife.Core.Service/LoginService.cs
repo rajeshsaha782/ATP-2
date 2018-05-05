@@ -39,7 +39,7 @@ namespace easylife.Core.Service
                 return member.Type;
 
             else
-                return "Invalid Email or Password";
+                return "Invalid Password";
         }
 
 
@@ -47,7 +47,7 @@ namespace easylife.Core.Service
         {
             var member = _context.Set<Member>().Where(i => i.Email == MemberEmail).SingleOrDefault();
 
-            if (member.Status == "Active")
+            if (member.Status == "1")
                 return true;
 
             else

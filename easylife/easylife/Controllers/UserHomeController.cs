@@ -22,8 +22,9 @@ namespace easylife.Controllers
         public ICouponService _CouponService;
         public IAddressService _AddressService;
         public IInvoiceService _InvoiceService;
+        public ILoginService _LoginService;
 
-        public UserHomeController(IProductService ProductService, IMemberService MemberService, ILikeService LikeService, IDislikeService DislikeService, IProductReviewService ProductReviewService, ICartService CartService, ICouponService CouponService, IAddressService AddressService, IInvoiceService InvoiceService)
+        public UserHomeController(IProductService ProductService, IMemberService MemberService, ILikeService LikeService, IDislikeService DislikeService, IProductReviewService ProductReviewService, ICartService CartService, ICouponService CouponService, IAddressService AddressService, IInvoiceService InvoiceService, ILoginService LoginService)
         {
             _ProductService = ProductService;
             _MemberService = MemberService;
@@ -34,6 +35,7 @@ namespace easylife.Controllers
             _CouponService = CouponService;
             _AddressService = AddressService;
             _InvoiceService = InvoiceService;
+            _LoginService = LoginService;
         }
 
         public ActionResult Index()
@@ -229,7 +231,27 @@ namespace easylife.Controllers
         [HttpPost]
         public string Login(string email,string password)
         {
-            return email+password;
+            if(_LoginService.isValidMember(email))
+            {
+                if(_LoginService.isActive(email))
+                {
+                    string s=_LoginService.Login(email,password);
+                    if(s != "Invalid Password")
+                    {
+                        Session["userId"] = s;
+                        return s;
+                    }
+                    else
+                    {
+                        return s;
+                    }
+                }
+                return "Block";
+                
+            }
+            
+            return "Invalid";
+            
         }
 
 
