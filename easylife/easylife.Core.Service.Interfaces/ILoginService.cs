@@ -11,5 +11,6 @@ namespace easylife.Core.Service.Interfaces
     {
         bool isValidMember(string MemberEmail);
         string Login(string MemberEmail, string password);//return the type of member
+        bool isActive(string MemberEmail);
     }
 }

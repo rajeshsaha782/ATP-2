@@ -28,5 +28,11 @@ namespace easylife.Core.Service
         {
             throw new NotImplementedException();
         }
+
+
+        public bool isActive(string MemberEmail)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

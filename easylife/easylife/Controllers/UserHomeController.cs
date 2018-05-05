@@ -140,7 +140,7 @@ namespace easylife.Controllers
             m.GetAllCoupon = _CouponService.GetByMemberId(1);
             foreach(var item in _CartService.GetByMemberId(1))//fake
             {
-                m.totalCost = m.totalCost + (item.UnitPrice);
+                m.totalCost = m.totalCost + (item.UnitPrice*item.Quantity);
             }
 
             m.grandTotal = m.totalCost + 50;
@@ -167,7 +167,7 @@ namespace easylife.Controllers
 
             foreach(var item in _CartService.GetByMemberId(1))//fake
             {
-                m.totalCost = m.totalCost + (item.UnitPrice);
+                m.totalCost = m.totalCost + (item.UnitPrice*item.Quantity);
             }
 
             m.grandTotal = m.totalCost + 50 - m.Discount;
@@ -225,8 +225,13 @@ namespace easylife.Controllers
 
             return RedirectToAction("Index", "UserHome");
 
-
         }
+        [HttpPost]
+        public string Login(string email,string password)
+        {
+            return email+password;
+        }
+
 
 
         public ActionResult SortByHighestPrice(IEnumerable<Product> products)

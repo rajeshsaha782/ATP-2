@@ -398,22 +398,50 @@
 	    $("#loginButton").click(function () {
 
 	        var valid = true;
-	        if ($("#email").val()=="")
-	        {
+	        var emailReg = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
+
+	        if ($("#email").val() == "") {
 	            valid = false;
-	            $("#emailErr").text("*");
+	            $("#emailErr").text("*Required");
+	        }
+	        else
+	        {
+	            if (!emailReg.test($("#email").val())) {
+	                $("#emailErr").text("Invalid Email");
+	                valid = false;
+	            }
+	            else { $("#emailErr").text(""); }
+
+	            
 	        }
 
 	        if ($("#password").val() == "")
 	        {
 	            valid = false;
-	            $("#passwordErr").text("*");
+	            $("#passwordErr").text("*Required");
 	        }
-
+	        else
+	        {
+	            
+	            $("#passwordErr").text("");
+	        }
+	      
 	        if(valid)
 	        {
                 
-              window.location = '@Url.Action("Dashboard","UserDashboard")'
+	            var email = $("#email").val();
+	            var password = $("#password").val();
+
+	            $.ajax({
+	                method: "POST",
+	                //contentType: "application/json; charset=utf-8",
+	                data: {'email':email , 'password':password },
+	                url: "@Url.Action("Login","UserHome")",
+	                success: function (data) {
+	                     alert(data)
+	                },
+	                error: function () { alert("error")}
+	            });
 	            
 	        }
 	        
