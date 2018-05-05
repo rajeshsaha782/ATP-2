@@ -118,13 +118,13 @@ namespace easylife.Controllers
             if(a == "update")
             {
                 c.Quantity = qty + _CartService.GetById(updateId).Quantity;
-                c.UnitPrice = _ProductService.GetById(id).SellingPrice * c.Quantity;
+                c.UnitPrice = _ProductService.GetById(id).SellingPrice;
                 _CartService.Update(c);
             }
             else
             {
                 c.Quantity = qty;
-                c.UnitPrice = _ProductService.GetById(id).SellingPrice * c.Quantity;
+                c.UnitPrice = _ProductService.GetById(id).SellingPrice;
                 _CartService.Insert(c);
             }
             return RedirectToAction("shoppingCart");
