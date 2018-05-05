@@ -46,13 +46,25 @@ namespace easylife.Controllers
 
         public ActionResult info(int id)
         {
-            return View(_MemberService.GetById(id));
+
+            if (Convert.ToInt32(Session["userId"]) == id)
+            {
+                return View(_MemberService.GetById(id));
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
         }
 
         [HttpGet]
         public ActionResult edit(int id)
         {
-            return View(_MemberService.GetById(id));
+            if (Convert.ToInt32(Session["userId"]) == id)
+            {
+                return View(_MemberService.GetById(id));
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+            
         }
         [HttpPost]
         public ActionResult edit(Member m)
@@ -61,158 +73,258 @@ namespace easylife.Controllers
             //{
             //    return View(_MemberService.GetById(m.MemberId));
             //}
+            if (Convert.ToInt32(Session["userId"]) == m.MemberId)
+            {
+                return View(_MemberService.GetById(m.MemberId));
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
             
-            return View(_MemberService.GetById(m.MemberId));
         }
 
         public ActionResult changepass(int id,int f)
         {
-            myPasswordViewModel p = new myPasswordViewModel();
-            p.MemberId = id;
-            p.Name = _MemberService.GetById(id).Name;
-            p.member = _MemberService.GetById(id);
-            if (f == 1)
+            if (Convert.ToInt32(Session["userId"]) == id)
             {
-                p.flag = 1;
-            }
-            else if (f==2)
-            {
-                p.flag = 2;
+                myPasswordViewModel p = new myPasswordViewModel();
+                p.MemberId = id;
+                p.Name = _MemberService.GetById(id).Name;
+                p.member = _MemberService.GetById(id);
+                if (f == 1)
+                {
+                    p.flag = 1;
+                }
+                else if (f == 2)
+                {
+                    p.flag = 2;
+                }
+                else
+                    p.flag = 0;
+
+                return View(p);
             }
             else
-                p.flag = 0;
+                return RedirectToAction("Index", "UserHome");
             
-            return View(p);
+            
         }
 
         public ActionResult ChangePassword(int mid, string cpass, string npass, string rpass)
         {
-            myPasswordViewModel p = new myPasswordViewModel();
-            p.member = _MemberService.GetById(mid);
-            if (p.member.Password != cpass)
+            if (Convert.ToInt32(Session["userId"]) == mid)
             {
-                return RedirectToAction("changepass", "UserDashboard", new { id = mid, f=1 });
-            }
-            else if(npass != rpass)
-            {
-                return RedirectToAction("changepass", "UserDashboard", new { id = mid, f=2 });
+                myPasswordViewModel p = new myPasswordViewModel();
+                p.member = _MemberService.GetById(mid);
+                if (p.member.Password != cpass)
+                {
+                    return RedirectToAction("changepass", "UserDashboard", new { id = mid, f = 1 });
+                }
+                else if (npass != rpass)
+                {
+                    return RedirectToAction("changepass", "UserDashboard", new { id = mid, f = 2 });
+                }
+                else
+                {
+                    p.member.Password = npass;
+                    _MemberService.Update(p.member);
+                    return RedirectToAction("info", "UserDashboard", new { id = mid });
+                }
             }
             else
-            {
-                p.member.Password = npass;
-                _MemberService.Update(p.member);
-                return RedirectToAction("info", "UserDashboard", new { id = mid });
-            }
+                return RedirectToAction("Index", "UserHome");
+            
+            
 
             
         }
 
         public ActionResult myOrders(int id)
         {
-            myOrdersViewModel m = new myOrdersViewModel();
-            m.MemberId = id;
-            m.Name = _MemberService.GetById(id).Name;
-            m.Invoices = _InvoiceService.GetByMemberId(id);
-            return View(m);
+            if (Convert.ToInt32(Session["userId"]) == id)
+            {
+                myOrdersViewModel m = new myOrdersViewModel();
+                m.MemberId = id;
+                m.Name = _MemberService.GetById(id).Name;
+                m.Invoices = _InvoiceService.GetByMemberId(id);
+                return View(m);
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+            
+            
         }
         public ActionResult removeOrder(int id, int mid)
         {
-            _InvoiceService.Delete(id);
-            return RedirectToAction("myOrders", "UserDashboard", new { id = mid });
+            if (Convert.ToInt32(Session["userId"]) == id)
+            {
+                _InvoiceService.Delete(id);
+                return RedirectToAction("myOrders", "UserDashboard", new { id = mid });
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+            
+            
         }
 
         public ActionResult invoices(int id)//This id is the InvoiceId not memberId
         {
-            InvoiceViewModel I = new InvoiceViewModel();
-            I.MemberId = _InvoiceService.GetById(id).MemberId;
-            I.Name = _MemberService.GetById(I.MemberId).Name;
-            I.Invoice = _InvoiceService.GetById(id);
-            return View(I);
+            if (Convert.ToInt32(Session["userId"]) == id)
+            {
+                InvoiceViewModel I = new InvoiceViewModel();
+                I.MemberId = _InvoiceService.GetById(id).MemberId;
+                I.Name = _MemberService.GetById(I.MemberId).Name;
+                I.Invoice = _InvoiceService.GetById(id);
+                return View(I);
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+            
+            
         }
 
         public ActionResult myReviews(int id)
         {
-            myReviewsViewModel m = new myReviewsViewModel();
-            m.MemberId = id;
-            m.Name = _MemberService.GetById(id).Name;
-            m.Reviews = _ProductReviewService.GetByMemberId(id);
-            //m.count = _ProductReviewService.CountReviewsByMemberId(id);
-            int count1 = 0;
-            foreach (var review in m.Reviews)
+            if (Convert.ToInt32(Session["userId"]) == id)
             {
-                m.Products[count1]=_ProductService.GetById(review.ProductId);
-                count1++;
-                //m.ProductNames.Add("hey");
+                myReviewsViewModel m = new myReviewsViewModel();
+                m.MemberId = id;
+                m.Name = _MemberService.GetById(id).Name;
+                m.Reviews = _ProductReviewService.GetByMemberId(id);
+                //m.count = _ProductReviewService.CountReviewsByMemberId(id);
+                int count1 = 0;
+                foreach (var review in m.Reviews)
+                {
+                    m.Products[count1] = _ProductService.GetById(review.ProductId);
+                    count1++;
+                    //m.ProductNames.Add("hey");
+                }
+                //Console.WriteLine(m.ProductNames[0]);
+                return View(m);
             }
-            //Console.WriteLine(m.ProductNames[0]);
-            return View(m);
+            else
+                return RedirectToAction("Index", "UserHome");
+            
+            
         }
 
         public ActionResult manageAddress(int id)
         {
-            myAddressViewModel m = new myAddressViewModel();
-            m.MemberId = id;
-            m.Name = _MemberService.GetById(id).Name;
-            m.Addresses = _AddressService.GetByMemberId(id);
-            return View(m);
+            if (Convert.ToInt32(Session["userId"]) == id)
+            {
+                myAddressViewModel m = new myAddressViewModel();
+                m.MemberId = id;
+                m.Name = _MemberService.GetById(id).Name;
+                m.Addresses = _AddressService.GetByMemberId(id);
+                return View(m);
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+            
+            
         }
         [HttpPost]
         public ActionResult addAddress(string fulladdress, int mid)
         {
-            Address a = new Address();
-            a.MemberId = mid;
-            a.MemberAddress = fulladdress;
+            if (Convert.ToInt32(Session["userId"]) == mid)
+            {
+                Address a = new Address();
+                a.MemberId = mid;
+                a.MemberAddress = fulladdress;
 
-            _AddressService.Insert(a);
-            return RedirectToAction("manageAddress", "UserDashboard", new { id = mid });
+                _AddressService.Insert(a);
+                return RedirectToAction("manageAddress", "UserDashboard", new { id = mid });
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+            
+            
         }
         public ActionResult removeAddress(int id,int mid)
         {
-            _AddressService.Delete(id);
-            return RedirectToAction("manageAddress", "UserDashboard", new { id = mid });
+            if (Convert.ToInt32(Session["userId"]) == mid)
+            {
+                _AddressService.Delete(id);
+                return RedirectToAction("manageAddress", "UserDashboard", new { id = mid });
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+            
+            
         }
         public ActionResult myCoupon(int id)
         {
-            myCouponViewModel m = new myCouponViewModel();
-            m.MemberId = id;
-            m.Name = _MemberService.GetById(id).Name;
-            m.Coupons = _CouponService.GetByMemberId(id);
-            return View(m);
+            if (Convert.ToInt32(Session["userId"]) == id)
+            {
+                myCouponViewModel m = new myCouponViewModel();
+                m.MemberId = id;
+                m.Name = _MemberService.GetById(id).Name;
+                m.Coupons = _CouponService.GetByMemberId(id);
+                return View(m);
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+            
+            
 
         }
         public ActionResult myFavorite(int id)
         {
-            myFavoriteViewModel m = new myFavoriteViewModel();
-            m.MemberId = id;
-            m.Name = _MemberService.GetById(id).Name;
-            m.Favorites = _UserFavoriteService.GetByMemberId(id);
-            //m.count = _ProductReviewService.CountReviewsByMemberId(id);
-            int count1 = 0;
-            foreach (var favorite in m.Favorites)
+            if (Convert.ToInt32(Session["userId"]) == id)
             {
-                m.Products[count1] = _ProductService.GetById(favorite.ProductId);
-                count1++;
-                //m.ProductNames.Add("hey");
+                myFavoriteViewModel m = new myFavoriteViewModel();
+                m.MemberId = id;
+                m.Name = _MemberService.GetById(id).Name;
+                m.Favorites = _UserFavoriteService.GetByMemberId(id);
+                //m.count = _ProductReviewService.CountReviewsByMemberId(id);
+                int count1 = 0;
+                foreach (var favorite in m.Favorites)
+                {
+                    m.Products[count1] = _ProductService.GetById(favorite.ProductId);
+                    count1++;
+                    //m.ProductNames.Add("hey");
+                }
+                //Console.WriteLine(m.ProductNames[0]);
+                return View(m);
             }
-            //Console.WriteLine(m.ProductNames[0]);
-            return View(m);
+            else
+                return RedirectToAction("Index", "UserHome");
+            
+           
         }
         public ActionResult removeFavorite(int id, int mid)
         {
-            _UserFavoriteService.Delete(id);
-            return RedirectToAction("myFavorite", "UserDashboard", new { id = mid });
+            if (Convert.ToInt32(Session["userId"]) == id)
+            {
+                _UserFavoriteService.Delete(id);
+                return RedirectToAction("myFavorite", "UserDashboard", new { id = mid });
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+            
+            
         }
        
         public ActionResult myReports(int id)
         {
-            myReportViewModel m = new myReportViewModel();
-            m.MemberId = id;
-            m.Name = _MemberService.GetById(id).Name;
-            m.Reports = _ReportService.GetByMemberId(id);
-            return View(m);
+            if (Convert.ToInt32(Session["userId"]) == id)
+            {
+                myReportViewModel m = new myReportViewModel();
+                m.MemberId = id;
+                m.Name = _MemberService.GetById(id).Name;
+                m.Reports = _ReportService.GetByMemberId(id);
+                return View(m);
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+            
+            
         }
-        
-  
+
+        public ActionResult Logout()
+        {
+                Session["userId"] = null;
+                return RedirectToAction("Index", "UserHome");
+        }
 
 
 

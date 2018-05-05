@@ -446,14 +446,14 @@ namespace Test
             //}
 
             Cart c=new Cart();
-            CartService cs = new CartService(e);
+            CartService cs1 = new CartService(e);
 
             c.MemberId = 1;
             c.ProductId = 1;
             c.ProductName = "54";
             c.Quantity = 1;
             c.UnitPrice = 10;
-            Console.WriteLine(cs.Insert(c));
+            Console.WriteLine(cs1.Insert(c));
         }
     }
 }
