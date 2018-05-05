@@ -17,7 +17,7 @@ namespace easylife.Core.Service.Interfaces
 
         IEnumerable<UserFavorite> GetByMemberId(int MemberId);
         IEnumerable<UserFavorite> GetByProductId(int ProductId);
-
+        int CountByMemberId(int MemberId);
         
     }
 }

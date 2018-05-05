@@ -65,6 +65,11 @@ namespace easylife.Core.Service
         }
 
 
+        public int CountByMemberId(int Member_id)
+        {
+            return _context.Set<Coupon>().Count(i => i.MemberId == Member_id);
+        }
+
 
         public bool Insert(Coupon coupon)
         {

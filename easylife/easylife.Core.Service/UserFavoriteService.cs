@@ -33,6 +33,11 @@ namespace easylife.Core.Service
             return _context.Set<UserFavorite>().Where(i=>i.MemeberId==Member_id);
         }
 
+        public int CountByMemberId(int Member_id)
+        {
+            return _context.Set<UserFavorite>().Count(i => i.MemeberId == Member_id);
+        }
+
 
         //Console.WriteLine("Send");
 

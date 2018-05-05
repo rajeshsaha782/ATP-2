@@ -52,6 +52,11 @@ namespace easylife.Core.Service
             return _context.Set<Invoice>().Where(i => i.MemberId == Member_id);
         }
 
+        public int CountByMemberId(int Member_id)
+        {
+            return _context.Set<Invoice>().Count(i => i.MemberId == Member_id);
+        }
+
         public IEnumerable<Invoice> GetByPaid()
         {
             return _context.Set<Invoice>().Where(i => i.PaymentStatus == "Paid");

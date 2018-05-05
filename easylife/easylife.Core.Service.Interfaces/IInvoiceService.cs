@@ -21,6 +21,7 @@ namespace easylife.Core.Service.Interfaces
         IEnumerable<Invoice> GetByUnpaid();
         IEnumerable<Invoice> GetByDate(DateTime Date);
         bool SetStatus(int InvoiceId, string Status);
+        int CountByMemberId(int Member_id);
 
     }
 }

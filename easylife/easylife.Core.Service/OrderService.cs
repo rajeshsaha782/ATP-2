@@ -49,6 +49,11 @@ namespace easylife.Core.Service
             return _context.Set<Order>().Where(i => i.InvoiceId == Invoice_id);
         }
 
+        public int CountByInvoiceId(int InvoiceId)
+        {
+            return _context.Set<Order>().Count(i => i.InvoiceId == InvoiceId);
+        }
+
         public IEnumerable<Order> GetByProductId(int Product_id)
         {
             return _context.Set<Order>().Where(i => i.ProductId == Product_id);

@@ -226,7 +226,7 @@ namespace easylife.Controllers
             I.ShippingAddress = ShippingAddress;
 
 
-            I = _InvoiceService.Insert(I, true);
+            //I = _InvoiceService.Insert(I, true);
             //m.userInvoice.InvoiceId = I.InvoiceId;
             // m.userInvoice.Date = I.Date;
 

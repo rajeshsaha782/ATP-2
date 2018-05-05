@@ -7,7 +7,8 @@ namespace easylife.Models
 {
     public class MemberInfo
     {
-        public int MemberId;
-        public string Name;
+        public int MemberId { get; set; }
+        public string Name { get; set; }
+        public int totalProductInCart { get; set; }
     }
 }

@@ -19,6 +19,7 @@ namespace easylife.Core.Service.Interfaces
         IEnumerable<Coupon> GetByMemberId(int Member_id);
         bool isAvailable(int CouponId);
         bool DeleteByMemberId(int MemberId);
+        int CountByMemberId(int Member_id);
 
     }
 }

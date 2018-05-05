@@ -17,6 +17,7 @@ namespace easylife.Core.Service.Interfaces
 
         IEnumerable<Order> GetByInvoiceId(int InvoiceId);
         IEnumerable<Order> GetByProductId(int ProductId);
+        int CountByInvoiceId(int InvoiceId);
         
     }
 }

@@ -21,8 +21,10 @@ namespace easylife.Controllers
         public IUserFavoriteService _UserFavoriteService;
         public IReportService _ReportService;
         public IAddressService _AddressService;
+        public ICartService _CartService;
+        public IOrderService _OrderService;
 
-        public UserDashboardController(IProductService ProductService, IMemberService MemberService, IInvoiceService InvoiceService, IProductReviewService ProductReviewService, ICouponService CouponService, IUserFavoriteService UserFavoriteService, IReportService ReportService, IAddressService AddressService)
+        public UserDashboardController(IProductService ProductService, IMemberService MemberService, IInvoiceService InvoiceService, IProductReviewService ProductReviewService, ICouponService CouponService, IUserFavoriteService UserFavoriteService, IReportService ReportService, IAddressService AddressService, ICartService CartService, IOrderService OrderService)
         {
             _ProductService = ProductService;
             _MemberService = MemberService;
@@ -32,6 +34,8 @@ namespace easylife.Controllers
             _UserFavoriteService = UserFavoriteService;
             _ReportService = ReportService;
             _AddressService = AddressService;
+            _CartService = CartService;
+            _OrderService = OrderService;
         }
 
         public ActionResult Dashboard()
@@ -40,8 +44,23 @@ namespace easylife.Controllers
             {
                 return RedirectToAction("Index","UserHome");
             }
+            myDashboardViewModel d = new myDashboardViewModel();
             int id = Convert.ToInt32(Session["userId"]);
-            return View(_MemberService.GetById(id));
+            d.MemberId = id;
+            d.Name = _MemberService.GetById(id).Name;
+            d.member = _MemberService.GetById(id);
+            d.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
+            IEnumerable<Invoice> invoices = _InvoiceService.GetByMemberId(id);
+            d.OderCount = 0;
+            foreach (var item in invoices)
+            {
+                d.OderCount += _OrderService.CountByInvoiceId(item.InvoiceId);
+            }
+            d.CouponCount = _CouponService.CountByMemberId(id);
+            d.ReviewCount = _ProductReviewService.CountReviewsByMemberId(id);
+            d.FavoriteCount = _UserFavoriteService.CountByMemberId(id);
+            d.Address = _AddressService.GetByMemberId(id).First().MemberAddress;
+            return View(d);
         }
 
         public ActionResult info(int id)
@@ -49,7 +68,12 @@ namespace easylife.Controllers
 
             if (Convert.ToInt32(Session["userId"]) == id)
             {
-                return View(_MemberService.GetById(id));
+                myInfoViewModel d = new myInfoViewModel();
+                d.MemberId = id;
+                d.Name = _MemberService.GetById(id).Name;
+                d.member = _MemberService.GetById(id);
+                d.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
+                return View(d);
             }
             else
                 return RedirectToAction("Index", "UserHome");
@@ -60,7 +84,12 @@ namespace easylife.Controllers
         {
             if (Convert.ToInt32(Session["userId"]) == id)
             {
-                return View(_MemberService.GetById(id));
+                myEditViewModel d = new myEditViewModel();
+                d.MemberId = id;
+                d.Name = _MemberService.GetById(id).Name;
+                d.member = _MemberService.GetById(id);
+                d.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
+                return View(d);
             }
             else
                 return RedirectToAction("Index", "UserHome");
@@ -81,7 +110,13 @@ namespace easylife.Controllers
             if (Convert.ToInt32(Session["userId"]) == m.MemberId)
             {
                 _MemberService.Update(m);
-                return View(_MemberService.GetById(m.MemberId));
+                myEditViewModel d = new myEditViewModel();
+                int id = m.MemberId;
+                d.MemberId = id;
+                d.Name = _MemberService.GetById(id).Name;
+                d.member = _MemberService.GetById(id);
+                d.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
+                return View(d);
             }
             else
                 return RedirectToAction("Index", "UserHome");
@@ -95,6 +130,7 @@ namespace easylife.Controllers
                 myPasswordViewModel p = new myPasswordViewModel();
                 p.MemberId = id;
                 p.Name = _MemberService.GetById(id).Name;
+                p.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
                 p.member = _MemberService.GetById(id);
                 if (f == 1)
                 {
@@ -152,6 +188,7 @@ namespace easylife.Controllers
                 m.MemberId = id;
                 m.Name = _MemberService.GetById(id).Name;
                 m.Invoices = _InvoiceService.GetByMemberId(id);
+                m.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
                 return View(m);
             }
             else
@@ -180,6 +217,7 @@ namespace easylife.Controllers
                 I.MemberId = _InvoiceService.GetById(id).MemberId;
                 I.Name = _MemberService.GetById(I.MemberId).Name;
                 I.Invoice = _InvoiceService.GetById(id);
+                I.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
                 return View(I);
             }
             else
@@ -196,6 +234,7 @@ namespace easylife.Controllers
                 m.MemberId = id;
                 m.Name = _MemberService.GetById(id).Name;
                 m.Reviews = _ProductReviewService.GetByMemberId(id);
+                m.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
                 //m.count = _ProductReviewService.CountReviewsByMemberId(id);
                 int count1 = 0;
                 foreach (var review in m.Reviews)
@@ -221,6 +260,7 @@ namespace easylife.Controllers
                 m.MemberId = id;
                 m.Name = _MemberService.GetById(id).Name;
                 m.Addresses = _AddressService.GetByMemberId(id);
+                m.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
                 return View(m);
             }
             else
@@ -236,7 +276,6 @@ namespace easylife.Controllers
                 Address a = new Address();
                 a.MemberId = mid;
                 a.MemberAddress = fulladdress;
-
                 _AddressService.Insert(a);
                 return RedirectToAction("manageAddress", "UserDashboard", new { id = mid });
             }
@@ -265,6 +304,7 @@ namespace easylife.Controllers
                 m.MemberId = id;
                 m.Name = _MemberService.GetById(id).Name;
                 m.Coupons = _CouponService.GetByMemberId(id);
+                m.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
                 return View(m);
             }
             else
@@ -281,6 +321,7 @@ namespace easylife.Controllers
                 m.MemberId = id;
                 m.Name = _MemberService.GetById(id).Name;
                 m.Favorites = _UserFavoriteService.GetByMemberId(id);
+                m.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
                 //m.count = _ProductReviewService.CountReviewsByMemberId(id);
                 int count1 = 0;
                 foreach (var favorite in m.Favorites)
@@ -318,6 +359,7 @@ namespace easylife.Controllers
                 m.MemberId = id;
                 m.Name = _MemberService.GetById(id).Name;
                 m.Reports = _ReportService.GetByMemberId(id);
+                m.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
                 return View(m);
             }
             else

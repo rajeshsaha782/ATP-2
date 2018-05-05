@@ -38,7 +38,7 @@
 					
 				</div>
 				
-				<form class="navbar-form navbar-right" action="search">
+				<form class="navbar-form navbar-right" action=@Url.Action("search","UserHome")>
 					<div class="input-group input-group1 ">
 						<input type="text" class="form-control" placeholder="Search" name="search">
 						<div class="input-group-btn">
@@ -52,7 +52,7 @@
 				<ul class="nav navbar-nav pull-right pull-right1">
 					<li class="point"><a href=@Url.Action("Dashboard")><span class="glyphicon glyphicon-user" ></span>@Model.Name</a></li>
 					
-					<li><a href=@Url.Action("shoppingCart")><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(0)</span></a></li>
+					<li><a href=@Url.Action("shoppingCart","UserHome")><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(@Model.totalProductInCart)</span></a></li>
 				</ul>
 			</div>
 		</nav>
@@ -217,9 +217,9 @@
 				<div class="container-fluid col-md-3">
 					<ul>
 						<h4>My Account</h4>
-						<li><a href="info">Personal Information</a></li>
-						<li><a href="myOrders" >Orders</a></li>
-						<li><a href="myReports">Reports</a></li>
+						<li><a href=@Url.Action("info", new { id=Model.MemberId})>Personal Information</a></li>
+						<li><a href=@Url.Action("myOrders", new { id=Model.MemberId}) >Orders</a></li>
+						<li><a href=@Url.Action("myReports", new { id=Model.MemberId})>Reports</a></li>
 						<li><a href=@Url.Action("shoppingCart","UserHome")>Shopping Cart</a></li>
 					</ul>
 					
@@ -231,7 +231,7 @@
 						<h4>Visit Us</h4>
 						<li><a href="#"><span class="glyphicon glyphicon-map-marker"></span> Dhanmondi,Dhaka-1205</a></li>
 						<li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Admin@easylife.com</a></li>
-						<li><a href=""><span class="glyphicon glyphicon-phone"></span>0145678</a></li>
+						<li><a href=""><span class="glyphicon glyphicon-phone"></span>01711111</a></li>
 					</ul>
 					
 					

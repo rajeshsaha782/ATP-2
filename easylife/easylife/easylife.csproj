@@ -167,7 +167,10 @@
     <Compile Include="Models\AdminViewModel\DeliveryManViewModel.cs" />
     <Compile Include="Models\UserDashboardViewModel\myAddressViewModel.cs" />
     <Compile Include="Models\UserDashboardViewModel\myCouponViewModel.cs" />
+    <Compile Include="Models\UserDashboardViewModel\myDashboardViewModel.cs" />
+    <Compile Include="Models\UserDashboardViewModel\myEditViewModel.cs" />
     <Compile Include="Models\UserDashboardViewModel\myFavoriteViewModel.cs" />
+    <Compile Include="Models\UserDashboardViewModel\myInfoViewModel.cs" />
     <Compile Include="Models\UserDashboardViewModel\myPasswordViewModel.cs" />
     <Compile Include="Models\UserDashboardViewModel\myReportViewModel.cs" />
     <Compile Include="Models\UserHomeViewModel\brandViewModel.cs" />
