@@ -63,6 +63,8 @@ namespace easylife.Controllers
         public ActionResult changepass(int id,int f)
         {
             myPasswordViewModel p = new myPasswordViewModel();
+            p.MemberId = id;
+            p.Name = _MemberService.GetById(id).Name;
             p.member = _MemberService.GetById(id);
             if (f == 1)
             {

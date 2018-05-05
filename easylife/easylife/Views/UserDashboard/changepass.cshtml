@@ -6,7 +6,7 @@
 <div class="container-fluid ">
 						<ol class="breadcrumb">
 						<li><a href=@Url.Action("index","UserHome")><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a href=@Url.Action("dashboard", new { id= Model.member.MemberId})><i class="fa fa-dashboard"></i>Dashboard</a></li>
+						<li><a href=@Url.Action("dashboard", new { id= Model.MemberId})><i class="fa fa-dashboard"></i>Dashboard</a></li>
 						<li><a  class="active"><i class="fa fa-dashboard"></i>Change Password</a></li>
 						
 						</ol>
@@ -24,7 +24,8 @@
 						<table class="table table-striped  ">
 								
 								<tbody >
-								
+								@using (Html.BeginForm("ChangePassword", "UserDashboard", new { mid = Model.MemberId }, FormMethod.Post))
+                                        {	
 									
 									<tr>
 										
@@ -36,7 +37,7 @@
 										</td>
                                         @if (@Model.flag==1)
                                         {
-                                            <td>*Wrong Password</td>
+                                            <td style="color:red">*Wrong Password</td>
                                         }
 
 										
@@ -64,7 +65,7 @@
 
                                         @if (@Model.flag==2)
                                         {
-                                            <td>*Password doesn't match</td>
+                                            <td style="color:red">*Password doesn't match</td>
                                         }
 
 										
@@ -74,13 +75,13 @@
 									<tr>
 								
 										<td colspan="2"  >
-											<p><a a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-info" >Save</button></a></p>
+											<p><input type="submit" value="Save" class="btn btn-primary" style="margin-left:200px" /></p>
 										</td>
 
 										
 									</tr>
 									
-									
+        }
 								</tbody>
 							</table>
 						
