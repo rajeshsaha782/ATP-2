@@ -1,4 +1,5 @@
-﻿using easylife.Core.Service.Interfaces;
+﻿using easylife.Core.Entities;
+using easylife.Core.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -21,18 +22,36 @@ namespace easylife.Core.Service
 
         public bool isValidMember(string MemberEmail)
         {
-            throw new NotImplementedException();
+            var member = _context.Set<Member>().Where(i => i.Email == MemberEmail).SingleOrDefault();
+
+            if (member != null)
+                return true;
+
+            else
+                return false;
         }
 
         public string Login(string MemberEmail, string password)
         {
-            throw new NotImplementedException();
+            var member = _context.Set<Member>().Where(i => i.Email == MemberEmail).SingleOrDefault();
+
+            if ((member != null) && (member.Password == password))
+                return member.Type;
+
+            else
+                return "Invalid Email or Password";
         }
 
 
         public bool isActive(string MemberEmail)
         {
-            throw new NotImplementedException();
+            var member = _context.Set<Member>().Where(i => i.Email == MemberEmail).SingleOrDefault();
+
+            if (member.Status == "Active")
+                return true;
+
+            else
+                return false;
         }
     }
 }
