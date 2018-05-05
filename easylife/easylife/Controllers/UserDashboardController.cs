@@ -34,8 +34,13 @@ namespace easylife.Controllers
             _AddressService = AddressService;
         }
 
-        public ActionResult Dashboard(int id)
+        public ActionResult Dashboard()
         {
+            if(Session["userId"]==null)
+            {
+                return RedirectToAction("Index","UserHome");
+            }
+            int id = Convert.ToInt32(Session["userId"]);
             return View(_MemberService.GetById(id));
         }
 

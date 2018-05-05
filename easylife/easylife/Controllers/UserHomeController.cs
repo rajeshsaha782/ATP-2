@@ -238,7 +238,7 @@ namespace easylife.Controllers
                     string s=_LoginService.Login(email,password);
                     if(s != "Invalid Password")
                     {
-                        Session["userId"] = s;
+                        Session["userId"] = Convert.ToString(_MemberService.GetByEmail(email).FirstOrDefault().MemberId);
                         return s;
                     }
                     else
