@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,12 +32,12 @@ namespace Test
 
             Member m1 = new Member();
             m1.Email = "rajesh@gmail.com";
-            m1.Password = "123";
+            m1.Password="123";
             m1.Name = "Rajesh saha";
             m1.Gender = "Male";
             m1.PhoneNumber = "01711111111";
-            m1.Type = "Admin";
-            m1.Status = "Active";
+            m1.Type = "1";
+            m1.Status = "1";
             m1.MemberSince = DateTime.Now;
             m1.LastLoggedIn = DateTime.Now;
             m1.TotalPurchase = 1;
@@ -52,8 +52,8 @@ namespace Test
             m2.Name = "Rakibul Hossain";
             m2.Gender = "Male";
             m2.PhoneNumber = "01722222222";
-            m2.Type = "Delivery Man";
-            m2.Status = "Active";
+            m2.Type = "2";
+            m2.Status = "2";
             m2.MemberSince = DateTime.Now;
             m2.LastLoggedIn = DateTime.Now;
             m2.TotalPurchase = 1;
@@ -69,8 +69,8 @@ namespace Test
             m3.Name = "Mashiul Azam";
             m3.Gender = "Male";
             m3.PhoneNumber = "01733333333";
-            m3.Type = "Product Excutive";
-            m3.Status = "Active";
+            m3.Type = "3";
+            m3.Status = "1";
             m3.MemberSince = DateTime.Now;
             m3.LastLoggedIn = DateTime.Now;
             m3.TotalPurchase = 1;
@@ -86,8 +86,8 @@ namespace Test
             m4.Name = "Rezaul Karim";
             m4.Gender = "Male";
             m4.PhoneNumber = "01744444444";
-            m4.Type = "Order Excutive";
-            m4.Status = "Active";
+            m4.Type = "4";
+            m4.Status = "1";
             m4.MemberSince = DateTime.Now;
             m4.LastLoggedIn = DateTime.Now;
             m4.TotalPurchase = 1;
@@ -95,14 +95,14 @@ namespace Test
 
             Console.WriteLine(ms.Insert(m4));
 
-            Member m5 = new Member();
+             Member m5 = new Member();
             m5.Email = "robi@gmail.com";
             m5.Password = "123";
             m5.Name = "Robi Ullah";
             m5.Gender = "Male";
             m5.PhoneNumber = "01811111111";
-            m5.Type = "User";
-            m5.Status = "Active";
+            m5.Type = "0";
+            m5.Status = "1";
             m5.MemberSince = DateTime.Now;
             m5.LastLoggedIn = DateTime.Now;
             m5.TotalPurchase = 1;
@@ -117,8 +117,8 @@ namespace Test
             m6.Name = "Ibrahim Khalil";
             m6.Gender = "Male";
             m6.PhoneNumber = "01822222222";
-            m6.Type = "User";
-            m6.Status = "Active";
+            m6.Type = "0";
+            m6.Status = "1";
             m6.MemberSince = DateTime.Now;
             m6.LastLoggedIn = DateTime.Now;
             m6.TotalPurchase = 1;
@@ -132,8 +132,8 @@ namespace Test
             m7.Name = "Toma Azam";
             m7.Gender = "Female";
             m7.PhoneNumber = "01833333333";
-            m7.Type = "User";
-            m7.Status = "Block";
+            m7.Type = "0";
+            m7.Status = "0";
             m7.MemberSince = DateTime.Now;
             m7.LastLoggedIn = DateTime.Now;
             m7.TotalPurchase = 1;
@@ -147,12 +147,29 @@ namespace Test
             m8.Name = "Mizbah Ahmed";
             m8.Gender = "Male";
             m8.PhoneNumber = "01844444444";
-            m8.Type = "User";
-            m8.Status = "Block";
+            m8.Type = "0";
+            m8.Status = "0";
             m8.MemberSince = DateTime.Now;
             m8.LastLoggedIn = DateTime.Now;
             m8.TotalPurchase = 1;
             m8.Point = 1;
+
+            Console.WriteLine(ms.Insert(m8));
+
+
+
+            Member m9 = new Member();
+            m9.Email = "tushar@gmail.com";
+            m9.Password = "123";
+            m9.Name = "Saiful Islam";
+            m9.Gender = "Male";
+            m9.PhoneNumber = "01755555555";
+            m9.Type = "2";
+            m9.Status = "1";
+            m9.MemberSince = DateTime.Now;
+            m9.LastLoggedIn = DateTime.Now;
+            m9.TotalPurchase = 1;
+            m9.Point = 1;
 
             Console.WriteLine(ms.Insert(m8));
 
@@ -176,7 +193,7 @@ namespace Test
             //Console.WriteLine(ms.GetById(1).Email);
 
             //easylifeDbContext e = new easylifeDbContext();
-
+          
             //Address a = new Address();
             //a.Member_id = 1;
             //a.Member_Address = "Mirpur";
@@ -210,54 +227,114 @@ namespace Test
             ProductService ps = new ProductService(e);
             Console.WriteLine(ps.Insert(p));
 
-            //Address--------------------
-            Address a = new Address();
-            a.MemberId = 1;
-            a.MemberAddress = "Khilkhet,Dhaka";
-
+             //Address--------------------
 
             AddressService ads = new AddressService(e);
-            Console.WriteLine(ads.Insert(a));
+           
+            Address a1 = new Address();
+
+            a1.MemberId = 5;
+            a1.MemberAddress = "Khilkhet,Dhaka";
+			Console.WriteLine(ads.Insert(a1));
+
+            Address a2 = new Address();
+            a2.MemberId = 5;
+            a2.MemberAddress = "Khilgaon,Dhaka";
+            Console.WriteLine(ads.Insert(a2));
+
+
+			Address a3 = new Address();
+			a3.MemberId = 5;
+            a3.MemberAddress = "Mirpur,Dhaka";
+			Console.WriteLine(ads.Insert(a3));
+
 
 
 
             //Cart--------------------
-
-            Cart c = new Cart();
-            c.MemberId = 1;
-            c.ProductId = 1;
-            c.ProductName = "Shirt";
-            c.Quantity = 1;
-            c.UnitPrice = 450;
-
             CartService cs = new CartService(e);
-            Console.WriteLine(cs.Insert(c));
+
+            Cart c1 = new Cart();
+            c1.MemberId = 5;
+            c1.ProductId = 1;
+            c1.ProductName = "Kakashi T Shirt";
+            c1.Quantity = 1;
+            c1.UnitPrice = 450;
+			Console.WriteLine(cs.Insert(c1));
+
+
+            Cart c2 = new Cart();
+            c2.MemberId = 5;
+            c2.ProductId = 2;
+            c2.ProductName = "Naruto T Shirt";
+            c2.Quantity = 1;
+            c2.UnitPrice = 450;
+            Console.WriteLine(cs.Insert(c2));
+
+
+            Cart c3 = new Cart();
+            c3.MemberId = 6;
+            c3.ProductId = 3;
+            c3.ProductName = "Avenger T Shirt";
+            c3.Quantity = 1;
+            c3.UnitPrice = 450;
+            Console.WriteLine(cs.Insert(c3));
 
 
 
             //Coupon--------------------
 
-            Coupon cu = new Coupon();
-            cu.MemberId = 1;
-            cu.Percentage = 20;
-            cu.Availability = "1";
-            cu.IssueDate = DateTime.Now;
-            cu.DeadlineDate = DateTime.Now;
-
             CouponService cus = new CouponService(e);
-            Console.WriteLine(cus.Insert(cu));
+
+            Coupon cu1 = new Coupon();
+            cu1.MemberId = 5;
+            cu1.Percentage = 20;
+            cu1.Availability = "1";
+            cu1.IssueDate = DateTime.Now;
+            cu1.DeadlineDate = DateTime.Now;
+            Console.WriteLine(cus.Insert(cu1));
+
+
+            Coupon cu2 = new Coupon();
+            cu2.MemberId = 5;
+            cu2.Percentage = 20;
+            cu2.Availability = "0";
+            cu2.IssueDate = DateTime.Now;
+            cu2.DeadlineDate = DateTime.Now;
+            Console.WriteLine(cus.Insert(cu2));
+
+
+            Coupon cu3 = new Coupon();
+            cu3.MemberId = 5;
+            cu3.Percentage = 30;
+            cu3.Availability = "2";
+            cu3.IssueDate = DateTime.Now;
+            cu3.DeadlineDate = DateTime.Now;
+            Console.WriteLine(cus.Insert(cu3));
 
 
             //DeliveryMan--------------------
 
-            DeliveryMan dm = new DeliveryMan();
-            dm.AssignedBy = 1;
-            dm.MemberId = 1;
-            dm.Availability = "1";
-            dm.Zone = "khilkhet";
-
             DeliveryManService dms = new DeliveryManService(e);
-            Console.WriteLine(dms.Insert(dm));
+
+            DeliveryMan dm1 = new DeliveryMan();
+            dm1.AssignedBy = 1;
+            dm1.MemberId = 5;
+            dm1.Availability = "1";
+            dm1.Zone = "khilkhet";
+            Console.WriteLine(dms.Insert(dm1));
+
+            DeliveryMan dm2 = new DeliveryMan();
+            dm2.AssignedBy = 1;
+            dm2.MemberId = 6;
+            dm2.Availability = "1";
+            dm2.Zone = "Mirpur";
+            Console.WriteLine(dms.Insert(dm2));
+
+            
+
+
+
 
 
             //Dislike--------------------
@@ -351,7 +428,7 @@ namespace Test
 
             UserFavoriteService ufs = new UserFavoriteService(e);
             Console.WriteLine(ufs.Insert(u));
-
+            
 
             ///GetAll-----------------
 
@@ -368,7 +445,15 @@ namespace Test
             //    Console.WriteLine(i.ProductName);
             //}
 
-            
+            Cart c=new Cart();
+            CartService cs = new CartService(e);
+
+            c.MemberId = 1;
+            c.ProductId = 1;
+            c.ProductName = "54";
+            c.Quantity = 1;
+            c.UnitPrice = 10;
+            Console.WriteLine(cs.Insert(c));
         }
     }
 }
