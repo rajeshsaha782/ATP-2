@@ -18,7 +18,7 @@
 						<div class="container-fluid">
 							
 							
-						@using (Html.BeginForm())
+						@using (Html.BeginForm("edit", "UserDashboard", FormMethod.Post))
                         {
                             @Html.AntiForgeryToken()
     

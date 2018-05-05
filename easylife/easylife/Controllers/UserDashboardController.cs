@@ -66,6 +66,11 @@ namespace easylife.Controllers
                 return RedirectToAction("Index", "UserHome");
             
         }
+        /*public ActionResult editMember(Member m)
+        {
+            _MemberService.Update(m);
+            return RedirectToAction("edit", "UserDashboard", new { id = m.MemberId });
+        }*/
         [HttpPost]
         public ActionResult edit(Member m)
         {
@@ -75,6 +80,7 @@ namespace easylife.Controllers
             //}
             if (Convert.ToInt32(Session["userId"]) == m.MemberId)
             {
+                _MemberService.Update(m);
                 return View(_MemberService.GetById(m.MemberId));
             }
             else
