@@ -320,7 +320,7 @@ namespace easylife.Controllers
         {
             MemberViewModel m = new MemberViewModel();
             m.Members = _MemberService.GetAll();
-            m.UserCount = _MemberService.GetByType("User").Count();
+            m.UserCount = _MemberService.GetByType("0").Count();
             return View(m);
         }
 
