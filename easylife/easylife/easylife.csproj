@@ -298,6 +298,7 @@
     <None Include="Views\UserHome\catagory.cshtml" />
     <None Include="Views\UserHome\confirmOrder.cshtml" />
     <Content Include="Views\UserHome\brand.cshtml" />
+    <Content Include="Views\UserHome\PriceRange.cshtml" />
     <None Include="Views\UserHome\details.cshtml" />
     <Content Include="Views\UserHome\invoices.cshtml" />
     <None Include="Views\UserHome\reports.cshtml" />

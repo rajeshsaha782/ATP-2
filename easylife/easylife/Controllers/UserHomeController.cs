@@ -368,6 +368,19 @@ namespace easylife.Controllers
             return View(m);
         }
 
+        public ActionResult PriceRange(int max)
+        {
+            searchViewModel m = new searchViewModel();
+            m.productBySearch = _ProductService.GetByLessThanSellPrice(max);
+            if(Session["userId"] != null)
+            {
+                m.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
+                m.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
+            }
+            Session["max"] = max;
+            return View(m);
+        }
+
         public ActionResult trackProduct()
         {
             trackProductViewModel m = new trackProductViewModel();

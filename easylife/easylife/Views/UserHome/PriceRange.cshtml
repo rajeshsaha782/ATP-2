@@ -48,8 +48,7 @@
 								output.innerHTML = slider.value;
 
 								slider.oninput = function() {
-								    output.innerHTML = this.value;
-                                    
+								  output.innerHTML = this.value;
 								}
 
 
@@ -57,9 +56,8 @@
 
 								   //alert(slider.value);
 
-								    
-								    window.location = '@Url.Action("PriceRange", "UserHome", new { max=1300})'
-								  
+
+								    window.location = '@Url.Action("PriceRange", "UserHome", new { max=1000 })'
 								});
 							</script>
 					

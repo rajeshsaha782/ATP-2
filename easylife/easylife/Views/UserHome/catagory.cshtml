@@ -60,10 +60,14 @@
 
 						        </div>
                            }
-                           
-                            
+
+                            if(Model.productByCatagory.Count()==0)
+                            {
+                                <h2>There are no produtcts available now!!! </h2>    
+                            }
                                @Html.Raw("</div> ")
                             
+                        
        
                     }
                     
@@ -76,83 +80,10 @@
 					</br>
 					
 					
-					
-					<h3><b>Related Products</b></h3>
+			
                     
                     
-					<div class="container-fluid well">
 					
-						<div class="container-fluid col-md-3">
-							<a href=@Url.Action("details")><img class="img-thumbnail img2" src="~/resources/1.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p style="color:red;font-size:20">
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-								</p>
-								<p><a href=@Url.Action("details")><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href=@Url.Action("details")><img class="img-thumbnail img2" src="~/resources/2.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p style="color:red;font-size:20">
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-								</p>
-								<p><a href=@Url.Action("details")><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href=@Url.Action("details")><img class="img-thumbnail img2" src="~/resources/3.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p style="color:red;font-size:20">
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-								</p>
-                                <p><a href=@Url.Action("details")><button type="button" class="btn btn-info" >Buy</button></a></p>
-							
-							</div>
-							
-							
-						</div>
-						<div class="container-fluid col-md-3">
-							<a href=@Url.Action("details")><img class="img-thumbnail img2" src="~/resources/f1.jpg"></a>
-							<div style="text-align:center ;">
-								<p>Kakashi T-Shirt</p>
-								<p>450 $</p>
-								<p style="color:red;font-size:20">
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-									<span><i class="fa fa-star"></i></span>
-								</p>
-								<p><a href=@Url.Action("details")><button type="button" class="btn btn-info" >Buy</button></a></p>
-							</div>
-							
-							
-						</div>
-						
-					</div>	
 					
 					</br>
 					</br>

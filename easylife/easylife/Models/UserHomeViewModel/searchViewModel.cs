@@ -9,5 +9,7 @@ namespace easylife.Models.UserHomeViewModel
     public class searchViewModel:MemberModel
     {
         public IEnumerable<Product> productBySearch { get; set; }
+        public IEnumerable<Product> productByPriceRange { get; set; }
+
     }
 }
