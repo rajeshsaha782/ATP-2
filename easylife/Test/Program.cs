@@ -1124,6 +1124,399 @@ namespace Test
 			
 			
 			
+			///Handbag
+			
+			
+			
+			
+			Product p50 = new Product();
+            p50.ProductName = "Blue Handbag";
+            p50.Features = "Loreum Ispum";
+            p50.Quantity = 12;
+            p50.BuyingPrice = 1200;
+            p50.SellingPrice = 1400;
+            p50.Category = "Accessories";
+            p50.SubCategory = "Handbag";
+            p50.Brand = "ectasy";
+            p50.size = 0;
+            p50.Date = DateTime.Now;
+            p50.LastSold = DateTime.Now;
+            p50.TotalSell = 200;
+            p50.Totalreview = 5;
+            p50.Star = 40;
+			Console.WriteLine(ps.Insert(p50));
+			
+			
+			Product p51 = new Product();
+            p51.ProductName = "Brown Handbag";
+            p51.Features = "Loreum Ispum";
+            p51.Quantity = 12;
+            p51.BuyingPrice = 1200;
+            p51.SellingPrice = 1400;
+            p51.Category = "Accessories";
+            p51.SubCategory = "Handbag";
+            p51.Brand = "ectasy";
+            p51.size = 0;
+            p51.Date = DateTime.Now;
+            p51.LastSold = DateTime.Now;
+            p51.TotalSell = 200;
+            p51.Totalreview = 5;
+            p51.Star = 40;
+			Console.WriteLine(ps.Insert(p51));
+			
+			
+			
+			Product p52 = new Product();
+            p52.ProductName = "Green Handbag";
+            p52.Features = "Loreum Ispum";
+            p52.Quantity = 12;
+            p52.BuyingPrice = 1200;
+            p52.SellingPrice = 1400;
+            p52.Category = "Accessories";
+            p52.SubCategory = "Handbag";
+            p52.Brand = "ectasy";
+            p52.size = 0;
+            p52.Date = DateTime.Now;
+            p52.LastSold = DateTime.Now;
+            p52.TotalSell = 200;
+            p52.Totalreview = 5;
+            p52.Star = 40;
+			Console.WriteLine(ps.Insert(p52));
+			
+			
+			Product p53 = new Product();
+            p53.ProductName = "Pink Handbag";
+            p53.Features = "Loreum Ispum";
+            p53.Quantity = 12;
+            p53.BuyingPrice = 1200;
+            p53.SellingPrice = 1400;
+            p53.Category = "Accessories";
+            p53.SubCategory = "Handbag";
+            p53.Brand = "ectasy";
+            p53.size = 0;
+            p53.Date = DateTime.Now;
+            p53.LastSold = DateTime.Now;
+            p53.TotalSell = 200;
+            p53.Totalreview = 5;
+            p53.Star = 40;
+			Console.WriteLine(ps.Insert(p53));
+			
+			
+			Product p54 = new Product();
+            p54.ProductName = "White Handbag";
+            p54.Features = "Loreum Ispum";
+            p54.Quantity = 12;
+            p54.BuyingPrice = 1200;
+            p54.SellingPrice = 1400;
+            p54.Category = "Accessories";
+            p54.SubCategory = "Handbag";
+            p54.Brand = "ectasy";
+            p54.size = 0;
+            p54.Date = DateTime.Now;
+            p54.LastSold = DateTime.Now;
+            p54.TotalSell = 200;
+            p54.Totalreview = 5;
+            p54.Star = 40;
+			Console.WriteLine(ps.Insert(p54));
+			
+			
+			Product p55 = new Product();
+            p55.ProductName = "Red Handbag";
+            p55.Features = "Loreum Ispum";
+            p55.Quantity = 12;
+            p55.BuyingPrice = 1200;
+            p55.SellingPrice = 1400;
+            p55.Category = "Accessories";
+            p55.SubCategory = "Handbag";
+            p55.Brand = "ectasy";
+            p55.size = 0;
+            p55.Date = DateTime.Now;
+            p55.LastSold = DateTime.Now;
+            p55.TotalSell = 200;
+            p55.Totalreview = 5;
+            p55.Star = 40;
+			Console.WriteLine(ps.Insert(p55));
+			
+			Product p56 = new Product();
+            p56.ProductName = "Black Handbag";
+            p56.Features = "Loreum Ispum";
+            p56.Quantity = 12;
+            p56.BuyingPrice = 1200;
+            p56.SellingPrice = 1400;
+            p56.Category = "Accessories";
+            p56.SubCategory = "Handbag";
+            p56.Brand = "ectasy";
+            p56.size = 0;
+            p56.Date = DateTime.Now;
+            p56.LastSold = DateTime.Now;
+            p56.TotalSell = 200;
+            p56.Totalreview = 5;
+            p56.Star = 40;
+			Console.WriteLine(ps.Insert(p56));
+			
+			
+			
+			///sunglass
+			
+			
+			Product p57 = new Product();
+            p57.ProductName = "Armani Sunglass";
+            p57.Features = "Loreum Ispum";
+            p57.Quantity = 12;
+            p57.BuyingPrice = 200;
+            p57.SellingPrice = 220;
+            p57.Category = "Accessories";
+            p57.SubCategory = "Sunglass";
+            p57.Brand = "ectasy";
+            p57.size = 0;
+            p57.Date = DateTime.Now;
+            p57.LastSold = DateTime.Now;
+            p57.TotalSell = 200;
+            p57.Totalreview = 5;
+            p57.Star = 40;
+			Console.WriteLine(ps.Insert(p57));
+			
+			
+			Product p58 = new Product();
+            p58.ProductName = "Black Shaded Sunglass";
+            p58.Features = "Loreum Ispum";
+            p58.Quantity = 12;
+            p58.BuyingPrice = 200;
+            p58.SellingPrice = 220;
+            p58.Category = "Accessories";
+            p58.SubCategory = "Sunglass";
+            p58.Brand = "ectasy";
+            p58.size = 0;
+            p58.Date = DateTime.Now;
+            p58.LastSold = DateTime.Now;
+            p58.TotalSell = 200;
+            p58.Totalreview = 5;
+            p58.Star = 40;
+			Console.WriteLine(ps.Insert(p58));
+			
+			
+			Product p59 = new Product();
+            p59.ProductName = "Brown Shaded Sunglass";
+            p59.Features = "Loreum Ispum";
+            p59.Quantity = 12;
+            p59.BuyingPrice = 200;
+            p59.SellingPrice = 220;
+            p59.Category = "Accessories";
+            p59.SubCategory = "Sunglass";
+            p59.Brand = "ectasy";
+            p59.size = 0;
+            p59.Date = DateTime.Now;
+            p59.LastSold = DateTime.Now;
+            p59.TotalSell = 200;
+            p59.Totalreview = 5;
+            p59.Star = 40;
+			Console.WriteLine(ps.Insert(p59));
+			
+			Product p60 = new Product();
+            p60.ProductName = "Club Master Sunglass";
+            p60.Features = "Loreum Ispum";
+            p60.Quantity = 12;
+            p60.BuyingPrice = 200;
+            p60.SellingPrice = 220;
+            p60.Category = "Accessories";
+            p60.SubCategory = "Sunglass";
+            p60.Brand = "ectasy";
+            p60.size = 0;
+            p60.Date = DateTime.Now;
+            p60.LastSold = DateTime.Now;
+            p60.TotalSell = 200;
+            p60.Totalreview = 5;
+            p60.Star = 40;
+			Console.WriteLine(ps.Insert(p60));
+			
+			
+			Product p61 = new Product();
+            p61.ProductName = "Red Shaded Sunglass";
+            p61.Features = "Loreum Ispum";
+            p61.Quantity = 12;
+            p61.BuyingPrice = 200;
+            p61.SellingPrice = 220;
+            p61.Category = "Accessories";
+            p61.SubCategory = "Sunglass";
+            p61.Brand = "ectasy";
+            p61.size = 0;
+            p61.Date = DateTime.Now;
+            p61.LastSold = DateTime.Now;
+            p61.TotalSell = 200;
+            p61.Totalreview = 5;
+            p61.Star = 40;
+			Console.WriteLine(ps.Insert(p61));
+			
+			
+			Product p62 = new Product();
+            p62.ProductName = "Round Sunglass";
+            p62.Features = "Loreum Ispum";
+            p62.Quantity = 12;
+            p62.BuyingPrice = 200;
+            p62.SellingPrice = 220;
+            p62.Category = "Accessories";
+            p62.SubCategory = "Sunglass";
+            p62.Brand = "yellow";
+            p62.size = 0;
+            p62.Date = DateTime.Now;
+            p62.LastSold = DateTime.Now;
+            p62.TotalSell = 200;
+            p62.Totalreview = 5;
+            p62.Star = 40;
+			Console.WriteLine(ps.Insert(p62));
+			
+			
+			Product p63 = new Product();
+            p63.ProductName = "Blue Shaded Sunglass";
+            p63.Features = "Loreum Ispum";
+            p63.Quantity = 12;
+            p63.BuyingPrice = 200;
+            p63.SellingPrice = 220;
+            p63.Category = "Accessories";
+            p63.SubCategory = "Sunglass";
+            p63.Brand = "yellow";
+            p63.size = 0;
+            p63.Date = DateTime.Now;
+            p63.LastSold = DateTime.Now;
+            p63.TotalSell = 200;
+            p63.Totalreview = 5;
+            p63.Star = 40;
+			Console.WriteLine(ps.Insert(p63));
+			
+			
+			///jwellery
+			
+			
+			Product p64 = new Product();
+            p64.ProductName = "Necklace Diamond ";
+            p64.Features = "Loreum Ispum";
+            p64.Quantity = 12;
+            p64.BuyingPrice = 30,000;
+            p64.SellingPrice = 34,000;
+            p64.Category = "Accessories";
+            p64.SubCategory = "Jewelery";
+            p64.Brand = "yellow";
+            p64.size = 0;
+            p64.Date = DateTime.Now;
+            p64.LastSold = DateTime.Now;
+            p64.TotalSell = 200;
+            p64.Totalreview = 5;
+            p64.Star = 40;
+			Console.WriteLine(ps.Insert(p64));
+			
+			
+			Product p65 = new Product();
+            p65.ProductName = "Necklace Love";
+            p65.Features = "Loreum Ispum";
+            p65.Quantity = 12;
+            p65.BuyingPrice = 30,000;
+            p65.SellingPrice = 34,000;
+            p65.Category = "Accessories";
+            p65.SubCategory = "Jewelery";
+            p65.Brand = "yellow";
+            p65.size = 0;
+            p65.Date = DateTime.Now;
+            p65.LastSold = DateTime.Now;
+            p65.TotalSell = 200;
+            p65.Totalreview = 5;
+            p65.Star = 40;
+			Console.WriteLine(ps.Insert(p65));
+			
+			
+			Product p66 = new Product();
+            p66.ProductName = "Ear Ring Oval";
+            p66.Features = "Loreum Ispum";
+            p66.Quantity = 12;
+            p66.BuyingPrice = 300;
+            p66.SellingPrice = 340;
+            p66.Category = "Accessories";
+            p66.SubCategory = "Jewelery";
+            p66.Brand = "ectasy";
+            p66.size = 0;
+            p66.Date = DateTime.Now;
+            p66.LastSold = DateTime.Now;
+            p66.TotalSell = 200;
+            p66.Totalreview = 5;
+            p66.Star = 40;
+			Console.WriteLine(ps.Insert(p66));
+			
+			Product p67 = new Product();
+            p67.ProductName = "Round Ear Ring";
+            p67.Features = "Loreum Ispum";
+            p67.Quantity = 12;
+            p67.BuyingPrice = 300;
+            p67.SellingPrice = 340;
+            p67.Category = "Accessories";
+            p67.SubCategory = "Jewelery";
+            p67.Brand = "ectasy";
+            p67.size = 0;
+            p67.Date = DateTime.Now;
+            p67.LastSold = DateTime.Now;
+            p67.TotalSell = 200;
+            p67.Totalreview = 5;
+            p67.Star = 40;
+			Console.WriteLine(ps.Insert(p67));
+			
+			
+			Product p68 = new Product();
+            p68.ProductName = "Premium Ear Ring";
+            p68.Features = "Loreum Ispum";
+            p68.Quantity = 12;
+            p68.BuyingPrice = 300;
+            p68.SellingPrice = 340;
+            p68.Category = "Accessories";
+            p68.SubCategory = "Jewelery";
+            p68.Brand = "ectasy";
+            p68.size = 0;
+            p68.Date = DateTime.Now;
+            p68.LastSold = DateTime.Now;
+            p68.TotalSell = 200;
+            p68.Totalreview = 5;
+            p68.Star = 40;
+			Console.WriteLine(ps.Insert(p68));
+			
+			
+			
+			Product p69 = new Product();
+            p69.ProductName = "Gold Platted Ear Ring";
+            p69.Features = "Loreum Ispum";
+            p69.Quantity = 12;
+            p69.BuyingPrice = 300;
+            p69.SellingPrice = 340;
+            p69.Category = "Accessories";
+            p69.SubCategory = "Jewelery";
+            p69.Brand = "ectasy";
+            p69.size = 0;
+            p69.Date = DateTime.Now;
+            p69.LastSold = DateTime.Now;
+            p69.TotalSell = 200;
+            p69.Totalreview = 5;
+            p69.Star = 40;
+			Console.WriteLine(ps.Insert(p69));
+			
+			
+			Product p70 = new Product();
+            p70.ProductName = "Pear Ear Ring";
+            p70.Features = "Loreum Ispum";
+            p70.Quantity = 12;
+            p70.BuyingPrice = 300;
+            p70.SellingPrice = 340;
+            p70.Category = "Accessories";
+            p70.SubCategory = "Jewelery";
+            p70.Brand = "ectasy";
+            p70.size = 0;
+            p70.Date = DateTime.Now;
+            p70.LastSold = DateTime.Now;
+            p70.TotalSell = 200;
+            p70.Totalreview = 5;
+            p70.Star = 40;
+			Console.WriteLine(ps.Insert(p70));
+			
+			
+			
+			
+			
+			
 			
 
              //Address--------------------
