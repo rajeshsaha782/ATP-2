@@ -12,6 +12,8 @@ namespace easylife.Models.AdminViewModel
         public int TotalProducts;
         public int TotalPending;
 
+        public int MemberId;
+
 
 
     }

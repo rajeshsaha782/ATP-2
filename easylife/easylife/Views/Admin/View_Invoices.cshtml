@@ -98,20 +98,29 @@
               }
             <tr>
               <td><a href=@Url.Action("View_Invoice")>1</a></td>
-              <td><a href=@Url.Action("View_Profile_User")>@name</a></td>
+              <td><a href=@Url.Action("View_Profile_User",new { id = item.MemberId })>@name</a></td>
               <td>@item.Date</td>
 		      <td>@item.Status</td>
               <td>@item.PaymentStatus</td>
 		      <td>
-			    <select id="deliveryMan" class="comboBox">
-					<option>Rajesh</option>
-					<option>Efti</option>
-					<option>Rakibul</option>
-					<option>Reza</option>
-				 </select>
+              @foreach (var tem in Model.members)
+              {
+                  if (tem.Type == "2")
+                  {
+                    @Html.DropDownListFor(model => model.DeliveryMan, new SelectList(
+                    new List<Object>
+                    { new { value = "DElivery Man", text = tem.Name },
+
+                        }, "value", "text", 2))
+                  }
+
+              }
+             
+                       
+                  
 			    </td>
             </tr>
-          }
+              }
 
 
           <!--<tr>

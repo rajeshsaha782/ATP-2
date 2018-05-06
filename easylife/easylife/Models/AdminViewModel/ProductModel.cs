@@ -15,6 +15,8 @@ namespace easylife.Models.AdminViewModel
         public int RemainingQuantity;
         public int TotalProduct;
         public int RemainingProduct;
+        public int MemberId;
+
 
 
         //Invoice View

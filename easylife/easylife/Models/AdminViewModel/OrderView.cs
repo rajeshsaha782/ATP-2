@@ -10,5 +10,7 @@ namespace easylife.Models.AdminViewModel
         public int Pending;
         public int Completed;
         public int Cancel;
+        public int MemberId;
+
     }
 }
