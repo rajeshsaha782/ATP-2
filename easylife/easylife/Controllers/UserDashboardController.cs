@@ -107,27 +107,13 @@ namespace easylife.Controllers
         [HttpPost]
         public ActionResult edit(int id,string Name, string Email, string Gender, string PhoneNumber)
         {
-            //if(_MemberService.Update(m))
-            //{
-            //    return View(_MemberService.GetById(m.MemberId));
-            //}
-            //if (Convert.ToInt32(Session["userId"]) == m.MemberId)
-            //{
-
+            
             Member m = new Member();
-            m.MemberId = id;
+            m = _MemberService.GetById(id);
             m.Name = Name;
             m.Email = Email;
             m.Gender = Gender;
             m.PhoneNumber = PhoneNumber;
-
-            m.MemberSince = _MemberService.GetById(id).MemberSince;
-            m.LastLoggedIn = _MemberService.GetById(id).LastLoggedIn;
-            m.Password = _MemberService.GetById(id).Password;
-            m.Type = "0";
-            m.Status = _MemberService.GetById(id).Status;
-            m.Point = _MemberService.GetById(id).Point;
-            m.TotalPurchase = _MemberService.GetById(id).TotalPurchase;
             _MemberService.Update(m);
 
             myEditViewModel d = new myEditViewModel();
@@ -141,10 +127,7 @@ namespace easylife.Controllers
 
             d.member = _MemberService.GetById(id);
             d.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
-            return View(d);
-            //}
-           // else
-               // return RedirectToAction("Index", "UserHome");
+            return RedirectToAction("info", "UserDashboard", new { id = id });
 
 
         }
