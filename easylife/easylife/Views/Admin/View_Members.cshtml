@@ -85,7 +85,7 @@ table {
       <tbody>
           @foreach (var item in Model.Members)
           {
-              if (item.Type != "User")
+              if (item.Type != "0")
               {
                 <tr onclick="location.href='@Url.Action("View_Profile_Admin", new { id=item.MemberId })'">
                     <td>

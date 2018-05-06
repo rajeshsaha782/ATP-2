@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "easylife", "easylife\easylife.csproj", "{0180678C-0976-4CF0-BE58-B35402A092D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "easylife.Core.Entities", "easylife.Core.Entities\easylife.Core.Entities.csproj", "{EA25D295-DE6C-4156-BDC6-74135EDEE6A6}"
