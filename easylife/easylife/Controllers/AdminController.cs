@@ -489,10 +489,14 @@ namespace easylife.Controllers
         {
             return View();
         }
-       
-        public ActionResult View_Product_Details()
+       [HttpGet]
+        public ActionResult View_Product_Details(int id=0)
         {
-            return View();
+            ProductViewModel p = new ProductViewModel();
+            p.Products = _ProductService.GetAll();
+            p.products = _ProductService.GetById(id);
+            p.ProductId = id;
+            return View(p);
         }
       
        

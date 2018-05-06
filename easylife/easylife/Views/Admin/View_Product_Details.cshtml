@@ -1,4 +1,6 @@
-﻿@{
+﻿@model easylife.Models.AdminViewModel.ProductViewModel
+
+@{
     ViewBag.Title = "Product Detail";
 }
 
@@ -20,15 +22,16 @@
 					<!--<img src="resources/1.jpg" width="80%" height="300px" align="center"/> -->
 				</div>
 				
+
 				<div  style="width:60%;height:600px;background-color:white;float:right">
-					<h4 align="left">Kakashi T-Shirt</h4>
+					<h4 align="left">@Model.products.ProductName</h4>
 					<br/>
-					<p align="left">Price:<span class="pri">$415.54</span></p>
+					<p align="left">Price:<span class="pri">$@Model.products.SellingPrice</span></p>
 					<p align="left">Size:
-						<input type="radio">S</input>
-						<input type="radio">M</input>
-						<input type="radio">L</input>
-						<input type="radio">Xl</input>
+                        @Html.RadioButton("Size", "M") M
+                        @Html.RadioButton("Size", "X") X
+                        @Html.RadioButton("Size", "L") L
+                        @Html.ValidationMessageFor(model => model.products.Size, "", new { @class = "text-danger" })
 						
 					</p>
 					
@@ -45,9 +48,7 @@
 					</div>
 					
 					<div id="Features" class="w3-container city">
-						<p>Sleeve: Half sleeve. Fabric: Cotton.Comfortable to wear.Exclusive design. Style: Slim fit. Bangladeshi product.</p>
-						<p>Pack of two solid waist-length T-shirts in purple and grey melange.Each has a stylised polo collar, short sleeves</p>
-						<p>Cotton Machine-wash warm</p>
+						<p>@Model.products.Features</p>
 					</div>
 					
 					<div id="Sizing" class="w3-container city" style="display:none">

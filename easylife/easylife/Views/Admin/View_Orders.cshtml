@@ -87,7 +87,7 @@
 
         <tr>
           <td>@item.OrderId</td>
-          <td><a href='@Url.Action("View_Product_Details")'">@item.ProductId</a></td>
+          <td><a href='@Url.Action("View_Product_Details",new { id = @item.ProductId })'">@item.ProductId</a></td>
           <td><a href='@Url.Action("View_Invoice")'">@item.InvoiceId</a></td>
 		  <td>@item.SellingDate</td>
           <td>@name</td>
