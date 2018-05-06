@@ -34,6 +34,15 @@ namespace easylife.Core.Service
         {
             return _context.Set<Product>().Where(i => i.Category == category && i.SubCategory==subcategory);
         }
+        public IEnumerable<Product> GetByCategory(string category)
+        {
+            return _context.Set<Product>().Where(i => i.Category == category);
+        }
+
+        public IEnumerable<Product> NewProducts()
+        {
+            return _context.Set<Product>().Where(i => i.Date.Month == DateTime.Now.Month);
+        }
 
         public IEnumerable<Product> GetBySearch(string search)
         {
@@ -173,6 +182,9 @@ namespace easylife.Core.Service
         }
 
 
-      
+
+
+
+       
     }
 }

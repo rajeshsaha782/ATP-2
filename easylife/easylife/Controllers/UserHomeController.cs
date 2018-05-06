@@ -106,7 +106,7 @@ namespace easylife.Controllers
             d.Reviews = _ProductReviewService.GetByProductId(id);
 
             d.RelatedProducts = _ProductService.GetByCategory(d.DetailProduct.Category, d.DetailProduct.SubCategory);
-
+            d.NewArrivalProducts = _ProductService.NewProducts();
             d.isFavorite = _UserFavoriteService.isFavorite(id, Convert.ToInt32(Session["userId"]));
             d.isLike = _LikeService.isLiked(id, Convert.ToInt32(Session["userId"]));
             d.isDislike = _DislikeService.isDisLiked(id, Convert.ToInt32(Session["userId"]));

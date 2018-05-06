@@ -62,7 +62,7 @@
                     @if(Session["userId"]!=null)
                     {
                         <li class="point"><a href=@Url.Action("Dashboard","UserDashboard")><span class="glyphicon glyphicon-user" ></span>@Model.Name</a></li>
-                        <li class="point"><a href=@Url.Action("Logout")><span class="glyphicon glyphicon-log-out" title="Log out"></span></a></li>
+                        <li class="point"><a href=@Url.Action("Logout")><span class="glyphicon glyphicon-log-out" title="Log out"></span>Logout</a></li>
                         <li><a href=@Url.Action("shoppingCart")><span class="glyphicon glyphicon-shopping-cart glyphicon1 " data-toggle="tooltip" title="Total Shopping = 0 TAKA"></span ><span class="badge">item(@Model.totalProductInCart)</span></a></li>
                     }
 					
