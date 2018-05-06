@@ -31,14 +31,11 @@
 </style>
 
 	<div >
-		<input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
-		<select id="search by" class="comboBox">
-			<option>Any</option>
-			<option>Order Code</option>
-			<option>Product Name</option>
-			<option>Product Code</option>
-			<option>Invoice</option>
-		</select>
+        @using (Html.BeginForm("View_Orders", "Admin", FormMethod.Post))
+            {
+            <select id="search by" class="comboBox" @Html.DropDownList("Searchby", new SelectList(new[] { "Any", "Product Code", "Invoice Code" }))
+                    @Html.TextBox("searching")<input class="button" type="submit" value="Search" />
+             }
 	</div>
 
 <body class="w3-animate-bottom">

@@ -25,7 +25,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<Member> GetByEmail(string Email)
         {
-            return _context.Set<Member>().Where(i => i.Email == Email);
+            return _context.Set<Member>().Where(i => i.Email.Contains(Email));
         }
 
         public Member GetById(int Member_id)
@@ -35,7 +35,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<Member> GetByName(string Name)
         {
-            return _context.Set<Member>().Where(i => i.Name == Name);// need Like regular exspresion
+            return _context.Set<Member>().Where(i => i.Name.Contains(Name));// need Like regular exspresion
         }
 
         public IEnumerable<Member> GetByStatus(string Status)
@@ -46,7 +46,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<Member> GetByType(string Type)
         {
-            return _context.Set<Member>().Where(i => i.Type == Type);
+            return _context.Set<Member>().Where(i => i.Type.Contains(Type));
         }
 
         public int countMember()

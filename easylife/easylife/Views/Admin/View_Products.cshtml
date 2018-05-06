@@ -33,12 +33,11 @@
 
 	    <div >
 					
-		    <input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
-		    <select id="search by" class="comboBox">
-			    <option>Any</option>
-			    <option>Product Name</option>
-			    <option>Product Code</option>
-		    </select>
+            @using (Html.BeginForm("View_Products", "Admin", FormMethod.Post))
+            {
+                <select id="search by" class="comboBox" @Html.DropDownList("Searchby", new SelectList(new[] { "Any", "Product Name", "Brand" }))
+                        @Html.TextBox("searching")<input class="button" type="submit" value="Search" />
+             }
 	    </div>
 
 <body class="w3-animate-bottom">
@@ -54,6 +53,7 @@
             <tr>
               <th>Product Image</th>
               <th>Product Name[Code]</th>
+                <td>Brand</td>
               <th>Total Sells</th>
 		      <th>Price</th>
               <th>Last Purchase</th>
@@ -72,6 +72,7 @@
 		        <tr>
                   <td><a href='@Url.Action("View_Product_Details")'><img id="img" src="~/resources/1.jpg" width="60px" height="60px"/></a></td>
                   <td>@item.ProductName</td>
+                    <td>@item.Brand</td>
                   <td>@item.TotalSell</td>
                   <td>@item.SellingPrice</td>
 		          <td>@item.LastSold</td>

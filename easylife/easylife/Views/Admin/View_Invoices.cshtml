@@ -34,14 +34,33 @@
            }
 </style>
 
-	<div >	
-		<input type="text" placeholder="Search Here" style="margin-top:30px;margin-left:50px;width:30%">   <input class="button" type="submit" value="Search"/>
-		<select id="search by" class="comboBox">
-			<option>Any</option>
-			<option>Buyer Name</option>
-			<option>Invoice Code</option>
-		</select>
-	</div>
+	<div>
+    @using (Html.BeginForm("View_Members", "Admin", FormMethod.Post))
+            {
+        <select id="view" class="comboBox" @Html.DropDownList("SearchbyUser", new SelectList(new[] { "All", "Admin", "Stock Executive", "Order Executive" }))
+                        <select id="search by" class="comboBox" @Html.DropDownList("Searchby", new SelectList(new[] { "Any", "Name", "Email", "Type" }))
+
+                        <!--<select id="view" class="comboBox">
+                            <option>View All</option>
+                            <option>View Admins</option>
+                            <option>View Stock Executive</option>
+                            <option>View Order Executive</option>
+                          </select>-->
+
+
+
+                        <!--<select id="search by" class="comboBox">
+                            <option>Any</option>
+                            <option>Name</option>
+                            <option>Email</option>
+                            <option>Type</option>
+                          </select>-->
+
+
+                        @Html.TextBox("searching")
+                        <input class="button" type="submit" value="Search" />
+                        }
+    </div>
 
 <body class="w3-animate-bottom">
 	

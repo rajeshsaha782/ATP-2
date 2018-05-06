@@ -27,7 +27,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<Product> GetByBrand(string brand)
         {
-            return _context.Set<Product>().Where(i => i.Brand == brand);
+            return _context.Set<Product>().Where(i => i.Brand.Contains(brand));
         }
 
         public IEnumerable<Product> GetByCategory(string category, string subcategory)

@@ -32,7 +32,7 @@ namespace easylife.Controllers
         {
             DashboardViewModel D = new DashboardViewModel();
             int Total= _MemberService.GetAll().Count();
-            int user = _MemberService.GetByType("User").Count();
+            int user = _MemberService.GetByType("0").Count();
             int count = 0;
             foreach(var item in _InvoiceService.GetAll())
             {
@@ -56,6 +56,7 @@ namespace easylife.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public ActionResult View_Profile_Admin(int id = 0)
         {
@@ -67,6 +68,14 @@ namespace easylife.Controllers
 
             return View(_MemberService.GetById(id));
         }
+        [HttpGet]
+        public ActionResult View_Profile_Delivery_Man(int id = 0)
+        {
+            return View(_MemberService.GetById(id));
+        }
+
+
+
         public ActionResult Change_Password()
         {
             return View();
@@ -123,11 +132,49 @@ namespace easylife.Controllers
             MemberViewModel m = new MemberViewModel();
             m.Members = _MemberService.GetAll();
             int x= _MemberService.GetAll().Count();
-            int y = _MemberService.GetByType("User").Count();
+            int y = _MemberService.GetByType("0").Count();
             m.AdminCount = x - y;
 
             return View(m);
         }
+
+        [HttpPost]
+        public ActionResult View_Members(string searching, string Searchby, string SearchbyUser)
+        {
+            MemberViewModel m = new MemberViewModel();
+
+            if (Searchby == "Name")
+            {
+                m.Members = _MemberService.GetByName(searching);
+            }
+            else if (Searchby == "Email")
+            {
+                m.Members = _MemberService.GetByEmail(searching);
+            }
+            else if (Searchby == "Type")
+            {
+                m.Members = _MemberService.GetByType(searching);
+            }
+            else
+            {
+                m.Members = _MemberService.GetAll();
+            }
+
+            //m.Members = _MemberService.GetByName(searching);
+            int count = 0;
+            foreach (var item in m.Members)
+            {
+                if (item.Type != "0")
+                {
+                    count++;
+                }
+            }
+            m.AdminCount = count;
+           // m.SearchName = searching;
+            return View(m);
+        }
+
+
         public ActionResult View_Delivery_Man()
         {
             DeliveryManViewModel D = new DeliveryManViewModel();
@@ -138,7 +185,49 @@ namespace easylife.Controllers
 
             return View(D);
         }
-       
+
+        [HttpPost]
+        public ActionResult View_Delivery_Man(string searching, string Searchby)
+        {
+            DeliveryManViewModel D = new DeliveryManViewModel();
+
+            if (Searchby == "Name")
+            {
+                D.members = _MemberService.GetByName(searching);
+
+            }
+            else if (Searchby == "Email")
+            {
+                D.members = _MemberService.GetByEmail(searching);
+            }
+            else if (Searchby == "Type")
+            {
+                D.members = _MemberService.GetByType(searching);
+            }
+            else
+            {
+                D.members = _MemberService.GetAll();
+            }
+
+
+            D.Invoices = _InvoiceService.GetAll();
+            D.DeliveryMan = _DeliveryManService.GetAll();
+            int Count = 0;
+            foreach (var item in D.members)
+            {
+                if (item.Type == "2")
+                {
+                    Count++;
+                }
+            }
+            D.MemberCount = Count;
+
+            return View(D);
+        }
+
+
+
+
         public ActionResult View_Products()
         {
             ProductViewModel m = new ProductViewModel();
@@ -147,6 +236,33 @@ namespace easylife.Controllers
 
             return View(m);
         }
+
+        [HttpPost]
+        public ActionResult View_Products(string searching, string Searchby)
+        {
+            ProductViewModel m = new ProductViewModel();
+
+            if (Searchby == "Product Name")
+            {
+                m.Products = _ProductService.GetBySearch(searching);
+
+            }
+            else if (Searchby == "Brand")
+            {
+                m.Products = _ProductService.GetByBrand(searching);
+            }
+            else
+            {
+                m.Products = _ProductService.GetAll();
+            }
+
+            m.TotalProduct = m.Products.Count();
+
+            return View(m);
+        }
+
+
+
         public ActionResult View_Users()
         {
             MemberViewModel m = new MemberViewModel();
@@ -154,6 +270,42 @@ namespace easylife.Controllers
             m.UserCount = _MemberService.GetByType("User").Count();
             return View(m);
         }
+
+        [HttpPost]
+        public ActionResult View_Users(string searching, string Searchby)
+        {
+            MemberViewModel m = new MemberViewModel();
+            if (Searchby == "Name")
+            {
+                m.Members = _MemberService.GetByName(searching);
+
+            }
+            else if (Searchby == "Email")
+            {
+                m.Members = _MemberService.GetByEmail(searching);
+            }
+            else if (Searchby == "Type")
+            {
+                m.Members = _MemberService.GetByType(searching);
+            }
+            else
+            {
+                m.Members = _MemberService.GetAll();
+            }
+            //m.Members = _MemberService.GetByName(searching);
+            int count = 0;
+            foreach (var item in m.Members)
+            {
+                if (item.Type == "0")
+                {
+                    count++;
+                }
+            }
+            m.UserCount = count;
+            return View(m);
+        }
+
+
         public ActionResult View_Invoices()
         {
             InvoicesViewModel m = new InvoicesViewModel();
@@ -163,6 +315,32 @@ namespace easylife.Controllers
 
             return View(m);
         }
+
+        [HttpPost]
+        public ActionResult View_Invoices(string searching, string Searchby)
+        {
+            InvoicesViewModel m = new InvoicesViewModel();
+            if (Searchby == "Buyer Name")
+            {
+                // m.Invoice = _InvoiceService.GetByMemberId(searching);
+
+            }
+            else if (Searchby == "Address")
+            {
+                // m.Invoice = _InvoiceService.getByAddress(searching);
+            }
+            else
+            {
+                m.Invoices = _InvoiceService.GetAll();
+            }
+            m.members = _MemberService.GetAll();
+            m.InvoiceCount = m.Invoices.Count();
+
+            return View(m);
+        }
+
+
+
         public ActionResult View_Orders()
         {
             OrdersViewModel m = new OrdersViewModel();
@@ -172,6 +350,36 @@ namespace easylife.Controllers
             m.TotalOrder = _OrderService.GetAll().Count();
             return View(m);
         }
+
+        [HttpPost]
+        public ActionResult View_Orders(string searching, string Searchby)
+        {
+            OrdersViewModel m = new OrdersViewModel();
+
+            if (Searchby == "Invoice Code")
+            {
+                m.Orders = _OrderService.GetByInvoiceId(Convert.ToInt32(searching));
+
+            }
+            else if (Searchby == "Product Code")
+            {
+                m.Orders = _OrderService.GetByProductId(Convert.ToInt32(searching));
+            }
+            else
+            {
+                m.Orders = _OrderService.GetAll();
+            }
+
+            // m.Orders = _OrderService.GetAll();
+            m.Invoices = _InvoiceService.GetAll();
+            m.Products = _ProductService.GetAll();
+            m.TotalOrder = _OrderService.GetAll().Count();
+            return View(m);
+        }
+
+
+
+
         public ActionResult View_Stock()
         {
             ProductViewModel p = new ProductViewModel();
@@ -179,6 +387,29 @@ namespace easylife.Controllers
 
             return View(p);
         }
+
+        [HttpPost]
+        public ActionResult View_Stock(string searching, string Searchby)
+        {
+            ProductViewModel p = new ProductViewModel();
+
+            if (Searchby == "Brand")
+            {
+                p.Products = _ProductService.GetByBrand(searching);
+
+            }
+            else if (Searchby == "Product Name")
+            {
+                p.Products = _ProductService.GetBySearch(searching);
+            }
+            else
+            {
+                p.Products = _ProductService.GetAll();
+            }
+
+            return View(p);
+        }
+
         public ActionResult Profit_graph()
         {
             return View();
@@ -205,10 +436,7 @@ namespace easylife.Controllers
         {
             return View();
         }
-        public ActionResult View_Profile_Delivery_Man(int id = 0)
-        {
-            return View(_MemberService.GetById(id));
-        }
+       
         public ActionResult View_Product_Details()
         {
             return View();
