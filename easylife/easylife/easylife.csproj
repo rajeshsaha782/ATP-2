@@ -304,7 +304,9 @@
     <None Include="Views\UserHome\search.cshtml" />
     <None Include="Views\UserHome\shoppingCart.cshtml" />
     <None Include="Views\UserHome\trackProduct.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
