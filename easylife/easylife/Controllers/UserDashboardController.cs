@@ -340,7 +340,7 @@ namespace easylife.Controllers
         }
         public ActionResult removeFavorite(int id, int mid)
         {
-            if (Convert.ToInt32(Session["userId"]) == id)
+            if (Convert.ToInt32(Session["userId"]) == mid)
             {
                 _UserFavoriteService.Delete(id);
                 return RedirectToAction("myFavorite", "UserDashboard", new { id = mid });
