@@ -37,42 +37,50 @@
 							<tr>
 							
 								<th>Name:</th>
-								<td><label>@Model.Name</label></td>
+								<td>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </td>
 							
 							</tr>
 							
 							<tr>
 							
 								<th>Gender:</th>
-								<td><label>Male</label></td>
+								<td>
+                                    @Html.RadioButton("gender", "Male") Male
+                                    @Html.RadioButton("gender", "Female") Female
+                                    @Html.RadioButton("gender", "Other") Other
+                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                </td>
 							</tr>
 							
-							<tr>
-							
-								<th>Birth Date:</th>
-								<td><label>12-12-12</label></td>
-							
-							</tr>
 							<tr>
 							
 								<th>Cell No:</th>
-								<td><label>1234567890</label></td>
+								<td>
+                                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                </td>
 							
 							</tr>
 							<tr>
 							
 								<th>Availaibility:</th>
-								<td><input type="radio" name="position" Value="a" checked>Availaible
-                                &nbsp;
-                                <input type="radio" name="position" Value="a" checked>On vacation
-								<br/>
+								<td>
+                                    @Html.RadioButton("position", "Availaible") Availaible
+                                    @Html.RadioButton("position", "On vacation") On vacation
+                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
 								
 								</td>
 							</tr>
                                 <tr>
 							
 								<th>Delivery Zone:</th>
-								<td><input value="Mirpur"></td>
+								<td>
+                                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                </td>
 							
 							</tr>
                                

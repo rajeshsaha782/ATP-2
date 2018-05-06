@@ -101,7 +101,16 @@ table {
                        @Html.DisplayFor(modelItem => item.LastLoggedIn)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Type)
+                        
+                        @if(item.Type=="1")
+                        {
+                           <a>Admin</a>
+                        }
+                        else
+                        {
+                            <a>Delivery Man</a>
+                        }
+                       
                     </td>
                 </tr>
               }
