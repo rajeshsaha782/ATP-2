@@ -40,6 +40,7 @@ namespace easylife.Controllers
             _LoginService = LoginService;
             _ReportService = ReportService;
             _UserFavoriteService = UserFavoriteService;
+
         }
 
         public ActionResult Index()
