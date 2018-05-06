@@ -18,41 +18,38 @@
 						<div class="container-fluid">
 							
 							
-						@using (Html.BeginForm("edit", "UserDashboard",new {m=Model.member}, FormMethod.Post))
+						@using (Html.BeginForm("edit", "UserDashboard",new{id=Model.MemberId}, FormMethod.Post))
                         {
                             @Html.AntiForgeryToken()
     
 						
 						                    <div class="box-body">
-                                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                    
                                                     <div class="form-group">
                                                         @Html.LabelFor(model=> model.member.Name)
                                                         <div>
-                                                            @Html.EditorFor(model => model.member.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                                            @Html.ValidationMessageFor(model => model.member.Name, "", new { @class = "text-danger" })
+                                                            <input name="Name" value="@Model.Name"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         @Html.LabelFor(model=> model.member.Email)
                                                         <div>
-                                                            @Html.EditorFor(model => model.member.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                                            @Html.ValidationMessageFor(model => model.member.Email, "", new { @class = "text-danger" })
+                                                             <input name="Email" value="@Model.Email"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         @Html.LabelFor(model=> model.member.Gender)
                                                         <div>
-                                                           Male @Html.RadioButton("gender","Male")
-                                                           Female @Html.RadioButton("gender","Female")
-                                                           Other @Html.RadioButton("gender","Other")
-                                                            @Html.ValidationMessageFor(model => model.member.Gender, "", new { @class = "text-danger" })
+                                                           Male <input type="radio" name="Gender" value="@Model.Gender"/>
+                                                           Female <input type="radio" name="Gender" value="@Model.Gender"/>
+                                                           Other <input type="radio" name="Gender" value="@Model.Gender"/>
+                                                           
                                                         </div>
                                                     </div>
                                                      <div class="form-group">
                                                         @Html.LabelFor(model => model.member.PhoneNumber)
                                                         <div>
-                                                            @Html.EditorFor(model => model.member.PhoneNumber, new {@class = "form-control"})
-                                                            @Html.ValidationMessageFor(model => model.member.PhoneNumber, "", new { @class = "text-danger"})
+                                                            <input name="PhoneNumber" value="@Model.PhoneNumber"/>
                                                         </div>
                                                     </div>
                                                     

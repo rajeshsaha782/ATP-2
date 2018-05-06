@@ -87,6 +87,10 @@ namespace easylife.Controllers
                 myEditViewModel d = new myEditViewModel();
                 d.MemberId = id;
                 d.Name = _MemberService.GetById(id).Name;
+                d.Email = _MemberService.GetById(id).Email;
+                d.Gender = _MemberService.GetById(id).Gender;
+                d.PhoneNumber = _MemberService.GetById(id).PhoneNumber;
+
                 d.member = _MemberService.GetById(id);
                 d.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
                 return View(d);
@@ -101,26 +105,42 @@ namespace easylife.Controllers
             return RedirectToAction("edit", "UserDashboard", new { id = m.MemberId });
         }*/
         [HttpPost]
-        public ActionResult edit(Member m)
+        public ActionResult edit(int id,string Name, string Email, string Gender, string PhoneNumber)
         {
             //if(_MemberService.Update(m))
             //{
             //    return View(_MemberService.GetById(m.MemberId));
             //}
-            if (Convert.ToInt32(Session["userId"]) == m.MemberId)
-            {
-                _MemberService.Update(m);
-                myEditViewModel d = new myEditViewModel();
-                int id = m.MemberId;
-                d.MemberId = id;
-                d.Name = _MemberService.GetById(id).Name;
-                d.member = _MemberService.GetById(id);
-                d.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
-                return View(d);
-            }
-            else
-                return RedirectToAction("Index", "UserHome");
+            //if (Convert.ToInt32(Session["userId"]) == m.MemberId)
+            //{
+
+            Member m = new Member();
+            m.MemberId = id;
+            m.Name = Name;
+            m.Email = Email;
+            m.Gender = Gender;
+            m.PhoneNumber = PhoneNumber;
+            m.MemberSince = DateTime.Now;
+            m.LastLoggedIn = DateTime.Now;
+            _MemberService.Update(m);
+
+            myEditViewModel d = new myEditViewModel();
+
             
+            d.MemberId = id;
+            d.Name = _MemberService.GetById(id).Name;
+            d.Email = _MemberService.GetById(id).Email;
+            d.Gender = _MemberService.GetById(id).Gender;
+            d.PhoneNumber = _MemberService.GetById(id).PhoneNumber;
+
+            d.member = _MemberService.GetById(id);
+            d.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
+            return View(d);
+            //}
+           // else
+               // return RedirectToAction("Index", "UserHome");
+
+
         }
 
         public ActionResult changepass(int id,int f)
