@@ -94,13 +94,13 @@
                                
 						<th>Position:</th>
 						<td>
-                            @Html.RadioButton("Type", "Admin") Admin 
+                            @Html.RadioButton("Type", "1") Admin 
                             <hr/>
-                            @Html.RadioButton("Type", "Stock Executive") Stock Executive 
+                            @Html.RadioButton("Type", "2") Stock Executive 
                             <hr />
-                            @Html.RadioButton("Type", "Delivery Man") Delivery Man
+                            @Html.RadioButton("Type", "3") Delivery Man
                             <hr />
-                            @Html.RadioButton("Type", "Other") Order Executive 
+                            @Html.RadioButton("Type", "4") Order Executive 
                             @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
                                  
 						</td>
@@ -109,8 +109,8 @@
 						<tr>
 							<th>Status:</th>
 								<td>
-                                    @Html.RadioButton("Status", "Active") Active
-                                    @Html.RadioButton("Status", "Blocked") Blocked 
+                                    @Html.RadioButton("Status", "1") Active
+                                    @Html.RadioButton("Status", "0") Blocked 
                                     @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
 								</td>
 						</tr>

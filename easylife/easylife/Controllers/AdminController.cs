@@ -143,17 +143,26 @@ namespace easylife.Controllers
         [HttpPost]
         public ActionResult Add_Member(Member mem)
         {
-            mem.LastLoggedIn = DateTime.Now;
-            mem.MemberSince = DateTime.Now;
-            mem.TotalPurchase = 0;
-            mem.Point = 0;
-            if (_MemberService.Insert(mem))
-                return RedirectToAction("Dashboard");
+            if(mem.Email!=null&&mem.Name!=null&&mem.Password!=null&&mem.Gender!=null&&mem.Type!=null&&mem.Status!=null)
+            {
+                mem.LastLoggedIn = DateTime.Now;
+                mem.MemberSince = DateTime.Now;
+                mem.TotalPurchase = 0;
+                mem.Point = 0;
+                if (_MemberService.Insert(mem))
+                    return RedirectToAction("Dashboard");
+                else
+                {
+
+                    return View(mem);
+                }
+            }
             else
             {
-               
+
                 return View(mem);
             }
+
         }
         public ActionResult Add_Product()
         {
@@ -162,20 +171,29 @@ namespace easylife.Controllers
         [HttpPost]
         public ActionResult Add_Product(Product pro)
         {
-            pro.TotalViewed = 0;
-            pro.TotalSell = 0;
-            pro.Star = 0;
-            pro.Date = DateTime.Now;
-            pro.BuyingPrice = 2;
-            pro.LastSold = DateTime.Now;
+            if(pro.ProductName!=null&&pro.SellingPrice!=0&&pro.Size!=0)
+            {
+                pro.TotalViewed = 0;
+                pro.TotalSell = 0;
+                pro.Star = 0;
+                pro.Date = DateTime.Now;
+                pro.BuyingPrice = 2;
+                pro.LastSold = DateTime.Now;
 
-            if (_ProductService.Insert(pro))
-                return RedirectToAction("Dashboard");
+                if (_ProductService.Insert(pro))
+                    return RedirectToAction("Dashboard");
+                else
+                {
+
+                    return View(pro);
+                }
+            }
             else
             {
 
                 return View(pro);
             }
+
             //return View();
         }
         //---------------------------------------------
