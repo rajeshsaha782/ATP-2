@@ -36,9 +36,10 @@
 									<td>@item.CouponId</td>
 									<td>@item.IssueDate</td>
 									<td>@item.DeadlineDate</td>
-									<td>{@item.Percentage}%</td>
-									<td>@item.Availability</td>
-									
+									<td>@item.Percentage%</td>
+                                    @if (item.Availability == "0") {<td>Used</td> }
+									@if (item.Availability == "1") {<td>Available</td> }
+									@if (item.Availability == "2") {<td>Expired</td> }
 								</tr>
                                 }
 								

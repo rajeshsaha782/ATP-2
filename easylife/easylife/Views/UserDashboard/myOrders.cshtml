@@ -33,7 +33,7 @@
 								@foreach (var item in Model.Invoices)
                                 {
                                     <tr>
-									    <td> <a href=@Url.Action("invoices", new { id=item.InvoiceId})> @item.InvoiceId </a></td>
+									    <td> <a href=@Url.Action("invoices", new { id=item.InvoiceId,mid=Model.MemberId})> @item.InvoiceId </a></td>
 								        <td>@item.Date</td>
 									    <td>@item.Status</td>
 									    <td>@item.PaymentStatus</td>

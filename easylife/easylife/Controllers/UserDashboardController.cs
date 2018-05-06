@@ -198,7 +198,7 @@ namespace easylife.Controllers
         }
         public ActionResult removeOrder(int id, int mid)
         {
-            if (Convert.ToInt32(Session["userId"]) == id)
+            if (Convert.ToInt32(Session["userId"]) == mid)
             {
                 _InvoiceService.Delete(id);
                 return RedirectToAction("myOrders", "UserDashboard", new { id = mid });
@@ -209,9 +209,9 @@ namespace easylife.Controllers
             
         }
 
-        public ActionResult invoices(int id)//This id is the InvoiceId not memberId
+        public ActionResult invoices(int id,int mid)//This id is the InvoiceId not memberId
         {
-            if (Convert.ToInt32(Session["userId"]) == id)
+            if (Convert.ToInt32(Session["userId"]) == mid)
             {
                 InvoiceViewModel I = new InvoiceViewModel();
                 I.MemberId = _InvoiceService.GetById(id).MemberId;
