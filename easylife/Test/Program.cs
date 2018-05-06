@@ -1428,7 +1428,7 @@ namespace Test
             p66.Features = "Loreum Ispum";
             p66.Quantity = 12;
             p66.BuyingPrice = 300;
-            p66.SellingPrice = 34;
+            p66.SellingPrice = 340;
             p66.Category = "Accessories";
             p66.SubCategory = "Jewelery";
             p66.Brand = "ectasy";
@@ -1445,7 +1445,7 @@ namespace Test
             p67.Features = "Loreum Ispum";
             p67.Quantity = 12;
             p67.BuyingPrice = 300;
-            p67.SellingPrice = 34;
+            p67.SellingPrice = 340;
             p67.Category = "Accessories";
             p67.SubCategory = "Jewelery";
             p67.Brand = "ectasy";
@@ -1463,7 +1463,7 @@ namespace Test
             p68.Features = "Loreum Ispum";
             p68.Quantity = 12;
             p68.BuyingPrice = 300;
-            p68.SellingPrice = 34;
+            p68.SellingPrice = 340;
             p68.Category = "Accessories";
             p68.SubCategory = "Jewelery";
             p68.Brand = "ectasy";
@@ -1482,7 +1482,7 @@ namespace Test
             p69.Features = "Loreum Ispum";
             p69.Quantity = 12;
             p69.BuyingPrice = 300;
-            p69.SellingPrice = 34;
+            p69.SellingPrice = 340;
             p69.Category = "Accessories";
             p69.SubCategory = "Jewelery";
             p69.Brand = "ectasy";
@@ -1500,7 +1500,7 @@ namespace Test
             p70.Features = "Loreum Ispum";
             p70.Quantity = 12;
             p70.BuyingPrice = 300;
-            p70.SellingPrice = 34;
+            p70.SellingPrice = 340;
             p70.Category = "Accessories";
             p70.SubCategory = "Jewelery";
             p70.Brand = "ectasy";
@@ -1511,6 +1511,140 @@ namespace Test
             p70.TotalViewed = 5;
             p70.Star = 4;
 			Console.WriteLine(ps.Insert(p70));
+			
+			
+			////watch
+			
+			Product p71 = new Product();
+            p71.ProductName = "MvMt Watch";
+            p71.Features = "Loreum Ispum";
+            p71.Quantity = 12;
+            p71.BuyingPrice = 1200;
+            p71.SellingPrice = 1300;
+            p71.Category = "Accessories";
+            p71.SubCategory = "Watch";
+            p71.Brand = "ectasy";
+            p71.Size = 0;
+            p71.Date = DateTime.Now;
+            p71.LastSold = DateTime.Now;
+            p71.TotalSell = 200;
+            p71.TotalViewed = 5;
+            p71.Star = 4;
+			Console.WriteLine(ps.Insert(p71));
+			
+			
+			
+			Product p72 = new Product();
+            p72.ProductName = "Omega Watch";
+            p72.Features = "Loreum Ispum";
+            p72.Quantity = 12;
+            p72.BuyingPrice = 1300;
+            p72.SellingPrice = 1400;
+            p72.Category = "Accessories";
+            p72.SubCategory = "Watch";
+            p72.Brand = "ectasy";
+            p72.Size = 0;
+            p72.Date = DateTime.Now;
+            p72.LastSold = DateTime.Now;
+            p72.TotalSell = 200;
+            p72.TotalViewed = 5;
+            p72.Star = 4;
+			Console.WriteLine(ps.Insert(p72));
+			
+			
+			
+			Product p73 = new Product();
+            p73.ProductName = "Espoir Watch";
+            p73.Features = "Loreum Ispum";
+            p73.Quantity = 12;
+            p73.BuyingPrice = 1400;
+            p73.SellingPrice = 1500;
+            p73.Category = "Accessories";
+            p73.SubCategory = "Watch";
+            p73.Brand = "ectasy";
+            p73.Size = 0;
+            p73.Date = DateTime.Now;
+            p73.LastSold = DateTime.Now;
+            p73.TotalSell = 200;
+            p73.TotalViewed = 5;
+            p73.Star = 4;
+			Console.WriteLine(ps.Insert(p73));
+			
+			
+			
+			Product p74 = new Product();
+            p74.ProductName = "Fossil Watch";
+            p74.Features = "Loreum Ispum";
+            p74.Quantity = 12;
+            p74.BuyingPrice = 1500;
+            p74.SellingPrice = 1600;
+            p74.Category = "Accessories";
+            p74.SubCategory = "Watch";
+            p74.Brand = "ectasy";
+            p74.Size = 0;
+            p74.Date = DateTime.Now;
+            p74.LastSold = DateTime.Now;
+            p74.TotalSell = 200;
+            p74.TotalViewed = 5;
+            p74.Star = 4;
+			Console.WriteLine(ps.Insert(p74));
+			
+			
+			
+			Product p75 = new Product();
+            p75.ProductName = "MvMt Watch";
+            p75.Features = "Loreum Ispum";
+            p75.Quantity = 12;
+            p75.BuyingPrice = 1500;
+            p75.SellingPrice = 1600;
+            p75.Category = "Accessories";
+            p75.SubCategory = "Watch";
+            p75.Brand = "ectasy";
+            p75.Size = 0;
+            p75.Date = DateTime.Now;
+            p75.LastSold = DateTime.Now;
+            p75.TotalSell = 200;
+            p75.TotalViewed = 5;
+            p75.Star = 4;
+			Console.WriteLine(ps.Insert(p75));
+			
+			
+			
+			Product p76 = new Product();
+            p76.ProductName = "Bulova Watch";
+            p76.Features = "Loreum Ispum";
+            p76.Quantity = 12;
+            p76.BuyingPrice = 1300;
+            p76.SellingPrice = 1400;
+            p76.Category = "Accessories";
+            p76.SubCategory = "Watch";
+            p76.Brand = "ectasy";
+            p76.Size = 0;
+            p76.Date = DateTime.Now;
+            p76.LastSold = DateTime.Now;
+            p76.TotalSell = 200;
+            p76.TotalViewed = 5;
+            p76.Star = 4;
+			Console.WriteLine(ps.Insert(p76));
+			
+			
+			
+			Product p77 = new Product();
+            p77.ProductName = "Matrix Watch";
+            p77.Features = "Loreum Ispum";
+            p77.Quantity = 12;
+            p77.BuyingPrice = 1300;
+            p77.SellingPrice = 1500;
+            p77.Category = "Accessories";
+            p77.SubCategory = "Watch";
+            p77.Brand = "ectasy";
+            p77.Size = 0;
+            p77.Date = DateTime.Now;
+            p77.LastSold = DateTime.Now;
+            p77.TotalSell = 200;
+            p77.TotalViewed = 5;
+            p77.Star = 4;
+			Console.WriteLine(ps.Insert(p77));
 			
 			
 			
