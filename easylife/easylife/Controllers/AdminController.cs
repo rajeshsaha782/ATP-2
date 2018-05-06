@@ -81,6 +81,64 @@ namespace easylife.Controllers
 
         }
 
+        public ActionResult Change_Password(int id, int f)
+        {
+            if (Convert.ToInt32(Session["userId"]) == id)
+            {
+                PasswordViewModel p = new PasswordViewModel();
+                p.MemberId = id;
+                p.Name = _MemberService.GetById(id).Name;
+                // p.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
+                p.member = _MemberService.GetById(id);
+                if (f == 1)
+                {
+                    p.flag = 1;
+                }
+                else if (f == 2)
+                {
+                    p.flag = 2;
+                }
+                else
+                    p.flag = 0;
+
+                return View(p);
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+
+
+        }
+
+        public ActionResult ChangePassword(int mid, string cpass, string npass, string rpass)
+        {
+            if (Convert.ToInt32(Session["userId"]) == mid)
+            {
+                PasswordViewModel p = new PasswordViewModel();
+                p.member = _MemberService.GetById(mid);
+                if (p.member.Password != cpass)
+                {
+                    return RedirectToAction("changepass", "UserDashboard", new { id = mid, f = 1 });
+                }
+                else if (npass != rpass)
+                {
+                    return RedirectToAction("changepass", "UserDashboard", new { id = mid, f = 2 });
+                }
+                else
+                {
+                    p.member.Password = npass;
+                    _MemberService.Update(p.member);
+                    return RedirectToAction("info", "UserDashboard", new { id = mid });
+                }
+            }
+            else
+                return RedirectToAction("Index", "UserHome");
+
+
+
+
+        }
+
+       
 
 
         [HttpGet]
@@ -155,10 +213,7 @@ namespace easylife.Controllers
 
 
 
-        public ActionResult Change_Password()
-        {
-            return View();
-        }
+       
 
         //---------------------------------------------
 

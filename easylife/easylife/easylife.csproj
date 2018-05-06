@@ -162,6 +162,7 @@
     <Compile Include="Models\AdminViewModel\MemberViewModel.cs" />
     <Compile Include="Models\AdminViewModel\OrdersViewModel.cs" />
     <Compile Include="Models\AdminViewModel\OrderView.cs" />
+    <Compile Include="Models\AdminViewModel\PasswordViewModel.cs" />
     <Compile Include="Models\AdminViewModel\ProductModel.cs" />
     <Compile Include="Models\AdminViewModel\ProductViewModel.cs" />
     <Compile Include="Models\AdminViewModel\DeliveryManViewModel.cs" />
