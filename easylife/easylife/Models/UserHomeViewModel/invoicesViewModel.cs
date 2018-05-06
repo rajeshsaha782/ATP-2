@@ -10,5 +10,7 @@ namespace easylife.Models.UserHomeViewModel
     {
         public string ShippingAddress { get; set; }
         public Invoice userInvoice { get; set; }
+        public IEnumerable<Order> Orders { get; set; }
+        public Product[] Products = new Product[1000];
     }
 }
