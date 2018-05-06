@@ -122,6 +122,7 @@ namespace easylife.Controllers
             p.Review = review;
             p.Date = DateTime.Now;
             _ProductReviewService.Insert(p);
+            _MemberService.SetPoint(Convert.ToInt32(Session["userId"]), 100);
             return RedirectToAction("details", new { id = p.ProductId });
         }
 
@@ -150,7 +151,7 @@ namespace easylife.Controllers
 
             _LikeService.Insert(l);
             _DislikeService.UnsetDisike(Convert.ToInt32(Session["userId"]), id);
-
+            _MemberService.SetPoint(Convert.ToInt32(Session["userId"]), 100);
             SetStar(id);
 
             return RedirectToAction("details", new { id = id });
@@ -158,7 +159,7 @@ namespace easylife.Controllers
         public ActionResult removeFromlike(int id)
         {
             _LikeService.UnsetLike(Convert.ToInt32(Session["userId"]), id);
-
+            _MemberService.SetPoint(Convert.ToInt32(Session["userId"]), -100);
             SetStar(id);
 
             return RedirectToAction("details", new { id = id });
@@ -173,7 +174,7 @@ namespace easylife.Controllers
 
             _DislikeService.Insert(l);
             _LikeService.UnsetLike(Convert.ToInt32(Session["userId"]), id);
-
+            _MemberService.SetPoint(Convert.ToInt32(Session["userId"]), 100);
             SetStar(id);
 
             return RedirectToAction("details", new { id = id });
@@ -181,7 +182,7 @@ namespace easylife.Controllers
         public ActionResult removeFromdislike(int id)
         {
             _DislikeService.UnsetDisike(Convert.ToInt32(Session["userId"]), id);
-
+            _MemberService.SetPoint(Convert.ToInt32(Session["userId"]), -100);
             SetStar(id);
 
             return RedirectToAction("details", new { id = id });
@@ -384,8 +385,8 @@ namespace easylife.Controllers
         {
             m.MemberSince = DateTime.Now;
             m.LastLoggedIn = DateTime.Now;
-            m.Status = "active";
-            m.Type = "User";
+            m.Status = "1";
+            m.Type = "0";
             _MemberService.Insert(m);
 
             return RedirectToAction("Index", "UserHome");

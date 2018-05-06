@@ -120,8 +120,14 @@ namespace easylife.Controllers
             m.Email = Email;
             m.Gender = Gender;
             m.PhoneNumber = PhoneNumber;
-            m.MemberSince = DateTime.Now;
-            m.LastLoggedIn = DateTime.Now;
+
+            m.MemberSince = _MemberService.GetById(id).MemberSince;
+            m.LastLoggedIn = _MemberService.GetById(id).LastLoggedIn;
+            m.Password = _MemberService.GetById(id).Password;
+            m.Type = "0";
+            m.Status = _MemberService.GetById(id).Status;
+            m.Point = _MemberService.GetById(id).Point;
+            m.TotalPurchase = _MemberService.GetById(id).TotalPurchase;
             _MemberService.Update(m);
 
             myEditViewModel d = new myEditViewModel();
