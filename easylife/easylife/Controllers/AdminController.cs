@@ -52,10 +52,50 @@ namespace easylife.Controllers
             D.Invoices = _InvoiceService.GetAll();
             return View(D);
         }
-        public ActionResult Edit_Profile_Admin()
+
+
+
+        [HttpGet]
+        public ActionResult Edit_Profile_Admin(int MemberId=0)
         {
-            return View();
+            return View(_MemberService.GetById(MemberId));
         }
+
+        [HttpPost]
+        public ActionResult Edit_Profile_Admin(Member mem)
+        {
+
+            if (_MemberService.Update(mem))
+                return RedirectToAction("Dashboard");
+            else
+            {
+
+                return View(mem);
+            }
+           
+        }
+
+        [HttpGet]
+        public ActionResult Edit_Profile_User(int MemberId=0)
+        {
+            return View(_MemberService.GetById(MemberId));
+        }
+        [HttpPost]
+        public ActionResult Edit_Profile_User(Member mem)
+        {
+            if (_MemberService.Update(mem))
+                return RedirectToAction("Dashboard");
+            else
+            {
+
+                return View(mem);
+            }
+        }
+
+
+
+
+
 
         [HttpGet]
         public ActionResult View_Profile_Admin(int id = 0)
@@ -72,6 +112,13 @@ namespace easylife.Controllers
         public ActionResult View_Profile_Delivery_Man(int id = 0)
         {
             return View(_MemberService.GetById(id));
+        }
+
+
+        [HttpGet]
+        public ActionResult Edit_Profile_Delivery_Man(int MemberId=0)
+        {
+            return View(_MemberService.GetById(MemberId));
         }
 
 
@@ -441,14 +488,8 @@ namespace easylife.Controllers
         {
             return View();
         }
-        public ActionResult Edit_Profile_User()
-        {
-            return View();
-        }
-        public ActionResult Edit_Profile_Delivery_Man()
-        {
-            return View();
-        }
+      
+       
         public ActionResult Set_Cupon()
         {
             return View();

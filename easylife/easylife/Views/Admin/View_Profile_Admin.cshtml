@@ -74,7 +74,8 @@
 							</tr>
 							
 							<tr colspan="2">
-							<td><a href="@Url.Action("Edit_Profile_Admin")"><button class="button">Edit</button></a>
+							<td><a onclick="location.href='@Url.Action("Edit_Profile_Admin", new { @Model.MemberId })'"><button class="button">Edit</button></a>
+                               
 							</tr>
 							
 							

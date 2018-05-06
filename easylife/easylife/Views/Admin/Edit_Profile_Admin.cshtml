@@ -1,3 +1,4 @@
+@model easylife.Core.Entities.Member
 @{
     ViewBag.Title = "Edit Profile Admin";
 }
@@ -20,7 +21,10 @@
 		
 			
 				
-				
+@using (Html.BeginForm("Edit_Profile_Admin", "Admin", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
 				<div class="invoice-wrapper">
 				
 				
@@ -35,39 +39,46 @@
 							<tr>
 							
 								<th>Name:</th>
-								<td><input type="text" value="Efti"></td>
+								<td>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </td>
 							
 							</tr>
 							
 							<tr>
 							
 								<th>Gender:</th>
-								<td><input type="radio" name="gender" Value="m" checked>Male
-						<input type="radio" name="gender" Value="f">Female
-						<input type="radio" name="gender" Value="o">Other</td>
+								<td>
+                                    @Html.RadioButton("gender", "Male") Male
+                                    @Html.RadioButton("gender", "Female") Female
+                                    @Html.RadioButton("gender", "Other") Other
+                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                </td>
 							
 							</tr>
 							
-							<tr>
-							
-								<th>Birth Date:</th>
-								<td><input type="text" value="01-01-1997"></td>
-							
-							</tr>
 							<tr>
 							
 								<th>Cell No:</th>
-								<td><input type="text" value="01916590193"></td>
+								<td>
+                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                </td>
 							
 							</tr>
 							<tr>
 							
 								<th>Position:</th>
-								<td><input type="radio" name="position" Value="a" checked>Admin
-								<br/>
-								<input type="radio" name="position" Value="s">Stock Executive
-								<br/>
-								<input type="radio" name="position" Value="o">Order Executive
+								<td>
+                                    @Html.RadioButton("Type", "Admin") Admin
+                                    <hr />
+                                    @Html.RadioButton("Type", "Stock Executive") Stock Executive
+                                    <hr />
+                                    @Html.RadioButton("Type", "Delivery Man") Delivery Man
+                                    <hr />
+                                    @Html.RadioButton("Type", "Other") Order Executive
+                                    @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
 								</td>
 							</tr>
 							
@@ -99,8 +110,8 @@
 					 
 				   
 				   </div>
-				   
-				   
+}
+
 		</div>
 		
 		<script>
