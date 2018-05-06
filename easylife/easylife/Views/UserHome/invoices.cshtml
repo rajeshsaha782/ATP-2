@@ -49,24 +49,22 @@
 												<td>
 													<p style="text-align:left;"><b>Bill To:</b><p>
 													<p style="text-align:left;">@Model.Name<p>
+                                                        <p style="text-align:left;"><b>Shipping Address</b><p>
 													<p style="text-align:left;">@Model.ShippingAddress<p>
 													
 												</td>
 												<td>
 													<table class="table table-striped ">
 														<tbody>
+															
 															<tr>
-																<td>invoice</td>
-																<td></td>
-															</tr>
-															<tr>
-																<td>invoice Date</td>
+																<td>Date</td>
 																<td>@Model.userInvoice.Date</td>
 															</tr>
-															<tr>
+															<!--<tr>
 																<td>Amount</td>
 																<td>$450</td>
-															</tr>
+															</tr>-->
 														</tbody>
 													</table>
 													
@@ -85,31 +83,26 @@
 														<tbody>
 															<tr>
 																<th>Item</th>
+                                                                <th>Name</th>
 																<th>Quantity</th>
 																<th>Unit Cost</th>
-																<th>Line Cost</th>
 															</tr>
-															<tr>
-																<td>Kakashi T-Shirt</td>
-																<td>1</td>
-																<td>$450</td>
-																<td>$50</td>
+                                                             @{var count=0;}
+                                                            @{var tprice=0.0;}
+                                                            @foreach (var item in Model.Orders)
+                                                            {
+                                                                <tr>
+                                                                <td><a href=@Url.Action("details","UserHome", new { id=item.ProductId})>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">",item.ProductId))</a></td>
+																<td>@Model.Products[count].ProductName</td>
+																<td>@item.Quantity</td>
+																<td>$@Model.Products[count].SellingPrice</td>
 																
 															</tr>
-															<tr>
-																<td>Kakashi T-Shirt</td>
-																<td>1</td>
-																<td>$450</td>
-																<td>$50</td>
-																
-															</tr>
-															<tr>
-																<td>Kakashi T-Shirt</td>
-																<td>1</td>
-																<td>$450</td>
-																<td>$50</td>
-																
-															</tr>
+                                                                tprice += Model.Products[count].SellingPrice;
+                                                                count++;
+                                                            }
+															
+															
 															
 														</tbody>
 													</table>
@@ -135,15 +128,17 @@
 														<tbody>
 															<tr>
 																<td>Subtotal</td>
-																<td>$1500</td>
+																<td>$@tprice</td>
 															</tr>
+                                                            @{var tax=50;}
 															<tr>
-																<td>TAX(5%)</td>
-																<td>$30</td>
+																<td>Shipping Cost</td>
+																<td>$@tax</td>
 															</tr>
+                                                            @{tprice += tax;}
 															<tr>
 																<td>Total</td>
-																<td>$1530</td>
+																<td>$@tprice</td>
 															</tr>
 														</tbody>
 													</table>

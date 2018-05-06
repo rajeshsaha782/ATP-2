@@ -25,8 +25,9 @@ namespace easylife.Controllers
         public ILoginService _LoginService;
         public IReportService _ReportService;
         public IUserFavoriteService _UserFavoriteService;
+        public IOrderService _OrderService;
 
-        public UserHomeController(IProductService ProductService, IMemberService MemberService, ILikeService LikeService, IDislikeService DislikeService, IProductReviewService ProductReviewService, ICartService CartService, ICouponService CouponService, IAddressService AddressService, IInvoiceService InvoiceService, ILoginService LoginService, IReportService ReportService, IUserFavoriteService UserFavoriteService)
+        public UserHomeController(IProductService ProductService, IMemberService MemberService, ILikeService LikeService, IDislikeService DislikeService, IProductReviewService ProductReviewService, ICartService CartService, ICouponService CouponService, IAddressService AddressService, IInvoiceService InvoiceService, ILoginService LoginService, IReportService ReportService, IUserFavoriteService UserFavoriteService, IOrderService OrderService)
         {
             _ProductService = ProductService;
             _MemberService = MemberService;
@@ -40,7 +41,7 @@ namespace easylife.Controllers
             _LoginService = LoginService;
             _ReportService = ReportService;
             _UserFavoriteService = UserFavoriteService;
-
+            _OrderService = OrderService;
         }
 
         public ActionResult Index()
@@ -311,15 +312,35 @@ namespace easylife.Controllers
             I.PaymentMethod = paymentMethod;
             I.ShippingAddress = ShippingAddress;
 
-
             _InvoiceService.Insert(I);
+            m.userInvoice = _InvoiceService.GetByMemberId(Convert.ToInt32(Session["userId"])).Last();
+            
+            int count = 0;
+            Order order = new Order();
+            IEnumerable<Cart> carts = _CartService.GetByMemberId(I.MemberId);
+            foreach (var item in carts)
+            {
+                order = new Order();
+                order.ProductId = item.ProductId;
+                order.MemeberId = Convert.ToInt32(Session["userId"]);
+                order.InvoiceId = m.userInvoice.InvoiceId;
+                order.Quantity = item.Quantity;
+                order.Profit = 0;
+                order.SellingDate = DateTime.Now;
+                _OrderService.Insert(order);
+                //_CartService.Delete(item.CartId);
+            }
 
-            I = _InvoiceService.GetByMemberId(Convert.ToInt32(Session["userId"])).Last();
-            //m.userInvoice.InvoiceId = I.InvoiceId;
-            //m.userInvoice.Date = I.Date;
+            m.Orders = _OrderService.GetByInvoiceId(m.userInvoice.InvoiceId);
 
-            //order...
+            foreach (var item in m.Orders)
+            {
+                m.Products[count] = _ProductService.GetById(item.ProductId);
+                count++;
+            }
 
+
+            
             return View(m);
         }
 
