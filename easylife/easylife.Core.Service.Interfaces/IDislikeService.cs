@@ -15,6 +15,10 @@ namespace easylife.Core.Service.Interfaces
         bool Update(Dislike dislike);
         bool Delete(int DislikeId);
 
+
+
+        bool isDisLiked(int ProductId, int MemberId);
+
         IEnumerable<Dislike> GetByMemberId(int MemberId);
         IEnumerable<Dislike> GetByProductId(int ProductId);
         bool SetDisike(int MemberId, int ProductId);

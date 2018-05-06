@@ -58,7 +58,7 @@ namespace easylife.Controllers
             }
             d.CouponCount = _CouponService.CountByMemberId(id);
             d.ReviewCount = _ProductReviewService.CountReviewsByMemberId(id);
-            d.FavoriteCount = _UserFavoriteService.CountByMemberId(id);
+            d.FavoriteCount = _UserFavoriteService.GetByMemberId(id).Count();
             d.Address = _AddressService.GetByMemberId(id).First().MemberAddress;
             return View(d);
         }

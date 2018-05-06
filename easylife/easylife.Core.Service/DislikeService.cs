@@ -51,7 +51,7 @@ namespace easylife.Core.Service
             var deleteDislike = _context.Set<Dislike>().Where(i => i.DislikeId == Dislike_id).SingleOrDefault();
             /// 
 
-            if (deleteDislike != null)
+            if(deleteDislike != null)
             {
                 _context.Set<Dislike>().Remove(deleteDislike);
                 _context.SaveChanges();
@@ -59,11 +59,11 @@ namespace easylife.Core.Service
             return true;
         }
 
-      
+
 
         public bool Insert(Dislike dislike)
         {
-            if (_context.Set<Dislike>().Add(dislike) == dislike)
+            if(_context.Set<Dislike>().Add(dislike) == dislike)
             {
                 _context.SaveChanges();
                 return true;
@@ -82,10 +82,10 @@ namespace easylife.Core.Service
 
         public bool UnsetDisike(int Member_id, int Product_id)
         {
-            var deleteDislike = _context.Set<Dislike>().Where(i => i.MemberId == Member_id && i.ProductId == Product_id).SingleOrDefault();
+            var deleteDislike = _context.Set<Dislike>().Where(i => (i.MemberId == Member_id) && (i.ProductId == Product_id)).SingleOrDefault();
             /// 
 
-            if (deleteDislike != null)
+            if(deleteDislike != null)
             {
                 _context.Set<Dislike>().Remove(deleteDislike);
                 _context.SaveChanges();
@@ -93,18 +93,30 @@ namespace easylife.Core.Service
             }
             else
                 return false;
-            
+
         }
 
         public bool Update(Dislike dislike)
         {
-            if (_context.Set<Dislike>().Any(e => e.DislikeId == dislike.DislikeId))
+            if(_context.Set<Dislike>().Any(e => e.DislikeId == dislike.DislikeId))
             {
                 _context.Set<Dislike>().Attach(dislike);
                 _context.Entry(dislike).State = EntityState.Modified;
                 _context.SaveChanges();
                 return true;
             }
+            else
+                return false;
+        }
+
+
+        public bool isDisLiked(int ProductId, int MemberId)
+        {
+            Dislike m = _context.Set<Dislike>().Where(i => (i.ProductId == ProductId) && (i.MemberId == MemberId)).SingleOrDefault();
+
+            if(m != null)
+                return true;
+
             else
                 return false;
         }

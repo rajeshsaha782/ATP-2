@@ -6,7 +6,7 @@ using easylife.Core.Entities;
 
 namespace easylife.Models.UserHomeViewModel
 {
-    public class DetailViewModel:MemberModel
+    public class DetailViewModel : MemberModel
     {
         public Product DetailProduct { get; set; }
         public int Like { set; get; }
@@ -16,5 +16,9 @@ namespace easylife.Models.UserHomeViewModel
 
         public IEnumerable<Product> RelatedProducts { set; get; }
         public IEnumerable<Product> NewArrivalProducts { set; get; }
+
+        public bool isFavorite { get; set; }
+        public bool isLike { get; set; }
+        public bool isDislike { get; set; }
     }
 }

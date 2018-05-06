@@ -15,6 +15,9 @@ namespace easylife.Core.Service.Interfaces
         bool Update(Like address);
         bool Delete(int AddressId);
 
+
+        bool isLiked(int ProductId, int MemberId);
+
         IEnumerable<Like> GetByMemberId(int MemberId);
         IEnumerable<Like> GetByProductId(int ProductId);
         bool SetLike(int MemberId, int ProductId);

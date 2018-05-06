@@ -37,9 +37,26 @@
 									&nbsp;
 								<span id="purchase" class="glyphicon glyphicon-shopping-cart" style="font-size: 25px;text-align:center;color:gray" title="5 people Purchased this Product"></span><small style="font-size: 15px;">(@Model.DetailProduct.TotalSell)</small>
 									&nbsp;
-								<span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:black" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
+                                    @if(Model.isLike)
+                                    {
+                                        <span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:green" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
+                                    }
+                                    @if(!Model.isLike)
+                                    {
+                                        <span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:black" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
+                                    }
+								
 									&nbsp;
-								<span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:black"title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
+                                    @if(Model.isDislike)
+                                    {
+                                        <span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:red"title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
+                                    }
+                                    @if(!Model.isDislike)
+                                    {
+                                        <span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:black"title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
+                                    }
+
+								
 								</p>
 							</div>
 							
@@ -97,13 +114,21 @@
 											<p>	
 												<span id="cart" class="glyphicon glyphicon-shopping-cart point" style="font-size:30px; padding-left:20px;color:grey" title="Add to Cart"></span>
 							
-												<span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
+                                                @if(Model.isFavorite==true)
+                                                {
+                                                    <span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:red" title="Save for later"></span>
+                                                }
+                                                @if(Model.isFavorite == false)
+                                                {
+                                                    <span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
+                                                }
+												
 												
                                                 @if(Session["userId"] == null)
                                                 {
                                                      <a  data-toggle="modal" data-target="#Detailloginmodal"><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>
                                                 }
-                                                @if(Session["userId"]!=null)
+                                                @if(Session["userId"] != null)
                                                 {
                                                     <input type="submit" value="Buy Now" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px" />
                                                 }
@@ -500,49 +525,57 @@
 	        if (whichButton === "love") {
 	            if ($("#love").css("color") == 'rgb(128, 128, 128)') {
 	                $("#love").css("color", "red");
+
+	                window.location = '@Url.Action("addToFavourite", "UserHome", new { id = Model.DetailProduct.ProductId })';
 	                alert("Added into Your favourite list");
-	            }
-	            else {
-	                $("#love").css("color", "gray");
+                }
+                else {
+                    $("#love").css("color", "gray");
+                    window.location = '@Url.Action("removeFromFavourite", "UserHome", new { id = Model.DetailProduct.ProductId })';
 	                alert("Removed from your favorite list");
-	            }
+                }
 
-	        }
-	        else if (whichButton === "cart") {
-	            if ($("#cart").css("color") == 'rgb(128, 128, 128)') {
-	                $("#cart").css("color", "green");
-	                alert("Added into Your Cart");
-	            }
-	            else {
-	                $("#cart").css("color", "gray");
-	                alert("Removed from your cart");
-	            }
+            }
+            else if (whichButton === "cart") {
+                if ($("#cart").css("color") == 'rgb(128, 128, 128)') {
+                    $("#cart").css("color", "green");
+                    alert("Added into Your Cart");
+                }
+                else {
+                    $("#cart").css("color", "gray");
+                    alert("Removed from your cart");
+                }
 
-	        }
+            }
 
-	        else if (whichButton === "like") {
+            else if (whichButton === "like") {
 
-	            if ($("#like").css("color") == 'rgb(0, 0, 0)') {
+                if ($("#like").css("color") == 'rgb(0, 0, 0)') {
 
-	                $("#like").css("color", "green");
-	                $("#unlike").css("color", 'rgb(0, 0, 0)');
-	            }
-	            else {
-	                $("#like").css("color", 'rgb(0, 0, 0)');
-	            }
+                    $("#like").css("color", "green");
+                    $("#unlike").css("color", 'rgb(0, 0, 0)');
 
-	        }
-	        else if (whichButton === "unlike") {
+                    window.location = '@Url.Action("likeIt", "UserHome", new { id = Model.DetailProduct.ProductId })';
+                }
+                else {
+                    $("#like").css("color", 'rgb(0, 0, 0)');
+                    window.location = '@Url.Action("removeFromlike", "UserHome", new { id = Model.DetailProduct.ProductId })';
+                }
 
-	            if ($("#unlike").css("color") == 'rgb(0, 0, 0)') {
+            }
+            else if (whichButton === "unlike") {
 
-	                $("#unlike").css("color", "red");
-	                $("#like").css("color", 'rgb(0, 0, 0)');
-	            }
-	            else {
-	                $("#unlike").css("color", 'rgb(0, 0, 0)');
-	            }
-	        }
+                if ($("#unlike").css("color") == 'rgb(0, 0, 0)') {
+
+                    $("#unlike").css("color", "red");
+                    $("#like").css("color", 'rgb(0, 0, 0)');
+                    window.location = '@Url.Action("dislikeIt", "UserHome", new { id = Model.DetailProduct.ProductId })';
+                }
+                else {
+                    $("#unlike").css("color", 'rgb(0, 0, 0)');
+                    window.location = '@Url.Action("removeFromdislike", "UserHome", new { id = Model.DetailProduct.ProductId })';
+                }
+            }
 
 
 	    });
@@ -606,14 +639,14 @@
                     }
                     else {
                         if (data == 0) {
-                            window.location = '@Url.Action("Detail", "UserHome", new { id=@Model.DetailProduct.ProductId})'
-	                        }
-                            if (data == 1) {
-                                window.location = '@Url.Action("Dashboard","Admin")'
+                            window.location = '@Url.Action("Detail", "UserHome", new { id = @Model.DetailProduct.ProductId })'
+                        }
+                        if (data == 1) {
+                            window.location = '@Url.Action("Dashboard","Admin")'
                             }
 
                         }
-	                },
+                },
                 error: function () { alert("error") }
             });
 

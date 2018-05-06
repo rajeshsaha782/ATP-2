@@ -24,8 +24,9 @@ namespace easylife.Controllers
         public IInvoiceService _InvoiceService;
         public ILoginService _LoginService;
         public IReportService _ReportService;
+        public IUserFavoriteService _UserFavoriteService;
 
-        public UserHomeController(IProductService ProductService, IMemberService MemberService, ILikeService LikeService, IDislikeService DislikeService, IProductReviewService ProductReviewService, ICartService CartService, ICouponService CouponService, IAddressService AddressService, IInvoiceService InvoiceService, ILoginService LoginService, IReportService ReportService)
+        public UserHomeController(IProductService ProductService, IMemberService MemberService, ILikeService LikeService, IDislikeService DislikeService, IProductReviewService ProductReviewService, ICartService CartService, ICouponService CouponService, IAddressService AddressService, IInvoiceService InvoiceService, ILoginService LoginService, IReportService ReportService, IUserFavoriteService UserFavoriteService)
         {
             _ProductService = ProductService;
             _MemberService = MemberService;
@@ -38,6 +39,7 @@ namespace easylife.Controllers
             _InvoiceService = InvoiceService;
             _LoginService = LoginService;
             _ReportService = ReportService;
+            _UserFavoriteService = UserFavoriteService;
         }
 
         public ActionResult Index()
@@ -49,6 +51,8 @@ namespace easylife.Controllers
                 m.Name = _MemberService.GetById(Convert.ToInt32(Session["userId"])).Name;
                 m.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
             }
+
+
             return View(m);
         }
         [HttpGet]
@@ -100,9 +104,11 @@ namespace easylife.Controllers
             d.DisLike = _DislikeService.countdislike(id);
             d.Reviews = _ProductReviewService.GetByProductId(id);
 
-
-
             d.RelatedProducts = _ProductService.GetByCategory(d.DetailProduct.Category, d.DetailProduct.SubCategory);
+
+            d.isFavorite = _UserFavoriteService.isFavorite(id, Convert.ToInt32(Session["userId"]));
+            d.isLike = _LikeService.isLiked(id, Convert.ToInt32(Session["userId"]));
+            d.isDislike = _DislikeService.isDisLiked(id, Convert.ToInt32(Session["userId"]));
 
             return View(d);
         }
@@ -116,6 +122,84 @@ namespace easylife.Controllers
             p.Date = DateTime.Now;
             _ProductReviewService.Insert(p);
             return RedirectToAction("details", new { id = p.ProductId });
+        }
+
+        public ActionResult addToFavourite(int id)//product id
+        {
+            UserFavorite f = new UserFavorite();
+            f.ProductId = id;
+            f.MemeberId = Convert.ToInt32(Session["userId"]);
+            f.Date = DateTime.Now;
+
+            _UserFavoriteService.Insert(f);
+
+            return RedirectToAction("details", new { id = id });
+        }
+        public ActionResult removeFromFavourite(int id)//product id
+        {
+            _UserFavoriteService.Delete(id, Convert.ToInt32(Session["userId"]));
+            return RedirectToAction("details", new { id = id });
+        }
+        public ActionResult likeIt(int id)
+        {
+            Like l = new Like();
+
+            l.MemberId = Convert.ToInt32(Session["userId"]);
+            l.ProductId = id;
+
+            _LikeService.Insert(l);
+            _DislikeService.UnsetDisike(Convert.ToInt32(Session["userId"]), id);
+
+            SetStar(id);
+
+            return RedirectToAction("details", new { id = id });
+        }
+        public ActionResult removeFromlike(int id)
+        {
+            _LikeService.UnsetLike(Convert.ToInt32(Session["userId"]), id);
+
+            SetStar(id);
+
+            return RedirectToAction("details", new { id = id });
+        }
+
+        public ActionResult dislikeIt(int id)
+        {
+            Dislike l = new Dislike();
+
+            l.MemberId = Convert.ToInt32(Session["userId"]);
+            l.ProductId = id;
+
+            _DislikeService.Insert(l);
+            _LikeService.UnsetLike(Convert.ToInt32(Session["userId"]), id);
+
+            SetStar(id);
+
+            return RedirectToAction("details", new { id = id });
+        }
+        public ActionResult removeFromdislike(int id)
+        {
+            _DislikeService.UnsetDisike(Convert.ToInt32(Session["userId"]), id);
+
+            SetStar(id);
+
+            return RedirectToAction("details", new { id = id });
+        }
+
+        public void SetStar(int id)//product id
+        {
+            //Star= (Like*5)/(like+dislike)
+            Product p = new Product();
+            int totalLike, totalDislike;
+
+            p = _ProductService.GetById(id);
+            totalLike = _LikeService.countlike(id);
+            totalDislike = _DislikeService.countdislike(id);
+
+            p.Star = (totalLike * 5) / (totalLike + totalDislike);
+
+            _ProductService.Update(p);
+
         }
 
         public ActionResult AddToCart(int qty, int id)
@@ -226,9 +310,11 @@ namespace easylife.Controllers
             I.ShippingAddress = ShippingAddress;
 
 
-            //I = _InvoiceService.Insert(I, true);
+            _InvoiceService.Insert(I);
+
+            I = _InvoiceService.GetByMemberId(Convert.ToInt32(Session["userId"])).Last();
             //m.userInvoice.InvoiceId = I.InvoiceId;
-            // m.userInvoice.Date = I.Date;
+            //m.userInvoice.Date = I.Date;
 
             //order...
 

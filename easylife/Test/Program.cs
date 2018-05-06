@@ -1,4 +1,4 @@
-﻿ng System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -218,17 +218,17 @@ namespace Test
             p1.ProductName = "Kakashi T Shirt";
             p1.Features = "Loreum Ispum";
             p1.Quantity = 10;
-            p1.BuyingPrice = 440;
+            p1.BuyingPrice = 44;
             p1.SellingPrice = 450;
             p1.Category = "Kids Wear";
             p1.SubCategory = "T-Shirt";
             p1.Brand = "easy";
-            p1.size = 1;
+            p1.Size = 1;
             p1.Date = DateTime.Now;
             p1.LastSold = DateTime.Now;
             p1.TotalSell = 200;
-            p1.Totalreview = 5;
-            p1.Star = 40;
+            p1.TotalViewed = 5;
+            p1.Star = 4;
 			Console.WriteLine(ps.Insert(p1));
 
 
@@ -236,34 +236,34 @@ namespace Test
             p2.ProductName = "Naruto T Shirt";
             p2.Features = "Loreum Ispum";
             p2.Quantity = 10;
-            p2.BuyingPrice = 440;
+            p2.BuyingPrice = 44;
             p2.SellingPrice = 450;
             p2.Category = "Kids Wear";
             p2.SubCategory = "T-Shirt";
             p2.Brand = "easy";
-            p2.size = 1;
+            p2.Size = 1;
             p2.Date = DateTime.Now;
             p2.LastSold = DateTime.Now;
             p2.TotalSell = 200;
-            p2.Totalreview = 5;
-            p2.Star = 40;
+            p2.TotalViewed = 5;
+            p2.Star = 4;
 			Console.WriteLine(ps.Insert(p2));
 			
 			Product p3 = new Product();
             p3.ProductName = "Avenger T Shirt";
             p3.Features = "Loreum Ispum";
             p3.Quantity = 10;
-            p3.BuyingPrice = 440;
+            p3.BuyingPrice = 44;
             p3.SellingPrice = 450;
             p3.Category = "Kids Wear";
             p3.SubCategory = "T-Shirt";
             p3.Brand = "easy";
-            p3.size = 1;
+            p3.Size = 1;
             p3.Date = DateTime.Now;
             p3.LastSold = DateTime.Now;
             p3.TotalSell = 200;
-            p3.Totalreview = 5;
-            p3.Star = 40;
+            p3.TotalViewed = 5;
+            p3.Star = 4;
 			Console.WriteLine(ps.Insert(p3));
 			
 			
@@ -276,12 +276,12 @@ namespace Test
             p8.Category = "Kids Wear";
             p8.SubCategory = "T-Shirt";
             p8.Brand = "arong";
-            p8.size = 1;
+            p8.Size = 1;
             p8.Date = DateTime.Now;
             p8.LastSold = DateTime.Now;
             p8.TotalSell = 200;
-            p8.Totalreview = 5;
-            p8.Star = 40;
+            p8.TotalViewed = 5;
+            p8.Star = 4;
 			Console.WriteLine(ps.Insert(p8));
 			
 			Product p9 = new Product();
@@ -293,12 +293,12 @@ namespace Test
             p9.Category = "Kids Wear";
             p9.SubCategory = "T-Shirt";
             p9.Brand = "arong";
-            p9.size = 2;
+            p9.Size = 2;
             p9.Date = DateTime.Now;
             p9.LastSold = DateTime.Now;
             p9.TotalSell = 200;
-            p9.Totalreview = 5;
-            p9.Star = 40;
+            p9.TotalViewed = 5;
+            p9.Star = 4;
 			Console.WriteLine(ps.Insert(p9));
 			
 
@@ -312,12 +312,12 @@ namespace Test
             p11.Category = "Kids Wear";
             p11.SubCategory = "T-Shirt";
             p11.Brand = "arong";
-            p11.size = 1;
+            p11.Size = 1;
             p11.Date = DateTime.Now;
             p11.LastSold = DateTime.Now;
             p11.TotalSell = 200;
-            p11.Totalreview = 5;
-            p11.Star = 40;
+            p11.TotalViewed = 5;
+            p11.Star = 4;
 			Console.WriteLine(ps.Insert(p11));
 			
 			
@@ -330,12 +330,12 @@ namespace Test
             p10.Category = "Kids Wear";
             p10.SubCategory = "T-Shirt";
             p10.Brand = "arong";
-            p10.size = 3;
+            p10.Size = 3;
             p10.Date = DateTime.Now;
             p10.LastSold = DateTime.Now;
             p10.TotalSell = 200;
-            p10.Totalreview = 5;
-            p10.Star = 40;
+            p10.TotalViewed = 5;
+            p10.Star = 4;
 			Console.WriteLine(ps.Insert(p11));
 			
 			
@@ -360,12 +360,12 @@ namespace Test
             p4.Category = "Mens Wear";
             p4.SubCategory = "Shirt";
             p4.Brand = "yellow";
-            p4.size = 1;
+            p4.Size = 1;
             p4.Date = DateTime.Now;
             p4.LastSold = DateTime.Now;
             p4.TotalSell = 200;
-            p4.Totalreview = 5;
-            p4.Star = 40;
+            p4.TotalViewed = 5;
+            p4.Star = 4;
 			Console.WriteLine(ps.Insert(p4));
 			
 			Product p5 = new Product();
@@ -377,12 +377,12 @@ namespace Test
             p5.Category = "Mens Wear";
             p5.SubCategory = "Shirt";
             p5.Brand = "yellow";
-            p5.size = 3;
+            p5.Size = 3;
             p5.Date = DateTime.Now;
             p5.LastSold = DateTime.Now;
             p5.TotalSell = 200;
-            p5.Totalreview = 5;
-            p5.Star = 40;
+            p5.TotalViewed = 5;
+            p5.Star = 4;
 			Console.WriteLine(ps.Insert(p5));
 			
 			Product p6 = new Product();
@@ -394,12 +394,12 @@ namespace Test
             p6.Category = "Mens Wear";
             p6.SubCategory = "Shirt";
             p6.Brand = "yellow";
-            p6.size = 1;
+            p6.Size = 1;
             p6.Date = DateTime.Now;
             p6.LastSold = DateTime.Now;
             p6.TotalSell = 200;
-            p6.Totalreview = 5;
-            p6.Star = 40;
+            p6.TotalViewed = 5;
+            p6.Star = 4;
 			Console.WriteLine(ps.Insert(p6));
 			
 			Product p7 = new Product();
@@ -411,12 +411,12 @@ namespace Test
             p7.Category = "Mens Wear";
             p7.SubCategory = "Shirt";
             p7.Brand = "arong";
-            p7.size = 1;
+            p7.Size = 1;
             p7.Date = DateTime.Now;
             p7.LastSold = DateTime.Now;
             p7.TotalSell = 200;
-            p7.Totalreview = 5;
-            p7.Star = 40;
+            p7.TotalViewed = 5;
+            p7.Star = 4;
 			Console.WriteLine(ps.Insert(p7));
 			
 			
@@ -429,12 +429,12 @@ namespace Test
             p12.Category = "Mens Wear";
             p12.SubCategory = "Shirt";
             p12.Brand = "arong";
-            p12.size = 1;
+            p12.Size = 1;
             p12.Date = DateTime.Now;
             p12.LastSold = DateTime.Now;
             p12.TotalSell = 200;
-            p12.Totalreview = 5;
-            p12.Star = 40;
+            p12.TotalViewed = 5;
+            p12.Star = 4;
 			Console.WriteLine(ps.Insert(p12));
 			
 			
@@ -447,12 +447,12 @@ namespace Test
             p13.Category = "Mens Wear";
             p13.SubCategory = "Shirt";
             p13.Brand = "ectasy";
-            p10.size =2;
+            p10.Size =2;
             p13.Date = DateTime.Now;
             p13.LastSold = DateTime.Now;
             p1.TotalSell = 200;
-            p1.Totalreview = 5;
-            p1.Star = 40;
+            p1.TotalViewed = 5;
+            p1.Star = 4;
 			Console.WriteLine(ps.Insert(p13));
 			
 			
@@ -465,12 +465,12 @@ namespace Test
             p14.Category = "Mens Wear";
             p14.SubCategory = "Shirt";
             p14.Brand = "ectasy";
-            p10.size = 2;
+            p10.Size = 2;
             p14.Date = DateTime.Now;
             p14.LastSold = DateTime.Now;
             p1.TotalSell = 200;
-            p1.Totalreview = 5;
-            p1.Star = 40;
+            p1.TotalViewed = 5;
+            p1.Star = 4;
 			Console.WriteLine(ps.Insert(p14));
 			
 
@@ -489,12 +489,12 @@ namespace Test
             p15.Category = "Mens Wear";
             p15.SubCategory = "Pant";
             p15.Brand = "ectasy";
-            p15.size = 2;
+            p15.Size = 2;
             p15.Date = DateTime.Now;
             p15.LastSold = DateTime.Now;
             p15.TotalSell = 200;
-            p15.Totalreview = 5;
-            p15.Star = 40;
+            p15.TotalViewed = 5;
+            p15.Star = 4;
 			Console.WriteLine(ps.Insert(p15));
 			
 			Product p16 = new Product();
@@ -506,12 +506,12 @@ namespace Test
             p16.Category = "Mens Wear";
             p16.SubCategory = "Pant";
             p16.Brand = "ectasy";
-            p10.size = 2;
+            p10.Size = 2;
             p16.Date = DateTime.Now;
             p16.LastSold = DateTime.Now;
             p16.TotalSell = 200;
-            p16.Totalreview = 5;
-            p16.Star = 40;
+            p16.TotalViewed = 5;
+            p16.Star = 4;
 			Console.WriteLine(ps.Insert(p16));
 			
 			Product p17 = new Product();
@@ -523,12 +523,12 @@ namespace Test
             p17.Category = "Mens Wear";
             p17.SubCategory = "Pant";
             p17.Brand = "yellow";
-            p17.size = 2;
+            p17.Size = 2;
             p17.Date = DateTime.Now;
             p17.LastSold = DateTime.Now;
             p17.TotalSell = 200;
-            p17.Totalreview = 5;
-            p17.Star = 40;
+            p17.TotalViewed = 5;
+            p17.Star = 4;
 			Console.WriteLine(ps.Insert(p17));
 			
 			
@@ -541,12 +541,12 @@ namespace Test
             p18.Category = "Mens Wear";
             p18.SubCategory = "Pant";
             p18.Brand = "yellow";
-            p18.size = 2;
+            p18.Size = 2;
             p18.Date = DateTime.Now;
             p18.LastSold = DateTime.Now;
             p18.TotalSell = 200;
-            p18.Totalreview = 5;
-            p18.Star = 40;
+            p18.TotalViewed = 5;
+            p18.Star = 4;
 			Console.WriteLine(ps.Insert(p18));
 			
 			Product p19 = new Product();
@@ -558,12 +558,12 @@ namespace Test
             p19.Category = "Mens Wear";
             p19.SubCategory = "Pant";
             p19.Brand = "yellow";
-            p19.size = 2;
+            p19.Size = 2;
             p19.Date = DateTime.Now;
             p19.LastSold = DateTime.Now;
             p19.TotalSell = 200;
-            p19.Totalreview = 5;
-            p19.Star = 40;
+            p19.TotalViewed = 5;
+            p19.Star = 4;
 			Console.WriteLine(ps.Insert(p19));
 			
 			Product p20 = new Product();
@@ -575,12 +575,12 @@ namespace Test
             p20.Category = "Mens Wear";
             p20.SubCategory = "Pant";
             p20.Brand = "yellow";
-            p20.size = 2;
+            p20.Size = 2;
             p20.Date = DateTime.Now;
             p20.LastSold = DateTime.Now;
             p20.TotalSell = 200;
-            p20.Totalreview = 5;
-            p20.Star = 40;
+            p20.TotalViewed = 5;
+            p20.Star = 4;
 			Console.WriteLine(ps.Insert(p20));
 			
 			Product p21 = new Product();
@@ -592,12 +592,12 @@ namespace Test
             p21.Category = "Mens Wear";
             p21.SubCategory = "Pant";
             p21.Brand = "yellow";
-            p21.size = 2;
+            p21.Size = 2;
             p21.Date = DateTime.Now;
             p21.LastSold = DateTime.Now;
             p21.TotalSell = 200;
-            p21.Totalreview = 5;
-            p21.Star = 40;
+            p21.TotalViewed = 5;
+            p21.Star = 4;
 			Console.WriteLine(ps.Insert(p21));
 			
 			
@@ -616,12 +616,12 @@ namespace Test
             p22.Category = "Mens Wear";
             p22.SubCategory = "Panjabi";
             p22.Brand = "yellow";
-            p22.size = 2;
+            p22.Size = 2;
             p22.Date = DateTime.Now;
             p22.LastSold = DateTime.Now;
             p22.TotalSell = 200;
-            p22.Totalreview = 5;
-            p22.Star = 40;
+            p22.TotalViewed = 5;
+            p22.Star = 4;
 			Console.WriteLine(ps.Insert(p22));
 			
 			
@@ -634,12 +634,12 @@ namespace Test
             p23.Category = "Mens Wear";
             p23.SubCategory = "Panjabi";
             p23.Brand = "yellow";
-            p23.size =1;
+            p23.Size =1;
             p23.Date = DateTime.Now;
             p23.LastSold = DateTime.Now;
             p23.TotalSell = 200;
-            p23.Totalreview = 5;
-            p23.Star = 40;
+            p23.TotalViewed = 5;
+            p23.Star = 4;
 			Console.WriteLine(ps.Insert(p23));
 			
 			Product p24 = new Product();
@@ -651,12 +651,12 @@ namespace Test
             p24.Category = "Mens Wear";
             p24.SubCategory = "Panjabi";
             p24.Brand = "easy";
-            p24.size = 1;
+            p24.Size = 1;
             p24.Date = DateTime.Now;
             p24.LastSold = DateTime.Now;
             p24.TotalSell = 200;
-            p24.Totalreview = 5;
-            p24.Star = 40;
+            p24.TotalViewed = 5;
+            p24.Star = 4;
 			Console.WriteLine(ps.Insert(p24));
 			
 			
@@ -669,12 +669,12 @@ namespace Test
             p25.Category = "Mens Wear";
             p25.SubCategory = "Panjabi";
             p25.Brand = "easy";
-            p25.size = 2;
+            p25.Size = 2;
             p25.Date = DateTime.Now;
             p25.LastSold = DateTime.Now;
             p25.TotalSell = 200;
-            p25.Totalreview = 5;
-            p25.Star = 40;
+            p25.TotalViewed = 5;
+            p25.Star = 4;
 			Console.WriteLine(ps.Insert(p25));
 			
 			
@@ -687,12 +687,12 @@ namespace Test
             p26.Category = "Mens Wear";
             p26.SubCategory = "Panjabi";
             p26.Brand = "arong";
-            p26.size = 2;
+            p26.Size = 2;
             p26.Date = DateTime.Now;
             p26.LastSold = DateTime.Now;
             p26.TotalSell = 200;
-            p26.Totalreview = 5;
-            p26.Star = 40;
+            p26.TotalViewed = 5;
+            p26.Star = 4;
 			Console.WriteLine(ps.Insert(p26));
 			
 			Product p27 = new Product();
@@ -704,12 +704,12 @@ namespace Test
             p27.Category = "Mens Wear";
             p27.SubCategory = "Panjabi";
             p27.Brand = "arong";
-            p27.size = 1;
+            p27.Size = 1;
             p27.Date = DateTime.Now;
             p27.LastSold = DateTime.Now;
             p27.TotalSell = 200;
-            p27.Totalreview = 5;
-            p27.Star = 40;
+            p27.TotalViewed = 5;
+            p27.Star = 4;
 			Console.WriteLine(ps.Insert(p27));
 			
 			Product p28 = new Product();
@@ -721,12 +721,12 @@ namespace Test
             p28.Category = "Mens Wear";
             p28.SubCategory = "Panjabi";
             p28.Brand = "arong";
-            p28.size = 2;
+            p28.Size = 2;
             p28.Date = DateTime.Now;
             p28.LastSold = DateTime.Now;
             p28.TotalSell = 200;
-            p28.Totalreview = 5;
-            p28.Star = 40;
+            p28.TotalViewed = 5;
+            p28.Star = 4;
 			Console.WriteLine(ps.Insert(p28));
 
 
@@ -744,13 +744,13 @@ namespace Test
             p29.Category = "Womens Wear";
             p29.SubCategory = "Saree";
             p29.Brand = "arong";
-            p29.size = 0;
+            p29.Size = 0;
             p29.Date = DateTime.Now;
             p29.LastSold = DateTime.Now;
             p29.LastSold = DateTime.Now;
             p29.TotalSell = 200;
-            p29.Totalreview = 5;
-            p29.Star = 40;
+            p29.TotalViewed = 5;
+            p29.Star = 4;
 			Console.WriteLine(ps.Insert(p29));
 			
 			Product p30 = new Product();
@@ -762,13 +762,13 @@ namespace Test
             p30.Category = "Womens Wear";
             p30.SubCategory = "Saree";
             p30.Brand = "arong";
-            p30.size = 0;
+            p30.Size = 0;
             p30.Date = DateTime.Now;
             p30.LastSold = DateTime.Now;
             p30.LastSold = DateTime.Now;
             p30.TotalSell = 200;
-            p30.Totalreview = 5;
-            p30.Star = 40;
+            p30.TotalViewed = 5;
+            p30.Star = 4;
 			Console.WriteLine(ps.Insert(p30));
 			
 			
@@ -781,13 +781,13 @@ namespace Test
             p31.Category = "Womens Wear";
             p31.SubCategory = "Saree";
             p31.Brand = "arong";
-            p31.size = 0;
+            p31.Size = 0;
             p31.Date = DateTime.Now;
             p31.LastSold = DateTime.Now;
             p31.LastSold = DateTime.Now;
             p31.TotalSell = 200;
-            p31.Totalreview = 5;
-            p31.Star = 40;
+            p31.TotalViewed = 5;
+            p31.Star = 4;
 			Console.WriteLine(ps.Insert(p31));
 			
 			Product p32 = new Product();
@@ -799,13 +799,13 @@ namespace Test
             p32.Category = "Womens Wear";
             p32.SubCategory = "Saree";
             p32.Brand = "arong";
-            p32.size = 0;
+            p32.Size = 0;
             p32.Date = DateTime.Now;
             p32.LastSold = DateTime.Now;
             p32.LastSold = DateTime.Now;
             p32.TotalSell = 200;
-            p32.Totalreview = 5;
-            p32.Star = 40;
+            p32.TotalViewed = 5;
+            p32.Star = 4;
 			Console.WriteLine(ps.Insert(p32));
 			
 			Product p33 = new Product();
@@ -817,13 +817,13 @@ namespace Test
             p33.Category = "Womens Wear";
             p33.SubCategory = "Saree";
             p33.Brand = "arong";
-            p33.size = 0;
+            p33.Size = 0;
             p33.Date = DateTime.Now;
             p33.LastSold = DateTime.Now;
             p33.LastSold = DateTime.Now;
             p33.TotalSell = 200;
-            p33.Totalreview = 5;
-            p33.Star = 40;
+            p33.TotalViewed = 5;
+            p33.Star = 4;
 			Console.WriteLine(ps.Insert(p33));
 			
 			
@@ -836,13 +836,13 @@ namespace Test
             p34.Category = "Womens Wear";
             p34.SubCategory = "Saree";
             p34.Brand = "arong";
-            p34.size = 0;
+            p34.Size = 0;
             p34.Date = DateTime.Now;
             p34.LastSold = DateTime.Now;
             p34.LastSold = DateTime.Now;
             p34.TotalSell = 200;
-            p34.Totalreview = 5;
-            p34.Star = 40;
+            p34.TotalViewed = 5;
+            p34.Star = 4;
 			Console.WriteLine(ps.Insert(p34));
 			
 			Product p35 = new Product();
@@ -854,13 +854,13 @@ namespace Test
             p35.Category = "Womens Wear";
             p35.SubCategory = "Saree";
             p35.Brand = "arong";
-            p35.size = 0;
+            p35.Size = 0;
             p35.Date = DateTime.Now;
             p35.LastSold = DateTime.Now;
             p35.LastSold = DateTime.Now;
             p35.TotalSell = 200;
-            p35.Totalreview = 5;
-            p35.Star = 40;
+            p35.TotalViewed = 5;
+            p35.Star = 4;
 			Console.WriteLine(ps.Insert(p35));
 			
 			
@@ -877,13 +877,13 @@ namespace Test
             p36.Category = "Womens Wear";
             p36.SubCategory = "Three-Piece";
             p36.Brand = "arong";
-            p36.size = 1;
+            p36.Size = 1;
             p36.Date = DateTime.Now;
             p36.LastSold = DateTime.Now;
             p36.LastSold = DateTime.Now;
             p36.TotalSell = 200;
-            p36.Totalreview = 5;
-            p36.Star = 40;
+            p36.TotalViewed = 5;
+            p36.Star = 4;
 			Console.WriteLine(ps.Insert(p36));
 			
 			
@@ -896,13 +896,13 @@ namespace Test
             p37.Category = "Womens Wear";
             p37.SubCategory = "Three-Piece";
             p37.Brand = "arong";
-            p37.size = 2;
+            p37.Size = 2;
             p37.Date = DateTime.Now;
             p37.LastSold = DateTime.Now;
             p37.LastSold = DateTime.Now;
             p37.TotalSell = 200;
-            p37.Totalreview = 5;
-            p37.Star = 40;
+            p37.TotalViewed = 5;
+            p37.Star = 4;
 			Console.WriteLine(ps.Insert(p37));
 			
 			
@@ -915,13 +915,13 @@ namespace Test
             p38.Category = "Womens Wear";
             p38.SubCategory = "Three-Piece";
             p38.Brand = "arong";
-            p21.size = 1;
+            p21.Size = 1;
             p38.Date = DateTime.Now;
             p38.LastSold = DateTime.Now;
             p21.LastSold = DateTime.Now;
             p21.TotalSell = 200;
-            p21.Totalreview = 5;
-            p21.Star = 40;
+            p21.TotalViewed = 5;
+            p21.Star = 4;
 			Console.WriteLine(ps.Insert(p38));
 			
 			Product p39 = new Product();
@@ -933,13 +933,13 @@ namespace Test
             p39.Category = "Womens Wear";
             p39.SubCategory = "Three-Piece";
             p39.Brand = "arong";
-            p39.size = 2;
+            p39.Size = 2;
             p39.Date = DateTime.Now;
             p39.LastSold = DateTime.Now;
             p39.LastSold = DateTime.Now;
             p39.TotalSell = 200;
-            p39.Totalreview = 5;
-            p39.Star = 40;
+            p39.TotalViewed = 5;
+            p39.Star = 4;
 			Console.WriteLine(ps.Insert(p39));
 			
 			Product p40 = new Product();
@@ -951,14 +951,14 @@ namespace Test
             p40.Category = "Womens Wear";
             p40.SubCategory = "Three-Piece";
             p40.Brand = "arong";
-            p40.size = 1;
+            p40.Size = 1;
             p40.Date = DateTime.Now;
             p40.LastSold = DateTime.Now;
             p40.LastSold = DateTime.Now;
             p40.TotalSell = 200;
-            p40.Totalreview = 5;
-            p40.Star = 40;
-			Console.WriteLine(ps.Insert(p40));
+            p40.TotalViewed = 5;
+            p40.Star = 4;
+			Console.WriteLine(ps.Insert(p4));
 			
 			
 			Product p41 = new Product();
@@ -970,13 +970,13 @@ namespace Test
             p41.Category = "Womens Wear";
             p41.SubCategory = "Three-Piece";
             p41.Brand = "arong";
-            p41.size = 2;
+            p41.Size = 2;
             p41.Date = DateTime.Now;
             p41.LastSold = DateTime.Now;
             p41.LastSold = DateTime.Now;
             p41.TotalSell = 200;
-            p41.Totalreview = 5;
-            p41.Star = 40;
+            p41.TotalViewed = 5;
+            p41.Star = 4;
 			Console.WriteLine(ps.Insert(p41));
 			
 			Product p42 = new Product();
@@ -988,13 +988,13 @@ namespace Test
             p42.Category = "Womens Wear";
             p42.SubCategory = "Three-Piece";
             p42.Brand = "arong";
-            p42.size = 1;
+            p42.Size = 1;
             p42.Date = DateTime.Now;
             p42.LastSold = DateTime.Now;
             p42.LastSold = DateTime.Now;
             p42.TotalSell = 200;
-            p42.Totalreview = 5;
-            p42.Star = 40;
+            p42.TotalViewed = 5;
+            p42.Star = 4;
 			Console.WriteLine(ps.Insert(p42));
 			
 			
@@ -1005,103 +1005,103 @@ namespace Test
             p43.ProductName = "Summer-shorts";
             p43.Features = "Loreum Ispum";
             p43.Quantity = 430;
-            p43.BuyingPrice = 440;
+            p43.BuyingPrice = 44;
             p43.SellingPrice = 450;
             p43.Category = "Kids Wear";
             p43.SubCategory = "Pant";
             p43.Brand = "easy";
-            p43.size = 1;
+            p43.Size = 1;
             p43.Date = DateTime.Now;
             p43.LastSold = DateTime.Now;
             p43.TotalSell = 200;
-            p43.Totalreview = 5;
-            p43.Star = 40;
+            p43.TotalViewed = 5;
+            p43.Star = 4;
 			Console.WriteLine(ps.Insert(p43));
 			
 			
 			Product p44 = new Product();
             p44.ProductName = "children-cotton-pant";
             p44.Features = "Loreum Ispum";
-            p44.Quantity = 440;
-            p44.BuyingPrice = 440;
+            p44.Quantity = 44;
+            p44.BuyingPrice = 44;
             p44.SellingPrice = 450;
             p44.Category = "Kids Wear";
             p44.SubCategory = "Pant";
             p44.Brand = "easy";
-            p44.size = 1;
+            p44.Size = 1;
             p44.Date = DateTime.Now;
             p44.LastSold = DateTime.Now;
             p44.TotalSell = 200;
-            p44.Totalreview = 5;
-            p44.Star = 40;
+            p44.TotalViewed = 5;
+            p44.Star = 4;
 			Console.WriteLine(ps.Insert(p44));
 			
 			Product p45 = new Product();
             p45.ProductName = "Kids-Pant-Children-Jeans";
             p45.Features = "Loreum Ispum";
             p45.Quantity = 450;
-            p45.BuyingPrice = 440;
+            p45.BuyingPrice = 44;
             p45.SellingPrice = 450;
             p45.Category = "Kids Wear";
             p45.SubCategory = "Pant";
             p45.Brand ="easy";
-            p45.size = 2;
+            p45.Size = 2;
             p45.Date = DateTime.Now;
             p45.LastSold = DateTime.Now;
             p45.TotalSell = 200;
-            p45.Totalreview = 5;
-            p45.Star = 40;
+            p45.TotalViewed = 5;
+            p45.Star = 4;
 			Console.WriteLine(ps.Insert(p45));
 			
 			Product p46 = new Product();
             p46.ProductName = "Kids-Pant-Fashion-Light-Blue-Jean";
             p46.Features = "Loreum Ispum";
             p46.Quantity = 460;
-            p46.BuyingPrice = 440;
+            p46.BuyingPrice = 44;
             p46.SellingPrice = 450;
             p46.Category = "Kids Wear";
             p46.SubCategory = "Pant";
             p46.Brand = "easy";
-            p46.size = 2;
+            p46.Size = 2;
             p46.Date = DateTime.Now;
             p46.LastSold = DateTime.Now;
             p46.TotalSell = 200;
-            p46.Totalreview = 5;
-            p46.Star = 40;
+            p46.TotalViewed = 5;
+            p46.Star = 4;
 			Console.WriteLine(ps.Insert(p46));
 			
 			Product p47 = new Product();
             p47.ProductName = "Three Quarter";
             p47.Features = "Loreum Ispum";
             p47.Quantity = 470;
-            p47.BuyingPrice = 440;
+            p47.BuyingPrice = 44;
             p47.SellingPrice = 450;
             p47.Category = "Kids Wear";
             p47.SubCategory = "Pant";
             p47.Brand = "easy";
-            p47.size = 2;
+            p47.Size = 2;
             p47.Date = DateTime.Now;
             p47.LastSold = DateTime.Now;
             p47.TotalSell = 200;
-            p47.Totalreview = 5;
-            p47.Star = 40;
+            p47.TotalViewed = 5;
+            p47.Star = 4;
 			Console.WriteLine(ps.Insert(p47));
 			
 			Product p48 = new Product();
             p48.ProductName = "Moana Girl Jeans";
             p48.Features = "Loreum Ispum";
             p48.Quantity = 480;
-            p48.BuyingPrice = 440;
+            p48.BuyingPrice = 44;
             p48.SellingPrice = 450;
             p48.Category = "Kids Wear";
             p48.SubCategory = "Pant";
             p48.Brand = "easy";
-            p48.size = 2;
+            p48.Size = 2;
             p48.Date = DateTime.Now;
             p48.LastSold = DateTime.Now;
             p48.TotalSell = 200;
-            p48.Totalreview = 5;
-            p48.Star = 40;
+            p48.TotalViewed = 5;
+            p48.Star = 4;
 			Console.WriteLine(ps.Insert(p48));
 			
 			
@@ -1109,17 +1109,17 @@ namespace Test
             p49.ProductName = "Cotton Pant";
             p49.Features = "Loreum Ispum";
             p49.Quantity = 490;
-            p49.BuyingPrice = 440;
+            p49.BuyingPrice = 44;
             p49.SellingPrice = 450;
             p49.Category = "Kids Wear";
             p49.SubCategory = "Pant";
             p49.Brand = "easy";
-            p49.size = 2;
+            p49.Size = 2;
             p49.Date = DateTime.Now;
             p49.LastSold = DateTime.Now;
             p49.TotalSell = 200;
-            p49.Totalreview = 5;
-            p49.Star = 40;
+            p49.TotalViewed = 5;
+            p49.Star = 4;
 			Console.WriteLine(ps.Insert(p49));
 			
 			
@@ -1134,16 +1134,16 @@ namespace Test
             p50.Features = "Loreum Ispum";
             p50.Quantity = 12;
             p50.BuyingPrice = 1200;
-            p50.SellingPrice = 1400;
+            p50.SellingPrice = 140;
             p50.Category = "Accessories";
             p50.SubCategory = "Handbag";
             p50.Brand = "ectasy";
-            p50.size = 0;
+            p50.Size = 0;
             p50.Date = DateTime.Now;
             p50.LastSold = DateTime.Now;
             p50.TotalSell = 200;
-            p50.Totalreview = 5;
-            p50.Star = 40;
+            p50.TotalViewed = 5;
+            p50.Star = 4;
 			Console.WriteLine(ps.Insert(p50));
 			
 			
@@ -1152,16 +1152,16 @@ namespace Test
             p51.Features = "Loreum Ispum";
             p51.Quantity = 12;
             p51.BuyingPrice = 1200;
-            p51.SellingPrice = 1400;
+            p51.SellingPrice = 140;
             p51.Category = "Accessories";
             p51.SubCategory = "Handbag";
             p51.Brand = "ectasy";
-            p51.size = 0;
+            p51.Size = 0;
             p51.Date = DateTime.Now;
             p51.LastSold = DateTime.Now;
             p51.TotalSell = 200;
-            p51.Totalreview = 5;
-            p51.Star = 40;
+            p51.TotalViewed = 5;
+            p51.Star = 4;
 			Console.WriteLine(ps.Insert(p51));
 			
 			
@@ -1171,16 +1171,16 @@ namespace Test
             p52.Features = "Loreum Ispum";
             p52.Quantity = 12;
             p52.BuyingPrice = 1200;
-            p52.SellingPrice = 1400;
+            p52.SellingPrice = 140;
             p52.Category = "Accessories";
             p52.SubCategory = "Handbag";
             p52.Brand = "ectasy";
-            p52.size = 0;
+            p52.Size = 0;
             p52.Date = DateTime.Now;
             p52.LastSold = DateTime.Now;
             p52.TotalSell = 200;
-            p52.Totalreview = 5;
-            p52.Star = 40;
+            p52.TotalViewed = 5;
+            p52.Star = 4;
 			Console.WriteLine(ps.Insert(p52));
 			
 			
@@ -1189,16 +1189,16 @@ namespace Test
             p53.Features = "Loreum Ispum";
             p53.Quantity = 12;
             p53.BuyingPrice = 1200;
-            p53.SellingPrice = 1400;
+            p53.SellingPrice = 140;
             p53.Category = "Accessories";
             p53.SubCategory = "Handbag";
             p53.Brand = "ectasy";
-            p53.size = 0;
+            p53.Size = 0;
             p53.Date = DateTime.Now;
             p53.LastSold = DateTime.Now;
             p53.TotalSell = 200;
-            p53.Totalreview = 5;
-            p53.Star = 40;
+            p53.TotalViewed = 5;
+            p53.Star = 4;
 			Console.WriteLine(ps.Insert(p53));
 			
 			
@@ -1207,16 +1207,16 @@ namespace Test
             p54.Features = "Loreum Ispum";
             p54.Quantity = 12;
             p54.BuyingPrice = 1200;
-            p54.SellingPrice = 1400;
+            p54.SellingPrice = 140;
             p54.Category = "Accessories";
             p54.SubCategory = "Handbag";
             p54.Brand = "ectasy";
-            p54.size = 0;
+            p54.Size = 0;
             p54.Date = DateTime.Now;
             p54.LastSold = DateTime.Now;
             p54.TotalSell = 200;
-            p54.Totalreview = 5;
-            p54.Star = 40;
+            p54.TotalViewed = 5;
+            p54.Star = 4;
 			Console.WriteLine(ps.Insert(p54));
 			
 			
@@ -1225,16 +1225,16 @@ namespace Test
             p55.Features = "Loreum Ispum";
             p55.Quantity = 12;
             p55.BuyingPrice = 1200;
-            p55.SellingPrice = 1400;
+            p55.SellingPrice = 140;
             p55.Category = "Accessories";
             p55.SubCategory = "Handbag";
             p55.Brand = "ectasy";
-            p55.size = 0;
+            p55.Size = 0;
             p55.Date = DateTime.Now;
             p55.LastSold = DateTime.Now;
             p55.TotalSell = 200;
-            p55.Totalreview = 5;
-            p55.Star = 40;
+            p55.TotalViewed = 5;
+            p55.Star = 4;
 			Console.WriteLine(ps.Insert(p55));
 			
 			Product p56 = new Product();
@@ -1242,16 +1242,16 @@ namespace Test
             p56.Features = "Loreum Ispum";
             p56.Quantity = 12;
             p56.BuyingPrice = 1200;
-            p56.SellingPrice = 1400;
+            p56.SellingPrice = 140;
             p56.Category = "Accessories";
             p56.SubCategory = "Handbag";
             p56.Brand = "ectasy";
-            p56.size = 0;
+            p56.Size = 0;
             p56.Date = DateTime.Now;
             p56.LastSold = DateTime.Now;
             p56.TotalSell = 200;
-            p56.Totalreview = 5;
-            p56.Star = 40;
+            p56.TotalViewed = 5;
+            p56.Star = 4;
 			Console.WriteLine(ps.Insert(p56));
 			
 			
@@ -1268,12 +1268,12 @@ namespace Test
             p57.Category = "Accessories";
             p57.SubCategory = "Sunglass";
             p57.Brand = "ectasy";
-            p57.size = 0;
+            p57.Size = 0;
             p57.Date = DateTime.Now;
             p57.LastSold = DateTime.Now;
             p57.TotalSell = 200;
-            p57.Totalreview = 5;
-            p57.Star = 40;
+            p57.TotalViewed = 5;
+            p57.Star = 4;
 			Console.WriteLine(ps.Insert(p57));
 			
 			
@@ -1286,12 +1286,12 @@ namespace Test
             p58.Category = "Accessories";
             p58.SubCategory = "Sunglass";
             p58.Brand = "ectasy";
-            p58.size = 0;
+            p58.Size = 0;
             p58.Date = DateTime.Now;
             p58.LastSold = DateTime.Now;
             p58.TotalSell = 200;
-            p58.Totalreview = 5;
-            p58.Star = 40;
+            p58.TotalViewed = 5;
+            p58.Star = 4;
 			Console.WriteLine(ps.Insert(p58));
 			
 			
@@ -1304,12 +1304,12 @@ namespace Test
             p59.Category = "Accessories";
             p59.SubCategory = "Sunglass";
             p59.Brand = "ectasy";
-            p59.size = 0;
+            p59.Size = 0;
             p59.Date = DateTime.Now;
             p59.LastSold = DateTime.Now;
             p59.TotalSell = 200;
-            p59.Totalreview = 5;
-            p59.Star = 40;
+            p59.TotalViewed = 5;
+            p59.Star = 4;
 			Console.WriteLine(ps.Insert(p59));
 			
 			Product p60 = new Product();
@@ -1321,12 +1321,12 @@ namespace Test
             p60.Category = "Accessories";
             p60.SubCategory = "Sunglass";
             p60.Brand = "ectasy";
-            p60.size = 0;
+            p60.Size = 0;
             p60.Date = DateTime.Now;
             p60.LastSold = DateTime.Now;
             p60.TotalSell = 200;
-            p60.Totalreview = 5;
-            p60.Star = 40;
+            p60.TotalViewed = 5;
+            p60.Star = 4;
 			Console.WriteLine(ps.Insert(p60));
 			
 			
@@ -1339,12 +1339,12 @@ namespace Test
             p61.Category = "Accessories";
             p61.SubCategory = "Sunglass";
             p61.Brand = "ectasy";
-            p61.size = 0;
+            p61.Size = 0;
             p61.Date = DateTime.Now;
             p61.LastSold = DateTime.Now;
             p61.TotalSell = 200;
-            p61.Totalreview = 5;
-            p61.Star = 40;
+            p61.TotalViewed = 5;
+            p61.Star = 4;
 			Console.WriteLine(ps.Insert(p61));
 			
 			
@@ -1357,12 +1357,12 @@ namespace Test
             p62.Category = "Accessories";
             p62.SubCategory = "Sunglass";
             p62.Brand = "yellow";
-            p62.size = 0;
+            p62.Size = 0;
             p62.Date = DateTime.Now;
             p62.LastSold = DateTime.Now;
             p62.TotalSell = 200;
-            p62.Totalreview = 5;
-            p62.Star = 40;
+            p62.TotalViewed = 5;
+            p62.Star = 4;
 			Console.WriteLine(ps.Insert(p62));
 			
 			
@@ -1375,12 +1375,12 @@ namespace Test
             p63.Category = "Accessories";
             p63.SubCategory = "Sunglass";
             p63.Brand = "yellow";
-            p63.size = 0;
+            p63.Size = 0;
             p63.Date = DateTime.Now;
             p63.LastSold = DateTime.Now;
             p63.TotalSell = 200;
-            p63.Totalreview = 5;
-            p63.Star = 40;
+            p63.TotalViewed = 5;
+            p63.Star = 4;
 			Console.WriteLine(ps.Insert(p63));
 			
 			
@@ -1391,17 +1391,17 @@ namespace Test
             p64.ProductName = "Necklace Diamond ";
             p64.Features = "Loreum Ispum";
             p64.Quantity = 12;
-            p64.BuyingPrice = 30,000;
-            p64.SellingPrice = 34,000;
+            p64.BuyingPrice = 30000;
+            p64.SellingPrice = 3400;
             p64.Category = "Accessories";
             p64.SubCategory = "Jewelery";
             p64.Brand = "yellow";
-            p64.size = 0;
+            p64.Size = 0;
             p64.Date = DateTime.Now;
             p64.LastSold = DateTime.Now;
             p64.TotalSell = 200;
-            p64.Totalreview = 5;
-            p64.Star = 40;
+            p64.TotalViewed = 5;
+            p64.Star = 4;
 			Console.WriteLine(ps.Insert(p64));
 			
 			
@@ -1409,17 +1409,17 @@ namespace Test
             p65.ProductName = "Necklace Love";
             p65.Features = "Loreum Ispum";
             p65.Quantity = 12;
-            p65.BuyingPrice = 30,000;
-            p65.SellingPrice = 34,000;
+            p65.BuyingPrice = 30000;
+            p65.SellingPrice = 3400;
             p65.Category = "Accessories";
             p65.SubCategory = "Jewelery";
             p65.Brand = "yellow";
-            p65.size = 0;
+            p65.Size = 0;
             p65.Date = DateTime.Now;
             p65.LastSold = DateTime.Now;
             p65.TotalSell = 200;
-            p65.Totalreview = 5;
-            p65.Star = 40;
+            p65.TotalViewed = 5;
+            p65.Star = 4;
 			Console.WriteLine(ps.Insert(p65));
 			
 			
@@ -1428,16 +1428,16 @@ namespace Test
             p66.Features = "Loreum Ispum";
             p66.Quantity = 12;
             p66.BuyingPrice = 300;
-            p66.SellingPrice = 340;
+            p66.SellingPrice = 34;
             p66.Category = "Accessories";
             p66.SubCategory = "Jewelery";
             p66.Brand = "ectasy";
-            p66.size = 0;
+            p66.Size = 0;
             p66.Date = DateTime.Now;
             p66.LastSold = DateTime.Now;
             p66.TotalSell = 200;
-            p66.Totalreview = 5;
-            p66.Star = 40;
+            p66.TotalViewed = 5;
+            p66.Star = 4;
 			Console.WriteLine(ps.Insert(p66));
 			
 			Product p67 = new Product();
@@ -1445,16 +1445,16 @@ namespace Test
             p67.Features = "Loreum Ispum";
             p67.Quantity = 12;
             p67.BuyingPrice = 300;
-            p67.SellingPrice = 340;
+            p67.SellingPrice = 34;
             p67.Category = "Accessories";
             p67.SubCategory = "Jewelery";
             p67.Brand = "ectasy";
-            p67.size = 0;
+            p67.Size = 0;
             p67.Date = DateTime.Now;
             p67.LastSold = DateTime.Now;
             p67.TotalSell = 200;
-            p67.Totalreview = 5;
-            p67.Star = 40;
+            p67.TotalViewed = 5;
+            p67.Star = 4;
 			Console.WriteLine(ps.Insert(p67));
 			
 			
@@ -1463,16 +1463,16 @@ namespace Test
             p68.Features = "Loreum Ispum";
             p68.Quantity = 12;
             p68.BuyingPrice = 300;
-            p68.SellingPrice = 340;
+            p68.SellingPrice = 34;
             p68.Category = "Accessories";
             p68.SubCategory = "Jewelery";
             p68.Brand = "ectasy";
-            p68.size = 0;
+            p68.Size = 0;
             p68.Date = DateTime.Now;
             p68.LastSold = DateTime.Now;
             p68.TotalSell = 200;
-            p68.Totalreview = 5;
-            p68.Star = 40;
+            p68.TotalViewed = 5;
+            p68.Star = 4;
 			Console.WriteLine(ps.Insert(p68));
 			
 			
@@ -1482,16 +1482,16 @@ namespace Test
             p69.Features = "Loreum Ispum";
             p69.Quantity = 12;
             p69.BuyingPrice = 300;
-            p69.SellingPrice = 340;
+            p69.SellingPrice = 34;
             p69.Category = "Accessories";
             p69.SubCategory = "Jewelery";
             p69.Brand = "ectasy";
-            p69.size = 0;
+            p69.Size = 0;
             p69.Date = DateTime.Now;
             p69.LastSold = DateTime.Now;
             p69.TotalSell = 200;
-            p69.Totalreview = 5;
-            p69.Star = 40;
+            p69.TotalViewed = 5;
+            p69.Star = 4;
 			Console.WriteLine(ps.Insert(p69));
 			
 			
@@ -1500,16 +1500,16 @@ namespace Test
             p70.Features = "Loreum Ispum";
             p70.Quantity = 12;
             p70.BuyingPrice = 300;
-            p70.SellingPrice = 340;
+            p70.SellingPrice = 34;
             p70.Category = "Accessories";
             p70.SubCategory = "Jewelery";
             p70.Brand = "ectasy";
-            p70.size = 0;
+            p70.Size = 0;
             p70.Date = DateTime.Now;
             p70.LastSold = DateTime.Now;
             p70.TotalSell = 200;
-            p70.Totalreview = 5;
-            p70.Star = 40;
+            p70.TotalViewed = 5;
+            p70.Star = 4;
 			Console.WriteLine(ps.Insert(p70));
 			
 			

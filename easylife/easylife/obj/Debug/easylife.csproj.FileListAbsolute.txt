@@ -131,6 +131,7 @@ C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife\bin\System.Web.WebPages.Razor.xml
 C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife\obj\Debug\easylife.csprojResolveAssemblyReference.cache
 C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife\obj\Debug\easylife.dll
 C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife\obj\Debug\easylife.pdb
+E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\obj\Debug\easylife.csprojResolveAssemblyReference.cache
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\bin\easylife.dll
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\bin\easylife.pdb
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\bin\Antlr3.Runtime.dll
@@ -181,6 +182,5 @@ E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\bin\System
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\bin\System.Web.WebPages.xml
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\bin\System.Web.WebPages.Deployment.xml
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\bin\System.Web.WebPages.Razor.xml
-E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\obj\Debug\easylife.csprojResolveAssemblyReference.cache
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\obj\Debug\easylife.dll
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\obj\Debug\easylife.pdb

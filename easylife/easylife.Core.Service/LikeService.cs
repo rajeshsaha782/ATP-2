@@ -42,12 +42,12 @@ namespace easylife.Core.Service
             return _context.Set<Like>().Count(i => i.ProductId == Product_id);
         }
 
-        public bool Delete(int AddressId)
+        public bool Delete(int LikeId)
         {
-            var deleteLike = _context.Set<Like>().Where(i => i.LikeId == AddressId).SingleOrDefault();
+            var deleteLike = _context.Set<Like>().Where(i => i.LikeId == LikeId).SingleOrDefault();
             /// 
 
-            if (deleteLike != null)
+            if(deleteLike != null)
             {
                 _context.Set<Like>().Remove(deleteLike);
                 _context.SaveChanges();
@@ -55,11 +55,10 @@ namespace easylife.Core.Service
             return true;
         }
 
-      
 
-        public bool Insert(Like address)
+        public bool Insert(Like like)
         {
-            if (_context.Set<Like>().Add(address) == address)
+            if(_context.Set<Like>().Add(like) == like)
             {
                 _context.SaveChanges();
                 return true;
@@ -78,10 +77,10 @@ namespace easylife.Core.Service
 
         public bool UnsetLike(int Member_id, int Product_id)
         {
-            var deleteLike = _context.Set<Like>().Where(i => i.MemberId == Member_id && i.ProductId == Product_id).SingleOrDefault();
+            var deleteLike = _context.Set<Like>().Where(i => (i.MemberId == Member_id) && (i.ProductId == Product_id)).SingleOrDefault();
             /// 
 
-            if (deleteLike != null)
+            if(deleteLike != null)
             {
                 _context.Set<Like>().Remove(deleteLike);
                 _context.SaveChanges();
@@ -93,13 +92,25 @@ namespace easylife.Core.Service
 
         public bool Update(Like like)
         {
-            if (_context.Set<Like>().Any(e => e.LikeId == like.LikeId))
+            if(_context.Set<Like>().Any(e => e.LikeId == like.LikeId))
             {
                 _context.Set<Like>().Attach(like);
                 _context.Entry(like).State = EntityState.Modified;
                 _context.SaveChanges();
                 return true;
             }
+            else
+                return false;
+        }
+
+
+        public bool isLiked(int ProductId, int MemberId)
+        {
+            Like m = _context.Set<Like>().Where(i => (i.ProductId == ProductId) & (i.MemberId == MemberId)).SingleOrDefault();
+
+            if(m != null)
+                return true;
+
             else
                 return false;
         }

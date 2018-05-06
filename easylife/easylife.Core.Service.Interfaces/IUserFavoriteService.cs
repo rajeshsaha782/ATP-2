@@ -14,10 +14,13 @@ namespace easylife.Core.Service.Interfaces
         bool Insert(UserFavorite userfavorite);
         bool Update(UserFavorite userfavorite);
         bool Delete(int UserFavoriteId);
+        bool Delete(int ProductId, int MemberId);
+
+        bool isFavorite(int ProductId, int MemberId);
 
         IEnumerable<UserFavorite> GetByMemberId(int MemberId);
         IEnumerable<UserFavorite> GetByProductId(int ProductId);
-        int CountByMemberId(int MemberId);
-        
+
+
     }
 }

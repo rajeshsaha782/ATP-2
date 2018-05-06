@@ -9,7 +9,7 @@ using easylife.Core.Entities;
 
 namespace easylife.Core.Service
 {
-   public class UserFavoriteService : IUserFavoriteService
+    public class UserFavoriteService : IUserFavoriteService
     {
         DbContext _context;
 
@@ -30,12 +30,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<UserFavorite> GetByMemberId(int Member_id)
         {
-            return _context.Set<UserFavorite>().Where(i=>i.MemeberId==Member_id);
-        }
-
-        public int CountByMemberId(int Member_id)
-        {
-            return _context.Set<UserFavorite>().Count(i => i.MemeberId == Member_id);
+            return _context.Set<UserFavorite>().Where(i => i.MemeberId == Member_id);
         }
 
 
@@ -43,10 +38,22 @@ namespace easylife.Core.Service
 
         public bool Delete(int UserFavorite_id)
         {
-            var deleteFavorite= _context.Set<UserFavorite>().Where(i=>i.UserFavoriteId == UserFavorite_id).SingleOrDefault();
+            var deleteFavorite = _context.Set<UserFavorite>().Where(i => i.UserFavoriteId == UserFavorite_id).SingleOrDefault();
             /// 
-           
-            if (deleteFavorite != null)
+
+            if(deleteFavorite != null)
+            {
+                _context.Set<UserFavorite>().Remove(deleteFavorite);
+                _context.SaveChanges();
+            }
+            return true;
+        }
+        public bool Delete(int ProductId, int MemberId)
+        {
+            var deleteFavorite = _context.Set<UserFavorite>().Where(i => (i.ProductId == ProductId) && (i.MemeberId == MemberId)).SingleOrDefault();
+            /// 
+
+            if(deleteFavorite != null)
             {
                 _context.Set<UserFavorite>().Remove(deleteFavorite);
                 _context.SaveChanges();
@@ -54,11 +61,10 @@ namespace easylife.Core.Service
             return true;
         }
 
-
         public UserFavorite GetById(int UserFavorite_id)
         {
             return _context.Set<UserFavorite>().Where(i => i.UserFavoriteId == UserFavorite_id).SingleOrDefault();
-            
+
         }
 
         public IEnumerable<UserFavorite> GetByProductId(int Product_id)
@@ -68,7 +74,7 @@ namespace easylife.Core.Service
 
         public bool Insert(UserFavorite userfavorite)
         {
-            if (_context.Set<UserFavorite>().Add(userfavorite) == userfavorite)
+            if(_context.Set<UserFavorite>().Add(userfavorite) == userfavorite)
             {
                 _context.SaveChanges();
                 return true;
@@ -78,10 +84,21 @@ namespace easylife.Core.Service
 
         }
 
+        public bool isFavorite(int ProductId, int MemberId)
+        {
+            UserFavorite m = _context.Set<UserFavorite>().Where(i => (i.ProductId == ProductId) && (i.MemeberId == MemberId)).SingleOrDefault();
+
+            if(m != null)
+                return true;
+
+            else
+                return false;
+        }
+
         public bool Update(UserFavorite userfavorite)
         {
 
-            if (_context.Set<UserFavorite>().Any(e => e.UserFavoriteId == userfavorite.UserFavoriteId))
+            if(_context.Set<UserFavorite>().Any(e => e.UserFavoriteId == userfavorite.UserFavoriteId))
             {
                 _context.Set<UserFavorite>().Attach(userfavorite);
                 _context.Entry(userfavorite).State = EntityState.Modified;
@@ -90,7 +107,7 @@ namespace easylife.Core.Service
             }
             else
                 return false;
-           
+
         }
     }
 }
