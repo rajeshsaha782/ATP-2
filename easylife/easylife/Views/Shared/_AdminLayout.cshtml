@@ -63,7 +63,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: Arial, sans-serif;
           <ul class="treeview-menu">
             <li><a href=@Url.Action("Dashboard") style="color:black"  class=" w3-blue" ><i class="fa fa-dashboard fa-fw"></i>  DashBoard</a></li>
 					<li><a href=@Url.Action("Edit_Profile_Admin") style="color:black" ><i class="fa fa-cog fa-fw"></i>  Edit Profile</a></li>
-					<li><a href=@Url.Action("View_Profile_Admin") style="color:black"  ><i class="fa fa-eye fa-fw"></i>  View Profile</a></li>
+					<li><a href='@Url.Action("View_Profile_Admin", new { id=Model.MemberId})'  style="color:black"  ><i class="fa fa-eye fa-fw"></i>  View Profile</a></li>
 					<li><a href=@Url.Action("Change_Password") style="color:black"  ><i class="fa fa-lock fa-fw"></i>  Change Password</a></li>
           </ul>
         </li>

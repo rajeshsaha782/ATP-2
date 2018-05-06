@@ -50,6 +50,8 @@ namespace easylife.Controllers
             D.Members = _MemberService.GetAll();
             D.Product = _ProductService.GetAll();
             D.Invoices = _InvoiceService.GetAll();
+
+            D.MemberId= Convert.ToInt32(Session["userId"]);
             return View(D);
         }
 
@@ -92,13 +94,17 @@ namespace easylife.Controllers
             }
         }
 
+        
+        public ActionResult View_Profile_Admin()
+        {
+           
+            int x = Convert.ToInt32(Session["userId"]);
 
-
-
-
+            return View(_MemberService.GetById(x));
+        }
 
         [HttpGet]
-        public ActionResult View_Profile_Admin(int id = 0)
+        public ActionResult View_Profile_Admin(int id)
         {
             return View(_MemberService.GetById(id));
         }
