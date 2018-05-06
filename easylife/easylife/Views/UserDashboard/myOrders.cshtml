@@ -25,7 +25,7 @@
 									<th>Invoice No</th>
 									<th>Order Date</th>
 									<th>Status</th>
-									<th  colspan="2">Payment</th>
+									<th  colspan="2">Payment Status</th>
 									
 									
 									
@@ -35,8 +35,11 @@
                                     <tr>
 									    <td> <a href=@Url.Action("invoices", new { id=item.InvoiceId,mid=Model.MemberId})> @item.InvoiceId </a></td>
 								        <td>@item.Date</td>
-									    <td>@item.Status</td>
-									    <td>@item.PaymentStatus</td>
+									    @if (item.Status == "0") {<td>On The Way</td> }
+                                        @if (item.Status == "1") {<td>Delivered</td> }
+                                        @if (item.Status == "2") {<td>Canceled</td> }
+									    @if (item.PaymentStatus == "0") {<td>Unpaid</td> }
+                                        @if (item.PaymentStatus == "1") {<td>Paid</td> }
 									    <td><a href=@Url.Action("removeOrder", new { id=item.InvoiceId,mid=item.MemberId})><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></td>
 									
 									

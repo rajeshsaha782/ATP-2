@@ -42,7 +42,8 @@
 					</div>					
 					</br>
 					</br>
-					        <script>
+					        @{var sl=0;}
+                            <script>
 								var slider = document.getElementById("myRange");
 								var output = document.getElementById("price");
 								output.innerHTML = slider.value;
@@ -51,13 +52,13 @@
 								  output.innerHTML = this.value;
 								}
 
-
+                                @sl = slider;
 								$("#myRange").on('change', function (data) {
 
 								   //alert(slider.value);
 
 
-								    window.location = '@Url.Action("PriceRange", "UserHome", new { max=1000 })'
+								    window.location = '@Url.Action("PriceRange", "UserHome", new { max=sl })'
 								});
 							</script>
 					

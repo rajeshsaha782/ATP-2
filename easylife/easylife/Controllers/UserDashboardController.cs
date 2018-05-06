@@ -226,6 +226,13 @@ namespace easylife.Controllers
                 I.MemberId = _InvoiceService.GetById(id).MemberId;
                 I.Name = _MemberService.GetById(I.MemberId).Name;
                 I.Invoice = _InvoiceService.GetById(id);
+                I.Orders = _OrderService.GetByInvoiceId(id);
+                int count = 0;
+                foreach (var item in I.Orders)
+                {
+                    I.Products[count] = _ProductService.GetById(item.ProductId);
+                    count++;
+                }
                 I.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
                 return View(I);
             }
