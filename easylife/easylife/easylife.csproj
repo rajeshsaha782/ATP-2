@@ -165,6 +165,7 @@
     <Compile Include="Models\AdminViewModel\ProductModel.cs" />
     <Compile Include="Models\AdminViewModel\ProductViewModel.cs" />
     <Compile Include="Models\AdminViewModel\DeliveryManViewModel.cs" />
+    <Compile Include="Models\AdminViewModel\SetCouponModel.cs" />
     <Compile Include="Models\UserDashboardViewModel\myAddressViewModel.cs" />
     <Compile Include="Models\UserDashboardViewModel\myCouponViewModel.cs" />
     <Compile Include="Models\UserDashboardViewModel\myDashboardViewModel.cs" />
@@ -346,7 +347,7 @@
     <None Include="Views\Admin\Edit_Profile_Admin.cshtml" />
     <Content Include="Views\Admin\Edit_Profile_Delivery_Man.cshtml" />
     <Content Include="Views\Admin\Edit_Profile_User.cshtml" />
-    <Content Include="Views\Admin\Set_Cupon.cshtml" />
+    <Content Include="Views\Admin\Set_Coupon.cshtml" />
     <Content Include="Views\Admin\Send_Mail.cshtml" />
     <None Include="Views\Admin\Update_Slider.cshtml" />
     <Content Include="Views\Admin\View_Product_Details.cshtml" />

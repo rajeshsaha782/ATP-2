@@ -130,6 +130,7 @@ E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\bin\System
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\bin\System.Web.WebPages.Razor.xml
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\obj\Debug\easylife.dll
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife\obj\Debug\easylife.pdb
+D:\ATP-2\easylife\easylife\bin\System.Web.Helpers.dll
 D:\ATP-2\easylife\easylife\bin\easylife.dll.config
 D:\ATP-2\easylife\easylife\bin\easylife.dll
 D:\ATP-2\easylife\easylife\bin\easylife.pdb
@@ -147,7 +148,6 @@ D:\ATP-2\easylife\easylife\bin\Microsoft.Practices.Unity.RegistrationByConventio
 D:\ATP-2\easylife\easylife\bin\Microsoft.Web.Infrastructure.dll
 D:\ATP-2\easylife\easylife\bin\Newtonsoft.Json.dll
 D:\ATP-2\easylife\easylife\bin\System.Net.Http.Formatting.dll
-D:\ATP-2\easylife\easylife\bin\System.Web.Helpers.dll
 D:\ATP-2\easylife\easylife\bin\System.Web.Http.dll
 D:\ATP-2\easylife\easylife\bin\System.Web.Http.WebHost.dll
 D:\ATP-2\easylife\easylife\bin\System.Web.Mvc.dll

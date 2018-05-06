@@ -18,14 +18,16 @@ namespace easylife.Controllers
         public IDeliveryManService _DeliveryManService;
         public IProductService _ProductService;
         public IOrderService _OrderService;
+        public ICouponService _CouponService;
 
-        public AdminController(IMemberService MemberService, IOrderService OrderService, IInvoiceService InvoiceService, IDeliveryManService DeliveryManService, IProductService ProductService)
+        public AdminController(IMemberService MemberService,ICouponService CouponService, IOrderService OrderService, IInvoiceService InvoiceService, IDeliveryManService DeliveryManService, IProductService ProductService)
         {
             _InvoiceService = InvoiceService;
             _MemberService = MemberService;
             _DeliveryManService = DeliveryManService;
             _ProductService = ProductService;
             _OrderService = OrderService;
+            _CouponService = CouponService;
         }
 
         public ActionResult Dashboard()
@@ -82,9 +84,9 @@ namespace easylife.Controllers
 
 
         [HttpGet]
-        public ActionResult Edit_Profile_Admin(int MemberId=0)
+        public ActionResult Edit_Profile_Admin(int id=0)
         {
-            return View(_MemberService.GetById(MemberId));
+            return View(_MemberService.GetById(id));
         }
 
         [HttpPost]
@@ -542,10 +544,33 @@ namespace easylife.Controllers
         }
       
        
-        public ActionResult Set_Cupon()
+        [HttpGet]
+        public ActionResult Set_Coupon(int id=0)
         {
-            return View();
+            Coupon m = new Coupon();
+            m.MemberId = id;
+            return View(m);
         }
+
+        [HttpPost]
+        public ActionResult Set_Coupon(Coupon coupon,int id)
+        {
+            // SetCouponModel s = new SetCouponModel();
+            coupon.MemberId = id;
+            coupon.Availability = "0";
+            coupon.IssueDate = DateTime.Now;
+            if (_CouponService.Insert(coupon))
+                return RedirectToAction("View_Users");
+            else
+            {
+
+                return RedirectToAction("View_Users");
+            }
+           
+        }
+
+
+
         public ActionResult Send_Mail()
         {
             return View();

@@ -91,11 +91,11 @@
                       else
                       {
                     <td>Block</td>
-                          }
+                      }
                       }
 
                   <td><a href='@Url.Action("Send_Mail")'><img height="30" width="30" src="~/resources/mail.jpg" /></a></td>
-                  <td><a href='@Url.Action("Set_Cupon")'><img height="30" width="30" src="~/resources/cupon.jpg" /></a></td>
+                  <td><a href=@Url.Action("Set_Coupon", new { id = item.MemberId})><img height="30" width="30" src="~/resources/cupon.jpg" /></a></td>
                 </tr>
               }
           }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model easylife.Core.Entities.Coupon
+@{
     ViewBag.Title = "Set Coupon";
 }
 
@@ -6,6 +7,10 @@
 			
 			<div class="main-div">
 				
+
+@using (Html.BeginForm("Set_Coupon", "Admin",new { id = Model.MemberId }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
 				<div  style="width:50%;height:600px;background-color:white;">
 					<table>
                             <tr  style="background-color:whitesmoke;" >
@@ -19,22 +24,32 @@
 
 
                         <tr>
-                            <td>Memeber Id:</td><td><label>1</label></td>
+                            <td>Memeber Id:</td><td><label>@Model.MemberId</label></td>
 
 
 
 
                         </tr>
                         <tr>
-                            <td>Percentage:</td><td><input value="2/11/2018">%</td>
+                            <td>Percentage:</td>
+                            <td>@Html.EditorFor(model => model.Percentage, new { htmlAttributes = new { @class = "form-control" } })
+                               @Html.ValidationMessageFor(model => model.Percentage, "", new { @class = "text-danger" })
+                            %</td>
 
                         </tr>
                         <tr>
-                            <td>Issue Date:</td><td><input value="30/10/2018"></td>
+                            <td>Issue Date:</td>
+                            <td>@DateTime.Now</td>
 
                         </tr>
                         <tr>
-                            <td>Expire Date:</td><td><input value="2/11/2018"></td>
+
+                            <td>Expire Date:</td>
+                            <td>
+                             
+                                @Html.TextBoxFor(m => m.DeadlineDate, new { Value = Model.DeadlineDate.ToString("yyyy-mm-dd"), id = "MySuperCoolId" });
+                            </td>
+                            
 
                         </tr>
                        
@@ -46,8 +61,8 @@
                     <hr>
                     <table>
                             <tr >
-                                   <td><button class="button" onclick="confirmm()">Add</button></td>
-                                 <td><a href="@Url.Action("View_Users")"><button class="button">Cancel</button></a></td>   
+                                   <td><button class="button">Add</button></td>
+                                 <td><a href="@Url.Action("View_Users",new {id=Model.MemberId })"><button class="button">Cancel</button></a></td>   
                                     
                             </tr>
                             
@@ -58,6 +73,7 @@
 					
 						
 					</div>
+}
 					<!--<img src="resources/1.jpg" width="80%" height="300px" align="center"/> -->
 				</div>
 				
@@ -67,7 +83,7 @@ function confirmm() {
     var txt;
     if (confirm("Add cupon ?")) {
         alert("Added Succesfully");
-		window.open('@Url.Action("View_Users")','_self');
+		
 		
     } else {
         txt = "You pressed Cancel!";
