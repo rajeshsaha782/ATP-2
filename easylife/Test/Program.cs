@@ -53,7 +53,7 @@ namespace Test
             m2.Gender = "Male";
             m2.PhoneNumber = "01722222222";
             m2.Type = "2";
-            m2.Status = "2";
+            m2.Status = "1";
             m2.MemberSince = DateTime.Now;
             m2.LastLoggedIn = DateTime.Now;
             m2.TotalPurchase = 1;
