@@ -78,13 +78,22 @@
           {
               if (item.Type == "0")
               {
-                <tr onclick="location.href='@Url.Action("View_Profile_User", new { id=item.MemberId })'">
+                <tr onclick="location.href='@Url.Action("View_Profile_User", new { id = item.MemberId })'">
                   <td>@Html.DisplayFor(modelItem => item.MemberId)</td>
                   <td>@Html.DisplayFor(modelItem => item.Name)</td>
 		          <td>@Html.DisplayFor(modelItem => item.Email)</td>
                   <td>@Html.DisplayFor(modelItem => item.MemberId)</td>
                   <td>@Html.DisplayFor(modelItem => item.LastLoggedIn)</td>
-		          <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                  @{if (item.Status == "1")
+                      {
+                    <td>Active</td>
+                      }
+                      else
+                      {
+                    <td>Block</td>
+                          }
+                      }
+
                   <td><a href='@Url.Action("Send_Mail")'><img height="30" width="30" src="~/resources/mail.jpg" /></a></td>
                   <td><a href='@Url.Action("Set_Cupon")'><img height="30" width="30" src="~/resources/cupon.jpg" /></a></td>
                 </tr>
