@@ -84,7 +84,8 @@
 
 							<tr>
 							        <td><a onclick="location.href='@Url.Action("Edit_Profile_User", new { @Model.MemberId })'"><button class="button">Edit</button></a>
-							        <td><button class="button" onclick="confirmm()">Delete</button></td>
+							        <td><a onclick="location.href='@Url.Action("DeleteUser", new { @Model.MemberId })'"<button class="button" onclick="confirmm()">Delete</button></a> 
+                                  </td>
                                    
 
 </tr>

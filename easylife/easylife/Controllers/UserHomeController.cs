@@ -268,7 +268,7 @@ namespace easylife.Controllers
         {
             _CartService.Delete(id);
             return RedirectToAction("shoppingCart");
-
+            
 
         }
 

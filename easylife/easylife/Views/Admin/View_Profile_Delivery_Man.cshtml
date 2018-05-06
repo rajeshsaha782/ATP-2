@@ -78,7 +78,9 @@
 							<tr>
 							        <td><a onclick="location.href='@Url.Action("Edit_Profile_Delivery_Man", new { @Model.MemberId })'"><button class="button">Edit</button></a>
                                        
-							        <td><button class="button" onclick="confirmm()">Delete</button></td>
+							        <td>
+                                        <a onclick="location.href='@Url.Action("DeleteDeliveryMan", new { @Model.MemberId })'"><button class="button" onclick="confirmm()">Delete</button></a>
+                                   </td>
 							</tr>
 						
 						</table>

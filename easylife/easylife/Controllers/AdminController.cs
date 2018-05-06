@@ -50,9 +50,33 @@ namespace easylife.Controllers
             D.Members = _MemberService.GetAll();
             D.Product = _ProductService.GetAll();
             D.Invoices = _InvoiceService.GetAll();
-
-            D.MemberId= Convert.ToInt32(Session["userId"]);
+            D.MemberId = Convert.ToInt32(Session["userId"]);
+            foreach (var item in _MemberService.GetAll())
+            {
+                if (item.MemberId == D.MemberId)
+                {
+                    @ViewBag.Name = item.Name;
+                }
+            }
+           
+            
             return View(D);
+        }
+
+        public ActionResult DeleteUser(int  MemberId)
+        {
+            _MemberService.Delete(MemberId);
+            return RedirectToAction("View_Users");
+
+
+        }
+
+        public ActionResult DeleteDeliveryMan(int MemberId)
+        {
+            _MemberService.Delete(MemberId);
+            return RedirectToAction("View_Delivery_man");
+
+
         }
 
 
@@ -525,6 +549,13 @@ namespace easylife.Controllers
         public ActionResult Send_Mail()
         {
             return View();
+        }
+
+
+        public ActionResult Logout()
+        {
+            Session["userId"] = null;
+            return RedirectToAction("Index", "UserHome");
         }
 
     }
