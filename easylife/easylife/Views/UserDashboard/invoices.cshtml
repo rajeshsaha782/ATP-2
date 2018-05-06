@@ -47,6 +47,7 @@
 												<td>
 													<p style="text-align:left;"><b>Bill To:</b><p>
 													<p style="text-align:left;">@Model.Name<p>
+                                                        <p style="text-align:left;"><b>Shipping Address:</b><p>
 													<p style="text-align:left;">@Model.Invoice.ShippingAddress<p>
 												</td>
 												<td>
@@ -129,9 +130,9 @@
 																<td>Subtotal</td>
 																<td>$@tprice</td>
 															</tr>
-                                                            @{var tax=(tprice*5)/100;}
+                                                            @{var tax=60;}
 															<tr>
-																<td>TAX(5%)</td>
+																<td>Shipping Cost</td>
 																<td>$@tax</td>
 															</tr>
                                                             @{tprice += tax;}
