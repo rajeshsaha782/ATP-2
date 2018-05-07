@@ -19,8 +19,9 @@ namespace easylife.Controllers
         public IProductService _ProductService;
         public IOrderService _OrderService;
         public ICouponService _CouponService;
+        public IAddressService _AddressService;
 
-        public AdminController(IMemberService MemberService,ICouponService CouponService, IOrderService OrderService, IInvoiceService InvoiceService, IDeliveryManService DeliveryManService, IProductService ProductService)
+        public AdminController(IMemberService MemberService, ICouponService CouponService, IOrderService OrderService, IInvoiceService InvoiceService, IDeliveryManService DeliveryManService, IProductService ProductService, IAddressService AddressService)
         {
             _InvoiceService = InvoiceService;
             _MemberService = MemberService;
@@ -28,6 +29,7 @@ namespace easylife.Controllers
             _ProductService = ProductService;
             _OrderService = OrderService;
             _CouponService = CouponService;
+            _AddressService = AddressService;
         }
 
         public ActionResult Dashboard()
@@ -232,8 +234,16 @@ namespace easylife.Controllers
                 mem.MemberSince = DateTime.Now;
                 mem.TotalPurchase = 0;
                 mem.Point = 0;
+                Address address= new Address();
+
+
                 if (_MemberService.Insert(mem))
+                {
+                    address.MemberId = _MemberService.GetAll().Last().MemberId;
+                    address.MemberAddress = "No Address";
+                    _AddressService.Insert(address);
                     return RedirectToAction("Dashboard");
+                }
                 else
                 {
 

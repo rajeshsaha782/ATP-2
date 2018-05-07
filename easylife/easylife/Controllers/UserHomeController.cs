@@ -501,7 +501,14 @@ namespace easylife.Controllers
             m.LastLoggedIn = DateTime.Now;
             m.Status = "1";
             m.Type = "0";
+
             _MemberService.Insert(m);
+
+            Address address = new Address();
+            address.MemberId = _MemberService.GetAll().Last().MemberId;
+            address.MemberAddress = "No Address";
+            _AddressService.Insert(address);
+
 
             return RedirectToAction("Index", "UserHome");
 

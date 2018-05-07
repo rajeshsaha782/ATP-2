@@ -51,6 +51,18 @@ namespace easylife.Core.Service
             return true;
         }
 
+        public bool DeleteNoAdress(int MemberId)
+        {
+            var DeleteAddress = _context.Set<Address>().Where(i => i.MemberId == MemberId & i.MemberAddress == "No Address").SingleOrDefault();
+            /// 
+
+            if (DeleteAddress != null)
+            {
+                _context.Set<Address>().Remove(DeleteAddress);
+                _context.SaveChanges();
+            }
+            return true;
+        }
        
 
         public Address GetById(int AddressId)

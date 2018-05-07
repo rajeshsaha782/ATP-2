@@ -41,10 +41,11 @@
 								
 									
 								</td>
+                                    @if(Model.count!=1){
 								<td>
 									<p><a href=@Url.Action("removeAddress", new { id=item.AddressId,mid=item.MemberId})><span class="glyphicon glyphicon-trash point" title="Remove"></span></a></p>
 								</td>
-									
+									}
 								</tr>
                                                         count++;
                                                     }                

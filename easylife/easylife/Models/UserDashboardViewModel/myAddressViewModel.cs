@@ -9,5 +9,6 @@ namespace easylife.Models.UserDashboardViewModel
     public class myAddressViewModel:MemberInfo
     {
         public IEnumerable<Address> Addresses { get; set; }
+        public int count { get; set; }
     }
 }

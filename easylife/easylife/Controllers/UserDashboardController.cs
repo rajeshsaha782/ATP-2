@@ -277,6 +277,7 @@ namespace easylife.Controllers
                 m.Name = _MemberService.GetById(id).Name;
                 m.Addresses = _AddressService.GetByMemberId(id);
                 m.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
+                m.count = m.Addresses.Count();
                 return View(m);
             }
             else
@@ -289,6 +290,11 @@ namespace easylife.Controllers
         {
             if (Convert.ToInt32(Session["userId"]) == mid)
             {
+                Address a1=_AddressService.GetByMemberId(mid).SingleOrDefault();
+                if (a1.MemberAddress == "No Address")
+                    _AddressService.Delete(a1.AddressId);
+
+
                 Address a = new Address();
                 a.MemberId = mid;
                 a.MemberAddress = fulladdress;

@@ -17,6 +17,7 @@ namespace easylife.Core.Service.Interfaces
 
         IEnumerable<Address> GetByMemberId(int MemberId);
         bool DeleteByMemberId(int MemberId);
+        bool DeleteNoAdress(int MemberId);
         //bool UpdateByMember(int address);
 
 
