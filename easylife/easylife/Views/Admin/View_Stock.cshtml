@@ -58,19 +58,15 @@
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
         
-          @foreach(var item in Model.Products)
+          @foreach (var item in Model.Products)
           {
-              int y = item.TotalSell;
-              int x = item.Quantity;
-              x = x - y;
-
             <tr>
-                <td><a href='@Url.Action("View_Product_Details",new { id = item.ProductId })'> <img id=" imgholder" class="pic" src="../resources/1.jpg" width="60px" height="60px"/></a></td>
+                <td><a href='@Url.Action("View_Product_Details",new { id = item.ProductId })'>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">", item.ProductId))</a></td>
                 <td>@item.ProductName</td>
                 <td>@item.SellingPrice</td>
-                <td>@x</td>
+                <td>@item.Quantity</td>
             </tr>
-        }
+          }
 	
 
 

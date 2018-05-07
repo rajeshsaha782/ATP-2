@@ -6,487 +6,527 @@
 }
 <link href="~/Styles/Style_user.css" rel="stylesheet" />
 <div class="container-fluid ">
-						<ol class="breadcrumb">
-						<li><a href=@Url.Action("index")><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a href=@Url.Action("search") >Search</a></li>
-						<li><a  class="active">Details</a></li>
-						
-						</ol>
-					</div>
-					
-					
-					<div class="container-fluid ">
-						
-						
-						
-						
-						
-						<div class="container-fluid col-md-4">
-						
-								
-									<div class="easyzoom example">
-										@Html.Raw(String.Format("<img src=\"/resources/{0}.jpg\">", Model.DetailProduct.ProductId))
-                                       @* <img src="~/resources/2.jpg">*@
-									</div>
-								
-						
-							<div >
-							
-								<p>
-								<span id="viewed" class="glyphicon glyphicon-eye-open" style="font-size: 25px;text-align:center;color:gray" title="10 people viewed this Product"></span><small style="font-size: 15px;">(@Model.DetailProduct.TotalViewed)</small>
-									&nbsp;
-								<span id="purchase" class="glyphicon glyphicon-shopping-cart" style="font-size: 25px;text-align:center;color:gray" title="5 people Purchased this Product"></span><small style="font-size: 15px;">(@Model.DetailProduct.TotalSell)</small>
-									&nbsp;
-                                    @if(Model.isLike)
-                                    {
-                                        <span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:green" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
+    <ol class="breadcrumb">
+        <li><a href=@Url.Action("index")><i class="fa fa-dashboard"></i> Home</a></li>
+
+        <li><a class="active">Details</a></li>
+
+    </ol>
+</div>
+
+
+<div class="container-fluid ">
+
+
+
+
+
+    <div class="container-fluid col-md-4">
+
+
+        <div class="easyzoom example">
+            @Html.Raw(String.Format("<img src=\"/resources/{0}.jpg\">", Model.DetailProduct.ProductId))
+            @* <img src="~/resources/2.jpg">*@
+        </div>
+
+
+        <div>
+
+            <p>
+                <span id="viewed" class="glyphicon glyphicon-eye-open" style="font-size: 25px;text-align:center;color:gray" title="10 people viewed this Product"></span><small style="font-size: 15px;">(@Model.DetailProduct.TotalViewed)</small>
+                &nbsp;
+                <span id="purchase" class="glyphicon glyphicon-shopping-cart" style="font-size: 25px;text-align:center;color:gray" title="5 people Purchased this Product"></span><small style="font-size: 15px;">(@Model.DetailProduct.TotalSell)</small>
+                &nbsp;
+                @if (Model.isLike)
+                {
+                    <span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:green" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
+                }
+                @if (!Model.isLike)
+                {
+                    <span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:black" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
+                }
+
+                &nbsp;
+                @if (Model.isDislike)
+                {
+                    <span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:red" title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
+                }
+                @if (!Model.isDislike)
+                {
+                    <span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:black" title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
+                }
+
+
+            </p>
+        </div>
+
+
+    </div>
+    <div style="margin-left:10%" class="container-fluid col-md-6">
+
+
+        <table class="table table-striped reg  " style="width:400px;">
+            @using (Html.BeginForm("AddToCart", "UserHome", new { id = Model.DetailProduct.ProductId }, FormMethod.Post))
+            {
+                <tbody>
+                    <tr>
+                        <th>Product Name</th>
+                        <td><p>@Model.DetailProduct.ProductName</p></td>
+                    </tr>
+                    <tr>
+                        <th>Product Price</th>
+                        <td><p> &#2547; @Model.DetailProduct.SellingPrice</p></td>
+                    </tr>
+                    <tr>
+                        <th>@if (Model.DetailProduct.Size != 0) { Write("Size"); }</th>
+                        <td>
+                            @for (int i = 0; i < Model.DetailProduct.Size; i++)
+                            {
+                                <input name="size" type="radio" />
+                                if (i == 0) { Write("S"); }
+                                else if (i == 1) { Write("M"); }
+                                else if (i == 2) { Write("XL"); }
+                                else if (i == 3) { Write("XXL"); }
+                                else if (i == 4) { Write("XXXL"); }
+                            }
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Quantity</th>
+                        <td><input id="qty" name="qty" type="number" value="1" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p>
+                                @for (int i = 1; i <= Model.DetailProduct.Star; i++)
+                                {
+                                    <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+                                }
+                                @for (int i = 1; i <= 5 - Model.DetailProduct.Star; i++)
+                                {
+                                    <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+                                }
+
+
+
+
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+
+                            <p>
+                                <span id="cart" class="glyphicon glyphicon-shopping-cart point" style="font-size:30px; padding-left:20px;color:grey" title="Add to Cart"></span>
+
+                                @if (Model.isFavorite == true)
+                                {
+                                    <span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:red" title="Save for later"></span>
+                                }
+                                @if (Model.isFavorite == false)
+                                {
+                                    <span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
+                                }
+
+
+                                @if (Session["userId"] == null)
+                                {
+                                    <a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>
+                                }
+                                @if (Session["userId"] != null)
+                                {
+                                    <input type="submit" value="Buy Now" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px" />
+                                }
+
+                                @*<a href=@Url.Action("shoppingCart", new { id = Model.DetailProduct.ProductId })><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>*@
+                            </p>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            }
+        </table>
+
+
+        </br>
+        </br>
+
+        <div class="container-fluid ">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#feature">Feature</a></li>
+                <li><a data-toggle="tab" href="#size">Size</a></li>
+                <li><a data-toggle="tab" href="#review">Review</a></li>
+
+
+            </ul>
+
+            </br>
+
+
+            <div class="tab-content">
+                <div id="feature" class="tab-pane fade in active" style="height:100px;overflow:auto">
+                    <p>@Model.DetailProduct.Features</p>
+                </div>
+
+
+                <div id="size" class="tab-pane fade">
+                    <table class="table table-striped reg  " style="width:400px;">
+
+                        <tbody>
+                            <tr>
+                                <th>Size</th>
+                                <th>Small</th>
+                                <th>Medium</th>
+                                <th>Large</th>
+                                <th>XL</th>
+                            </tr>
+                            <tr>
+                                <td>chest</td>
+                                <td>30</td>
+                                <td>38</td>
+                                <td>40</td>
+                                <td>42</td>
+                            </tr>
+                            <tr>
+                                <td>Length</td>
+                                <td>25</td>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>27</td>
+
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="review" class="tab-pane fade" style="height:300px;width:500px; overflow:auto">
+                    <table class="table table-striped ">
+
+                        <tbody>
+
+                            @foreach (var Review in Model.Reviews)
+                            {
+                                <tr>
+                                    <td>
+                                        @if (Model.ReviewdMembers[c].Gender == "Male")
+                                        {
+                                            <img class="img-circle user" src="~/resources/u1.jpg">
+                                        }
+                                        @if (Model.ReviewdMembers[c].Gender != "Male")
+                                        {
+                                            <img class="img-circle user" src="~/resources/u2.jpg">
+                                        }
+
+
+
+                                    </td>
+                                    <td>
+                                        @Model.ReviewdMembers[c].Name
+                                    @{
+                                        if (Model.ReviewdMembers[c].Name == Model.Name)
+                                        {
+                                            <small style="color:blue">(You)</small>
+                                        }
                                     }
-                                    @if(!Model.isLike)
+                                </td>
+                                <td>
+                                    @if (Model.ReviewdMembers[c].Point <= 500)
                                     {
-                                        <span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:black" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
+                                        <img class="img-circle user" height="10px" src="~/resources/bronze.jpg">
                                     }
-								
-									&nbsp;
-                                    @if(Model.isDislike)
+                                    @if (Model.ReviewdMembers[c].Point > 500 && Model.ReviewdMembers[c].Point <= 1500)
                                     {
-                                        <span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:red"title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
+                                        <img class="img-circle user" height="10px" src="~/resources/gold.jpg">
                                     }
-                                    @if(!Model.isDislike)
+                                    @if (Model.ReviewdMembers[c].Point > 1500)
                                     {
-                                        <span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:black"title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
+                                        <img class="img-circle user" src="~/resources/platinum.jpg">
                                     }
 
-								
-								</p>
-							</div>
-							
-							
-						</div>
-						<div style="margin-left:10%" class="container-fluid col-md-6">
-							
-							
-							<table class="table table-striped reg  " style="width:400px;">
-								 @using(Html.BeginForm("AddToCart", "UserHome", new { id = Model.DetailProduct.ProductId }, FormMethod.Post))
-         {
-								<tbody>
-									<tr>
-										<th>Product Name</th>
-										<td><p>@Model.DetailProduct.ProductName</p></td>
-									</tr>
-									<tr>
-										<th>Product Price</th>
-										<td><p>$@Model.DetailProduct.SellingPrice</p></td>
-									</tr>
-									<tr>
-										<th>Size</th>
-										<td> 
-                                            @for(int i = 0; i < Model.DetailProduct.Size;i++ )
-                                            {
-                                                <input name="size" type="radio"/>
-                                                if(i == 0) { Write("S"); }
-                                                else if(i == 1) { Write("M"); }
-                                                else if(i == 2) { Write("XL"); }
-                                                else if(i == 3) { Write("XXL"); }
-                                                else if(i == 4) { Write("XXXL"); }
-                                            }
-                                            
-											
-										</td>
-									</tr>
-									<tr>
-										<th>Quantity</th>
-										<td><input id="qty" name="qty" type="number" value="1"/></td>
-									</tr>
-									<tr>
-										<td colspan="2">
-										<p>	
-                                           @for(int i = 1; i <= Model.DetailProduct.Star; i++)
-                                           {
-                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-                                           }
-                                           @for(int i = 1; i <= 5 - Model.DetailProduct.Star; i++)
-                                           {
-                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-                                           }
-											
-											
-											
-											
-										</p>	
-										</td>
-									</tr>
-									
-									<tr>
-										<td colspan="2">
-											
-											<p>	
-												<span id="cart" class="glyphicon glyphicon-shopping-cart point" style="font-size:30px; padding-left:20px;color:grey" title="Add to Cart"></span>
-							
-                                                @if(Model.isFavorite==true)
-                                                {
-                                                    <span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:red" title="Save for later"></span>
-                                                }
-                                                @if(Model.isFavorite == false)
-                                                {
-                                                    <span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
-                                                }
-												
-												
-                                                @if(Session["userId"] == null)
-                                                {
-                                                     <a  data-toggle="modal" data-target="#Detailloginmodal"><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>
-                                                }
-                                                @if(Session["userId"] != null)
-                                                {
-                                                    <input type="submit" value="Buy Now" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px" />
-                                                }
-                                                
-												@*<a href=@Url.Action("shoppingCart", new { id = Model.DetailProduct.ProductId })><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>*@
-											</p>
-										</td>
-									</tr>
-									
-								</tbody>
-							
-         }
-						</table>
-						
-							
-							</br>
-							</br>
-							
-							<div class="container-fluid ">
-								<ul class="nav nav-tabs">
-									<li class="active"><a data-toggle="tab" href="#feature">Feature</a></li>
-									<li><a data-toggle="tab" href="#size">Size</a></li>
-									<li><a data-toggle="tab" href="#review">Review</a></li>
-						
-								   
-								 </ul>
 
-								 </br>
-							
+                                </td>
+                                <td> <p style="text-align:justify;">@Review.Review</p></td>
+                                <td> <p style="text-align:justify;color:gray"><small>@Review.Date</small></p></td>
 
-								 <div class="tab-content">
-									<div id="feature" class="tab-pane fade in active" style="height:100px;overflow:auto">
-										<p>@Model.DetailProduct.Features</p>
-									</div>
+                            </tr>
+                                            c++;
+                                        }
+
+                            @*<tr>
+                                <td> <img class="img-circle user" src="~/resources/u1.jpg"></td>
+                                    <td>Norvvis</td>
+                                    <td><img class="img-circle user" src="~/resources/bronze.jpg"></td>
+                                    <td> <p style="text-align:justify;">It is a long established fact that a reader will be distracted
+                                      by the readable content of a page when looking at its layout.</p></td>
+
+                                </tr>*@
+                            <tr>
+                                <td colspan="5"> <p><b>Type Your review</b></p></td>
 
 
-									<div id="size" class="tab-pane fade">
-									<table class="table table-striped reg  " style="width:400px;">
-								
-								<tbody>
-									<tr>
-										<th>Size</th>
-										<th>Small</th>
-										<th>Medium</th>
-										<th>Large</th>
-										<th>XL</th>
-									</tr>
-									<tr>
-										<td>chest</td>
-										<td>30</td>
-										<td>38</td>
-										<td>40</td>
-										<td>42</td>
-									</tr>
-									<tr>
-										<td>Length</td>
-										<td>25</td>
-										<td>26</td>
-										<td>27</td>
-										<td>27</td>
-								
-									</tr>
-									
-									
-								</tbody>
-							</table>
-										
-									</div>
-									<div id="review" class="tab-pane fade" style="height:200px;overflow:auto">
-									<table class="table table-striped " >
-								
-								<tbody>
-									@foreach(var Review in Model.Reviews)
-         {
-                                         <tr>
-										<td> <img class="img-circle user" src="~/resources/u2.jpg"></td>
-										<td>@Review.MemberId</td>
-										<td><img class="img-circle user" src="~/resources/gold.jpg"></td>
-										<td> <p style="text-align:justify;">@Review.Review</p></td>
-										
-									    </tr>
-         }
-									
-									@*<tr>
-									<td> <img class="img-circle user" src="~/resources/u1.jpg"></td>
-										<td>Norvvis</td>
-										<td><img class="img-circle user" src="~/resources/bronze.jpg"></td>
-										<td> <p style="text-align:justify;">It is a long established fact that a reader will be distracted
-										  by the readable content of a page when looking at its layout.</p></td>
-										
-									</tr>*@
-									<tr>
-										<td colspan="3"> <p><b>Type Your review</b></p></td>
-										
-										
-									</tr>
-                                    @using(Html.BeginForm("InsertReview", "UserHome", FormMethod.Post))
-                                    {
-									<tr>
-									<td> <img class="img-circle user" src="~/resources/user.jpg"></td>
-										<td>Rakib</td>
-										<td><img class="img-circle user" src="~/resources/platinum.jpg"></td>
-                                        <td>
-                                               <input type="text" name="review"/> <input type="submit" value="Submit" class="btn btn-primary" />
-                                        </td>
-										
-									</tr>
-                                    }
-									
-								</tbody>
-							</table>
-										
-									</div>
+                            </tr>
+                            @using (Html.BeginForm("InsertReview", "UserHome", FormMethod.Post))
+                            {
+                                <tr>
+                                    <td> <img class="img-circle user" src="~/resources/user.jpg"></td>
+                                    <td>@Model.Name</td>
 
-									
-								   
-								 </div>
+                                    <td colspan="3">
+                                        <textarea rows="5" name="review"></textarea>
 
-					</div>
-						
-					</div>	
-					
+                                        <input type="submit" value="Submit" class="btn btn-primary" />
+                                    </td>
 
-				</div>
-				<div class="container-fluid">
-					<h3 class="neon" style="margin-top:120px"><p><b>Related Products</b></p></h3>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+                </div>
 
 
-                     @{
-                      
-                          
-                               @Html.Raw("<div class=\"container-fluid well\">")
-                           
-                         foreach(var item in Model.RelatedProducts)
-                         {
-                               <div class="container-fluid col-md-3">
-							    <a href=@Url.Action("details", new { id = item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">", item.ProductId))</a>
-							    <div style="text-align:center ;">
-								    <p>@item.ProductName</p>
-								    <p>@item.SellingPrice $</p>
-								    <p>
-									@for(int i = 1; i <= item.Star; i++)
-         {
-                                          <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-         }
-                                    @for(int i = 1; i <= 5 - item.Star; i++)
-                                    {
-                                        <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-                                    }
-								</p>
-								    <p><a href=@Url.Action("details", new { id = @item.ProductId })><button type="button" class="btn btn-info" >Buy</button></a></p>
-							    </div>
 
-						        </div>
-                                    c++;
-                                    if(c == 4)
-                                    { break; }
-                         }
-                           
-                            
-                           @Html.Raw("</div> ")
-                            
-       
-                    }
+            </div>
 
-					
-					
-					</br>
-					</br>
-					
-					<h3 class="neon" data-text="!!New Arrival!!"><p><b>!!New Arrival!!</b></p></h3>
-					
-                    @{
-                      if(Model.NewArrivalProducts.Count()!=0)
-                      {
-                          
-                               @Html.Raw("<div class=\"container-fluid well\">")
-                           
-                         foreach(var item in Model.NewArrivalProducts)
-                         {
-                               <div class="container-fluid col-md-3">
-							    <a href=@Url.Action("details", new { id = item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">", item.ProductId))</a>
-							    <div style="text-align:center ;">
-								    <p>@item.ProductName</p>
-								    <p>@item.SellingPrice $</p>
-								    <p>
-									@for(int i = 1; i <= item.Star; i++)
-                                     {
-                                          <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-                                     }
-                                    @for(int i = 1; i <= 5 - item.Star; i++)
-                                    {
-                                        <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-                                    }
-								</p>
-								    <p><a href=@Url.Action("details", new { id = @item.ProductId })><button type="button" class="btn btn-info" >Buy</button></a></p>
-							    </div>
+        </div>
 
-						        </div>
-                                    c++;
-                                    if(c == 4)
-                                    { break; }
-                         }
-                           
-                            
-                           @Html.Raw("</div> ")
-                            
+    </div>
+
+
+</div>
+<div class="container-fluid">
+    <h3 class="neon" style="margin-top:120px"><p><b>Related Products</b></p></h3>
+
+
+    @{
+
+
+        @Html.Raw("<div class=\"container-fluid well\">")
+
+        foreach (var item in Model.RelatedProducts)
+        {
+            <div class="container-fluid col-md-3">
+                <a href=@Url.Action("details", new { id = item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">", item.ProductId))</a>
+                <div style="text-align:center ;">
+                    <p>@item.ProductName</p>
+                    <p>&#2547; @item.SellingPrice </p>
+                    <p>
+                        @for (int i = 1; i <= item.Star; i++)
+                        {
+                            <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
                         }
-                    }
-	
-					
-					</br>
-					</br>
-					
-					
-					
-					
-					
-					
-				</div>
+                        @for (int i = 1; i <= 5 - item.Star; i++)
+                        {
+                            <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+                        }
+                    </p>
+                    <p><a href=@Url.Action("details", new { id = @item.ProductId })><button type="button" class="btn btn-info">Buy</button></a></p>
+                </div>
+
+            </div>
+            c++;
+            if (c == 4)
+            { break; }
+        }
+
+
+        @Html.Raw("</div> ")
+
+
+    }
+
+
+
+    </br>
+    </br>
+
+    <h3 class="neon" data-text="!!New Arrival!!"><p><b>!!New Arrival!!</b></p></h3>
+
+    @{
+        if (Model.NewArrivalProducts.Count() != 0)
+        {
+
+            @Html.Raw("<div class=\"container-fluid well\">")
+
+            foreach (var item in Model.NewArrivalProducts)
+            {
+                <div class="container-fluid col-md-3">
+                    <a href=@Url.Action("details", new { id = item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">", item.ProductId))</a>
+                    <div style="text-align:center ;">
+                        <p>@item.ProductName</p>
+                        <p>&#2547;@item.SellingPrice </p>
+                        <p>
+                            @for (int i = 1; i <= item.Star; i++)
+                            {
+                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
+                            }
+                            @for (int i = 1; i <= 5 - item.Star; i++)
+                            {
+                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+                            }
+                        </p>
+                        <p><a href=@Url.Action("details", new { id = @item.ProductId })><button type="button" class="btn btn-info">Buy</button></a></p>
+                    </div>
+
+                </div>
+                c++;
+                if (c == 4)
+                { break; }
+            }
+
+
+            @Html.Raw("</div> ")
+
+        }
+    }
+
+
+    </br>
+    </br>
+
+
+
+
+
+
+</div>
 
 <div class="row">
 
 
-		<div class="modal fade" id="Detailloginmodal" role="dialog" style="padding-top:50px;">
-		<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				
-				<div class="modal-body" >
-					
-					<table class="table table-striped  ">
-						
-						<tbody style="width:50%">
-							
-							<tr>
-								<th>Email</th>
-								<td><input id="Demail" type="text"/><span id="DemailErr" style="color:red"></span></td>
-								
-							</tr>
-							<tr>
-								<th>Password</th>
-								<td><input id="Dpassword" type="password"/><span id="DpasswordErr" style="color:red"></span></td>
-								
-							</tr>
-							
-							<tr>
-								
-								<td colspan="2">
+    <div class="modal fade" id="Detailloginmodal" role="dialog" style="padding-top:50px;">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <table class="table table-striped  ">
+
+                        <tbody style="width:50%">
+
+                            <tr>
+                                <th>Email</th>
+                                <td><input id="Demail" type="text" /><span id="DemailErr" style="color:red"></span></td>
+
+                            </tr>
+                            <tr>
+                                <th>Password</th>
+                                <td><input id="Dpassword" type="password" /><span id="DpasswordErr" style="color:red"></span></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td colspan="2">
                                     <span id="DvalidationErr" style="color:red"></span>
-								<hr>
-								</td>
-								
-							</tr>
-							<tr>
-								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" id="sign" class="btn btn-info" >Sign Up</button></a> </td>
-								
-							</tr>
-							
-						</tbody>
-					</table>
-					
-				</div>
-				<div class="modal-footer">
-					@*<a href=@Url.Action("Dashboard","UserDashboard")><button type="button" id="loginButton" class="btn btn-info" >Log In</button></a>*@
-					<a href="#"><button type="button" id="DloginButton" class="btn btn-info" >Log In</button></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>	
+                                    <hr>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" id="sign" class="btn btn-info">Sign Up</button></a> </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    @*<a href=@Url.Action("Dashboard","UserDashboard")><button type="button" id="loginButton" class="btn btn-info" >Log In</button></a>*@
+                    <a href="#"><button type="button" id="DloginButton" class="btn btn-info">Log In</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 @section Signup{
-                
-             @using(Html.BeginForm("SignUp", "UserHome", FormMethod.Post))
-             {
-			        <div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
-			        <div class="modal-dialog modal-sm">
-				        <div class="modal-content">
-					
-					        <div class="modal-body" >
-						
-						        <div class="box-body">
-                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.Name)
-                                            <div>
-                                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.Email)
-                                            <div>
-                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.Gender)
-                                            <div>
-                                                Male @Html.RadioButton("gender", "Male")
-                                                Female @Html.RadioButton("gender", "Female")
-                                                Other @Html.RadioButton("gender", "Other")
-                                                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                            <div class="form-group">
-                                            @Html.LabelFor(model => model.PhoneNumber)
-                                            <div>
-                                                @Html.EditorFor(model => model.PhoneNumber, new { @class = "form-control" })
-                                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.Password)
-                                            <div>
-                                                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
-                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                    </div>
-					                <div class="box-footer">
-                                        Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="login" class="btn btn-info" >Log In</button></a>
-                                    </div>
-						
-					        </div>
-					        <div class="modal-footer">
-						        <input type="submit" value="Sign Up" class="btn btn-primary" />
-                                @*<a href=@Url.Action("dashboard")><button type="button" class="btn btn-info" >Sign Up</button></a>*@
-					        </div>
-				        </div>
-			        </div>
-		        </div>
-             }   
-    
-     }
-				
-			
-			
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="~/Scripts/easyzoom.js"></script>
-    <script>
+
+    @using (Html.BeginForm("SignUp", "UserHome", FormMethod.Post))
+    {
+        <div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+
+                        <div class="box-body">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Name)
+                                <div>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email)
+                                <div>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Gender)
+                                <div>
+                                    Male @Html.RadioButton("gender", "Male")
+                                    Female @Html.RadioButton("gender", "Female")
+                                    Other @Html.RadioButton("gender", "Other")
+                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PhoneNumber)
+                                <div>
+                                    @Html.EditorFor(model => model.PhoneNumber, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password)
+                                <div>
+                                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="login" class="btn btn-info">Log In</button></a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="Sign Up" class="btn btn-primary" />
+                        @*<a href=@Url.Action("dashboard")><button type="button" class="btn btn-info" >Sign Up</button></a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+}
+
+
+
+@*<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>*@
+<script src="~/Scripts/easyzoom.js"></script>
+<script>
         $('.example').easyZoom({
             width: 300,
             position: 'bottom',
             background: 'white',
         });
-    </script>	
-	<script>
+</script>
+<script>
 
 
 	    $("span").on("click", function () {
@@ -550,8 +590,8 @@
 
 
 	    });
-	</script>		
-		
+</script>
+
 
 <script>
 
@@ -627,4 +667,4 @@
     });
 
 
-	</script>	
+</script>	

@@ -158,6 +158,7 @@
     </Compile>
     <Compile Include="Models\AdminViewModel\DashboardViewModel.cs" />
     <Compile Include="Models\AdminViewModel\InvoicesViewModel.cs" />
+    <Compile Include="Models\AdminViewModel\InvoiceAdminViewModel.cs" />
     <Compile Include="Models\AdminViewModel\MemberView.cs" />
     <Compile Include="Models\AdminViewModel\MemberViewModel.cs" />
     <Compile Include="Models\AdminViewModel\OrdersViewModel.cs" />
@@ -265,6 +266,13 @@
     <Content Include="resources\69.jpg" />
     <Content Include="resources\7.jpg" />
     <Content Include="resources\70.jpg" />
+    <Content Include="resources\71.jpg" />
+    <Content Include="resources\72.jpg" />
+    <Content Include="resources\73.jpg" />
+    <Content Include="resources\74.jpg" />
+    <Content Include="resources\75.jpg" />
+    <Content Include="resources\76.jpg" />
+    <Content Include="resources\77.jpg" />
     <Content Include="resources\8.jpg" />
     <Content Include="resources\9.jpg" />
     <Content Include="resources\apex.jpg" />
@@ -272,6 +280,7 @@
     <Content Include="resources\back.jpg" />
     <Content Include="resources\bata.jpg" />
     <Content Include="resources\bkash.jpg" />
+    <Content Include="resources\block.jpg" />
     <Content Include="resources\bronze.jpg" />
     <Content Include="resources\cap6.jpg" />
     <Content Include="resources\cash.jpg" />
@@ -312,6 +321,7 @@
     <Content Include="resources\slider5.jpg" />
     <Content Include="resources\slider6.jpg" />
     <Content Include="resources\tanim.jpg" />
+    <Content Include="resources\desktop.ini" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="resources\u1.jpg" />
     <Content Include="resources\u2.jpg" />

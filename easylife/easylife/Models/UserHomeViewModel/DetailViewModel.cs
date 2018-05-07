@@ -12,7 +12,7 @@ namespace easylife.Models.UserHomeViewModel
         public int Like { set; get; }
         public int DisLike { set; get; }
         public IEnumerable<ProductReview> Reviews { set; get; }
-        public List<string> ReviewedMemberNames { set; get; }
+        public Member[] ReviewdMembers = new Member[1000];
 
         public IEnumerable<Product> RelatedProducts { set; get; }
         public IEnumerable<Product> NewArrivalProducts { set; get; }

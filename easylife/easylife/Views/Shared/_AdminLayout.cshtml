@@ -35,7 +35,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: Arial, sans-serif;
 <div class="w3-bar w3-top w3-card-4 w3-large ba" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-dark-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="w3-bar-item"><a href=@Url.Action("Dashboard",new { id=Convert.ToInt32(Session["userId"])})><img src="~/resources/e.jpg" class="w3-left  w3-margin-right" style="width:100px"/></a></span>
-  <span class="w3-bar-item  w3-right"><a href=@Url.Action("View_Profile_Admin",new { id=Convert.ToInt32(Session["userId"])}) ><img src="~/resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"></a>
+  <span class="w3-bar-item  w3-right"><a href=@Url.Action("View_Profile_Admin",new { id=Convert.ToInt32(Session["userId"])}) ><img src="~/resources/m.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"></a>
        <a href=@Url.Action("Logout")><i class="fa fa-sign-out w3-xlarge"></i></a> <i class="fa fa-tasks fa-fw w3-hover-shadow "><div class="notification">1</div></i></span>
 </div>
 
@@ -46,7 +46,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: Arial, sans-serif;
   <div class="w3-container w3-row">
     
     <div class="w3-col s8 w3-bar">
-      <span><h3>Welcome, <strong>@ViewBag.Name</strong></h3></span>
+      <span><h3>Welcome, <strong>@Session["userName"]</strong></h3></span>
       
     </div>
   </div >

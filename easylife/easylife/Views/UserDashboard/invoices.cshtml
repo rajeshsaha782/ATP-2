@@ -95,7 +95,7 @@
                                                                 <td><a href=@Url.Action("details","UserHome", new { id=item.ProductId})>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">",item.ProductId))</a></td>
 																<td>@Model.Products[count].ProductName</td>
 																<td>@item.Quantity</td>
-																<td>$@Model.Products[count].SellingPrice</td>
+																<td>&#2547;@Model.Products[count].SellingPrice</td>
 																
 															</tr>
                                                                 tprice += Model.Products[count].SellingPrice;
@@ -128,17 +128,17 @@
 														<tbody>
 															<tr>
 																<td>Subtotal</td>
-																<td>$@tprice</td>
+																<td>&#2547;@tprice</td>
 															</tr>
                                                             @{var tax=50;}
 															<tr>
 																<td>Shipping Cost</td>
-																<td>$@tax</td>
+																<td>&#2547;@tax</td>
 															</tr>
                                                             @{tprice += tax;}
 															<tr>
 																<td>Total</td>
-																<td>$@tprice</td>
+																<td>&#2547;@tprice</td>
 															</tr>
 														</tbody>
 													</table>

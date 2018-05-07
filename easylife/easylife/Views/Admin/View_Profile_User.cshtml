@@ -77,8 +77,15 @@
 								<th>Status:</th>
 								<td>
                                     <img src="~/resources/efti.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:1px;height:1px">
-                                    <img src="~/resources/gold.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px">
-                                    <img id="img" src="~/resources/active.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px">
+                                    <img src="~/resources/platinum.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px">
+                                    
+                                    
+                                    @if (Model.Status == "1")
+                                    {<img id="img" src="~/resources/active.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px">}
+
+                                    @if (Model.Status == "0")
+                                    {<img id="img" src="~/resources/block.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px">}
+
 								</td>
 							</tr>
 

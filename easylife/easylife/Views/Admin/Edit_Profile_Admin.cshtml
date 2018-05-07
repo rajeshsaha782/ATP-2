@@ -21,9 +21,9 @@
 		
 			
 				
-@using (Html.BeginForm("Edit_Profile_Admin", "Admin", FormMethod.Post))
+@using (Html.BeginForm("Edit_Profile_Admin", "Admin",new { id = Convert.ToInt32(Session["userId"]) }, FormMethod.Post))
 {
-    @Html.AntiForgeryToken()
+
 
 				<div class="invoice-wrapper">
 				
@@ -40,8 +40,9 @@
 							
 								<th>Name:</th>
 								<td>
-                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    <input name="Name" value="@Model.Name" />
+                                    <!--Html.EditorFor(model => model.Name, new { htmlAttributes = new { class = "form-control" } })
+                                    Html.ValidationMessageFor(model => model.Name, "", new { class = "text-danger" })-->
                                 </td>
 							
 							</tr>
@@ -50,10 +51,13 @@
 							
 								<th>Gender:</th>
 								<td>
-                                    @Html.RadioButton("gender", "Male") Male
-                                    @Html.RadioButton("gender", "Female") Female
-                                    @Html.RadioButton("gender", "Other") Other
-                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                    <input type="radio" name="Gender" value="@Model.Gender" /> Male
+                                    <input type="radio" name="Gender" value="@Model.Gender" /> Female
+                                     <input type="radio" name="Gender" value="@Model.Gender" /> Other
+                                    <!--Html.RadioButton("gender", "Male") Male
+                                    Html.RadioButton("gender", "Female") Female
+                                    Html.RadioButton("gender", "Other") Other
+                                    Html.ValidationMessageFor(model => model.Gender, "", new { class = "text-danger" })-->
                                 </td>
 							
 							</tr>
@@ -62,8 +66,9 @@
 							
 								<th>Cell No:</th>
 								<td>
-                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                    <input name="CellPhone" value="@Model.PhoneNumber" />
+                                <!--Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { class = "form-control" } })
+                                Html.ValidationMessageFor(model => model.PhoneNumber, "", new { class = "text-danger" })-->
                                 </td>
 							
 							</tr>
@@ -71,23 +76,20 @@
 							
 								<th>Position:</th>
 								<td>
-                                    @Html.RadioButton("Type", "Admin") Admin
-                                    <hr />
-                                    @Html.RadioButton("Type", "Stock Executive") Stock Executive
-                                    <hr />
-                                    @Html.RadioButton("Type", "Delivery Man") Delivery Man
-                                    <hr />
-                                    @Html.RadioButton("Type", "Other") Order Executive
-                                    @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                                    <input type="radio" name="Type" value="@Model.Type" /> Admin
+                                    <input type="radio" name="Type" value="@Model.Type" /> Stock Executive
+                                    <input type="radio" name="Type" value="@Model.Type" /> Delivery Man
+
+                                    
 								</td>
 							</tr>
 							
 							<tr>
 							<td>
-							<button class="button" onclick="confirmm()">Confirm</button>
+                                <input type="submit" value="Update" class="btn btn-primary" />
 							</td>
 							<td>
-						<a href="@Url.Action("Dashboard")"><button class="button">Cancel</button></a>
+						<a href="@Url.Action("Dashboard","Admin")"><button class="button">Cancel</button></a>
 						</td>
 						
 							</tr>
@@ -100,7 +102,7 @@
 			
 			 </div>
 }
-
+    
 </div>
 		
 		<script>

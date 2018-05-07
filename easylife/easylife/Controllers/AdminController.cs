@@ -53,15 +53,11 @@ namespace easylife.Controllers
             D.Product = _ProductService.GetAll();
             D.Invoices = _InvoiceService.GetAll();
             D.MemberId = Convert.ToInt32(Session["userId"]);
-            foreach (var item in _MemberService.GetAll())
-            {
-                if (item.MemberId == D.MemberId)
-                {
-                    @ViewBag.Name = item.Name;
-                }
-            }
-           
-            
+
+            //Session["userName"]=
+
+            Session["userName"] = _MemberService.GetById(D.MemberId).Name;
+
             return View(D);
         }
 
@@ -148,8 +144,14 @@ namespace easylife.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit_Profile_Admin(Member mem)
+        public ActionResult Edit_Profile_Admin(int id,string Name,string Gender,string CellPhone,string Type)
         {
+
+            Member mem = _MemberService.GetById(id);
+            mem.Name = Name;
+            mem.Gender = Gender;
+            mem.PhoneNumber = CellPhone;
+            mem.Type = Type;
 
             if (_MemberService.Update(mem))
                 return RedirectToAction("Dashboard");
@@ -445,14 +447,9 @@ namespace easylife.Controllers
                 m.Members = _MemberService.GetAll();
             }
             //m.Members = _MemberService.GetByName(searching);
-            int count = 0;
-            foreach (var item in m.Members)
-            {
-                if (item.Type == "0")
-                {
-                    count++;
-                }
-            }
+            int count = _MemberService.GetByType("0").Count();
+
+           
             m.UserCount = count;
             return View(m);
         }
@@ -584,9 +581,21 @@ namespace easylife.Controllers
         //---------------------------------------------
 
 
-        public ActionResult View_Invoice()
+        public ActionResult View_Invoice(int id)
         {
-            return View();
+            InvoiceAdminViewModel I = new InvoiceAdminViewModel();
+            I.Invoice = _InvoiceService.GetById(id);
+            I.MemberId = I.Invoice.MemberId;
+            I.Name = _MemberService.GetById(I.MemberId).Name;
+            I.Orders = _OrderService.GetByInvoiceId(id);
+            int count = 0;
+            foreach (var item in I.Orders)
+            {
+                I.Products[count] = _ProductService.GetById(item.ProductId);
+                count++;
+            }
+            
+            return View(I);
         }
        [HttpGet]
         public ActionResult View_Product_Details(int id=0)
@@ -604,6 +613,7 @@ namespace easylife.Controllers
         {
             Coupon m = new Coupon();
             m.MemberId = id;
+            
             return View(m);
         }
 
@@ -612,7 +622,7 @@ namespace easylife.Controllers
         {
             // SetCouponModel s = new SetCouponModel();
             coupon.MemberId = id;
-            coupon.Availability = "0";
+            coupon.Availability = "1";
             coupon.IssueDate = DateTime.Now;
             if (_CouponService.Insert(coupon))
                 return RedirectToAction("View_Users");
@@ -625,16 +635,28 @@ namespace easylife.Controllers
         }
 
 
-
+        [HttpGet]
         public ActionResult Send_Mail()
         {
+
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Send_Mail(string email,string subject,string body)
+        {
+            easylife.Core.Service.EmailService e = new Core.Service.EmailService();
+            if(e.SendEmail(email, subject, body))
+                return RedirectToAction("View_Users");
+            else
+                return View();
         }
 
 
         public ActionResult Logout()
         {
             Session["userId"] = null;
+            Session["userName"] = null;
             return RedirectToAction("Index", "UserHome");
         }
 

@@ -1,199 +1,160 @@
-﻿
+﻿@model easylife.Models.AdminViewModel.InvoiceAdminViewModel
 @{
     ViewBag.Title = "View_Invoice";
 }
-<div class="main_wrapper" style="background-color:white">
-			
-			<div class="wrap">
-				
-				<div class="main-div">
-					
-					
-					
-					
-					
-					<div class="invoice">
-						
-						
-						
-						
-						<div class="invoice-wrapper">
-							
-							
-							<div class="invoice-wrap">
-								
-								<div class="desc">
-									
-									
-									<p>Bill From:</p>
-									<p>Easylife Online shopping</p>
-									<p>Dhanmondi</p>
-									<p>Dhanmondi Dhaka-1205</p>
-									
-									
-								</div>
-								
-								
-								<div class="pic"> 
-									
-									<img src="../resources/e.jpg" height="120" width="240"/>
-									
-								</div>
-								
-							</div>
-							
-							
-							<hr>
-							
-							
-							<div class="invoice-wrap">
-								
-								<div class="desc">
-									
-									
-									<p>Bill To:</p>
-									<p>Rakibul Hossain</p>
-									<p>Nikunja</p>
-									<p>Road No10</p>
-									<p>House No2</p>
-									
-									
-								</div>
-								
-								
-								<div class="pic"> 
-									
-									<table width="200" >
-										
-										<tr>
-											
-											<td>Invoice</td>
-											<td align="right">9765</td>
-											
-										</tr>
-										
-										<tr>
-											
-											<td>Invoices Date</td>
-											<td align="right">March 10, 2018</td>
-											
-										</tr>
-										<tr>
-											<td>Amount Due</td>
-											<td class="pri" align="right">$1500</td>
-											
-										</tr>
-										
-									</table>
-									
-								</div>
-								
-							</div>
-							
-							<br>
-							
-							<div class="invoice-wrap">
-								
-								<table class="data">
-									
-									<tr>
-										
-										<th>Items</th>
-										<th>Quantity</th>
-										<th>Unit Cost</th>
-										<th>Line Cost</th>
-										
-									</tr>
-									
-									<tr>
-										
-										<td>Kakashi T-Shirt</td>
-										<td>1</td>
-										<td class="pri">$425</td>
-										<td class="pri">$425</td>
-										
-									</tr>
-									
-									<tr>
-										
-										<td>Kakashi T-Shirt</td>
-										<td>2</td>
-										<td class="pri">$425</td>
-										<td class="pri">$850</td>
-										
-									</tr>
-									
-									
-									
-								</table>
-								
-							</div>
-							
-							<br></br>
-							
-							<hr>
-							
-							
-							
-							<div class="invoice-wrap">
-								
-								<div class="desc">
-									
-									
-									<p>Notes/Memeo</p>
-									<p>With slipping, 30 days money-back guarantee.</p>
-									
-								</div>
-								
-								
-								<div class="pic"> 
-									
-									<table width="200" >
-										
-										<tr>
-											
-											<td>Subtotal</td>
-											<td align="right"class="pri">$1500</td>
-											
-										</tr>
-										
-										<tr>
-											
-											<td>TAX(5%)</td>
-											<td align="right" class="pri">$30</td>
-											
-										</tr>
-										<tr>
-											<td>Total</td>
-											<td class="pri" align="right">$1530</td>
-											
-										</tr>
-										
-									</table>
-									
-								</div>
-				
-							</div>
-	
-							
-						</div>
-						
-						
-						
-						
-						
-						
-						
-					</div>
-					
-					
-					
-					
-				</div>
-				
-				
-			</div>
-			
-		</div>
+<div class="container-fluid ">
 
+
+    <table class="table table-striped ">
+
+        <tbody>
+            <tr>
+                <table width="800px;" style="margin-left:150px;">
+                    <tr>
+                        <td>
+                            <p style="text-align:left;"><b>Bill from:</b><p>
+                            <p style="text-align:left;">Easylife Online shopping<p>
+                            <p style="text-align:left;">Dhanmondi<p>
+                            <p style="text-align:left;">Dhanmondi, Dhaka-1215<p>
+                        </td>
+                        <td style="text-align:center;">
+                            <h1>Easylife.</h1>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p style="text-align:left;"><b>Bill To:</b><p>
+                            <p style="text-align:left;">@Model.Name<p>
+                            <p style="text-align:left;"><b>Shipping Address:</b><p>
+                            <p style="text-align:left;">@Model.Invoice.ShippingAddress<p>
+                        </td>
+                        <td>
+                            <table class="table table-striped ">
+                                <tbody>
+                                    <tr>
+                                        <td>invoice</td>
+                                        <td>@Model.Invoice.InvoiceId</td>
+                                    </tr>
+                                    <tr>
+                                        <td>invoice Date</td>
+                                        <td>@Model.Invoice.Date</td>
+                                    </tr>
+                                    <!--<tr>
+                                        <td>Amount Due</td>
+                                        <td>$450</td>
+                                    </tr>-->
+                                </tbody>
+                            </table>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <table class="table table-striped ">
+                                <tbody>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Name</th>
+                                        <th>Quantity</th>
+                                        <th>Unit Cost</th>
+                                    </tr>
+                                    @{var count = 0;}
+                                    @{var tprice = 0.0;}
+                                    @foreach (var item in Model.Orders)
+                                    {
+                                        <tr>
+                                            <td><a href=@Url.Action("details","UserHome", new { id=item.ProductId})>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">", item.ProductId))</a></td>
+                                            <td>@Model.Products[count].ProductName</td>
+                                            <td>@item.Quantity</td>
+                                            <td>&#2547;@Model.Products[count].SellingPrice</td>
+
+                                        </tr>
+                                        tprice += Model.Products[count].SellingPrice;
+                                        count++;
+                                    }
+
+
+
+                                </tbody>
+                            </table>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><b>Note/Memo</b><p>
+                            <p>With slipping, 30 days money-back guarantee.
+
+                            <p>
+
+                        </td>
+                        <td>
+                            <table class="table table-striped ">
+                                <tbody>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <td>&#2547;@tprice</td>
+                                    </tr>
+                                    @{var tax = 50;}
+                                    <tr>
+                                        <td>Shipping Cost</td>
+                                        <td>&#2547;@tax</td>
+                                    </tr>
+                                    @{tprice += tax;}
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>&#2547;@tprice</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    
+
+
+
+                </table>
+
+
+
+            </tr>
+
+
+
+        </tbody>
+    </table>
+
+
+
+</div>
+
+	
 

@@ -60,9 +60,9 @@
                                                 <td>
                                                     @Html.DropDownListFor(model => model.Category, new SelectList(
                new List<Object>{
-                                                                   new { value = "Man" , text = "Man"  },
-                                                                   new { value = "Woman" , text = "Woman" },
-                                                                   new { value = "Kid" , text = "Kid"},
+                                                                   new { value = "Mens Wear" , text = "Mens Wear"  },
+                                                                   new { value = "Womens Wear" , text = "Womens Wear" },
+                                                                   new { value = "Kids Wear" , text = "Kids Wear"},
                                                                    new { value = "FootWear" , text = "FootWear"},
                                                                    new { value = "Accessories" , text = "Accessories"},
                                                                 }, "value", "text", 2), new { @onchange = "Callfunc(this.value)" })
@@ -81,8 +81,12 @@
                                                                 new { value = "Pant", text = "Pant" },
                                                                 new { value = "Panjabi", text = "Panjabi" },
                                                                 new { value = "T-shirt", text = "T-shirt" },
-                                                                new { value = "Panjabi", text = "Panjabi" },
-                                                                new { value = "T-shirt", text = "T-shirt" },
+                                                                new { value = "Saree", text = "Saree" },
+                                                                new { value = "Three-Piece", text = "Three-Piece" },
+                                                                 new { value = "Handbag", text = "Handbag" },
+                                                                new { value = "Sunglass", text = "Sunglass" },
+                                                                new { value = "Jewelery", text = "Jewelery" },
+                                                                new { value = "Watch", text = "Watch" },
                                                           },"value","text", 2))
 
                                                 </td>
@@ -155,11 +159,14 @@
                                                     @Html.DropDownListFor(model => model.Brand, new SelectList(
                                                           new List<Object>
                                                             {
-                                                                                   new { value = "Local", text = "Local" },
-                                                                                   new { value = "Easy", text = "Easy" },
-                                                                                   new { value = "Ecstacy", text = "Ecstacy" },
-                                                                                   new { value = "Yellow", text = "Yellow" },
-                                                                                   new { value = "Aarong", text = "Aarong" },
+                                                                                  
+                                                                                   new { value = "easy", text = "Easy" },
+                                                                                   new { value = "ectasy", text = "Ecstacy" },
+                                                                                   new { value = "yellow", text = "Yellow" },
+                                                                                   new { value = "arong", text = "Aarong" },
+                                                                                   new { value = "bata", text = "Bata" },
+                                                                                   new { value = "apex", text = "Apex" },
+                                                                                  
                                                           }, "value", "text", 2))
 												</td>
 												

@@ -11,10 +11,11 @@
 				<div  style="width:40%;height:600px;background-color:white;float:left">
 					
 					<div class="slider" style="box-shadow:none;">
-						<div  style="width:100%">
+						<div  >
 							
-							<img id="img" src="~/resources/1.jpg" width="400px" height="350px"/>
 							
+                            <a> @Html.Raw(String.Format("<img width=\"400px\" height=\"850px\" class=\"img-circle user\" src=\"/resources/{0}.jpg\">", Model.ProductId))</a>
+                            
 							
 						</div>
 						

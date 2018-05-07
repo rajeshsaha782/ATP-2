@@ -94,12 +94,14 @@
                                
 						<th>Position:</th>
 						<td>
+                            @Html.RadioButton("Type", "0") User
+                            
                             @Html.RadioButton("Type", "1") Admin 
-                            <hr/>
+                           
                             @Html.RadioButton("Type", "2") Stock Executive 
-                            <hr />
+                           <br>
                             @Html.RadioButton("Type", "3") Delivery Man
-                            <hr />
+                            
                             @Html.RadioButton("Type", "4") Order Executive 
                             @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
                                  

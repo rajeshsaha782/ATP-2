@@ -4,255 +4,266 @@
 }
 
 <div class="container-fluid ">
-						<ol class="breadcrumb">
-						<li><a href=@Url.Action("index")><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a href=@Url.Action("search") ><i ></i>Search</a></li>
-						<li><a  href=@Url.Action("details")><i ></i>Details</a></li>
-						<li><a  href=@Url.Action("shoppingCart")><i ></i>Shopping Cart</a></li>
-						<li><a  class="active"><i ></i>Confirm Order</a></li>
-						
-						</ol>
-					</div>
-					
-					
-					
-					<div class="container-fluid ">
-						
-						
-						@using(Html.BeginForm("invoices", "UserHome", FormMethod.Post))
-                        {
-						
-						<table class="table table-striped ">
-							
-							<tbody>
-							 
-							<tr>
-								<table class="table table-striped ">
-								
-								<tbody>
-								<p><b>Shipment</b></p>
-									<tr>
-										
-									<td>Name</td>
-										<td>@Model.Name</td>
-				
-									</tr>
-									
-									<tr>
-										
-										<td>Shipping Address</td>
-										<td><textarea rows="5" name="ShippingAddress"></textarea></td>
-				
-									</tr>
-									<tr>
-										
-										<td>Phone No</td>
-										<td>@Model.PhoneNumber</td>
-				
-									</tr>
-									<tr>
-										
-									<td colspan="4" style="text-align:center;" >
-										<select>
-											<option selected >Use Billing Address</option>
-                                            @foreach(var item in Model.MemberAddresses)
-                                            {
-                                                <option id="@item.AddressId">@item.MemberAddress</option>	
-                                            }	
-											
-											
-										</select>
-									
-									</td>
-										
-				
-									</tr>
-									
-								</tbody>
-							</table>
-							
-								
-							</tr>
-							<tr>
-								<table class="table table-striped ">
-								
-								<tbody>
-								<p><b>Total Cost Estimation</b></p>
-									<tr style="color:blue">
-										
-									<td>Product Cost</td>
-										<td>$@Model.totalCost</td>
-				
-									</tr>
-									
-									<tr style="color:blue">
-										
-									<td>Shipping Cost</td>
-										<td>$50</td>
-				
-									</tr>
-                                    <tr style="color:red">
-										
-									<td>Discount</td>
-										<td>$@Model.Discount</td>
-				
-									</tr>
-									<tr style="color:green">
-										
-									<td>Total</td>
-										<td>$@Model.grandTotal</td>
-				
-									</tr>
-									
-										
-								</tbody>
-							</table>
-								
-							</tr>
-							
-							<tr>
-								<table class="table table-striped ">
-								
-								<tbody>
-								<p><b>Payment Method</b></p>
-									<tr>
-										
-										<td><input name="paymentMethod" value="0" type="radio"/><span><img class="img-circle user" src="~/resources/bkash.jpg"> </span> b-Kash 
-                                            <input name="paymentMethod" value="1" type="radio"/><span><img class="img-circle user" src="~/resources/cash.jpg"> </span>Cash On delivery</td>
-										
-				
-									</tr>
-									
-									
-								</tbody>
-							</table>
-                        
-							</tr>
-							<tr>
-										<td colspan="3" >
-                                            @*<p><a a data-toggle="modal" data-target="#loginmodal_cart"><button type="button" class="btn btn-info" >Confirm</button></a></p>*@
-                                            <input type="submit" value="Confirm" class="btn btn-info" />
-										</td>
-										
-										
-										
-							</tr>
-							
-						</tbody>
-						</table>	
-        }				
-					</div>
-					
-	<div class="row">
+    <ol class="breadcrumb">
+        <li><a href=@Url.Action("index")><i class="fa fa-dashboard"></i> Home</a></li>
 
-		<div class="modal fade" id="loginmodal_cart" role="dialog" style="padding-top:50px;">
-		<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				
-				<div class="modal-body" >
-					
-					<table class="table table-striped  ">
-						
-						<tbody>
-							
-							<tr>
-								<th>Email</th>
-								<td><input type="text"></input></td>
-								
-							</tr>
-							<tr>
-								<th>Password</th>
-								<td><input type="password"></input></td>
-								
-							</tr>
-							
-							<tr>
-								
-								<td colspan="2">
-								<hr>
-								</td>
-								
-							</tr>
-							<tr>
-								<td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" id="sign" class="btn btn-info" >Sign Up</button></a> </td>
-								
-							</tr>
-							
-						</tbody>
-					</table>
-					
-				</div>
-				<div class="modal-footer">
-					<a href=@Url.Action("invoices")><button type="button" id="login" class="btn btn-info" >Log In</button></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>	
+        <li><a href=@Url.Action("details", new { id= Convert.ToInt32(Session["productId"])})><i></i>Details</a></li>
+        <li><a href=@Url.Action("shoppingCart")><i></i>Shopping Cart</a></li>
+        <li><a class="active"><i></i>Confirm Order</a></li>
+
+    </ol>
+</div>
+
+
+
+<div class="container-fluid ">
+
+
+    @using (Html.BeginForm("invoices", "UserHome", FormMethod.Post))
+    {
+
+        <table class="table table-striped ">
+
+            <tbody>
+
+                <tr>
+                    <table class="table table-striped ">
+
+                        <tbody>
+                            <p><b>Shipment</b></p>
+                            <tr>
+
+                                <td>Name</td>
+                                <td>@Model.Name</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Shipping Address</td>
+                                <td><textarea id="address" rows="5" name="ShippingAddress"></textarea></td>
+
+                            </tr>
+                            <tr>
+
+                                <td>Phone No</td>
+                                <td>@Model.PhoneNumber</td>
+
+                            </tr>
+                            <tr>
+
+                                <td colspan="4" style="text-align:center;">
+                                    <select id="myaddress">
+                                        <option selected>Use Billing Address</option>
+                                        @foreach (var item in Model.MemberAddresses)
+                                        {
+                                            <option id="@item.AddressId">@item.MemberAddress</option>       }
+
+
+                                    </select>
+
+                                </td>
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </tr>
+                <tr>
+                    <table class="table table-striped ">
+
+                        <tbody>
+                            <p><b>Total Cost Estimation</b></p>
+                            <tr style="color:blue">
+
+                                <td>Product Cost</td>
+                                <td>&#2547;@Model.totalCost</td>
+
+                            </tr>
+
+                            <tr style="color:blue">
+
+                                <td>Shipping Cost</td>
+                                <td>&#2547;50</td>
+
+                            </tr>
+                            <tr style="color:red">
+
+                                <td>Discount</td>
+                                <td>&#2547;@Model.Discount</td>
+
+                            </tr>
+                            <tr style="color:green">
+
+                                <td>Total</td>
+                                <td>&#2547;@Model.grandTotal</td>
+
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                </tr>
+
+                <tr>
+                    <table class="table table-striped ">
+
+                        <tbody>
+                            <p><b>Payment Method</b></p>
+                            <tr>
+
+                                <td>
+                                    <input name="paymentMethod" value="0" type="radio" /><span><img class="img-circle user" src="~/resources/bkash.jpg"> </span> b-Kash
+                                    <input name="paymentMethod" value="1" type="radio" /><span><img class="img-circle user" src="~/resources/cash.jpg"> </span>Cash On delivery
+                                </td>
+
+
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        @*<p><a a data-toggle="modal" data-target="#loginmodal_cart"><button type="button" class="btn btn-info" >Confirm</button></a></p>*@
+                        <input type="submit" value="Confirm" class="btn btn-info" />
+                    </td>
+
+
+
+                </tr>
+
+            </tbody>
+        </table>
+    }
+</div>
+
+<div class="row">
+
+    <div class="modal fade" id="loginmodal_cart" role="dialog" style="padding-top:50px;">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <table class="table table-striped  ">
+
+                        <tbody>
+
+                            <tr>
+                                <th>Email</th>
+                                <td><input type="text"></input></td>
+
+                            </tr>
+                            <tr>
+                                <th>Password</th>
+                                <td><input type="password"></input></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td colspan="2">Not A Member Yet??&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#signupModal"><button type="button" id="sign" class="btn btn-info">Sign Up</button></a> </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <a href=@Url.Action("invoices")><button type="button" id="login" class="btn btn-info">Log In</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @section Signup{
-                
-             @using(Html.BeginForm("SignUp", "UserHome", FormMethod.Post))
-            {
-			        <div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
-			        <div class="modal-dialog modal-sm">
-				        <div class="modal-content">
-					
-					        <div class="modal-body" >
-						
-						        <div class="box-body">
-                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                        <div class="form-group">
-                                            @Html.LabelFor(model=> model.Name)
-                                            <div>
-                                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            @Html.LabelFor(model=> model.Email)
-                                            <div>
-                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            @Html.LabelFor(model=> model.Gender)
-                                            <div>
-                                                Male @Html.RadioButton("gender","Male")
-                                                Female @Html.RadioButton("gender","Female")
-                                                Other @Html.RadioButton("gender","Other")
-                                                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                            <div class="form-group">
-                                            @Html.LabelFor(model => model.PhoneNumber)
-                                            <div>
-                                                @Html.EditorFor(model => model.PhoneNumber, new {@class = "form-control"})
-                                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger"})
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.Password)
-                                            <div>
-                                                @Html.PasswordFor(model => model.Password, new {@class = "form-control"})
-                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger"})
-                                            </div>
-                                        </div>
-                                    </div>
-					                <div class="box-footer">
-                                        Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="login" class="btn btn-info" >Log In</button></a>
-                                    </div>
-						
-					        </div>
-					        <div class="modal-footer">
-						        <input type="submit" value="Sign Up" class="btn btn-primary" />
-                                @*<a href=@Url.Action("dashboard")><button type="button" class="btn btn-info" >Sign Up</button></a>*@
-					        </div>
-				        </div>
-			        </div>
-		        </div>
-            }   
-    
-     }
-				
-							
+
+    @using (Html.BeginForm("SignUp", "UserHome", FormMethod.Post))
+    {
+        <div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+
+                        <div class="box-body">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Name)
+                                <div>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email)
+                                <div>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Gender)
+                                <div>
+                                    Male @Html.RadioButton("gender", "Male")
+                                    Female @Html.RadioButton("gender", "Female")
+                                    Other @Html.RadioButton("gender", "Other")
+                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PhoneNumber)
+                                <div>
+                                    @Html.EditorFor(model => model.PhoneNumber, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password)
+                                <div>
+                                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="login" class="btn btn-info">Log In</button></a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="Sign Up" class="btn btn-primary" />
+                        @*<a href=@Url.Action("dashboard")><button type="button" class="btn btn-info" >Sign Up</button></a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+}
+
+<script>
+		    $('#myaddress').change(function () {
+		        alert("changed");
+		        var addId = $(this).children(":selected").attr("id");
+		        alert(addId);
+
+
+		    });
+
+
+</script>

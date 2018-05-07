@@ -3,17 +3,18 @@
     ViewBag.Title = "EasyLife | Details| shoppingCart| Confirm Order |Invoices";
 }
 <div class="container-fluid ">
-						<ol class="breadcrumb">
-						<li><a href=@Url.Action("index")><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a href=@Url.Action("search") ><i ></i>Search</a></li>
-						<li><a  href=@Url.Action("details")><i ></i>Details</a></li>
-						<li><a  href=@Url.Action("shoppingCart")><i ></i>Shopping Cart</a></li>
-						<li><a  href=@Url.Action("confirmOrders")><i ></i>Confirm Order</a></li>
-						<li><a class="active">Invoices</a></li>
-				
-						
-						</ol>
-					</div>
+    <ol class="breadcrumb">
+        <li><a href=@Url.Action("index")><i class="fa fa-dashboard"></i> Home</a></li>
+
+        <li><a href=@Url.Action("details", new { id= Convert.ToInt32(Session["productId"])})><i></i>Details</a></li>
+
+        <li><a href=@Url.Action("shoppingCart")><i></i>Shopping Cart</a></li>
+        <li><a href=@Url.Action("confirmOrders")><i></i>Confirm Order</a></li>
+        <li><a class="active">Invoices</a></li>
+
+
+    </ol>
+</div>
 						
 						
 						
@@ -63,7 +64,7 @@
 															</tr>
 															<!--<tr>
 																<td>Amount</td>
-																<td>$450</td>
+																<td>&#2547;450</td>
 															</tr>-->
 														</tbody>
 													</table>
@@ -95,10 +96,10 @@
                                                                 <td><a href=@Url.Action("details","UserHome", new { id=item.ProductId})>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">",item.ProductId))</a></td>
 																<td>@Model.Products[count].ProductName</td>
 																<td>@item.Quantity</td>
-																<td>$@Model.Products[count].SellingPrice</td>
+																<td>&#2547;@Model.Products[count].SellingPrice</td>
 																
 															</tr>
-                                                                tprice += Model.Products[count].SellingPrice;
+                                                                tprice += Model.Products[count].SellingPrice*item.Quantity;
                                                                 count++;
                                                             }
 															
@@ -128,17 +129,17 @@
 														<tbody>
 															<tr>
 																<td>Subtotal</td>
-																<td>$@tprice</td>
+																<td>&#2547;@tprice</td>
 															</tr>
                                                             @{var tax=50;}
 															<tr>
 																<td>Shipping Cost</td>
-																<td>$@tax</td>
+																<td>&#2547;@tax</td>
 															</tr>
                                                             @{tprice += tax;}
 															<tr>
 																<td>Total</td>
-																<td>$@tprice</td>
+																<td>&#2547;@tprice</td>
 															</tr>
 														</tbody>
 													</table>

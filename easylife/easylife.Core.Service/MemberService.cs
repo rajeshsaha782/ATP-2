@@ -55,7 +55,7 @@ namespace easylife.Core.Service
         }
         public bool Delete(int Member_id)
         {
-            var deleteMemberservice= _context.Set<Member>().Where(i => i.MemberId == Member_id).SingleOrDefault();
+            var deleteMemberservice = _context.Set<Member>().Where(i => i.MemberId == Member_id).SingleOrDefault();
             /// 
 
             if (deleteMemberservice != null)
@@ -66,11 +66,11 @@ namespace easylife.Core.Service
             return true;
         }
 
-       
+
 
         public int GetPoint(int Member_id)
         {
-            return GetById(Member_id).Point;      
+            return GetById(Member_id).Point;
         }
 
         public bool Insert(Member member)
@@ -86,12 +86,12 @@ namespace easylife.Core.Service
                 return false;
             }
         }
-   
+
 
         public bool SetPoint(int Member_id, int point)
         {
             Member m = GetById(Member_id);
-            m.Point++;
+            m.Point = m.Point + point;
             return Update(m);
         }
 

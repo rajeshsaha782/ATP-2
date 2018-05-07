@@ -68,6 +68,7 @@
         {
             var name = "";
             var status="";
+            var paymentstatus="";
             foreach (var T in Model.Products)
             {
                 if (item.ProductId == T.ProductId)
@@ -80,7 +81,8 @@
             {
                 if (item.InvoiceId == T.InvoiceId)
                 {
-                    status= T.PaymentStatus;
+                    paymentstatus= T.PaymentStatus;
+                    status = T.Status;
                 }
             }
 
@@ -91,8 +93,30 @@
           <td><a href='@Url.Action("View_Invoice")'">@item.InvoiceId</a></td>
 		  <td>@item.SellingDate</td>
           <td>@name</td>
-          <td>@status</td>
-          <td>Not Paid</td>
+            @{if ( status== "0")
+                {
+                    <td>On the way</td>
+                }
+                else if (status == "0")
+                {
+                    <td>Delivered</td>
+                }
+                else
+                {
+                    <td>Cancelled</td>
+                }
+            }
+         
+          @{if (paymentstatus == "0")
+              {
+                <td>UnPaid</td>
+              }
+              else if (status == "1")
+              {
+                <td>Paid</td>
+              }
+
+        }
 		  
         </tr>
         }

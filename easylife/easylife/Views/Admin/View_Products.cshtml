@@ -70,13 +70,14 @@
                @foreach (var item in Model.Products)
                {
 		        <tr>
-                  <td><a href='@Url.Action("View_Product_Details", new { id = item.ProductId })'><img id="img" src="~/resources/1.jpg" width="60px" height="60px"/></a></td>
+                  <td><a href='@Url.Action("View_Product_Details", new { id = item.ProductId })'>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">", item.ProductId))</a></td>
                   <td>@item.ProductName</td>
-                    <td>@item.Brand</td>
+                  <td>@item.Brand</td>
                   <td>@item.TotalSell</td>
                   <td>@item.SellingPrice</td>
 		          <td>@item.LastSold</td>
 		          <td>@item.Quantity</td>
+                    
                 </tr>
             }
 

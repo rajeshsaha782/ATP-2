@@ -4,46 +4,47 @@
 }
 <link href="~/Styles/Style_user.css" rel="stylesheet" />
 <div class="container-fluid ">
-						<ol class="breadcrumb">
-						<li><a href=@Url.Action("index")><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a class="active"><i ></i>Search</a></li>
-						
-						
-						</ol>
-					</div>
-					
-					
-					
-					<div class="container-fluid well ">
-						
-						<div class="dropdown col-md-2">
-						    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Advance Search
-							<span class="caret"></span></button>
-						    <ul class="dropdown-menu">
-								<li><a href=@Url.Action("SortByHighestPrice", new { products=Model})> <span class="glyphicon glyphicon-sort"></span> Sort by highest price</a></li>
-								<li><a href="#"> <span class="glyphicon glyphicon-sort"></span> Sort by lowest price </a></li>
-								<li><a href="#"> <span class="glyphicon glyphicon-sort"></span>Sort By newest</a></li>
-								<li><a href="#"> <span class="glyphicon glyphicon-sort"></span> Sort By Rating </a></li>
-								<li><a href="#">  <span class="glyphicon glyphicon-sort"></span> Sort By Top Sale</a></li>
-							</ul>
-						</div>
-						<div class="container col-md-8">
-							<div class="""slidecontainer">
-						  <input type="range" min="100" max="10000" value="500" class="slider" id="myRange">
-						 
-						</div>
-						
-						</div>
-						<div class="container col-md-2">
-							<p>Prize Max: <span id="price"></span></p>
-						</div>
-						
-						
-					</div>					
+    <ol class="breadcrumb">
+        <li><a href=@Url.Action("index")><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a class="active"><i></i>Search</a></li>
+
+
+    </ol>
+</div>
+
+
+
+<div class="container-fluid well ">
+
+    <div class="dropdown col-md-2">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Advance Search
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href=@Url.Action("SortByHighestPrice", new { products=Model})> <span class="glyphicon glyphicon-sort"></span> Sort by highest price</a></li>
+            <li><a href="#"> <span class="glyphicon glyphicon-sort"></span> Sort by lowest price </a></li>
+            <li><a href="#"> <span class="glyphicon glyphicon-sort"></span>Sort By newest</a></li>
+            <li><a href="#"> <span class="glyphicon glyphicon-sort"></span> Sort By Rating </a></li>
+            <li><a href="#">  <span class="glyphicon glyphicon-sort"></span> Sort By Top Sale</a></li>
+        </ul>
+    </div>
+    <div class="container col-md-8">
+        <div class="" "slidecontainer">
+            <input type="range" min="100" max="10000" value="500" class="slider" id="myRange">
+
+        </div>
+
+    </div>
+    <div class="container col-md-2">
+        <p>Prize Max: <span id="price"></span></p>
+    </div>
+
+
+</div>
 					</br>
 					</br>
-					        @{var sl=0;}
-                            <script>
+<script>
 								var slider = document.getElementById("myRange");
 								var output = document.getElementById("price");
 								output.innerHTML = slider.value;
@@ -52,121 +53,120 @@
 								  output.innerHTML = this.value;
 								}
 
-                                @sl = slider;
+
 								$("#myRange").on('change', function (data) {
 
 								   //alert(slider.value);
 
 
-								    window.location = '@Url.Action("PriceRange", "UserHome", new { max=sl })'
+								    window.location = '@Url.Action("PriceRange", "UserHome", new { max=1000 })'
 								});
-							</script>
-					
-					
-					 @{
-                      
-                           
-                           @Html.Raw("<div class=\"container-fluid well\">")
-                         
-                           foreach (var item in Model.productBySearch) 
-                           {
-                               <div class="container-fluid col-md-3">
-							    <a href=@Url.Action("details", new {id=item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">",item.ProductId))</a>
-							    <div style="text-align:center ;">
-								    <p>@item.ProductName</p>
-								    <p>@item.SellingPrice $</p>
-								    <p>
-									@for(int i = 1; i <= item.Star; i++)
-                                           {
-                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
-                                           }
-                                           @for(int i = 1; i <= 5-item.Star; i++)
-                                           {
-                                                <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
-                                           }
-								</p>
-								    <p><a href=@Url.Action("details", new { id = @item.ProductId})><button type="button" class="btn btn-info" >Buy</button></a></p>
-							    </div>
+</script>
 
-						        </div>
-                           }
 
-                         if(Model.productBySearch.Count() == 0)
-                            {
-                                <h2>No Products found!!! </h2>    
-                            }
-                               @Html.Raw("</div> ")
-                            
-       
+@{
+
+
+    @Html.Raw("<div class=\"container-fluid well\">")
+
+    foreach (var item in Model.productBySearch)
+    {
+        <div class="container-fluid col-md-3">
+            <a href=@Url.Action("details", new {id=item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">", item.ProductId))</a>
+            <div style="text-align:center ;">
+                <p>@item.ProductName</p>
+                <p>&#2547;@item.SellingPrice</p>
+                <p>
+                    @for (int i = 1; i <= item.Star; i++)
+                    {
+                        <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
                     }
+                    @for (int i = 1; i <= 5 - item.Star; i++)
+                    {
+                        <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
+                    }
+                </p>
+                <p><a href=@Url.Action("details", new { id = @item.ProductId})><button type="button" class="btn btn-info">Buy</button></a></p>
+            </div>
+
+        </div>
+    }
+
+    if (Model.productBySearch.Count() == 0)
+    {
+        <h2>No Products found!!! </h2>
+    }
+    @Html.Raw("</div> ")
+
+
+}
 
 
 @section Signup{
-                
-             @using(Html.BeginForm("SignUp", "UserHome", FormMethod.Post))
-             {
-			        <div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
-			        <div class="modal-dialog modal-sm">
-				        <div class="modal-content">
-					
-					        <div class="modal-body" >
-						
-						        <div class="box-body">
-                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.Name)
-                                            <div>
-                                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.Email)
-                                            <div>
-                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.Gender)
-                                            <div>
-                                                Male @Html.RadioButton("gender", "Male")
-                                                Female @Html.RadioButton("gender", "Female")
-                                                Other @Html.RadioButton("gender", "Other")
-                                                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                            <div class="form-group">
-                                            @Html.LabelFor(model => model.PhoneNumber)
-                                            <div>
-                                                @Html.EditorFor(model => model.PhoneNumber, new { @class = "form-control" })
-                                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.Password)
-                                            <div>
-                                                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
-                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                    </div>
-					                <div class="box-footer">
-                                        Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="login" class="btn btn-info" >Log In</button></a>
-                                    </div>
-						
-					        </div>
-					        <div class="modal-footer">
-						        <input type="submit" value="Sign Up" class="btn btn-primary" />
-                                @*<a href=@Url.Action("dashboard")><button type="button" class="btn btn-info" >Sign Up</button></a>*@
-					        </div>
-				        </div>
-			        </div>
-		        </div>
-            }   
-    
-     }
-			<script>
-               
-            </script>
-			
+
+    @using (Html.BeginForm("SignUp", "UserHome", FormMethod.Post))
+    {
+        <div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+
+                        <div class="box-body">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Name)
+                                <div>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email)
+                                <div>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Gender)
+                                <div>
+                                    Male @Html.RadioButton("gender", "Male")
+                                    Female @Html.RadioButton("gender", "Female")
+                                    Other @Html.RadioButton("gender", "Other")
+                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PhoneNumber)
+                                <div>
+                                    @Html.EditorFor(model => model.PhoneNumber, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password)
+                                <div>
+                                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            Already Registerd?&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#loginmodal"><button type="button" id="login" class="btn btn-info">Log In</button></a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="Sign Up" class="btn btn-primary" />
+                        @*<a href=@Url.Action("dashboard")><button type="button" class="btn btn-info" >Sign Up</button></a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+}
+<script>
+
+</script>
