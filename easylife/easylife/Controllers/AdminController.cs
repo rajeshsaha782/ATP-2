@@ -81,7 +81,7 @@ namespace easylife.Controllers
 
         }
 
-        public ActionResult Change_Password(int id, int f)
+        public ActionResult Change_Password(int id, int f=0)
         {
             if (Convert.ToInt32(Session["userId"]) == id)
             {
@@ -104,7 +104,7 @@ namespace easylife.Controllers
                 return View(p);
             }
             else
-                return RedirectToAction("Index", "UserHome");
+                return RedirectToAction("Index", "Admin");
 
 
         }
@@ -117,21 +117,21 @@ namespace easylife.Controllers
                 p.member = _MemberService.GetById(mid);
                 if (p.member.Password != cpass)
                 {
-                    return RedirectToAction("changepass", "UserDashboard", new { id = mid, f = 1 });
+                    return RedirectToAction("Change_Password", "Admin", new { id = mid, f = 1 });
                 }
                 else if (npass != rpass)
                 {
-                    return RedirectToAction("changepass", "UserDashboard", new { id = mid, f = 2 });
+                    return RedirectToAction("Change_Password", "Admin", new { id = mid, f = 2 });
                 }
                 else
                 {
                     p.member.Password = npass;
                     _MemberService.Update(p.member);
-                    return RedirectToAction("info", "UserDashboard", new { id = mid });
+                    return RedirectToAction("Dashboard", "Admin", new { id = mid });
                 }
             }
             else
-                return RedirectToAction("Index", "UserHome");
+                return RedirectToAction("Dashboard", "Admin");
 
 
 
