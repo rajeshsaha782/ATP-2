@@ -138,8 +138,17 @@
                 //contentType: "application/json; charset=utf-8",
                 data: { 'id': $("#invoiceCode").val() },
                 url: "@Url.Action("trackProduct", "UserHome")",
-            success: function (data) {
-                alert(data)
+                success: function (data) {
+                    if (data == "Not_logged")
+                    {
+                        $('#loginmodal').modal('show');
+                    }
+                    else
+                    {
+                        alert(data);
+                    }
+
+               
             },
             error: function () { alert("error") }
 

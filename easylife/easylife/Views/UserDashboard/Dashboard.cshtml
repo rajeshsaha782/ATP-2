@@ -88,8 +88,11 @@
 									
 									
 									<tr>
+                                     
 										<td > <a href=@Url.Action("info", new { id=Model.MemberId})><img class="img-circle img2" src="~/resources/user.jpg"></a></td>
-										<td style="text-align:center;padding-top:70px;"><p><b>@Model.Name</b></p>
+										<td style="text-align:center;padding-top:70px;">
+                                            <p ><strong style="color:blue;font-size:30px">Welcome</strong></p>
+                                            <p><b>@Model.Name</b></p>
 											<p>Customer Id:<b>@Model.MemberId</b></p>
 											<p><b>Address</b></p>
 											<p>@Model.Address</p>
