@@ -59,7 +59,16 @@ namespace easylife.Controllers
             d.CouponCount = _CouponService.CountByMemberId(id);
             d.ReviewCount = _ProductReviewService.CountReviewsByMemberId(id);
             d.FavoriteCount = _UserFavoriteService.GetByMemberId(id).Count();
-            d.Address = _AddressService.GetByMemberId(id).First().MemberAddress;
+
+            if(_AddressService.GetByMemberId(id).Count() == 0)
+            {
+                d.Address = null;
+            }
+            else
+            {
+                d.Address = _AddressService.GetByMemberId(id).First().MemberAddress;
+            }
+            
             return View(d);
         }
 
@@ -290,9 +299,9 @@ namespace easylife.Controllers
         {
             if (Convert.ToInt32(Session["userId"]) == mid)
             {
-                Address a1=_AddressService.GetByMemberId(mid).SingleOrDefault();
-                if (a1.MemberAddress == "No Address")
-                    _AddressService.Delete(a1.AddressId);
+                //Address a1=_AddressService.GetByMemberId(mid).SingleOrDefault();
+                //if (a1.MemberAddress == "No Address")
+                //    _AddressService.Delete(a1.AddressId);
 
 
                 Address a = new Address();

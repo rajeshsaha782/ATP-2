@@ -208,7 +208,15 @@ namespace easylife.Controllers
             totalLike = _LikeService.countlike(id);
             totalDislike = _DislikeService.countdislike(id);
 
-            p.Star = (totalLike * 5) / (totalLike + totalDislike);
+            if(totalLike + totalDislike == 0)
+            {
+                p.Star = (totalLike * 5) / (1);
+            }
+            else
+            {
+                p.Star = (totalLike * 5) / (totalLike + totalDislike);
+            }
+            
 
             _ProductService.Update(p);
 
