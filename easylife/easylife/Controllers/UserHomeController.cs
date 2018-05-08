@@ -467,17 +467,22 @@ namespace easylife.Controllers
 
             string Status, Payment, msg;
 
-            Status = _InvoiceService.GetById(id).Status;
-            Payment = _InvoiceService.GetById(id).PaymentStatus;
+            
 
             if(Session["userId"] == null)
             {
                 return "Not_logged";
             }
-            if (_InvoiceService.GetById(id).MemberId != Convert.ToInt32(Session["userId"]))
+            else if (_InvoiceService.GetById(id).MemberId != Convert.ToInt32(Session["userId"]))
             {
                 return "Invaild Invoice number.Enter for a valid Invoice";
             }
+            
+
+
+
+            Status = _InvoiceService.GetById(id).Status;
+            Payment = _InvoiceService.GetById(id).PaymentStatus;
 
             if (Status == "0")
             {
