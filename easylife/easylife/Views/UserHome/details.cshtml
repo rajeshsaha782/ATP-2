@@ -37,24 +37,39 @@
                 &nbsp;
                 <span id="purchase" class="glyphicon glyphicon-shopping-cart" style="font-size: 25px;text-align:center;color:gray" title="5 people Purchased this Product"></span><small style="font-size: 15px;">(@Model.DetailProduct.TotalSell)</small>
                 &nbsp;
-                @if (Model.isLike)
-                {
-                    <span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:green" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
-                }
-                @if (!Model.isLike)
-                {
-                    <span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:black" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
-                }
 
-                &nbsp;
-                @if (Model.isDislike)
-                {
-                    <span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:red" title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
+                @{
+                    if(Session["userId"] == null)
+                    {
+                        <span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:gray" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
+                        Html.Raw("&nbsp");
+                        <span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:gray" title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
+                        
+                    }
+                    else if(Session["userId"] != null)
+                    {
+                        if(Model.isLike)
+                        {
+                        <span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:green" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
+                        }
+                        if(!Model.isLike)
+                        {
+                        <span id="like" class="glyphicon glyphicon-thumbs-up point" style="font-size: 30px;text-align:center;color:black" title="Like this Product"></span><small style="font-size: 15px;">(@Model.Like)</small>
+                        }
+
+                        Html.Raw("&nbsp");
+                        if(Model.isDislike)
+                        {
+                        <span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:red" title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
+                        }
+                        if(!Model.isDislike)
+                        {
+                        <span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:black" title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
+                        }
+                    }
+                    
                 }
-                @if (!Model.isDislike)
-                {
-                    <span id="unlike" class="glyphicon glyphicon-thumbs-down point" style="font-size: 30px;text-align:center;color:black" title="Dislike this Product"></span><small style="font-size: 15px;">(@Model.DisLike)</small>
-                }
+                
 
 
             </p>
@@ -66,7 +81,7 @@
 
 
         <table class="table table-striped reg  " style="width:400px;">
-            @using (Html.BeginForm("AddToCart", "UserHome", new { id = Model.DetailProduct.ProductId }, FormMethod.Post))
+            @using(Html.BeginForm("AddToCart", "UserHome", new { id = Model.DetailProduct.ProductId }, FormMethod.Post, new { @id = "addToCartform" }))
             {
                 <tbody>
                     <tr>
@@ -78,16 +93,16 @@
                         <td><p> &#2547; @Model.DetailProduct.SellingPrice</p></td>
                     </tr>
                     <tr>
-                        <th>@if (Model.DetailProduct.Size != 0) { Write("Size"); }</th>
+                        <th>@if(Model.DetailProduct.Size != 0) { Write("Size"); }</th>
                         <td>
-                            @for (int i = 0; i < Model.DetailProduct.Size; i++)
+                            @for(int i = 0; i < Model.DetailProduct.Size; i++)
                             {
                                 <input name="size" type="radio" />
-                                if (i == 0) { Write("S"); }
-                                else if (i == 1) { Write("M"); }
-                                else if (i == 2) { Write("XL"); }
-                                else if (i == 3) { Write("XXL"); }
-                                else if (i == 4) { Write("XXXL"); }
+                                if(i == 0) { Write("S"); }
+                                else if(i == 1) { Write("M"); }
+                                else if(i == 2) { Write("XL"); }
+                                else if(i == 3) { Write("XXL"); }
+                                else if(i == 4) { Write("XXXL"); }
                             }
 
 
@@ -100,11 +115,11 @@
                     <tr>
                         <td colspan="2">
                             <p>
-                                @for (int i = 1; i <= Model.DetailProduct.Star; i++)
+                                @for(int i = 1; i <= Model.DetailProduct.Star; i++)
                                 {
                                     <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
                                 }
-                                @for (int i = 1; i <= 5 - Model.DetailProduct.Star; i++)
+                                @for(int i = 1; i <= 5 - Model.DetailProduct.Star; i++)
                                 {
                                     <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
                                 }
@@ -120,23 +135,36 @@
                         <td colspan="2">
 
                             <p>
-                                <span id="cart" class="glyphicon glyphicon-shopping-cart point" style="font-size:30px; padding-left:20px;color:grey" title="Add to Cart"></span>
-
-                                @if (Model.isFavorite == true)
-                                {
-                                    <span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:red" title="Save for later"></span>
-                                }
-                                @if (Model.isFavorite == false)
-                                {
-                                    <span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
-                                }
+                                
 
 
-                                @if (Session["userId"] == null)
+                                @{
+                                    if(Session["userId"] == null)
+                                    {
+                                        <span id="cart" class="glyphicon glyphicon-shopping-cart point" style="font-size:30px; padding-left:20px;color:#867979" title="Add to Cart"></span>
+                                        <span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:#867979" title="Save for later"></span>
+                                    }
+                                    else
+                                    {
+                                        if(Model.isFavorite == true)
+                                        {
+                                            <span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:red" title="Save for later"></span>
+                                        }
+                                        if(Model.isFavorite == false)
+                                        {
+                                            <span id="love" class="glyphicon glyphicon-heart point" style="font-size:30px; padding-left:20px;color:grey" title="Save for later"></span>
+                                        }
+                                        <span id="cart" class="glyphicon glyphicon-shopping-cart point" style="font-size:30px; padding-left:20px;color:gray" title="Add to Cart"></span>
+                                    }
+                                 }
+                                
+
+
+                                @if(Session["userId"] == null)
                                 {
                                     <a data-toggle="modal" data-target="#loginmodal"><button type="button" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px">Buy Now</button></a>
                                 }
-                                @if (Session["userId"] != null)
+                                @if(Session["userId"] != null)
                                 {
                                     <input type="submit" value="Buy Now" class="btn btn-primary" style="margin-bottom:10px;margin-left:20px" />
                                 }
@@ -210,15 +238,15 @@
 
                         <tbody>
 
-                            @foreach (var Review in Model.Reviews)
+                            @foreach(var Review in Model.Reviews)
                             {
                                 <tr>
                                     <td>
-                                        @if (Model.ReviewdMembers[c].Gender == "Male")
+                                        @if(Model.ReviewdMembers[c].Gender == "Male")
                                         {
                                             <img class="img-circle user" src="~/resources/u1.jpg">
                                         }
-                                        @if (Model.ReviewdMembers[c].Gender != "Male")
+                                        @if(Model.ReviewdMembers[c].Gender != "Male")
                                         {
                                             <img class="img-circle user" src="~/resources/u2.jpg">
                                         }
@@ -229,22 +257,22 @@
                                     <td>
                                         @Model.ReviewdMembers[c].Name
                                     @{
-                                        if (Model.ReviewdMembers[c].Name == Model.Name)
+                                        if(Model.ReviewdMembers[c].Name == Model.Name)
                                         {
                                             <small style="color:blue">(You)</small>
                                         }
                                     }
                                 </td>
                                 <td>
-                                    @if (Model.ReviewdMembers[c].Point <= 500)
+                                    @if(Model.ReviewdMembers[c].Point <= 500)
                                     {
                                         <img class="img-circle user" height="10px" src="~/resources/bronze.jpg">
                                     }
-                                    @if (Model.ReviewdMembers[c].Point > 500 && Model.ReviewdMembers[c].Point <= 1500)
+                                    @if(Model.ReviewdMembers[c].Point > 500 && Model.ReviewdMembers[c].Point <= 1500)
                                     {
                                         <img class="img-circle user" height="10px" src="~/resources/gold.jpg">
                                     }
-                                    @if (Model.ReviewdMembers[c].Point > 1500)
+                                    @if(Model.ReviewdMembers[c].Point > 1500)
                                     {
                                         <img class="img-circle user" src="~/resources/platinum.jpg">
                                     }
@@ -255,8 +283,8 @@
                                 <td> <p style="text-align:justify;color:gray"><small>@Review.Date</small></p></td>
 
                             </tr>
-                                            c++;
-                                        }
+                                    c++;
+                            }
 
                             @*<tr>
                                 <td> <img class="img-circle user" src="~/resources/u1.jpg"></td>
@@ -271,7 +299,7 @@
 
 
                             </tr>
-                            @using (Html.BeginForm("InsertReview", "UserHome", FormMethod.Post))
+                            @using(Html.BeginForm("InsertReview", "UserHome", FormMethod.Post))
                             {
                                 <tr>
                                     <td> <img class="img-circle user" src="~/resources/user.jpg"></td>
@@ -310,7 +338,7 @@
 
         @Html.Raw("<div class=\"container-fluid well\">")
 
-        foreach (var item in Model.RelatedProducts)
+        foreach(var item in Model.RelatedProducts)
         {
             <div class="container-fluid col-md-3">
                 <a href=@Url.Action("details", new { id = item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">", item.ProductId))</a>
@@ -318,11 +346,11 @@
                     <p>@item.ProductName</p>
                     <p>&#2547; @item.SellingPrice </p>
                     <p>
-                        @for (int i = 1; i <= item.Star; i++)
+                        @for(int i = 1; i <= item.Star; i++)
                         {
                             <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
                         }
-                        @for (int i = 1; i <= 5 - item.Star; i++)
+                        @for(int i = 1; i <= 5 - item.Star; i++)
                         {
                             <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
                         }
@@ -331,9 +359,9 @@
                 </div>
 
             </div>
-            c++;
-            if (c == 4)
-            { break; }
+                        c++;
+                        if(c == 4)
+                        { break; }
         }
 
 
@@ -350,12 +378,12 @@
     <h3 class="neon" data-text="!!New Arrival!!"><p><b>!!New Arrival!!</b></p></h3>
 
     @{
-        if (Model.NewArrivalProducts.Count() != 0)
+        if(Model.NewArrivalProducts.Count() != 0)
         {
 
             @Html.Raw("<div class=\"container-fluid well\">")
 
-            foreach (var item in Model.NewArrivalProducts)
+            foreach(var item in Model.NewArrivalProducts)
             {
                 <div class="container-fluid col-md-3">
                     <a href=@Url.Action("details", new { id = item.ProductId })>@Html.Raw(String.Format("<img class=\"img-thumbnail img2\" src=\"/resources/{0}.jpg\">", item.ProductId))</a>
@@ -363,11 +391,11 @@
                         <p>@item.ProductName</p>
                         <p>&#2547;@item.SellingPrice </p>
                         <p>
-                            @for (int i = 1; i <= item.Star; i++)
+                            @for(int i = 1; i <= item.Star; i++)
                             {
                                 <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:#FFDF00"></span>
                             }
-                            @for (int i = 1; i <= 5 - item.Star; i++)
+                            @for(int i = 1; i <= 5 - item.Star; i++)
                             {
                                 <span id="viewed" class="glyphicon glyphicon-star" style="font-size: 20px;color:gray"></span>
                             }
@@ -376,9 +404,9 @@
                     </div>
 
                 </div>
-                c++;
-                if (c == 4)
-                { break; }
+                            c++;
+                            if(c == 4)
+                            { break; }
             }
 
 
@@ -451,7 +479,7 @@
 
 @section Signup{
 
-    @using (Html.BeginForm("SignUp", "UserHome", FormMethod.Post))
+    @using(Html.BeginForm("SignUp", "UserHome", FormMethod.Post))
     {
         <div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
             <div class="modal-dialog modal-sm">
@@ -533,35 +561,54 @@
 
 	        whichButton = this.id;
 
-	        if (whichButton === "love") {
-	            if ($("#love").css("color") == 'rgb(128, 128, 128)') {
+	        if (whichButton === "love")
+	        {
+	           
+	            if ($("#love").css("color") == 'rgb(134, 121, 121)') {
+	                //alert("Login first");
+	                $('#loginmodal').modal('show');
+	            }
+	            else if ($("#love").css("color") == 'rgb(128, 128, 128)') {
 	                $("#love").css("color", "red");
 
 	                window.location = '@Url.Action("addToFavourite", "UserHome", new { id = Model.DetailProduct.ProductId })';
-	                alert("Added into Your favourite list");
+	               // alert("Added into Your favourite list");
                 }
                 else {
                     $("#love").css("color", "gray");
                     window.location = '@Url.Action("removeFromFavourite", "UserHome", new { id = Model.DetailProduct.ProductId })';
-                    alert("Removed from your favorite list");
+                    //alert("Removed from your favorite list");
                 }
 
             }
-            else if (whichButton === "cart") {
-                if ($("#cart").css("color") == 'rgb(128, 128, 128)') {
-                    $("#cart").css("color", "green");
-                    alert("Added into Your Cart");
+	        else if (whichButton === "cart")
+	        {
+	            if ($("#cart").css("color") == 'rgb(134, 121, 121)') {
+	                //alert("Login first");
+	                $('#loginmodal').modal('show');
+	            }
+	            
+	            else if ($("#cart").css("color") == 'rgb(128, 128, 128)') {
+	                $("#cart").css("color", "green");
+	                $("#addToCartform").submit();
+                   // alert("Added into Your Cart");
                 }
                 else {
                     $("#cart").css("color", "gray");
-                    alert("Removed from your cart");
+                    //alert("Removed from your cart");
                 }
 
             }
 
             else if (whichButton === "like") {
 
-                if ($("#like").css("color") == 'rgb(0, 0, 0)') {
+                if ($("#like").css("color") == 'rgb(128, 128, 128)')
+                {
+                    //alert("Login first");
+                    $('#loginmodal').modal('show');
+                }
+                else if ($("#like").css("color") == 'rgb(0, 0, 0)')
+                {
 
                     $("#like").css("color", "green");
                     $("#unlike").css("color", 'rgb(0, 0, 0)');
@@ -574,9 +621,14 @@
                 }
 
             }
-            else if (whichButton === "unlike") {
+            else if (whichButton === "unlike")
+            {
+                if ($("#like").css("color") == 'rgb(128, 128, 128)') {
+                    //alert("Login first");
+                    $('#loginmodal').modal('show');
+                }
 
-                if ($("#unlike").css("color") == 'rgb(0, 0, 0)') {
+                else if ($("#unlike").css("color") == 'rgb(0, 0, 0)') {
 
                     $("#unlike").css("color", "red");
                     $("#like").css("color", 'rgb(0, 0, 0)');
@@ -653,7 +705,7 @@
                             window.location = '@Url.Action("Detail", "UserHome", new { id = @Model.DetailProduct.ProductId })'
                         }
                         if (data == 1) {
-                            window.location = '@Url.Action("Dashboard","Admin")'
+                            window.location = '@Url.Action("Dashboard", "Admin")'
                         }
 
                     }
