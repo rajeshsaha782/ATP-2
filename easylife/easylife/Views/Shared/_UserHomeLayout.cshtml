@@ -500,6 +500,81 @@
         </script>
 
 
+        <script>
+
+            $("#signup").click(function ()
+            {
+                var signupValid = true;
+                var emailReg = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
+
+                if ($("#Name").val() == "") {
+                    $("#NameErr").text("*Required");
+                    signupValid = false;
+                }
+                else {
+                    $("#NameErr").text("");
+                }
+
+                if ($("#Email").val() == "") {
+                    $("#EmailErr").text("*Required");
+                    signupValid = false;
+                }
+                else {
+                    if (!emailReg.test($("#Email").val())) {
+                        $("#EmailErr").text("Invalid Email");
+                        signupValid = false;
+                    }
+                    else {
+                        $("#EmailErr").text("");
+                    }
+
+
+                }
+
+                if ($("#Password").val() == "") {
+                    $("#PassErr").text("*Required");
+                    signupValid = false;
+                }
+                else {
+                    $("#PassErr").text("");
+                }
+                //alert("Handler for .submit() called.");
+
+                if (signupValid) {
+                    
+                    var email = $("#Email").val(), name = $("#Name").val(), Gender = $("#gender").val(), PhoneNumber = $("#PhoneNumber").val(), password = $("#Password").val();
+
+                    $.ajax({
+
+                        method: "POST",
+                        
+                        data: { 'Name':name,'Email': email,'Gender':Gender,'PhoneNumber':PhoneNumber, 'password': password },
+                        url: "@Url.Action("SignUp", "UserHome")",
+	                success: function (data) {
+	                    //alert(data);
+	                    if (data == "Email already used")
+	                    {
+	                        $("#EmailErr").text("Email already used!!!");
+	                    }
+	                    else if(data=="done")
+	                    {
+	                        window.location = '@Url.Action("Index", "UserHome")'
+	                    }
+	                    
+	                },
+                        error: function () { alert("error") }
+                    });
+
+                }
+            
+                   // event.preventDefault();
+                
+
+               
+            });
+            
+        </script>
+
 
 
         <!--modal finished-->

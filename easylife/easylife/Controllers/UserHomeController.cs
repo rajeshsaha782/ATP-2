@@ -502,23 +502,31 @@ namespace easylife.Controllers
         }
 
 
-
-        public ActionResult SignUp(Member m)
+        [HttpPost]
+        public string SignUp(Member m)
         {
-            m.MemberSince = DateTime.Now;
-            m.LastLoggedIn = DateTime.Now;
-            m.Status = "1";
-            m.Type = "0";
 
-            _MemberService.Insert(m);
+            if(!_LoginService.isValidMember(m.Email))
+            {
+                m.MemberSince = DateTime.Now;
+                m.LastLoggedIn = DateTime.Now;
+                m.Status = "1";
+                m.Type = "0";
 
-            Address address = new Address();
-            address.MemberId = _MemberService.GetAll().Last().MemberId;
-            address.MemberAddress = "No Address";
-            _AddressService.Insert(address);
+                _MemberService.Insert(m);
+
+                return "done";
+            }
+            return "Email already used";
+           
+
+            //Address address = new Address();
+            //address.MemberId = _MemberService.GetAll().Last().MemberId;
+            //address.MemberAddress = "No Address";
+            //_AddressService.Insert(address);
 
 
-            return RedirectToAction("Index", "UserHome");
+            
 
         }
         [HttpPost]

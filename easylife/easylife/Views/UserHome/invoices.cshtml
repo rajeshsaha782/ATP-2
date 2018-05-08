@@ -177,7 +177,7 @@
 					</br>
 	@section Signup{
                 
-             @using(Html.BeginForm("SignUp", "UserHome", FormMethod.Post))
+             @using(Html.BeginForm("SignUp", "UserHome", FormMethod.Post, new { @id = "signupform" }))
             {
 			        <div class="modal fade" id="signupModal" role="dialog" style="padding-top:50px;">
 			        <div class="modal-dialog modal-sm">
