@@ -27,16 +27,43 @@
 html,body,h1,h2,h3,h4,h5 {font-family: Arial, sans-serif;
                               text-decoration:none;
 }
+.a1
+    { color:lightgray;
+    }
+    .a1:hover {
+        color: white;
+    }
+    .badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align:baseline;
+  border-radius: 0.25rem;
+}
+
+.badge:empty {
+  display: none;
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
 
 </style>
-<body class="s">
+<body class="" style="background:whitesmoke">
 <aside class="main-sidebar">
 <!-- Top container -->
-<div class="w3-bar w3-top w3-card-4 w3-large ba" style="z-index:4">
+<div class="w3-bar w3-top w3-card-4 w3-large" style="z-index:4;background-color:#151515">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-dark-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item"><a href=@Url.Action("Dashboard",new { id=Convert.ToInt32(Session["userId"])})><img src="~/resources/e.jpg" class="w3-left  w3-margin-right" style="width:100px"/></a></span>
-  <span class="w3-bar-item  w3-right"><a href=@Url.Action("View_Profile_Admin",new { id=Convert.ToInt32(Session["userId"])}) ><img src="~/resources/m.jpg" class="w3-circle w3-hover-shadow w3-margin-right" style="width:35px;height:35px"></a>
-       <a href=@Url.Action("Logout")><i class="fa fa-sign-out w3-xlarge"></i></a> <i class="fa fa-tasks fa-fw w3-hover-shadow "><div class="notification">1</div></i></span>
+  <span class="w3-bar-item" style="font-family:Calibri;font-size:x-large;color:whitesmoke"><a class="navbar-brand a1"  href=@Url.Action("Dashboard",new { id=Convert.ToInt32(Session["userId"])})>Easylife</a></span>
+  <span class="w3-bar-item  w3-right" style="padding-top:15px"><a class="a1" style="padding-right:50px"  href="#"><i class="fa fa-clipboard w3-xlarge"  title="2 Report(s)"></i>&nbsp <span class="w3-badge w3-red badge w3-small">2</span></a><a class="a1" style="padding-right:50px" href=@Url.Action("View_Profile_Admin",new { id=Convert.ToInt32(Session["userId"])}) ><span class="fa fa-user" style="font-size:x-large" ></span>&nbsp @Session["userName"]</a>
+       <a class="a1" style="padding-right:50px" href=@Url.Action("Logout")><i class="fa fa-sign-out w3-xlarge"></i>&nbsp Logout </a> <!--<i class="fa fa-tasks fa-fw w3-hover-shadow "><div class="notification">1</div></i></span>-->
 </div>
 
 <!-- Sidebar/menu -->
@@ -45,7 +72,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: Arial, sans-serif;
 <nav class="w3-sidebar w3-collapse ba1 w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     
-    <div class="w3-col s8 w3-bar">
+    <div class="w3-col  w3-bar">
       <span><h3>Welcome, <strong>@Session["userName"]</strong></h3></span>
       
     </div>
@@ -173,50 +200,49 @@ html,body,h1,h2,h3,h4,h5 {font-family: Arial, sans-serif;
 
 <script>
 
-var heigh = window.innerHeight*0.9;
+    var heigh = window.innerHeight * 0.9;
 
-document.getElementById("frame").height=heigh;
+    document.getElementById("frame").height = heigh;
 
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
+    // Get the Sidebar
+    var mySidebar = document.getElementById("mySidebar");
 
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
+    // Get the DIV with overlay effect
+    var overlayBg = document.getElementById("myOverlay");
 
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-        overlayBg.style.display = "none";
-    } else {
-        mySidebar.style.display = 'block';
-        overlayBg.style.display = "block";
+    // Toggle between showing and hiding the sidebar, and add overlay effect
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+            overlayBg.style.display = "none";
+        } else {
+            mySidebar.style.display = 'block';
+            overlayBg.style.display = "block";
+        }
     }
-}
 
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-    overlayBg.style.display = "none";
-}
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+        overlayBg.style.display = "none";
+    }
 
-$('li').on('click', function(e) {
+    $('li').on('click', function (e) {
 
-	if( $(this).hasClass('hover'))
-	{
-		$('li').removeClass('hover');
-		$(this).removeClass('selected');
-	}
+        if ($(this).hasClass('hover')) {
+            $('li').removeClass('hover');
+            $(this).removeClass('selected');
+        }
 
-	else{
-  // remove .hover class from all other elements
-  $('li').removeClass('hover');
+        else {
+            // remove .hover class from all other elements
+            $('li').removeClass('hover');
 
-  // apply it to the current element
-  $(this).addClass('hover');
-   $(this).addClass('selected');
-  }
-});
+            // apply it to the current element
+            $(this).addClass('hover');
+            $(this).addClass('selected');
+        }
+    });
 
 
 </script>
