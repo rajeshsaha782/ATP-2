@@ -55,7 +55,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<Report> GetBySeenStatus()
         {
-            return _context.Set<Report>().Where(i => i.SeenStatus == "Seen");
+            return _context.Set<Report>().Where(i => i.SeenStatus == "1");
         }
 
         public IEnumerable<Report> GetByTitle(string Title)
@@ -65,7 +65,7 @@ namespace easylife.Core.Service
 
         public IEnumerable<Report> GetByUnseenStatus()
         {
-            return _context.Set<Report>().Where(i => i.SeenStatus != "Seen");
+            return _context.Set<Report>().Where(i => i.SeenStatus != "1");
         }
 
         public bool Insert(Report report)
@@ -82,14 +82,14 @@ namespace easylife.Core.Service
         public bool SetSeen(int Report_id)
         {
             Report r = GetById(Report_id);
-            r.SeenStatus = "Seen";
+            r.SeenStatus = "1";
             return Update(r);
         }
 
         public bool SetUnseen(int Report_id)
         {
             Report r = GetById(Report_id);
-            r.SeenStatus = "Unseen";
+            r.SeenStatus = "0";
             return Update(r);
         }
 

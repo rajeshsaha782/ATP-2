@@ -10,5 +10,7 @@ namespace easylife.Models.AdminViewModel
     {
         public Member member { get; set; }
         public int flag { get; set; }
+
+
     }
 }

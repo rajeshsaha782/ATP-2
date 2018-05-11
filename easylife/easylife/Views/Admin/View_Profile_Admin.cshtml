@@ -1,4 +1,4 @@
-﻿@model easylife.Core.Entities.Member
+﻿@model easylife.Models.AdminViewModel.MemberView
 @{
     ViewBag.Title = "View_Profile_Admin";
 
@@ -31,50 +31,50 @@
 							<tr>
 							
 								<th>Name:</th>
-								<td><label>@Model.Name</label></td>
+								<td><label>@Model.member.Name</label></td>
 							
 							</tr>
 							
 							<tr>
 							
 								<th>Email:</th>
-								<td><label>@Model.Email</label></td>
+								<td><label>@Model.member.Email</label></td>
 							
 							</tr>
 							<tr>
 							
 								<th>Gender:</th>
-								<td><label>@Model.Gender</label></td>
+								<td><label>@Model.member.Gender</label></td>
 							
 							</tr>
 							
 							<tr>
 							
 								<th>Cell:</th>
-								<td><label>@Model.PhoneNumber</label></td>
+								<td><label>@Model.member.PhoneNumber</label></td>
 							
 							</tr>
 							<tr>
 							
 								<th>Position:</th>
-								<td>@Model.Type</td>
+								<td>@Model.member.Type</td>
 							
 							</tr>
 							<tr>
 							
 								<th>Member Since:</th>
-								<td><label>@Model.MemberSince</label></td>
+								<td><label>@Model.member.MemberSince</label></td>
 							
 							</tr>
                              <tr>
 							
 								<th>Last Logged in:</th>
-								<td><label>@Model.LastLoggedIn</label></td>
+								<td><label>@Model.member.LastLoggedIn</label></td>
 							
 							</tr>
 							
 							<tr colspan="2">
-							<td><a onclick="location.href='@Url.Action("Edit_Profile_Admin", new { @Model.MemberId })'"><button class="button">Edit</button></a>
+							<td><a onclick="location.href='@Url.Action("Edit_Profile_Admin", new { @Model.member.MemberId })'"><button class="button">Edit</button></a>
                                
 							</tr>
 						

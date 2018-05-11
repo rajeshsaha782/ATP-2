@@ -20,8 +20,9 @@ namespace easylife.Controllers
         public IOrderService _OrderService;
         public ICouponService _CouponService;
         public IAddressService _AddressService;
+        public IReportService _ReportService;
 
-        public AdminController(IMemberService MemberService, ICouponService CouponService, IOrderService OrderService, IInvoiceService InvoiceService, IDeliveryManService DeliveryManService, IProductService ProductService, IAddressService AddressService)
+        public AdminController(IMemberService MemberService, ICouponService CouponService, IOrderService OrderService, IInvoiceService InvoiceService, IDeliveryManService DeliveryManService, IProductService ProductService, IAddressService AddressService, IReportService ReportService)
         {
             _InvoiceService = InvoiceService;
             _MemberService = MemberService;
@@ -30,11 +31,18 @@ namespace easylife.Controllers
             _OrderService = OrderService;
             _CouponService = CouponService;
             _AddressService = AddressService;
+            _ReportService = ReportService;
         }
 
         public ActionResult Dashboard()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             DashboardViewModel D = new DashboardViewModel();
+            D.ReportCount = _ReportService.GetByUnseenStatus().Count();
             int Total= _MemberService.GetAll().Count();
             int user = _MemberService.GetByType("0").Count();
             int count = 0;
@@ -65,6 +73,10 @@ namespace easylife.Controllers
 
         public ActionResult DeleteUser(int  MemberId)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
             _MemberService.Delete(MemberId);
             return RedirectToAction("View_Users");
 
@@ -73,6 +85,10 @@ namespace easylife.Controllers
 
         public ActionResult DeleteDeliveryMan(int MemberId)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
             _MemberService.Delete(MemberId);
             return RedirectToAction("View_Delivery_man");
 
@@ -81,9 +97,14 @@ namespace easylife.Controllers
 
         public ActionResult Change_Password(int id, int f=0)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
             if (Convert.ToInt32(Session["userId"]) == id)
             {
                 PasswordViewModel p = new PasswordViewModel();
+                p.ReportCount = _ReportService.GetByUnseenStatus().Count();
                 p.MemberId = id;
                 p.Name = _MemberService.GetById(id).Name;
                 // p.totalProductInCart = _CartService.GetByMemberId(Convert.ToInt32(Session["userId"])).Count();
@@ -109,9 +130,14 @@ namespace easylife.Controllers
 
         public ActionResult ChangePassword(int mid, string cpass, string npass, string rpass)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
             if (Convert.ToInt32(Session["userId"]) == mid)
             {
                 PasswordViewModel p = new PasswordViewModel();
+                p.ReportCount = _ReportService.GetByUnseenStatus().Count();
                 p.member = _MemberService.GetById(mid);
                 if (p.member.Password != cpass)
                 {
@@ -142,25 +168,38 @@ namespace easylife.Controllers
         [HttpGet]
         public ActionResult Edit_Profile_Admin(int id=0)
         {
-            return View(_MemberService.GetById(id));
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+            MemberView m = new MemberView();
+            m.member = _MemberService.GetById(id);
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
+            return View(m);
         }
 
         [HttpPost]
         public ActionResult Edit_Profile_Admin(int id,string Name,string Gender,string CellPhone,string Type)
         {
-
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
             Member mem = _MemberService.GetById(id);
             mem.Name = Name;
             mem.Gender = Gender;
             mem.PhoneNumber = CellPhone;
             mem.Type = Type;
 
+
             if (_MemberService.Update(mem))
                 return RedirectToAction("Dashboard");
             else
             {
-
-                return View(mem);
+                MemberView mem1 = new MemberView();
+                mem1.member = mem;
+                mem1.ReportCount = _ReportService.GetByUnseenStatus().Count();
+                return View(mem1);
             }
            
         }
@@ -168,51 +207,105 @@ namespace easylife.Controllers
         [HttpGet]
         public ActionResult Edit_Profile_User(int MemberId=0)
         {
-            return View(_MemberService.GetById(MemberId));
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+            
+            MemberView m = new MemberView();
+            m.member = _MemberService.GetById(MemberId);
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
+            return View(m);
         }
         [HttpPost]
         public ActionResult Edit_Profile_User(Member mem)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             if (_MemberService.Update(mem))
                 return RedirectToAction("Dashboard");
             else
             {
-
-                return View(mem);
+                MemberView mem1 = new MemberView();
+                mem1.member = mem;
+                mem1.ReportCount = _ReportService.GetByUnseenStatus().Count();
+                return View(mem1);
             }
         }
 
         
         public ActionResult View_Profile_Admin()
         {
-           
-            int x = Convert.ToInt32(Session["userId"]);
 
-            return View(_MemberService.GetById(x));
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
+            int x = Convert.ToInt32(Session["userId"]);
+            MemberView m = new MemberView();
+            m.member = _MemberService.GetById(x);
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
+            return View(m);
         }
 
         [HttpGet]
         public ActionResult View_Profile_Admin(int id)
         {
-            return View(_MemberService.GetById(id));
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
+            MemberView m = new MemberView();
+            m.member = _MemberService.GetById(id);
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
+            return View(m);
         }
         [HttpGet]
         public ActionResult View_Profile_User(int id = 0)
         {
 
-            return View(_MemberService.GetById(id));
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
+            MemberView m = new MemberView();
+            m.member = _MemberService.GetById(id);
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
+            return View(m);
         }
         [HttpGet]
         public ActionResult View_Profile_Delivery_Man(int id = 0)
         {
-            return View(_MemberService.GetById(id));
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
+            MemberView m = new MemberView();
+            m.member = _MemberService.GetById(id);
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
+            return View(m);
         }
 
 
         [HttpGet]
         public ActionResult Edit_Profile_Delivery_Man(int MemberId=0)
         {
-            return View(_MemberService.GetById(MemberId));
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
+            MemberView m = new MemberView();
+            m.member = _MemberService.GetById(MemberId);
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
+            return View(m);
         }
 
 
@@ -223,12 +316,22 @@ namespace easylife.Controllers
 
         public ActionResult Add_Member()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             return View();
         }
         [HttpPost]
         public ActionResult Add_Member(Member mem)
         {
-            if(mem.Email!=null&&mem.Name!=null&&mem.Password!=null&&mem.Gender!=null&&mem.Type!=null&&mem.Status!=null)
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
+            if (mem.Email != null && mem.Name != null && mem.Password != null && mem.Gender != null && mem.Type != null && mem.Status != null)
             {
                 mem.LastLoggedIn = DateTime.Now;
                 mem.MemberSince = DateTime.Now;
@@ -247,24 +350,40 @@ namespace easylife.Controllers
                 else
                 {
 
-                    return View(mem);
+                    MemberView mem1 = new MemberView();
+                    mem1.member = mem;
+                    mem1.ReportCount = _ReportService.GetByUnseenStatus().Count();
+                    return View(mem1);
                 }
             }
             else
             {
 
-                return View(mem);
+                MemberView mem1 = new MemberView();
+                mem1.member = mem;
+                mem1.ReportCount = _ReportService.GetByUnseenStatus().Count();
+                return View(mem1);
             }
 
         }
         public ActionResult Add_Product()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             return View();
         }
         [HttpPost]
         public ActionResult Add_Product(Product pro)
         {
-            if(pro.ProductName!=null&&pro.SellingPrice!=0&&pro.Size!=0)
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
+            if (pro.ProductName != null && pro.SellingPrice != 0 && pro.Size != 0)
             {
                 pro.TotalViewed = 0;
                 pro.TotalSell = 0;
@@ -277,14 +396,18 @@ namespace easylife.Controllers
                     return RedirectToAction("Dashboard");
                 else
                 {
-
-                    return View(pro);
+                    ProductViewModel pro1 = new ProductViewModel();
+                    pro1.products = pro;
+                    pro1.ReportCount = _ReportService.GetByUnseenStatus().Count();
+                    return View(pro1);
                 }
             }
             else
             {
-
-                return View(pro);
+                ProductViewModel pro1 = new ProductViewModel();
+                pro1.products = pro;
+                pro1.ReportCount = _ReportService.GetByUnseenStatus().Count();
+                return View(pro1);
             }
 
             //return View();
@@ -293,7 +416,13 @@ namespace easylife.Controllers
 
         public ActionResult View_Members()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             MemberViewModel m = new MemberViewModel();
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             m.Members = _MemberService.GetAll();
             int x= _MemberService.GetAll().Count();
             int y = _MemberService.GetByType("0").Count();
@@ -305,8 +434,13 @@ namespace easylife.Controllers
         [HttpPost]
         public ActionResult View_Members(string searching, string Searchby, string SearchbyUser)
         {
-            MemberViewModel m = new MemberViewModel();
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
 
+            MemberViewModel m = new MemberViewModel();
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             if (Searchby == "Name")
             {
                 m.Members = _MemberService.GetByName(searching);
@@ -341,18 +475,28 @@ namespace easylife.Controllers
 
         public ActionResult View_Delivery_Man()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             DeliveryManViewModel D = new DeliveryManViewModel();
             D.members = _MemberService.GetAll();
             D.Invoices = _InvoiceService.GetAll();
             D.DeliveryMan = _DeliveryManService.GetAll();
             D.MemberCount = _DeliveryManService.GetAll().Count();
-
+            D.ReportCount = _ReportService.GetByUnseenStatus().Count();
             return View(D);
         }
 
         [HttpPost]
         public ActionResult View_Delivery_Man(string searching, string Searchby)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             DeliveryManViewModel D = new DeliveryManViewModel();
 
             if (Searchby == "Name")
@@ -385,7 +529,7 @@ namespace easylife.Controllers
                 }
             }
             D.MemberCount = Count;
-
+            D.ReportCount = _ReportService.GetByUnseenStatus().Count();
             return View(D);
         }
 
@@ -394,16 +538,26 @@ namespace easylife.Controllers
 
         public ActionResult View_Products()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             ProductViewModel m = new ProductViewModel();
             m.Products = _ProductService.GetAll();
             m.TotalProduct = _ProductService.GetAll().Count();
-
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             return View(m);
         }
 
         [HttpPost]
         public ActionResult View_Products(string searching, string Searchby)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             ProductViewModel m = new ProductViewModel();
 
             if (Searchby == "Product Name")
@@ -421,7 +575,7 @@ namespace easylife.Controllers
             }
 
             m.TotalProduct = m.Products.Count();
-
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             return View(m);
         }
 
@@ -429,16 +583,28 @@ namespace easylife.Controllers
 
         public ActionResult View_Users()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             MemberViewModel m = new MemberViewModel();
             m.Members = _MemberService.GetAll();
             m.UserCount = _MemberService.GetByType("0").Count();
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             return View(m);
         }
 
         [HttpPost]
         public ActionResult View_Users(string searching, string Searchby)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             MemberViewModel m = new MemberViewModel();
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             if (Searchby == "Name")
             {
                 m.Members = _MemberService.GetByName(searching);
@@ -467,18 +633,29 @@ namespace easylife.Controllers
 
         public ActionResult View_Invoices()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             InvoicesViewModel m = new InvoicesViewModel();
             m.Invoices = _InvoiceService.GetAll();
             m.members = _MemberService.GetAll();
             m.InvoiceCount = _InvoiceService.GetAll().Count();
-
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             return View(m);
         }
 
         [HttpPost]
         public ActionResult View_Invoices(string searching, string Searchby)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             InvoicesViewModel m = new InvoicesViewModel();
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             if (Searchby == "Buyer Name")
             {
                 // m.Invoice = _InvoiceService.GetByMemberId(searching);
@@ -502,19 +679,30 @@ namespace easylife.Controllers
 
         public ActionResult View_Orders()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             OrdersViewModel m = new OrdersViewModel();
             m.Orders = _OrderService.GetAll();
             m.Invoices = _InvoiceService.GetAll();
             m.Products = _ProductService.GetAll();
             m.TotalOrder = _OrderService.GetAll().Count();
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             return View(m);
         }
 
         [HttpPost]
         public ActionResult View_Orders(string searching, string Searchby)
         {
-            OrdersViewModel m = new OrdersViewModel();
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
 
+            OrdersViewModel m = new OrdersViewModel();
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             if (Searchby == "Invoice Code")
             {
                 m.Orders = _OrderService.GetByInvoiceId(Convert.ToInt32(searching));
@@ -541,17 +729,27 @@ namespace easylife.Controllers
 
         public ActionResult View_Stock()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             ProductViewModel p = new ProductViewModel();
             p.Products = _ProductService.GetAll();
-
+            p.ReportCount = _ReportService.GetByUnseenStatus().Count();
             return View(p);
         }
 
         [HttpPost]
         public ActionResult View_Stock(string searching, string Searchby)
         {
-            ProductViewModel p = new ProductViewModel();
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
 
+            ProductViewModel p = new ProductViewModel();
+            p.ReportCount = _ReportService.GetByUnseenStatus().Count();
             if (Searchby == "Brand")
             {
                 p.Products = _ProductService.GetByBrand(searching);
@@ -571,6 +769,11 @@ namespace easylife.Controllers
 
         public ActionResult Profit_graph()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             return View();
         }
 
@@ -578,11 +781,21 @@ namespace easylife.Controllers
 
         public ActionResult Update_Slider()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             return View();
         }
 
         public ActionResult Advertise()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             return View();
         }
 
@@ -593,7 +806,13 @@ namespace easylife.Controllers
 
         public ActionResult View_Invoice(int id)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             InvoiceAdminViewModel I = new InvoiceAdminViewModel();
+            I.ReportCount = _ReportService.GetByUnseenStatus().Count();
             I.Invoice = _InvoiceService.GetById(id);
             I.MemberId = I.Invoice.MemberId;
             I.Name = _MemberService.GetById(I.MemberId).Name;
@@ -610,10 +829,16 @@ namespace easylife.Controllers
        [HttpGet]
         public ActionResult View_Product_Details(int id=0)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             ProductViewModel p = new ProductViewModel();
             p.Products = _ProductService.GetAll();
             p.products = _ProductService.GetById(id);
             p.ProductId = id;
+            p.ReportCount = _ReportService.GetByUnseenStatus().Count();
             return View(p);
         }
       
@@ -621,8 +846,16 @@ namespace easylife.Controllers
         [HttpGet]
         public ActionResult Set_Coupon(int id=0)
         {
-            Coupon m = new Coupon();
-            m.MemberId = id;
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
+
+
+            SetCouponModel m = new SetCouponModel();
+            m.coupon.MemberId = id;
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             
             return View(m);
         }
@@ -630,6 +863,11 @@ namespace easylife.Controllers
         [HttpPost]
         public ActionResult Set_Coupon(Coupon coupon,int id)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             // SetCouponModel s = new SetCouponModel();
             coupon.MemberId = id;
             coupon.Availability = "1";
@@ -649,12 +887,22 @@ namespace easylife.Controllers
         public ActionResult Send_Mail()
         {
 
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             return View();
         }
 
         [HttpPost]
         public ActionResult Send_Mail(string email,string subject,string body)
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
             easylife.Core.Service.EmailService e = new Core.Service.EmailService();
             if(e.SendEmail(email, subject, body))
                 return RedirectToAction("View_Users");

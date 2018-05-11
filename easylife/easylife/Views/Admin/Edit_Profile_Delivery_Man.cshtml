@@ -1,4 +1,4 @@
-@model easylife.Core.Entities.Member
+@model easylife.Models.AdminViewModel.MemberView
 @{
     ViewBag.Title = "Edit profile Delivery Man";
 }
@@ -31,15 +31,15 @@
 						    <tr>
 							
 								<th>Memeber ID:</th>
-								<td><label>@Model.MemberId</label></td>
+								<td><label>@Model.member.MemberId</label></td>
 							
 							</tr>
 							<tr>
 							
 								<th>Name:</th>
 								<td>
-                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    @Html.EditorFor(model => model.member.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.member.Name, "", new { @class = "text-danger" })
                                 </td>
 							
 							</tr>
@@ -51,7 +51,7 @@
                                     @Html.RadioButton("gender", "Male") Male
                                     @Html.RadioButton("gender", "Female") Female
                                     @Html.RadioButton("gender", "Other") Other
-                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.member.Gender, "", new { @class = "text-danger" })
                                 </td>
 							</tr>
 							
@@ -59,8 +59,8 @@
 							
 								<th>Cell No:</th>
 								<td>
-                                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                    @Html.EditorFor(model => model.member.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.member.PhoneNumber, "", new { @class = "text-danger" })
                                 </td>
 							
 							</tr>
@@ -70,7 +70,7 @@
 								<td>
                                     @Html.RadioButton("position", "Availaible") Availaible
                                     @Html.RadioButton("position", "On vacation") On vacation
-                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.member.Gender, "", new { @class = "text-danger" })
 								
 								</td>
 							</tr>
@@ -78,8 +78,8 @@
 							
 								<th>Delivery Zone:</th>
 								<td>
-                                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                    @Html.EditorFor(model => model.member.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.member.PhoneNumber, "", new { @class = "text-danger" })
                                 </td>
 							
 							</tr>

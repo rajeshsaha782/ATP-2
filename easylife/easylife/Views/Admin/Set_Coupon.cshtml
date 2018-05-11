@@ -1,4 +1,4 @@
-﻿@model easylife.Core.Entities.Coupon
+﻿@model easylife.Models.AdminViewModel.SetCouponModel
 @{
     ViewBag.Title = "Set Coupon";
 }
@@ -8,7 +8,7 @@
 			<div class="main-div">
 				
 
-@using (Html.BeginForm("Set_Coupon", "Admin",new { id = Model.MemberId }, FormMethod.Post))
+@using (Html.BeginForm("Set_Coupon", "Admin",new { id = Model.coupon.MemberId }, FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 				<div  style="width:50%;height:600px;background-color:white;">
@@ -24,7 +24,7 @@
 
 
                         <tr>
-                            <td>Memeber Id:</td><td><label>@Model.MemberId</label></td>
+                            <td>Memeber Id:</td><td><label>@Model.coupon.MemberId</label></td>
 
 
 
@@ -32,8 +32,8 @@
                         </tr>
                         <tr>
                             <td>Percentage:</td>
-                            <td>@Html.EditorFor(model => model.Percentage, new { htmlAttributes = new { @class = "form-control" } })
-                               @Html.ValidationMessageFor(model => model.Percentage, "", new { @class = "text-danger" })
+                            <td>@Html.EditorFor(model => model.coupon.Percentage, new { htmlAttributes = new { @class = "form-control" } })
+                               @Html.ValidationMessageFor(model => model.coupon.Percentage, "", new { @class = "text-danger" })
                             %</td>
 
                         </tr>
@@ -47,7 +47,7 @@
                             <td>Expire Date:</td>
                             <td>
                              
-                                @Html.TextBoxFor(m => m.DeadlineDate, new { Value = Model.DeadlineDate.ToString("yyyy-mm-dd"), id = "MySuperCoolId" });
+                                @Html.TextBoxFor(m => m.coupon.DeadlineDate, new { Value = Model.coupon.DeadlineDate.ToString("yyyy-mm-dd"), id = "MySuperCoolId" });
                             </td>
                             
 
@@ -62,7 +62,7 @@
                     <table>
                             <tr >
                                    <td><button class="button">Add</button></td>
-                                 <td><a href="@Url.Action("View_Users",new {id=Model.MemberId })"><button class="button">Cancel</button></a></td>   
+                                 <td><a href="@Url.Action("View_Users",new {id=Model.coupon.MemberId })"><button class="button">Cancel</button></a></td>   
                                     
                             </tr>
                             

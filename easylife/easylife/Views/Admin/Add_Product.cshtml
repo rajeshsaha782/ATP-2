@@ -1,4 +1,4 @@
-﻿@model easylife.Core.Entities.Product
+﻿@model easylife.Models.AdminViewModel.ProductViewModel
 @{
     ViewBag.Title = "Add_Product";
 }
@@ -101,7 +101,7 @@
 												<td>Sub-Catagory</td>
 												<td>:</td>
 												<td>
-                                                    ///Html.DropDownListFor(model => model.SubCategory, new SelectList(
+                                                    ///Html.DropDownListFor(model => model.products.SubCategory, new SelectList(
                                                           new List<Object> {
                                                                                if (ViewBag.value == "Man")
                                                                                 {

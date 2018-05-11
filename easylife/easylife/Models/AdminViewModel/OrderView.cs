@@ -5,7 +5,7 @@ using System.Web;
 
 namespace easylife.Models.AdminViewModel
 {
-    public class OrderView
+    public class OrderView:MemberView
     {
         public int Pending;
         public int Completed;

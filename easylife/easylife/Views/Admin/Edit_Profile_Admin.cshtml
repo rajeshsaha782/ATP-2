@@ -1,4 +1,4 @@
-@model easylife.Core.Entities.Member
+@model easylife.Models.AdminViewModel.MemberView
 @{
     ViewBag.Title = "Edit Profile Admin";
 }
@@ -40,7 +40,7 @@
 							
 								<th>Name:</th>
 								<td>
-                                    <input name="Name" value="@Model.Name" />
+                                    <input name="Name" value="@Model.member.Name" />
                                     <!--Html.EditorFor(model => model.Name, new { htmlAttributes = new { class = "form-control" } })
                                     Html.ValidationMessageFor(model => model.Name, "", new { class = "text-danger" })-->
                                 </td>
@@ -51,13 +51,13 @@
 							
 								<th>Gender:</th>
 								<td>
-                                    <input type="radio" name="Gender" value="@Model.Gender" /> Male
-                                    <input type="radio" name="Gender" value="@Model.Gender" /> Female
-                                     <input type="radio" name="Gender" value="@Model.Gender" /> Other
+                                    <input type="radio" name="Gender" value="@Model.member.Gender" /> Male
+                                    <input type="radio" name="Gender" value="@Model.member.Gender" /> Female
+                                     <input type="radio" name="Gender" value="@Model.member.Gender" /> Other
                                     <!--Html.RadioButton("gender", "Male") Male
                                     Html.RadioButton("gender", "Female") Female
                                     Html.RadioButton("gender", "Other") Other
-                                    Html.ValidationMessageFor(model => model.Gender, "", new { class = "text-danger" })-->
+                                    Html.ValidationMessageFor(model => model.member.Gender, "", new { class = "text-danger" })-->
                                 </td>
 							
 							</tr>
@@ -66,7 +66,7 @@
 							
 								<th>Cell No:</th>
 								<td>
-                                    <input name="CellPhone" value="@Model.PhoneNumber" />
+                                    <input name="CellPhone" value="@Model.member.PhoneNumber" />
                                 <!--Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { class = "form-control" } })
                                 Html.ValidationMessageFor(model => model.PhoneNumber, "", new { class = "text-danger" })-->
                                 </td>
@@ -76,9 +76,9 @@
 							
 								<th>Position:</th>
 								<td>
-                                    <input type="radio" name="Type" value="@Model.Type" /> Admin
-                                    <input type="radio" name="Type" value="@Model.Type" /> Stock Executive
-                                    <input type="radio" name="Type" value="@Model.Type" /> Delivery Man
+                                    <input type="radio" name="Type" value="@Model.member.Type" /> Admin
+                                    <input type="radio" name="Type" value="@Model.member.Type" /> Stock Executive
+                                    <input type="radio" name="Type" value="@Model.member.Type" /> Delivery Man
 
                                     
 								</td>

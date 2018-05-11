@@ -6,7 +6,7 @@ using System.Web;
 
 namespace easylife.Models.AdminViewModel
 {
-    public class InvoiceAdminViewModel
+    public class InvoiceAdminViewModel:MemberView
     {
         public string Name { get; set; }
         public int MemberId { get; set; }

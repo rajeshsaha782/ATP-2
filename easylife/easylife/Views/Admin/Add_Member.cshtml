@@ -1,4 +1,4 @@
-﻿@model easylife.Core.Entities.Member
+﻿@model easylife.Models.AdminViewModel.MemberView
 @{
     ViewBag.Title = "Add_Member";
 }
@@ -7,7 +7,7 @@
             .w3-animate-bottom
                         {   overflow: scroll;
                             overflow-x: hidden;
-	                        position:relative;animation:animatebottom 0.4s
+	                        position:relative;animation:animatebottom 0.4s;
 
                          } 
             keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}
@@ -24,10 +24,8 @@
 
 <div class="invoice" style="width:800px;background-color:lightskyblue">
 		
-    @using (Html.BeginForm("Add_Member", "Admin",FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
-
+   
+            
 			<div class="invoice-wrapper">
 				
 				<div class="invoice-wrap">
@@ -42,7 +40,7 @@
 							<th>@Html.LabelFor(model => model.Name)</th>
 							<td>
                                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger",@id="NameErr" })
                             </td>
 						</tr>
 							
@@ -50,7 +48,7 @@
 							<th>@Html.LabelFor(model => model.Email)</th>
 							<td>
                                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                               <font color="red"> @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger",@id="EmailErr" })</font>
                             </td>
 							
 						</tr>
@@ -59,7 +57,7 @@
 							<th>@Html.LabelFor(model => model.Password)</th>
 							<td>
                                 @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger",@id="PassErr" })
                             </td>
 							
 						</tr>
@@ -68,7 +66,7 @@
 							<th>@Html.LabelFor(model => model.Password)</th>
 							<td>
                                 @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger",@id="PassErr" })
                             </td>
 							
 						</tr>
@@ -119,7 +117,7 @@
 							
 						<tr>
 							<td>
-							    <button class="button" value="Confirm" onclick="confirmm()">Confirm</button>
+							    <button class="button" id="signup" value="Confirm" onclick="signup()">Confirm</button>
 							</td>
 							<td>
 						        <a href="@Url.Action("Dashboard")"><button class="button">Cancel</button></a>
@@ -135,7 +133,7 @@
 				   
 				
 			</div>
-          }
+          
 	</div>
 		
 
@@ -144,7 +142,7 @@
             var txt;
             if (confirm("Add This Member?")) {
                // alert("Succesful");
-                //alert(Model.Name);
+                //alert(Model.member.Name);
               window.open('@Url.Action("View_Profile_Admin")', '_self');
 		
             } else {
@@ -153,4 +151,71 @@
             document.getElementById("demo").innercshtml = txt;
         }
     </script>
+
+    @* -------------SignUp------------------*@
+        <script>
+
+            $("#signup").click(function () {
+                var signupValid = true;
+                var emailReg = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
+
+                if ($("#Name").val() == "") {
+                    $("#NameErr").text("*Required");
+                    signupValid = false;
+                }
+                else {
+                    $("#NameErr").text("");
+                }
+
+                if ($("#Email").val() == "") {
+                    $("#EmailErr").text("*Required");
+                    signupValid = false;
+                }
+                else {
+                    if (!emailReg.test($("#Email").val())) {
+                        $("#EmailErr").text("Invalid Email");
+                        signupValid = false;
+                    }
+                    else {
+                        $("#EmailErr").text("");
+                    }
+
+
+                }
+
+                if ($("#Password").val() == "") {
+                    $("#PassErr").text("*Required");
+                    signupValid = false;
+                }
+                else {
+                    $("#PassErr").text("");
+                }
+                //alert("Handler for .submit() called.");
+
+                if (signupValid) {
+
+                    var email = $("#Email").val(), name = $("#Name").val(), Gender = $("#gender").val(), PhoneNumber = $("#PhoneNumber").val(), password = $("#Password").val(),type=$("#Type").val(),status=$("#Status").val();
+
+                    $.ajax({
+
+                        method: "POST",
+
+                        data: { 'Name': name, 'Email': email, 'Gender': Gender, 'PhoneNumber': PhoneNumber, 'Password': password,'Type':type,'Status':status },
+                        url: "@Url.Action("Add_Member", "Admin")",
+                        success: function (data) {
+                           
+                                window.location = '@Url.Action("Dashboard", "Admin")'
+
+	                },
+                        error: function () { alert("error") }
+                    });
+
+        }
+
+                // event.preventDefault();
+
+
+
+            });
+        </script>
 </body>

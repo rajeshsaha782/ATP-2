@@ -32,6 +32,16 @@ namespace easylife.Models.AdminViewModel
         public int Invoice;
         public DateTime OrederPlace;
         public int TotalOrder;
+        public int ReportCount { get; set; }
+
+
+        public string Category { get; set; }
+        public string SubCategory { get; set; }
+        public float SellingPrice { get; set; }
+        public int Size { get; set; }
+        public int Quantity { get; set; }
+        public string Brand { get; set; }
+        public string Features { get; set; }
 
 
 
