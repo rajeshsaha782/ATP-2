@@ -82,14 +82,53 @@ namespace easylife.Controllers
 
             ReportViewModel m = new ReportViewModel();
             m.Reports = _ReportService.GetAll();
-            m.members = _MemberService.GetAll();
-            m.ReportCount = _ReportService.GetAll().Count();
+            m.TotalReportCount = m.Reports.Count();
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
+            int c = 0;
+            foreach (var item in m.Reports)
+            {
+                m.members[c] = _MemberService.GetById(item.MemeberId);
+                c++;
+            }
 
             return View(m);
 
 
         }
 
+        public ActionResult View_Report(int rid,string name)
+        {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+            _ReportService.SetSeen(rid);
+            ReportViewModel m = new ReportViewModel();
+            m.ReportCount = _ReportService.GetByUnseenStatus().Count();
+            m.report = _ReportService.GetById(rid);
+            m.name = _MemberService.GetById(m.report.MemeberId).Name;
+            return View(m);
+        }
+
+        public ActionResult Delete_Report(int rid)
+        {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+            _ReportService.Delete(rid);
+            return RedirectToAction("View_Reports", "Admin");
+        }
+
+        public ActionResult SetUnseenReport(int rid)
+        {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+            _ReportService.SetUnseen(rid);
+            return RedirectToAction("View_Reports", "Admin");
+        }
 
 
         public ActionResult DeleteUser(int  MemberId)

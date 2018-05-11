@@ -9,9 +9,12 @@ namespace easylife.Models.AdminViewModel
     public class ReportViewModel
     {
         public int ReportCount;
+        public int TotalReportCount;
 
 
         public IEnumerable<Report> Reports { set; get; }
-        public IEnumerable<Member> members { set; get; }
+        public Member[] members = new Member[1000];
+        public Report report { get; set; }
+        public string name { get; set; }
     }
 }

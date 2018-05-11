@@ -367,6 +367,7 @@
     <None Include="Views\Admin\View_Profile_User.cshtml" />
     <Content Include="Views\Shared\_UserHomeLayout.cshtml" />
     <Content Include="Views\Admin\View_Reports.cshtml" />
+    <Content Include="Views\Admin\View_Report.cshtml" />
     <None Include="Views\UserDashboard\changepass.cshtml" />
     <None Include="Views\UserDashboard\edit.cshtml" />
     <None Include="Views\UserDashboard\invoices.cshtml" />

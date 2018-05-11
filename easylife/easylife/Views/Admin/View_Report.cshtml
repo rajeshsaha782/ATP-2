@@ -1,0 +1,68 @@
+﻿@model easylife.Models.AdminViewModel.ReportViewModel
+
+@{
+    ViewBag.Title = "View Report";
+}
+
+<style>
+.w3-animate-bottom{overflow: scroll;
+    overflow-x: hidden;
+	position:relative;animation:animatebottom 0.4s}keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+	
+	::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent; 
+}
+    .button {background-color:lightgray;
+    }
+    
+</style>		
+<body class="w3-light-grey w3-animate-bottom ">
+	<div class="invoice" style="width:800px;background-color:whitesmoke" >
+		
+				<div class="invoice-wrapper">
+				
+					<div class="invoice-wrap">
+					
+						<div style="text-align:center;color:black;" class="ba"><h3>Report Detail</h3></div>
+					
+				
+						<div class="desc" style="margin-left:275;">
+						
+						
+							<table class="reg" >
+						
+							<tr>
+							
+								<td><b>Report Title:</b></td>
+								<td><label>@Model.report.ReportTitle</label></td>
+							
+							</tr>
+							
+							<tr>
+							
+								<td><b>Reported By:</b></td>
+								<td><a href="'@Url.Action("Edit_Profile_User", new { @Model.report.MemeberId })'" <label>@Model.name</label></td>
+							
+							</tr>
+							<tr>
+							
+								<td><b>Description:</b></td>
+								<td><label>@Model.report.Description</label></td>
+							
+							</tr>
+							
+							<td><a onclick="location.href='@Url.Action("Delete_Report", new { rid=Model.report.ReportId })'"<button class="button w3-large">Delete</button></a> </td>
+							<td><a onclick="location.href='@Url.Action("SetUnseenReport", new { rid=Model.report.ReportId })'"<button class="button " style="height:45px" >Mark as Unseen</button></a> </td>
+						
+						
+						</table>
+						
+						</div>
+				
+				   </div>
+			
+				   </div>
+			
+		</div>
+</body>

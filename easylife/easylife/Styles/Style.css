@@ -19,8 +19,8 @@ a
 	text-decoration:none;
 }
 .ba{
-  background: -webkit-linear-gradient(left,#FFFFFF, #FF8C00);
-  background: linear-gradient(to right, #FFFFFF, #FF8C00);
+  background: -webkit-linear-gradient(left,#FF8C00,#FFFFFF);
+  background: linear-gradient(to right,  #FF8C00,#FFFFFF);
   /* font-family: 'Roboto', sans-serif; */
 }
 
