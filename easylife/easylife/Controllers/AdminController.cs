@@ -71,6 +71,27 @@ namespace easylife.Controllers
             return View(D);
         }
 
+
+
+        public ActionResult View_Reports()
+        {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("Index", "UserHome");
+            }
+
+            ReportViewModel m = new ReportViewModel();
+            m.Reports = _ReportService.GetAll();
+            m.members = _MemberService.GetAll();
+            m.ReportCount = _ReportService.GetAll().Count();
+
+            return View(m);
+
+
+        }
+
+
+
         public ActionResult DeleteUser(int  MemberId)
         {
             if (Session["userId"] == null)

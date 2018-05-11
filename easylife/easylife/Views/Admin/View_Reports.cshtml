@@ -1,0 +1,206 @@
+﻿@model easylife.Models.AdminViewModel.ReportViewModel
+@{
+    ViewBag.Title = "View_Invoices";
+
+}
+
+<style>
+        cshtml,body,h1,h2,h3,h4,h5 {font-family: 'Times New Roman', Times, serif}
+            table {
+			        border-collapse: collapse;
+			        width: 100%;
+			      }
+		tr:hover {   background-color:gray;}
+
+         a:hover {color: hotpink;}
+        a:link {color: black;}
+
+      .comboBox {
+                  border-radius: 4px;
+                  background-color: #fffff;
+                  border: none;
+                  color: black;
+                  text-align: center;
+                  font-size:15px;
+                  width: 120px;
+                  height: 30px;
+                  border-radius:10px;
+                  transition: all 0.5s;
+                  cursor: pointer;
+                  margin: 5px;
+                }
+        h3 {
+               text-align:center;
+           }
+</style>
+
+	<div>
+    @using (Html.BeginForm("View_Members", "Admin", FormMethod.Post))
+            {
+        <select id="view" class="comboBox" @Html.DropDownList("SearchbyUser", new SelectList(new[] { "All", "Admin", "Stock Executive", "Order Executive" }))
+                        <select id="search by" class="comboBox" @Html.DropDownList("Searchby", new SelectList(new[] { "Any", "Name", "Email", "Type" }))
+
+                        <!--<select id="view" class="comboBox">
+                            <option>View All</option>
+                            <option>View Admins</option>
+                            <option>View Stock Executive</option>
+                            <option>View Order Executive</option>
+                          </select>-->
+
+
+
+                        <!--<select id="search by" class="comboBox">
+                            <option>Any</option>
+                            <option>Name</option>
+                            <option>Email</option>
+                            <option>Type</option>
+                          </select>-->
+
+
+                        @Html.TextBox("searching")
+                        <input class="button" type="submit" value="Search" />
+                        }
+    </div>
+
+<body class="w3-animate-bottom">
+	
+  <!--for demo wrap-->
+
+  <h1 style="color:	teal">Invoices</h1>
+    <h3 style="color:	teal">Total Invoice(s) Found: @Model.ReportCount</h3>
+  <section class="w3-card-4">
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Report Id</th>
+          <th>ReportTitle</th>
+          <th>Reported By</th>
+		  <th>Reported Time</th>
+          <th>Description</th>
+          <th>Status</th>
+		  <th>Delivery man</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" style="background-color:white" cellspacing="0" border="0">
+      <tbody>
+          @foreach (var item in Model.)
+          {
+              var name = "";
+              foreach(var T in Model.members)
+              {
+                  if(item.MemberId==T.MemberId)
+                  {
+                      name = T.Name;
+                  }
+              }
+            <tr>
+              <td><a href=@Url.Action("View_Invoice",new { id=item.InvoiceId})>@item.InvoiceId</a></td>
+              <td><a href=@Url.Action("View_Profile_User",new { id = item.MemberId })>@name</a></td>
+              <td>@item.Date</td>
+                @{if (item.Status == "0")
+                    {
+                        <td>On the way</td>
+                    }
+                    else if(item.Status == "0")
+                    {
+                       <td>Delivered</td>
+                    }
+                    else
+                    {
+                    <td>Cancelled</td>
+                    }
+                }
+              
+                @{if (item.PaymentStatus == "0")
+                    {
+                        <td>UnPaid</td>
+                    }
+                    else if (item.PaymentStatus == "1")
+                    {
+                        <td>Paid</td>
+                    }
+                    
+                }
+		      <td>
+              @foreach (var tem in Model.members)
+              {
+                  if (tem.Type == "2")
+                  {
+                    @Html.DropDownListFor(model => model.DeliveryMan, new SelectList(
+                    new List<Object>
+                    { new { value = "DElivery Man", text = tem.Name },
+
+                        }, "value", "text", 2))
+                  }
+
+              }
+             
+                       
+                  
+			    </td>
+            </tr>
+              }
+
+
+          <!--<tr>
+          <td><a href='@Url.Action("View_Invoice")'>2</a></td>
+          <td><a href='@Url.Action("View_Profile_User")'>Rajesh Saha</a></td>
+          <td>1 year(s) ago</td>
+		  <td>Delivered</td>
+          <td>Paid</td>
+		  <td>
+			<select id="deliveryMan" class="comboBox">
+							<option>Rajesh</option>
+							<option selected>Efti</option>
+							<option>Rakibul</option>
+							<option>Reza</option>
+						  </select>
+			</td>
+        </tr>
+		<tr>
+          <td><a href=@Url.Action("View_Invoice")>3</a></td>
+          <td><a href=@Url.Action("View_Profile_User")>Rakibul Hossain</a></td>
+          <td>1 year(s) ago</td>
+		  <td>Pending</td>
+          <td>Not Paid</td>
+		  <td>
+			<select id="deliveryMan" class="comboBox">
+							<option>Rajesh</option>
+							<option>Efti</option>
+							<option selected>Rakibul</option>
+							<option>Reza</option>
+						  </select>
+			</td>
+        </tr>
+		<tr>
+          <td><a href=@Url.Action("View_Invoice")>4</a></td>
+          <td><a href=@Url.Action("View_Profile_User")>Reza Ul Karim</a></td>
+          <td>1 year(s) ago</td>
+		  <td>Pending</td>
+          <td>Not Paid</td>
+		  <td>
+			<select id="deliveryMan" class="comboBox">
+							<option>Rajesh</option>
+							<option>Efti</option>
+							<option>Rakibul</option>
+							<option selected>Reza</option>
+						  </select>
+			</td>
+        </tr>
+        -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- <script> -->
+	<!-- $(window).on("load resize ", function() { -->
+  <!-- var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width(); -->
+  <!-- $('.tbl-header').css({'padding-right':scrollWidth}); -->
+<!-- }).resize(); -->
+<!-- </script> -->
+</body>

@@ -64,62 +64,17 @@
   <div class="tbl-content" style="background-color:white">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-        @foreach (var item in Model.Orders)
-        {
-            var name = "";
-            var status="";
-            var paymentstatus="";
-            foreach (var T in Model.Products)
-            {
-                if (item.ProductId == T.ProductId)
-                {
-                    name = T.ProductName;
-                }
-            }
-
-            foreach (var T in Model.Invoices)
-            {
-                if (item.InvoiceId == T.InvoiceId)
-                {
-                    paymentstatus= T.PaymentStatus;
-                    status = T.Status;
-                }
-            }
-
-
+      
         <tr>
-          <td>@item.OrderId</td>
-          <td><a href='@Url.Action("View_Product_Details",new { id = @item.ProductId })'">@item.ProductId</a></td>
-          <td><a href='@Url.Action("View_Invoice")'">@item.InvoiceId</a></td>
-		  <td>@item.SellingDate</td>
-          <td>@name</td>
-            @{if ( status== "0")
-                {
-                    <td>On the way</td>
-                }
-                else if (status == "0")
-                {
-                    <td>Delivered</td>
-                }
-                else
-                {
-                    <td>Cancelled</td>
-                }
-            }
-         
-          @{if (paymentstatus == "0")
-              {
-                <td>UnPaid</td>
-              }
-              else if (status == "1")
-              {
-                <td>Paid</td>
-              }
-
-        }
-		  
+          <td>item.OrderId</td>
+          <td><a href='@Url.Action("View_Product_Details")'>tem.ProductId</a></td>
+          <td><a href='@Url.Action("View_Invoice")'>item.InvoiceId</a></td>
+		  <td>item.SellingDate</td>
+          <td>name</td>
+          
+        
         </tr>
-        }
+
 
 
         <!--
