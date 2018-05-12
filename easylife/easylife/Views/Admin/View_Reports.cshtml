@@ -15,6 +15,13 @@
          a:hover {color: hotpink;}
         a:link {color: black;}
 
+    .bbb {
+        background-color: #F5A9A9;
+    }
+        .bbb:hover {
+            background-color: gray;
+        }
+
       .comboBox {
                   border-radius: 4px;
                   background-color: #fffff;
@@ -88,14 +95,29 @@
           @{var count = 0;}
           @foreach (var item in Model.Reports)
           {
-              <tr onclick="location.href='@Url.Action("View_Report", new { rid=item.ReportId,name=Model.members[count].Name,f=0 })'">
+              
+               if (item.SeenStatus == "0")
+               {
+                   <tr class="bbb" onclick="location.href='@Url.Action("View_Report", new { rid=item.ReportId,name=Model.members[count].Name,f=0 })'">
                     <td>@item.ReportId</td>
                     <td>@item.ReportTitle</td>
                     <td>@Model.members[count].Name</td>
                     <td>@item.Date</td>
-                  @if (item.SeenStatus == "0") { <td>Unseen</td>}
-                  @if (item.SeenStatus == "1") { <td>Seen</td>}
+                    <td>Unseen</td>
                 </tr>
+               }
+               
+               if (item.SeenStatus == "1")
+               {
+                   <tr onclick="location.href='@Url.Action("View_Report", new { rid=item.ReportId,name=Model.members[count].Name,f=0 })'">
+                    <td>@item.ReportId</td>
+                    <td>@item.ReportTitle</td>
+                    <td>@Model.members[count].Name</td>
+                    <td>@item.Date</td>
+                    <td>Seen</td>
+                </tr>
+               }
+             
               count++;
           }
           
