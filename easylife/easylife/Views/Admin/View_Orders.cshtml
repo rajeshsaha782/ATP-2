@@ -50,12 +50,11 @@
       <thead>
         <tr>
           <th>Order Code</th>
-          <th>Product Code</th>
-          <th>Invoice</th>
-		  <th>Order Placed</th>
           <th>Product</th>
-          <th>Order Status</th>
-          <th>Payment Status</th>
+          <th>Product Name</th>
+		  <th>Quantity</th>
+          <th>Invoice Id</th>
+          <th>Order Placed</th>
 		  
         </tr>
       </thead>
@@ -64,16 +63,24 @@
   <div class="tbl-content" style="background-color:white">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-      
-        <tr>
-          <td>item.OrderId</td>
-          <td><a href='@Url.Action("View_Product_Details")'>tem.ProductId</a></td>
-          <td><a href='@Url.Action("View_Invoice")'>item.InvoiceId</a></td>
-		  <td>item.SellingDate</td>
-          <td>name</td>
+          @{var count=0;}
+
+          @foreach (var item in Model.Orders)
+          {
+              <tr>
+                <td>@item.OrderId</td>
+                <td onclick="location.href='@Url.Action("View_Product_Details", new {id=item.ProductId})'">@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">", item.ProductId))</td>
+                <td onclick="location.href='@Url.Action("View_Product_Details", new {id=item.ProductId})'">@Model.Products[count].ProductName</td>
+                <td>@item.Quantity</td>
+                <td onclick="location.href='@Url.Action("View_Invoice", new { id = item.InvoiceId })'">@item.InvoiceId</td>
+		        <td>@item.SellingDate</td>
           
         
-        </tr>
+              </tr>
+              count++;
+          }
+      
+        
 
 
 

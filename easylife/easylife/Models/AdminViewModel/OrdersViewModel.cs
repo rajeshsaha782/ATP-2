@@ -11,7 +11,7 @@ namespace easylife.Models.AdminViewModel
         
         public IEnumerable<Order> Orders { set; get; }
         public IEnumerable<Invoice> Invoices { set; get; }
-        public IEnumerable<Product> Products { set; get; }
+        public Product[] Products = new Product[1000];
 
 
     }

@@ -752,7 +752,13 @@ namespace easylife.Controllers
             OrdersViewModel m = new OrdersViewModel();
             m.Orders = _OrderService.GetAll();
             m.Invoices = _InvoiceService.GetAll();
-            m.Products = _ProductService.GetAll();
+            int count = 0;
+            foreach (var item in m.Orders)
+            {
+                m.Products[count] = _ProductService.GetById(item.ProductId);
+                count++;
+            }
+
             m.TotalOrder = _OrderService.GetAll().Count();
             m.ReportCount = _ReportService.GetByUnseenStatus().Count();
             return View(m);
@@ -783,8 +789,13 @@ namespace easylife.Controllers
             }
 
             // m.Orders = _OrderService.GetAll();
-            m.Invoices = _InvoiceService.GetAll();
-            m.Products = _ProductService.GetAll();
+            m.Invoices = _InvoiceService.GetAll(); 
+            int count = 0;
+            foreach (var item in m.Orders)
+            {
+                m.Products[count] = _ProductService.GetById(item.ProductId);
+                count++;
+            }
             m.TotalOrder = _OrderService.GetAll().Count();
             return View(m);
         }

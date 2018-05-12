@@ -48,6 +48,12 @@
                                         <td>invoice Date</td>
                                         <td>@Model.Invoice.Date</td>
                                     </tr>
+                                    <tr>
+                                        <td>Payment Method</td>
+
+                                        @if (Model.Invoice.PaymentMethod == "0") {<td>bKash</td> }
+                                        @if (Model.Invoice.PaymentMethod == "1") {<td>Cash on Delivery</td> }
+                                    </tr>
                                     <!--<tr>
                                         <td>Amount Due</td>
                                         <td>$450</td>
@@ -79,7 +85,7 @@
                                     @foreach (var item in Model.Orders)
                                     {
                                         <tr>
-                                            <td><a href=@Url.Action("details","UserHome", new { id=item.ProductId})>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">", item.ProductId))</a></td>
+                                            <td><a href='@Url.Action("View_Product_Details", new {id=item.ProductId})'>@Html.Raw(String.Format("<img class=\"img-circle user\" src=\"/resources/{0}.jpg\">", item.ProductId))</a></td>
                                             <td>@Model.Products[count].ProductName</td>
                                             <td>@item.Quantity</td>
                                             <td>&#2547;@Model.Products[count].SellingPrice</td>
@@ -104,10 +110,20 @@
                     </tr>
                     <tr>
                         <td>
-                            <p><b>Note/Memo</b><p>
-                            <p>With slipping, 30 days money-back guarantee.
+                            <p><b>Delivery Status</b></p>
 
-                            <p>
+                            @if (Model.Invoice.Status == "0") {<p>On The Way</p> }
+                            @if (Model.Invoice.Status == "1") {<p>Deliverd</p> }
+                            @if (Model.Invoice.Status == "2") {<p>Canceled</p> }
+
+                            <br />
+
+                            <p><b>Payment Status</b></p>
+
+                            @if (Model.Invoice.PaymentStatus == "0") {<p>Unpaid</p> }
+                            @if (Model.Invoice.PaymentStatus == "1") {<p>Paid</p> }
+
+                            
 
                         </td>
                         <td>
