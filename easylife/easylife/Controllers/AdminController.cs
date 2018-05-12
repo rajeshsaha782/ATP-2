@@ -893,6 +893,7 @@ namespace easylife.Controllers
             I.MemberId = I.Invoice.MemberId;
             I.Name = _MemberService.GetById(I.MemberId).Name;
             I.Orders = _OrderService.GetByInvoiceId(id);
+            I.DeliveryMan = _MemberService.GetById(I.Invoice.DeliveryManId);
             int count = 0;
             foreach (var item in I.Orders)
             {

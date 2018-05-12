@@ -35,6 +35,8 @@
                             <p style="text-align:left;">@Model.Name<p>
                             <p style="text-align:left;"><b>Shipping Address:</b><p>
                             <p style="text-align:left;">@Model.Invoice.ShippingAddress<p>
+                            <p style="text-align:left;"><b>Delivery Man:</b><p>
+                            <p style="text-align:left;color:green" onclick="location.href='@Url.Action("View_Profile_Delivery_Man", new { id = Model.DeliveryMan.MemberId })'">@Model.DeliveryMan.Name<p>
                         </td>
 
                         <td>
