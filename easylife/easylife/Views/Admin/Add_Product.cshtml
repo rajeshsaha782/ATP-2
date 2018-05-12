@@ -23,9 +23,11 @@
 						{
 							text-align:center;
 						}
+                        .button {background-color:lightgray;
+    }
         </style>
 <body class="w3-light-grey w3-animate-bottom ">
-         <div class="invoice" style="width:800px;background-color:lightskyblue">
+         <div class="invoice" style="width:800px;background-color:whitesmoke">
 		
 @using (Html.BeginForm("Add_Product", "Admin", FormMethod.Post))
 {
@@ -45,7 +47,7 @@
                                         <table width="100%" border="0" >
 											
 											<tr height="40px">
-												<td>Product<td>
+												<td><b>Product</b><td>
                                                 <td>
                                                 @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
@@ -55,7 +57,7 @@
 											</tr>		
 											
                                             <tr height="40px">
-                                                <td>Catagory</td>
+                                                <td><b>Catagory</b></td>
                                                 <td>:</td>
                                                 <td>
                                                     @Html.DropDownListFor(model => model.Category, new SelectList(
@@ -71,7 +73,7 @@
                                             </tr>	
 
                                             <tr height="40px">
-                                                <td>Sub-Catagory</td>
+                                                <td><b>Sub-Catagory</b></td>
                                                 <td>:</td>
                                                 <td>
                                                     @Html.DropDownListFor(model => model.SubCategory, new SelectList(
@@ -123,7 +125,7 @@
                                                  -->
 											
 											<tr height="40px">
-												<td>Price</td>
+												<td><b>Price</b></td>
 												<td>:</td>
 												<td>
                                                     @Html.EditorFor(model => model.SellingPrice, new { htmlAttributes = new { @class = "form-control" } })
@@ -133,7 +135,7 @@
 											</tr>		
 											
 											<tr height="40px">
-												<td>Size</td>
+												<td><b>Size</b></td>
 												<td>:</td>
 												<td>
                                                     @Html.EditorFor(model => model.Size, new { htmlAttributes = new { @class = "form-control" } })
@@ -143,7 +145,7 @@
 											</tr>		
 											
 											<tr height="40px">
-												<td>Quantity</td>
+												<td><b>Quantity</b></td>
 												<td>:</td>
 												<td>
                                                     @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
@@ -153,7 +155,7 @@
 											</tr>	
 											
 											<tr height="40px">
-												<td>Brand</td>
+												<td><b>Brand</b></td>
 												<td>:</td>
 												<td>
                                                     @Html.DropDownListFor(model => model.Brand, new SelectList(
@@ -173,7 +175,7 @@
 											</tr>
 											
 											<tr height="40px">
-												<td>Product Feature</td>
+												<td><b>Product Feature</b></td>
 												<td>:</td>
 												<td>
                                                     @Html.EditorFor(model => model.Features, new { htmlAttributes = new { @class = "form-control" } })

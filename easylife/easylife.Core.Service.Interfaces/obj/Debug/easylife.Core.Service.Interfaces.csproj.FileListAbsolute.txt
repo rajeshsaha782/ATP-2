@@ -12,13 +12,6 @@ E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Servi
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.csprojResolveAssemblyReference.cache
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.dll
 E:\AIUB\3-3.Spring(2017-18)\ATP-II\Project_easylife\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.pdb
-C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Service.Interfaces.dll
-C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Service.Interfaces.pdb
-C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Entities.dll
-C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Entities.pdb
-C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.csprojResolveAssemblyReference.cache
-C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.dll
-C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.pdb
 D:\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Service.Interfaces.dll
 D:\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Service.Interfaces.pdb
 D:\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Entities.dll
@@ -26,3 +19,10 @@ D:\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Entit
 D:\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.csprojResolveAssemblyReference.cache
 D:\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.dll
 D:\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.pdb
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Service.Interfaces.dll
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Service.Interfaces.pdb
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Entities.dll
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\bin\Debug\easylife.Core.Entities.pdb
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.dll
+C:\xampp\htdocs\GitHub\ATP-2\easylife\easylife.Core.Service.Interfaces\obj\Debug\easylife.Core.Service.Interfaces.pdb

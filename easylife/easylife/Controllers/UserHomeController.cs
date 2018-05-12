@@ -550,11 +550,10 @@ namespace easylife.Controllers
                     {
                         Session["userId"] = Convert.ToString(_MemberService.GetByEmail(email).FirstOrDefault().MemberId);
 
-                        //Member mem = new Member();
-                        //mem.MemberId = Convert.ToInt32(Session["userId"]);
-                        //mem.LastLoggedIn = DateTime.Now;
+                        Member mem = _MemberService.GetById(Convert.ToInt32(Session["userId"]));
+                        mem.LastLoggedIn = DateTime.Now;
 
-                        //_MemberService.Update(mem);
+                        _MemberService.Update(mem);
 
                         return s;
                     }

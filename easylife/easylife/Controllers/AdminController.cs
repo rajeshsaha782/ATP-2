@@ -380,8 +380,10 @@ namespace easylife.Controllers
             {
                 return RedirectToAction("Index", "UserHome");
             }
-
-            return View();
+            MemberView mem1 = new MemberView();
+            //mem1.member = mem;
+            mem1.ReportCount = _ReportService.GetByUnseenStatus().Count();
+            return View(mem1);
         }
         [HttpPost]
         public ActionResult Add_Member(Member mem)
@@ -433,7 +435,10 @@ namespace easylife.Controllers
                 return RedirectToAction("Index", "UserHome");
             }
 
-            return View();
+            ProductViewModel pro1 = new ProductViewModel();
+            //pro1.products = pro;
+            pro1.ReportCount = _ReportService.GetByUnseenStatus().Count();
+            return View(pro1);
         }
         [HttpPost]
         public ActionResult Add_Product(Product pro)
